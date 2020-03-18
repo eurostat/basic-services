@@ -1,0 +1,267 @@
+country,city,street,cap_beds,name,postcode,tel,house_number,id,list_specs,data_year,url,latGISCO,lonGISCO,latBing,lonBing
+AT,Bad Tatzmannsdorf,Vogelsangweg,169,Rehabilitationszentrum für Herz-Kreislauferkrankungen Bad Tatzmannsdorf,7431,03353 6000 0,11,K101,,,http://www.ska-badtatzmannsdorf.at,47.3330468,16.2242553,47.331527108287254,16.22262893566035
+AT,Eisenstadt,Johannes von Gott-Platz,420,Krankenhaus der Barmherzigen Brüder Eisenstadt,7000,02682 601 0,1,K102,"AN, IM, KIJU",,http://www.barmherzige-brueder.at,0.0,0.0,47.84727,16.51378
+AT,Güssing,Grazer Straße,118,Landeskrankenhaus Güssing,7540,05 7979 31000,13,K104,"AN, IM",,http://www.krages.at,47.159349,16.163562,47.049762,16.3212708
+AT,Kittsee,Hauptplatz,111,Ladislaus Batthyany-Strattmann Krankenhaus Kittsee,2421,05 7979 35000,3,K105,"AN, IM",,http://www.krages.at,48.09270755,17.0663027184193,48.09289,17.06505
+AT,Oberpullendorf,Spitalstraße,138,Landeskrankenhaus Oberpullendorf,7350,05 7979 34000,32,K106,"AN, IM",,http://www.krages.at,47.5073329,16.5086600573201,47.50727,16.50939
+AT,Oberwart,Dornburggasse,338,Landeskrankenhaus Oberwart,7400,05 7979 32000,80,K107,"AN, IM, KIJU",,http://www.krages.at,47.2802638,16.2035387,47.27995,16.20347
+AT,St. Andrä am Zicksee,Otto-Pohanka-Platz,140,Orthopädisches Klinikum SKA Zicksee,7161,02176 2325,,K109,,,http://www.kobvskazicksee.at,0.0,0.0,47.79147,16.9144
+AT,Rust,Baumgartenstraße,12,Heilpädagogisches Zentrum Rust,7071,05 7979 21000,15a,K111,,,http://www.psd-bgld.at,0.0,0.0,47.8016,16.66597
+AT,Bad Tatzmannsdorf,Am Kurpark,105,Therapiezentrum Rosalienhof -  Bad Tatzmannsdorf,7431,03353 8387 0,1,K112,,,http://www.bva.at,47.33706595,16.2280907404241,47.33702,16.22791
+AT,Bad Sauerbrunn,Hartiggasse,121,Sonderkrankenanstalt  Onkologische Rehabilitation - Der Sonnberghof,7202,02625 300,4,K113,,,http://www.dersonnberghof.at,47.7721772,16.3249976,47.77233,16.32394
+AT,Kittsee,Spitalgasse,100,Sonderkrankenanstalt für neurologische Rehabilitation Kittsee,2421,02143 30100 0,1,K114,,,http://neuroreha-kittsee.at,48.09235215,17.0664117299582,48.09219,17.06688
+AT,Friesach,St. Veiter Straße,167,Krankenhaus des Deutschen Ordens Friesach GmbH,9360,04268 2691 0,12,K201,AN,,http://www.dokh.at,46.9483654,14.4096152,46.94779,14.41049
+AT,Hermagor,Radnigerstraße,42,Gailtal-Klinik Hermagor,9620,04282 2220 0,12,K204,,,http://www.gailtal-klinik.at,46.6292262,13.3708128,46.62923,13.3708
+AT,Klagenfurt am Wörthersee,Feschnigstraße,1165,Klinikum - Klagenfurt am Wörthersee (LKH Klagenfurt),9020,0463 538 0,11,K205,"AN, IM, KIJU, NCH, NEU",,http://www.lkh-klu.at,46.6342442,14.3073104,46.63675607026466,14.308367964213128
+AT,Klagenfurt am Wörthersee,Völkermarkter Straße,155,Krankenhaus der Elisabethinen Klagenfurt GmbH,9020,0463 5830,15-19,K206,GEM,,http://www.ekh.at,46.6248911,14.3271371,46.62588,14.31615
+AT,Klagenfurt am Wörthersee,Waidmannsdorfer Straße,100,Unfallkrankenhaus Klagenfurt,9020,05 9393 4600,35,K207,,,http://www.auva.at/ukhklagenfurt,46.6179251,14.2955144,46.61814560296913,14.295424915126423
+AT,Klagenfurt am Wörthersee,Feschnigstraße,83,Abteilung für chronische Kranke im Klinikum Klagenfurt am Wörthersee,9020,0463 538,11,K211,,,http://www.lkh-klu.at,46.6342442,14.3073104,46.63675607026466,14.308367964213128
+AT,Klagenfurt am Wörthersee,Radetzkystraße,160,Privatklinik Maria Hilf Klagenfurt,9020,0463 5885 0,35,K212,,,http://www.humanomed.at,46.6277758,14.2965404,46.62772,14.29645
+AT,Kötschach-Mauthen,Laas,66,Landeskrankenhaus Laas,9640,04715 7701 0,39,K213,IM,,http://www.lkh-laas.at,46.6995551,12.9890263,46.69954,12.98908
+AT,St. Veit an der Glan,Spitalgasse,166,Krankenhaus der Barmherzigen Brüder St. Veit/Glan,9300,04212 499 0,26,K214,AN,,http://www.bbstveit.at,46.769454,14.3533024,46.76909,14.35341
+AT,Spittal an der Drau,Billrothstraße,231,Krankenhaus Spittal/Drau,9800,04762 622 0,1,K215,AN,,http://www.khspittal.com,46.80206015,13.4902067490607,46.80183,13.49071
+AT,Villach,Nikolaigasse,625,Landeskrankenhaus Villach,9500,04242 208 0,43,K216,"AN, IM, KIJU",,http://www.lkh-vil.or.at,46.6147222,13.8555556,46.61541,13.85849
+AT,Villach,Nikolaigasse,26,Abteilung für chronisch Kranke im Landeskrankenhaus Villach,9500,04242 208 62290,43,K217,,,http://www.lkh-vil.or.at,46.6147222,13.8555556,46.61541,13.85849
+AT,Feldkirchen in Kärnten,Martin-Luther-Straße,56,Krankenhaus Waiern,9560,04276 2201,14,K218,,,http://www.diakonie-kaernten.at/de-84.cms,46.7333784,14.0871058155227,46.73342,14.08682
+AT,Wolfsberg,Paul Hackhoferstraße,229,Landeskrankenhaus Wolfsberg,9400,04352 533 0,9,K219,AN,,http://www.lkh-wo.at,46.8316592,14.8480333,46.83239,14.84858
+AT,Wolfsberg,Paul Hackhoferstraße,90,Abteilung für chronische Kranke und Zentrum für Lymphologie im Landeskrankenhaus Wolfsberg,9400,04352 533 0,9,K220,,,http://www.lkh-wo.at,46.8316592,14.8480333,46.83239,14.84858
+AT,Treffen,De la Tour Straße,56,Sonderkrankenanstalt de La Tour,9521,04248 2557 0,28,K222,,,http://www.diakonie-kaernten.at/de-86.cms,46.6796471,13.8444485813966,46.67953,13.84463
+AT,Villach-Warmbad Villach,Dr. Walter Hochsteiner-Straße,152,Privatklinik Villach,9504,04242 3044 0,4,K223,,,http://www.privatklinik-villach.at,0.0,0.0,46.59427,13.82646
+AT,Treibach-Althofen,Moorweg,435,Interdisziplinäre Sonderkrankenanstalt für Rehabilitation,9330,04262 2071 0,30,K224,,,http://www.humanomed.at/privatklinik-althofen/,0.0,0.0,46.87469,14.4923
+AT,Obervellach,Johann-Schroth-Weg,30,Sonderkrankenanstalt  Die Schrothkur Obervellach,9821,04782 2043,137,K225,,,http://www.schrothkur.at,0.0,0.0,46.92781066894531,13.235426902770996
+AT,Kötschach-Mauthen,Laas,50,Abteilung für chronisch Kranke im Landeskrankenhaus Laas,9640,04715 7701 704,39,K226,,,http://www.lkh-laas.at,46.6995551,12.9890263,46.69954,12.98908
+AT,Villach-Warmbad Villach,Kumpfallee,0,Sonderkrankenanstalt für Orthopädie und orthopädische Chirurgie Warmbad-Villach,9504,04242 300 6 00,91,K228,,,http://www.med-warmbad.at/orthopaedie,46.58842205,13.8307671311812,46.5885,13.83077
+AT,Klagenfurt am Wörthersee,Grete-Bittner-Straße,95,Rehabilitationsklinik für seelische Gesundheit und Prävention,9020,0463 43 00 07,40,K229,,,http://www.seelischereha.com,46.6360396,14.2966193,46.63594,14.29653
+AT,Villach-Warmbad Villach,Kumpfallee,238,Sonderkrankenanstalt für medizinische Rehabilitation Thermenhof,9504,04242 3001 4099,93,K230,,,http://www.med-warmbad.at,46.5878827,13.8304746,46.58791,13.83044
+AT,Hermagor,Radingerstraße,110,KABEG Gailtalklinik,9620,04282 2220 0,12,K232,,,http://www.gailtal-klinik.at,0.0,0.0,46.62923,13.3708
+AT,Micheldorf,Agathenhofstraße,54,Sonderkrankenanstalt und Gesundheitsresort Agathenhof,9322,05 02 88 29,24,K233,,,http//:www.agathenhof.at,46.9172242,14.4203567426305,46.91708,14.41964
+AT,Feldkirchen in Kärnten,Martin-Luther Straße,12,Sonderkrankenhaus Sarepta-Spezialkliinik für Essstörungen,9560,04276 2201 300,14,K238,,,http://www.diakonie-delatour.at/sarepta-spezialklinik-fuer-essstoerungen,46.7333784,14.0871058155227,46.73342,14.08682
+AT,Amstetten,Krankenhausstraße,355,Landesklinikum Amstetten,3300,07472 604 00,21,K303,"AN, GEM, IM, KIJU",,http://www.amstetten.lknoe.at,48.1276057,14.8818641330638,48.12824,14.88117
+AT,Baden,Renngasse,124,Klinikum am Kurpark Baden für Orthopädie und Rheumatologie,2500,02252 432 85 0,2,K305,,,,47.9507863,16.2280619,48.0091549,16.2336123
+AT,Bad Schönau,Am Kurpark,94,Sonderkrankenanstalt Bad Schönau,2853,02646 8251 0,1,K307,,,http://www.koenigsberg-bad-schoenau.at,47.4925218,16.2321744017069,47.49273,16.23198
+AT,Muthmannsdorf,Felbring,119,SKA-RZ-Pensionsversicherungsanstalt Felbring im Schneebergland,2723,02638 882 81 0,71,K313,,,http://www.ska-felbring.at,47.841035,16.0842088,47.84132,16.08766
+AT,Grimmenstein,Hocheggerstraße,181,Landesklinikum Hochegg,2840,02644 6300 0,88,K315,PUL,,http://www.hochegg.lknoe.at,47.61640685,16.0872343809848,47.61621,16.08731
+AT,Hainburg an der Donau,Hofmeisterstraße,142,Landesklinikum Hainburg,2410,02165 90501 203,70,K316,GEM,,http://www.hainburg.lknoe.at,0.0,0.0,48.14443,16.9558
+AT,Grimmenstein,Friedrich-Hillegeist-Straße,240,Rehabilitationszentrum Hochegg,2840,02644 6010,2,K318,,,http://www.ska-hochegg.at,47.6156828,16.0986844,47.61537,16.09856
+AT,Hollabrunn,Robert Löffler-Straße,222,Landesklinikum Hollabrunn,2020,02952 2275 0,20,K319,"AN, GEM, IM",,http://www.hollabrunn.lknoe.at,48.56269955,16.0908684619655,48.56284,16.09074
+AT,Klosterneuburg,Kreutzergasse,127,Landesklinikum Klosterneuburg,3400,02243 9004 0,12-14,K321,GEM,,http://www.kh-klosterneuburg.at,48.3080327,16.3245863,48.30832,16.32423
+AT,Krems an der Donau,Mitterweg,461,Universitätsklinikum Krems,3500,02732 804 0,10,K326,"AN, GEM, IM",,http://www.krems.lknoe.at,48.41202845,15.6155879363047,48.41202,15.61502
+AT,Laab im Walde,Tiergartenstraße,141,Rehabilitationszentrum für Bewegungsstörungen und rheumatische Erkrankungen,2381,02239 3536,3c,K328,,,http://www.ska-laabimwalde.at,48.15715585,16.1783461842788,48.15622,16.18029
+AT,Mauer-Öhling,Hausmeninger Straße,440,Landesklinikum Mauer,3362,07475 9004,221,K333,,,http://www.mauer.lknoe.at,48.092879,14.8036045,48.0919979,14.8009421
+AT,Melk,Krankenhausstraße,143,Landesklinikum Melk,3390,02752 9004,11,K334,"AN, GEM",,http://www.melk.lknoe.at,48.2266221,15.3384207,48.2267,15.33837
+AT,Mistelbach,Liechtensteinstraße,524,Landesklinikum Mistelbach-Gänserndorf,2130,02572 3341,67,K335,"AN, GEM, IM, KIJU",,http://www.mistelbach.lknoe.at,48.567261,16.5800081,48.56818,16.58053
+AT,Neunkirchen,Peischinger Straße,384,Landesklinikum Neunkirchen,2620,02635 602,19,K338,"AN, GEM",,,47.7267709,16.0864573,47.72636,16.08535
+AT,Prein an der Rax,Prein/Rax Oberland,152,Sonderkrankenanstalt Gesundheitsresort Raxblick,2654,02665 241 0,2-4,K339,,,http://www.raxblick.at,0.0,0.0,47.675960540771484,15.755098342895508
+AT,Scheibbs,Eisenwurzenstraße,183,Landesklinikum Scheibbs,3270,07482 404 0,26,K347,GEM,,http://www.scheibbs.lknoe.at,48.0149824,15.1604644,48.01163,15.16323
+AT,Pressbaum,Weidlingbachstraße,48,Sonderkrankenanstalt der Justizanstalt Wien-Josefstadt (Außenstelle Wilhelmshöhe),3021,02233 524 64 3589,14,K352,,,http://www.bmj.gv.at,48.1853807,16.0876679,48.18514,16.08991
+AT,Waidhofen an der Ybbs,Ybbsitzer Straße,163,Landesklinikum Waidhofen/Ybbs,3340,07442 9004 0,112,K354,"AN, GEM",,http://www.waidhofen-ybbs.lknoe.at,47.9546647,14.7872007,47.95301,14.78813
+AT,Wiener Neustadt,Matthias Corviniusring,766,Landesklinikum Wiener Neustadt,2700,02622 321 0,3-5,K356,"AN, GEM, IM, KIJU",,http://wienerneustadt.lknoe.at,0.0,0.0,47.81615,16.24834
+AT,Ybbs an der Donau,Persenbeuger Straße,145,Therapiezentrum Ybbs,3370,07412 551 00,1-3,K357,,,http://www.wienkav.at/kav/pky/,0.0,0.0,48.18176,15.07925
+AT,Baden,Sauerhofstraße,160,Klinikum Peterhof Baden,2500,02252 481 77,9-15,K359,,,,48.004362,16.2291257657109,48.00417,16.22886
+AT,Baden,Adolfine-Malcher-Gasse,173,Klinikum Malcherhof Baden,2500,02252 895 11 0,1,K363,,,http://www.klinikum-malcherhof.at,48.0114866,16.2402787,48.01132,16.24011
+AT,Breitenstein,Hauptstraße,106,"Diätgenesungsheim Karl Hiesmayr, Breitenstein",2673,02664 2273,69,K364,,,,47.6633781,15.8241021273569,47.66333,15.82404
+AT,Groß Gerungs,Kreuzberg,223,Sonderkrankenanstalt für Herz- und Kreislauferkrankungen Groß Gerungs,3920,02812 8681 0,310,K365,,,http://www.herz-kreislauf.at,0.0,0.0,48.56515,14.95841
+AT,Klosterneuburg,Holzgasse,200,Rehabilitationszentrum 'Weißer Hof' Klosterneuburg,3400,05 9393 51000,350,K369,,,http://www.auva.at/rzweisserhof,48.32525505,16.2766668712599,48.32594,16.27595
+AT,Weitra,,268,Sonderkrankenanstalt Moorheilbad Harbach,3970,02858 5255 0,,K370,,,http://www.moorheilbad-harbach.at,48.7004692,14.9015511,48.688377380371094,14.861903190612793
+AT,Alland,,144,Rehabilitationszentrum Alland,2534,02258 2630 0,,K371,,,http://www.ska-alland.at,48.0588086,16.075773,48.04957962036133,16.062395095825195
+AT,Bad Pirawarth,Kurhausstraße,321,"Klinik Pirawarth, Kur- und Rehabilitationszentrum",2222,02574 291 60,100,K375,,,http://www.klinik-pirawarth.at,48.4489642,16.6102292294388,48.44914,16.60992
+AT,Waidhofen an der Ybbs,Hötzendorfstraße,156,Therapiezentrum Buchenberg,3340,07442 522 85 2066,1,K376,,,,47.953824,14.7877237,47.9537,14.78741
+AT,Horn,Spitalgasse,369,Landesklinikum Horn-Allentsteig,3580,02982 2661 0,10,K377,"AN, IM",,http://www.horn.lknoe.at,48.668881,15.661173,48.66894,15.66116
+AT,Stockerau,Lenaustraße,298,Landesklinikum Korneuburg-Stockerau,2000,02262 780 0,1,K378,"AN, GEM",,,48.3868729,16.2044719164122,48.38686,16.20444
+AT,Tulln an der Donau,Alter Ziegelweg,440,Universitätsklinikum Tulln,3430,02272 601,10,K379,"GEM, KIJU",,http://www.tulln.lknoe.at/,0.0,0.0,48.32198,16.06494
+AT,Baden,Waltersdorfer Straße,737,Landesklinikum Baden-Mödling-Hinterbrühl,2500,02252 9004,75,K380,"AN, GEM, IM, KIJU",,http://www.baden.lknoe.at/,48.0003981,16.2554077,47.99945,16.25425
+AT,Aspang,Ausschlag-Zöbern,80,Sonderkrankenanstalt Marienhof,2870,02642 52430,3-5,K381,,,https://www.gruenerkreis.at/sonderkrankenhaus-marienhof,47.5333886,16.0823389,47.53308,16.08253
+AT,St. Pölten,Dunant-Platz,1114,Universitätsklinikum St. Pölten-Lilienfeld,3100,02742 9004 0,1,K382,"AN, GEM, IM, KIJU",,http://www.stpoelten.lknoe.at/,0.0,0.0,48.21438,15.62538
+AT,Zwettl,Propstei,629,Landesklinikum Zwettl-Gmünd-Waidhofen/Thaya,3910,02822 504 0,5,K383,"AN, GEM, IM, KIJU",,http://www.zwettl.lknoe.at,48.59982195,15.1627070243756,48.6026518,15.165592
+AT,Eggenburg,Grafenbergerstraße,100,Psychosomatisches Zentrum Waldviertel Eggenburg,3730,02984 20228 0,2,K384,,,http://www.pszw.at,48.6429412,15.8216036,48.64306,15.82163
+AT,Ottenschlag,Xundheitsstraße,111,Sonderkrankenanstalt Ottenschlag,3631,02858 5255 1650,1,K385,,,http://www.xundheitswelt.at,48.42766975,15.225389624488,48.42731,15.22495
+AT,Baden,Weilburgstraße,124,Rehabilitationszentrum Engelsbad,2500,02252 845 71 0,7-9,K386,,,http://www.bva.at,48.0051596,16.2298644703488,48.00542,16.23021
+AT,Perchtoldsdorf,Sonnberggasse,170,Waldsanatorium Perchtoldsdorf,2380,01 865 01 00 0,93,K387,,,http://www. waldsanatorium.at,0.0,0.0,48.12869,16.25631
+AT,Krems-Hollenburg,Krustettenerstraße,150,Sonderkrankenanstalt für Psychiatrie Krems-Hollenburg,3506,02739 77 110,25,K388,,,http://www.sanlas.at,0.0,0.0,48.37769,15.67918
+AT,Gars am Kamp,Kremser Straße,100,Rehabilitationsklinik Gars am Kamp (gehört zu K384),3571,02985 33200,656,K389+,,,http://www.pszw.at,48.5951911,15.6621706,48.59421,15.66064
+AT,Bad Erlach,Fabriksgasse,100,Sonderkrankenanstalt für Remobilisation/Nachsorge und onkologische Rehabilitation,2822,02627 813 00,8,K390,,,http//www.lebensmed-baderlach.at,47.7305755,16.2161051,47.72905,16.21885
+AT,Braunau am Inn,Ringstraße,384,"Krankenhaus ""St. Josef""  Braunau am Inn",5280,07722 804 0,60,K405,"AN, IM, KIJU",,http://www.khbr.at,48.2555741,13.0332948,48.25583,13.03307
+AT,Freistadt,Krankenhausstraße,165,Klinikum Freistadt,4240,050 554 76 0,1,K408,GEM,,http://www.lkh-freistadt.at,48.49225975,14.4983080804569,48.49192,14.4983
+AT,Enns,Bahnhofweg,120,Sonderkrankenanstalt für neurologische und pneumologische Rehabilitation,4470,07223 82 828,7,K413,,,http://www.rehaklinikenns.at,48.216422,14.473308,48.21626,14.47295
+AT,Hörsching,Fliegerhorst Vogler,47,Sanitätsanstalt Hörsching des Militärkommandos Oberösterreich,4063,07221 700,,K414,,,,48.2264245,14.193905856514,48.22231,14.19139
+AT,Kirchdorf an der Krems,Hausmanninger Straße,219,Landeskrankenhaus Kirchdorf an der Krems,4560,050 554 67 0,8,K415,GEM,,http://www.lkh-kirchdorf.at,47.9084864,14.1237682,47.90823,14.12455
+AT,Linz,Seilerstätte,337,Krankenhaus der Barmherzigen Brüder Linz,4020,0732 7897 0,2,K417,"AN, IM",,http://www.bblinz.at,48.3004793,14.2890894,48.30045,14.28909
+AT,Linz,Seilerstätte,666,Krankenhaus der Barmherzigen Schwestern vom Hl. Vinzenz von Paul Linz,4020,0732 7677 0,4,K418,"AN, IM, KIJU",,http://www.bhs.at/linz/,48.2844228,14.37307745,48.29901,14.2892
+AT,Linz,Fadingerstraße,455,Krankenhaus der Elisabethinen Linz,4020,0732 7676 0,1,K419,"AN, IM, PUL",,http://www.elisabethinen.or.at,48.3053242,14.2932199,48.30492,14.29369
+AT,Linz,Garnisonstraße,153,Unfallkrankenhaus Linz,4021,0732 6920 0,7,K420,,,http://www.auva.at/ukhlinz,48.30423555,14.3096132682883,48.30401,14.30942
+AT,Linz,Weißenwolffstraße,119,Klinik Diakonissen Linz,4020,0732 7675 0,15,K421,,,http://www.diakonissen-krankenhaus-linz.at,48.3043587,14.3021144239691,48.30432,14.30206
+AT,Ried im Innkreis,Schloßberg,427,Krankenhaus der Barmherzigen Schwestern vom Hl. Vinzenz von Paul Ried,4910,07752 602 0,1,K427,"AN, IM, KIJU",,http://www.bhs-ried.at,48.2108446,13.4933325,48.21057,13.49322
+AT,Schärding,Alfred-Kubin-Straße,153,Klinikum Schärding,4780,050 554 78 0,2,K428,GEM,,http://www.lkh-schaerding.at,48.5069879,13.4616262,48.45531,13.43558
+AT,Sierning,Neustraße,90,Sonderkrankenanstalt Sierning,4522,07259 2142 0,14,K429,,,http://www.kh-sierning.at,48.0434732,14.3084623,48.04268,14.30755
+AT,Steyr,Sierninger Straße,621,Landeskrankenhaus Steyr,4400,050 554 66 0,170,K431,"AN, IM, KIJU, PUL",,http://www.lkh-steyr.at,48.0449963,14.3911039,48.04397,14.39269
+AT,Wels,Grieskirchner Straße,1227,Klinikum Wels-Grieskirchen,4600,07242 415 0,42,K434,"AN, CH, IM, KIJU, PUL",,http://www.klinikum-wels.at,48.1734046,14.0236459,48.17321,14.02412
+AT,Weyer,Mühlein,132,"Sonderkrankenanstalt zur Behandlung unspezifischer Atemwegserkrankungen, Erkrankungen des rheumatischen Formenkreises sowie für postoperative Rehabilitation",3335,07355 86510,2,K436,,,http://www.ska-weyer.at,47.8574065,14.6833206359217,47.8576,14.68261
+AT,Bad Hall,Parkstraße,122,Klinikum Bad Hall für Herz- Kreislauf- und neurologische Rehabilitation,4540,07258 3071 0,12,K437,,,,48.0284767,14.2126845571593,48.02873,14.21279
+AT,Bad Schallerbach,Schönauer Straße,230,Sonderkrankenanstalt  - Rehabilitationszentrum Bad Schallerbach (SKA - RZ Bad Schallerbach),4701,07249 433,45,K438,,,http://www.ska-badschallerbach.at,48.23706555,13.9189962472256,48.23682,13.91906
+AT,Rohrbach in Oberösterreich,Krankenhausstraße,202,Klinikum Rohrbach,4150,050 554 77 0,1,K441,GEM,,http://www.lkh-rohrbach.at,48.5661165,13.9906117,48.5666799930013,13.9898899843379
+AT,Bad Ischl,Untere Lindaustraßße,134,Rehabilitationszentrum Bad Ischl-Lindau,4820,06132 242 53,44,K442,,,http://www.ska-badischl.at,0.0,0.0,47.71531,13.58083
+AT,St. Georgen im Attergau,Kogl,95,Rehabilitationszentrum St. Georgen,4880,07667 6161 0,25,K443,,,https://reha.at,47.9406325,13.4576627503507,47.9404,13.45714
+AT,Linz,Prechtlerstraße,30,Sonderkrankenanstalt für Kinder- und Jugendneuropsychiatrie,4030,0732 349 271,30-32,K444,,,http://www.spattstrasse.at,48.2699014,14.31290235,48.26996,14.3129
+AT,Bad Ischl,Gartenstraße,171,HerzReha Herz Kreislaufzentrum Bad Ischl,4820,06132 278 01,9,K446,,,,47.709481,13.6133547,47.71006,13.61386
+AT,Bad Schallerbach,Stifterstraße,177,"Sonderkrankenanstalt für Herz- und Kreislauferkrankungen, Stoffwechselerkrankungen sowie Atemwegserkrankungen - Rehabilitationszentrum Austria",4701,07249 425 41,11,K447,,,,48.22789405,13.9137008408471,48.22812,13.91429
+AT,Aspach,Revitalplatz,178,Sonderkrankenanstalt Aspach,5252,07755 6801,2,K448,,,http://www.revital-aspach.at,48.1828686,13.3008844,48.18281,13.30033
+AT,Schönering,Am Dorfplatz,151,Sonderkrankenanstalt für neurologische und orth. Rehabilitation und Kinderrehabilitation,4073,07226 40004 0,1,K450,,,http://www.klinik-wilhering.at,48.2999037,14.1628497398588,48.29992,14.16295
+AT,Bad Wimsbach-Neydharting,Neydharting,63,Sonderkrankenanstalt für Krankheiten des Stoffwechselsystems und des Verdauungsapparates,4654,07245 25 474 0,4,K451,,,http://interface.gesundheit-pflege.at/betriebe.html,48.05211205,13.8825775400335,48.05233,13.88294
+AT,Altmünster,Gmundnerberg,156,Sonderkrankenanstalt für neurologische Rehabilitation Altmünster,4813,07612 88 000,82,K452,,,http://www.ntgb.at,47.9073631,13.7435132210553,47.90721,13.74347
+AT,Bad Schallerbach,Schallerbacherhofstraße,123,Klinikum Schallerbacherhof für orthopädische Rehabilitation,4701,07249 486 41 0,1,K453,,,http://www.schallerbacherhof.at,48.22914015,13.9230180627053,48.22895,13.92318
+AT,Linz,Krankenhausstraße,1811,Linz Kepler Universitätsklinikum,4020,,9,K470,"AN, GEM, IM, KIJU, NEU",,http://www.jku.at,48.3032209,14.3054526,48.30329,14.30543
+AT,Gmunden,Miller-von-Aichholz-Straße,1091,Salzkammergut-Klinikum,4810,05 055473 0,49,K480,"AN, GEM, IM, KIJU, PUL",,http://www.salzkammergut-klinikum.at,47.9156765,13.779099,47.91621,13.77961
+AT,Bad Hall,Linzer Straße,100,Therapiezentrum Justuspark Bad Hall,4540,050405 85550,7,K481,,,http://www.bva.at,48.03738635,14.2044766907873,48.03754,14.20456
+AT,Bad Hofgastein,Salzburger Straße,144,Rehabilitationszentrum Bad Hofgastein,5630,06432 6685,26-30,K505,,,http://www.ska-badhofgastein.at,47.1760888,13.1055612991304,47.17556,13.10452
+AT,Hallein,Bürgermeisterstraße,124,Landesklinik Hallein,5400,05 72 55 44,34,K512,GEM,,,47.6855442,13.112829,47.68552,13.11271
+AT,Oberndorf bei Salzburg,Paracelsusstraße,107,Aö Krankenhaus Oberndorf,5110,06272 4334 601,37,K517,GEM,,http://www.krankenhaus-oberndorf.at,47.936511,12.9467116424202,47.93665,12.94705
+AT,Obertauern,Obertauern,3,Krankenanstalt Obertauern Dr. Aufmesser,5562,06456 7298,115,K518,,,http://www.aufmesser.at,47.250812,13.5483677,47.24562,13.56428
+AT,Puch bei Hallein,Dorf,12,Sanatorium Oberthurnhof  St. Jakob am Thurn,5412,0662 62 33 93 0,4,K519,,,,47.7397061,13.094851,47.740940426743,13.0948625604493
+AT,Radstadt,Judenbühel,13,Krankenanstalt Radstadt Dr. Aufmesser,5550,06452 7501,3-5,K521,,,http://www.aufmesser.at,47.3850823,13.4708959,47.38545,13.46683
+AT,Salzburg,Müllner Hauptstraße,1073,Landeskrankenhaus Salzburg - Universitätsklinikum der PMU,5020,05 7255 58838,48,K524,"AN, IM, KIJU",,http://www.salk.at/Landeskrankenhaus.html,47.8062316,13.0304065432589,47.80626,13.0329
+AT,Salzburg,Dr. Franz Rehrl-Platz,138,Unfallkrankenhaus Salzburg,5020,0662 6580 0,5,K525,,,http://www.auva.at/ukhsalzburg,47.7993726,13.0556539,47.79901,13.05606
+AT,Salzburg,Haydnstraße,116,"Privatklinik Wehrle - Diakonissen, Standort Andräviertel",5020,0662 905 09 0,18,K526,,,http://www.privatklinik-wehrle-diakonissen.at,47.8082238,13.045977,47.80825,13.04575
+AT,Salzburg,Kajetanerplatz,235,Krankenhaus der Barmherzigen Brüder  Salzburg,5010,0662 8088,1,K527,"AN, IM",,http://www.barmherzige-brueder.at,47.7970791,13.051592,47.7971,13.05156
+AT,Salzburg,Ignaz-Harrer-Straße,470,Christian-Doppler-Klinik Salzburg - Universitätsklinikum der PMU,5020,05 7255 3,79,K528,"NCH, NEU",,http://www.salk.at/Christian-Doppler-Klinik.html,47.8140867,13.017441,47.8128759,13.021916
+AT,St. Veit im Pongau,St. Veiter-Straße,94,Landesklinik St. Veit,5621,05 7255 46,46,K533,,,http://www.salk.at/Landesklinik_St._Veit.html,47.33133625,13.1619587712741,47.3312,13.1624
+AT,Schwarzach im Pongau,Kardinal Schwarzenbergplatz,496,Kardinal Schwarzenberg Klinikum,5620,06415 7101 0,1,K534,"AN, IM, KIJU",,http://www.kh-schwarzach.at,47.3218051,13.1528691,47.32144,13.15285
+AT,Tamsweg,Bahnhofstraße,86,Landesklinik Tamsweg,5580,05 7255 47,7,K535,GEM,,http://www.salk.at,47.12908,13.809217,47.12907,13.80921
+AT,Zell am See,Paracelsusstraße,347,Tauernklinikum Zell am See-Mittersill,5700,06542 777 51,8,K536,"AN, GEM, IM",,http://www.kh-zellamsee.at,47.33904505,12.8152406671673,47.33887,12.8133
+AT,Bad Gastein,Hans-Kudlich-Straße,155,Klinikum Bad Gastein für Orthopädie und Rheumatologie,5640,06434 2523 0,14,K538,,,https://www.klinikum-badgastein.at,47.10252895,13.1275097660152,47.10233,13.12757
+AT,Salzburg,Weizensteinerstraße,38,Suchthilfe Klinik Salzburg,5020,0662 82 42 03,11,K540,,,,47.79286965,13.0263328279175,47.79305,13.02603
+AT,Saalfelden am Steinernen Meer,Thorerstraße,130,Rehabilitationszentrum Saalfelden,5760,06582 790,26,K541,,,http://www.ska-saalfelden.at,47.4237464,12.8385153,47.42079,12.84044
+AT,Saalfelden am Steinernen Meer,Schmalenbergham,36,Privatklinik Ritzensee,5760,06582 794,4,K544,,,http://www.privatklinik-ritzensee.at,47.4166794,12.8511682051743,47.41661,12.85093
+AT,Großgmain,Salzburgerstraße,164,Rehabilitationszentrum Großgmain,5084,06247 7406 0,520,K545,,,http://www.ska-grossgmain.at,47.7277489,12.9186988,47.72781,12.91914
+AT,Heilbad Dürrnberg,Prof. Martin Hell-Straße,59,Emco Privatklinik,5422,06245 790,7-9,K546,,,http://www.emco-klinik.at,0.0,0.0,47.66149,13.09145
+AT,Bad Vigaun,Karl-Rödhammer-Weg,57,Klinik St. Barbara - Medizinisches Zentrum Bad Vigaun,5424,06245 8999 0,91,K547,,,http://www.klinik-st-barbara.at,47.6696231,13.134968,47.67007,13.13374
+AT,Bad Gastein,Pyrkershöhenstraße,160,Bärenhof am Felsenbad,5640,06434 3366,11,K548,,,http://www.baerenhof.at,47.1106896,13.1352073684363,47.11251,13.13384
+AT,Salzburg,Sinnhubstraße,21,PKS Privatklinik Salzburg,5020,0662 829 033,2,K549,,,http://www.privatkliniksalzburg.at,47.79480425,13.0302832986274,47.79478,13.0303
+AT,Altenmarkt im Pongau,Michael-Walchhofer-Straße,8,Krankenanstalt Altenmarkt,5541,06452 5151 7700,13,K550,,,http://www.agzmed.at,47.3767888,13.4215325,47.37683,13.42168
+AT,Abtenau,Markt,22,Krankenhaus Abtenau,5441,06243 2300,25,K551,,,http://www.sbg.at/senioren-abtenau,47.5655254,13.3464986060576,47.56548,13.3464
+AT,Salzburg,Ignaz-Harrer-Straße,30,NeuroCare Rehaklinik Salzburg,5020,05 7255 86001,79,K552,,,http://www.neurocare.at,47.8140867,13.017441,47.8128759,13.021916
+AT,Hallein,Bürgermeisterstraße,52,Rehabilitationszentrum für Stoffwechsel- und Gastroenterologische Erkrankungen,5400,06245 70 700,38,K553,,,http://interface.gesundheit-pflege.at/betriebe.html,47.684895,13.1131043561461,47.68484,13.1135
+AT,Oberndorf bei Salzburg,Paraselsusstraße,60,Rehabilitstionszentrum Oberndorf,5110,06272 40740 7005,37a,K554,,,http://www.reha-oberndorf.at,0.0,0.0,47.93704,12.94793
+AT,Bad Vigaun,Karl-Rödhammer-Weg,141,Rehabilitationszentrum Bad Vigaun,5424,06245 8999 0,91,K555,,,http://www.badvigaun.com,47.6696231,13.134968,47.67007,13.13374
+AT,Salzburg,Müllner Hauptstraße,10,Sonderkrankenanstalt für Neurorehabilitation für Kinder und Jugendliche,5020,0662 4482 2600,48,K556,,,http://www.salk.at,47.8062316,13.0304065432589,47.80626,13.0329
+AT,St. Veit im Pongau,St. Veiter-Straße,88,Landesklinik St Veit (gehört zu K533),5621,06415 7201 0,46,K563+,,,http://www.salk.at/Landesklinik St. Veit.html,47.33133625,13.1619587712741,47.3312,13.1624
+AT,St. Veit im Pongau,St. Veiterstraße,202,Onkologisches Rehabilitationszentrum St. Veit/Pongau,5621,06415 50300,48,K564,,,http://www.onko-reha-stveit.at,47.33189535,13.1632763591772,47.33264,13.15975
+AT,Aflenz Kurort,Mariazellerstraße,72,Rehabilitationszentrum Aflenz,8623,03861 500,206,K601,,,http://www.ska-aflenz.at,47.54580745,15.2439046006177,47.541,15.23937
+AT,Bad Aussee,Braungasse,140,Rehabilitationszentrum Bad Aussee,8990,03622 525 81 0,354,K603,,,http://www.ska-badaussee.at,47.610221,13.7818290177641,47.6103,13.78191
+AT,Bad Gleichenberg,Schweizereiweg,150,Klinikum Bad Gleichenberg für Lungen- und Stoffwechselerkrankungen,8344,03159 2340,4,K605,,,,46.8753976,15.9139241490398,46.87558,15.91428
+AT,Feldbach,Ottokar-Kernstockstraße,351,Krankenhausverbund Feldbach-Fürstenfeld,8330,03152 899 0,18,K608,"GEM, IM",,http://www.lkh-feldbach.at,46.950812,15.8809044196269,46.950372,15.88237
+AT,Bad Aussee,Sommersbergseestraße,100,AMEOS Klinikum Bad Aussee,8990,03622 52100,395,K610,,,http://www.privatklinik-badaussee.at,47.6065079,13.7753853,47.60649,13.77538
+AT,Graz,Auenbrugger Platz,1524,Landeskrankenhaus-Universitätsklinikum Graz,8036,0316 385 0,1,K612,"AN, CH, GEM, HCH, IM, KIJU, KJC, NCH, NEU",,http://www.klinikum-graz.at,47.07935245,15.4655695421189,47.07932,15.46542
+AT,Graz,Göstinger Straße,145,Unfallkrankenhaus Steiermark,8020,0316 505 0,24,K614,,,http://www.auva.at/ukhgraz,47.0789696,15.3986802,47.07875,15.39847
+AT,Graz,Albert Schweitzer-Gasse,186,Albert Schweitzer Klinik,8020,0316 7060 1999,36,K615,,,http://www.ggz.graz.at,47.0637722,15.4301723,47.06399,15.43007
+AT,Graz-Wetzelsdorf,Straßgangerstraße,41,"Militärspital 1, Belgier-Kaserne Graz",8052,0316 5993,171,K616,,,,47.0529111,15.3956619,47.05291,15.39566
+AT,Bad Aussee,Sommersbergseestraße,25,Privatklinik für psychosomatische Therapie,8990,03622 53 000,395,K617,,,http://www.ameos.eu/standort/ameos-sued/bad-aussee,47.6065079,13.7753853,47.60649,13.77538
+AT,Graz,Marschallgasse,421,Krankenhaus der Barmherzigen Brüder Graz,8020,0316 7067 0,12,K619,GEM,,http://www.barmherzige-brueder.at,47.0718786,15.4314347,47.07217,15.43116
+AT,Graz,Elisabethinergasse,179,Krankenhaus der Elisabethinen Graz,8020,0316 7063 0,14,K620,GEM,,http://www.elisabethinen.at,47.0695299,15.4271372,47.06952,15.42714
+AT,Graz,Hugo-Wolf-Gasse,44,Privatklinik Leech,8010,0316 3632 0,2-4,K623,,,http://www.privatklinik-leech.at,47.0757179,15.44932,47.07572,15.44932
+AT,Graz,Kreuzgasse,130,Privatklinik der Kreuzschwestern,8010,0316 331 0,35,K624,,,http://www.kreuzschwestern-graz.at,47.0839134,15.4423181,47.0839,15.44231
+AT,Graz,Schanzelgasse,44,Sanatorium St. Leonhard für Frauenheilkunde und Geburtshilfe,8010,0316 3607 0,42,K625,,,http://www.leonhard.at,47.0787585,15.4617841,47.07874,15.46179
+AT,Graz-Ragnitz,Johannes-von-Gott-Straße,560,Lebenswelten der Barmherzigen Brüder - Steiermark,8047,0316 30 10 81,12,K629,,,http://www.kainbach.at,0.0,0.0,47.092105034122135,15.527979411862992
+AT,Gröbming,Hofmanning,154,"Sonderkrankenanstalt der PVA, REHABZ für Erkrankungen des Stütz- und Bewegungsapparates und neurolgische Erkrankungen",8962,03685 223 23,214,K630,,,http://www.ska-groebming.at,47.4532092,13.9053306,47.45148,13.907
+AT,Hartberg,Krankenhausplatz,151,Landeskrankenhaus Hartberg,8230,03332 605 0,1,K631,"AN, IM",,http://www.lkh-hartberg.at,47.2728623,15.9666279566255,47.27285,15.96655
+AT,Kapfenberg,Anton-Buchalka-Straße,70,Neurologisches Therapiezentrum Kapfenberg,8605,03862 290 0,1,K635,,,http://www.ntk.at,47.4444442,15.2885555244556,47.44428,15.28825
+AT,Leoben,Vordernberger Straße,783,Landeskrankenhaus Hochsteiermark,8700,03842 401 0,42,K638,"GEM, IM, KIJU, PUL",,http://www.lkh-leoben.at,47.380513,15.0850301610126,47.38012,15.0855
+AT,Mürzzuschlag,Grazer Straße,92,Krankenanstaltenverbund Mürzzuschlag-Mariazell,8680,03852 2080 0,63-65,K640,IM,,http://www.lkh-muerzzuschlag.at,47.6011719,15.668143,47.60104,15.66871
+AT,Rottenmann,St. Georgen,219,Krankenanstaltenverbund Rottenmann-Bad Aussee,8786,03614 2431 0,2-4,K643,GEM,,http://www.lkh-rottenmann.at,47.52466155,14.3680524359313,47.5253,14.3672
+AT,St. Radegund bei Graz,Quellenstraße,160,Rehabilitationszentrum St. Radegund,8061,03132 2351,1,K645,,,http://www.ska-st-radegund.at,47.1820613,15.4833101445178,47.18254,15.48389
+AT,Schladming,Salzburger Straße,126,Klinik Diakonissen Schladming,8970,03687 2020 0,777,K646,GEM,,http://www.diakonissen-krankenhaus-schladming.at,47.3919923,13.6763057653485,47.39207,13.67615
+AT,Tobelbad,Dr.-Georg-Neubauer-Straße,202,Rehabilitationsklinik Tobelbad,8144,03136 525 71 0,6,K649,,,http://www.auva.at/rktobelbad,46.98007635,15.3647044216967,46.98035,15.36395
+AT,Vorau,Spitalstraße,112,Marienkrankenhaus Vorau,8250,03337 2254,101,K652,GEM,,http://www.marienkrankenhaus.at,47.4050786,15.8828025,47.40506,15.88246
+AT,Wagna,Pelzmannstraße,236,Landeskrankenhaus Südsteiermark,8435,03452 701 0,18,K654,"AN, GEM, IM",,http://www.lkh-suedsteiermark.at,46.76982835,15.5584118866553,46.77069,15.55776
+AT,Weiz,Franz-Pichler-Straße,80,Landeskrankenhaus Weiz,8160,03172 2214,85,K655,GEM,,http://www.lkh-weiz.at,47.2124627,15.6368486411121,47.21248,15.63672
+AT,Graz,Körblergasse,50,Hansa Privatklinikum,8010,0316 3600 0,42,K659,,,http://www.privatklinikum-hansa.at,47.0831151,15.4446165,47.08312,15.44462
+AT,St. Radegund bei Graz,Diepoldsbergerstraße,185,"Privatklinik St. Radegund für Innere Medizin, Psychiatrie, Neurologie, Orthopädie und Geriatrie/Gerontologie",8061,03132 53553,38-40,K663,,,http://www.privatklinik-stradegund.at,47.18103995,15.4991993040847,47.18093,15.49913
+AT,Deutschlandsberg,Radlpaßstraße,292,Landeskrankenhaus Weststeiermark,8530,03462 4411 0,29,K664,"GEM, IM",,http://www.lkh-deutschlandsberg.at,46.913827,15.2823300362947,46.81207,15.2311
+AT,Graz,Albert-Schweitzer-Gasse,135,Albert Schweitzer Klinik (gehört zu K615),8020,0316 7060 1999,36,K665+,,,,47.0637722,15.4301723,47.06399,15.43007
+AT,Graz-Wetzelsdorf,Gritzenweg,45,Privatklinik Kastanienhof,8052,0316 57 39 60,16,K667,,,http://www.kastanienhof.at,0.0,0.0,47.06349,15.38551
+AT,Laßnitzhöhe,Miglitzpromenade,227,Privatklinik Laßnitzhöhe,8301,03133 2274,18,K668,,,http://www.privatklinik-lassnitzhoehe.at,47.07569435,15.5781085138344,47.07591,15.57801
+AT,Frohnleiten,Hauptplatz,162,"Theresienhof, Klinikum für Orthopädie und orthopädische Rehabilitation",8130,03126 4700,3-5,K670,,,http://www.theresienhof.at,0.0,0.0,47.27056,15.32422
+AT,Bad Radkersburg,Thermenstraße,315,"Reha Radkersburg, Radkersburger Hof - SKA zur Rehabililitation neurologischer, orthopädischer und rheumatischer Erkrankungen sowie ambulante Untersuchungen und Behandlungen",8490,03476 3860 0,24,K671,,,http://www.klinik-maria-theresia.at,46.6875222,15.9785606746176,46.68781,15.97785
+AT,Judenburg,Oberweggasse,439,Landeskrankenhaus Murtal,8750,03572 825 60 0,18,K672,"AN, IM",,http://www.lkh-judenburg.at,47.1657387,14.6546954,47.16591,14.65602
+AT,Graz Postfach,Göstinger Straße,940,LKH Graz II,8021,0316 5466 0,22,K673,"AN, IM, NEU",,http://www.lkh-grazwest.at,0.0,0.0,47.07775,15.39955
+AT,Graz-Ragnitz,Berthold-Linder-Weg,144,Privatklinik Graz-Ragnitz,8047,0316 596 0,15,K674,,,http://www.privatklinik-grazragnitz.at,47.077343,15.4755869,47.07727,15.47567
+AT,Stolzalpe,Stolzalpe,28,Sonderkrankenanstalt für orthopädische und neuroorthopädische Rehabilitiation,8852,03532 44719,38,K675,,,http://www.reha-stolzalpe.at,47.1209088,14.1930209,47.11915,14.18647
+AT,Judendorf-Straßengel,Grazer Straße,196,"Rehabilitationsklinik für Neurologie, Pädiatrie, Orthopädie und Onkologie",8111,03124 90520,15,K676,,,http://www.klinik-judendorf.at,47.11489935,15.3401437683209,47.11487,15.3412
+AT,Leoben,Vordernbergerstraße,6,Pflegeanstalt für chronisch Kranke,8700,03842 401 0,42,K677,,,http://www.lkh-leoben.at,47.380513,15.0850301610126,47.38012,15.0855
+AT,Leibnitz,Grazerstraße,124,Pflegeananstalt für chronisch psychisch Kranke Neutillmitsch-Gralla,8430,03452 83325,74,K678,,,http://sanlas.at,46.816125,15.548305,46.79219,15.5383
+AT,Wildbad Einöd,Wildbad,75,OptimaMed Rehabilitation Wildbad,9323,04268 28 22 0,8,K680,,,http://www.wildbad.at/psychiatrische-und-vater-mutter-kind-rehabilitation/,47.0225561,14.4137006,47.0214439708202,14.412913051544
+AT,Wildbad Einöd,Wildbad,52,OptimaMed Kinder- und Jugend-Rehabilitation,9323,,8,K682,,,,47.0225561,14.4137006,47.0214439708202,14.412913051544
+AT,Bad Häring,Rehaweg,136,Rehabilitationszentrum Bad Häring,6323,05332 790 0,1,K701,,,http://www.auva.at/rzhaering,47.5056157,12.1026622499664,47.50547,12.10311
+AT,Hall in Tirol,Milser Straße,527,Landeskrankenhaus Hall in Tirol,6060,05223 508 0,10,K704,GEM,,http://www.tirol-kliniken.at,47.2823607,11.5152022956537,47.28234,11.51559
+AT,Kitzbühel,Hornweg,120,Rehabilitationszentrum Kitzbühel,6370,05356 67067 0,32,K705,,,www.reha-kitz.at,47.5167172,12.4286533948716,47.44947,12.39578
+AT,Innsbruck,Anichstraße,1457,Landeskrankenhaus Universitätskliniken Innsbruck,6020,0512/ 04 0,35,K706,"AN, CH, HCH, IM, KIJU, NCH, NEU, ORTR",,http://www.tirol-kliniken.at,47.2625525,11.3867694,47.26338,11.38755
+AT,Zirl,Anna-Dengel-Haus,325,Ö. Landeskrankenhaus Hochzirl - Natters,6170,05238 501 0,,K707,PUL,,http://www.tirol-kliniken.at,0.0,0.0,47.31210708618164,11.263765335083008
+AT,Innsbruck,Sennstraße,182,Sanatorium Kettenbrücke der Barmherzigen Schwestern,6020,0512 2112 0,1,K708,,,http://www.sanatorium-kettenbruecke.at,47.2795437,11.407857,47.27953,11.40778
+AT,Rum,Lärchenstraße,124,Privatklinik Hochrum - Sanatorium der Kreuzschwestern Innsbruck,6063,0512 234 0,41,K709,,,http://www.privatklinik-hochrum.com,47.2890704,11.4474007,47.28862,11.44717
+AT,Imst,Medalp Platz,,Medalp Sportclinic Imst,6460,05418 511 00,1,K711,,,http://www.medalp.com,47.21340895,10.7001456,47.21408,10.6998
+AT,Lienz,Emanuel-von-Hibler-Straße,372,Bezirkskrankenhaus Lienz,9900,04852 606 0,5,K714,"AN, IM, KIJU",,,46.8355163,12.7642258,46.83531,12.7636
+AT,Reutte,Krankenhausstraße,117,Bezirkskrankenhaus Reutte,6600,05672 601 0,39,K717,GEM,,http://www.bkh-reutte.at,47.47354795,10.71103605,47.47366,10.71214
+AT,St. Johann in Tirol,Bahnhofstraße,274,Bezirkskrankenhaus St. Johann in Tirol,6380,05352 606 0,14,K719,"GEM, IM",,http://www.khsj.at,47.5207325,12.4302806,47.52094,12.43003
+AT,Schwaz,Swarovskistraße,272,Bezirkskrankenhaus Schwaz,6130,05242 600 0,1,K720,IM,,http://www.kh-schwaz.at,47.34476795,11.7055895542098,47.34481,11.70508
+AT,Zams,Sanatoriumstraße,336,Krankenhaus St. Vinzenz Zams,6511,05442 600 0,43,K722,"AN, IM",,http://www.khzams.at,47.1612149,10.593129,47.16196,10.59362
+AT,Innsbruck,Köldererstraße,25,heereseigene Sonderkrankenanstalt INNSBRUCK,6020,0512 3317 5611,4,K724,,,,47.26081205,11.41655695,47.26081,11.41663
+AT,Dölsach,Stronach,52,Rehabilitationszentrum Ederhof,9991,04852 699 90,7,K729,,,,46.8297162,12.8516811,46.83122,12.82943
+AT,Kufstein,Endach,385,Bezirkskrankenhaus Kufstein,6330,05372 6966 0,27,K731,"GEM, KIJU",,http://www.bkh-kufstein.at,47.57099045,12.1504247080813,47.57112,12.15035
+AT,Wörgl,Fritz-Atzl-Straße,29,Kursana Sanatorium Wörgl,6300,05332 74572,8,K732,,,,47.4885981,12.0617174175582,47.48865,12.06183
+AT,Walchsee,Alleestraße,49,Wittlinger Therapiezentrum -  Walchsee,6344,05374 5245 0,30,K733,,,http://www.wittlinger-therapiezentrum.com,47.65435895,12.3169333570721,47.65435,12.31682
+AT,Münster,Gröben,260,"Rehabilitationszentrum Münster - Klinikum für Rehabilitation in Tirol für Neurologie, Kardiologie und Pulmologie und Onkologie",6232,,700,K734,,,http://www.reha-muenster.at,47.4187418,11.8371599743179,47.42101,11.83851
+AT,Bludenz,Spitalgasse,145,Landeskrankenhaus Bludenz,6700,05552 603,13,K802,GEM,,http://www.lkhz.at,47.159373,9.8212835,47.15947,9.82019
+AT,Bregenz,Carl-Pedenz-Straße,259,Landeskrankenhaus Bregenz,6900,05574 401 0,2,K803,"IM, KIJU",,http://www.lkhb.at,47.4968541,9.7455172,47.49673,9.74528
+AT,Dornbirn,Lustenauer Straße,284,Krankenhaus der Stadt Dornbirn,6850,05572 303 0,4,K807,"GEM, KIJU",,http://krankenhaus.dornbirn.at,47.35581945,9.66329382544786,47.40607,9.74012
+AT,Hohenems,Bahnhofstraße,152,Landeskrankenhaus Hohenems,6845,05576 703 0,31,K816,IM,,http://www.lkhh.at,47.3628811,9.6840859,47.36307,9.68135
+AT,Rankweil,Valdunastraße,364,Landeskrankenhaus Rankweil,6830,05522 403 0,16,K824,PSY,,http://www.lkhr.at,47.2588074,9.6470159,47.26114,9.64837
+AT,Rankweil,Valdunastraße,23,Pflegeabteilung des LKH Rankweil (gehört zu K824),6830,,16,K825+,,,,47.2588074,9.6470159,47.26114,9.64837
+AT,Frastanz,Maria Ebene,85,Krankenhaus Stiftung Maria Ebene Frastanz,6820,05522 727 46 0,17,K828,,,http://www.mariaebene.at,47.2211052,9.6040908,47.22092,9.60406
+AT,Feldkirch,Carinagasse,619,Landeskrankenhaus Feldkirch,6800,05522 303 0,47,K830,"GEM, IM, KIJU",,http://www.lkhf.at,47.2309754,9.5801681,47.23176,9.57969
+AT,Lech,Oberstubenbach,11,Unfallsanatorium Dr. Rhomberg,6764,05583 2234,439,K838,,,https://www.drrohmberg.at,47.2163566,10.1507661,47.215328216552734,10.124895095825195
+AT,Schruns,Montafonerstraße,8,Sanatorium Dr. Schenk,6780,05556 740 00 0,29,K853,,,http://www.dr-schenk.at,47.08205435,9.90019499851779,47.07364,9.91341
+AT,Schruns,Wagenweg,153,Rehabilitationsklinik Montafon,6780,05556 205,4a,K862,,,http://www.rehaklinik-montafon.at,47.0784305,9.91830936999946,47.07856,9.91811
+AT,Bregenz,Mehrerauerstraße,10,Hospiz am See,6900,05522 200 1100,72,K863,,,http://www.hospiz-vorarlberg.at,47.50281345,9.71689049993477,47.50284,9.7169
+AT,Wien,Währinger Gürtel,1621,Allgemeines Krankenhaus der Stadt Wien-Medizinischer Universitätscampus,1090,01 40 400 0,18-20,K901,"AN, CH, DER, GEM, HCH, IM, KIJU, KJC, NCH, NEU, PCH, PSY",,http://www.akhwien.at,48.2203567,16.3448121,48.22019,16.34435
+AT,Wien,Mackgasse,253,Anton-Proksch-Institut,1230,01 888 10 0,7-9,K902,,,http://www.api.or.at,48.1367571,16.245867,48.13571,16.2460349
+AT,Wien,Johannes von Gott Platz,378,Krankenhaus der Barmherzigen Brüder,1020,01 21121 0,1,K903,"AN, IM",,http://www.bbwien.at,48.2157322,16.3821354,48.21559667059289,16.38221810951472
+AT,Wien,Stumpergasse,215,Krankenhaus der Barmherzigen Schwestern vom heiligen Vinzenz von Paul,1060,01 599 88 0,13,K904,"AN, IM",,http://www.bhs-wien.at,48.1924825,16.3460033,48.19249811629872,16.345968526921194
+AT,Wien,Skodagasse,96,Privatklinik Confraternität,1080,01 401 14 0,32,K905,,,http://www.confraternitaet.at,48.2146238,16.3485012,48.21461,16.34852
+AT,Wien,Reizenpfenniggasse,222,Rehaklinik Baumgarten,1140,01 41 500,1,K907,,,http://www.rehawienbaumgarten.at,0.0,0.0,48.21017,16.28502
+AT,Wien,Hans-Sachs-Gasse,226,Evangelisches Krankenhaus,1180,01 40422 0,10-12,K908,GEM,,http://www.ekhwien.at,48.2241021,16.345744,48.22413,16.34571
+AT,Wien,Kundratstraße,730,"Sozialmedizinisches Zentrum Süd, Kaiser-Franz-Josef-Spital mit Gottfried von Preyer'schem Kinderspital",1100,01 601 91 0,3,K910,"AN, IM, KIJU",,http://www.wienkav.at/kav/szx/,48.1732939,16.3493081,48.17547,16.35218
+AT,Wien,Lazarettgasse,94,Privatklinik Goldenes Kreuz,1090,01 401 11 0,16-18,K911,,,http://www.goldenes-kreuz.at,48.2179399,16.3502286,48.21755,16.34703
+AT,Wien,Heinrich-Collin-Straße,347,Hanusch-Krankenhaus,1140,01 910 21 0,30,K912,AN,,http://www.hanusch-krankenhaus.at,48.1985212,16.2906036,48.198991886290884,16.293806602588994
+AT,Wien,Löblichgasse,102,Sanatorium Hera,1090,01 313 50 0,14,K913,,,http://www.hera.co.at,48.2264683,16.3517289,48.22639482366377,16.35164674092025
+AT,Wien,Baumgasse,147,Herz Jesu-Krankenhaus,1030,01 712 26 84 0,20a,K914,AN,,http://www.kh-herzjesu.at,48.1951412,16.3980293,48.1956,16.39837
+AT,Wien,Nikolsdorfergasse,228,FRANZISKUS SPITAL,1050,01 54 60 50,26-36,K915,GEM,,http://www.franziskusspital.com,0.0,0.0,48.1878718,16.3618232
+AT,Wien,Wolkersbergenstraße,995,Krankenhaus Hietzing mit Neurologischem Zentrum Rosenhügel,1130,01 801 10 0,1,K916,"AN, CH, HCH, IM, NEU",,http://www.wienkav.at/kav/khl/,48.1683129,16.2817024,48.16942,16.27942
+AT,Wien,Juchgasse,675,Krankenanstalt Rudolfstiftung der Stadt Wien inklusive dem Standort Semmelweis-Frauenklinik,1030,01 711 65 0,25,K917,"AN, IM, KIJU",,http://www.wienkav.at/kav/kar/,48.19656,16.3919314,48.19658007843794,16.39116666743483
+AT,Wien,Auhofstraße,148,St. Josef-Krankenhaus,1130,01 878 44 0,189,K919,"GEM, KIJU",,http://www.sjk-wien.at,48.19430185,16.2629393541168,48.19451952947924,16.262819668861216
+AT,Wien,Kundratstraße,267,Traumazentrum Wien der Allgemeinen Unfallversicherungsanstalt,1120,01 601 50 0,37,K920,,,http://www.auva.at/ukhmeidling,48.17270875,16.3438549784412,48.172795,16.3432646
+AT,Wien,Montleartstraße,933,Wilhelminenspital der Stadt Wien,1160,01 491 50 0,37,K921,"AN, IM, KIJU",,http://www.wienkav.at/kav/wil/,48.2096538,16.3030378,48.21116,16.30172
+AT,Wien,Hütteldorfer Straße,313,Pflegewohnhaus Baumgarten - Pflegeanstalt für chronisch Kranke,1140,01 910 34 0,188,K924,,,http://www.wienkav.at/kav/gzb/,48.1975432,16.2981232,48.19699063118642,16.28606670006093
+AT,Wien,Wickenburggasse,76,Sonderkrankenanstalt der Justizanstalt Wien-Josefstadt,1082,01 404 03 358343,18-22,K927,,,http://www.bmj.gv.at,48.2137123,16.3541136,48.21374,16.35409
+AT,Wien,Seeböckgasse,350,Haus der Barmherzigkeit Seeböckgasse,1160,01 401 99 1326,30A,K931,,,http://www.hausderbarmherzigkeit.at,48.2185253,16.3132596,48.2185,16.31349
+AT,Wien,Brünner Straße,25,Heereskrankenanstalt Wien,1210,05020110 65115,238,K933,,,,48.2969789,16.4200834,48.29571076490432,16.419492241174435
+AT,Wien,Haeckelstraße,322,Pflegewohnhaus Liesing - Pflegeanstalt für chronisch Kranke,1235,01 86 600 0,1A,K939,,,http://www.wienkav.at/kav/pli/,0.0,0.0,48.13489,16.28085
+AT,Wien,Speisinger Straße,262,Orthopädisches Spital Speising,1130,01 801 82 0,109,K943,GEM,,http://www.oss.at,48.1632337,16.2816122,48.164068329721324,16.280857062239903
+AT,Wien,Köglergasse,52,Rehabilitationszentrum Meidling der Allgemeinen Unfallversicherungsanstalt,1120,01 601 50 4000,2A,K945,,,http://www.auva.at/rzmeidling,48.172228,16.345404,48.17233,16.3452
+AT,Wien,Billrothstraße,155,Rudolfinerhaus,1190,01 360 36 0,78,K949,,,http://www.rudolfinerhaus.at,48.2432224,16.3479143,48.24331,16.34738
+AT,Wien,Kollburggasse,137,Sanatorium Liebhartstal,1160,01 488 07 0,6-10,K951,,,,48.2167557,16.301259236249,48.21663,16.30113
+AT,Wien,Kinderspitalgasse,119,St. Anna-Kinderspital Zentrum für Kinder- und Jugendheilkunde,1090,01 401 70 0,6,K952,KIJU,,http://www.stanna.at,48.2159169,16.3443403,48.21594,16.34434
+AT,Wien,Pelikangasse,145,Wiener Privatklinik,1090,01 401 80 0,15,K954,,,http://www.wpk.at,48.2171451,16.3480266,48.21725528006179,16.348090711581925
+AT,Wien,Dornbacher Straße,274,Krankenhaus Göttlicher Heiland,1170,01 400 88 0,20-28,K955,"AN, IM",,http://www.khgh.at,48.2265158,16.3072781,48.22759,16.30423
+AT,Wien,Langobardenstraße,954,Sozialmedizinisches Zentrum Ost - Donauspital,1220,01 288 02 0,122,K956,"AN, IM, KIJU, KJC, ORTR",,http://www.wienkav.at/kav/dsp,48.2182604,16.4639741,48.21902,16.46422
+AT,Wien,Langobardenstraße,382,"Pflegewohnhaus Donaustadt mit sozialmedizinischer Betreuung, Zentrum für Langzeitbeatmung und Appaliker Care Unit",1220,01 288 02 0,122,K957,,,http://www.wienkav.at/kav/gzd/,48.2182604,16.4639741,48.21902,16.46422
+AT,Wien,Heiligenstädter Straße,160,Privatklinik Döbling - Vienna International Health Center,1190,01 360 66 0,55-63,K963,,,http://www.privatklinik-doebling.at,48.23935425,16.358915780423,48.23881,16.35859
+AT,Wien,Kreuzgasse,20,Privatklinik Währing,1180,650 328 73 37,17-19,K970,,,http://www.privatklinik-waehring.com,48.2219873,16.3435592,48.22238,16.34084
+AT,Wien,Baumgartner Höhe,600,"Sozialmedizinisches Zentrum Baumgartner Höhe, Otto Wagner-Spital",1140,01 910 60 0,1,K971,"IM, PUL, TCH",,http://www.wienkav.at/kav/ows/,48.2103515,16.2790986,48.206802955882075,16.279600042082002
+AT,Wien,Rosenhügelstraße,147,Neurologisches Rehabilitationszentrum Rosenhügel,1130,01 88 032 0,192a,K973,,,http://www.nrz.at,48.1591109,16.283802,48.15912,16.28347
+AT,Wien,Tokiostraße,270,Haus der Barmherzigkeit Tokiostraße,1220,,4,K975,,,http://www.hausderbarmherzigkeit.at,48.247221,16.430769695961,48.24687,16.43058
+AT,Wien,Brünner Straße,,Krankenhaus Nord,1210,01 277 00 0,73,K976,,,http://www.khnord.at,48.270136,16.404719,48.269996527260936,16.404812173300577
+AT,Wien,Stüber-Gunther-Gasse,256,Pflegewohnhaus Meidling - Pflegeanstalt für chronisch Kranke,1120,01 80 181 1300,2,K977,,,,48.1652246,16.3252493,48.16591,16.32727
+AT,Wien,Vorgartenstraße,306,Pflegewohnhaus Leopoldstadt - Pflegeanstalt für chronisch Kranke,1020,01 245 45 0,129-143,K978,,,,48.2271852,16.3984893,48.22711,16.39893
+AT,Wien,Dittmanngasse,348,Pflegewohnhaus Simmering - Pflegeanstalt für chronisch Kranke,1110,01 74084 0,5,K979,,,,48.1768874,16.4176199968087,48.17669,16.41647
+AT,Wien,Kardinal-Rauscher-Platz,324,Pflegewohnhaus Rudolfsheim-Fünfhaus,1150,01 215 35 0,2,K980,,,,48.1971449,16.3249406,48.19673,16.32527
+AT,Wien,Bernhardtstalgasse,266,Pflegewohnhaus Innerfavoriten - Pflegeanstalt für chronisch Kranke,1100,01 60806 1301,32,K981,,,,48.1737329,16.3613215,48.1737,16.36131
+AT,Wien,Seitzergasse,9,Kuzbari Zentrum für ästhetische Medizin,1010,01  358 28 70,2-4-6,K982,,,http://www.kuzbari.at,48.2104717,16.3689607,48.21009,16.36886
