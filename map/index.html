@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./lib/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="./lib/MarkerCluster.css" />
+    <link rel="stylesheet" href="./lib/MarkerCluster.Default.css" />
+  </head>
+
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <div id="map" style="height:100vh; width:100%;"></div>
+    <script src="./lib/leaflet/leaflet.js"></script>
+    <script src="./lib/leaflet.markercluster.js"></script>
+    <script src="./lib/d3dsv.js"></script>
+    <script>
+      //get hospitals
+      let request = new XMLHttpRequest();
+      request.open(
+        "GET",
+        "https://raw.githubusercontent.com/eurostat/healthcare-services/0e3442ada1f8c4ee29a3522e4606901996612a32/data/csv/all.csv",
+        true
+      );
+
+      request.onload = () => {
+        if (request.status >= 200 && request.status < 400) {
+          let hospitals = d3.csvParse(request.responseText);
+
+          //build map
+          let tiles = L.tileLayer(
+            "https://europa.eu/webtools/rest/gisco/maps/wmts/OSMCartoComposite/EPSG3857/{z}/{x}/{y}.png",
+            {
+              maxZoom: 18,
+              attribution:
+                '&copy; <a href="//openstreetmap.org/copyright">OpenStreetMap</a> contributors,Points &copy 2012 LINZ'
+            }
+          );
+          let map = L.map("map", {
+            center: L.latLng(52, 10),
+            zoom: 5,
+            layers: [tiles]
+          });
+
+          let mcg = L.markerClusterGroup({
+            chunkedLoading: true,
+            //singleMarkerMode: true,
+            spiderfyOnMaxZoom: false
+          });
+
+          for (let i = 0; i < hospitals.length; i++) {
+            let a = hospitals[i];
+            let title = a.name;
+            let marker = L.marker(new L.LatLng(a.lat, a.lon, { title: title }));
+            let popup = "<strong>" + title + "</strong><br>";
+            if (a.street) {
+              popup = popup + "Street: " + a.street + "<br>";
+            }
+            if (a.cap_beds) {
+              popup = popup + "Beds: " + a.cap_beds + "<br>";
+            }
+            if (a.facility_type) {
+              popup = popup + "Facility Type: " + a.facility_type + "<br>";
+            }
+            marker.bindPopup(popup);
+            mcg.addLayer(marker);
+          }
+          map.addLayer(mcg);
+        } else {
+          // We reached our target server, but it returned an error
+        }
+      };
+
+      request.onerror = function() {
+        // There was a connection error of some sort
+      };
+
+      request.send();
+    </script>
+  </body>
+</html>
