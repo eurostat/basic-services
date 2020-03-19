@@ -1,0 +1,44 @@
+﻿id,name,lon,lat,house_number,road,suburb,city,town,county,state,postcode,country,country_code
+1,Bērnu klīniskā universitātes slimnīca,24.08800837,56.92199605,45,Vienības gatve,Torņakalns,Riga,,,Vidzeme,LV-1004,Latvia,lv
+2,Bērnu klīniskās universitātes slimnīcas filiāle Juglā,24.25395525,56.95978725,20,Juglas iela,Jugla,Riga,,,Vidzeme,LV-1079,Latvia,lv
+3,"Rīgas Austrumu klīniskās universitātes slimnīcas klīnika ""Gaiļezers""",24.24575433,56.9672429,2,Hipokrāta iela,Mežciems,Riga,,,Vidzeme,LV-1079,Latvia,lv
+4,"Rīgas Austrumu klīniskās universitātes slimnīcas klīnika ""Biķernieki""",24.1854924,56.9787862,68,Lielvārdes iela,Teika,Riga,,,Vidzeme,LV-1006,Latvia,lv
+5,Rīgas 2.slimnīca,24.09073548,56.9166026,1,Ģimnastikas iela,Ziepniekkalns,Riga,,,Vidzeme,LV-1058,Latvia,lv
+6,Paula Stradiņa klīniskā universitātes slimnīca,24.0635717,56.9313119,13,Pilsoņu iela,Āgenskalns,Riga,,,Vidzeme,LV-1002,Latvia,lv
+7,Traumatoloģijas un ortopēdijas slimnīca,24.13693904,56.98328535,22,Duntes iela,Sarkandaugava,Riga,,,Vidzeme,LV-1013,Latvia,lv
+8,"Rīgas Austrumu klīniskās universitātes slimnīcas stacionārs ""Latvijas Infektoloģijas centrs""",24.1977922,56.9770058,3,Linezera iela,Teika,Riga,,,Vidzeme,LV-1006,Latvia,lv
+9,Rīgas Dzemdību nams,24.1338222,56.9669176,45,Miera iela,Brasa,Riga,,,Vidzeme,LV-1013,Latvia,lv
+10,Rīgas Psihiatrijas un narkoloģijas centrs,24.12169443,56.99531865,2,Tvaika iela,Sarkandaugava,Riga,,,Vidzeme,LV-1005,Latvia,lv
+11,Jūrmalas slimnīca,23.85897084,56.9805627,19/21,Vienības prospekts,Bulduri,Jūrmala,,,Vidzeme,LV-2010,Latvia,lv
+12,"Nacionālais rehabilitācijas centrs ""Vaivari""",23.66758937,56.95918365,61,Asaru prospekts,Vaivari,Jūrmala,,,Vidzeme,LV-2008,Latvia,lv
+13,Alūksnes slimnīca,27.03959858,57.4374881,1A,Pils iela,,,Alūksne,Alūksnes novads,Vidzeme,LV-4301,Latvia,lv
+14,Balvu un Gulbenes slimnīcu apvienība (uzņemšana Balvos),27.2579129,57.1393399,2,Vidzemes iela,Liepiņas,,Balvi,Balvu novads,Latgale,LV-4501,Latvia,lv
+15,Cēsu klīnika,25.25606024,57.31527985,9,Slimnīcas iela,Kalna 2A,,Cēsis,Cēsis county,Vidzeme,LV-4101,Latvia,lv
+16,Daugavpils reģionālā slimnīca,26.591078,55.898548,20,Vasarnīcu iela,Jaunie Stropi,Daugavpils,,,Latgale,LV-5410,Latvia,lv
+17,"Daugavpils reģionālās slimnīcas struktūrvienība ""Plaušu slimību un tuberkulozes centrs""",26.5513206,55.8776411,311,18. novembra iela,Jaunbūve,Daugavpils,,,Latgale,LV-5417,Latvia,lv
+18,Daugavpils psihoneiroloģiskā slimnīca,26.56142027,55.8755887,60/62,Lielā Dārza iela,Jaunbūve,Daugavpils,,,Latgale,LV-5417,Latvia,lv
+19,Dobeles un apkārtnes slimnīca,23.26939959,56.621997,2,Ādama iela,,,Dobele,Dobeles novads,Zemgale,LV-3701,Latvia,lv
+20,Jelgavas pilsētas slimnīca,23.7500845,56.6574369,6,Brīvības bulvāris,Cukurfabrika,Jelgava,,,Zemgale,LV-3002,Latvia,lv
+21,Jēkabpils reģionālā slimnīca,25.84156,56.49696,125,Andreja Pormaļa iela,,Jēkabpils,,,Zemgale,LV-5201,Latvia,lv
+22,Krāslavas slimnīca,27.17498622,55.88669115,159,Rīgas iela,,,Kraslava,Krāslavas novads,Latgale,LV-5601,Latvia,lv
+23,Kuldīgas slimnīca,21.95510195,56.9611068,22,Aizputes iela,,,Kuldīga,Kuldīgas novads,Kurzeme,LV-3301,Latvia,lv
+24,Liepājas reģionālā slimnīca,21.0994055,56.55294115,25,Slimnīcas iela,,Liepaja,,,Kurzeme,LV-3414,Latvia,lv
+25,Madonas slimnīca,26.2366139,56.8519457,38,Rūpniecības iela,,,Madona,Madonas novads,Vidzeme,LV-4801,Latvia,lv
+26,Ogres rajona slimnīca,24.61973,56.8196,2,Slimnīcas iela,Pārogre,,Ogre,Ogres novads,Zemgale,LV-5001,Latvia,lv
+27,Preiļu slimnīca,26.72699,56.29162,13,Raiņa bulvāris,,,Preiļi,Preiļu novads,Latgale,LV-5301,Latvia,lv
+28,Rēzeknes slimnīca,27.341902,56.508976,41,18. novembra iela,Vipinga,Rezekne,,,Latgale,LV-4601,Latvia,lv
+30,Ziemeļkurzemes reģionālā slimnīca,21.54424824,57.38776935,60,Inženieru iela,Vasarnīcu rajons,Ventspils,,,Kurzeme,LV-3601,Latvia,lv
+31,Tukuma slimnīca,23.15635,56.96905,8,Raudas iela,,,Tukums,Tukuma novads,Kurzeme,LV-3101,Latvia,lv
+32,Vidzemes slimnīca,25.3851517,57.519022,195,Jumaras iela,,Valmiera,,,Vidzeme,LV-4224,Latvia,lv
+33,Saulkrastu slimnīca,24.41658544,57.2736647,34,Ainažu iela,Neibāde,,Saulkrasti,Saulkrastu novads,Vidzeme,LV-2160,Latvia,lv
+34,Priekules slimnīca,21.5839573,56.440432,5,Aizputes iela,,,Priekule,Priekules novads,Kurzeme,LV-3434,Latvia,lv
+35,Saldus medicīnas centrs,22.491371,56.6715206,3,Slimnīcas iela,,,Saldus,Saldus novads,Kurzeme,LV-3801,Latvia,lv
+36,Sarkanā Krusta Smiltenes slimnīca,25.917784,57.4256588,14,Dakteru iela,,,Smiltene,Smiltenes novads,Vidzeme,LV-4729,Latvia,lv
+37,Balvu un Gulbenes slimnīcu apvienība (Gulbenē),26.762,57.15708,1,Upes iela,,,Gulbene,Gulbenes novads,Vidzeme,LV-4401,Latvia,lv
+38,Vidzemes slimnīca (Valkā),26.01073752,57.78501285,3,Rūjienas iela,,,Valka,Valkas novads,Vidzeme,LV-4701,Latvia,lv
+39,Līvānu slimnīca,26.1742809,56.3505847,44,Zaļā iela,,,Līvāni,Līvānu novads,Latgale,LV-5316,Latvia,lv
+40,Aizkraukles slimnīca,25.2574933,56.6055575,5,Bērzu iela,,,Aizkraukle,Aizkraukle,Zemgale,LV-5101,Latvia,lv
+41,Limbažu slimnīca,24.717177,57.5154842,3,Klostera iela,,,Limbaži,Limbažu novads,Vidzeme,LV-4001,Latvia,lv
+42,Ludzas medicīnas centrs,27.7271048,56.5446378,43,Raiņa iela,,,Ludza,Ludzas novads,Latgale,LV-5701,Latvia,lv
+43,Rīgas rajona slimnīca (Siguldas slimnīca),24.84432,57.15672,13,Lakstīgalas iela,,,Sigulda,Siguldas novads,Vidzeme,LV-2150,Latvia,lv
+44,Bauskas slimnīca,24.2019619,56.41066,7,Dārza iela,,,Bauska,Bauskas novads,Zemgale,LV-3901,Latvia,lv
