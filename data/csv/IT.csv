@@ -1,4 +1,4 @@
-id,name,site_name,lat,lon,street,house_number,postcode,city,cc,country,emergency,cap_beds,cap_prac,cap_rooms,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date
+id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,emergency,cap_beds,cap_prac,cap_rooms,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date
 321-30363-,RESIDENZA ANNI AZZURRI MIRASOLE - OPERA,,45.39391,9.21044,"VIA P. BORSELLINO, 6 - LOC. NOVERASCO",,,OPERA,IT,Italy,,42,,,Casa di cura privata accreditata,,,,,,2018,2020_03_19
 103-70301-1,OSPEDALE LA COLLETTA ARENZANO,,44.39936,8.6634,VIA DEL GIAPPONE 3,,,ARENZANO,IT,Italy,,97,,,Ospedale a gestione diretta,,,,,,2018,2020_03_19
 207-190552-,CASA DI CURA CLINICA DEL MEDITERRANEO,,36.92074,14.70542,"VIA ETTORE FIERAMOSCA,100",,,RAGUSA,IT,Italy,,92,,,Casa di cura privata accreditata,,,,,,2018,2020_03_19

@@ -1,4 +1,4 @@
-id,name,site_name,lat,lon,street,house_number,postcode,city,cc,country,emergency,cap_beds,cap_prac,cap_rooms,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date
+id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,emergency,cap_beds,cap_prac,cap_rooms,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date
 "",Walton Community Hospital - Virgin Care Services Ltd,,51.37999725,-0.406042069,,,KT12 3LD,Walton-on-Thames,Surrey,UK,,,,,Hospital,private,,1932414205,,,,2020_03_19
 "",Woking Community Hospital (Virgin Care),,51.31513214,-0.556289494,,,GU22 7HS,Woking,Surrey,UK,,,,,Hospital,private,,1483715911,,,,2020_03_19
 "",North Somerset Community Hospital,,51.43719482,-2.847192764,,,BS21 6BS,Clevedon,Avon,UK,,,,,Hospital,public,,1275872212,,http://www.nscphealth.co.uk,,2020_03_19

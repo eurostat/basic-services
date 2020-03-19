@@ -1,4 +1,4 @@
-id,name,site_name,lat,lon,street,house_number,postcode,city,cc,country,emergency,cap_beds,cap_prac,cap_rooms,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date
+id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,emergency,cap_beds,cap_prac,cap_rooms,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date
 "",Midland Regional Hospital Portlaoise,,53.03816486,-7.277122479,Dublin Road,,R32RW61,Portlaoise,Co. Laois,IE,,,,,,,,,,,,2020_03_19
 "",Midland Regional Hospital Tullamore,,53.28237998,-7.492147556,Arden Road,,R35NY51,Tullamore,Co. Offaly,IE,,,,,,,,,,,,2020_03_19
 "",St James's Hospital Dublin,,53.33945642,-6.297759915,James's Street,,D08NHY1,Dublin,,IE,,,,,,,,,,,,2020_03_19

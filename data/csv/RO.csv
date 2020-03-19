@@ -1,4 +1,4 @@
-id,name,site_name,lat,lon,street,house_number,postcode,city,cc,country,emergency,cap_beds,cap_prac,cap_rooms,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date
+id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,emergency,cap_beds,cap_prac,cap_rooms,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date
 323,Spitalul de Recuperare Borsa,,47.654216,24.666528,,,,,,RO,,400,,,,,,,,spital_borsa@yahoo.com,,2020_03_19
 25,Spitalul de Pneumoftiziologie Leordeni Consiliul Judetean Arges,,44.793596,25.115331,,,,,,RO,,107,,,,,,,,www.spitalleordeni.ro,,2020_03_19
 56,Spitalul Orasenesc Rupea Consiliul Local Rupea,,46.0375,25.220388,,,,,,RO,,80,,,,,,,,www.spitalrupea.ro,,2020_03_19

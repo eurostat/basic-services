@@ -1,4 +1,4 @@
-id,name,site_name,lat,lon,street,house_number,postcode,city,cc,country,emergency,cap_beds,cap_prac,cap_rooms,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date
+id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,emergency,cap_beds,cap_prac,cap_rooms,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date
 K101,Rehabilitationszentrum für Herz-Kreislauferkrankungen Bad Tatzmannsdorf,,47.331527108287254,16.22262893566035,Vogelsangweg,11,7431,Bad Tatzmannsdorf,,AT,,169,,,,,,03353 6000 0,,http://www.ska-badtatzmannsdorf.at,,2020_03_19
 K102,Krankenhaus der Barmherzigen Brüder Eisenstadt,,47.84727,16.51378,Johannes von Gott-Platz,1,7000,Eisenstadt,,AT,,420,,,,,"AN, IM, KIJU",02682 601 0,,http://www.barmherzige-brueder.at,,2020_03_19
 K104,Landeskrankenhaus Güssing,,47.049762,16.3212708,Grazer Straße,13,7540,Güssing,,AT,,118,,,,,"AN, IM",05 7979 31000,,http://www.krages.at,,2020_03_19

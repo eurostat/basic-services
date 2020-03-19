@@ -1,4 +1,4 @@
-id,name,site_name,lat,lon,street,house_number,postcode,city,cc,country,emergency,cap_beds,cap_prac,cap_rooms,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date
+id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,emergency,cap_beds,cap_prac,cap_rooms,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date
 771077,Josephs-Hospital Warendorf,,51.960420529706,8.002352893336,Am Krankenhaus,2,48231,Warendorf,DE,Germany,,,,,standort,,,,,,2020,2020_03_19
 771770,Hauptstandort,,51.960538935624,12.09354137759,Friedrich-Naumann-Straße,53,39261,Zerbst/Anhalt,DE,Germany,,,,,standort,,,,,,2020,2020_03_19
 771997,Evangelisches Krankenhaus Witten gGmbH,,51.445604014753,7.343875944598,Pferdebachstraße,27,58455,Witten,DE,Germany,,,,,standort,,,,,,2020,2020_03_19
