@@ -52,7 +52,8 @@
           let map = L.map("map", {
             center: L.latLng(52, 10),
             zoom: 5,
-            layers: [tiles]
+            layers: [tiles],
+            maxZoom: 18
           });
 
           let mcg = L.markerClusterGroup({
