@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Healthcare Services</title>
+    <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./lib/leaflet.css" />
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="./lib/MarkerCluster.Default.css" />
   </head>
 
-  <body>
+  <body style="margin:0px">
     <!--[if lt IE 7]>
       <p class="browsehappy">
         You are using an <strong>outdated</strong> browser. Please
@@ -96,23 +96,15 @@
             chunkedLoading: true,
             //singleMarkerMode: true,
             //spiderfyOnMaxZoom: false
-            removeOutsideVisibleBounds: false //for dealing with 3035
+            showCoverageOnHover: false,
+            removeOutsideVisibleBounds: true //for dealing with 3035
           });
 
           for (let i = 0; i < hospitals.length; i++) {
             let a = hospitals[i];
             let title = a.name;
             let marker = L.marker(new L.LatLng(a.lat, a.lon, { title: title }));
-            let popup = "<strong>" + title + "</strong><br>";
-            if (a.street) {
-              popup = popup + "Street: " + a.street + "<br>";
-            }
-            if (a.cap_beds) {
-              popup = popup + "Beds: " + a.cap_beds + "<br>";
-            }
-            if (a.facility_type) {
-              popup = popup + "Facility Type: " + a.facility_type + "<br>";
-            }
+            let popup = generatePopupString(a);
             marker.bindPopup(popup);
             mcg.addLayer(marker);
           }
@@ -125,6 +117,37 @@
       request.onerror = function() {
         // There was a connection error of some sort
       };
+
+      function generatePopupString(obj) {
+        let i = 0;
+        let string = "<table class='gisco-attribute-table'>";
+        let style;
+
+        for (var key in obj) {
+          var value = obj[key];
+          if (value) {
+            i++;
+            if (i % 2 == 0) {
+              style = "background-color:#eaeaea; padding:4px;";
+            } else {
+              style = "padding:4px;";
+            }
+            string = string + "<tr style=" + style + ">";
+            string =
+              string +
+              "<td><strong>" +
+              key +
+              "</strong></td>" +
+              "<td>" +
+              value +
+              "</td>";
+            string = string + "</tr>";
+          }
+        }
+
+        string = string + "</table>";
+        return string;
+      }
 
       request.send();
     </script>
