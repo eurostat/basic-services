@@ -1,133 +1,133 @@
 id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,emergency,cap_beds,cap_prac,cap_rooms,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date
-,BB Stockholm,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Byle Gård,,59.26611,17.97445,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Capio Maria AB,,59.36257,17.97729,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Capio Rehab Saltsjöbaden,,59.288330078125,18.288230895996094,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Danderyds sjukhus AB,,59.39245,18.03958,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Ersta sjukhus,,59.30938,18.06007,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Karolinska Universitetssjukhuset,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Mandometerkliniken Stockholm,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Maria Regina,,59.3192,18.07132,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Ortopediska huset,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Rehab station Stockholm AB,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Rehabcenter Sfären,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,S:t Eriks ögonsjukhus AB,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,S:t Görans sjukhus AB,,59.334065,18.020615,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Sophiahemmet,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Stockholms sjukhem Geriatrik Bromma,,59.358606,17.899821,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Stångberga Legevisitten,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Södersjukhuset AB,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Dalens sjukhus,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Handens sjukhus,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Löwenströmska,,59.54301,17.90801,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Mälargården,,59.32293,18.069,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Nacka sjukhus,,59.30938,18.06007,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Norrtälje sjukhus (TioHundra AB),,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Nynäshamns sjukhus,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Stiftelsen Hublegården,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,"Stockholms läns sjukvårdsområde, (SLSO)",,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Stora Sköndals sjukhem,,59.25747,18.12603,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Södertälje sjukhus AB,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Akademiska sjukhuset,,59.858619689941406,17.64373016357422,,,,Uppsala,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Lasarettet i Enköping,,59.63887023925781,17.094276428222656,,,,Uppsala,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Närvårdsavd i Uppsala,,59.858619689941406,17.64373016357422,,,,Uppsala,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Elisabethsjukhuset (Aleris),,59.858619689941406,17.64373016357422,,,,Uppsala,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Karsuddens sjukhus,,59.01478,16.20857,,,,Sörmland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Kullbergska sjukhuset,,62.82179260253906,16.73538589477539,,,,Sörmland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Mälarsjukhuset,,59.36365,16.5362,,,,Sörmland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Nyköpings sjukhus,,62.82179260253906,16.73538589477539,,,,Sörmland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Finspångs lasarett,,58.70999,15.76212,,,,Östergötland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Lasarettet i Motala,,58.54246,15.03294,,,,Östergötland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Universitetssjukhuset i Linköping,,58.400870,15.620314,,,,Östergötland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Vrinnevisjukhuset,,58.562972,16.178709,,,,Östergötland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Höglandssjukhuset,,57.77975845336914,14.176480293273926,,,,Jönköping,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Länssjukhuset Ryhov,,57.77975845336914,14.176480293273926,,,,Jönköping,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Värnamo sjukhus,,57.77975845336914,14.176480293273926,,,,Jönköping,SE,Sweden,,,,,,,,,,,,2020_03_20
-,"Centrallasarettet, Växjö",,56.87995910644531,14.799449920654297,,,,Kronoberg,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Ljungby lasarett,,56.83476,13.93196,,,,Kronoberg,SE,Sweden,,,,,,,,,,,,2020_03_20
-,"Rehabcentrum (rehabkliniken), Växjö",,56.87995910644531,14.799449920654297,,,,Kronoberg,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Länssjukhuset i Kalmar,,56.65932,16.33305,,,,Kalmar,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Oskarshamns sjukhus,,57.10788,16.13221,,,,Kalmar,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Västerviks sjukhus,,57.89382,16.40096,,,,Kalmar,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Blekingesjukhuset,,57.90414047241211,14.961870193481445,,,,Blekinge,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Aleris Plastikkirurgi Malmö,,55.5966911315918,13.001219749450684,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Centralsjukhuset Kristianstad,,56.036521911621094,14.168658256530762,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Helsingborgs lasarett,,56.045775,12.704605,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Hässleholms sjukhus,,56.160474,13.778898,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Lasarettet i Landskrona,,55.8795166015625,12.838919639587402,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Lasarettet i Ystad,,55.43437,13.81826,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Lasarettet Trelleborg,,55.37770080566406,13.167510032653809,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Lydiagården Höör,,55.93321228027344,13.547783851623535,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Palliativ sjukhusvård Helsingborg,,56.04181671142578,12.730361938476562,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Palliativ sjukhusvård Kristianstad,,56.036521911621094,14.168658256530762,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Praktikertjänst Närsjukhus Simrishamn,,55.55376052856445,14.342297554016113,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_20
-,"Skånes universitetssjukhus, Lund",,55.711204,13.198610,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_20
-,"Skånes universitetssjukhus, Malmö",,55.5966911315918,13.001219749450684,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Ängelholms sjukhus,,56.06036,12.70645,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Capio Movement Halmstad,,56.67226028442383,12.857500076293945,,,,Halland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Hallands sjukhus,,57.494538,12.085968,,,,Halland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Palliativa allmänna vårdavd,,56.907252,12.500539,,,,Halland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Alingsås lasarett,,57.92968,12.52234,,,,Västra Götaland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Frölunda specialistsjukhus,,57.650495,11.912671,,,,Västra Götaland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Kungälvs sjukhus,,57.878457,11.969664,,,,Västra Götaland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Lundby sjukhus AB,,57.721113,11.936681,,,,Västra Götaland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,NU-sjukvården,,58.318229,12.266875,,,,Västra Götaland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Sahlgrenska universitetssjukhuset,,57.68267059326172,11.961790084838867,,,,Västra Götaland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Skaraborgs sjukhus,,58.53477,14.52833,,,,Västra Götaland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Stadsmissionen Göteborg,,57.70066833496094,11.968219757080078,,,,Västra Götaland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Södra Älvsborgs sjukhus,,57.724226,12.961219,,,,Västra Götaland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Carlanderska sjukhemmet,,57.692534,11.989493,,,,Västra Götaland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Hospice Gabriel,,58.497937,13.152461,,,,Västra Götaland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Arvika sjukhus,,60.03085,13.70454,,,,Värmland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Centralsjukhuset Karlstad,,59.374776,13.478027,,,,Värmland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Sjukhuset i Kristinehamn,,59.31459045410156,14.108336448669434,,,,Värmland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Sjukhuset i Säffle,,59.135863,12.933425,,,,Värmland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Torsby sjukhus,,60.03085,13.70454,,,,Värmland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Karlskoga lasarett,,59.31608,14.50786,,,,Örebro,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Lindesbergs lasarett,,59.602146,15.216675,,,,Örebro,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Universitetssjukhuset i Örebro,,59.275458,15.225082,,,,Örebro,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Närsjukh. Primärv Fagersta,,59.99690246582031,15.809639930725098,,,,Västmanland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Sjukhuset i Köping,,59.51056671142578,15.996578216552734,,,,Västmanland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Sjukhuset i Sala,,59.923946,16.601866,,,,Västmanland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Sjukhuset i Västerås,,59.609580993652344,16.54534912109375,,,,Västmanland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Avesta lasarett,,60.141154,16.200819,,,,Dalarna,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Borlänge sjukhus,,60.503941,15.465829,,,,Darlana,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Falu lasarett,,60.60785,15.64706,,,,Dalarna,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Ludvika lasarett,,60.139015197753906,15.195231437683105,,,,Dalarna,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Mora lasarett,,61.01144,14.58232,,,,Dalarna,SE,Sweden,,,,,,,,,,,,2020_03_20
-,"Säters sjukhus, psykiatri",,60.34053,15.715904,,,,Dalarna,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Hudiksvalls sjukhus,,61.82557,16.12839,,,,Gävleborg,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Bollnäs sjukhus (Aleris),,61.35162,16.36891,,,,Gävleborg,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Gävle sjukhus,,61.35162,16.36891,,,,Gävleborg,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Ljusdals närsjukhus,,61.828258,16.109194,,,,Gävleborg,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Sandvikens närsjukhus,,60.608992,16.759624,,,,Gävleborg,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Länssjukhuset Sundsvall-Härnösand,,62.526031494140625,17.436140060424805,,,,Västernorrland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Mellannorrlands Hospice AB,,63.103633880615234,17.252464294433594,,,,Västernorrland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Sollefteå sjukhus,,63.16801071166992,17.272720336914062,,,,Västernorrland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Örnsköldsviks sjukhus,,63.29898,18.71459,,,,Västernorrland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,"Näva, Strömsund",,62.035118103027344,14.37477970123291,,,,Jämtland Härjedalen,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Östersunds sjukhus,,62.035118103027344,14.37477970123291,,,,Jämtland Härjedalen,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Axlagården,,63.83611,20.17669,,,,Västerbotten,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Dorotea sjukstuga,,64.259299,16.418072,,,,Västerbotten,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Lycksele lasarett,,64.585205,18.679249,,,,Västerbotten,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Malå sjukstuga,,65.175320," 18.755641",,,,Västerbotten,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Norrlands Universitetssjukhus,,63.81752014160156,20.29792022705078,,,,Västerbotten,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Skellefteå lasarett,,64.75726,20.94185,,,,Västerbotten,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Sorsele sjukstuga,,65.537307,17.541003,,,,Västerbotten,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Storuman sjukstuga,,65.096957,17.121805,,,,Västerbotten,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Tärnaby sjukstuga,,65.715738,15.313197,,,,Västerbotten,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Vilhelmina sjukstuga,,64.625216,16.661627,,,,Västerbotten,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Åsele sjukstuga,,64.160975,17.359634,,,,Västerbotten,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Arjeplog vårdcentral,,66.049960,17.891863,,,,Norrbotten,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Arvidsjaur vårdcentral,,65.596649,19.168086,,,,Norrbotten,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Gällivare sjukhus,,67.131330,20.687395,,,,Norrbotten,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Jokkmokk vårdcentral,,66.602087,19.843368,,,,Norrbotten,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Kalix sjukhus,,65.854716,23.156408,,,,Norrbotten,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Kiruna sjukhus,,67.849807,20.239989,,,,Norrbotten,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Pajala  vårdcentral,,67.223678,23.343286,,,,Norrbotten,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Sunderby sjukhus,,65.672435,21.931057,,,,Norrbotten,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Överkalix  vårdcentral,,66.338472,22.846871,,,,Norrbotten,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Övertorneå  vårdcentral,,66.388950,23.653060,,,,Norrbotten,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Piteå sjukhus,,65.67104,21.92564,,,,Norrbotten,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Visby lasarett,,57.64785,18.29959,,,,Gotland,SE,Sweden,,,,,,,,,,,,2020_03_20
-,Riket,,62.82179260253906,16.73538589477539,,,,Riket,SE,Sweden,,,,,,,,,,,,2020_03_20
+,BB Stockholm,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Byle Gård,,59.26611,17.97445,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Capio Maria AB,,59.36257,17.97729,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Capio Rehab Saltsjöbaden,,59.288330078125,18.288230895996094,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Danderyds sjukhus AB,,59.39245,18.03958,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Ersta sjukhus,,59.30938,18.06007,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Karolinska Universitetssjukhuset,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Mandometerkliniken Stockholm,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Maria Regina,,59.3192,18.07132,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Ortopediska huset,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Rehab station Stockholm AB,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Rehabcenter Sfären,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,S:t Eriks ögonsjukhus AB,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,S:t Görans sjukhus AB,,59.334065,18.020615,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Sophiahemmet,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Stockholms sjukhem Geriatrik Bromma,,59.358606,17.899821,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Stångberga Legevisitten,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Södersjukhuset AB,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Dalens sjukhus,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Handens sjukhus,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Löwenströmska,,59.54301,17.90801,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Mälargården,,59.32293,18.069,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Nacka sjukhus,,59.30938,18.06007,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Norrtälje sjukhus (TioHundra AB),,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Nynäshamns sjukhus,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Stiftelsen Hublegården,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,"Stockholms läns sjukvårdsområde, (SLSO)",,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Stora Sköndals sjukhem,,59.25747,18.12603,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Södertälje sjukhus AB,,59.33256912231445,18.066829681396484,,,,Stockholm,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Akademiska sjukhuset,,59.858619689941406,17.64373016357422,,,,Uppsala,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Lasarettet i Enköping,,59.63887023925781,17.094276428222656,,,,Uppsala,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Närvårdsavd i Uppsala,,59.858619689941406,17.64373016357422,,,,Uppsala,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Elisabethsjukhuset (Aleris),,59.858619689941406,17.64373016357422,,,,Uppsala,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Karsuddens sjukhus,,59.01478,16.20857,,,,Sörmland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Kullbergska sjukhuset,,62.82179260253906,16.73538589477539,,,,Sörmland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Mälarsjukhuset,,59.36365,16.5362,,,,Sörmland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Nyköpings sjukhus,,62.82179260253906,16.73538589477539,,,,Sörmland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Finspångs lasarett,,58.70999,15.76212,,,,Östergötland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Lasarettet i Motala,,58.54246,15.03294,,,,Östergötland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Universitetssjukhuset i Linköping,,58.400870,15.620314,,,,Östergötland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Vrinnevisjukhuset,,58.562972,16.178709,,,,Östergötland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Höglandssjukhuset,,57.77975845336914,14.176480293273926,,,,Jönköping,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Länssjukhuset Ryhov,,57.77975845336914,14.176480293273926,,,,Jönköping,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Värnamo sjukhus,,57.77975845336914,14.176480293273926,,,,Jönköping,SE,Sweden,,,,,,,,,,,,2020_03_21
+,"Centrallasarettet, Växjö",,56.87995910644531,14.799449920654297,,,,Kronoberg,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Ljungby lasarett,,56.83476,13.93196,,,,Kronoberg,SE,Sweden,,,,,,,,,,,,2020_03_21
+,"Rehabcentrum (rehabkliniken), Växjö",,56.87995910644531,14.799449920654297,,,,Kronoberg,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Länssjukhuset i Kalmar,,56.65932,16.33305,,,,Kalmar,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Oskarshamns sjukhus,,57.10788,16.13221,,,,Kalmar,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Västerviks sjukhus,,57.89382,16.40096,,,,Kalmar,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Blekingesjukhuset,,57.90414047241211,14.961870193481445,,,,Blekinge,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Aleris Plastikkirurgi Malmö,,55.5966911315918,13.001219749450684,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Centralsjukhuset Kristianstad,,56.036521911621094,14.168658256530762,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Helsingborgs lasarett,,56.045775,12.704605,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Hässleholms sjukhus,,56.160474,13.778898,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Lasarettet i Landskrona,,55.8795166015625,12.838919639587402,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Lasarettet i Ystad,,55.43437,13.81826,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Lasarettet Trelleborg,,55.37770080566406,13.167510032653809,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Lydiagården Höör,,55.93321228027344,13.547783851623535,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Palliativ sjukhusvård Helsingborg,,56.04181671142578,12.730361938476562,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Palliativ sjukhusvård Kristianstad,,56.036521911621094,14.168658256530762,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Praktikertjänst Närsjukhus Simrishamn,,55.55376052856445,14.342297554016113,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_21
+,"Skånes universitetssjukhus, Lund",,55.711204,13.198610,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_21
+,"Skånes universitetssjukhus, Malmö",,55.5966911315918,13.001219749450684,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Ängelholms sjukhus,,56.06036,12.70645,,,,Skåne,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Capio Movement Halmstad,,56.67226028442383,12.857500076293945,,,,Halland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Hallands sjukhus,,57.494538,12.085968,,,,Halland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Palliativa allmänna vårdavd,,56.907252,12.500539,,,,Halland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Alingsås lasarett,,57.92968,12.52234,,,,Västra Götaland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Frölunda specialistsjukhus,,57.650495,11.912671,,,,Västra Götaland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Kungälvs sjukhus,,57.878457,11.969664,,,,Västra Götaland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Lundby sjukhus AB,,57.721113,11.936681,,,,Västra Götaland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,NU-sjukvården,,58.318229,12.266875,,,,Västra Götaland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Sahlgrenska universitetssjukhuset,,57.68267059326172,11.961790084838867,,,,Västra Götaland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Skaraborgs sjukhus,,58.53477,14.52833,,,,Västra Götaland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Stadsmissionen Göteborg,,57.70066833496094,11.968219757080078,,,,Västra Götaland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Södra Älvsborgs sjukhus,,57.724226,12.961219,,,,Västra Götaland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Carlanderska sjukhemmet,,57.692534,11.989493,,,,Västra Götaland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Hospice Gabriel,,58.497937,13.152461,,,,Västra Götaland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Arvika sjukhus,,60.03085,13.70454,,,,Värmland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Centralsjukhuset Karlstad,,59.374776,13.478027,,,,Värmland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Sjukhuset i Kristinehamn,,59.31459045410156,14.108336448669434,,,,Värmland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Sjukhuset i Säffle,,59.135863,12.933425,,,,Värmland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Torsby sjukhus,,60.03085,13.70454,,,,Värmland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Karlskoga lasarett,,59.31608,14.50786,,,,Örebro,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Lindesbergs lasarett,,59.602146,15.216675,,,,Örebro,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Universitetssjukhuset i Örebro,,59.275458,15.225082,,,,Örebro,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Närsjukh. Primärv Fagersta,,59.99690246582031,15.809639930725098,,,,Västmanland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Sjukhuset i Köping,,59.51056671142578,15.996578216552734,,,,Västmanland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Sjukhuset i Sala,,59.923946,16.601866,,,,Västmanland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Sjukhuset i Västerås,,59.609580993652344,16.54534912109375,,,,Västmanland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Avesta lasarett,,60.141154,16.200819,,,,Dalarna,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Borlänge sjukhus,,60.503941,15.465829,,,,Darlana,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Falu lasarett,,60.60785,15.64706,,,,Dalarna,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Ludvika lasarett,,60.139015197753906,15.195231437683105,,,,Dalarna,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Mora lasarett,,61.01144,14.58232,,,,Dalarna,SE,Sweden,,,,,,,,,,,,2020_03_21
+,"Säters sjukhus, psykiatri",,60.34053,15.715904,,,,Dalarna,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Hudiksvalls sjukhus,,61.82557,16.12839,,,,Gävleborg,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Bollnäs sjukhus (Aleris),,61.35162,16.36891,,,,Gävleborg,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Gävle sjukhus,,61.35162,16.36891,,,,Gävleborg,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Ljusdals närsjukhus,,61.828258,16.109194,,,,Gävleborg,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Sandvikens närsjukhus,,60.608992,16.759624,,,,Gävleborg,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Länssjukhuset Sundsvall-Härnösand,,62.526031494140625,17.436140060424805,,,,Västernorrland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Mellannorrlands Hospice AB,,63.103633880615234,17.252464294433594,,,,Västernorrland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Sollefteå sjukhus,,63.16801071166992,17.272720336914062,,,,Västernorrland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Örnsköldsviks sjukhus,,63.29898,18.71459,,,,Västernorrland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,"Näva, Strömsund",,62.035118103027344,14.37477970123291,,,,Jämtland Härjedalen,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Östersunds sjukhus,,62.035118103027344,14.37477970123291,,,,Jämtland Härjedalen,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Axlagården,,63.83611,20.17669,,,,Västerbotten,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Dorotea sjukstuga,,64.259299,16.418072,,,,Västerbotten,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Lycksele lasarett,,64.585205,18.679249,,,,Västerbotten,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Malå sjukstuga,,65.175320," 18.755641",,,,Västerbotten,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Norrlands Universitetssjukhus,,63.81752014160156,20.29792022705078,,,,Västerbotten,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Skellefteå lasarett,,64.75726,20.94185,,,,Västerbotten,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Sorsele sjukstuga,,65.537307,17.541003,,,,Västerbotten,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Storuman sjukstuga,,65.096957,17.121805,,,,Västerbotten,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Tärnaby sjukstuga,,65.715738,15.313197,,,,Västerbotten,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Vilhelmina sjukstuga,,64.625216,16.661627,,,,Västerbotten,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Åsele sjukstuga,,64.160975,17.359634,,,,Västerbotten,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Arjeplog vårdcentral,,66.049960,17.891863,,,,Norrbotten,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Arvidsjaur vårdcentral,,65.596649,19.168086,,,,Norrbotten,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Gällivare sjukhus,,67.131330,20.687395,,,,Norrbotten,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Jokkmokk vårdcentral,,66.602087,19.843368,,,,Norrbotten,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Kalix sjukhus,,65.854716,23.156408,,,,Norrbotten,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Kiruna sjukhus,,67.849807,20.239989,,,,Norrbotten,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Pajala  vårdcentral,,67.223678,23.343286,,,,Norrbotten,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Sunderby sjukhus,,65.672435,21.931057,,,,Norrbotten,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Överkalix  vårdcentral,,66.338472,22.846871,,,,Norrbotten,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Övertorneå  vårdcentral,,66.388950,23.653060,,,,Norrbotten,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Piteå sjukhus,,65.67104,21.92564,,,,Norrbotten,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Visby lasarett,,57.64785,18.29959,,,,Gotland,SE,Sweden,,,,,,,,,,,,2020_03_21
+,Riket,,62.82179260253906,16.73538589477539,,,,Riket,SE,Sweden,,,,,,,,,,,,2020_03_21
