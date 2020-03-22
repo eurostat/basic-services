@@ -59,7 +59,8 @@
           let mcg = L.markerClusterGroup({
             chunkedLoading: true,
             //singleMarkerMode: true,
-            spiderfyOnMaxZoom: true
+            spiderfyOnMaxZoom: true,
+            maxClusterRadius: 40
           });
 
           for (let i = 0; i < hospitals.length; i++) {
