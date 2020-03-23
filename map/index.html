@@ -40,13 +40,21 @@
         if (request.status >= 200 && request.status < 400) {
           let hospitals = d3.csvParse(request.responseText);
 
+          var newIcon = L.icon({
+            iconUrl: "lib/images/marker-icon.svg",
+            iconAnchor: [7, 0]
+          });
+          L.Marker.mergeOptions({
+            icon: newIcon
+          });
+
           //build map
           let tiles = L.tileLayer(
-            "https://europa.eu/webtools/rest/gisco/maps/wmts/OSMCartoComposite/EPSG3857/{z}/{x}/{y}.png",
+            "https://europa.eu/webtools/rest/gisco/maps/wmts/OSMPositronBackground/EPSG3857/{z}/{x}/{y}.png",
             {
               maxZoom: 18,
               attribution:
-                '&copy; <a href="//openstreetmap.org/copyright">OpenStreetMap</a> contributors,Points &copy 2012 LINZ'
+                '&copy; <a href="//openstreetmap.org/copyright">OpenStreetMap</a> contributors, GISCO'
             }
           );
           let map = L.map("map", {
