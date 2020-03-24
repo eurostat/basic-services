@@ -4333,9 +4333,9 @@ VH12,C.H. UNIVERSITAIRE ANDRE VESALE,LEONARD DE VINCI,50.361933,4.364199,RUE DE 
 50250,Kys/Alavan sairaala,,62.89669037,27.68053055,,,70211,Kuopio,FI,Finland,,,,,The university hospital or clinic,,,,,,,2020_03_24
 50250,Kys/Julkulan sairaala,,62.9325,27.63043,,,70260,Kuopio,FI,Finland,,,,,The university hospital or clinic,,,,,,,2020_03_24
 50275,Oulun yliopistollinen sairaala,,65.01035309,25.47356987,,,90029,Oulu,FI,Finland,,,,,The university hospital or clinic,,,,,,,2020_03_24
-50290,Tampereen yliopistollinen sairaala,,61.49840927,23.77183914,,,33521,Tampere,FI,Finland,,,,,The university hospital or clinic,,,,,,,2020_03_24
+50290,Tampereen yliopistollinen sairaala,,61.504344,23.812899,,,33521,Tampere,FI,Finland,,,,,The university hospital or clinic,,,,,,,2020_03_24
 50290,TAYS Pitkäniemen sairaala,,61.48238,23.57333,,,33380,Nokia,FI,Finland,,,,,The university hospital or clinic,,,,,,,2020_03_24
-50290,TAYS Hatanpään sairaala,,61.49840927,23.77183914,,,33101,Tampere,FI,Finland,,,,,The university hospital or clinic,,,,,,,2020_03_24
+50290,TAYS Hatanpään sairaala,,61.483651,23.753833,,,33101,Tampere,FI,Finland,,,,,The university hospital or clinic,,,,,,,2020_03_24
 50290,TAYS Valkeakosken sairaala,,61.27076,24.03137,,,37600,Valkeakoski,FI,Finland,,,,,The university hospital or clinic,,,,,,,2020_03_24
 50290,TAYS Vammalan sairaala,,61.34994,22.90886,,,38201,Sastamala,FI,Finland,,,,,The university hospital or clinic,,,,,,,2020_03_24
 60605,Dextra Munkkivuori,,60.2057,24.87818,,,350,Helsinki,FI,Finland,,,,,Private hospital (esh),,,,,,,2020_03_24
@@ -4358,7 +4358,7 @@ VH12,C.H. UNIVERSITAIRE ANDRE VESALE,LEONARD DE VINCI,50.361933,4.364199,RUE DE 
 60689,Suomen Aivotutkimus- ja kuntoutuskeskus Neuron,,62.89669037,27.68053055,,,71130,Kuopio,FI,Finland,,,,,"Private hospital (esh), health care rehabilitation facility",,,,,,,2020_03_24
 60694,Dextra Plastiikkakirurginen Sairaala,,60.17116165,24.93264961,,,120,Helsinki,FI,Finland,,,,,Private hospital (esh),,,,,,,2020_03_24
 60695,Terveystalo Pulssi,,60.45183,22.25793,,,20100,Turku,FI,Finland,,,,,Private hospital (esh),,,,,,,2020_03_24
-60697,Pihlajalinna Koskiklinikan sairaala,,61.49840927,23.77183914,,,33101,Tampere,FI,Finland,,,,,surgical Procedures,,,,,,,2020_03_24
+60697,Pihlajalinna Koskiklinikan sairaala,,61.495765,23.767204,,,33101,Tampere,FI,Finland,,,,,surgical Procedures,,,,,,,2020_03_24
 60701,Seinäjoen lääketieteellinen tutkimuslaitos Oy,,62.78899,22.83369,,,60100,Seinäjoki,FI,Finland,,,,,"Private hospital (esh), Surgical Procedures",,,,,,,2020_03_24
 60702,Suomen Terveystalo Helsinki Kamppi,,60.16988,24.93174,,,100,Helsinki,FI,Finland,,,,,Private hospital (esh),,,,,,,2020_03_24
 60704,Suomen Terveystalo/Turku,,60.45693,22.26969,,,20100,Turku,FI,Finland,,,,,surgical Procedures,,,,,,,2020_03_24
@@ -4369,10 +4369,9 @@ VH12,C.H. UNIVERSITAIRE ANDRE VESALE,LEONARD DE VINCI,50.361933,4.364199,RUE DE 
 60711,Vårdhem Elise,,63.68701,22.73695,,,68660,Pietarsaari,FI,Finland,,,,,Private hospital (PTH),,,,,,,2020_03_24
 60713,Suomen Terveystalo/Tampere,,61.49686,23.77281,,,33100,Tampere,FI,Finland,,,,,surgical Procedures,,,,,,,2020_03_24
 60715,Suomen Terveystalo/Lappeenranta,,61.05643,28.1921,,,53100,Lappeenranta,FI,Finland,,,,,surgical Procedures,,,,,,,2020_03_24
-60718,Tekonivelsairaala Coxa Oy,,61.49840927,23.77183914,,,33101,Tampere,FI,Finland,,,,,"Private hospital (esh), Surgical Procedures",,,,,,,2020_03_24
+60718,Tekonivelsairaala Coxa Oy,,61.505579,23.815042,,,33101,Tampere,FI,Finland,,,,,"Private hospital (esh), Surgical Procedures",,,,,,,2020_03_24
 60719,Helsingin Silmäsairaala,,60.16935,24.94164,,,100,Helsinki,FI,Finland,,,,,surgical Procedures,,,,,,,2020_03_24
 60719,Rovaniemen Silmäsairaala,,66.50309,25.7283,,,96200,Rovaniemi,FI,Finland,,,,,surgical Procedures,,,,,,,2020_03_24
-60719,Tampereen Silmäsairaala,,61.49857,23.76955,,,33100,Tampere,FI,Finland,,,,,surgical Procedures,,,,,,,2020_03_24
 60719,Kuopion Silmäsairaala,,62.89219,27.68151,,,70100,Kuopio,FI,Finland,,,,,surgical Procedures,,,,,,,2020_03_24
 60719,Vantaan Silmäsairaala,,60.30095291,24.9788723,,,1600,Vantaa,FI,Finland,,,,,surgical Procedures,,,,,,,2020_03_24
 60719,Kouvolan Silmäsairaala,,60.86876,26.70412,,,45100,Kouvola,FI,Finland,,,,,surgical Procedures,,,,,,,2020_03_24
@@ -4386,13 +4385,13 @@ VH12,C.H. UNIVERSITAIRE ANDRE VESALE,LEONARD DE VINCI,50.361933,4.364199,RUE DE 
 60737,Koivikko-koti,,60.97759,24.42129,,,13500,Hämeenlinna,FI,Finland,,,,,"Private hospital (PTH), Home Health Care",,,,,,,2020_03_24
 60745,Sairaala Mehiläinen Hämeenlinna,,60.99901,24.47872,,,13200,Hämeenlinna,FI,Finland,,,,,Private hospital (esh),,,,,,,2020_03_24
 60749,Sairaala Mehiläinen Kuopio,,62.89219,27.68151,,,70100,Kuopio,FI,Finland,,,,,Private hospital (esh),,,,,,,2020_03_24
-60754,Pihjalalinna/Jokilaakso,,61.49840927,23.77183914,,,33200,Tampere,FI,Finland,,,,,surgical Procedures,,,,,,,2020_03_24
+60754,Pihlajalinna/Jokilaakso,,61.492371,23.752819,,,33200,Tampere,FI,Finland,,,,,surgical Procedures,,,,,,,2020_03_24
 60761,Turun Silmäexpertit,,60.45511,22.26746,,,20100,Turku,FI,Finland,,,,,surgical Procedures,,,,,,,2020_03_24
 60763,Sairaala Mehiläinen Lahti,,60.98268,25.64932,,,15110,Lahti,FI,Finland,,,,,Private hospital (esh),,,,,,,2020_03_24
 60768,Oulun Diakonissalaitoksen sairaala,,65.01146698,25.48364067,,,90100,Oulu,FI,Finland,,,,,"Private hospital (esh), Surgical Procedures",,,,,,,2020_03_24
 60769,Oy Silmätalo Ögencentral ab,,60.39155,25.66082,,,6100,Porvoo,FI,Finland,,,,,surgical Procedures,,,,,,,2020_03_24
 60776,Helsingin Sydänsairaala Oy,,60.15937,24.90993,,,180,Helsinki,FI,Finland,,,,,Private hospital (esh),,,,,,,2020_03_24
-60776,Tays Sydänsairaala Oy,,61.49840927,23.77183914,,,33521,Tampere,FI,Finland,,,,,Private hospital (esh),,,,,,,2020_03_24
+60776,Tays Sydänsairaala Oy,,61.505296,23.815041,,,33521,Tampere,FI,Finland,,,,,Private hospital (esh),,,,,,,2020_03_24
 60780,Mehiläinen Kotka leikkaussali,,60.46352,26.93566,,,48100,Kotka,FI,Finland,,,,,surgical Procedures,,,,,,,2020_03_24
 60781,Kuntoutus Orton,,60.17116165,24.93264961,,,281,Helsinki,FI,Finland,,,,,"Private hospital (esh), health care rehabilitation facility",,,,,,,2020_03_24
 60785,"Plastiikkakirurginen sairaala KL, Jyväskylä",,62.24475,25.75485,,,40100,Jyväskylä,FI,Finland,,,,,Private hospital (esh),,,,,,,2020_03_24
@@ -4435,7 +4434,6 @@ VH12,C.H. UNIVERSITAIRE ANDRE VESALE,LEONARD DE VINCI,50.361933,4.364199,RUE DE 
 60849,Pohjola Sairaala Turku,,60.44812,22.29812,,,20520,Turku,FI,Finland,,,,,Private hospital (esh),,,,,,,2020_03_24
 60858,Pihlajalinna Seinäjoki,,62.79145,22.84014,,,60100,Seinäjoki,FI,Finland,,,,,"Erikoislääk. Desk, Surgery, Medical service",,,,,,,2020_03_24
 60861,Sammakkotalo,,65.00912,25.4733,,,90100,Oulu,FI,Finland,,,,,surgical Procedures,,,,,,,2020_03_24
-60862,ÖGA – pieni silmäsairaala Oy,,61.49840927,23.77183914,,,33100,Tampere,FI,Finland,,,,,surgical Procedures,,,,,,,2020_03_24
 61210,Suomen Terveystalo/Pori,,61.48607,21.79408,,,28100,Pori,FI,Finland,,,,,surgical Procedures,,,,,,,2020_03_24
 62677,Väestöliiton klinikat,,60.17073,24.934,,,100,Helsinki,FI,Finland,,,,,surgical Procedures,,,,,,,2020_03_24
 63239,"DiakonTerveys, Kuntoutuskeskus",,61.47462,21.77457,,,28500,Pori,FI,Finland,,,,,"Private hospital (PTH), Rehabilitation Center",,,,,,,2020_03_24
@@ -4505,7 +4503,7 @@ VH12,C.H. UNIVERSITAIRE ANDRE VESALE,LEONARD DE VINCI,50.361933,4.364199,RUE DE 
 90493,Siilinjärven terveyskeskus,,63.06166458,27.70882607,,,71800,Siilinjärvi,FI,Finland,,,,,"The health center, health center inpatient, hospital",,,,,,,2020_03_24
 90497,Nickby hälsostation och hälsovårdscentralens sjukhus,,60.36487579,25.38388824,,,4131,Sipoo,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,,2020_03_24
 90520,Säkylän terveyskeskus,,61.04563,22.35047,,,27800,Säkylä,FI,Finland,,,,,"The Health Center inpatient, hospital, health center",,,,,,,2020_03_24
-90532,Tampereen tk / Rauhaniemen sairaala,,61.49840927,23.77183914,,,33180,Tampere,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,,2020_03_24
+90532,Tampereen tk / Rauhaniemen sairaala,,61.512360,23.778403,,,33180,Tampere,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,,2020_03_24
 90545,Turun tk/sisätautisairaala,,60.44176,22.27785,,,20700,Turku,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,,2020_03_24
 90545,Kaskenlinnan sairaala,,60.44176,22.27785,,,20700,Turku,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,,2020_03_24
 90545,Kurjenmäkikoti,,60.43991,22.28447,,,nan,Turku,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,,2020_03_24
