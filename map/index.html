@@ -11,7 +11,7 @@
     <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./lib/leaflet.css" />
+    <link rel="stylesheet" href="./lib/leaflet/leaflet.css" />
     <link rel="stylesheet" href="./lib/MarkerCluster.css" />
     <link rel="stylesheet" href="./lib/MarkerCluster.Default.css" />
   </head>
@@ -76,6 +76,15 @@
         if (request.status >= 200 && request.status < 400) {
           let hospitals = d3.csvParse(request.responseText);
 
+          //change default marker
+          var newIcon = L.icon({
+            iconUrl: "lib/leaflet/images/marker-icon.png",
+            iconAnchor: [7, 0]
+          });
+          L.Marker.mergeOptions({
+            icon: newIcon
+          });
+
           //build map
           let tiles = L.tileLayer(
             "http://gisco.northeurope.cloudapp.azure.com/maps/wmts/OSMCartoComposite/EPSG3035/{z}/{x}/{y}.png",
@@ -95,9 +104,10 @@
           let mcg = L.markerClusterGroup({
             chunkedLoading: true,
             //singleMarkerMode: true,
-            //spiderfyOnMaxZoom: false
+            maxClusterRadius: 40,
+            spiderfyOnMaxZoom: true,
             showCoverageOnHover: false,
-            removeOutsideVisibleBounds: true //for dealing with 3035
+            removeOutsideVisibleBounds: true
           });
 
           for (let i = 0; i < hospitals.length; i++) {
