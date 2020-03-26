@@ -1,44 +1,44 @@
 id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,emergency,cap_beds,cap_prac,cap_rooms,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date
-1,Bērnu klīniskā universitātes slimnīca,,56.92199605,24.08800837,Vienības gatve,45,LV-1004,Riga,LV,Latvia,,,,,,,,,,,,2020_03_25
-2,Bērnu klīniskās universitātes slimnīcas filiāle Juglā,,56.95978725,24.25395525,Juglas iela,20,LV-1079,Riga,LV,Latvia,,,,,,,,,,,,2020_03_25
-3,"Rīgas Austrumu klīniskās universitātes slimnīcas klīnika ""Gaiļezers""",,56.9672429,24.24575433,Hipokrāta iela,2,LV-1079,Riga,LV,Latvia,,,,,,,,,,,,2020_03_25
-4,"Rīgas Austrumu klīniskās universitātes slimnīcas klīnika ""Biķernieki""",,56.96854,24.19744,Lielvārdes iela,68,LV-1006,Riga,LV,Latvia,,,,,,,,,,,,2020_03_25
-5,Rīgas 2.slimnīca,,56.9166026,24.09073548,Ģimnastikas iela,1,LV-1058,Riga,LV,Latvia,,,,,,,,,,,,2020_03_25
-6,Paula Stradiņa klīniskā universitātes slimnīca,,56.9313119,24.0635717,Pilsoņu iela,13,LV-1002,Riga,LV,Latvia,,,,,,,,,,,,2020_03_25
-7,Traumatoloģijas un ortopēdijas slimnīca,,56.98328535,24.13693904,Duntes iela,22,LV-1013,Riga,LV,Latvia,,,,,,,,,,,,2020_03_25
-8,"Rīgas Austrumu klīniskās universitātes slimnīcas stacionārs ""Latvijas Infektoloģijas centrs""",,56.9770058,24.1977922,Linezera iela,3,LV-1006,Riga,LV,Latvia,,,,,,,,,,,,2020_03_25
-9,Rīgas Dzemdību nams,,56.9669176,24.1338222,Miera iela,45,LV-1013,Riga,LV,Latvia,,,,,,,,,,,,2020_03_25
-10,Rīgas Psihiatrijas un narkoloģijas centrs,,56.99531865,24.12169443,Tvaika iela,2,LV-1005,Riga,LV,Latvia,,,,,,,,,,,,2020_03_25
-11,Jūrmalas slimnīca,,56.9805627,23.85897084,Vienības prospekts,19/21,LV-2010,Jūrmala,LV,Latvia,,,,,,,,,,,,2020_03_25
-12,"Nacionālais rehabilitācijas centrs ""Vaivari""",,56.95918365,23.66758937,Asaru prospekts,61,LV-2008,Jūrmala,LV,Latvia,,,,,,,,,,,,2020_03_25
-13,Alūksnes slimnīca,,57.4374881,27.03959858,Pils iela,1A,LV-4301,Alūksne,LV,Latvia,,,,,,,,,,,,2020_03_25
-14,Balvu un Gulbenes slimnīcu apvienība (uzņemšana Balvos),,57.14008,27.25549,Vidzemes iela,2,LV-4501,Balvi,LV,Latvia,,,,,,,,,,,,2020_03_25
-15,Cēsu klīnika,,57.31527985,25.25606024,Slimnīcas iela,9,LV-4101,Cēsis,LV,Latvia,,,,,,,,,,,,2020_03_25
-16,Daugavpils reģionālā slimnīca,,55.898548,26.591078,Vasarnīcu iela,20,LV-5410,Daugavpils,LV,Latvia,,,,,,,,,,,,2020_03_25
-17,"Daugavpils reģionālās slimnīcas struktūrvienība ""Plaušu slimību un tuberkulozes centrs""",,55.89242,26.59051,18. novembra iela,311,LV-5417,Daugavpils,LV,Latvia,,,,,,,,,,,,2020_03_25
-18,Daugavpils psihoneiroloģiskā slimnīca,,55.87634,26.56128,Lielā Dārza iela,60/62,LV-5417,Daugavpils,LV,Latvia,,,,,,,,,,,,2020_03_25
-19,Dobeles un apkārtnes slimnīca,,56.621997,23.26939959,Ādama iela,2,LV-3701,Dobele,LV,Latvia,,,,,,,,,,,,2020_03_25
-20,Jelgavas pilsētas slimnīca,,56.6574369,23.7500845,Brīvības bulvāris,6,LV-3002,Jelgava,LV,Latvia,,,,,,,,,,,,2020_03_25
-21,Jēkabpils reģionālā slimnīca,,56.49696,25.84156,Andreja Pormaļa iela,125,LV-5201,Jēkabpils,LV,Latvia,,,,,,,,,,,,2020_03_25
-22,Krāslavas slimnīca,,55.88669115,27.17498622,Rīgas iela,159,LV-5601,Kraslava,LV,Latvia,,,,,,,,,,,,2020_03_25
-23,Kuldīgas slimnīca,,56.9611068,21.95510195,Aizputes iela,22,LV-3301,Kuldīga,LV,Latvia,,,,,,,,,,,,2020_03_25
-24,Liepājas reģionālā slimnīca,,56.55294115,21.0994055,Slimnīcas iela,25,LV-3414,Liepaja,LV,Latvia,,,,,,,,,,,,2020_03_25
-25,Madonas slimnīca,,56.8519457,26.2366139,Rūpniecības iela,38,LV-4801,Madona,LV,Latvia,,,,,,,,,,,,2020_03_25
-26,Ogres rajona slimnīca,,56.8196,24.61973,Slimnīcas iela,2,LV-5001,Ogre,LV,Latvia,,,,,,,,,,,,2020_03_25
-27,Preiļu slimnīca,,56.29162,26.72699,Raiņa bulvāris,13,LV-5301,Preiļi,LV,Latvia,,,,,,,,,,,,2020_03_25
-28,Rēzeknes slimnīca,,56.508976,27.341902,18. novembra iela,41,LV-4601,Rezekne,LV,Latvia,,,,,,,,,,,,2020_03_25
-30,Ziemeļkurzemes reģionālā slimnīca,,57.38776935,21.54424824,Inženieru iela,60,LV-3601,Ventspils,LV,Latvia,,,,,,,,,,,,2020_03_25
-31,Tukuma slimnīca,,56.96905,23.15635,Raudas iela,8,LV-3101,Tukums,LV,Latvia,,,,,,,,,,,,2020_03_25
-32,Vidzemes slimnīca,,57.519022,25.3851517,Jumaras iela,195,LV-4224,Valmiera,LV,Latvia,,,,,,,,,,,,2020_03_25
-33,Saulkrastu slimnīca,,57.2736647,24.41658544,Ainažu iela,34,LV-2160,Saulkrasti,LV,Latvia,,,,,,,,,,,,2020_03_25
-34,Priekules slimnīca,,56.44195,21.58363,Aizputes iela,5,LV-3434,Priekule,LV,Latvia,,,,,,,,,,,,2020_03_25
-35,Saldus medicīnas centrs,,56.6715206,22.491371,Slimnīcas iela,3,LV-3801,Saldus,LV,Latvia,,,,,,,,,,,,2020_03_25
-36,Sarkanā Krusta Smiltenes slimnīca,,57.42504,25.91454,Dakteru iela,14,LV-4729,Smiltene,LV,Latvia,,,,,,,,,,,,2020_03_25
-37,Balvu un Gulbenes slimnīcu apvienība (Gulbenē),,57.15708,26.762,Upes iela,1,LV-4401,Gulbene,LV,Latvia,,,,,,,,,,,,2020_03_25
-38,Vidzemes slimnīca (Valkā),,57.78501285,26.01073752,Rūjienas iela,3,LV-4701,Valka,LV,Latvia,,,,,,,,,,,,2020_03_25
-39,Līvānu slimnīca,,56.35434,26.17373,Zaļā iela,44,LV-5316,Līvāni,LV,Latvia,,,,,,,,,,,,2020_03_25
-40,Aizkraukles slimnīca,,56.60315,25.25425,Bērzu iela,5,LV-5101,Aizkraukle,LV,Latvia,,,,,,,,,,,,2020_03_25
-41,Limbažu slimnīca,,57.5154842,24.717177,Klostera iela,3,LV-4001,Limbaži,LV,Latvia,,,,,,,,,,,,2020_03_25
-42,Ludzas medicīnas centrs,,56.54285,27.71407,Raiņa iela,43,LV-5701,Ludza,LV,Latvia,,,,,,,,,,,,2020_03_25
-43,Rīgas rajona slimnīca (Siguldas slimnīca),,57.15672,24.84432,Lakstīgalas iela,13,LV-2150,Sigulda,LV,Latvia,,,,,,,,,,,,2020_03_25
-44,Bauskas slimnīca,,56.40885,24.19166,Dārza iela,7,LV-3901,Bauska,LV,Latvia,,,,,,,,,,,,2020_03_25
+1,Bērnu klīniskā universitātes slimnīca,,56.92199605,24.08800837,Vienības gatve,45,LV-1004,Riga,LV,Latvia,,,,,,,,,,,,26/03/2020
+2,Bērnu klīniskās universitātes slimnīcas filiāle Juglā,,56.95978725,24.25395525,Juglas iela,20,LV-1079,Riga,LV,Latvia,,,,,,,,,,,,26/03/2020
+3,"Rīgas Austrumu klīniskās universitātes slimnīcas klīnika ""Gaiļezers""",,56.9672429,24.24575433,Hipokrāta iela,2,LV-1079,Riga,LV,Latvia,,,,,,,,,,,,26/03/2020
+4,"Rīgas Austrumu klīniskās universitātes slimnīcas klīnika ""Biķernieki""",,56.96854,24.19744,Lielvārdes iela,68,LV-1006,Riga,LV,Latvia,,,,,,,,,,,,26/03/2020
+5,Rīgas 2.slimnīca,,56.9166026,24.09073548,Ģimnastikas iela,1,LV-1058,Riga,LV,Latvia,,,,,,,,,,,,26/03/2020
+6,Paula Stradiņa klīniskā universitātes slimnīca,,56.9313119,24.0635717,Pilsoņu iela,13,LV-1002,Riga,LV,Latvia,,,,,,,,,,,,26/03/2020
+7,Traumatoloģijas un ortopēdijas slimnīca,,56.98328535,24.13693904,Duntes iela,22,LV-1013,Riga,LV,Latvia,,,,,,,,,,,,26/03/2020
+8,"Rīgas Austrumu klīniskās universitātes slimnīcas stacionārs ""Latvijas Infektoloģijas centrs""",,56.9770058,24.1977922,Linezera iela,3,LV-1006,Riga,LV,Latvia,,,,,,,,,,,,26/03/2020
+9,Rīgas Dzemdību nams,,56.9669176,24.1338222,Miera iela,45,LV-1013,Riga,LV,Latvia,,,,,,,,,,,,26/03/2020
+10,Rīgas Psihiatrijas un narkoloģijas centrs,,56.99531865,24.12169443,Tvaika iela,2,LV-1005,Riga,LV,Latvia,,,,,,,,,,,,26/03/2020
+11,Jūrmalas slimnīca,,56.9805627,23.85897084,Vienības prospekts,19/21,LV-2010,Jūrmala,LV,Latvia,,,,,,,,,,,,26/03/2020
+12,"Nacionālais rehabilitācijas centrs ""Vaivari""",,56.95918365,23.66758937,Asaru prospekts,61,LV-2008,Jūrmala,LV,Latvia,,,,,,,,,,,,26/03/2020
+13,Alūksnes slimnīca,,57.4374881,27.03959858,Pils iela,1A,LV-4301,Alūksne,LV,Latvia,,,,,,,,,,,,26/03/2020
+14,Balvu un Gulbenes slimnīcu apvienība (uzņemšana Balvos),,57.14008,27.25549,Vidzemes iela,2,LV-4501,Balvi,LV,Latvia,,,,,,,,,,,,26/03/2020
+15,Cēsu klīnika,,57.31527985,25.25606024,Slimnīcas iela,9,LV-4101,Cēsis,LV,Latvia,,,,,,,,,,,,26/03/2020
+16,Daugavpils reģionālā slimnīca,,55.898548,26.591078,Vasarnīcu iela,20,LV-5410,Daugavpils,LV,Latvia,,,,,,,,,,,,26/03/2020
+17,"Daugavpils reģionālās slimnīcas struktūrvienība ""Plaušu slimību un tuberkulozes centrs""",,55.89242,26.59051,18. novembra iela,311,LV-5417,Daugavpils,LV,Latvia,,,,,,,,,,,,26/03/2020
+18,Daugavpils psihoneiroloģiskā slimnīca,,55.87634,26.56128,Lielā Dārza iela,60/62,LV-5417,Daugavpils,LV,Latvia,,,,,,,,,,,,26/03/2020
+19,Dobeles un apkārtnes slimnīca,,56.621997,23.26939959,Ādama iela,2,LV-3701,Dobele,LV,Latvia,,,,,,,,,,,,26/03/2020
+20,Jelgavas pilsētas slimnīca,,56.6574369,23.7500845,Brīvības bulvāris,6,LV-3002,Jelgava,LV,Latvia,,,,,,,,,,,,26/03/2020
+21,Jēkabpils reģionālā slimnīca,,56.49696,25.84156,Andreja Pormaļa iela,125,LV-5201,Jēkabpils,LV,Latvia,,,,,,,,,,,,26/03/2020
+22,Krāslavas slimnīca,,55.88669115,27.17498622,Rīgas iela,159,LV-5601,Kraslava,LV,Latvia,,,,,,,,,,,,26/03/2020
+23,Kuldīgas slimnīca,,56.9611068,21.95510195,Aizputes iela,22,LV-3301,Kuldīga,LV,Latvia,,,,,,,,,,,,26/03/2020
+24,Liepājas reģionālā slimnīca,,56.55294115,21.0994055,Slimnīcas iela,25,LV-3414,Liepaja,LV,Latvia,,,,,,,,,,,,26/03/2020
+25,Madonas slimnīca,,56.8519457,26.2366139,Rūpniecības iela,38,LV-4801,Madona,LV,Latvia,,,,,,,,,,,,26/03/2020
+26,Ogres rajona slimnīca,,56.8196,24.61973,Slimnīcas iela,2,LV-5001,Ogre,LV,Latvia,,,,,,,,,,,,26/03/2020
+27,Preiļu slimnīca,,56.29162,26.72699,Raiņa bulvāris,13,LV-5301,Preiļi,LV,Latvia,,,,,,,,,,,,26/03/2020
+28,Rēzeknes slimnīca,,56.508976,27.341902,18. novembra iela,41,LV-4601,Rezekne,LV,Latvia,,,,,,,,,,,,26/03/2020
+30,Ziemeļkurzemes reģionālā slimnīca,,57.38776935,21.54424824,Inženieru iela,60,LV-3601,Ventspils,LV,Latvia,,,,,,,,,,,,26/03/2020
+31,Tukuma slimnīca,,56.96905,23.15635,Raudas iela,8,LV-3101,Tukums,LV,Latvia,,,,,,,,,,,,26/03/2020
+32,Vidzemes slimnīca,,57.519022,25.3851517,Jumaras iela,195,LV-4224,Valmiera,LV,Latvia,,,,,,,,,,,,26/03/2020
+33,Saulkrastu slimnīca,,57.2736647,24.41658544,Ainažu iela,34,LV-2160,Saulkrasti,LV,Latvia,,,,,,,,,,,,26/03/2020
+34,Priekules slimnīca,,56.44195,21.58363,Aizputes iela,5,LV-3434,Priekule,LV,Latvia,,,,,,,,,,,,26/03/2020
+35,Saldus medicīnas centrs,,56.6715206,22.491371,Slimnīcas iela,3,LV-3801,Saldus,LV,Latvia,,,,,,,,,,,,26/03/2020
+36,Sarkanā Krusta Smiltenes slimnīca,,57.42504,25.91454,Dakteru iela,14,LV-4729,Smiltene,LV,Latvia,,,,,,,,,,,,26/03/2020
+37,Balvu un Gulbenes slimnīcu apvienība (Gulbenē),,57.15708,26.762,Upes iela,1,LV-4401,Gulbene,LV,Latvia,,,,,,,,,,,,26/03/2020
+38,Vidzemes slimnīca (Valkā),,57.78501285,26.01073752,Rūjienas iela,3,LV-4701,Valka,LV,Latvia,,,,,,,,,,,,26/03/2020
+39,Līvānu slimnīca,,56.35434,26.17373,Zaļā iela,44,LV-5316,Līvāni,LV,Latvia,,,,,,,,,,,,26/03/2020
+40,Aizkraukles slimnīca,,56.60315,25.25425,Bērzu iela,5,LV-5101,Aizkraukle,LV,Latvia,,,,,,,,,,,,26/03/2020
+41,Limbažu slimnīca,,57.5154842,24.717177,Klostera iela,3,LV-4001,Limbaži,LV,Latvia,,,,,,,,,,,,26/03/2020
+42,Ludzas medicīnas centrs,,56.54285,27.71407,Raiņa iela,43,LV-5701,Ludza,LV,Latvia,,,,,,,,,,,,26/03/2020
+43,Rīgas rajona slimnīca (Siguldas slimnīca),,57.15672,24.84432,Lakstīgalas iela,13,LV-2150,Sigulda,LV,Latvia,,,,,,,,,,,,26/03/2020
+44,Bauskas slimnīca,,56.40885,24.19166,Dārza iela,7,LV-3901,Bauska,LV,Latvia,,,,,,,,,,,,26/03/2020
