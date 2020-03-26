@@ -1,4 +1,4 @@
-# Healthcare services
+# Healthcare services in Europe
 
 Geospatial datasets on main healthcare services in European countries, published by [Eurostat](https://ec.europa.eu/eurostat/).
 
