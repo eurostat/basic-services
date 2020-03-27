@@ -895,6 +895,17 @@ CH_355,GSMN Neuchâtel SA,La Chaux-de-Fonds,47.11363,6.83195,Chasseral 20,,2300,
 CH_356,Cereneo Schweiz AG Neurorehabilitationsklinik,Cereneo Schweiz AG,47.01489,8.47808,Seestrasse 18,,6354,Vitznau,CH,Switzerland,,,,,,,,,,,01/01/2017,27/03/2020
 CH_357,Geburtshaus Basel,Geburtshaus Basel,47.54927,7.57917,Schweizergasse 8,,4054,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,27/03/2020
 CH_358,Geburtshaus Maternité Alpine,Geburtshaus Maternité Alpine,46.56062,7.37394,Eggetlistrasse 5a,,3770,Zweisimmen,CH,Switzerland,,,,,,,,,,,01/01/2017,27/03/2020
+CY_1,Nicosia/Lefkosia General Hospital,,35.127389,33.377017,,,49HG+2R," Strovolos",CY,Cyprus,,514,,,General,public,,+357 22 603000,,,01/01/2017,27/03/2020
+CY_2,Archbishop Makarios III Hospital Nicosia,,35.152294,33.357779,,,5925+W4,Nicosia,CY,Cyprus,,217,,,Child and Mother Care Hospital,public,,22405000,,,01/01/2017,27/03/2020
+CY_3,Limassol Old Hospital,,34.679398,33.037800,,,M2HP+PX,Limassol,CY,Cyprus,,,,,,public,,25305333,,moh.gov.cy,01/01/2017,27/03/2020
+CY_4,Limassol General Hospital,,34.706201,32.984410,,,PX4M+HC,Kato Polemidia,CY,Cyprus,,422,,,General,public,,+357 25 801100,,moh.gov.cy,01/01/2017,27/03/2020
+CY_5,Larnaca General Hospital,,34.921266,33.604466,,,WJC4+F2,Larnaca,CY,Cyprus,,201,,,General,public,,+357 24 800500,,moh.gov.cy,01/01/2017,27/03/2020
+CY_6,Paphos General Hospital,,34.788966,32.445741,,,QCQW+J8,Paphos,CY,Cyprus,,157,,,General,public,,+357 26 803100,,moh.gov.cy,01/01/2017,27/03/2020
+CY_7,Famagusta/ Ammochostos General Hospital,,35.062554,33.971162,,,3X7C+2P,Paralimni,CY,Cyprus,,97,,,General,,,+357 23 200000,,moh.gov.cy,01/01/2017,27/03/2020
+CY_8,Famagusta Life Hospital,,35.126954,33.924474,,,4WGF+RQ,Famagusta,CY,Cyprus,,,,,,,,+90 392 444 11 33,,magusayasam.com,01/01/2017,27/03/2020
+CY_9,Kyperounda Rural Hospital,,34.951005,32.952322,,,XX22+CW,Kyperounta,CY,Cyprus,,,,,Rural,,,,,https://www.moh.gov.cy/moh/kph.nsf/index_gr/index_gr?opendocument,01/01/2017,27/03/2020
+CY_10,Evangelismos Polis�Medical Centre,,35.033866,32.427246,Arsinois,15,8820,Polis Chrysoschous,CY,Cyprus,,,,,Rural,,,+357 26 323434,,https://www.moh.gov.cy/moh/pph/pph.nsf/contactus_en/contactus_en?OpenDocument,01/01/2017,27/03/2020
+CY_11,Athalassa Mental Health Hospital,,35.129466,33.375084,,,,Strovolos,CY,Cyprus,,,,,Psychiatric,,,,,,01/01/2017,27/03/2020
 DE_771077,Josephs-Hospital Warendorf,,51.960420529706,8.002352893336,Am Krankenhaus,2,48231,Warendorf,DE,Germany (until 1990 former territory of the FRG),,,,,standort,,,,,,01/01/2020,27/03/2020
 DE_771770,Hauptstandort,,51.960538935624,12.09354137759,Friedrich-Naumann-Straße,53,39261,Zerbst/Anhalt,DE,Germany (until 1990 former territory of the FRG),,,,,standort,,,,,,01/01/2020,27/03/2020
 DE_771997,Evangelisches Krankenhaus Witten gGmbH,,51.445604014753,7.343875944598,Pferdebachstraße,27,58455,Witten,DE,Germany (until 1990 former territory of the FRG),,,,,standort,,,,,,01/01/2020,27/03/2020
