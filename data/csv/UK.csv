@@ -318,7 +318,7 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 317,Royston Hospital,,52.04084396,-2.18E-02,,,SG8 9EN,Royston,UK,United Kingdom,,,,,Hospital,public,,,,,,27/03/2020
 318,Saffron Walden Community Hospital,,52.02357101,0.256233364,,,CB11 3HY,Saffron Walden,UK,United Kingdom,,,,,Hospital,public,,,,,,27/03/2020
 319,Wellington Community Hospital,,50.97667694,-3.227399349,,,TA21 8QQ,Wellington,UK,United Kingdom,,,,,Hospital,public,,1823662663,,http://www.sompar.nhs.uk/our_services/adult_services/hospitals/wellington_hospital,,27/03/2020
-320,Chard  Community Hospital,,50875,-2.952359438,,,TA20 1NF,Chard,UK,United Kingdom,,,,,Hospital,public,,1460238220,,http://www.sompar.nhs.uk/what-we-do/community-hospitals/,,27/03/2020
+320,Chard  Community Hospital,,50.875,-2.952359438,,,TA20 1NF,Chard,UK,United Kingdom,,,,,Hospital,public,,1460238220,,http://www.sompar.nhs.uk/what-we-do/community-hospitals/,,27/03/2020
 321,Minehead Community Hospital,,51.20011902,-3.461884022,,,TA24 6DF,Minehead,UK,United Kingdom,,,,,Hospital,public,,1643701701,,http://www.sompar.nhs.uk/our_services/adult_services/hospitals/minehead_hospital,,27/03/2020
 322,Williton Community Hospital,,51.1628952,-3.323194981,,,TA4 4RA,Taunton,UK,United Kingdom,,,,,Hospital,public,,1984635600,,http://www.sompar.nhs.uk/our_services/adult_services/hospitals/williton_hospital,,27/03/2020
 323,Shepton Mallet Community Hospital,,51.19057846,-2.562471867,,,BA4 4PG,Shepton Mallet,UK,United Kingdom,,,,,Hospital,public,,1749342931,,http://www.sompar.nhs.uk/our_services/adult_services/hospitals/shepton_mallet_hospital,,27/03/2020
@@ -1471,7 +1471,7 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 1470,St Margaret's Hospital,,56.29254,-3.71709,,,PH3 1JH,,UK,United Kingdom,,,,,,,,,,,,27/03/2020
 1471,Aberfeldy Cottage Hospital,,56.6182485,-3.8580813,,,PH15 2DH,,UK,United Kingdom,,,,,,,,,,,,27/03/2020
 1472,Blairgowrie & Rattray Cottage Hospital,,56.58589,-3.34479,,,PH10 6EE,,UK,United Kingdom,,,,,,,,,,,,27/03/2020
-1473,Murray Royal Hospital,,56399,-3.41,,,PH2 7BH,,UK,United Kingdom,,,,,,,,,,,,27/03/2020
+1473,Murray Royal Hospital,,56.399,-3.41,,,PH2 7BH,,UK,United Kingdom,,,,,,,,,,,,27/03/2020
 1474,Scone Day Hospital,,56.420676,-3.409358,,,PH2 6LE,,UK,United Kingdom,,,,,,,,,,,,27/03/2020
 1475,Arbroath Infirmary,,56.5545293,-2.5968945,,,DD11 2AT,,UK,United Kingdom,,,,,,,,,,,,27/03/2020
 1476,Brechin Infirmary,,56.7340929,-2.6520274,,,DD9 7AN,,UK,United Kingdom,,,,,,,,,,,,27/03/2020
@@ -1585,7 +1585,7 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 1584,North Wales Cancer Treatment Centre,,53.271745,-3.496383,,,LL18 5UJ,,UK,United Kingdom,,,,,,,,,,http://www.wales.nhs.uk/sitesplus/861/directory/hospitals/91,,27/03/2020
 1585,Rookwood Hospital,,51.494372,-3.225151,,,CF5 2YN,,UK,United Kingdom,,,,,,,,,,http://www.wales.nhs.uk/sitesplus/864/directory/hospitals/167,,27/03/2020
 1586,University Dental Hospital,,51.506717,-3.189401,,,CF14 4XW,,UK,United Kingdom,,,,,,,,,,http://www.wales.nhs.uk/sitesplus/864/directory/hospitals/169,,27/03/2020
-1587,Mold Community Hospital,,53.169523,-3148,,,CH7 1XG,,UK,United Kingdom,,,,,,,,,,http://www.wales.nhs.uk/sitesplus/861/page/42944,,27/03/2020
+1587,Mold Community Hospital,,53.169523,-3.148,,,CH7 1XG,,UK,United Kingdom,,,,,,,,,,http://www.wales.nhs.uk/sitesplus/861/page/42944,,27/03/2020
 1588,Ysbyty Alltwen,,52.941312,-4.150401,,,LL49 9AQ,,UK,United Kingdom,,,,,,,,,,http://www.wales.nhs.uk/sitesplus/861/page/41583,,27/03/2020
 1589,Ysbyty Aneurin Bevan,,51.768122,-3.202506,,,NP23 6GL,,UK,United Kingdom,,,,,,,,,,http://www.wales.nhs.uk/sitesplus/866/directory/hospitals/208,,27/03/2020
 1590,Ysbyty Cwm Cynon,,51.686851,-3.392467,,,CF45 4BZ,,UK,United Kingdom,,,,,,,,,,http://www.wales.nhs.uk/sitesplus/865/page/41150,,27/03/2020

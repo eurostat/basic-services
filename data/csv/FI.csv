@@ -13,7 +13,7 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 40307,Vaasan keskussairaala/Centralsjukhuset i Vasa,,63.0981102,21.61980057,,,65130,Vaasa,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,27/03/2020
 40307,Psykiatrian yksikkö/Huutoniemen sairaala,,63.0981102,21.61980057,,,65320,Vaasa,FI,Finland,,,,,"Hospital, Home Care",,,,,,01/01/19,27/03/2020
 40308,Ålands centralsjukhus,,60.10160065,19.94192314,,,22111,Maarianhamina,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,27/03/2020
-40310,Keroputaan sairaala,,65865,24.18444,,,95410,Tornio,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,27/03/2020
+40310,Keroputaan sairaala,,65.865,24.18444,,,95410,Tornio,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,27/03/2020
 40310,Länsi-Pohjan keskussairaala,,65.73415,24.55625,,,94100,Kemi,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,27/03/2020
 40311,Muurolan sairaala,,66.37375,25.37065,,,97145,Rovaniemi,FI,Finland,,,,,other hospital,,,,,,01/01/19,27/03/2020
 40311,Lapin keskussairaala,,66.49835968,25.70528984,,,96101,Rovaniemi,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,27/03/2020
@@ -24,7 +24,7 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 40314,Kymenlaakson keskussairaala,,60.47888,26.91253,,,48210,Kotka,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,27/03/2020
 40315,Keski-Pohjanmaan keskussairaala,,63.84651,23.11217,,,67200,Kokkola,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,27/03/2020
 40316,Kainuun keskussairaala,,64.21462,27.73011,,,87140,Kajaani,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,27/03/2020
-40317,Seinäjoen sairaala,,62771,22.82085,,,60220,Seinäjoki,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,27/03/2020
+40317,Seinäjoen sairaala,,62.771,22.82085,,,60220,Seinäjoki,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,27/03/2020
 40317,Ähtärin sairaala,,62.5542,24.07154,,,63700,Ähtäri,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,27/03/2020
 40317,Seinäjoen keskussairaala,,62.76917,22.83343,,,60220,Seinäjoki,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,27/03/2020
 40318,Päijät-Hämeen keskussairaala,,60.99271,25.56869,,,15850,Lahti,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,27/03/2020
@@ -142,7 +142,7 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 60827,Alavuden terveyskeskus ja vuodeosasto,,62.58669,23.62773,,,63300,Alavus,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,27/03/2020
 60827,Kuntoutuskeskus Otsonlinna,,62.55465,24.07115,,,63700,Ähtäri,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,27/03/2020
 60828,Mänttä-Vilppulan terveyskeskus,,62.03501,24.61221,,,35800,Mänttä-Vilppula,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,27/03/2020
-60831,Caritas sairaala,,65.0035,25477,,,90150,Oulu,FI,Finland,,,,,Private hospital (PTH),,,,,,01/01/19,27/03/2020
+60831,Caritas sairaala,,65.0035,25.477,,,90150,Oulu,FI,Finland,,,,,Private hospital (PTH),,,,,,01/01/19,27/03/2020
 60832,Terveystalo Varkaus,,62.3293,27.89114,,,78300,Varkaus,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,27/03/2020
 60833,Terveystalo Kokkola,,63.8389,23.12908,,,67100,Kokkola,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,27/03/2020
 60834,Sulkavan terveysasema,,61.79002,28.37689,,,58700,Sulkava,FI,Finland,,,,,"The Health Center Health Center, Health Center inpatient, hospital",,,,,,01/01/19,27/03/2020
@@ -163,7 +163,7 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 60858,Pihlajalinna Seinäjoki,,62.79145,22.84014,,,60100,Seinäjoki,FI,Finland,,,,,"Erikoislääk. Desk, Surgery, Medical service",,,,,,01/01/19,27/03/2020
 60861,Sammakkotalo,,65.00912,25.4733,,,90100,Oulu,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,27/03/2020
 61210,Suomen Terveystalo/Pori,,61.48607,21.79408,,,28100,Pori,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,27/03/2020
-62677,Väestöliiton klinikat,,60.17073,24934,,,100,Helsinki,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,27/03/2020
+62677,Väestöliiton klinikat,,60.17073,24.934,,,100,Helsinki,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,27/03/2020
 63239,"DiakonTerveys, Kuntoutuskeskus",,61.47462,21.77457,,,28500,Pori,FI,Finland,,,,,"Private hospital (PTH), Rehabilitation Center",,,,,,01/01/19,27/03/2020
 65953,Diakonissalaitoksen sairaala,,60.18532,24.94109,,,530,Helsinki,FI,Finland,,,,,Other private hospital,,,,,,01/01/19,27/03/2020
 66260,Puolangan terveysasema ja hoivaosasto,,64.86871,27.66548,,,89200,Puolanka,FI,Finland,,,,,"The Health Center Health Center, Health Center inpatient, hospital",,,,,,01/01/19,27/03/2020
@@ -187,7 +187,7 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 90200,Kaarinan terveyskeskus,,60.4113733,22.3844849,,,20781,Kaarina,FI,Finland,,,,,"The health center, health center inpatient, hospital",,,,,,01/01/19,27/03/2020
 90237,Itäisen ja keskustan alueen terveysasemat ja vuodeosasto,,60.40417099,25.1051693,,,4200,Kerava,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,27/03/2020
 90272,Kristiinankaupungin perusturva,,62.27630615,21.40052986,,,64101,Kristiinankaupunki,FI,Finland,,,,,"The health center, health center inpatient, hospital, home care",,,,,,01/01/19,27/03/2020
-90280,Tuusniemen terveysasema,,62812,28.48894,,,71200,Tuusniemi,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,27/03/2020
+90280,Tuusniemen terveysasema,,62.812,28.48894,,,71200,Tuusniemi,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,27/03/2020
 90280,Kuopion tk / Harjulan sairaala,,62.89685,27.63655,,,70210,Kuopio,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,27/03/2020
 90280,Vehmersalmen terveyskeskus,,62.80937,27.96892,,,71310,Kuopio,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,27/03/2020
 90280,Karttulan terveysasema,,62.90247,26.95829,,,72100,Kuopio,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center, Home Health Care",,,,,,01/01/19,27/03/2020

@@ -33,7 +33,7 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 509-50509-3,OSPEDALE DI SAN BONIFACIO,,45.40011,11.27863,VIA CIRCONVALLAZIONE,,,SAN BONIFACIO,IT,Italy,,317,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 114-160158-4,OSPEDALE SAN PAOLO (PLESSO CORATO),,41.1468474,16.4240905,"VIA RUVO, 108",,,CORATO,IT,Italy,,90,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 509-50509-4,OSPEDALE DI MARZANA,,45.43377,10.98523,"PIAZZA RENATO LAMBRANZI, 1 - MARZANA",,,VERONA,IT,Italy,,86,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
-114-160158-3,OSPEDALE SAN PAOLO (PLESSO MOLFETTA),,41176,16.57726,PROVINCIALE MOLFETTA-TERLIZZI,,,MOLFETTA,IT,Italy,,101,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
+114-160158-3,OSPEDALE SAN PAOLO (PLESSO MOLFETTA),,41.176,16.57726,PROVINCIALE MOLFETTA-TERLIZZI,,,MOLFETTA,IT,Italy,,101,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 206-120122-,C.D.C. SAN RAFFAELE ROCCA DI PAPA,,41.74707,12.69832,VIA ARICCIA 16,,,ROCCA DI PAPA,IT,Italy,,95,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 208-10665-,CASA DI CURA VILLA CRISTINA,,45.8153,8.52433,CASE SPARSE POGGIO RADIOSO A STRADA DORS,,,NEBBIUNO,IT,Italy,,110,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 201-41001-,OSPEDALE CENTRALE DI BOLZANO,,46.49888,11.30881,"VIA L. BOEHLER, 5",,,BOLZANO,IT,Italy,,738,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
@@ -80,7 +80,7 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 202-190308-,P.O.MADDALENA RAIMONDI,,37.4768582,13.9819443,Via Forlanini 5,,,SAN CATALDO,IT,Italy,,24,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 103-70051-2,EVANGELICO-SAN CARLO VOLTRI,,44.43019,8.74572,"Piazzale Giannasso, 4",,,GENOVA,IT,Italy,,114,,,"Ospedale classificato o assimilato ai sensi dell'art. 1, ultimo comma, della Legge 132/1968",,,,,,01/01/20,27/03/2020
 203-90625-,OSPEDALE CIVILE DI CASTEL DEL PIANO,,42.89083,11.53536,VIA DANTE ALIGHIERI,,,CASTEL DEL PIANO,IT,Italy,,36,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
-103-70051-1,EVANGELICO Internazionale CASTELLETTO,,44414,8.94272,"Salita sup. San Rocchino, 31 A",,,GENOVA,IT,Italy,,13,,,"Ospedale classificato o assimilato ai sensi dell'art. 1, ultimo comma, della Legge 132/1968",,,,,,01/01/20,27/03/2020
+103-70051-1,EVANGELICO Internazionale CASTELLETTO,,44.414,8.94272,"Salita sup. San Rocchino, 31 A",,,GENOVA,IT,Italy,,13,,,"Ospedale classificato o assimilato ai sensi dell'art. 1, ultimo comma, della Legge 132/1968",,,,,,01/01/20,27/03/2020
 321-30125-,CASA DI CURA AMBROSIANA SPA-CESANO B.,,45.44929,9.09339,PIAZZA MONS. MONETA 1,,,CESANO BOSCONE,IT,Italy,,109,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 207-150387-,OSPEDALE DI ROCCADASPIDE,,40.42597,15.19112,VIA SANTA PALOMBA,,,ROCCADASPIDE,IT,Italy,,66,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 321-30367-,OSPEDALE S. GIUSEPPE - MILANO,,45.46301,9.17184,VIA S. VITTORE 12,,,MILANO,IT,Italy,,323,,,"Ospedale classificato o assimilato ai sensi dell'art. 1, ultimo comma, della Legge 132/1968",,,,,,01/01/20,27/03/2020
@@ -169,7 +169,7 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 204-190319-,P. O. 'UMBERTO I',,37.55009,14.30066,C.da Ferrante,,,ENNA,IT,Italy,,251,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 910-170910-,C.R.O.B. - I.R.C.C.S.,,40.91875076293945,15.668530464172363,Via Padre Pio 1,,,RIONERO IN VULTURE,IT,Italy,,87,,,IRCCS pubblico,,,,,,01/01/20,27/03/2020
 206-150110-,CASA DI CURA MARIA ROSARIA SPA,,40.7476,14.49478,VIA COLLE S. BARTOLOMEO 50,,,POMPEI,IT,Italy,,100,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
-205-190327-,P.O. 'SS. SALVATORE' MISTRETTA,,37929,14.36062,VIA ANNA SALAMONE,,,MISTRETTA,IT,Italy,,60,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
+205-190327-,P.O. 'SS. SALVATORE' MISTRETTA,,37.929,14.36062,VIA ANNA SALAMONE,,,MISTRETTA,IT,Italy,,60,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 508-50047-,CASA DI CURA VILLA MARGHERITA,,45.51335,11.54432,"VIA COSTACOLONNA, 6",,,ARCUGNANO,IT,Italy,,107,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 717-30082-,P.O. TRABATTONI RONZONI DI SEREGNO,,45.65374,9.20494,VIA VERDI 2,,,SEREGNO,IT,Italy,,85,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 201-120072-,OSPEDALE SAN GIOVANNI CALIBITA - FBF,,41.89071,12.47772,"VIA PONTE QUATTRO CAPI, 39",,,ROMA,IT,Italy,,263,,,"Ospedale classificato o assimilato ai sensi dell'art. 1, ultimo comma, della Legge 132/1968",,,,,,01/01/20,27/03/2020
@@ -284,7 +284,7 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 205-180059-,OSPEDALE CIVILE LOCRI,,38.24193,16.23518,C/DA VERGA,,,LOCRI,IT,Italy,,177,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 722-30163-,PRESIDIO OSPEDALIERO DI ISEO,,45.6633533,10.0517689,"VIA GIARDINI GARIBALDI,7",,,ISEO,IT,Italy,,94,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 201-200044-,CASA DI CURA VILLA ELENA,,39.22623,9.12539,VIA DANTE 133,,,CAGLIARI,IT,Italy,,74,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
-201-200020-,P.O. San Camillo,,40026,9.10233,Corso  IV Novembre,,,SORGONO,IT,Italy,,38,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
+201-200020-,P.O. San Camillo,,40.026,9.10233,Corso  IV Novembre,,,SORGONO,IT,Italy,,38,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 204-150081-,CASA DI CURA CLINIC CENTER SpA,,40.83695,14.18719,"VIALE MARIA BAKUNIN, 171",,,NAPOLI,IT,Italy,,250,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 327-30259-,CASA DI CURA S. CLEMENTE - MANTOVA,,45.14707,10.77125,V.LE POMPILIO 65,,,MANTOVA,IT,Italy,,91,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 201-150149-,CASA DI CURA VILLA DEI PLATANI,,40.91184,14.77494,"Via Carmelo Errico, 2",,,AVELLINO,IT,Italy,,160,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
@@ -424,8 +424,8 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 208-190550-,C. DI CURA 'VILLA AZZURRA' - GESIN SRL,,37.1019,15.27108,VIA CASSARO S.N.,,,SIRACUSA,IT,Italy,,39,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 202-90205-,CASA DI CURA S.ZITA,,43.8456,10.50131,VIA DEL PANIFICIO 13,,,LUCCA,IT,Italy,,66,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 202-100807-1,STABILIMENTO OSPEDALIERO DI NARNI,,42.51688,12.52201,"Via Cappuccini Nuovi, 3",,,NARNI,IT,Italy,,79,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
-203-130022-,CASA DI CURA PIERANGELI,,42.46253,14201,Piazza L.PIERANGELI,,,PESCARA,IT,Italy,,161,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
-201-150140-,OSPEDALE ARIANO IRPINO,,41.15362,15083,Corso Vittorio Emanuele,,,ARIANO IRPINO,IT,Italy,,129,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
+203-130022-,CASA DI CURA PIERANGELI,,42.46253,14.201,Piazza L.PIERANGELI,,,PESCARA,IT,Italy,,161,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
+201-150140-,OSPEDALE ARIANO IRPINO,,41.15362,15.083,Corso Vittorio Emanuele,,,ARIANO IRPINO,IT,Italy,,129,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 721-30162-,PRESIDIO OSPEDALIERO GARDONE V.T.,,45.6767412,10.1841773,VIA GIOVANNI XXIII N.4,,,GARDONE VAL TROMPIA,IT,Italy,,144,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 203-190313-,S.Giovanni Di Dio e S.Isidoro Giarre,,37.72435,15.16932,Via Carlo Forlanini contrada Coste,,,GIARRE,IT,Italy,,23,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 203-190555-,CASA DI CURA MONS. G. CALACIURA Cenacolo,,37.648170471191406,14.858209609985352,SPBiancavillaMontalto Cda CrocealVallone,,,BIANCAVILLA,IT,Italy,,40,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
@@ -520,7 +520,7 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 203-120606-,CASA DI CURA S. RAFFAELE PORTUENSE,,41.8649,12.44962,"VIA B. RAMAZZINI, 45",,,ROMA,IT,Italy,,96,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 207-150175-,Campolongo Hospital S.P.A.,,40.53633,14.91786,VIA MARINA 8/12  LOC CAMPOLONGO,,,EBOLI,IT,Italy,,260,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 205-190716-,CASA DI CURA CAPPELLANI GIOMI S.P.A.,,38.21439,15.56122,VIALE REG.ELENA N.335,,,MESSINA,IT,Italy,,47,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
-202-130030-,P.O. ATESSA 'SAN CAMILLO DE LELLIS',,42.07204,14448,Via Ianico,,,ATESSA,IT,Italy,,44,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
+202-130030-,P.O. ATESSA 'SAN CAMILLO DE LELLIS',,42.07204,14.448,Via Ianico,,,ATESSA,IT,Italy,,44,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 105-80229-,OSPEDALE PRIVATO ACCREDITATO VILLA LAURA,,44.47909,11.38526,VIA EMILIA LEVANTE 137,,,BOLOGNA,IT,Italy,,101,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 202-90203-,CASA DI CURA MD BARBANTINI,,43.837122,10.29002,"VIA FOSSO GUIDARIO, 89  LOC. BICCHIO",,,VIAREGGIO,IT,Italy,,32,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 910-150910-,ISTITUTO NAZIONALE TUMORI DI NAPOLI,,40.8632395595783,14.2198592928747,VIA MARIANO SEMMOLA,,,NAPOLI,IT,Italy,,260,,,IRCCS pubblico,,,,,,01/01/20,27/03/2020
@@ -599,7 +599,7 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 902-150902-3,P.O. S.S. Annunziata,,40.85043,14.26514,Via Egiziaca a Forcella 18,,,NAPOLI,IT,Italy,,8,,,Azienda Ospedaliera,,,,,,01/01/20,27/03/2020
 902-150902-2,Ospedale Pausilipon,,40.81237,14.20662,VIA POSILLIPO 226,,,NAPOLI,IT,Italy,,58,,,Azienda Ospedaliera,,,,,,01/01/20,27/03/2020
 325-30147-,POLICLINICO SAN MARCO - OSIO SOTTO,,45.60464,9.58736,CORSO EUROPA 7,,,OSIO SOTTO,IT,Italy,,290,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
-203-150010-,PRESIDIO OSPEDALIERO 'SAN ROCCO',,41.24703,13935,VIA SESSA MIGNANO,,,SESSA AURUNCA,IT,Italy,,100,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
+203-150010-,PRESIDIO OSPEDALIERO 'SAN ROCCO',,41.24703,13.935,VIA SESSA MIGNANO,,,SESSA AURUNCA,IT,Italy,,100,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 206-190330-,P.O. DEI BIANCHI CORLEONE,,37.81822,13.29732,VIA DON G. COLLETTO,,,CORLEONE,IT,Italy,,56,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 202-100602-,SERVIZIO PSICHIATRICO DIAGNOSI E CURA,,42.5553419,12.655753,"Via Tristano di Joannuccio, 2",,,TERNI,IT,Italy,,11,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 114-80251-,VILLA SALUS S.R.L.,,44.10136,12.52017,VIALE PORTO PALOS 93,,,RIMINI,IT,Italy,,40,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
@@ -652,8 +652,8 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 201-120328-,CASA DI CURA PRIVATA `DON CARLO GNOCCHI`,,41.93827,12.46256,VIA MARESCIALLO CAVIGLIA 30,,,ROMA,IT,Italy,,20,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 201-190301-,P.O. S. GIOVANNI DI DIO,,37.35788,13.60669,C/DA CONSOLIDA,,,AGRIGENTO,IT,Italy,,278,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 204-150442-,PRESIDIO OSPEDALIERO OSPEDALE DEL MARE,,40.8501500005289,14.3437700017959,Via Enrico Russo,,,NAPOLI,IT,Italy,,265,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
-203-90618-,OSPEDALE DEL CASENTINO,,43698,11.81939,VIALE FILIPPO TURATI,,,BIBBIENA,IT,Italy,,61,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
-104-80218-,VILLA PINETA S.R.L.,,41.78712,12387,"VIA GAIATO, 127",,,PAVULLO NEL FRIGNANO,IT,Italy,,104,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
+203-90618-,OSPEDALE DEL CASENTINO,,43.698,11.81939,VIALE FILIPPO TURATI,,,BIBBIENA,IT,Italy,,61,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
+104-80218-,VILLA PINETA S.R.L.,,41.78712,12.387,"VIA GAIATO, 127",,,PAVULLO NEL FRIGNANO,IT,Italy,,104,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 321-30352-,POLO GERIATRICO RIABILITATIVO-CINISELLO,,45.55811,9.2387,"VIA DEI LAVORATORI, 133",,,CINISELLO BALSAMO,IT,Italy,,83,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 321-30110-,CASA DI CURA S. GIOVANNI - MILANO,,45.47474,9.12903,VIA CIVITALI 71,,,MILANO,IT,Italy,,49,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 204-60047-2,PRESIDIO OSPEDAL. SMM - SEDE CIVIDALE,,46.09259,13.43721,"P.LE DELL'OSPEDALE, 2",,,CIVIDALE DEL FRIULI,IT,Italy,,5,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
@@ -730,7 +730,7 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 901-150901-,AZIENDA OSPEDALIERA 'A. CARDARELLI',,40.86502,14.2264,VIA A.CARDARELLI 9,,,NAPOLI,IT,Italy,,872,,,Azienda Ospedaliera,,,,,,01/01/20,27/03/2020
 201-140003-2,OSPEDALE CARACCIOLO AGNONE,,45.79272,12.68121,"VIA MARCONI, n� 22",,,AGNONE,IT,Italy,,26,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 201-140003-1,OSPEDALE VENEZIALE- ISERNIA,,41.58003,14.2169,VIA S. IPPOLITO n�1,,,ISERNIA,IT,Italy,,154,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
-114-160140-,CASA DI CURA ANTHEA,,41.10429,16857,VIA C. ROSALBA 35/37,,,BARI,IT,Italy,,91,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
+114-160140-,CASA DI CURA ANTHEA,,41.10429,16.857,VIA C. ROSALBA 35/37,,,BARI,IT,Italy,,91,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 727-30191-,OSPEDALE S.MARTINO - MEDE,,45.09156,8.73079,VIALE DEI MILLE 23,,,MEDE,IT,Italy,,76,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 201-190305-,P.O. GIOVANNI PAOLO II,,37.52172,13.07622,VIA POMPEI - C. DA SENIAZZA,,,SCIACCA,IT,Italy,,230,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 301-10011-,TORINO NORD EMERGENZA SAN GIOVANNI BOSCO,,45.09683,7.70074,PIAZZA DEL DONATORE DI SANGUE 3,,,TORINO,IT,Italy,,371,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
@@ -834,7 +834,7 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 203-90624-2,OSPEDALE DI ORBETELLO,,42.44615,11.22759,LUNGOLAGO DEI PESCATORI,,,ORBETELLO,IT,Italy,,66,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 201-200012-,P.O.  GIOVANNI PAOLO II  OLBIA,,40.91374,9.47582,VIA BAZZONI SIRCANA,,,OLBIA,IT,Italy,,179,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 109-80068-4,"OSPEDALE ""MAZZOLANI VANDINI"" ARGENTA",,44.61188,11.8359,VIA NAZIONALE PONENTE 5,,,ARGENTA,IT,Italy,,109,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
-710-30901-1,OSPEDALE DI CIRCOLO E FONDAZIONE MACCHI,,45808,8.83731,VIALE LUIGI BORRI 57,,,VARESE,IT,Italy,,603,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
+710-30901-1,OSPEDALE DI CIRCOLO E FONDAZIONE MACCHI,,45.808,8.83731,VIALE LUIGI BORRI 57,,,VARESE,IT,Italy,,603,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 109-80068-6,"STABILIMENTO OSPEDALIERO "" SS. ANNUNZIAT",,44.72412,11.29086,"VIA VICINI, 2",,,CENTO,IT,Italy,,155,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 710-30901-2,OSPEDALE F. DEL PONTE - VARESE,,45.81525,8.83427,"VIA FILIPPO DEL PONTE, 19",,,VARESE,IT,Italy,,166,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 716-30068-,PRESIDIO OSPEDALIERO DI DESIO,,45.6272797,9.1977471,VIA MAZZINI 1,,,DESIO,IT,Italy,,343,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
@@ -923,7 +923,7 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 913-180913-2,Ospedale De Lellis,,38.91965,16.58413,Viale Pio X,,,CATANZARO,IT,Italy,,60,,,Azienda Ospedaliera,,,,,,01/01/20,27/03/2020
 324-30284-,CENTRO DI RIABIL.VILLA BERETTA-COSTA M,,45.7709328,9.270418,"VIA NAZARIO SAURO, 17",,,COSTA MASNAGA,IT,Italy,,91,,,"Ospedale classificato o assimilato ai sensi dell'art. 1, ultimo comma, della Legge 132/1968",,,,,,01/01/20,27/03/2020
 206-150121-,IOS - EX CLINICA ' S. FELICE'  SRL,,40.91366,14.39936,VIA  MAURO LEONE  N.106,,,POMIGLIANO D'ARCO,IT,Italy,,40,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
-503-50098-,OSPEDALE CLASSIFICATO VILLA SALUS,,45514,12.23871,VIA TERRAGLIO 114,,,VENEZIA,IT,Italy,,217,,,"Ospedale classificato o assimilato ai sensi dell'art. 1, ultimo comma, della Legge 132/1968",,,,,,01/01/20,27/03/2020
+503-50098-,OSPEDALE CLASSIFICATO VILLA SALUS,,45.514,12.23871,VIA TERRAGLIO 114,,,VENEZIA,IT,Italy,,217,,,"Ospedale classificato o assimilato ai sensi dell'art. 1, ultimo comma, della Legge 132/1968",,,,,,01/01/20,27/03/2020
 206-120280-,C.d.C San Raffaele Montecompatri,,41.80537,12.73704,"Via S. Silvestro,67",,,MONTECOMPATRI,IT,Italy,,110,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 201-200035-,P.O. SAN MARCELLINO,,39.42121,9.5705,VIALE RINASCITA 2,,,MURAVERA,IT,Italy,,45,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 201-200011-,P.O. PAOLO MERLO LA MADDALENA,,41.21691,9.40779,VIA AMM. MAGNAGHI,,,LA MADDALENA,IT,Italy,,35,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
@@ -949,7 +949,7 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 207-150441-,Presido Ospedaliero di Agropoli,,40.34986877441406,14.992199897766113,Contrada Cammarota,,,AGROPOLI,IT,Italy,,20,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 503-50099-,CASA DI CURA POLICLINICO SAN MARCO,,45.49298,12.24837,VIA ZANOTTO 40,,,VENEZIA,IT,Italy,,173,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 506-50506-1,OSPEDALE DI CITTADELLA,,45.64618,11.78568,VIA RIVA OSPEDALE,,,CITTADELLA,IT,Italy,,347,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
-116-160167-,OSPEDALE  CASARANO,,40017,18.16513,VIALE FRANCESCO FERRARI,,,CASARANO,IT,Italy,,218,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
+116-160167-,OSPEDALE  CASARANO,,40.017,18.16513,VIALE FRANCESCO FERRARI,,,CASARANO,IT,Italy,,218,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 506-50506-2,OSPEDALE DI CAMPOSAMPIERO,,45.56542,11.93005,"VIA P. COSMA, 1",,,CAMPOSAMPIERO,IT,Italy,,350,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 205-10004-1,OSPEDALE MAGGIORE,,45.0109578,7.8231595,VIA DE MARIA 1,,,CHIERI,IT,Italy,,147,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 502-50502-4,OSPEDALE DI  CONEGLIANO,,45.8812387,12.2899527,"VIA BRIGATA BISAGNO, 4",,,CONEGLIANO,IT,Italy,,314,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
@@ -1018,16 +1018,16 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 204-150418-2,PO LORETO MARE,,40.84675,14.27402,"VIA A. VESPUCCI, 86",,,NAPOLI,IT,Italy,,222,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 206-120082-,VILLA DELLE QUERCE-POLIGEST,,41.71402,12.71753,VIA DELLE VIGNE  N[ 19   NEMI,,,NEMI,IT,Italy,,243,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 201-200031-,P.O. SS. TRINITA',,39.23604,9.10783,VIA IS MIRRIONIS 92,,,CAGLIARI,IT,Italy,,339,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
-201-60046-,Presidio Osp. Cattinara e Maggiore di Ts,,45.65649,13801,Via Giovanni Sai 1-3,,,TRIESTE,IT,Italy,,751,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
+201-60046-,Presidio Osp. Cattinara e Maggiore di Ts,,45.65649,13.801,Via Giovanni Sai 1-3,,,TRIESTE,IT,Italy,,751,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 102-70211-2,OSPEDALE SANTA CORONA,,44.14199,8.2719,"VIA XXV APRILE, 38",,,PIETRA LIGURE,IT,Italy,,382,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 106-160101-,CASA DI CURA 'SALUS' - BRINDISI,,40.60504,17.88394,"VIA APPIA, 366",,,BRINDISI,IT,Italy,,60,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
-327-30353-,OSPEDALE CIVILE DI VOLTA MANTOVANA,,45.32354,10656,"VIA TONELLO, 5",,,VOLTA MANTOVANA,IT,Italy,,66,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
+327-30353-,OSPEDALE CIVILE DI VOLTA MANTOVANA,,45.32354,10.656,"VIA TONELLO, 5",,,VOLTA MANTOVANA,IT,Italy,,66,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 301-10893-,PRESIDIO SANITARIO SAN CAMILLO,,45.05699,7.70644,STRADA COMUNALE SANTA MARGHERITA 136,,,TORINO,IT,Italy,,120,,,Istituto qualificato presidio della U.S.L.,,,,,,01/01/20,27/03/2020
 102-70211-1,OSPEDALE SANTA MARIA MISERICORDIA,,44.04702461188497,8.220119464469144,"VIALE MARTIRI DELLA FOCE, 40",,,ALBENGA,IT,Italy,,100,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 203-60045-3,Sede di Gemona,,46.2870477,13.1250123,"via Rodolone, 2",,,GEMONA DEL FRIULI,IT,Italy,,11,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 201-110002-1,STABILIMENTO DI SENIGALLIA,,43.71442,13.21092,"VIA CELLINI, 1",,,SENIGALLIA,IT,Italy,,255,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 203-60045-2,Sede di Tolmezzo,,46.40502,13.00655,"via Morgagni, 18",,,TOLMEZZO,IT,Italy,,180,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
-201-110002-2,STABILIMENTO DI JESI,,43528,13.22687,VIA ALDO MORO 25,,,JESI,IT,Italy,,278,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
+201-110002-2,STABILIMENTO DI JESI,,43.528,13.22687,VIA ALDO MORO 25,,,JESI,IT,Italy,,278,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 201-110002-4,STABILIMENTO DI FABRIANO,,43.3396833,12.9078151,"VIA STELLUTI SCALA, 26",,,FABRIANO,IT,Italy,,168,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 201-110002-6,STABILIMENTO DI CINGOLI,,43.37178,13.21754,"VIALE  DELLA CARITA', 11",,,CINGOLI,IT,Italy,,30,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 203-60045-1,Sede di San Daniele,,46.1506500000053,13.0077750000509,via Trento trieste,,,SAN DANIELE DEL FRIULI,IT,Italy,,166,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
@@ -1064,7 +1064,7 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 724-30908-,OSPEDALE DI CREMONA,,45.12859,10.05299,VIA LARGO PRIORI 1,,,CREMONA,IT,Italy,,548,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 905-120905-2,COMPLESSO INTEGRATO COLUMBUS (C.I.C.),,41.926751,12.4295295,L.GO MOSCATI 31/33,,,ROMA,IT,Italy,,201,,,Policlinico universitario privato,,,,,,01/01/20,27/03/2020
 202-190311-,P.O. SUOR CECILIA BASAROCCO,,37.15156,14.38548,Piazza Martiri di Nassirya,,,NISCEMI,IT,Italy,,28,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
-902-90902-,AZIENDA OSPEDALIERA UNIVERSITARIA SENESE,,43342,11.3276,V.LE BRACCI - LOC.LE SCOTTE,,,SIENA,IT,Italy,,696,,,Azienda Ospedaliera integrata con l'Universit�,,,,,,01/01/20,27/03/2020
+902-90902-,AZIENDA OSPEDALIERA UNIVERSITARIA SENESE,,43.342,11.3276,V.LE BRACCI - LOC.LE SCOTTE,,,SIENA,IT,Italy,,696,,,Azienda Ospedaliera integrata con l'Universit�,,,,,,01/01/20,27/03/2020
 901-160901-,ISTITUTO TUMORI GIOVANNI PAOLO II,,41.1057,16.85898,VIALE ORAZIO FLACCO N.65,,,BARI,IT,Italy,,118,,,IRCCS pubblico,,,,,,01/01/20,27/03/2020
 116-160063-,OSPEDALE GALLIPOLI 'SACRO CUORE DI GESU',,40.05733,18.00544,STRADA PROV.LE ALEZIO-GALLIPOLI,,,GALLIPOLI,IT,Italy,,216,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 208-190345-,P.O. UMBERTO I (EX A.O.),,37.07307,15.28276,Via Testaferrata 1,,,SIRACUSA,IT,Italy,,322,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
@@ -1109,13 +1109,13 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 326-30369-,CENTRO MEDICO RICHIEDEI-PALAZZOLO S/O,,45.60007,9.88781,"VIA SGRAZZUTTI, 1",,,PALAZZOLO SULL'OGLIO,IT,Italy,,30,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 203-190521-,CASA DI CURA CARMIDE,,37.53371,15.11282,VIA FEUDO GRANDE 13,,,CATANIA,IT,Italy,,80,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 202-150035-,CASA DI CURA SAN FRANCESCO,,41.22127,14.52628,VIALE EUROPA 21,,,TELESE TERME,IT,Italy,,57,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
-949-30949-,IRCCS IST. SCIENTIFICO DI RIABILITAZIONE,,45.43696,9266,"VIA CAMALDOLI, 64",,,MILANO,IT,Italy,,66,,,IRCCS privato,,,,,,01/01/20,27/03/2020
+949-30949-,IRCCS IST. SCIENTIFICO DI RIABILITAZIONE,,45.43696,9.266,"VIA CAMALDOLI, 64",,,MILANO,IT,Italy,,66,,,IRCCS privato,,,,,,01/01/20,27/03/2020
 204-10617-,CASA DI CURA VILLE TURINA AMIONE,,45.21912,7.63034,VIA CARLO ANGELA 1,,,SAN MAURIZIO CANAVESE,IT,Italy,,120,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 205-180076-,CASA DI CURA 'VILLA S.ANNA',,38.10365,15.64423,"VIA CROCIFISSO, 25",,,REGGIO DI CALABRIA,IT,Italy,,40,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 206-150105-,CASA DI CURA VILLA STABIA,,40.70185,14.48934,VIALE EUROPA 77,,,CASTELLAMMARE DI STABIA,IT,Italy,,120,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 202-100707-,KOS CARE Unit� Speciale Stati Vegetativi,,42.95856,12.70412,"Via dell'Ospedale, 6",,,FOLIGNO,IT,Italy,,20,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 709-30067-,OSPEDALE MAGGIORE DI LODI,,45.31582,9.50954,"VIALE SAVOIA,1",,,LODI,IT,Italy,,310,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
-103-70074-,ISTITUTO CARDIOVASCOLARE CAMOGLI,,44.35001,9159,VIA AURELIA 85,,,CAMOGLI,IT,Italy,,69,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
+103-70074-,ISTITUTO CARDIOVASCOLARE CAMOGLI,,44.35001,9.159,VIA AURELIA 85,,,CAMOGLI,IT,Italy,,69,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 114-80246-,CASA DI CURA PRIVATA SAN LORENZINO S.P.A,,44.14163,12.24555,"V. NATALE DELL'AMORE, 15",,,CESENA,IT,Italy,,105,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020
 208-190347-,OSPEDALE GENERALE DI ZONA,,37.28736,14.98292,C.DA COLLE ROGGIO - S.P. LENTINI-SCORDIA,,,LENTINI,IT,Italy,,116,,,Ospedale a gestione diretta,,,,,,01/01/20,27/03/2020
 206-190545-,CASA DI CURE COSENTINO DI KAROL  S.R.L.,,38.11115,13.36872,CORSO DEI MILLE 56,,,PALERMO,IT,Italy,,50,,,Casa di cura privata accreditata,,,,,,01/01/20,27/03/2020

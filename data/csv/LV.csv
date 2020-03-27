@@ -34,7 +34,7 @@ id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,
 34,Priekules slimnīca,,56.44195,21.58363,Aizputes iela,5,LV-3434,Priekule,LV,Latvia,,,,,,,,,,,01/01/19,27/03/2020
 35,Saldus medicīnas centrs,,56.6715206,22.491371,Slimnīcas iela,3,LV-3801,Saldus,LV,Latvia,,,,,,,,,,,01/01/19,27/03/2020
 36,Sarkanā Krusta Smiltenes slimnīca,,57.42504,25.91454,Dakteru iela,14,LV-4729,Smiltene,LV,Latvia,,,,,,,,,,,01/01/19,27/03/2020
-37,Balvu un Gulbenes slimnīcu apvienība (Gulbenē),,57.15708,26762,Upes iela,1,LV-4401,Gulbene,LV,Latvia,,,,,,,,,,,01/01/19,27/03/2020
+37,Balvu un Gulbenes slimnīcu apvienība (Gulbenē),,57.15708,26.762,Upes iela,1,LV-4401,Gulbene,LV,Latvia,,,,,,,,,,,01/01/19,27/03/2020
 38,Vidzemes slimnīca (Valkā),,57.78501285,26.01073752,Rūjienas iela,3,LV-4701,Valka,LV,Latvia,,,,,,,,,,,01/01/19,27/03/2020
 39,Līvānu slimnīca,,56.35434,26.17373,Zaļā iela,44,LV-5316,Līvāni,LV,Latvia,,,,,,,,,,,01/01/19,27/03/2020
 40,Aizkraukles slimnīca,,56.60315,25.25425,Bērzu iela,5,LV-5101,Aizkraukle,LV,Latvia,,,,,,,,,,,01/01/19,27/03/2020
