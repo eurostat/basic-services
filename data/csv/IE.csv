@@ -1,39 +1,39 @@
-id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,emergency,cap_beds,cap_prac,cap_rooms,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date
-1,Midland Regional Hospital Portlaoise,,53.03816486,-7.277122479,Dublin Road,,R32RW61,Portlaoise,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-2,Midland Regional Hospital Tullamore,,53.28237998,-7.492147556,Arden Road,,R35NY51,Tullamore,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-3,St James's Hospital Dublin,,53.33945642,-6.297759915,James's Street,,D08NHY1,Dublin,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-4,Naas General Hospital,,53.21168823,-6.662709403,Craddockstown Road,,W91AE76,Naas,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-5,The Adelaide & Meath Hospital (Tallaght Hospital) Dublin,,53.29063947,-6.378254092,,Tallaght,,Dublin,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-6,Cavan General Hospital,,54.00103938,-7.373864346,,Lisdarn,H12A5D7,Cavan,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-7,Louth County Hospital Dundalk,,53.98807774,-6.400998942,Dublin Road,,,Dundalk,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-8,Monaghan Hospital,,54.24970222,-6.975513527,,,H18NV91,Monaghan,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-9,Our Lady of Lourdes Hospital Drogheda,,53.72295154,-6.356089867,,Drogheda,A92VW28,Co. Louth,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-10,Connolly Hospital Dublin,,53.38878588,-6.369272368,Mill Road,,D15X40D,Dublin,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-11,Beaumont Hospital,,53.39234793,-6.226787027,Beaumont Road,,D09C562,Dublin,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-12,St Luke's General Hospital Kilkenny,,52.66624423,-7.263919688,Freshford Road,,R95FY71,Kilkenny,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-13,Wexford General Hospital,,52.34304567,-6.483509872,Newtown Road,,Y35y17d,Wexford,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-14,Our Lady's Hospital Navan,,53.65051407,-6.698287463,,Navan,C15RK7Y,Co. Meath,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-15,Midland Regional Hospital Mullingar,,53.53438325,-7.350259727,Longford Road,,N91NA43,Mullingar,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-16,St Columcille's Hospital,,53.24304746,-6.133561387,Bray Road,,D18V9K1,Loughlinstown,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-17,St Vincent's University Hospital,,53.31680831,-6.214380854,Nutley Lane,,D04T6F4,Dublin,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-18,St Michael's Hospital Dun Laoghaire,,53.29402001,-6.139653407,George's Street Lower,,A96P902,Dun Laoghaire,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-19,Mater Misericordiae Hospital,,53.35961251,-6.269358184,Eccles Street,,D07R2WY,Dublin,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-20,South Tipperary General Hospital,,52.35568482,-7.715434867,Western Road,,E91VY40,Clonmel,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-21,University Hospital Waterford,,52.24876521,-7.079608659,Dunmore Road,,X91ER8E,Waterford,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-22,Bantry General Hospital,,51.67617683,-9.450776234,,Carrignagat,P75DX93,Bantry,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-23,Cork University Hospital,,51.88355888,-8.511639018,,Wilton,T12DC4A,Cork,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-24,Mallow General Hospital,,52.15152569,-8.66472028,,Kilknockin,P51N288,Mallow,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-25,Ennis Hospital,,52.85130247,-8.984380443,Gort Road,,V95HN29,Ennis,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-26,Roscommon County Hospital,,53.62496119,-8.176232474,Ardsallagh Beg,,F42AX61,Co. Roscommon,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-27,Mercy University Hospital,,51.89894944,-8.483554982,Grenville Place,,T12WE28,Cork,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-28,Nenagh Hospital,,52.85785097,-8.192324339,,Tyone,E45PT86,Nenagh,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-29,Sligo Regional Hospital,,54.27437422,-8.464529911,The Mall,,F91H684,Sligo,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-30,University Hospital Galway,,53.27605156,-9.066157823,Newcastle Road,,H91YR71,Galway,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-31,Portiuncula Hospital,,53.32684672,-8.235775779,Ballinasloe,,H53T971,Co. Galway,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-32,South Infirmary Victoria University Hospital,,51.89375412,-8.464897891,Old Blackrock Road,,T12X23H,Cork,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-33,St John's Hospital,,52.66303887,-8.617064741,St. John's Square,,,Limerick,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-34,Letterkenny University Hospital,,54.96022132,-7.735528062,Kilmacrennan Road,,F92AE81,Letterkenny,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-35,Merlin Park University Hospital,,53.27761004,-8.994342686,,Galway,H91N973,,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-36,University Hospital Kerry,,52.26556734,-9.690271098,,Tralee,V92NX94,Co. Kerry,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-37,University Hospital Limerick,,52.63606341,-8.654458514,Saint Nessan's Road,,V94F858,Dooradoyle,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
-38,Mayo General Hospital,,53.85222901,-9.304589649,Westport Road,,F23H529,Castlebar,IE,Ireland,,,,,,,,,,,01/07/17,27/03/2020
+id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,emergency,cap_beds,cap_prac,cap_rooms,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date,geo_qual
+1,Midland Regional Hospital Portlaoise,,53.03816486,-7.277122479,Dublin Road,,R32RW61,Portlaoise,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+2,Midland Regional Hospital Tullamore,,53.28237998,-7.492147556,Arden Road,,R35NY51,Tullamore,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+3,St James's Hospital Dublin,,53.33945642,-6.297759915,James's Street,,D08NHY1,Dublin,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+4,Naas General Hospital,,53.21168823,-6.662709403,Craddockstown Road,,W91AE76,Naas,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+5,The Adelaide & Meath Hospital (Tallaght Hospital) Dublin,,53.29063947,-6.378254092,,Tallaght,,Dublin,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+6,Cavan General Hospital,,54.00103938,-7.373864346,,Lisdarn,H12A5D7,Cavan,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+7,Louth County Hospital Dundalk,,53.98807774,-6.400998942,Dublin Road,,,Dundalk,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+8,Monaghan Hospital,,54.24970222,-6.975513527,,,H18NV91,Monaghan,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+9,Our Lady of Lourdes Hospital Drogheda,,53.72295154,-6.356089867,,Drogheda,A92VW28,Co. Louth,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+10,Connolly Hospital Dublin,,53.38878588,-6.369272368,Mill Road,,D15X40D,Dublin,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+11,Beaumont Hospital,,53.39234793,-6.226787027,Beaumont Road,,D09C562,Dublin,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+12,St Luke's General Hospital Kilkenny,,52.66624423,-7.263919688,Freshford Road,,R95FY71,Kilkenny,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+13,Wexford General Hospital,,52.34304567,-6.483509872,Newtown Road,,Y35y17d,Wexford,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+14,Our Lady's Hospital Navan,,53.65051407,-6.698287463,,Navan,C15RK7Y,Co. Meath,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+15,Midland Regional Hospital Mullingar,,53.53438325,-7.350259727,Longford Road,,N91NA43,Mullingar,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+16,St Columcille's Hospital,,53.24304746,-6.133561387,Bray Road,,D18V9K1,Loughlinstown,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+17,St Vincent's University Hospital,,53.31680831,-6.214380854,Nutley Lane,,D04T6F4,Dublin,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+18,St Michael's Hospital Dun Laoghaire,,53.29402001,-6.139653407,George's Street Lower,,A96P902,Dun Laoghaire,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+19,Mater Misericordiae Hospital,,53.35961251,-6.269358184,Eccles Street,,D07R2WY,Dublin,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+20,South Tipperary General Hospital,,52.35568482,-7.715434867,Western Road,,E91VY40,Clonmel,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+21,University Hospital Waterford,,52.24876521,-7.079608659,Dunmore Road,,X91ER8E,Waterford,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+22,Bantry General Hospital,,51.67617683,-9.450776234,,Carrignagat,P75DX93,Bantry,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+23,Cork University Hospital,,51.88355888,-8.511639018,,Wilton,T12DC4A,Cork,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+24,Mallow General Hospital,,52.15152569,-8.66472028,,Kilknockin,P51N288,Mallow,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+25,Ennis Hospital,,52.85130247,-8.984380443,Gort Road,,V95HN29,Ennis,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+26,Roscommon County Hospital,,53.62496119,-8.176232474,Ardsallagh Beg,,F42AX61,Co. Roscommon,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+27,Mercy University Hospital,,51.89894944,-8.483554982,Grenville Place,,T12WE28,Cork,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+28,Nenagh Hospital,,52.85785097,-8.192324339,,Tyone,E45PT86,Nenagh,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+29,Sligo Regional Hospital,,54.27437422,-8.464529911,The Mall,,F91H684,Sligo,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+30,University Hospital Galway,,53.27605156,-9.066157823,Newcastle Road,,H91YR71,Galway,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+31,Portiuncula Hospital,,53.32684672,-8.235775779,Ballinasloe,,H53T971,Co. Galway,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+32,South Infirmary Victoria University Hospital,,51.89375412,-8.464897891,Old Blackrock Road,,T12X23H,Cork,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+33,St John's Hospital,,52.66303887,-8.617064741,St. John's Square,,,Limerick,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+34,Letterkenny University Hospital,,54.96022132,-7.735528062,Kilmacrennan Road,,F92AE81,Letterkenny,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+35,Merlin Park University Hospital,,53.27761004,-8.994342686,,Galway,H91N973,,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+36,University Hospital Kerry,,52.26556734,-9.690271098,,Tralee,V92NX94,Co. Kerry,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+37,University Hospital Limerick,,52.63606341,-8.654458514,Saint Nessan's Road,,V94F858,Dooradoyle,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
+38,Mayo General Hospital,,53.85222901,-9.304589649,Westport Road,,F23H529,Castlebar,IE,Ireland,,,,,,,,,,,01/07/17,28/03/2020,
