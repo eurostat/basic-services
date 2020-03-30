@@ -1,0 +1,373 @@
+id,hospital_name,site_name,lat,lon,geo_qual,street,house_number,postcode,city,cc,country,cap_beds,cap_prac,cap_rooms,emergency,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date
+1201,Vanhan Vaasan sairaala,,63.07203,21.71236,-1,,,65381,Vaasa,FI,Finland,,,,,State mental hospital,,,,,,01/01/19,30/03/2020
+1202,Niuvanniemen sairaala,,62.9141227,27.6256102,-1,,,70240,Kuopio,FI,Finland,,,,,State mental hospital,,,,,,01/01/19,30/03/2020
+40301,Etelä-Karjalan keskussairaala,,61.06514,28.21056,-1,,,53130,Lappeenranta,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+40302,Sädesairaala,,62.22945,25.7104,-1,,,40620,Jyväskylä,FI,Finland,,,,,other hospital,,,,,,01/01/19,30/03/2020
+40302,Keski-Suomen keskussairaala,,62.22945,25.7104,-1,,,40620,Jyväskylä,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+40302,Haukkalan sairaala,,62.2577096,25.7004642,-1,,,40740,Jyväskylä,FI,Finland,,,,,other hospital,,,,,,01/01/19,30/03/2020
+40302,Kinkomaan sairaala Vitapolis,,62.13621902,25.66939926,-1,,,40351,Muurame,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+40304,P-K:n keskussairaalan psykiatrian yksikkö,,62.76427841,29.84748077,-1,,,80210,Kontiolahti,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+40304,Pohjois-Karjalan keskussairaala,,62.59119,29.78191,-1,,,80210,Joensuu,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+40304,Siilaisen sairaala,,62.6182121,29.7228395,-1,,,80130,Joensuu,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+40305,Savonlinnan keskussairaala,,61.87107,28.85246,-1,,,57120,Savonlinna,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+40307,Vaasan keskussairaala/Centralsjukhuset i Vasa,,63.0981102,21.61980057,-1,,,65130,Vaasa,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+40307,Psykiatrian yksikkö/Huutoniemen sairaala,,63.0981102,21.61980057,-1,,,65320,Vaasa,FI,Finland,,,,,"Hospital, Home Care",,,,,,01/01/19,30/03/2020
+40308,Ålands centralsjukhus,,60.10160065,19.94192314,-1,,,22111,Maarianhamina,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+40310,Keroputaan sairaala,,65.865,24.18444,-1,,,95410,Tornio,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+40310,Länsi-Pohjan keskussairaala,,65.73415,24.55625,-1,,,94100,Kemi,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+40311,Muurolan sairaala,,66.37375,25.37065,-1,,,97145,Rovaniemi,FI,Finland,,,,,other hospital,,,,,,01/01/19,30/03/2020
+40311,Lapin keskussairaala,,66.49835968,25.70528984,-1,,,96101,Rovaniemi,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+40312,Mikkelin keskussairaala ESSOTE,,61.69182,27.2787,-1,,,50100,Mikkeli,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+40313,Satalinnan sairaala,,61.3438,22.08919,-1,,,29200,Harjavalta,FI,Finland,,,,,other hospital,,,,,,01/01/19,30/03/2020
+40313,Satakunnan keskussairaala,,61.4737,21.78264,-1,,,28500,Pori,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+40314,Pohjois-Kymen sairaala,,60.91363,26.62384,-1,,,45750,Kouvola,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+40314,Kymenlaakson keskussairaala,,60.47888,26.91253,-1,,,48210,Kotka,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+40315,Keski-Pohjanmaan keskussairaala,,63.84651,23.11217,-1,,,67200,Kokkola,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+40316,Kainuun keskussairaala,,64.21462,27.73011,-1,,,87140,Kajaani,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+40317,Seinäjoen sairaala,,62.771,22.82085,-1,,,60220,Seinäjoki,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+40317,Ähtärin sairaala,,62.5542,24.07154,-1,,,63700,Ähtäri,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+40317,Seinäjoen keskussairaala,,62.76917,22.83343,-1,,,60220,Seinäjoki,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+40318,Päijät-Hämeen keskussairaala,,60.99271,25.56869,-1,,,15850,Lahti,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+40401,Porvoon sairaanhoitoalue/Porvoon sairaala,,60.38648605,25.65790558,-1,,,6200,Porvoo,FI,Finland,,,,,other hospital,,,,,,01/01/19,30/03/2020
+40401,Psykiatrian osastot (Kevätkummun sairaala),,60.3799361,25.6942457,-1,,,6200,Porvoo,FI,Finland,,,,,Psychiatric hospital,,,,,,01/01/19,30/03/2020
+40405,Lohjan sairaanhoitoalue/Lohjan sairaala,,60.24675751,24.07350159,-1,,,8200,Lohja,FI,Finland,,,,,other hospital,,,,,,01/01/19,30/03/2020
+40405,Psykiatrian osastot (Paloniemen sairaala),,60.26609,24.01628,-1,,,8450,Lohja,FI,Finland,,,,,Psychiatric hospital,,,,,,01/01/19,30/03/2020
+40424,Oulaskankaan sairaala,,64.26805115,24.81950951,-1,,,86301,Oulainen,FI,Finland,,,,,other hospital,,,,,,01/01/19,30/03/2020
+40426,Hyvinkään sairaanhoito-alue/Hyvinkään sairaala,,60.6312294,24.85704041,-1,,,5850,Hyvinkää,FI,Finland,,,,,other hospital,,,,,,01/01/19,30/03/2020
+40426,Kellokosken sairaala,,60.53244,25.10969,-1,,,4500,Tuusula,FI,Finland,,,,,Psychiatric hospital,,,,,,01/01/19,30/03/2020
+41002,Grelsby sjukhus,,60.23471,19.96711,-1,,,22410,Finström,FI,Finland,,,,,Psychiatric hospital,,,,,,01/01/19,30/03/2020
+41008,Moision sairaala ESSOTE,,61.65548,27.27855,-1,,,50520,Mikkeli,FI,Finland,,,,,Psychiatric hospital,,,,,,01/01/19,30/03/2020
+41009,Oyks/Psykiatrian klinikka,,65.01035309,25.47356987,-1,,,90029,Oulu,FI,Finland,,,,,Psychiatric hospital,,,,,,01/01/19,30/03/2020
+41019,Kymenlaakson psykiatrinen sairaala,,60.91292,26.62308,-1,,,45750,Kouvola,FI,Finland,,,,,Psychiatric hospital,,,,,,01/01/19,30/03/2020
+41107,Juurikkaniemen sairaala,,62.26729,24.68048,-1,,,42700,Keuruu,FI,Finland,,,,,Psychiatric hospital,,,,,,01/01/19,30/03/2020
+41120,Kass-psykiatriset osastot,,64.21462,27.73011,-1,,,87140,Kajaani,FI,Finland,,,,,Psychiatric hospital,,,,,,01/01/19,30/03/2020
+50200,Meilahden kolmiosairaala,,60.17116165,24.93264961,-1,,,29,Helsinki,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+50200,Hyks/Marian sairaala,,60.17116165,24.93264961,-1,,,29,Helsinki,FI,Finland,,,,,Central Hospital,,,,,,01/01/19,30/03/2020
+50200,Hyks/Psykiatriakeskus,,60.17116165,24.93264961,-1,,,29,Helsinki,FI,Finland,,,,,Psychiatric hospital,,,,,,01/01/19,30/03/2020
+50200,HYKS-sairaanhoitoalue,,60.17116165,24.93264961,-1,,,29,Helsinki,FI,Finland,,,,,The university hospital or clinic,,,,,,01/01/19,30/03/2020
+50200,Naistenklinikka,,60.17116165,24.93264961,-1,,,29,Helsinki,FI,Finland,,,,,The university hospital or clinic,,,,,,01/01/19,30/03/2020
+50200,Raaseporin sairaala,,59.97451019,23.4358902,-1,,,10601,Raasepori,FI,Finland,,,,,The university hospital or clinic,,,,,,01/01/19,30/03/2020
+50200,Jorvin sairaala,,60.2222,24.68538,-1,,,2740,Espoo,FI,Finland,,,,,The university hospital or clinic,,,,,,01/01/19,30/03/2020
+50200,Peijaksen sairaala,,60.33123,25.05916,-1,,,1400,Vantaa,FI,Finland,,,,,The university hospital or clinic,,,,,,01/01/19,30/03/2020
+50230,Tyks Vakka-Suomen sairaala,,60.80165,21.42167,-1,,,23501,Uusikaupunki,FI,Finland,,,,,other hospital,,,,,,01/01/19,30/03/2020
+50230,Vsshp psykiatrian tulosalue,,60.4540596,22.26704216,-1,,,20521,Turku,FI,Finland,,,,,Psychiatric hospital,,,,,,01/01/19,30/03/2020
+50230,Ensihoidon ja päivystyksen liikelaitos,,60.4540596,22.26704216,-1,,,20521,Turku,FI,Finland,,,,,other hospital,,,,,,01/01/19,30/03/2020
+50230,TYKS Kantasairaala,,60.4540596,22.26704216,-1,,,20521,Turku,FI,Finland,,,,,The university hospital or clinic,,,,,,01/01/19,30/03/2020
+50230,Tyks Salon sairaala,,60.37522,23.1277,-1,,,24130,Salo,FI,Finland,,,,,other hospital,,,,,,01/01/19,30/03/2020
+50230,Tyks Loimaan sairaala,,60.84769821,23.05903053,-1,,,32201,Loimaa,FI,Finland,,,,,other hospital,,,,,,01/01/19,30/03/2020
+50230,Turunmaan sairaala,,60.44463,22.27459,-1,,,20700,Turku,FI,Finland,,,,,other hospital,,,,,,01/01/19,30/03/2020
+50250,Kuopion yliopistollinen sairaala,,62.89669037,27.68053055,-1,,,70211,Kuopio,FI,Finland,,,,,The university hospital or clinic,,,,,,01/01/19,30/03/2020
+50250,Kys/Puijon sairaala,,62.89669037,27.68053055,-1,,,70211,Kuopio,FI,Finland,,,,,The university hospital or clinic,,,,,,01/01/19,30/03/2020
+50250,Kys/Alavan sairaala,,62.89669037,27.68053055,-1,,,70211,Kuopio,FI,Finland,,,,,The university hospital or clinic,,,,,,01/01/19,30/03/2020
+50250,Kys/Julkulan sairaala,,62.9325,27.63043,-1,,,70260,Kuopio,FI,Finland,,,,,The university hospital or clinic,,,,,,01/01/19,30/03/2020
+50275,Oulun yliopistollinen sairaala,,65.01035309,25.47356987,-1,,,90029,Oulu,FI,Finland,,,,,The university hospital or clinic,,,,,,01/01/19,30/03/2020
+50290,Tampereen yliopistollinen sairaala,,61.504344,23.812899,-1,,,33521,Tampere,FI,Finland,,,,,The university hospital or clinic,,,,,,01/01/19,30/03/2020
+50290,TAYS Pitkäniemen sairaala,,61.48238,23.57333,-1,,,33380,Nokia,FI,Finland,,,,,The university hospital or clinic,,,,,,01/01/19,30/03/2020
+50290,TAYS Hatanpään sairaala,,61.483651,23.753833,-1,,,33101,Tampere,FI,Finland,,,,,The university hospital or clinic,,,,,,01/01/19,30/03/2020
+50290,TAYS Valkeakosken sairaala,,61.27076,24.03137,-1,,,37600,Valkeakoski,FI,Finland,,,,,The university hospital or clinic,,,,,,01/01/19,30/03/2020
+50290,TAYS Vammalan sairaala,,61.34994,22.90886,-1,,,38201,Sastamala,FI,Finland,,,,,The university hospital or clinic,,,,,,01/01/19,30/03/2020
+60605,Dextra Munkkivuori,,60.2057,24.87818,-1,,,350,Helsinki,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60608,Sairaala Eira Oy,,60.15775,24.94186,-1,,,150,Helsinki,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60611,Terveystalo Ruoholahti Sairaala,,60.16404,24.90904,-1,,,180,Helsinki,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60624,"Mottagningen för barn, unga och familjer, Åboland/ Pargas",,60.30747223,22.31949234,-1,,,21600,Parainen,FI,Finland,,,,,"Private hospital (esh), a private hospital (PTH)",,,,,,01/01/19,30/03/2020
+60624,"Mottagningen för barn, unga och familjer, Åboland",,60.4540596,22.26704216,-1,,,20500,Turku,FI,Finland,,,,,"Private hospital (esh), a private hospital (PTH)",,,,,,01/01/19,30/03/2020
+60624,Genetiska kliniken / Vasahuset,,63.0981102,21.61980057,-1,,,65100,Vaasa,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60624,Genetiska kliniken / Helsingfors,,60.18697,24.91348,-1,,,250,Helsinki,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60626,Sairaala Mehiläinen Helsinki,,60.17743,24.92327,-1,,,260,Helsinki,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60646,Työterveyslaitoksen sairaala,,60.18998,24.91212,-1,,,250,Helsinki,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60650,Myllykoti,,60.47222,22.22663,-1,,,20320,Turku,FI,Finland,,,,,Private hospital (PTH),,,,,,01/01/19,30/03/2020
+60651,Sairaala Mehiläinen Turku,,60.45278,22.26632,-1,,,20100,Turku,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60672,Selkämeren sairaskoti/Geritrim,,62.27630615,21.40052986,-1,,,64101,Kristiinankaupunki,FI,Finland,,,,,"Other private hospital, healthcare rehabilitation facility, Retirement Home, Rehabilitation Center",,,,,,01/01/19,30/03/2020
+60675,Sairaala Botnia Oy,,65.01002,25.47741,-1,,,90100,Oulu,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60681,Punkaharjun kuntoutuskeskus,,61.78531,29.31306,-1,,,58450,Savonlinna,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60682,Terveystalo Porin Lääkäritalo,,61.48178,21.79829,-1,,,28100,Pori,FI,Finland,,,,,"Private hospital (esh), Surgical Procedures",,,,,,01/01/19,30/03/2020
+60683,Suomen Terveystalo/Savonlinna,,61.86913,28.87868,-1,,,57100,Savonlinna,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60689,Tammela,,62.58933,29.78179,-1,,,80200,Joensuu,FI,Finland,,,,,"Private hospital (PTH), health care rehabilitation facility",,,,,,01/01/19,30/03/2020
+60689,Suomen Aivotutkimus- ja kuntoutuskeskus Neuron,,62.89669037,27.68053055,-1,,,71130,Kuopio,FI,Finland,,,,,"Private hospital (esh), health care rehabilitation facility",,,,,,01/01/19,30/03/2020
+60694,Dextra Plastiikkakirurginen Sairaala,,60.17116165,24.93264961,-1,,,120,Helsinki,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60695,Terveystalo Pulssi,,60.45183,22.25793,-1,,,20100,Turku,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60697,Pihlajalinna Koskiklinikan sairaala,,61.495765,23.767204,-1,,,33101,Tampere,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60701,Seinäjoen lääketieteellinen tutkimuslaitos Oy,,62.78899,22.83369,-1,,,60100,Seinäjoki,FI,Finland,,,,,"Private hospital (esh), Surgical Procedures",,,,,,01/01/19,30/03/2020
+60702,Suomen Terveystalo Helsinki Kamppi,,60.16988,24.93174,-1,,,100,Helsinki,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60704,Suomen Terveystalo/Turku,,60.45693,22.26969,-1,,,20100,Turku,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60705,Karina-koti,,60.40647,22.25614,-1,,,20900,Turku,FI,Finland,,,,,Private hospital (PTH),,,,,,01/01/19,30/03/2020
+60708,Suomen Terveystalo Oyj/Seinäjoki,,62.78899,22.83369,-1,,,60100,Seinäjoki,FI,Finland,,,,,"Private hospital (esh), Surgical Procedures",,,,,,01/01/19,30/03/2020
+60710,Sairaala Mehiläinen Jyväskylä,,62.24313,25.7479,-1,,,40100,Jyväskylä,FI,Finland,,,,,"Private hospital (esh), Surgical Procedures",,,,,,01/01/19,30/03/2020
+60711,Vårdhem Victor,,63.68701,22.73695,-1,,,68660,Pietarsaari,FI,Finland,,,,,Private hospital (PTH),,,,,,01/01/19,30/03/2020
+60711,Vårdhem Elise,,63.68701,22.73695,-1,,,68660,Pietarsaari,FI,Finland,,,,,Private hospital (PTH),,,,,,01/01/19,30/03/2020
+60713,Suomen Terveystalo/Tampere,,61.49686,23.77281,-1,,,33100,Tampere,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60715,Suomen Terveystalo/Lappeenranta,,61.05643,28.1921,-1,,,53100,Lappeenranta,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60718,Tekonivelsairaala Coxa Oy,,61.505579,23.815042,-1,,,33101,Tampere,FI,Finland,,,,,"Private hospital (esh), Surgical Procedures",,,,,,01/01/19,30/03/2020
+60719,Helsingin Silmäsairaala,,60.16935,24.94164,-1,,,100,Helsinki,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60719,Rovaniemen Silmäsairaala,,66.50309,25.7283,-1,,,96200,Rovaniemi,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60719,Kuopion Silmäsairaala,,62.89219,27.68151,-1,,,70100,Kuopio,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60719,Vantaan Silmäsairaala,,60.30095291,24.9788723,-1,,,1600,Vantaa,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60719,Kouvolan Silmäsairaala,,60.86876,26.70412,-1,,,45100,Kouvola,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60719,Espoon Silmäsairaala,,60.2172134,24.8111871,-1,,,2600,Espoo,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60719,Jyväskylän Silmäsairaala,,62.24225,25.74746,-1,,,40100,Jyväskylä,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60719,Seinäjoen Silmäsairaala,,62.78944,22.84022,-1,,,60100,Seinäjoki,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60719,Joensuun Silmäsairaala,,62.6012,29.76087,-1,,,80100,Joensuu,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60719,Turun Silmäsairaala,,60.4511048,22.2626598,-1,,,20100,Turku,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60719,Lappeenrannan Silmäsairaala (Eye Karelia),,61.04846954,28.19474983,-1,,,53100,Lappeenranta,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60724,Suomen Terveystalo/Lahti,,60.98287,25.65654,-1,,,15110,Lahti,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60737,Koivikko-koti,,60.97759,24.42129,-1,,,13500,Hämeenlinna,FI,Finland,,,,,"Private hospital (PTH), Home Health Care",,,,,,01/01/19,30/03/2020
+60745,Sairaala Mehiläinen Hämeenlinna,,60.99901,24.47872,-1,,,13200,Hämeenlinna,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60749,Sairaala Mehiläinen Kuopio,,62.89219,27.68151,-1,,,70100,Kuopio,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60754,Pihlajalinna/Jokilaakso,,61.492371,23.752819,-1,,,33200,Tampere,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60761,Turun Silmäexpertit,,60.45511,22.26746,-1,,,20100,Turku,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60763,Sairaala Mehiläinen Lahti,,60.98268,25.64932,-1,,,15110,Lahti,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60768,Oulun Diakonissalaitoksen sairaala,,65.01146698,25.48364067,-1,,,90100,Oulu,FI,Finland,,,,,"Private hospital (esh), Surgical Procedures",,,,,,01/01/19,30/03/2020
+60769,Oy Silmätalo Ögencentral ab,,60.39155,25.66082,-1,,,6100,Porvoo,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60776,Helsingin Sydänsairaala Oy,,60.15937,24.90993,-1,,,180,Helsinki,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60776,Tays Sydänsairaala Oy,,61.505296,23.815041,-1,,,33521,Tampere,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60780,Mehiläinen Kotka leikkaussali,,60.46352,26.93566,-1,,,48100,Kotka,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60781,Kuntoutus Orton,,60.17116165,24.93264961,-1,,,281,Helsinki,FI,Finland,,,,,"Private hospital (esh), health care rehabilitation facility",,,,,,01/01/19,30/03/2020
+60785,"Plastiikkakirurginen sairaala KL, Jyväskylä",,62.24475,25.75485,-1,,,40100,Jyväskylä,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60785,"Plastiikkakirurginen sairaala KL, Helsinki",,60.16295,24.93679,-1,,,120,Helsinki,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60787,Kyyhkylän kuntoutuskeskus,,61.63308,27.28731,-1,,,50700,Mikkeli,FI,Finland,,,,,"Private hospital (esh), Rehabilitation Center",,,,,,01/01/19,30/03/2020
+60790,Itäkeskuksen poliklinikka Oy,,60.21227,25.08369,-1,,,930,Helsinki,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60791,Pihlajalinna Ite Kuopio Sairaala,,62.89029,27.69539,-1,,,70100,Kuopio,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60792,Rääkkylän terveysasema ja vuodeosasto,,62.31303,29.63165,-1,,,82300,Rääkkylä,FI,Finland,,,,,"The Health Center Health Center, Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+60794,Mehiläinen Neo,,60.45012,22.29546,-1,,,20520,Turku,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60798,Lastenpsykiatrinen Sairaala Peippo,,60.60791,24.82726,-1,,,5840,Hyvinkää,FI,Finland,,,,,Private hospital (PTH),,,,,,01/01/19,30/03/2020
+60801,Oy Kristinamedi ab,,62.27155,21.40197,-1,,,64100,Kristiinankaupunki,FI,Finland,,,,,"Private hospital (esh), Surgical Procedures",,,,,,01/01/19,30/03/2020
+60806,Pohjola Sairaala Helsinki,,60.20788,24.89365,-1,,,300,Helsinki,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60815,Lääkäripalvelut Österback,,62.24475,25.75485,-1,,,40100,Jyväskylä,FI,Finland,,,,,"Erikoislääk. Desk, Surgery, Private Hospital (esh)",,,,,,01/01/19,30/03/2020
+60816,Validia Kuntoutus Helsinki,,60.17116165,24.93264961,-1,,,251,Helsinki,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60818,Kärsämäen terveyskeskus,,63.9792,25.76358,-1,,,86710,Kärsämäki,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+60820,Rantasalmen vuodeosasto,,62.06286,28.3001,-1,,,58900,Rantasalmi,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+60825,Jämsän Terveys Oy/Jokilaakson sairaala,,61.8764,25.18975,-1,,,42100,Jämsä,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+60826,Lääkärikeskus Medfin,,60.16381,24.91565,-1,,,180,Helsinki,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60827,Ähtärin terveyskeskus ja vuodeosasto,,62.5542,24.07154,-1,,,63700,Ähtäri,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+60827,Alavuden terveyskeskus ja vuodeosasto,,62.58669,23.62773,-1,,,63300,Alavus,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+60827,Kuntoutuskeskus Otsonlinna,,62.55465,24.07115,-1,,,63700,Ähtäri,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+60828,Mänttä-Vilppulan terveyskeskus,,62.03501,24.61221,-1,,,35800,Mänttä-Vilppula,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+60831,Caritas sairaala,,65.0035,25.477,-1,,,90150,Oulu,FI,Finland,,,,,Private hospital (PTH),,,,,,01/01/19,30/03/2020
+60832,Terveystalo Varkaus,,62.3293,27.89114,-1,,,78300,Varkaus,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60833,Terveystalo Kokkola,,63.8389,23.12908,-1,,,67100,Kokkola,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60834,Sulkavan terveysasema,,61.79002,28.37689,-1,,,58700,Sulkava,FI,Finland,,,,,"The Health Center Health Center, Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+60836,Ruoveden terveyskeskus,,61.97732,24.08602,-1,,,34600,Ruovesi,FI,Finland,,,,,"The health center, health center inpatient, hospital",,,,,,01/01/19,30/03/2020
+60836,Virtain terveyskeskus ja vuodeosasto,,62.24015,23.76033,-1,,,34800,Virrat,FI,Finland,,,,,"The health center, health center inpatient, hospital",,,,,,01/01/19,30/03/2020
+60838,Rantsilan terveyskeskus ja vuodeosasto,,64.51097,25.65091,-1,,,92500,Siikalatva,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+60838,Pulkkilan terveysasema ja vuodeosasto,,64.2708495,25.866455,-1,,,92601,Siikalatva,FI,Finland,,,,,"The Health Center Health Center, Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+60839,Parkanon terveyskeskus ja terveyskeskussairaala,,62.04869843,23.07707024,-1,,,39700,Parkano,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+60840,Sysmän terveyskeskus,,61.50842,25.6812,-1,,,19700,Sysmä,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+60841,Pihlajalinna sairaala Ähtäri,,62.5542,24.07154,-1,,,63700,Ähtäri,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60843,Docrates Syöpäsairaala,,60.15937,24.90993,-1,,,180,Helsinki,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60844,Pohjola Sairaala Tampere,,61.50228,23.7635,-1,,,33100,Helsinki,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60845,Turun Silmäkirurgia,,60.45183,22.25793,-1,,,20100,Turku,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60846,Lääkärikeskus Aava Keravan Terveyspuisto,,60.40417099,25.1051693,-1,,,4200,Kerava,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+60847,Pohjola Sairaala Oulu,,64.98401,25.50893,-1,,,90250,Oulu,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60848,Pohjola Sairaala Kuopio,,62.8839,27.64081,-1,,,70700,Kuopio,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60849,Pohjola Sairaala Turku,,60.44812,22.29812,-1,,,20520,Turku,FI,Finland,,,,,Private hospital (esh),,,,,,01/01/19,30/03/2020
+60858,Pihlajalinna Seinäjoki,,62.79145,22.84014,-1,,,60100,Seinäjoki,FI,Finland,,,,,"Erikoislääk. Desk, Surgery, Medical service",,,,,,01/01/19,30/03/2020
+60861,Sammakkotalo,,65.00912,25.4733,-1,,,90100,Oulu,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+61210,Suomen Terveystalo/Pori,,61.48607,21.79408,-1,,,28100,Pori,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+62677,Väestöliiton klinikat,,60.17073,24.934,-1,,,100,Helsinki,FI,Finland,,,,,surgical Procedures,,,,,,01/01/19,30/03/2020
+63239,"DiakonTerveys, Kuntoutuskeskus",,61.47462,21.77457,-1,,,28500,Pori,FI,Finland,,,,,"Private hospital (PTH), Rehabilitation Center",,,,,,01/01/19,30/03/2020
+65953,Diakonissalaitoksen sairaala,,60.18532,24.94109,-1,,,530,Helsinki,FI,Finland,,,,,Other private hospital,,,,,,01/01/19,30/03/2020
+66260,Puolangan terveysasema ja hoivaosasto,,64.86871,27.66548,-1,,,89200,Puolanka,FI,Finland,,,,,"The Health Center Health Center, Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+66803,Kotipolku,,63.83992,23.14843,-1,,,67100,Kokkola,FI,Finland,,,,,"Health care rehabilitation center, health center inpatient, hospital",,,,,,01/01/19,30/03/2020
+71701,"Psykiatrinen vankisairaala, Vantaan yksikkö",,60.30095291,24.9788723,-1,,,1261,Vantaa,FI,Finland,,,,,the Prison hospital,,,,,,01/01/19,30/03/2020
+71704,"Psykiatrinen vankisairaala, Turun yksikkö",,60.4540596,22.26704216,-1,,,20251,Turku,FI,Finland,,,,,the Prison hospital,,,,,,01/01/19,30/03/2020
+71705,Hämeenlinnan vankisairaala,,61.00222015,24.47784042,-1,,,13101,Hämeenlinna,FI,Finland,,,,,the Prison hospital,,,,,,01/01/19,30/03/2020
+90101,Järvi-Pohjanmaan yhteistoiminta-alue terveystoimi/Akuuttiosasto,,63.00497437,23.86533546,-1,,,62900,Alajärvi,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90101,Järvi-Pohjanmaan yhteistoiminta-alue terveystoimi/Alajärven toimipiste,,63.00497437,23.86533546,-1,,,62900,Alajärvi,FI,Finland,,,,,"Health Center, Home Health Care",,,,,,01/01/19,30/03/2020
+90102,Toijalan terveysasema ja vuodeosasto,,61.16699982,23.86700058,-1,,,37800,Akaa,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90102,Akaan terveyskeskus,,61.17512,23.87467,-1,,,37800,Akaa,FI,Finland,,,,,"The health center, health center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90102,Urjalan terveysasema ja vuodeosasto,,61.0818816,23.5612059,-1,,,31760,Urjala,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90124,Espoon sairaala,,60.20677948,24.65578079,-1,,,2070,Espoo,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90124,Puolarmetsän sairaala,,60.20677948,24.65578079,-1,,,2070,Espoo,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90134,Helmi/Haapaveden terveyskeskus vuodeosasto,,64.1426239,25.36910629,-1,,,86601,Haapavesi,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90163,Hämeenkyrön pääterveysasema ja vuodeosasto,,61.56725693,23.0636425,-1,,,39100,Hämeenkyrö,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90168,Pääterveysasema ja vuodeosasto,,61.76172638,23.07595634,-1,,,39501,Ikaalinen,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90179,Turengin terveysasema ja vuodeosasto,,60.92791,24.64623,-1,,,14200,Janakkala,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90192,Jyte/Kyllön terveysasema ja vuodeosasto,,62.23228,25.70907,-1,,,40620,Jyväskylä,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90192,Jyte/Palokan terveysasema ja terveyskeskussairaala,,62.28889084,25.74171066,-1,,,40271,Jyväskylä,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center, Home Health Care",,,,,,01/01/19,30/03/2020
+90200,Kaarinan terveyskeskus,,60.4113733,22.3844849,-1,,,20781,Kaarina,FI,Finland,,,,,"The health center, health center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90237,Itäisen ja keskustan alueen terveysasemat ja vuodeosasto,,60.40417099,25.1051693,-1,,,4200,Kerava,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90272,Kristiinankaupungin perusturva,,62.27630615,21.40052986,-1,,,64101,Kristiinankaupunki,FI,Finland,,,,,"The health center, health center inpatient, hospital, home care",,,,,,01/01/19,30/03/2020
+90280,Tuusniemen terveysasema,,62.812,28.48894,-1,,,71200,Tuusniemi,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90280,Kuopion tk / Harjulan sairaala,,62.89685,27.63655,-1,,,70210,Kuopio,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90280,Vehmersalmen terveyskeskus,,62.80937,27.96892,-1,,,71310,Kuopio,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90280,Karttulan terveysasema,,62.90247,26.95829,-1,,,72100,Kuopio,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center, Home Health Care",,,,,,01/01/19,30/03/2020
+90280,Nilsiän terveysasema / vuodeosasto,,63.20106,28.0971,-1,,,73300,Kuopio,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90280,Juankosken terveysasema ja vuodeosasto,,62.89300919,27.68221092,-1,,,73500,Kuopio,FI,Finland,,,,,"The Health Center Health Center, Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90298,Hyvinvointikeskus Lapponia,,66.70533,27.44206,-1,,,98100,Kemijärvi,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90308,Terveyskeskuksen vuodeosastot 1 - 2,,62.96861,23.04173,-1,,,62100,Lapua,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90308,Terveyskeskuksen vuodeosasto 3,,62.96817,23.04292,-1,,,62100,Lapua,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90316,Lempäälän terveyskeskus,,61.31699,23.74809,-1,,,37500,Lempäälä,FI,Finland,,,,,"Health Center, Home Health Care",,,,,,01/01/19,30/03/2020
+90316,Lempäälän terveysasema ja vuodeosasto,,61.31699,23.74809,-1,,,37500,Lempäälä,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90321,Liedon terveyskeskus,,60.50749,22.45971,-1,,,21420,Lieto,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90323,Limingan terveyskeskus,,64.8062973,25.42324257,-1,,,91901,Liminka,FI,Finland,,,,,"Health Center, Home Health Care",,,,,,01/01/19,30/03/2020
+90325,Pusulan terveysasema,,60.47423,23.98603,-1,,,3850,Lohja,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90325,Tynninharjun terveysasema,,60.24675751,24.07350159,-1,,,8200,Lohja,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90332,Loviisan sosiaali- ja terveystoimi,,60.46015,26.22959,-1,,,7900,Loviisa,FI,Finland,,,,,"The health center, health center ward, Hospital, Home Health Care",,,,,,01/01/19,30/03/2020
+90343,"Gullåsen, hälsocentralens sjukhus",,60.11557,19.93483,-1,,,22100,Maarianhamina,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90343,Ålands hälso- och sjukvård/Primärvårdsenheten,,60.10160065,19.94192314,-1,,,22111,Maarianhamina,FI,Finland,,,,,"Health Center, Home Health Care",,,,,,01/01/19,30/03/2020
+90361,Vörå hälsostation,,63.13486,22.25447,-1,,,66600,Vöyri,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90361,Smedsby hälsostation och bäddavdelning,,63.1221298,21.7066965,-1,,,65610,Mustasaari,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90361,Oravais-Vörå-Maxmo- hälsovårdcentral,,63.29752,22.37681,-1,,,66800,Vöyri,FI,Finland,,,,,"The health center, health center ward, Hospital, Home Health Care",,,,,,01/01/19,30/03/2020
+90361,Korsholms hälsovårdscentral,,63.1221298,21.7066965,-1,,,65610,Mustasaari,FI,Finland,,,,,"Health Center, Home Health Care",,,,,,01/01/19,30/03/2020
+90362,Muuramen terveysasema ja terveyskeskussairaala,,62.1249733,25.66418839,-1,,,40950,Muurame,FI,Finland,,,,,"The Health Center Health Center, Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90369,Naantalin terveyskeskus,,60.49839401,22.02209282,-1,,,21101,Naantali,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90375,Nokian terveysasema ja sairaala,,61.48477173,23.51592636,-1,,,37101,Nokia,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90375,Terveyskeskuksen vuodeosasto,,61.48477173,23.51592636,-1,,,37101,Nokia,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90389,Oulaisten terveyskeskus ja vuodeosasto,,64.2688131,24.8307761,-1,,,86301,Oulainen,FI,Finland,,,,,"The health center, health center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90390,Oulun tk/Oulun kaupunginsairaala,,65.01035309,25.47356987,-1,,,90015,Oulu,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90390,Ylikiimingin terveysasema,,64.96976,26.03132,-1,,,91300,Oulu,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90390,Yli-Iin terveyskeskus,,65.32311,25.37417,-1,,,91200,Oulu,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90414,Social och hälsovårdsverket/allmän Medicin avdelning,,63.67633057,22.71270943,-1,,,68600,Pietarsaari,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90419,Pirkkalan yhteistoiminta-alue/Pirkkalan terveyskeskus,,61.46467972,23.66299629,-1,,,33960,Pirkkala,FI,Finland,,,,,"Health Center, Home Health Care",,,,,,01/01/19,30/03/2020
+90424,"Porin perusturvakeskus, terveyspalvelut",,61.48228836,21.80420113,-1,,,28120,Pori,FI,Finland,,,,,"Health Center, Home Health Care",,,,,,01/01/19,30/03/2020
+90424,Lavian terveysasema ja vuodeosasto,,61.4859581,21.7953701,-1,,,38601,Pori,FI,Finland,,,,,"The health center, health center ward, Hospital, Home Health Care",,,,,,01/01/19,30/03/2020
+90424,Merikarvian sairaala,,61.8595436,21.514088,-1,,,29900,Merikarvia,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90451,Raision terveyskeskussairaalan kuntoutusosasto,,60.47878265,22.16206932,-1,,,21200,Raisio,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90451,"Raision terveyskeskussairaala, akuuttiosasto",,60.47878265,22.16206932,-1,,,21200,Raisio,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90468,Rovaniemen terveysasema ja vuodeosasto,,66.49835968,25.70528984,-1,,,96101,Rovaniemi,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90489,Huhtalan sairaala,,62.7786,22.8319,-1,,,60220,Seinäjoki,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90489,Myllypuisto sairaala,,62.77794,22.83121,-1,,,60220,Seinäjoki,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90489,Kaupungin sairaala Y-talo,,62.77151,22.82113,-1,,,60220,Seinäjoki,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90493,Siilinjärven terveyskeskus,,63.06166458,27.70882607,-1,,,71800,Siilinjärvi,FI,Finland,,,,,"The health center, health center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90497,Nickby hälsostation och hälsovårdscentralens sjukhus,,60.36487579,25.38388824,-1,,,4131,Sipoo,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90520,Säkylän terveyskeskus,,61.04563,22.35047,-1,,,27800,Säkylä,FI,Finland,,,,,"The Health Center inpatient, hospital, health center",,,,,,01/01/19,30/03/2020
+90532,Tampereen tk / Rauhaniemen sairaala,,61.512360,23.778403,-1,,,33180,Tampere,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90545,Turun tk/sisätautisairaala,,60.44176,22.27785,-1,,,20700,Turku,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90545,Kaskenlinnan sairaala,,60.44176,22.27785,-1,,,20700,Turku,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90545,Kurjenmäkikoti,,60.43991,22.28447,-1,,,nan,Turku,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90559,Utsjoen terveyskeskus,,69.90072,27.01713,-1,,,99980,Utsjoki,FI,Finland,,,,,"Health Center, Home Health Care",,,,,,01/01/19,30/03/2020
+90565,Terveyskeskuksen vuodeosasto / Huutoniemi,,63.0981102,21.61980057,-1,,,65320,Vaasa,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90565,Laihian terveysasema ja vuodeosasto,,62.97900391,22.02358246,-1,,,66400,Laihia,FI,Finland,,,,,"The health center, health center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90565,Vähäkyrön vuodeosasto,,63.04715,22.11568,-1,,,66500,Vaasa,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90565,Palosaaren terveysasema ja vuodeosasto,,63.09805,21.64672,-1,,,65100,Vaasa,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90572,Varkauden sairaala,,62.3293,27.89114,-1,,,78300,Varkaus,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90572,Pääterveysasema ja vuodeosasto,,62.3293,27.89114,-1,,,78300,Varkaus,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90572,Joroisten terveyssema,,62.18182,27.82499,-1,,,79600,Joroinen,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90586,Viitasaaren kaupungin terveyskeskus,,63.06317902,25.88439178,-1,,,44500,Viitasaari,FI,Finland,,,,,"The health center, health center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90586,Pihtiputaan terveyskeskus,,63.37081,25.57849,-1,,,44800,Pihtipudas,FI,Finland,,,,,"The health center, health center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90603,Ylitornion terveysasema ja vuodeosasto,,66.31995,23.67629,-1,,,95600,Ylitornio,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90607,Kuntoutus- ja muistikeskus,,61.56772,23.60262,-1,,,33480,Ylöjärvi,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90607,Kurun terveyskeskus,,61.88066,23.72954,-1,,,34300,Ylöjärvi,FI,Finland,,,,,"The Health Center inpatient, hospital, Home Health Care",,,,,,01/01/19,30/03/2020
+90607,Viljakkalan terveyskeskus,,61.70497,23.26197,-1,,,39310,Ylöjärvi,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90614,Jokioisten vuodeosasto,,60.80479,23.50723,-1,,,31600,Jokioinen,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90614,Forssan vuodeosastot,,60.81606674,23.61864662,-1,,,30101,Forssa,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90614,Humppilan vuodeosasto,,60.92778,23.3687,-1,,,31640,Humppila,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90614,Tammelan vuodeosasto,,60.80869,23.76499,-1,,,31300,Tammela,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90614,Ypäjän vuodeosasto,,60.80685,23.26305,-1,,,32100,Ypäjä,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90618,Äänekosken terveysasema,,62.59795,25.72515,-1,,,44100,Äänekoski,FI,Finland,,,,,"The Health Center Health Center, Health Center inpatient, hospital, Detoxification Unit (drive)",,,,,,01/01/19,30/03/2020
+90625,Pelkosenniemen terveysasema ja vuodeosasto,,67.12194,27.48836,-1,,,98500,Pelkosenniemi,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90625,Pelkosenniemen-Savukosken terveyskeskus,,67.12194,27.48836,-1,,,98500,Pelkosenniemi,FI,Finland,,,,,"Health Center, Home Health Care",,,,,,01/01/19,30/03/2020
+90626,Saarikka/Saarijärven terveysasema ja vuodeosasto,,62.77846527,25.28238678,-1,,,43100,Saarijärvi,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90626,Saarikka/Kivijärven terveysasema ja vuodeosasto,,63.13101959,25.10042,-1,,,43800,Kivijärvi,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90626,Saarikka/Kuntoutusosasto,,62.88772,24.78761,-1,,,43500,Karstula,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90626,Saarikka/Karstulan terveysasema,,62.88772,24.78761,-1,,,43500,Karstula,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90635,Lammin terveysasema,,61.08835,25.00506,-1,,,16900,Hämeenlinna,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90635,Rengon terveysasema,,60.89253,24.28987,-1,,,14300,Hämeenlinna,FI,Finland,,,,,"The Health Center inpatient, hospital, Home Health Care",,,,,,01/01/19,30/03/2020
+90635,Vanajaveden sairaala,,60.9981628,24.4744109,-1,,,13200,Hämeenlinna,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90635,Hämeenlinnan terveyspalvelut,,61.00222015,24.47784042,-1,,,13111,Hämeenlinna,FI,Finland,,,,,"The health center, health center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90643,Raahen sairaala,,64.67397308,24.4952755,-1,,,92101,Raahe,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90643,Terveyskeskuksen vuodeosasto,,64.66805267,25.09251022,-1,,,92400,Siikajoki,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90644,Paimion-Sauvon terveyskeskus,,60.44116,22.6882,-1,,,21530,Paimio,FI,Finland,,,,,"Health Center, Home Health Care",,,,,,01/01/19,30/03/2020
+90645,Muonion-Enontekiön terveyskeskus,,67.9543457,23.67771912,-1,,,99301,Muonio,FI,Finland,,,,,"Health Center, Home Health Care",,,,,,01/01/19,30/03/2020
+90645,Muonion terveysasema ja vuodeosasto,,67.9543457,23.67771912,-1,,,99300,Muonio,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90649,Pöytyän terveysasema ja vuodeosasto,,60.72076,22.60337,-1,,,21870,Pöytyä,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90667,Pieksämäen sairaala,,62.29957962,27.15346909,-1,,,76101,Pieksämäki,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90667,Pääterveysasema ja vuodeosastot,,62.29957962,27.15346909,-1,,,76101,Pieksämäki,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90673,Sisä-Savon psykiatrinen aluekeskus,,62.63039,27.11595,-1,,,77600,Suonenjoki,FI,Finland,,,,,Psychiatric hospital,,,,,,01/01/19,30/03/2020
+90673,Suonenjoen terveysasema ja vuodeosasto,,62.62928,27.1184,-1,,,77600,Suonenjoki,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center, Home Health Care",,,,,,01/01/19,30/03/2020
+90673,Sisä-Savon terveyskeskus,,62.66716003,27.05223656,-1,,,77601,Suonenjoki,FI,Finland,,,,,"Health Center, Home Health Care",,,,,,01/01/19,30/03/2020
+90673,Rautalammin terveysasema ja vuodeosasto,,62.61676,26.85427,-1,,,77700,Rautalampi,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90675,Hälsovårdscentralens sjukhus,,62.94607544,21.56038666,-1,,,66101,Maalahti,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90677,Rauman aluesairaala,,61.13123,21.52451,-1,,,26100,Rauma,FI,Finland,,,,,other hospital,,,,,,01/01/19,30/03/2020
+90677,Terveyskeskuksen vuodeosasto,,61.13071823,21.4864006,-1,,,26100,Rauma,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90686,Pääterveysasema ja vuodeosasto,,60.79587,21.42406,-1,,,23500,Uusikaupunki,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90686,Vehmaan vuodeosasto,,60.67295074,21.60376358,-1,,,23210,Vehmaa,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90698,Malmkulla,,60.31086,22.29132,-1,,,21600,Parainen,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90699,Huvudhälsostationen och bäddavdelning,,62.47017,21.33321,-1,,,64200,Närpiö,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90699,Närpes hälsovårdscentral,,62.47017,21.33321,-1,,,64200,Närpiö,FI,Finland,,,,,"Health Center, Home Health Care",,,,,,01/01/19,30/03/2020
+90703,Loimaan kotisairaala,,60.84769821,23.05903053,-1,,,32201,Loimaa,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90703,Loimaan sosiaali- ja terveyspalvelukeskus,,60.84769821,23.05903053,-1,,,32201,Loimaa,FI,Finland,,,,,"The health center, health center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90707,Kuhmoisten terveyskeskus,,61.55998,25.15932,-1,,,17800,Kuhmoinen,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90718,Kimitoöns hälsovårdscentral,,60.16955948,22.73736,-1,,,25701,Kemiönsaari,FI,Finland,,,,,"The health center, health center ward, Hospital, Home Health Care",,,,,,01/01/19,30/03/2020
+90718,Dalsbruk hälsostation och bäddavdelning,,60.02026,22.49752,-1,,,25900,Kemiönsaari,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center, Home Health Care",,,,,,01/01/19,30/03/2020
+90719,Salon terveyskeskus,,60.37522,23.1277,-1,,,24130,Salo,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90719,"TK5 Geriatrinen arviointiyks., Salon hyvinvointipalvelut",,60.39008713,23.13930321,-1,,,24130,Salo,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90726,Riihimäen terveysasema ja vuodeosasto,,60.74323,24.77555,-1,,,11100,Riihimäki,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90726,Riihimäen seudun terveyskeskus,,60.73498154,24.78055,-1,,,11101,Riihimäki,FI,Finland,,,,,"Health Center, Home Health Care",,,,,,01/01/19,30/03/2020
+90726,Lopen terveysasema ja vuodeosasto,,60.71847,24.42724,-1,,,12700,Loppi,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center, Home Health Care",,,,,,01/01/19,30/03/2020
+90726,Oitin terveysasema ja vuodeosasto,,60.7859944,25.0239644,-1,,,12100,Hausjärvi,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center, Home Health Care",,,,,,01/01/19,30/03/2020
+90730,Kainuun sote/Kuhmon laitoshoito,,64.12854,29.51029,-1,,,88900,Kuhmo,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90730,Kainuun sote/Kajaanin terveysasema,,64.22193,27.72319,-1,,,87101,Kajaani,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90732,Kokemäen terveysasema,,61.25982,22.34624,-1,,,32800,Kokemäki,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center, Home Health Care",,,,,,01/01/19,30/03/2020
+90732,Eurajoen terveyskeskus,,61.19808,21.73212,-1,,,27100,Eurajoki,FI,Finland,,,,,"Health Center, Home Health Care",,,,,,01/01/19,30/03/2020
+90732,Harjavallan terveyskeskus ja vuodeosasto,,61.31066895,22.13209915,-1,,,29201,Harjavalta,FI,Finland,,,,,"The health center, health center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90733,Ylihärmän terveysasema,,63.14644,22.80517,-1,,,62375,Ylihärmä,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90733,Kauhavan tk-osasto,,63.10029,23.07229,-1,,,62200,Kauhava,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90733,Kotisairaala,,63.10091,23.07052,-1,,,62200,Kauhava,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90734,Nastolan terveysasema,,60.94667,25.92594,-1,,,15560,Lahti,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90734,Iitin terveysasema,,60.89688,26.34319,-1,,,47400,Iitti,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90734,Hartolan terveysasema,,61.58989,26.02131,-1,,,19600,Hartola,FI,Finland,,,,,"The Health Center Health Center, Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90734,Orimattilan terveysasema,,60.7963291,25.7187384,-1,,,16300,Orimattila,FI,Finland,,,,,"The Health Center Health Center, Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90734,Lahden terveyskeskus,,60.9770813,25.65695,-1,,,15101,Lahti,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90734,Tapanilakoti,,60.98871,25.59585,-1,,,15900,Lahti,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90734,Salpakankaan terveysasema ja vuodeosasto,,60.99135,25.51048,-1,,,15870,Hollola,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90734,Asikkalan terveysasema ja vuodeosasto,,61.1784849,25.5236292,-1,,,17201,Asikkala,FI,Finland,,,,,"The Health Center Health Center, Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90735,Ylivieskan terveysasema ja vuodeosasto,,64.07427,24.52877,-1,,,84100,Ylivieska,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90736,Itä-Savon sairaanhoitopiirin kuntayhtymä/perusterveydenhuolto,,62.09109879,28.92320061,-1,,,57120,Enonkoski,FI,Finland,,,,,"Health Center, Home Health Care",,,,,,01/01/19,30/03/2020
+90736,Savonlinnan vuodeosasto,,61.87369,28.84754,-1,,,57170,Savonlinna,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90736,Akuutti vuodeosasto 2B,,61.87107,28.85246,-1,,,57120,Savonlinna,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90736,Kerimäen vuodeosasto,,61.91624,29.28111,-1,,,58201,Savonlinna,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90736,Sulkavan vuodeosasto,,61.78909,28.37625,-1,,,58700,Sulkava,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90738,Nummelan terveysasema ja sairaala,,60.34586,24.32251,-1,,,3100,Vihti,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90738,Karkkilan terveysasema,,60.5398819,24.2248736,-1,,,3600,Karkkila,FI,Finland,,,,,"The Health Center inpatient, hospital, home care",,,,,,01/01/19,30/03/2020
+90740,Hälsovårdscentralens sjukhus/terveyskeskuksen sairaala,,59.97451019,23.4358902,-1,,,10611,Raasepori,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90741,Pohjois-Satakunnan peruspalvelukuntayhtymä /vuodeosasto,,61.79919,22.37575,-1,,,38700,Kankaanpää,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90741,Pohjois-Satakunnan peruspalvelukuntayhtymä,,61.79919,22.37575,-1,,,38700,Kankaanpää,FI,Finland,,,,,"The health center, health center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90744,JIK/Kurikan terveysasema,,62.62646,22.39526,-1,,,61300,Kurikka,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90747,Joutsenon terveysasema ja vuodeosasto,,61.11547,28.50456,-1,,,54100,Lappeenranta,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90747,Honkaharjun sairaala,,61.2211407,28.8201486,-1,,,55800,Imatra,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90747,Taipalsaaren terveysasema ja vuodeosasto,,61.1614299,28.0593602,-1,,,54920,Taipalsaari,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90747,Armilan keskusterveysasema ja sairaala,,61.05989,28.21206,-1,,,53100,Lappeenranta,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90747,Mäntylän sairaala,,61.02989,28.16938,-1,,,53650,Lappeenranta,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90747,Parikkalan pääterveysasema ja vuodeosasto,,61.55926,29.49824,-1,,,59100,Parikkala,FI,Finland,,,,,"The Health Center inpatient, hospital, Home Health Care",,,,,,01/01/19,30/03/2020
+90747,Savitaipaleen terveysasema ja vuodeosasto,,61.20017,27.67756,-1,,,54800,Savitaipale,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90748,Sonkajärven terveyskeskus ja vuodeosasto,,63.67089,27.52386,-1,,,74300,Sonkajärvi,FI,Finland,,,,,"The health center, health center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90748,Iisalmen sairaala,,63.5602684,27.19960976,-1,,,74101,Iisalmi,FI,Finland,,,,,other hospital,,,,,,01/01/19,30/03/2020
+90748,Iisalmen terveyskeskus ja vuodeosasto,,63.5602684,27.19960976,-1,,,74101,Iisalmi,FI,Finland,,,,,"The health center, health center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90750,Oulunkaari/Iin hoito-osasto,,65.32001,25.40448,-1,,,91100,Ii,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90752,Laukaan terveysasema ja vuodeosasto,,62.43496323,25.94116783,-1,,,41340,Laukaa,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90752,Konneveden terveysasema ja vuodeosasto,,62.62902,26.28615,-1,,,44300,Konnevesi,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90752,Joutsan terveysasema ja vuodeosasto,,61.73858,26.11876,-1,,,19650,Joutsa,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90755,Vesannon terveysasema ja vuodeosasto,,62.92304,26.44332,-1,,,72300,Vesanto,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90755,Pielaveden terveysasema ja vuodeosasto,,63.24158,26.74457,-1,,,72400,Pielavesi,FI,Finland,,,,,"The Health Center Health Center, Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90755,Kaavin terveysasema ja vuodeosasto,,62.974482,28.4821493,-1,,,73600,Kaavi,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90755,Leppävirran terveyskeskus ja vuodeosasto,,62.4964755,27.7930461,-1,,,79101,Leppävirta,FI,Finland,,,,,"The health center, health center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90755,Keiteleen terveysasema ja vuodeosasto,,63.17665482,26.34036636,-1,,,72600,Keitele,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90756,"Terveyskeskussairaala Os 2, Vammala",,61.33732,22.92267,-1,,,38200,Sastamala,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90756,"Terveyskeskussairaala Os 1, Vammala",,61.33732,22.92267,-1,,,38200,Sastamala,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90756,"Terveyskeskussairaala Os 3, Sastamala",,61.42061615,22.87767792,-1,,,38200,Sastamala,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90758,"Enon terveyskeskus, Siun sote",,62.7897171,30.1592516,-1,,,81201,Joensuu,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90758,"Terveyskeskussairaala Ilomantsi, Siun sote",,62.66863,30.92296,-1,,,82900,Ilomantsi,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90758,Terveyskeskussairaala Juuka,,63.24147,29.25662,-1,,,83900,Juuka,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90758,"Terveyskeskussairaala Kitee, Siun sote",,62.09745407,30.13793755,-1,,,82500,Kitee,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90758,"Terveyskeskussairaala Kontiolahti, Siun sote",,62.76334,29.84412,-1,,,81100,Kontiolahti,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90758,"Terveyskeskussairaala Lieksa, Siun sote",,63.31858,30.03116,-1,,,81700,Lieksa,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90758,"Terveyskeskussairaala Liperi, Siun sote",,62.53554,29.36821,-1,,,83100,Liperi,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90758,"Terveyskeskussairaala Nurmes, Siun sote",,63.55388,29.11473,-1,,,75530,Nurmes,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90758,"Terveyskeskussairaala Outokumpu, Siun sote",,62.72520828,29.02293015,-1,,,83501,Outokumpu,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90758,"Terveyskeskus Polvijärvi, Siun sote",,62.84346008,29.34370232,-1,,,83701,Polvijärvi,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90758,"Pyhäselän terveyskeskus, Siun sote",,62.43907,29.97228,-1,,,82200,Joensuu,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90758,"Siilaisen terveysasema ja sairaala, Siun sote",,62.60026932,29.77588081,-1,,,80130,Joensuu,FI,Finland,,,,,"The Health Center Health Center, Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90758,"Tuupovaaran terveyskeskus, Siun sote",,62.48086,30.61961,-1,,,82730,Joensuu,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90758,Hoitosolu Heinävesi,,62.4221082,28.6290676,-1,,,79700,Heinävesi,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90758,Hoitosolu Polvijärvi,,62.85766,29.37131,-1,,,86700,Polvijärvi,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90758,"Terveyskeskussairaala Tohmajärvi, Siun Sote",,62.18352509,30.37418175,-1,,,82600,Tohmajärvi,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90759,"Kangasniemen hyvinvointikeskus / Lähikuntoutusosasto Kangasniemi, ESSOTE",,61.99058533,26.64443588,-1,,,51200,Kangasniemi,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90759,"Mäntyharjun hyvinvointikeskus / Lähikuntoutusosasto Mäntyharju, ESSOTE",,61.42110062,26.88117027,-1,,,52700,Mäntyharju,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90759,"Juvan hyvinvointikeskus / Lähikuntoutusosasto Juva, ESSOTE",,61.89651489,27.86763954,-1,,,51900,Juva,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90759,"Mikkelin hyvinvointikeskus / Yleislääketieteen osasto, ESSOTE",,61.68886566,27.26182365,-1,,,50100,Mikkeli,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90759,"Mikkelin hyvinvointikeskus / Lähikuntoutusosasto Mikkeli, ESSOTE",,61.68886566,27.26182365,-1,,,50100,Mikkeli,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90760,Pappilanniemen vuodeosasto,,61.06381,24.40405,-1,,,13880,Hattula,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90761,Keusote/Etelä-Tuusulan terveysasema ja Akuuttiosasto,,60.3983078,25.02757263,-1,,,4301,Tuusula,FI,Finland,,,,,"The Health Center inpatient, hospital, health center health center",,,,,,01/01/19,30/03/2020
+90762,Kymsote/Karhulan sairaala,,60.51612,26.93939,-1,,,48600,Kotka,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
+90762,Kymsote/Villa Apila,,60.86687851,26.70544052,-1,,,45100,Kouvola,FI,Finland,,,,,"The Health Center inpatient, hospital",,,,,,01/01/19,30/03/2020
