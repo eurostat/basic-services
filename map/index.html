@@ -24,9 +24,16 @@
       </p>
     <![endif]-->
     <div id="map" style="height:100vh; width:100%;"></div>
+    <table></table>
+
     <script src="./lib/leaflet/leaflet.js"></script>
     <script src="./lib/leaflet.markercluster.js"></script>
     <script src="./lib/d3dsv.js"></script>
+    <script src="https://d3js.org/d3-array.v2.min.js"></script>
+    <script src="https://d3js.org/d3-color.v1.min.js"></script>
+    <script src="https://d3js.org/d3-format.v1.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+    <script src="https://d3js.org/d3-scale.v3.min.js"></script>
     <script src="./lib/proj4-compressed.js"></script>
     <script src="./lib/proj4leaflet.js"></script>
     <script>
@@ -87,38 +94,124 @@
 
           //build map
           let tiles = L.tileLayer(
-            "http://gisco.northeurope.cloudapp.azure.com/maps/wmts/OSMCartoComposite/EPSG3035/{z}/{x}/{y}.png",
+            "https://europa.eu/webtools/rest/gisco/maps/wmts/OSMPositronBackground/EPSG3035/{z}/{x}/{y}.png",
             {
               maxZoom: 18,
               attribution:
-                '&copy; <a href="//openstreetmap.org/copyright">OpenStreetMap</a> contributors,Points &copy 2012 LINZ'
+                '&copy; <a href="//openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="https://ec.europa.eu/eurostat/web/gisco">GISCO</a>'
             }
           );
-          let map = L.map("map", {
-            center: L.latLng(52, 10),
-            zoom: 5,
-            layers: [tiles],
-            crs: crs3035
-          });
+          let osm = L.tileLayer(
+            "https://europa.eu/webtools/rest/gisco/maps/wmts/OSMCartoBackground/EPSG3035/{z}/{x}/{y}.png",
+            {
+              maxZoom: 18,
+              attribution:
+                '&copy; <a href="//openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="https://ec.europa.eu/eurostat/web/gisco">GISCO</a>'
+            }
+          );
 
-          let mcg = L.markerClusterGroup({
-            chunkedLoading: true,
-            //singleMarkerMode: true,
-            maxClusterRadius: 40,
-            spiderfyOnMaxZoom: true,
-            showCoverageOnHover: false,
-            removeOutsideVisibleBounds: true
-          });
+          // let mcg = L.markerClusterGroup({
+          //   chunkedLoading: true,
+          //   //singleMarkerMode: true,
+          //   maxClusterRadius: 40,
+          //   spiderfyOnMaxZoom: true,
+          //   showCoverageOnHover: false,
+          //   removeOutsideVisibleBounds: true
+          // });
+
+          var circleScale = d3
+            .scaleSqrt()
+            .domain(d3.extent(hospitals, d => d.cap_beds)) //568158 37691912
+            .range([100, 8000]); //metres
+
+          let propCircles = L.layerGroup();
+          let normalCircles = L.layerGroup();
+          let defaultRadius = 2000; //metres
 
           for (let i = 0; i < hospitals.length; i++) {
             let a = hospitals[i];
-            let title = a.name;
-            let marker = L.marker(new L.LatLng(a.lat, a.lon, { title: title }));
+            //clusters
+            // let title = a.name;
+            //let marker = L.marker(new L.LatLng(a.lat, a.lon, { title: title }));
             let popup = generatePopupString(a);
-            marker.bindPopup(popup);
-            mcg.addLayer(marker);
+            //marker.bindPopup(popup);
+            //mcg.addLayer(marker);
+            //proportional circles
+            if (a.cap_beds) {
+              let r = circleScale(a.cap_beds);
+              //let circle = L.circle([a.lat, a.lon], r);
+              let circle = L.circle([a.lat, a.lon], r, {
+                fillColor: "#708598",
+                color: "#537898",
+                weight: 1,
+                fillOpacity: 0.6
+              }).on({
+                mouseover: function(e) {
+                  //this.openPopup();
+                  this.setStyle({ color: "yellow" });
+                },
+                mouseout: function(e) {
+                  //this.closePopup();
+                  this.setStyle({ color: "#537898" });
+                }
+              });
+              circle.bindPopup(popup);
+              propCircles.addLayer(circle);
+            }
+
+            //let circle = L.circle([a.lat, a.lon], r);
+            let normalCircle = L.circle([a.lat, a.lon], defaultRadius, {
+              fillColor: "#708598",
+              color: "#537898",
+              weight: 1,
+              fillOpacity: 0.6
+            }).on({
+              mouseover: function(e) {
+                //this.openPopup();
+                this.setStyle({ color: "yellow" });
+              },
+              mouseout: function(e) {
+                //this.closePopup();
+                this.setStyle({ color: "#537898" });
+              }
+            });
+            normalCircle.bindPopup(popup);
+            normalCircles.addLayer(normalCircle);
           }
-          map.addLayer(mcg);
+
+          let map = L.map("map", {
+            center: L.latLng(52, 10),
+            zoom: 5,
+            layers: [tiles, normalCircles],
+            renderer: L.canvas(),
+            crs: crs3035
+          });
+
+          map.on("zoomend", function(e) {
+            var currentZoom = map.getZoom();
+            let newRadius;
+            if (currentZoom >= 12) {
+              newRadius = 100;
+            } else if (currentZoom >= 10 && currentZoom <= 12) {
+              newRadius = 500;
+            } else {
+              newRadius = defaultRadius;
+            }
+            normalCircles.eachLayer(function(layer) {
+              if (layer._mradius !== newRadius) layer.setRadius(newRadius);
+            });
+          });
+
+          //layer toggle
+          var baseLayers = {
+            Positron: tiles,
+            OpenStreetMap: osm
+          };
+          var overlays = {
+            "Healthcare Centres": normalCircles,
+            "Bed Capacity": propCircles
+          };
+          L.control.layers(baseLayers, overlays).addTo(map);
         } else {
           // We reached our target server, but it returned an error
         }
@@ -160,6 +253,10 @@
       }
 
       request.send();
+
+      toRadius = function(val) {
+        return 1 * 0.005 * Math.sqrt(val);
+      };
     </script>
   </body>
 </html>
