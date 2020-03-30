@@ -1,359 +1,359 @@
-id,hospital_name,site_name,lat,lon,street,house_number,postcode,city,cc,country,emergency,cap_beds,cap_prac,cap_rooms,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date,geo_qual
-1,Tertianum AG Klinik Tertianum Neutal,REHA-Abteilung,47.675,9.01971,Seestrasse 101,,8267,Berlingen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-2,Klinik St. Georg Goldach AG,Goldach,47.47527,9.4746,Klosterstrasse 19,,9403,Goldach,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-3,Hôpital Riviera-Chablais Vaud-Valais,Montreux,46.44006,6.90826,Avenue de Belmont 25,,1820,Montreux,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-4,Hôpital Riviera-Chablais Vaud-Valais,Samaritain,46.461,6.85455,Boulevard Paderewski 3,,1800,Vevey,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-5,Hôpital Riviera-Chablais Vaud-Valais,Providence,46.45765,6.8553,Avenue de la Prairie 3,,1800,Vevey,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-6,Hôpital Riviera-Chablais Vaud-Valais,Mottex,46.46056,6.88522,Chemin de Mottex 25,,1807,Blonay,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-7,Hôpital Riviera-Chablais Vaud-Valais,Monthey,46.25364,6.94379,Route de Morgins,,1870,Monthey,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-8,Hôpital Riviera-Chablais Vaud-Valais,Aigle,46.31181,6.96439,Chemin du Grand-Chêne 1,,1860,Aigle,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-9,Groupement Hospitalier de l'Ouest Lémanique (GHOL) SA,Hôpital de Nyon,46.38346,6.22749,Chemin Monastier 10,,1260,Nyon,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-10,Groupement Hospitalier de l'Ouest Lémanique (GHOL) SA,Hôpital de Rolle,46.46423,6.34642,Route de l'Hôpital 26,,1180,Rolle,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-11,Institution de Lavigny,Institution de Lavigny,46.50326,6.41171,route du Vignoble 60,,1175,Lavigny,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-12,Hôpital Intercantonal de la Broye (HIB),Payerne,46.81885,6.94608,Avenue de la Colline 3,,1530,Payerne,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-13,Hôpital Intercantonal de la Broye (HIB),Estavayer-le-Lac,46.8504,6.84563,Rue de la Rochette,,1470,Estavayer-le-Lac,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-14,Spitäler Frutigen Meiringen Interlaken AG,Spital Frutigen,46.58399,7.64158,Adelbodenstrasse 27,,3714,Frutigen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-15,Spitäler Frutigen Meiringen Interlaken AG,Spital Interlaken,46.6807,7.8433,Weissenaustrasse 27,,3800,Unterseen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-16,Hôpital du Jura bernois SA,Hôpital de St-Imier,47.1483,6.9834,Les Fontenayes 17,,2610,St-Imier,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-17,Hôpital du Jura bernois SA,Hôpital de Moutier,47.28198,7.37464,Rue Beausite 49,,2740,Moutier,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-18,Adullam-Stiftung Basel Adullam-Geriatriespital,"Adullam Spital, Basel",47.56012,7.57963,Mittlere Strasse 15,,4056,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-19,Adullam-Stiftung Basel Adullam-Geriatriespital,"Adullam Spital, Riehen",47.58482,7.65435,Schützengasse 37,,4125,Riehen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-20,Flury Stiftung Spital Schiers,Flury Stiftung Spital Schiers,46.97098,9.686223,,,7220,Schiers,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-21,Center da Sanadad Savognin SA,Center da Sanadad Savognin,46.59528,9.60036,Stradung 52,,7460,Savognin,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-22,Spital Thurgau AG Kantonsspitäler Frauenfeld & Münsterlingen,Kantonsspital Frauenfeld KSF,47.54928,8.91029,"Pfaffenholzstrasse 4, Postfach",,8501,Frauenfeld,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-23,Spital Thurgau AG Kantonsspitäler Frauenfeld & Münsterlingen,Kantonsspital Münsterlingen KSM,47.63081,9.23625,Spitalcampus 1,,8596,Münsterlingen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-24,Kantonsspital Graubünden,Kantonsspital Graubünden,46.86458,9.53926,Loestrasse 170,,7000,Chur,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-25,Centro Sanitario Bregaglia Reparto Acuto,Centro Sanitario Bregaglia Reparto Acuto,46.34125,9.55861,Flin,,7606,Promontogno,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-26,Universitäre Psychiatrische Dienste Bern (UPD) AG,Gemeindepsychiatrisches Zentrum Morgenstrasse Bern,46.93386078,7.389210224,Morgenstrasse 83,,3018,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-27,Universitäre Psychiatrische Dienste Bern (UPD) AG,Station Lindenweg Moosseedorf,47.01508,7.48326,Lindenweg 4,,3302,Moosseedorf,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-28,Universitäre Psychiatrische Dienste Bern (UPD) AG,Wohncoaching Kasthoferstrasse Bern,46.94259,7.4723,Kasthoferstrasse 63,,3006,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-29,PZM Psychiatriezentrum Münsingen,PZM Psychiatriezentrum Münsingen,46.88051,7.55314,Hunzigenallee 1,,3110,Münsingen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-30,Spital Uster,Spital Uster,47.35352,8.72412,Brunnenstrasse 42,,8610,Uster,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-31,Spital Männedorf AG,Spital Männedorf,47.25104,8.69661,Asylstrasse 10,,8708,Männedorf,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-32,Stadtspital Waid,Stadtspital Waid,47.39886,8.52053,Tièchestrasse 99,,8037,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-33,Stadtspital Triemli,Stadtspital Triemli,47.36576,8.49748,Birmensdorferstrasse 497,,8063,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-34,Zuger Kantonsspital AG,Zuger Kantonsspital,47.1942,8.51775,Landhausstrasse 11,,6340,Baar,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-35,Suchtbehandlung Frankental Entzug & Intervention,Suchtbehandlung Frankental,47.40755,8.47724,Frankentalerstrasse 55,,8049,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-36,Clienia Littenheid AG Klinik für Psychiatrie und Psychotherapie,Clienia Littenheid AG,47.440514,9.008591,,,9573,Littenheid,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-37,Hôpital du Pays d'Enhaut,Hôpital du Pays d'Enhaut,46.47796,7.14076,Route de l'Hôpital 17,,1660,Château-d'Oex,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-38,Privatklinik Hohenegg AG,Ambulantes Zentrum,47.38064,8.5457,Sonneggstrasse 45,,8006,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-39,Réseau Santé Balcon du Jura.vd (RSBJ),Les Rosiers,46.81916,6.49479,Rue des Rosiers 29,,1450,Ste-Croix,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-40,Réseau Santé Balcon du Jura.vd (RSBJ),Les Alpes,46.82053,6.50643,Avenue des Alpes 18D,,1450,Ste-Croix,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-41,Ostschweizer Kinderspital,Ostschweizer Kinderspital,47.42986,9.39377,Claudiusstrasse 6,,9006,St. Gallen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-42,Ostschweizer Kinderspital,Romerhuus,47.42986,9.39377,Claudiusstrasse 6,,9006,St. Gallen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-43,Hôpital de Lavaux,Hôpital de Lavaux,46.49056,6.72532,Chemin des Colombaires 31,,1096,Cully,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-44,Kreisspital für das Freiamt,Kreisspital für das Freiamt,47.27729,8.33034,Spitalstrasse 144,,5630,Muri AG,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-45,Centro Sanitario Valposchiavo Ospedale San Sisto,Centro Sanitario Valposchiavo Ospedale San Sisto,46.323111,10.0619005,Via da l'Uspedal 1000,,7742,Poschiavo,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-46,Spital Schwyz,Spital Schwyz,47.0159,8.6587,Waldeggstrasse 10,,6430,Schwyz,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-47,Geburtshaus Zürcher Oberland AG,Geburtshaus Zürcher Oberland  AG,47.33238,8.84724,Schürlistrasse 3,,8344,Bäretswil,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-48,Paracelsus-Spital Richterswil AG,Paracelsus-Spital Richterswil,47.20789,8.69978,Bergstrasse 16,,8805,Richterswil,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-49,Geburtshus Storchenäscht AG,Geburtshus Storchenäscht,47.39786,8.21498,Hendschikerstrasse 12,,5504,Othmarsingen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-50,Geburtshaus Delphys,Geburtshaus Delphys,47.37468,8.51996,Badenerstrasse 177,,8003,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-51,GSMN Ticino SA - Ars Medica,Clinica Ars Medica GSMN Ticino SA,46.0399,8.92394,Via Grumo 16,,6929,Gravesano,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-52,Adus Medica AG,Adus Medica AG,47.47865,8.45128,Breitestrasse 11,,8157,Dielsdorf,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-53,Cardiocentro Ticino (CCT),Cardiocentro Ticino,46.0177314,8.9520604,Via Tesserete 48,,6900,Lugano,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-54,Secteur Psychiatrique Est Fondation de Nant,Hôpital psychiatrique Nant,46.47801,6.8537,Route de Nant,,1804,Corsier-sur-Vevey,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-55,Secteur Psychiatrique Est Fondation de Nant,Unité hospitalière de pédopsychiatrie Enfant & Adolesccent,46.478946,6.852562,Route de Nant,,1804,Corsier-sur-Vevey,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-56,Secteur Psychiatrique Est Fondation de Nant,Pédopsychiatrie ambulatoire,46.46549,6.84272,Rue des Moulins 11,,1800,Vevey,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-57,Secteur Psychiatrique Est Fondation de Nant,Accueil-Urgence-Liaison  c/o HRC Site Samaritain,46.46760178,6.846374035,Boulevard Paderewski 3,,1800,Vevey,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-58,Secteur Psychiatrique Est Fondation de Nant,Pédopsychiatrie ambulatoire,46.31181,6.96439,Grand Chêne 1,,1860,Aigle,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-59,Secteur Psychiatrique Est Fondation de Nant,Pédopsychiatrie ambulatoire,46.47212,7.12605,Rte des Chenolettes 4,,1660,Château-d'Oex,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-60,Secteur Psychiatrique Est Fondation de Nant,CTPE et CTJE,46.46973,6.87676,Chemin de Chamoyron 29,,1806,St-Légier-La Chiésaz,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-61,Secteur Psychiatrique Est Fondation de Nant,Psychiatrie adultes ambulatoire,46.43463,6.91083,Avenue des Alpes 66,,1820,Montreux,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-62,Secteur Psychiatrique Est Fondation de Nant,Psychiatrie adultes ambulatoire,46.31181,6.96439,Grand Chêne 1,,1860,Aigle,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-63,Secteur Psychiatrique Est Fondation de Nant,Psychogériatrie ambulatoire,46.46549,6.84272,Rue des Moulins 11,,1800,Vevey,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-64,Secteur Psychiatrique Est Fondation de Nant,Psychogériatrie ambulatoire,46.31181,6.96439,Grand Chêne 1,,1860,Aigle,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-65,Secteur Psychiatrique Est Fondation de Nant,Unité Ambulatoire Spécialisée,46.43463,6.91083,Avenue des Alpes 66,,1820,Montreux,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-66,Secteur Psychiatrique Est Fondation de Nant,Unités Traitements Dépendance,46.31903,6.9681,Rue du Molage 8,,1860,Aigle,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-67,Bad Schinznach AG Privat-Klinik Im Park,Schinznach - Bad,47.4572672,8.1659797,Badstrasse 50,,5116,Schinznach Bad,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-68,St. Claraspital,St. Claraspital,47.56654,7.61416,Kleinriehenstrasse 30,,4058,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-69,Stiftung Diaconis Palliative Care,Station Oranienburg-Belvoir,46.95229,7.45647,Schänzlistrasse 15,,3013,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-70,Universitäts-Kinderspital Zürich das Spital der Eleonorenstiftung,Universitäts-Kinderspital Zürich,47.37167,8.55801,Steinwiesstrasse 75,,8032,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-71,Hôpital de la Tour,Hôpital de La Tour,46.22887,6.06744,Avenue Jacob-Daniel Maillard 3,,1217,Meyrin,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-72,Palliativzentrum Hildegard,Palliativzentrum Hildegard,47.55037,7.61062,St. Alban-Ring 151,,4052,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-73,EHC Ensemble hospitalier de la Côte,Hôpital de Morges,46.52238,6.49975,Chemin du Crêt 2,,1110,Morges,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-74,EHC Ensemble hospitalier de la Côte,Hôpital de Gilly,46.47027,6.30507,Rte du Pavillon 12,,1182,Gilly,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-75,EHC Ensemble hospitalier de la Côte,Hôptial d'Aubonne,46.49172,6.3887,Rue de Trévelin 67,,1170,Aubonne,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-76,kneipp-hof Dussnang AG Rehabilitationsklinik,kneipp-hof Dussnang,47.43021,8.9633,Kurhausstrasse 34,,8374,Dussnang,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-77,Zürcher RehaZentrum Davos,Zürcher RehaZentrum Davos,46.76876,9.81579,Klinikstrasse 6,,7272,Davos Clavadel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-78,Zürcher RehaZentrum Wald,Zürcher RehaZentrum Wald,47.27632,8.94305,Faltigbergstrasse 7,,8636,Wald ZH,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-79,Clienia Schlössli AG,Clienia Schlössli AG,47.26921,8.71954,Schlösslistrasse 8,,8618,Oetwil am See,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-80,Clienia Schlössli AG,Psychiatriezentrum Männedorf,47.2525,8.69608,Bergstrasse 34,,8708,Männedorf,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-81,Clienia Schlössli AG,Psychiatriezentrum Wetzikon,47.32736,8.80197,Bahnhofstrasse 196,,8620,Wetzikon,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-82,Clienia Schlössli AG,Psychiatriezentrum Uster,47.35378,8.72286,Schachenweg 2,,8610,Uster,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-83,Clienia Schlössli AG,Praxis Opéra Zürich,47.36373,8.54752,Dufourstrasse 24,,8008,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-84,SRO Spital Region Oberaargau AG,Spital Langenthal,47.2161,7.79389,St. Urbanstrasse 67,,4900,Langenthal,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-85,SRO Spital Region Oberaargau AG,Ambulatorium Niederbipp,47.27207,7.6857,Anternstrasse 24,,4704,Niederbipp,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-86,SRO Spital Region Oberaargau AG,Ambulatorium Huttwil,47.11637,7.83936,Spitalstrasse 51,,4950,Huttwil,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-87,SRO Spital Region Oberaargau AG,Ambulatorium Herzogenbuchsee,47.19227,7.71857,Stelliweg 24,,3360,Herzogenbuchsee,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-88,Insel Gruppe AG (universitär),Inselspital,46.94771,7.42555,Freiburgstrasse 18,,3010,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-89,Bethesda Spital AG,Bethesda Spital,47.54804,7.6173,Gellertstrasse 144,,4052,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-90,Sune-Egge,Fachspital Sune-Egge,47.38172,8.53419,Konradstrasse 62,,8005,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-91,Fondation Rive-Neuve Unité de Soins Palliatifs,Fondation Rive-Neuve,46.46394,6.88174,Chemin des Cuarroz 57,,1807,Blonay,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-92,Stiftung für ganzheitliche Medizin,SGM Ambi Bern,46.94751,7.43788,Bubenbergplatz 10,,3011,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-93,Schweizer Paraplegiker-Zentrum Nottwil AG,Schweizer Paraplegiker-Zentrum,47.14123,8.13101,Guido A. Zäch Strasse 1,,6207,Nottwil,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-94,Privatklinik SALINA Salina Medizin AG,Salina Rehaklinik,47.55791,7.80017,Roberstenstrasse 31,,4310,Rheinfelden,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-95,Privatklinik SALINA Salina Medizin AG,Physiotherapie Salina B15,47.55137,7.78549,Baslerstrasse 15,,4310,Rheinfelden,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-96,Privatklinik SALINA Salina Medizin AG,Möhlin,47.55988,7.84197,Bachstrasse 10,,4313,Möhlin,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-97,Privatklinik SALINA Salina Medizin AG,Stein,47.54689,7.95189,Schaffhauserstr. 33,,4332,Stein,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-98,Privatklinik SALINA Salina Medizin AG,Physiotherapie Eiken,47.5319,7.99094,Rössliweg 15b,,5074,Eiken,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-99,Privatklinik SALINA Salina Medizin AG,Frick,47.50895,8.01679,Mühlegasse 18,,5070,Frick,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-100,Soteria Bern,Station Soteria,46.9500665,7.4293519,Bühlstrasse 19,,3012,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-101,Gesundheitszentrum Fricktal,"GZF, Spital Rheinfelden",47.55586,7.80587,Riburgerstrasse 12,,4310,Rheinfelden,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-102,Gesundheitszentrum Fricktal,"GZF, Spital Laufenburg",47.56215,8.06448,Spitalstrasse 10,,5080,Laufenburg,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-103,Gesundheitszentrum Fricktal,"GZF, Fachärztehaus Frick",47.50895,8.01679,Mühlegasse 18,,5070,Frick,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-104,Hirslanden Klinik Belair,Praxiszentrum am Bahnhof,47.69939,8.63121,Bleicheplatz 3,,8200,Schaffhausen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-105,"aarReha Schinznach Rehabilitation, Rheumatologie",Schinznach Bad,47.4575,8.16422,Badstrasse 55,,5116,Schinznach Bad,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-106,Herz-Neuro-Zentrum Bodensee AG,HNZB Kreuzlingen,47.64235,9.17619,Weinbergstrasse 1,,8280,Kreuzlingen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-107,Hôpital Jules Daler,Daler,46.80102,7.14057,Route de Bertigny 34,,1700,Fribourg,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-108,Sanatorium Kilchberg,Sanatorium Kilchberg AG,47.32836,8.54361,Alte Landstrasse 70,,8802,Kilchberg ZH,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-109,Hirslanden Klinik Am Rosenberg AG,Heiden,47.44655,9.52703,Hasenbühlstrasse 11,,9410,Heiden,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-110,Klinik Seeschau AG,Seeschau Kreuzlingen,47.64595,9.16147,Bernrainstrasse 17,,8280,Kreuzlingen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-111,Klinik Im Park,Radiologie und Neurorad. Schanze,47.37046,8.53527,Talstrasse 65,,8001,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-112,Klinik Im Park,Operationszentrum Bellaria,47.35176,8.53005,Bellariastrasse 38,,8038,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-113,Spital Thurgau AG Klinik St. Katharinental,KSK Diessenhofen,47.69077,8.73754,St. Katharinental,,8253,Diessenhofen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-114,Spital Thurgau AG Psychiatrische Klinik Münsterlingen,Psychiatr. Klinik Münsterlingen,47.63281,9.23369,Seeblickstrasse 3,,8596,Münsterlingen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-115,Spital Linth,Spital Linth,47.22376,8.99488,Gasterstrasse 25,,8730,Uznach,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-116,Kantonsspital Obwalden,Kantonsspital Obwalden,46.89009,8.24607,Brünigstrasse 181,,6060,Sarnen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-117,Kantonsspital Nidwalden,Kantonsspital Nidwalden,46.96,8.35772,Ennetmooserstrasse 19,,6370,Stans,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-118,Kantonales Spital Appenzell,Kantonales Spital Appenzell,47.33425,9.41613,Sonnhalde 2,,9050,Appenzell,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-119,Universitätsspital Zürich,UniversitätsSpital Zürich,47.37662,8.54918,Rämistrasse 100,,8091,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-120,Universitätsspital Zürich,Wagi-Areal Schlieren,47.39842,8.4582,Wagistrasse 14,,8952,Schlieren,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-121,Universitätsspital Zürich,Urologie Meilen,47.27078,8.64186,Obere Kirchgasse 18,,8706,Meilen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-122,Kantonsspital Winterthur,Kantonsspital Winterthur,47.5072,8.72849,Brauerstrasse 15,,8400,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-123,Integrierte Psychiatrie Winterthur IPW,ipw Winterthur,47.50636,8.6848,Wieshofstrasse 102,,8408,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-124,Integrierte Psychiatrie Winterthur IPW,ipw Embrach,47.52431,8.58463,Römerweg 51,,8424,Embrach,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-125,Integrierte Psychiatrie Winterthur IPW,ipw Bülach,47.51896,8.54292,Gartematt 6,,8180,Bülach,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-126,Integrierte Psychiatrie Winterthur IPW,ipw Dielsdorf,47.48123,8.45678,Geerenstrasse 6,,8157,Dielsdorf,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-127,Integrierte Psychiatrie Winterthur IPW,ipw Zürich-Schwamendingen,47.404,8.57076,Winterthurerstrasse 501,,8051,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-128,Integrierte Psychiatrie Winterthur IPW,ipw KIZ_Wi,47.50405,8.71782,Bleichestrasse 9,,8400,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-129,Integrierte Psychiatrie Winterthur IPW,ipw GAT_Wi,47.50414,8.71761,Salstrasse 48,,8400,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-130,Integrierte Psychiatrie Winterthur IPW,ipw GEZ_Wi,47.50123,8.72317,Rudolfstrasse 19,,8400,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-131,Integrierte Psychiatrie Winterthur IPW,ipw BSJ_Wi,47.50241,8.73234,Trollstrasse 18,,8400,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-132,Integrierte Psychiatrie Winterthur IPW,ipw CM_Wi,47.49612,8.69796,Schlachthofstrasse 19a,,8406,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-133,Integrierte Psychiatrie Winterthur IPW,ipw PP_Wi,47.50698,8.73016,Haldenstrasse 63,,8400,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-134,Integrierte Psychiatrie Winterthur IPW,ipw AFT_Wi,47.4982,8.72525,Technikumstrasse 81,,8400,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-135,Integrierte Psychiatrie Winterthur IPW,ipw Glattbrugg,47.43255,8.56037,Feldeggstrasse 5,,8152,Glattbrugg,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-136,Integrierte Psychiatrie Winterthur IPW,ipw ISW,47.49803,8.73295,Tösstalstrasse 19 und 53,,8400,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-137,Kantonsspital St. Gallen,Kantonsspital St. Gallen,47.4297334,9.3890057,Rorschacher Strasse 95,,9007,St. Gallen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-138,Kantonsspital St. Gallen,Spital Rorschach,47.47361,9.49914,Heidener Strasse 11,,9400,Rorschach,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-139,Kantonsspital St. Gallen,Spital Flawil,47.41805,9.18412,Krankenhausstrasse 23,,9230,Flawil,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-140,Psychiatrie-Dienste Süd,PZ Rheintal,47.4111,9.62489,Balgacherstrasse 202,,9435,Heerbrugg,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-141,Psychiatrie-Dienste Süd,PZ Werdenberg-Sarganserland,47.07369,9.48128,Hauptstrasse 27,,9477,Trübbach,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-142,Psychiatrie-Dienste Süd,PZ Linthgebiet Standort Uznach,47.22434,8.98362,Zürcherstrasse 1,,8730,Uznach,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-143,Psychiatrie-Dienste Süd,PZ Linthgebiet Standort Rapperswil,47.22579,8.81759,Alpenstrasse 2,,8640,Rapperswil,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-144,Psychiatrie St.Gallen Nord,PZ St. Gallen,47.4194,9.36955,Teufenerstrasse 26,,9001,St.Gallen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-145,Psychiatrie St.Gallen Nord,PZ Rorschach,47.47674,9.49351,Mariabergstrasse 19,,9401,Rorschach,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-146,Psychiatrie St.Gallen Nord,PZ Wattwil,47.30139,9.09188,Hembergerstrasse 22,,9630,Wattwil,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-147,Psychiatrische Universitätsklinik Zürich,PUK Zürich Lenggstrasse,47.35227,8.57028,Lenggstrasse 31,,8032,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-148,Psychiatrische Universitätsklinik Zürich,ZSP Militärstrasse,47.37625,8.53348,Militärstrasse 8,,8004,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-149,Psychiatrische Universitätsklinik Zürich,ZSP Ambi / TZ Heliostrasse,47.36262,8.56079,Heliosstrasse 32,,8032,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-150,Psychiatrische Universitätsklinik Zürich,KAP Hegibach,47.36317,8.56003,Minervastrasse 145,,8032,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-151,Psychiatrische Universitätsklinik Zürich,ZAE Ambi / TZ Selnaustrasse,47.36992,8.5325,Selnaustrasse 9,,8001,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-152,Psychiatrische Universitätsklinik Zürich,ZSP Nachtklinik Klusstrasse,47.36457,8.57171,Klusstrasse 44,,8032,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-153,Psychiatrische Universitätsklinik Zürich,ZSP Ambi Limmattal,47.4033,8.40483,Zürcherstrasse 49,,8953,Dietikon,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-154,Psychiatrische Universitätsklinik Zürich,ZSP Ambi Oerlikon,47.40923,8.54028,Hofwiesenstrasse 318,,8050,Zürich-Oerlikon,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-155,Psychiatrische Universitätsklinik Zürich,PUK Rheinau,47.63526,8.60398,Alleestrasse,,8462,Rheinau,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-156,Psychiatrische Universitätsklinik Zürich,ZKJF Zürich,47.36591,8.55703,Neptunstr. 60,,8032,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-157,Psychiatrische Universitätsklinik Zürich,KAP Schlieren,47.39944,8.45913,Wagistrasse 23,,8952,Schlieren,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-158,Psychiatrische Universitätsklinik Zürich,KJPP Zürich,47.36259,8.55689,Neumünsterallee 3,,8032,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-159,Psychiatrische Universitätsklinik Zürich,ZKP Brüschhalde,47.25335,8.70324,Bergstrasse 120,,8708,Männedorf,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-160,Psychiatrische Universitätsklinik Zürich,ZAS Winterthur,47.50628,8.73227,Albanistrasse 24,,8400,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-161,Psychiatrische Universitätsklinik Zürich,ZAS Bülach,47.52191,8.53885,Bahnhofstrasse 39,,8180,Bülach,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-162,Psychiatrische Universitätsklinik Zürich,ZAS Dietikon,47.40558,8.40243,Löwenstrasse 15,,8953,Dietikon,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-163,Psychiatrische Universitätsklinik Zürich,ZAS Horgen,47.26109,8.59711,Bahnhofstrasse 6,,8810,Horgen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-164,Psychiatrische Universitätsklinik Zürich,ZAS Uster,47.34713,8.71663,Gerberstrasse 3,,8610,Uster,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-165,Psychiatrische Universitätsklinik Zürich,ZAS Wetzikon,47.31713,8.79182,Guyer-Zeller-Strasse 21,,8620,Wetzikon,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-166,Psychiatrische Universitätsklinik Zürich,ZAS Zürich Nord,47.41461,8.5507,Thurgauerstrasse 39,,8050,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-167,CHUV Centre Hospitalier Universitaire Vaudois,Centre Hospitalier Universitaire Vaudois,46.52475,6.63956,Rue du Bugnon 21,,1011,Lausanne,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-168,CHUV Centre Hospitalier Universitaire Vaudois,Psychiatrie Nord CPNVD,46.78195,6.64769,Avenue des Sports 12B,,1400,Yverdon-les-Bains,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-169,CHUV Centre Hospitalier Universitaire Vaudois,Psychiatrie Ouest Hôpital de Prangins,46.39332199,6.247362137,Chemin Oscar Forel 3,,1197,Prangins,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-170,Spitalregion Rheintal Werdenberg Sarganserland,Spital Altstätten,47.38297,9.5412,F.-Marolani-Strasse 6,,9450,Altstätten,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-171,Spitalregion Rheintal Werdenberg Sarganserland,Spital Grabs,47.17356,9.44861,Spitalstrasse 44,,9472,Grabs,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-172,Spitalregion Rheintal Werdenberg Sarganserland,Spital Walenstadt,47.12118,9.31067,Spitalstrasse 5,,8880,Walenstadt,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-173,Spitalregion Rheintal Werdenberg Sarganserland,Rebstein,47.39704,9.57936,Alte Landstrasse 106,,9445,Rebstein,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-174,Spitalregion Fürstenland Toggenburg,Spital Wil,47.46535,9.05756,Fürstenlandstrasse 32,,9500,Wil SG,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-175,Spitalregion Fürstenland Toggenburg,Spital Wattwil,47.29729,9.08355,Steig,,9630,Wattwil,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-176,Spital Affoltern,Spital Affoltern,47.2848,8.45657,Sonnenbergstrasse 27,,8910,Affoltern am Albis,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-177,Regionalspital Surselva AG,Regionalspital Surselva,46.77682,9.20513,Spitalstrasse 6,,7130,Ilanz,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-178,Spital Oberengadin,Spital Oberengadin,46.54004,9.87883,Via Nouva 3,,7503,Samedan,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-179,Spital Bülach AG,Spital Bülach,47.52147,8.53304,Spitalstrasse 24,,8180,Bülach,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-180,Regionalspital Emmental AG,Spital Burgdorf,47.04822,7.62057,Oberburgstrasse 54,,3400,Burgdorf,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-181,Regionalspital Emmental AG,Spital Langnau,46.94346,7.78656,Dorfbergstrasse 10,,3550,Langnau,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-182,Spitalzentrum Biel AG,Spitalzentrum Biel,47.14673,7.24473,Vogelsang 84,,2502,Biel/Bienne,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-183,Spital Limmattal,Spital Limmattal,47.3930285,8.4306746,Urdorferstrasse 100,,8952,Schlieren,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-184,Geriatrische Klinik St. Gallen,Geriatrische Klinik St.Gallen,47.42896,9.38915,Rorschacher Strasse 94,,9000,St. Gallen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-185,Spital Thusis,Spital Thusis,46.69708,9.4371,Alte Strasse 31,,7430,Thusis,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-186,Rehaklinik Bellikon,Bellikon,47.38821,8.34341,Mutschellenstrasse 2,,5454,Bellikon,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-187,Reha-Pflegeklinik Eden AG,Reha-Pflegeklinik Eden,46.69979,7.89279,Schulhausweg 11,,3852,Ringgenberg BE,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-188,Spital Lachen,Spital Lachen,47.1887722,8.8582143,Oberdorfstrasse 41,,8853,Lachen SZ,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-189,Leukerbad Clinic RZL Rehabilitationszentrum Leukerbad AG,Leukerbad Clinic,46.37772,7.62647,Willy-Spühlerstrasse 2,,3954,Leukerbad,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-190,RehaClinic Zurzach,Akutnahe Rehabilitation,47.45416,8.27827,Im Ergel 1,,5404,Baden,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-191,Hôpital Ophtalmique Jules Gonin Fondation Asile des Aveugles,Hôpital ophtalmique Jules-Gonin,46.52443,6.62361,Avenue de France 15,,1004,Lausanne,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-192,Spital STS AG,Spital Thun,46.76111,7.63227,Krankenhausstrasse 12,,3600,Thun,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-193,Spital STS AG,Spital Zweisimmen,46.55784,7.3731,Karl Haueter-Strasse 21,,3770,Zweisimmen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-194,Asana Gruppe AG Spital Leuggern,Asana Gruppe Spital Leuggern,47.58032,8.21627,Kommendeweg,,5316,Leuggern,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-195,Asana Gruppe AG Spital Menziken,Menziken,47.24637,8.1899,Spitalstrasse 1,,5737,Menziken,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-196,Spital Zollikerberg,Spital Zollikerberg,47.34899,8.59808,Trichtenhauserstrasse 20,,8125,Zollikerberg,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-197,Spital Zollikerberg,Frauen-Permanence Zürich,47.36618,8.5484,Goethestrasse 24,,8001,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-198,Hospiz im Park,Hospiz im Park,47.49187,7.61347,Stollenrain 12,,4144,Arlesheim,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-199,Kantonsspital Aarau AG,Kantonsspital Aarau AG,47.3875,8.0581,Tellstrasse 15,,5001,Aarau,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-200,Psychiatrische Dienste Aargau AG,Psychiatrische Dienste Aargau AG,47.48136,8.21544,Zürcherstrasse 241,,5210,Windisch,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-201,Psychiatrische Dienste Aargau AG,Tageszentrum Aarau,47.37861,8.04659,Landhausweg 22,,5000,Aarau,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-202,Psychiatrische Dienste Aargau AG,TK & TZ Baden,47.4745,8.30218,St. Ursusstrasse 3,,5400,Baden,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-203,Psychiatrische Dienste Aargau AG,Tageszentrum Wohlen,47.34776,8.27198,Bahnhofweg 17,,5610,Wohlen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-204,Psychiatrische Dienste Aargau AG,Kinderstation Rüfenach,47.50682,8.20505,Heinrich Meyer-Weg 1,,5235,Rüfenach,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-205,Kantonsspital Baden AG,Im Ergel 1,47.45416,8.27827,Im Ergel 1,,5404,Baden,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-206,Kantonsspital Baden AG,Med. Zentrum Brugg,47.4823,8.20335,Fröhlichstrasse 7,,5200,Brugg,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-207,Kantonsspital Baden AG,"Spital Muri, Dialyse",47.27729,8.33034,Spitalstrasse 144,,5630,Muri AG,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-208,Kantonsspital Baden AG,Ärztezentrum Limmatfeld,47.40915,8.4052,Heimstrasse 1,,8953,Dietikon,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-209,Spital Einsiedeln,Spital Einsiedeln,47.13093,8.73942,Spitalstrasse 28,,8840,Einsiedeln,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-210,reha andeer ag Rehabilitationsklinik,reha andeer ag,46.60214,9.4266,Veia Granda,,7440,Andeer,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-211,Luzerner Höhenklinik Montana,Luzerner Höhenklinik Montana,46.31681,7.49788,Route de l'Astoria 2,,3963,Crans-Montana,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-212,Kantonsspital Uri,Kantonsspital Uri,46.88282,8.63742,Spitalstrasse 1,,6460,Altdorf UR,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-213,Spital Zofingen AG,Spital Zofingen AG,47.29632,7.94722,Mühlethalstrasse 27,,4800,Zofingen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-214,Réseau fribourgeois de santé mentale - RFSM Centre de soins hospitaliers,RFSM,46.656844,7.065642,,,1633,Marsens,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-215,Kantonsspital Glarus,Kantonsspital Glarus Akutsomatik,47.04551,9.06515,Burgstrasse 99,,8750,Glarus,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-216,Kantonsspital Glarus,Kantonsspital Glarus Psychiatrie,47.04551,9.06515,Burgstrasse 99,,8750,Glarus,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-217,"Spitalverbund Appenzell Ausserrhoden, Psychiatrisches Zentrum",Psychiatrisches Zentrum AR,47.38599,9.26438,Krombach 3,,9101,Herisau,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-218,Felix Platter-Spital,Felix Platter-Spital,47.56553,7.56607,Burgfelderstrasse 101,,4055,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-219,Felix Platter-Spital,Universitätsspital,47.56108,7.5815,Hebelstrasse 32,,4056,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-220,Services Psychiatriques Jura Bernois - Bienne-Seeland (SPJBB),Unité de St-Imier,47.15228,6.99917,Rue du Midi 9,,2610,St-Imier,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-221,Services Psychiatriques Jura Bernois - Bienne-Seeland (SPJBB),Unité de Moutier,47.28197,7.37432,Beausite 47,,2740,Moutier,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-222,Spitäler Schaffhausen,Geissbergstrasse 81,47.71139,8.63758,Geissbergstrasse 81,,8208,Schaffhausen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-223,Spitäler Schaffhausen,Nordstrasse 111,47.70623,8.62723,Nordstrasse 111,,8200,Schaffhausen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-224,Spitäler Schaffhausen,Promenadenstrasse 21,47.69496,8.62846,Promenadenstrasse 21,,8200,Schaffhausen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-225,Spital Davos AG Akutabteilung,Spital Davos,46.78769,9.81438,Promenade 4,,7270,Davos Platz,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-226,Reha Rheinfelden,Rheinfelden,47.5592,7.80711,Salinenstrasse 98,,4310,Rheinfelden,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-227,Universitätsspital Basel,Universitätsspital Basel,47.56108,7.5815,Hebelstrasse 32,,4056,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-228,"Biotonus, Clinique Bon-Port SA centre de soins médicaux & esthétiques",Biotonus,46.42952,6.91921,Rue Bon-Port 27,,1820,Montreux,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-229,Center da Sanda Val Müstair Akutabteilung,Center da Sanda Val Müstair,46.60694,10.43254,Sielva,,7536,Sta. Maria V. M.,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-230,Center da Sanda Engiadina Bassa Ospidal d'Engiadina Bassa,Ospidal d'Engiadina Bassa,46.79986,10.30388,Via da l'Ospidal 280,,7550,Scuol,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-231,Modellstation SOMOSA,Modellstation SOMOSA,47.50635,8.76473,Zum Park 20,,8404,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-232,Rehabilitationszentrum Seewis Klinik für Herz- & Kreislauferkrankungen,Reha Seewis,46.98921,9.63713,Schlossstrasse 1,,7212,Seewis Dorf,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-233,Universitäre Psychiatrische Kliniken Basel,UPK-Campus (EPK/FPK),47.57123,7.56588,Wilhelm-Klein-Strasse 27,,4056,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-234,Universitäre Psychiatrische Kliniken Basel,Psychotherap. Tagesklinik (PTK),47.55689,7.58432,Spalenberg 65,,4051,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-235,Universitäre Psychiatrische Kliniken Basel,Jugendpsychiatr. Abteilung (JPA),47.54123,7.58811,Röschenzerstrasse 5/7,,4053,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-236,Universitäre Psychiatrische Kliniken Basel,Kinderpsychiatr. Abteil. (KPA),47.55763,7.60219,Alemannengasse 60,,4058,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-237,Universitäre Psychiatrische Kliniken Basel,DTK f. Klein-/Kindergartenkinder,47.55931,7.60218,Chrischonastrasse 38,,4058,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-238,Universitäre Psychiatrische Kliniken Basel,Kriseninterventionsstation (KIS),47.56105,7.58505,Petersgraben 4,,4051,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-239,Universitäre Psychiatrische Kliniken Basel,Janus,47.5622,7.58472,Spitalstrasse 2,,4056,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-240,Universitäre Psychiatrische Kliniken Basel,"ZASS-Ambulanz, ZDK, ZPE",47.55617,7.58329,Kornhausgasse 7,,4051,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-241,"Kinder- & Jugendpsychiatrie Graubünden, Jugendstation Chur",KJP Jugendstation,46.8767,9.5398,Waisenhausstrasse 1,,7000,Chur,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-242,GZO Spital Wetzikon,GZO Spital Wetzikon,47.32152,8.80244,Spitalstrasse 66,,8620,Wetzikon ZH,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-243,Ospedale Malcantonese Fondazione Giuseppe Rossi,Ospedale Malcantonese,45.9925,8.838886,,,6980,Castelrotto,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-244,See-Spital,See-Spital Horgen,47.26323,8.58936,Asylstrasse 19,,8810,Horgen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-245,See-Spital,See-Spital Kilchberg,47.31978,8.5361,Grütstrasse 60,,8802,Kilchberg,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-246,Etablissements Hospitaliers du Nord Vaudois (eHnv),Hôpital d'Yverdon-les-Bains,46.77135,6.64667,Rue d'Entremonts 11,,1400,Yverdon-les-Bains,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-247,Etablissements Hospitaliers du Nord Vaudois (eHnv),Hôpital de Saint-Loup,46.66695,6.50438,Route de St-Loup 13,,1318,Pompaples,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-248,Etablissements Hospitaliers du Nord Vaudois (eHnv),Hôpital de Chamblon,46.7792,6.60943,Route de l'Hôpital 3,,1436,Chamblon,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-249,Etablissements Hospitaliers du Nord Vaudois (eHnv),Hôpital d'Orbe,46.72916,6.53331,Chemin de la Magnenette 2,,1350,Orbe,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-250,Etablissements Hospitaliers du Nord Vaudois (eHnv),Hôpital de La Vallée,46.60169,6.22149,Rue de l'Hôpital 3,,1347,Le Sentier,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-251,Hof Weissbad AG Nachbehandlungs-Zentrum,Hof Weissbad AG,47.30954,9.43299,Im Park 1,,9057,Weissbad,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-252,Insel Gruppe AG (nicht-universitär),Spital Tiefenau,46.9754,7.45317,Tiefenaustrasse 112,,3004,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-253,Insel Gruppe AG (nicht-universitär),Spital Aarberg,47.04784,7.27951,Lyssstrasse 31,,3270,Aarberg,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-254,Insel Gruppe AG (nicht-universitär),Spital Belp,46.89229,7.49422,Seftigenstrasse 89/91,,3123,Belp,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-255,Insel Gruppe AG (nicht-universitär),Spital Münsingen,46.87192,7.568,Krankenhausweg 18/20,,3110,Münsingen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-256,Insel Gruppe AG (nicht-universitär),Spital Riggisberg,46.81384,7.47824,Eyweg 2,,3132,Riggisberg,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-257,Luzerner Psychiatrie,Jugendpsychiatrische Th.station,47.03318,8.27662,Fenkernstrasse 15,,6010,Kriens,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-258,Luzerner Psychiatrie,Kinderpsychiatrische Th.station,47.03318,8.27662,Fenkernstrasse 15,,6010,Kriens,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-259,Luzerner Psychiatrie,Drop-in,47.05017,8.30044,Bruchstrasse 29a,,6007,Luzern,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-260,Luzerner Psychiatrie,KJPD-Ambulatorium Luzern,47.05767,8.29309,Kantonsspital 13,,6000,Luzern 16,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-261,Luzerner Psychiatrie,Forensischer Dienst,47.04003,8.3044,Voltastrasse 42,,6005,Luzern,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-262,Luzerner Psychiatrie,GiA Luzern,47.04003,8.3044,Voltastrasse 42,,6005,Luzern,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-263,Luzerner Psychiatrie,Ambulatorium Wolhusen,47.05894,8.07553,Gütsch 1 Josefshaus,,6110,Wolhusen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-264,Luzerner Psychiatrie,KJPD-Ambulatorium Wolhusen,47.05894,8.07553,Gütsch 1 Josefshaus,,6110,Wolhusen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-265,Luzerner Psychiatrie,Ambulatorium Sursee,47.17807,8.11015,Surentalstrasse 10,,6210,Sursee,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-266,Luzerner Psychiatrie,KJPD-Ambulatorium Sursee,47.17807,8.11015,Surentalstrasse 10,,6210,Sursee,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-267,Luzerner Psychiatrie,GiA Sursee,47.17807,8.11015,Surentalstrasse 10,,6210,Sursee,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-268,Luzerner Psychiatrie,Ambulatorium Hochdorf,47.16758,8.29081,Brauiplatz 8,,6280,Hochdorf,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-269,Luzerner Psychiatrie,KJPD-Ambulatorium Hochdorf,47.16758,8.29081,Brauiplatz 8,,6280,Hochdorf,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-270,Luzerner Psychiatrie,Ambulatorium Sarnen,46.88975,8.24524,Brünigstrasse 183,,6060,Sarnen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-271,Luzerner Psychiatrie,KJPD-Ambulatorium Sarnen,46.88975,8.24524,Brünigstrasse 183,,6060,Sarnen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-272,Luzerner Kantonsspital,LUKS Luzern,47.05871,8.3004,Spitalstrasse,,6000,Luzern 16,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-273,Luzerner Kantonsspital,LUKS Sursee,47.16838,8.11776,Spitalstrasse 16A,,6210,Sursee,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-274,Luzerner Kantonsspital,LUKS Wolhusen,47.06694,8.07158,Spitalstrasse,,6110,Wolhusen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-275,Geburtshaus Luna AG,Geburtshaus Luna,47.12841,7.2584,Brüggstrasse 111,,2503,Biel/Bienne,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-276,Geburtshaus Luna AG,Geburtshaus Luna (Ambulatorium),46.94605,7.43527,Effingerstrasse 14a,,3011,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-277,Limmatklinik AG,Limmatklinik AG,47.39303,8.51341,Hardturmstrasse 133,,8005,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-278,Ita Wegman Geburtshaus,Ita Wegman Geburtshaus,47.49391,7.61444,Pfeffingerweg 1,,4144,Arlesheim,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-279,Geburtshaus Tagmond GmbH,Geburtshaus Tagmond,47.51728,7.69445,Hauptstrasse 26,,4133,Pratteln,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-280,Geburtshaus ambra GmbH,Geburtshaus ambra GmbH,47.42384,7.84158,Unterdorfstrasse 25,,4443,Wittinsburg,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-281,Maison de Naissance le Petit Prince,Le Petit Prince,46.79875,7.11933,Route du Petit-Moncor 1d,,1752,Villars-sur-Glâne,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-282,Hôpital du Jura,Site de Delémont,47.3682,7.33874,Fbg des Capucins 30,,2800,Delémont,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-283,Hôpital du Jura,Site de Porrentruy,47.4195,7.05944,Chemin de l'Hôpital 9a,,2900,Porrentruy,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-284,Hôpital du Jura,Site de Saignelégier,47.25727,6.99743,Rue de l'Hôpital 11,,2350,Saignelégier,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-285,Hôpital du Jura,Résidence La Promenade,47.36533,7.34103,Rue de l'Hôpital 58,,2800,Delémont,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-286,Maison de naissance Les Cigognes,Maison de naissance Les Cigognes,47.34867,7.41163,Route Principale 21,,2824,Vicques,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-287,Geburtshaus Terra Alta,Terra Alta,47.1619,8.09964,Schellenrain 20,,6208,Oberkirch LU,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-288,Hôpital Neuchâtelois HNE,La Chaux-de-Fonds,47.11363,6.83195,Chasseral 20,,2300,La Chaux-de-Fonds,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-289,Hôpital Neuchâtelois HNE,Pourtalès,46.99628,6.94283,Maladière 45,,2002,Neuchâtel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-290,Hôpital Neuchâtelois HNE,Val-de-Travers,46.92548,6.63,Rue de l'Hôpital 4,,2107,Couvet,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-291,Hôpital Neuchâtelois HNE,Val-de-Ruz,47.04112,6.9012,Route de Landeyeux,,2046,Fontaines,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-292,Hôpital Neuchâtelois HNE,Le Locle,47.0571,6.74282,Bellevue 42,,2400,Le Locle,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-293,Hôpital Neuchâtelois HNE,Chrysalide,47.09898,6.82018,Rue de la Paix 99,,2300,La Chaux-de-Fonds,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-294,CNP Centre Neuchâtelois de psychiatrie,CNP Site de Perreux,46.9443,6.82375,Site de Perreux,,2017,Boudry,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-295,CNP Centre Neuchâtelois de psychiatrie,CNP Site de Préfargier,47.00652,7.00772,Site de Préfargier,,2074,Marin-Epagnier,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-296,CNP Centre Neuchâtelois de psychiatrie,CNP ea-ad consultation ambulatoire et liaison,47.11293,6.83271,Rue Sophie-Mairet 29,,2300,La Chaux-de-Fonds,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-297,CNP Centre Neuchâtelois de psychiatrie,CNP ea - consultation ambulatoire,47.00115204,6.927536011,Vieux-Châtel 20,,2000,Neuchâtel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-298,CNP Centre Neuchâtelois de psychiatrie,CNPâa,47.0571,6.74282,Rue de Bellevue 42,,2400,Le Locle,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-299,CNP Centre Neuchâtelois de psychiatrie,CNP-CUP,46.99822,6.95411,Maladières 45,,2000,Neuchâtel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-300,CNP Centre Neuchâtelois de psychiatrie,CNP ad-âa - consultation ambulatoire et HdJ âa,47.00115204,6.927536011,Vieux-Châtel 18,,2000,Neuchâtel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-301,CNP Centre Neuchâtelois de psychiatrie,CNPea-ad - consultation ambulatoire,46.90409,6.58158,Av. de la Gare 14c,,2114,Fleurier,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-302,Geburtshaus Stans,Geburtshaus Stans,46.95869,8.3629,Rosenweg 3,,6370,Stans,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-303,Solothurner Spitäler AG,Bürgerspital Solothurn,47.19997,7.53878,Schöngrünstrasse 36a,,4500,Solothurn,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-304,Solothurner Spitäler AG,Kantonsspital Olten,47.35489,7.90197,Baslerstrasse 150,,4600,Olten,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-305,Solothurner Spitäler AG,Spital Dornach,47.48657,7.61367,Spitalweg 11,,4143,Dornach,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-306,Solothurner Spitäler AG,Psychiatrische Dienste,47.21748,7.51826,Weissensteinstrasse 102,,4503,Solothurn,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-307,Solothurner Spitäler AG,Solothurner Spitäler AG,47.19997,7.53878,Schöngrünstrasse 36a,,4500,Solothurn,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-308,EOC Ente ospedaliero cantonale,Ospedale Regionale di Lugano,46.01802,8.95276,Via Tesserete 46,,6900,Lugano,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-309,EOC Ente ospedaliero cantonale,Ospedale Regionale San Giovanni,46.18409,9.02634,Via Ospedale 12,,6500,Bellinzona,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-310,EOC Ente ospedaliero cantonale,Ospedale Regionale La Carità,46.16931,8.79093,Via dell'Ospedale 1,,6600,Locarno,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-311,EOC Ente ospedaliero cantonale,Ospedale Regionale Beata Vergine,45.86715,8.98251,via Alfonso Turconi 23,,6850,Mendrisio,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-312,EOC Ente ospedaliero cantonale,Ospedale Regionale Faido,46.47835,8.80582,Via Ospedale 32,,6760,Faido,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-313,EOC Ente ospedaliero cantonale,Ospedale Regionale Acquarossa,46.44419,8.94523,Corzoneso Piano,,6716,Acquarossa,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-314,EOC Ente ospedaliero cantonale,Clinica Riabilitazione Novaggio,46.010158,8.851691,,,6986,Novaggio,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-315,EOC Ente ospedaliero cantonale,Direzione Generale EOC,46.19692,9.02662,Viale Officina 3,,6500,Bellinzona,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-316,EOC Ente ospedaliero cantonale,Servizi Centrali Biasca,46.34224,8.97592,via Chiasso 22,,6710,Biasca,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-317,Spital Wallis - Spitalzentrum Oberwallis (SZO),Standort Brig,46.31815,7.98456,Ueberlandstrasse,,3900,Brig,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-318,Spital Wallis - Spitalzentrum Oberwallis (SZO),Standort Visp,46.28782,7.88401,Pflanzettastrasse 8,,3930,Visp,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-319,Spital Wallis - Spitalzentrum Oberwallis (SZO),Brig - Verwaltung SZO,46.31821,7.9819,Spitalstrasse 7,,3900,Brig,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-320,Hôpital du Valais - Centre hospitalier du Chablais (CHC),Clinique St-Amé,46.21337,6.99837,Vers Saint-Amé 10,,1890,St-Maurice,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-321,Hôpital du Valais - Centre hospitalier du Chablais (CHC),Hôpital de Malévoz - IPVR,46.25659,6.94416,Route de Morgins 10,,1870,Monthey,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-322,Hôpital du Valais - Centre hospitalier du centre du Valais (CHCVs),Hôpital de Sierre,46.29221,7.52158,Rue St-Charles 14,,3960,Sierre,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-323,Hôpital du Valais - Centre hospitalier du centre du Valais (CHCVs),Centre Valaisan de Pneumologie,46.2998,7.4814,Route de la Moubra 87,,3963,Crans-Montana,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-324,Hôpital du Valais - Centre hospitalier du centre du Valais (CHCVs),Hôpital de Sion Champsec,46.23464,7.38692,Av. du Grand-Champsec 80,,1951,Sion,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-325,Hôpital du Valais - Centre hospitalier du centre du Valais (CHCVs),Hôpital de Martigny,46.09946,7.06846,Av. de la Fusion 27 Case postale,,1920,Martigny,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-326,Hôpital du Valais - Centre hospitalier du centre du Valais (CHCVs),Sion - Admin.CHCVs,46.23464,7.38692,Av. du Grand-Champsec 80,,1951,Sion,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-327,Hôpital du Valais - Centre hospitalier du centre du Valais (CHCVs),Martigny - admin.CHCVs,46.09946,7.06846,Av. de la Fusion 27 Case postale,,1920,Martigny,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-328,HFR - Hôpital fribourgeois,HFR Fribourg - HC,46.8008889,7.1381365,Chemin des Pensionnats 2,,1700,Fribourg,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-329,HFR - Hôpital fribourgeois,HFR Billens,46.69437,6.90257,Route de l'Hôpital 1,,1681,Billens,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-330,HFR - Hôpital fribourgeois,HFR Meyriez-Murten,46.92132,7.10891,Spitalweg 36,,3280,Murten,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-331,HFR - Hôpital fribourgeois,HFR Riaz,46.64118,7.05782,Rue de l'Hôpital 39,,1632,Riaz,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-332,HFR - Hôpital fribourgeois,HFR Tafers,46.81042,7.21235,Maggenberg 1,,1712,Tafers,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-333,Les Hôpitaux Universitaires de Genève HUG,HUG - Soins aigus,46.19326,6.14841,Rue Gabrielle-Perret-Gentil 4,,1205,Genève,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-334,Les Hôpitaux Universitaires de Genève HUG,HUG - Soins psychiatriques,46.19326,6.14841,Rue Gabrielle-Perret-Gentil 4,,1205,Genève,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-335,Les Hôpitaux Universitaires de Genève HUG,HUG - Soins subaigus et continus,46.19326,6.14841,Rue Gabrielle-Perret-Gentil 4,,1205,Genève,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-336,Therapiezentrum Meggen,Therapiezentrum Meggen,47.05034,8.36541,Rütliweg 1,,6045,Meggen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-337,Maison de Naissance Tilia Sàrl,Maison de Naissance Tilia Sàrl,46.9919,6.91242,Chemin des Valangines 9,,2000,Neuchâtel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-338,Universitäts-Kinderspital beider Basel (UKBB),UKBB,47.56372,7.58178,Spitalstrasse 33,,4056,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-339,"Spitalverbund Appenzell Ausserrhoden, Akutsomatisches Spital Heiden/Herisau",Spital Herisau,47.38599,9.26438,Krombach 3,,9410,Herisau,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-340,"Spitalverbund Appenzell Ausserrhoden, Akutsomatisches Spital Heiden/Herisau",Spital Heiden,47.44244,9.53134,Werdstrasse 1 A,,9410,Heiden,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-341,RehaClinic Braunwald,Braunwald,46.93581,8.99452,Niederschlachtstrasse 12,,8784,Braunwald,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-342,Kantonsspital Baselland,Liestal,47.48987,7.73018,Mühlemattstrasse 26,,4410,Liestal,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-343,Kantonsspital Baselland,Bruderholz,47.528159,7.580989,,,4101,Bruderholz,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-344,Kantonsspital Baselland,Laufen,47.42536,7.50461,Lochbruggstrasse 39,,4242,Laufen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-345,Maison de naissance La Roseraie,Maison de naissance La Roseraie,46.18932,6.1476,Chemin du Châtelet 3,,1205,Genève,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-346,Hirslanden Bern AG,Salem-Spital,46.95208,7.45379,Schänzlistrasse 39,,3013,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-347,Hirslanden Bern AG,Praxiszentrum am Bahnhof,46.9499,7.43925,Parkterrasse 10,,3012,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-348,Hirslanden Bern AG,Zentrale Bereiche,46.95477,7.44663,Nordring 4,,3013,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-349,Clinique CIC Riviera,CIC,46.44098,6.89197,Rue du Lac 92,,1815,Clarens,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-350,Lindenhof AG,Lindenhofspital,46.95807,7.42774,Bremgartenstrasse 117,,3012,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-351,Lindenhof AG,Sonnenhofspital,46.94258,7.47413,Buchserstrasse 30,,3006,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-352,Lindenhof AG,Engeriedspital,46.96008,7.4375,Riedweg 15,,3012,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-353,Lindenhof AG,Verwaltungsstandort,46.9443,7.46067,Muristrasse 12,,3006,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-354,GSMN Neuchâtel SA,Hôpital de la Providence,46.99516,6.9391,Faubourg de l'Hôpital 81,,2000,Neuchâtel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-355,GSMN Neuchâtel SA,La Chaux-de-Fonds,47.11363,6.83195,Chasseral 20,,2300,La Chaux-de-Fonds,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-356,Cereneo Schweiz AG Neurorehabilitationsklinik,Cereneo Schweiz AG,47.01489,8.47808,Seestrasse 18,,6354,Vitznau,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-357,Geburtshaus Basel,Geburtshaus Basel,47.54927,7.57917,Schweizergasse 8,,4054,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
-358,Geburtshaus Maternité Alpine,Geburtshaus Maternité Alpine,46.56062,7.37394,Eggetlistrasse 5a,,3770,Zweisimmen,CH,Switzerland,,,,,,,,,,,01/01/2017,29/03/2020,-1
+id,hospital_name,site_name,lat,lon,geo_qual,street,house_number,postcode,city,cc,country,cap_beds,cap_prac,cap_rooms,emergency,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date
+1,Tertianum AG Klinik Tertianum Neutal,REHA-Abteilung,47.675,9.01971,-1,Seestrasse 101,,8267,Berlingen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+2,Klinik St. Georg Goldach AG,Goldach,47.47527,9.4746,-1,Klosterstrasse 19,,9403,Goldach,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+3,Hôpital Riviera-Chablais Vaud-Valais,Montreux,46.44006,6.90826,-1,Avenue de Belmont 25,,1820,Montreux,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+4,Hôpital Riviera-Chablais Vaud-Valais,Samaritain,46.461,6.85455,-1,Boulevard Paderewski 3,,1800,Vevey,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+5,Hôpital Riviera-Chablais Vaud-Valais,Providence,46.45765,6.8553,-1,Avenue de la Prairie 3,,1800,Vevey,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+6,Hôpital Riviera-Chablais Vaud-Valais,Mottex,46.46056,6.88522,-1,Chemin de Mottex 25,,1807,Blonay,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+7,Hôpital Riviera-Chablais Vaud-Valais,Monthey,46.25364,6.94379,-1,Route de Morgins,,1870,Monthey,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+8,Hôpital Riviera-Chablais Vaud-Valais,Aigle,46.31181,6.96439,-1,Chemin du Grand-Chêne 1,,1860,Aigle,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+9,Groupement Hospitalier de l'Ouest Lémanique (GHOL) SA,Hôpital de Nyon,46.38346,6.22749,-1,Chemin Monastier 10,,1260,Nyon,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+10,Groupement Hospitalier de l'Ouest Lémanique (GHOL) SA,Hôpital de Rolle,46.46423,6.34642,-1,Route de l'Hôpital 26,,1180,Rolle,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+11,Institution de Lavigny,Institution de Lavigny,46.50326,6.41171,-1,route du Vignoble 60,,1175,Lavigny,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+12,Hôpital Intercantonal de la Broye (HIB),Payerne,46.81885,6.94608,-1,Avenue de la Colline 3,,1530,Payerne,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+13,Hôpital Intercantonal de la Broye (HIB),Estavayer-le-Lac,46.8504,6.84563,-1,Rue de la Rochette,,1470,Estavayer-le-Lac,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+14,Spitäler Frutigen Meiringen Interlaken AG,Spital Frutigen,46.58399,7.64158,-1,Adelbodenstrasse 27,,3714,Frutigen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+15,Spitäler Frutigen Meiringen Interlaken AG,Spital Interlaken,46.6807,7.8433,-1,Weissenaustrasse 27,,3800,Unterseen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+16,Hôpital du Jura bernois SA,Hôpital de St-Imier,47.1483,6.9834,-1,Les Fontenayes 17,,2610,St-Imier,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+17,Hôpital du Jura bernois SA,Hôpital de Moutier,47.28198,7.37464,-1,Rue Beausite 49,,2740,Moutier,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+18,Adullam-Stiftung Basel Adullam-Geriatriespital,"Adullam Spital, Basel",47.56012,7.57963,-1,Mittlere Strasse 15,,4056,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+19,Adullam-Stiftung Basel Adullam-Geriatriespital,"Adullam Spital, Riehen",47.58482,7.65435,-1,Schützengasse 37,,4125,Riehen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+20,Flury Stiftung Spital Schiers,Flury Stiftung Spital Schiers,46.97098,9.686223,-1,,,7220,Schiers,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+21,Center da Sanadad Savognin SA,Center da Sanadad Savognin,46.59528,9.60036,-1,Stradung 52,,7460,Savognin,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+22,Spital Thurgau AG Kantonsspitäler Frauenfeld & Münsterlingen,Kantonsspital Frauenfeld KSF,47.54928,8.91029,-1,"Pfaffenholzstrasse 4, Postfach",,8501,Frauenfeld,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+23,Spital Thurgau AG Kantonsspitäler Frauenfeld & Münsterlingen,Kantonsspital Münsterlingen KSM,47.63081,9.23625,-1,Spitalcampus 1,,8596,Münsterlingen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+24,Kantonsspital Graubünden,Kantonsspital Graubünden,46.86458,9.53926,-1,Loestrasse 170,,7000,Chur,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+25,Centro Sanitario Bregaglia Reparto Acuto,Centro Sanitario Bregaglia Reparto Acuto,46.34125,9.55861,-1,Flin,,7606,Promontogno,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+26,Universitäre Psychiatrische Dienste Bern (UPD) AG,Gemeindepsychiatrisches Zentrum Morgenstrasse Bern,46.93386078,7.389210224,-1,Morgenstrasse 83,,3018,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+27,Universitäre Psychiatrische Dienste Bern (UPD) AG,Station Lindenweg Moosseedorf,47.01508,7.48326,-1,Lindenweg 4,,3302,Moosseedorf,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+28,Universitäre Psychiatrische Dienste Bern (UPD) AG,Wohncoaching Kasthoferstrasse Bern,46.94259,7.4723,-1,Kasthoferstrasse 63,,3006,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+29,PZM Psychiatriezentrum Münsingen,PZM Psychiatriezentrum Münsingen,46.88051,7.55314,-1,Hunzigenallee 1,,3110,Münsingen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+30,Spital Uster,Spital Uster,47.35352,8.72412,-1,Brunnenstrasse 42,,8610,Uster,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+31,Spital Männedorf AG,Spital Männedorf,47.25104,8.69661,-1,Asylstrasse 10,,8708,Männedorf,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+32,Stadtspital Waid,Stadtspital Waid,47.39886,8.52053,-1,Tièchestrasse 99,,8037,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+33,Stadtspital Triemli,Stadtspital Triemli,47.36576,8.49748,-1,Birmensdorferstrasse 497,,8063,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+34,Zuger Kantonsspital AG,Zuger Kantonsspital,47.1942,8.51775,-1,Landhausstrasse 11,,6340,Baar,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+35,Suchtbehandlung Frankental Entzug & Intervention,Suchtbehandlung Frankental,47.40755,8.47724,-1,Frankentalerstrasse 55,,8049,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+36,Clienia Littenheid AG Klinik für Psychiatrie und Psychotherapie,Clienia Littenheid AG,47.440514,9.008591,-1,,,9573,Littenheid,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+37,Hôpital du Pays d'Enhaut,Hôpital du Pays d'Enhaut,46.47796,7.14076,-1,Route de l'Hôpital 17,,1660,Château-d'Oex,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+38,Privatklinik Hohenegg AG,Ambulantes Zentrum,47.38064,8.5457,-1,Sonneggstrasse 45,,8006,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+39,Réseau Santé Balcon du Jura.vd (RSBJ),Les Rosiers,46.81916,6.49479,-1,Rue des Rosiers 29,,1450,Ste-Croix,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+40,Réseau Santé Balcon du Jura.vd (RSBJ),Les Alpes,46.82053,6.50643,-1,Avenue des Alpes 18D,,1450,Ste-Croix,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+41,Ostschweizer Kinderspital,Ostschweizer Kinderspital,47.42986,9.39377,-1,Claudiusstrasse 6,,9006,St. Gallen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+42,Ostschweizer Kinderspital,Romerhuus,47.42986,9.39377,-1,Claudiusstrasse 6,,9006,St. Gallen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+43,Hôpital de Lavaux,Hôpital de Lavaux,46.49056,6.72532,-1,Chemin des Colombaires 31,,1096,Cully,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+44,Kreisspital für das Freiamt,Kreisspital für das Freiamt,47.27729,8.33034,-1,Spitalstrasse 144,,5630,Muri AG,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+45,Centro Sanitario Valposchiavo Ospedale San Sisto,Centro Sanitario Valposchiavo Ospedale San Sisto,46.323111,10.0619005,-1,Via da l'Uspedal 1000,,7742,Poschiavo,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+46,Spital Schwyz,Spital Schwyz,47.0159,8.6587,-1,Waldeggstrasse 10,,6430,Schwyz,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+47,Geburtshaus Zürcher Oberland AG,Geburtshaus Zürcher Oberland  AG,47.33238,8.84724,-1,Schürlistrasse 3,,8344,Bäretswil,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+48,Paracelsus-Spital Richterswil AG,Paracelsus-Spital Richterswil,47.20789,8.69978,-1,Bergstrasse 16,,8805,Richterswil,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+49,Geburtshus Storchenäscht AG,Geburtshus Storchenäscht,47.39786,8.21498,-1,Hendschikerstrasse 12,,5504,Othmarsingen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+50,Geburtshaus Delphys,Geburtshaus Delphys,47.37468,8.51996,-1,Badenerstrasse 177,,8003,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+51,GSMN Ticino SA - Ars Medica,Clinica Ars Medica GSMN Ticino SA,46.0399,8.92394,-1,Via Grumo 16,,6929,Gravesano,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+52,Adus Medica AG,Adus Medica AG,47.47865,8.45128,-1,Breitestrasse 11,,8157,Dielsdorf,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+53,Cardiocentro Ticino (CCT),Cardiocentro Ticino,46.0177314,8.9520604,-1,Via Tesserete 48,,6900,Lugano,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+54,Secteur Psychiatrique Est Fondation de Nant,Hôpital psychiatrique Nant,46.47801,6.8537,-1,Route de Nant,,1804,Corsier-sur-Vevey,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+55,Secteur Psychiatrique Est Fondation de Nant,Unité hospitalière de pédopsychiatrie Enfant & Adolesccent,46.478946,6.852562,-1,Route de Nant,,1804,Corsier-sur-Vevey,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+56,Secteur Psychiatrique Est Fondation de Nant,Pédopsychiatrie ambulatoire,46.46549,6.84272,-1,Rue des Moulins 11,,1800,Vevey,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+57,Secteur Psychiatrique Est Fondation de Nant,Accueil-Urgence-Liaison  c/o HRC Site Samaritain,46.46760178,6.846374035,-1,Boulevard Paderewski 3,,1800,Vevey,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+58,Secteur Psychiatrique Est Fondation de Nant,Pédopsychiatrie ambulatoire,46.31181,6.96439,-1,Grand Chêne 1,,1860,Aigle,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+59,Secteur Psychiatrique Est Fondation de Nant,Pédopsychiatrie ambulatoire,46.47212,7.12605,-1,Rte des Chenolettes 4,,1660,Château-d'Oex,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+60,Secteur Psychiatrique Est Fondation de Nant,CTPE et CTJE,46.46973,6.87676,-1,Chemin de Chamoyron 29,,1806,St-Légier-La Chiésaz,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+61,Secteur Psychiatrique Est Fondation de Nant,Psychiatrie adultes ambulatoire,46.43463,6.91083,-1,Avenue des Alpes 66,,1820,Montreux,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+62,Secteur Psychiatrique Est Fondation de Nant,Psychiatrie adultes ambulatoire,46.31181,6.96439,-1,Grand Chêne 1,,1860,Aigle,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+63,Secteur Psychiatrique Est Fondation de Nant,Psychogériatrie ambulatoire,46.46549,6.84272,-1,Rue des Moulins 11,,1800,Vevey,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+64,Secteur Psychiatrique Est Fondation de Nant,Psychogériatrie ambulatoire,46.31181,6.96439,-1,Grand Chêne 1,,1860,Aigle,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+65,Secteur Psychiatrique Est Fondation de Nant,Unité Ambulatoire Spécialisée,46.43463,6.91083,-1,Avenue des Alpes 66,,1820,Montreux,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+66,Secteur Psychiatrique Est Fondation de Nant,Unités Traitements Dépendance,46.31903,6.9681,-1,Rue du Molage 8,,1860,Aigle,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+67,Bad Schinznach AG Privat-Klinik Im Park,Schinznach - Bad,47.4572672,8.1659797,-1,Badstrasse 50,,5116,Schinznach Bad,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+68,St. Claraspital,St. Claraspital,47.56654,7.61416,-1,Kleinriehenstrasse 30,,4058,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+69,Stiftung Diaconis Palliative Care,Station Oranienburg-Belvoir,46.95229,7.45647,-1,Schänzlistrasse 15,,3013,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+70,Universitäts-Kinderspital Zürich das Spital der Eleonorenstiftung,Universitäts-Kinderspital Zürich,47.37167,8.55801,-1,Steinwiesstrasse 75,,8032,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+71,Hôpital de la Tour,Hôpital de La Tour,46.22887,6.06744,-1,Avenue Jacob-Daniel Maillard 3,,1217,Meyrin,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+72,Palliativzentrum Hildegard,Palliativzentrum Hildegard,47.55037,7.61062,-1,St. Alban-Ring 151,,4052,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+73,EHC Ensemble hospitalier de la Côte,Hôpital de Morges,46.52238,6.49975,-1,Chemin du Crêt 2,,1110,Morges,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+74,EHC Ensemble hospitalier de la Côte,Hôpital de Gilly,46.47027,6.30507,-1,Rte du Pavillon 12,,1182,Gilly,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+75,EHC Ensemble hospitalier de la Côte,Hôptial d'Aubonne,46.49172,6.3887,-1,Rue de Trévelin 67,,1170,Aubonne,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+76,kneipp-hof Dussnang AG Rehabilitationsklinik,kneipp-hof Dussnang,47.43021,8.9633,-1,Kurhausstrasse 34,,8374,Dussnang,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+77,Zürcher RehaZentrum Davos,Zürcher RehaZentrum Davos,46.76876,9.81579,-1,Klinikstrasse 6,,7272,Davos Clavadel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+78,Zürcher RehaZentrum Wald,Zürcher RehaZentrum Wald,47.27632,8.94305,-1,Faltigbergstrasse 7,,8636,Wald ZH,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+79,Clienia Schlössli AG,Clienia Schlössli AG,47.26921,8.71954,-1,Schlösslistrasse 8,,8618,Oetwil am See,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+80,Clienia Schlössli AG,Psychiatriezentrum Männedorf,47.2525,8.69608,-1,Bergstrasse 34,,8708,Männedorf,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+81,Clienia Schlössli AG,Psychiatriezentrum Wetzikon,47.32736,8.80197,-1,Bahnhofstrasse 196,,8620,Wetzikon,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+82,Clienia Schlössli AG,Psychiatriezentrum Uster,47.35378,8.72286,-1,Schachenweg 2,,8610,Uster,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+83,Clienia Schlössli AG,Praxis Opéra Zürich,47.36373,8.54752,-1,Dufourstrasse 24,,8008,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+84,SRO Spital Region Oberaargau AG,Spital Langenthal,47.2161,7.79389,-1,St. Urbanstrasse 67,,4900,Langenthal,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+85,SRO Spital Region Oberaargau AG,Ambulatorium Niederbipp,47.27207,7.6857,-1,Anternstrasse 24,,4704,Niederbipp,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+86,SRO Spital Region Oberaargau AG,Ambulatorium Huttwil,47.11637,7.83936,-1,Spitalstrasse 51,,4950,Huttwil,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+87,SRO Spital Region Oberaargau AG,Ambulatorium Herzogenbuchsee,47.19227,7.71857,-1,Stelliweg 24,,3360,Herzogenbuchsee,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+88,Insel Gruppe AG (universitär),Inselspital,46.94771,7.42555,-1,Freiburgstrasse 18,,3010,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+89,Bethesda Spital AG,Bethesda Spital,47.54804,7.6173,-1,Gellertstrasse 144,,4052,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+90,Sune-Egge,Fachspital Sune-Egge,47.38172,8.53419,-1,Konradstrasse 62,,8005,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+91,Fondation Rive-Neuve Unité de Soins Palliatifs,Fondation Rive-Neuve,46.46394,6.88174,-1,Chemin des Cuarroz 57,,1807,Blonay,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+92,Stiftung für ganzheitliche Medizin,SGM Ambi Bern,46.94751,7.43788,-1,Bubenbergplatz 10,,3011,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+93,Schweizer Paraplegiker-Zentrum Nottwil AG,Schweizer Paraplegiker-Zentrum,47.14123,8.13101,-1,Guido A. Zäch Strasse 1,,6207,Nottwil,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+94,Privatklinik SALINA Salina Medizin AG,Salina Rehaklinik,47.55791,7.80017,-1,Roberstenstrasse 31,,4310,Rheinfelden,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+95,Privatklinik SALINA Salina Medizin AG,Physiotherapie Salina B15,47.55137,7.78549,-1,Baslerstrasse 15,,4310,Rheinfelden,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+96,Privatklinik SALINA Salina Medizin AG,Möhlin,47.55988,7.84197,-1,Bachstrasse 10,,4313,Möhlin,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+97,Privatklinik SALINA Salina Medizin AG,Stein,47.54689,7.95189,-1,Schaffhauserstr. 33,,4332,Stein,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+98,Privatklinik SALINA Salina Medizin AG,Physiotherapie Eiken,47.5319,7.99094,-1,Rössliweg 15b,,5074,Eiken,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+99,Privatklinik SALINA Salina Medizin AG,Frick,47.50895,8.01679,-1,Mühlegasse 18,,5070,Frick,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+100,Soteria Bern,Station Soteria,46.9500665,7.4293519,-1,Bühlstrasse 19,,3012,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+101,Gesundheitszentrum Fricktal,"GZF, Spital Rheinfelden",47.55586,7.80587,-1,Riburgerstrasse 12,,4310,Rheinfelden,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+102,Gesundheitszentrum Fricktal,"GZF, Spital Laufenburg",47.56215,8.06448,-1,Spitalstrasse 10,,5080,Laufenburg,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+103,Gesundheitszentrum Fricktal,"GZF, Fachärztehaus Frick",47.50895,8.01679,-1,Mühlegasse 18,,5070,Frick,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+104,Hirslanden Klinik Belair,Praxiszentrum am Bahnhof,47.69939,8.63121,-1,Bleicheplatz 3,,8200,Schaffhausen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+105,"aarReha Schinznach Rehabilitation, Rheumatologie",Schinznach Bad,47.4575,8.16422,-1,Badstrasse 55,,5116,Schinznach Bad,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+106,Herz-Neuro-Zentrum Bodensee AG,HNZB Kreuzlingen,47.64235,9.17619,-1,Weinbergstrasse 1,,8280,Kreuzlingen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+107,Hôpital Jules Daler,Daler,46.80102,7.14057,-1,Route de Bertigny 34,,1700,Fribourg,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+108,Sanatorium Kilchberg,Sanatorium Kilchberg AG,47.32836,8.54361,-1,Alte Landstrasse 70,,8802,Kilchberg ZH,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+109,Hirslanden Klinik Am Rosenberg AG,Heiden,47.44655,9.52703,-1,Hasenbühlstrasse 11,,9410,Heiden,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+110,Klinik Seeschau AG,Seeschau Kreuzlingen,47.64595,9.16147,-1,Bernrainstrasse 17,,8280,Kreuzlingen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+111,Klinik Im Park,Radiologie und Neurorad. Schanze,47.37046,8.53527,-1,Talstrasse 65,,8001,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+112,Klinik Im Park,Operationszentrum Bellaria,47.35176,8.53005,-1,Bellariastrasse 38,,8038,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+113,Spital Thurgau AG Klinik St. Katharinental,KSK Diessenhofen,47.69077,8.73754,-1,St. Katharinental,,8253,Diessenhofen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+114,Spital Thurgau AG Psychiatrische Klinik Münsterlingen,Psychiatr. Klinik Münsterlingen,47.63281,9.23369,-1,Seeblickstrasse 3,,8596,Münsterlingen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+115,Spital Linth,Spital Linth,47.22376,8.99488,-1,Gasterstrasse 25,,8730,Uznach,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+116,Kantonsspital Obwalden,Kantonsspital Obwalden,46.89009,8.24607,-1,Brünigstrasse 181,,6060,Sarnen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+117,Kantonsspital Nidwalden,Kantonsspital Nidwalden,46.96,8.35772,-1,Ennetmooserstrasse 19,,6370,Stans,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+118,Kantonales Spital Appenzell,Kantonales Spital Appenzell,47.33425,9.41613,-1,Sonnhalde 2,,9050,Appenzell,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+119,Universitätsspital Zürich,UniversitätsSpital Zürich,47.37662,8.54918,-1,Rämistrasse 100,,8091,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+120,Universitätsspital Zürich,Wagi-Areal Schlieren,47.39842,8.4582,-1,Wagistrasse 14,,8952,Schlieren,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+121,Universitätsspital Zürich,Urologie Meilen,47.27078,8.64186,-1,Obere Kirchgasse 18,,8706,Meilen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+122,Kantonsspital Winterthur,Kantonsspital Winterthur,47.5072,8.72849,-1,Brauerstrasse 15,,8400,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+123,Integrierte Psychiatrie Winterthur IPW,ipw Winterthur,47.50636,8.6848,-1,Wieshofstrasse 102,,8408,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+124,Integrierte Psychiatrie Winterthur IPW,ipw Embrach,47.52431,8.58463,-1,Römerweg 51,,8424,Embrach,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+125,Integrierte Psychiatrie Winterthur IPW,ipw Bülach,47.51896,8.54292,-1,Gartematt 6,,8180,Bülach,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+126,Integrierte Psychiatrie Winterthur IPW,ipw Dielsdorf,47.48123,8.45678,-1,Geerenstrasse 6,,8157,Dielsdorf,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+127,Integrierte Psychiatrie Winterthur IPW,ipw Zürich-Schwamendingen,47.404,8.57076,-1,Winterthurerstrasse 501,,8051,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+128,Integrierte Psychiatrie Winterthur IPW,ipw KIZ_Wi,47.50405,8.71782,-1,Bleichestrasse 9,,8400,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+129,Integrierte Psychiatrie Winterthur IPW,ipw GAT_Wi,47.50414,8.71761,-1,Salstrasse 48,,8400,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+130,Integrierte Psychiatrie Winterthur IPW,ipw GEZ_Wi,47.50123,8.72317,-1,Rudolfstrasse 19,,8400,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+131,Integrierte Psychiatrie Winterthur IPW,ipw BSJ_Wi,47.50241,8.73234,-1,Trollstrasse 18,,8400,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+132,Integrierte Psychiatrie Winterthur IPW,ipw CM_Wi,47.49612,8.69796,-1,Schlachthofstrasse 19a,,8406,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+133,Integrierte Psychiatrie Winterthur IPW,ipw PP_Wi,47.50698,8.73016,-1,Haldenstrasse 63,,8400,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+134,Integrierte Psychiatrie Winterthur IPW,ipw AFT_Wi,47.4982,8.72525,-1,Technikumstrasse 81,,8400,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+135,Integrierte Psychiatrie Winterthur IPW,ipw Glattbrugg,47.43255,8.56037,-1,Feldeggstrasse 5,,8152,Glattbrugg,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+136,Integrierte Psychiatrie Winterthur IPW,ipw ISW,47.49803,8.73295,-1,Tösstalstrasse 19 und 53,,8400,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+137,Kantonsspital St. Gallen,Kantonsspital St. Gallen,47.4297334,9.3890057,-1,Rorschacher Strasse 95,,9007,St. Gallen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+138,Kantonsspital St. Gallen,Spital Rorschach,47.47361,9.49914,-1,Heidener Strasse 11,,9400,Rorschach,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+139,Kantonsspital St. Gallen,Spital Flawil,47.41805,9.18412,-1,Krankenhausstrasse 23,,9230,Flawil,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+140,Psychiatrie-Dienste Süd,PZ Rheintal,47.4111,9.62489,-1,Balgacherstrasse 202,,9435,Heerbrugg,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+141,Psychiatrie-Dienste Süd,PZ Werdenberg-Sarganserland,47.07369,9.48128,-1,Hauptstrasse 27,,9477,Trübbach,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+142,Psychiatrie-Dienste Süd,PZ Linthgebiet Standort Uznach,47.22434,8.98362,-1,Zürcherstrasse 1,,8730,Uznach,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+143,Psychiatrie-Dienste Süd,PZ Linthgebiet Standort Rapperswil,47.22579,8.81759,-1,Alpenstrasse 2,,8640,Rapperswil,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+144,Psychiatrie St.Gallen Nord,PZ St. Gallen,47.4194,9.36955,-1,Teufenerstrasse 26,,9001,St.Gallen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+145,Psychiatrie St.Gallen Nord,PZ Rorschach,47.47674,9.49351,-1,Mariabergstrasse 19,,9401,Rorschach,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+146,Psychiatrie St.Gallen Nord,PZ Wattwil,47.30139,9.09188,-1,Hembergerstrasse 22,,9630,Wattwil,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+147,Psychiatrische Universitätsklinik Zürich,PUK Zürich Lenggstrasse,47.35227,8.57028,-1,Lenggstrasse 31,,8032,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+148,Psychiatrische Universitätsklinik Zürich,ZSP Militärstrasse,47.37625,8.53348,-1,Militärstrasse 8,,8004,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+149,Psychiatrische Universitätsklinik Zürich,ZSP Ambi / TZ Heliostrasse,47.36262,8.56079,-1,Heliosstrasse 32,,8032,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+150,Psychiatrische Universitätsklinik Zürich,KAP Hegibach,47.36317,8.56003,-1,Minervastrasse 145,,8032,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+151,Psychiatrische Universitätsklinik Zürich,ZAE Ambi / TZ Selnaustrasse,47.36992,8.5325,-1,Selnaustrasse 9,,8001,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+152,Psychiatrische Universitätsklinik Zürich,ZSP Nachtklinik Klusstrasse,47.36457,8.57171,-1,Klusstrasse 44,,8032,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+153,Psychiatrische Universitätsklinik Zürich,ZSP Ambi Limmattal,47.4033,8.40483,-1,Zürcherstrasse 49,,8953,Dietikon,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+154,Psychiatrische Universitätsklinik Zürich,ZSP Ambi Oerlikon,47.40923,8.54028,-1,Hofwiesenstrasse 318,,8050,Zürich-Oerlikon,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+155,Psychiatrische Universitätsklinik Zürich,PUK Rheinau,47.63526,8.60398,-1,Alleestrasse,,8462,Rheinau,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+156,Psychiatrische Universitätsklinik Zürich,ZKJF Zürich,47.36591,8.55703,-1,Neptunstr. 60,,8032,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+157,Psychiatrische Universitätsklinik Zürich,KAP Schlieren,47.39944,8.45913,-1,Wagistrasse 23,,8952,Schlieren,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+158,Psychiatrische Universitätsklinik Zürich,KJPP Zürich,47.36259,8.55689,-1,Neumünsterallee 3,,8032,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+159,Psychiatrische Universitätsklinik Zürich,ZKP Brüschhalde,47.25335,8.70324,-1,Bergstrasse 120,,8708,Männedorf,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+160,Psychiatrische Universitätsklinik Zürich,ZAS Winterthur,47.50628,8.73227,-1,Albanistrasse 24,,8400,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+161,Psychiatrische Universitätsklinik Zürich,ZAS Bülach,47.52191,8.53885,-1,Bahnhofstrasse 39,,8180,Bülach,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+162,Psychiatrische Universitätsklinik Zürich,ZAS Dietikon,47.40558,8.40243,-1,Löwenstrasse 15,,8953,Dietikon,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+163,Psychiatrische Universitätsklinik Zürich,ZAS Horgen,47.26109,8.59711,-1,Bahnhofstrasse 6,,8810,Horgen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+164,Psychiatrische Universitätsklinik Zürich,ZAS Uster,47.34713,8.71663,-1,Gerberstrasse 3,,8610,Uster,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+165,Psychiatrische Universitätsklinik Zürich,ZAS Wetzikon,47.31713,8.79182,-1,Guyer-Zeller-Strasse 21,,8620,Wetzikon,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+166,Psychiatrische Universitätsklinik Zürich,ZAS Zürich Nord,47.41461,8.5507,-1,Thurgauerstrasse 39,,8050,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+167,CHUV Centre Hospitalier Universitaire Vaudois,Centre Hospitalier Universitaire Vaudois,46.52475,6.63956,-1,Rue du Bugnon 21,,1011,Lausanne,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+168,CHUV Centre Hospitalier Universitaire Vaudois,Psychiatrie Nord CPNVD,46.78195,6.64769,-1,Avenue des Sports 12B,,1400,Yverdon-les-Bains,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+169,CHUV Centre Hospitalier Universitaire Vaudois,Psychiatrie Ouest Hôpital de Prangins,46.39332199,6.247362137,-1,Chemin Oscar Forel 3,,1197,Prangins,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+170,Spitalregion Rheintal Werdenberg Sarganserland,Spital Altstätten,47.38297,9.5412,-1,F.-Marolani-Strasse 6,,9450,Altstätten,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+171,Spitalregion Rheintal Werdenberg Sarganserland,Spital Grabs,47.17356,9.44861,-1,Spitalstrasse 44,,9472,Grabs,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+172,Spitalregion Rheintal Werdenberg Sarganserland,Spital Walenstadt,47.12118,9.31067,-1,Spitalstrasse 5,,8880,Walenstadt,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+173,Spitalregion Rheintal Werdenberg Sarganserland,Rebstein,47.39704,9.57936,-1,Alte Landstrasse 106,,9445,Rebstein,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+174,Spitalregion Fürstenland Toggenburg,Spital Wil,47.46535,9.05756,-1,Fürstenlandstrasse 32,,9500,Wil SG,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+175,Spitalregion Fürstenland Toggenburg,Spital Wattwil,47.29729,9.08355,-1,Steig,,9630,Wattwil,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+176,Spital Affoltern,Spital Affoltern,47.2848,8.45657,-1,Sonnenbergstrasse 27,,8910,Affoltern am Albis,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+177,Regionalspital Surselva AG,Regionalspital Surselva,46.77682,9.20513,-1,Spitalstrasse 6,,7130,Ilanz,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+178,Spital Oberengadin,Spital Oberengadin,46.54004,9.87883,-1,Via Nouva 3,,7503,Samedan,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+179,Spital Bülach AG,Spital Bülach,47.52147,8.53304,-1,Spitalstrasse 24,,8180,Bülach,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+180,Regionalspital Emmental AG,Spital Burgdorf,47.04822,7.62057,-1,Oberburgstrasse 54,,3400,Burgdorf,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+181,Regionalspital Emmental AG,Spital Langnau,46.94346,7.78656,-1,Dorfbergstrasse 10,,3550,Langnau,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+182,Spitalzentrum Biel AG,Spitalzentrum Biel,47.14673,7.24473,-1,Vogelsang 84,,2502,Biel/Bienne,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+183,Spital Limmattal,Spital Limmattal,47.3930285,8.4306746,-1,Urdorferstrasse 100,,8952,Schlieren,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+184,Geriatrische Klinik St. Gallen,Geriatrische Klinik St.Gallen,47.42896,9.38915,-1,Rorschacher Strasse 94,,9000,St. Gallen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+185,Spital Thusis,Spital Thusis,46.69708,9.4371,-1,Alte Strasse 31,,7430,Thusis,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+186,Rehaklinik Bellikon,Bellikon,47.38821,8.34341,-1,Mutschellenstrasse 2,,5454,Bellikon,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+187,Reha-Pflegeklinik Eden AG,Reha-Pflegeklinik Eden,46.69979,7.89279,-1,Schulhausweg 11,,3852,Ringgenberg BE,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+188,Spital Lachen,Spital Lachen,47.1887722,8.8582143,-1,Oberdorfstrasse 41,,8853,Lachen SZ,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+189,Leukerbad Clinic RZL Rehabilitationszentrum Leukerbad AG,Leukerbad Clinic,46.37772,7.62647,-1,Willy-Spühlerstrasse 2,,3954,Leukerbad,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+190,RehaClinic Zurzach,Akutnahe Rehabilitation,47.45416,8.27827,-1,Im Ergel 1,,5404,Baden,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+191,Hôpital Ophtalmique Jules Gonin Fondation Asile des Aveugles,Hôpital ophtalmique Jules-Gonin,46.52443,6.62361,-1,Avenue de France 15,,1004,Lausanne,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+192,Spital STS AG,Spital Thun,46.76111,7.63227,-1,Krankenhausstrasse 12,,3600,Thun,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+193,Spital STS AG,Spital Zweisimmen,46.55784,7.3731,-1,Karl Haueter-Strasse 21,,3770,Zweisimmen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+194,Asana Gruppe AG Spital Leuggern,Asana Gruppe Spital Leuggern,47.58032,8.21627,-1,Kommendeweg,,5316,Leuggern,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+195,Asana Gruppe AG Spital Menziken,Menziken,47.24637,8.1899,-1,Spitalstrasse 1,,5737,Menziken,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+196,Spital Zollikerberg,Spital Zollikerberg,47.34899,8.59808,-1,Trichtenhauserstrasse 20,,8125,Zollikerberg,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+197,Spital Zollikerberg,Frauen-Permanence Zürich,47.36618,8.5484,-1,Goethestrasse 24,,8001,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+198,Hospiz im Park,Hospiz im Park,47.49187,7.61347,-1,Stollenrain 12,,4144,Arlesheim,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+199,Kantonsspital Aarau AG,Kantonsspital Aarau AG,47.3875,8.0581,-1,Tellstrasse 15,,5001,Aarau,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+200,Psychiatrische Dienste Aargau AG,Psychiatrische Dienste Aargau AG,47.48136,8.21544,-1,Zürcherstrasse 241,,5210,Windisch,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+201,Psychiatrische Dienste Aargau AG,Tageszentrum Aarau,47.37861,8.04659,-1,Landhausweg 22,,5000,Aarau,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+202,Psychiatrische Dienste Aargau AG,TK & TZ Baden,47.4745,8.30218,-1,St. Ursusstrasse 3,,5400,Baden,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+203,Psychiatrische Dienste Aargau AG,Tageszentrum Wohlen,47.34776,8.27198,-1,Bahnhofweg 17,,5610,Wohlen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+204,Psychiatrische Dienste Aargau AG,Kinderstation Rüfenach,47.50682,8.20505,-1,Heinrich Meyer-Weg 1,,5235,Rüfenach,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+205,Kantonsspital Baden AG,Im Ergel 1,47.45416,8.27827,-1,Im Ergel 1,,5404,Baden,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+206,Kantonsspital Baden AG,Med. Zentrum Brugg,47.4823,8.20335,-1,Fröhlichstrasse 7,,5200,Brugg,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+207,Kantonsspital Baden AG,"Spital Muri, Dialyse",47.27729,8.33034,-1,Spitalstrasse 144,,5630,Muri AG,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+208,Kantonsspital Baden AG,Ärztezentrum Limmatfeld,47.40915,8.4052,-1,Heimstrasse 1,,8953,Dietikon,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+209,Spital Einsiedeln,Spital Einsiedeln,47.13093,8.73942,-1,Spitalstrasse 28,,8840,Einsiedeln,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+210,reha andeer ag Rehabilitationsklinik,reha andeer ag,46.60214,9.4266,-1,Veia Granda,,7440,Andeer,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+211,Luzerner Höhenklinik Montana,Luzerner Höhenklinik Montana,46.31681,7.49788,-1,Route de l'Astoria 2,,3963,Crans-Montana,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+212,Kantonsspital Uri,Kantonsspital Uri,46.88282,8.63742,-1,Spitalstrasse 1,,6460,Altdorf UR,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+213,Spital Zofingen AG,Spital Zofingen AG,47.29632,7.94722,-1,Mühlethalstrasse 27,,4800,Zofingen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+214,Réseau fribourgeois de santé mentale - RFSM Centre de soins hospitaliers,RFSM,46.656844,7.065642,-1,,,1633,Marsens,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+215,Kantonsspital Glarus,Kantonsspital Glarus Akutsomatik,47.04551,9.06515,-1,Burgstrasse 99,,8750,Glarus,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+216,Kantonsspital Glarus,Kantonsspital Glarus Psychiatrie,47.04551,9.06515,-1,Burgstrasse 99,,8750,Glarus,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+217,"Spitalverbund Appenzell Ausserrhoden, Psychiatrisches Zentrum",Psychiatrisches Zentrum AR,47.38599,9.26438,-1,Krombach 3,,9101,Herisau,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+218,Felix Platter-Spital,Felix Platter-Spital,47.56553,7.56607,-1,Burgfelderstrasse 101,,4055,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+219,Felix Platter-Spital,Universitätsspital,47.56108,7.5815,-1,Hebelstrasse 32,,4056,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+220,Services Psychiatriques Jura Bernois - Bienne-Seeland (SPJBB),Unité de St-Imier,47.15228,6.99917,-1,Rue du Midi 9,,2610,St-Imier,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+221,Services Psychiatriques Jura Bernois - Bienne-Seeland (SPJBB),Unité de Moutier,47.28197,7.37432,-1,Beausite 47,,2740,Moutier,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+222,Spitäler Schaffhausen,Geissbergstrasse 81,47.71139,8.63758,-1,Geissbergstrasse 81,,8208,Schaffhausen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+223,Spitäler Schaffhausen,Nordstrasse 111,47.70623,8.62723,-1,Nordstrasse 111,,8200,Schaffhausen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+224,Spitäler Schaffhausen,Promenadenstrasse 21,47.69496,8.62846,-1,Promenadenstrasse 21,,8200,Schaffhausen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+225,Spital Davos AG Akutabteilung,Spital Davos,46.78769,9.81438,-1,Promenade 4,,7270,Davos Platz,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+226,Reha Rheinfelden,Rheinfelden,47.5592,7.80711,-1,Salinenstrasse 98,,4310,Rheinfelden,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+227,Universitätsspital Basel,Universitätsspital Basel,47.56108,7.5815,-1,Hebelstrasse 32,,4056,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+228,"Biotonus, Clinique Bon-Port SA centre de soins médicaux & esthétiques",Biotonus,46.42952,6.91921,-1,Rue Bon-Port 27,,1820,Montreux,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+229,Center da Sanda Val Müstair Akutabteilung,Center da Sanda Val Müstair,46.60694,10.43254,-1,Sielva,,7536,Sta. Maria V. M.,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+230,Center da Sanda Engiadina Bassa Ospidal d'Engiadina Bassa,Ospidal d'Engiadina Bassa,46.79986,10.30388,-1,Via da l'Ospidal 280,,7550,Scuol,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+231,Modellstation SOMOSA,Modellstation SOMOSA,47.50635,8.76473,-1,Zum Park 20,,8404,Winterthur,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+232,Rehabilitationszentrum Seewis Klinik für Herz- & Kreislauferkrankungen,Reha Seewis,46.98921,9.63713,-1,Schlossstrasse 1,,7212,Seewis Dorf,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+233,Universitäre Psychiatrische Kliniken Basel,UPK-Campus (EPK/FPK),47.57123,7.56588,-1,Wilhelm-Klein-Strasse 27,,4056,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+234,Universitäre Psychiatrische Kliniken Basel,Psychotherap. Tagesklinik (PTK),47.55689,7.58432,-1,Spalenberg 65,,4051,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+235,Universitäre Psychiatrische Kliniken Basel,Jugendpsychiatr. Abteilung (JPA),47.54123,7.58811,-1,Röschenzerstrasse 5/7,,4053,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+236,Universitäre Psychiatrische Kliniken Basel,Kinderpsychiatr. Abteil. (KPA),47.55763,7.60219,-1,Alemannengasse 60,,4058,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+237,Universitäre Psychiatrische Kliniken Basel,DTK f. Klein-/Kindergartenkinder,47.55931,7.60218,-1,Chrischonastrasse 38,,4058,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+238,Universitäre Psychiatrische Kliniken Basel,Kriseninterventionsstation (KIS),47.56105,7.58505,-1,Petersgraben 4,,4051,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+239,Universitäre Psychiatrische Kliniken Basel,Janus,47.5622,7.58472,-1,Spitalstrasse 2,,4056,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+240,Universitäre Psychiatrische Kliniken Basel,"ZASS-Ambulanz, ZDK, ZPE",47.55617,7.58329,-1,Kornhausgasse 7,,4051,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+241,"Kinder- & Jugendpsychiatrie Graubünden, Jugendstation Chur",KJP Jugendstation,46.8767,9.5398,-1,Waisenhausstrasse 1,,7000,Chur,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+242,GZO Spital Wetzikon,GZO Spital Wetzikon,47.32152,8.80244,-1,Spitalstrasse 66,,8620,Wetzikon ZH,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+243,Ospedale Malcantonese Fondazione Giuseppe Rossi,Ospedale Malcantonese,45.9925,8.838886,-1,,,6980,Castelrotto,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+244,See-Spital,See-Spital Horgen,47.26323,8.58936,-1,Asylstrasse 19,,8810,Horgen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+245,See-Spital,See-Spital Kilchberg,47.31978,8.5361,-1,Grütstrasse 60,,8802,Kilchberg,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+246,Etablissements Hospitaliers du Nord Vaudois (eHnv),Hôpital d'Yverdon-les-Bains,46.77135,6.64667,-1,Rue d'Entremonts 11,,1400,Yverdon-les-Bains,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+247,Etablissements Hospitaliers du Nord Vaudois (eHnv),Hôpital de Saint-Loup,46.66695,6.50438,-1,Route de St-Loup 13,,1318,Pompaples,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+248,Etablissements Hospitaliers du Nord Vaudois (eHnv),Hôpital de Chamblon,46.7792,6.60943,-1,Route de l'Hôpital 3,,1436,Chamblon,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+249,Etablissements Hospitaliers du Nord Vaudois (eHnv),Hôpital d'Orbe,46.72916,6.53331,-1,Chemin de la Magnenette 2,,1350,Orbe,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+250,Etablissements Hospitaliers du Nord Vaudois (eHnv),Hôpital de La Vallée,46.60169,6.22149,-1,Rue de l'Hôpital 3,,1347,Le Sentier,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+251,Hof Weissbad AG Nachbehandlungs-Zentrum,Hof Weissbad AG,47.30954,9.43299,-1,Im Park 1,,9057,Weissbad,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+252,Insel Gruppe AG (nicht-universitär),Spital Tiefenau,46.9754,7.45317,-1,Tiefenaustrasse 112,,3004,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+253,Insel Gruppe AG (nicht-universitär),Spital Aarberg,47.04784,7.27951,-1,Lyssstrasse 31,,3270,Aarberg,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+254,Insel Gruppe AG (nicht-universitär),Spital Belp,46.89229,7.49422,-1,Seftigenstrasse 89/91,,3123,Belp,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+255,Insel Gruppe AG (nicht-universitär),Spital Münsingen,46.87192,7.568,-1,Krankenhausweg 18/20,,3110,Münsingen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+256,Insel Gruppe AG (nicht-universitär),Spital Riggisberg,46.81384,7.47824,-1,Eyweg 2,,3132,Riggisberg,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+257,Luzerner Psychiatrie,Jugendpsychiatrische Th.station,47.03318,8.27662,-1,Fenkernstrasse 15,,6010,Kriens,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+258,Luzerner Psychiatrie,Kinderpsychiatrische Th.station,47.03318,8.27662,-1,Fenkernstrasse 15,,6010,Kriens,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+259,Luzerner Psychiatrie,Drop-in,47.05017,8.30044,-1,Bruchstrasse 29a,,6007,Luzern,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+260,Luzerner Psychiatrie,KJPD-Ambulatorium Luzern,47.05767,8.29309,-1,Kantonsspital 13,,6000,Luzern 16,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+261,Luzerner Psychiatrie,Forensischer Dienst,47.04003,8.3044,-1,Voltastrasse 42,,6005,Luzern,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+262,Luzerner Psychiatrie,GiA Luzern,47.04003,8.3044,-1,Voltastrasse 42,,6005,Luzern,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+263,Luzerner Psychiatrie,Ambulatorium Wolhusen,47.05894,8.07553,-1,Gütsch 1 Josefshaus,,6110,Wolhusen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+264,Luzerner Psychiatrie,KJPD-Ambulatorium Wolhusen,47.05894,8.07553,-1,Gütsch 1 Josefshaus,,6110,Wolhusen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+265,Luzerner Psychiatrie,Ambulatorium Sursee,47.17807,8.11015,-1,Surentalstrasse 10,,6210,Sursee,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+266,Luzerner Psychiatrie,KJPD-Ambulatorium Sursee,47.17807,8.11015,-1,Surentalstrasse 10,,6210,Sursee,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+267,Luzerner Psychiatrie,GiA Sursee,47.17807,8.11015,-1,Surentalstrasse 10,,6210,Sursee,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+268,Luzerner Psychiatrie,Ambulatorium Hochdorf,47.16758,8.29081,-1,Brauiplatz 8,,6280,Hochdorf,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+269,Luzerner Psychiatrie,KJPD-Ambulatorium Hochdorf,47.16758,8.29081,-1,Brauiplatz 8,,6280,Hochdorf,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+270,Luzerner Psychiatrie,Ambulatorium Sarnen,46.88975,8.24524,-1,Brünigstrasse 183,,6060,Sarnen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+271,Luzerner Psychiatrie,KJPD-Ambulatorium Sarnen,46.88975,8.24524,-1,Brünigstrasse 183,,6060,Sarnen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+272,Luzerner Kantonsspital,LUKS Luzern,47.05871,8.3004,-1,Spitalstrasse,,6000,Luzern 16,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+273,Luzerner Kantonsspital,LUKS Sursee,47.16838,8.11776,-1,Spitalstrasse 16A,,6210,Sursee,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+274,Luzerner Kantonsspital,LUKS Wolhusen,47.06694,8.07158,-1,Spitalstrasse,,6110,Wolhusen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+275,Geburtshaus Luna AG,Geburtshaus Luna,47.12841,7.2584,-1,Brüggstrasse 111,,2503,Biel/Bienne,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+276,Geburtshaus Luna AG,Geburtshaus Luna (Ambulatorium),46.94605,7.43527,-1,Effingerstrasse 14a,,3011,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+277,Limmatklinik AG,Limmatklinik AG,47.39303,8.51341,-1,Hardturmstrasse 133,,8005,Zürich,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+278,Ita Wegman Geburtshaus,Ita Wegman Geburtshaus,47.49391,7.61444,-1,Pfeffingerweg 1,,4144,Arlesheim,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+279,Geburtshaus Tagmond GmbH,Geburtshaus Tagmond,47.51728,7.69445,-1,Hauptstrasse 26,,4133,Pratteln,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+280,Geburtshaus ambra GmbH,Geburtshaus ambra GmbH,47.42384,7.84158,-1,Unterdorfstrasse 25,,4443,Wittinsburg,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+281,Maison de Naissance le Petit Prince,Le Petit Prince,46.79875,7.11933,-1,Route du Petit-Moncor 1d,,1752,Villars-sur-Glâne,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+282,Hôpital du Jura,Site de Delémont,47.3682,7.33874,-1,Fbg des Capucins 30,,2800,Delémont,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+283,Hôpital du Jura,Site de Porrentruy,47.4195,7.05944,-1,Chemin de l'Hôpital 9a,,2900,Porrentruy,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+284,Hôpital du Jura,Site de Saignelégier,47.25727,6.99743,-1,Rue de l'Hôpital 11,,2350,Saignelégier,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+285,Hôpital du Jura,Résidence La Promenade,47.36533,7.34103,-1,Rue de l'Hôpital 58,,2800,Delémont,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+286,Maison de naissance Les Cigognes,Maison de naissance Les Cigognes,47.34867,7.41163,-1,Route Principale 21,,2824,Vicques,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+287,Geburtshaus Terra Alta,Terra Alta,47.1619,8.09964,-1,Schellenrain 20,,6208,Oberkirch LU,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+288,Hôpital Neuchâtelois HNE,La Chaux-de-Fonds,47.11363,6.83195,-1,Chasseral 20,,2300,La Chaux-de-Fonds,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+289,Hôpital Neuchâtelois HNE,Pourtalès,46.99628,6.94283,-1,Maladière 45,,2002,Neuchâtel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+290,Hôpital Neuchâtelois HNE,Val-de-Travers,46.92548,6.63,-1,Rue de l'Hôpital 4,,2107,Couvet,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+291,Hôpital Neuchâtelois HNE,Val-de-Ruz,47.04112,6.9012,-1,Route de Landeyeux,,2046,Fontaines,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+292,Hôpital Neuchâtelois HNE,Le Locle,47.0571,6.74282,-1,Bellevue 42,,2400,Le Locle,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+293,Hôpital Neuchâtelois HNE,Chrysalide,47.09898,6.82018,-1,Rue de la Paix 99,,2300,La Chaux-de-Fonds,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+294,CNP Centre Neuchâtelois de psychiatrie,CNP Site de Perreux,46.9443,6.82375,-1,Site de Perreux,,2017,Boudry,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+295,CNP Centre Neuchâtelois de psychiatrie,CNP Site de Préfargier,47.00652,7.00772,-1,Site de Préfargier,,2074,Marin-Epagnier,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+296,CNP Centre Neuchâtelois de psychiatrie,CNP ea-ad consultation ambulatoire et liaison,47.11293,6.83271,-1,Rue Sophie-Mairet 29,,2300,La Chaux-de-Fonds,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+297,CNP Centre Neuchâtelois de psychiatrie,CNP ea - consultation ambulatoire,47.00115204,6.927536011,-1,Vieux-Châtel 20,,2000,Neuchâtel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+298,CNP Centre Neuchâtelois de psychiatrie,CNPâa,47.0571,6.74282,-1,Rue de Bellevue 42,,2400,Le Locle,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+299,CNP Centre Neuchâtelois de psychiatrie,CNP-CUP,46.99822,6.95411,-1,Maladières 45,,2000,Neuchâtel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+300,CNP Centre Neuchâtelois de psychiatrie,CNP ad-âa - consultation ambulatoire et HdJ âa,47.00115204,6.927536011,-1,Vieux-Châtel 18,,2000,Neuchâtel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+301,CNP Centre Neuchâtelois de psychiatrie,CNPea-ad - consultation ambulatoire,46.90409,6.58158,-1,Av. de la Gare 14c,,2114,Fleurier,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+302,Geburtshaus Stans,Geburtshaus Stans,46.95869,8.3629,-1,Rosenweg 3,,6370,Stans,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+303,Solothurner Spitäler AG,Bürgerspital Solothurn,47.19997,7.53878,-1,Schöngrünstrasse 36a,,4500,Solothurn,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+304,Solothurner Spitäler AG,Kantonsspital Olten,47.35489,7.90197,-1,Baslerstrasse 150,,4600,Olten,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+305,Solothurner Spitäler AG,Spital Dornach,47.48657,7.61367,-1,Spitalweg 11,,4143,Dornach,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+306,Solothurner Spitäler AG,Psychiatrische Dienste,47.21748,7.51826,-1,Weissensteinstrasse 102,,4503,Solothurn,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+307,Solothurner Spitäler AG,Solothurner Spitäler AG,47.19997,7.53878,-1,Schöngrünstrasse 36a,,4500,Solothurn,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+308,EOC Ente ospedaliero cantonale,Ospedale Regionale di Lugano,46.01802,8.95276,-1,Via Tesserete 46,,6900,Lugano,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+309,EOC Ente ospedaliero cantonale,Ospedale Regionale San Giovanni,46.18409,9.02634,-1,Via Ospedale 12,,6500,Bellinzona,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+310,EOC Ente ospedaliero cantonale,Ospedale Regionale La Carità,46.16931,8.79093,-1,Via dell'Ospedale 1,,6600,Locarno,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+311,EOC Ente ospedaliero cantonale,Ospedale Regionale Beata Vergine,45.86715,8.98251,-1,via Alfonso Turconi 23,,6850,Mendrisio,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+312,EOC Ente ospedaliero cantonale,Ospedale Regionale Faido,46.47835,8.80582,-1,Via Ospedale 32,,6760,Faido,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+313,EOC Ente ospedaliero cantonale,Ospedale Regionale Acquarossa,46.44419,8.94523,-1,Corzoneso Piano,,6716,Acquarossa,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+314,EOC Ente ospedaliero cantonale,Clinica Riabilitazione Novaggio,46.010158,8.851691,-1,,,6986,Novaggio,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+315,EOC Ente ospedaliero cantonale,Direzione Generale EOC,46.19692,9.02662,-1,Viale Officina 3,,6500,Bellinzona,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+316,EOC Ente ospedaliero cantonale,Servizi Centrali Biasca,46.34224,8.97592,-1,via Chiasso 22,,6710,Biasca,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+317,Spital Wallis - Spitalzentrum Oberwallis (SZO),Standort Brig,46.31815,7.98456,-1,Ueberlandstrasse,,3900,Brig,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+318,Spital Wallis - Spitalzentrum Oberwallis (SZO),Standort Visp,46.28782,7.88401,-1,Pflanzettastrasse 8,,3930,Visp,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+319,Spital Wallis - Spitalzentrum Oberwallis (SZO),Brig - Verwaltung SZO,46.31821,7.9819,-1,Spitalstrasse 7,,3900,Brig,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+320,Hôpital du Valais - Centre hospitalier du Chablais (CHC),Clinique St-Amé,46.21337,6.99837,-1,Vers Saint-Amé 10,,1890,St-Maurice,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+321,Hôpital du Valais - Centre hospitalier du Chablais (CHC),Hôpital de Malévoz - IPVR,46.25659,6.94416,-1,Route de Morgins 10,,1870,Monthey,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+322,Hôpital du Valais - Centre hospitalier du centre du Valais (CHCVs),Hôpital de Sierre,46.29221,7.52158,-1,Rue St-Charles 14,,3960,Sierre,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+323,Hôpital du Valais - Centre hospitalier du centre du Valais (CHCVs),Centre Valaisan de Pneumologie,46.2998,7.4814,-1,Route de la Moubra 87,,3963,Crans-Montana,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+324,Hôpital du Valais - Centre hospitalier du centre du Valais (CHCVs),Hôpital de Sion Champsec,46.23464,7.38692,-1,Av. du Grand-Champsec 80,,1951,Sion,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+325,Hôpital du Valais - Centre hospitalier du centre du Valais (CHCVs),Hôpital de Martigny,46.09946,7.06846,-1,Av. de la Fusion 27 Case postale,,1920,Martigny,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+326,Hôpital du Valais - Centre hospitalier du centre du Valais (CHCVs),Sion - Admin.CHCVs,46.23464,7.38692,-1,Av. du Grand-Champsec 80,,1951,Sion,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+327,Hôpital du Valais - Centre hospitalier du centre du Valais (CHCVs),Martigny - admin.CHCVs,46.09946,7.06846,-1,Av. de la Fusion 27 Case postale,,1920,Martigny,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+328,HFR - Hôpital fribourgeois,HFR Fribourg - HC,46.8008889,7.1381365,-1,Chemin des Pensionnats 2,,1700,Fribourg,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+329,HFR - Hôpital fribourgeois,HFR Billens,46.69437,6.90257,-1,Route de l'Hôpital 1,,1681,Billens,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+330,HFR - Hôpital fribourgeois,HFR Meyriez-Murten,46.92132,7.10891,-1,Spitalweg 36,,3280,Murten,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+331,HFR - Hôpital fribourgeois,HFR Riaz,46.64118,7.05782,-1,Rue de l'Hôpital 39,,1632,Riaz,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+332,HFR - Hôpital fribourgeois,HFR Tafers,46.81042,7.21235,-1,Maggenberg 1,,1712,Tafers,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+333,Les Hôpitaux Universitaires de Genève HUG,HUG - Soins aigus,46.19326,6.14841,-1,Rue Gabrielle-Perret-Gentil 4,,1205,Genève,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+334,Les Hôpitaux Universitaires de Genève HUG,HUG - Soins psychiatriques,46.19326,6.14841,-1,Rue Gabrielle-Perret-Gentil 4,,1205,Genève,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+335,Les Hôpitaux Universitaires de Genève HUG,HUG - Soins subaigus et continus,46.19326,6.14841,-1,Rue Gabrielle-Perret-Gentil 4,,1205,Genève,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+336,Therapiezentrum Meggen,Therapiezentrum Meggen,47.05034,8.36541,-1,Rütliweg 1,,6045,Meggen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+337,Maison de Naissance Tilia Sàrl,Maison de Naissance Tilia Sàrl,46.9919,6.91242,-1,Chemin des Valangines 9,,2000,Neuchâtel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+338,Universitäts-Kinderspital beider Basel (UKBB),UKBB,47.56372,7.58178,-1,Spitalstrasse 33,,4056,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+339,"Spitalverbund Appenzell Ausserrhoden, Akutsomatisches Spital Heiden/Herisau",Spital Herisau,47.38599,9.26438,-1,Krombach 3,,9410,Herisau,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+340,"Spitalverbund Appenzell Ausserrhoden, Akutsomatisches Spital Heiden/Herisau",Spital Heiden,47.44244,9.53134,-1,Werdstrasse 1 A,,9410,Heiden,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+341,RehaClinic Braunwald,Braunwald,46.93581,8.99452,-1,Niederschlachtstrasse 12,,8784,Braunwald,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+342,Kantonsspital Baselland,Liestal,47.48987,7.73018,-1,Mühlemattstrasse 26,,4410,Liestal,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+343,Kantonsspital Baselland,Bruderholz,47.528159,7.580989,-1,,,4101,Bruderholz,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+344,Kantonsspital Baselland,Laufen,47.42536,7.50461,-1,Lochbruggstrasse 39,,4242,Laufen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+345,Maison de naissance La Roseraie,Maison de naissance La Roseraie,46.18932,6.1476,-1,Chemin du Châtelet 3,,1205,Genève,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+346,Hirslanden Bern AG,Salem-Spital,46.95208,7.45379,-1,Schänzlistrasse 39,,3013,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+347,Hirslanden Bern AG,Praxiszentrum am Bahnhof,46.9499,7.43925,-1,Parkterrasse 10,,3012,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+348,Hirslanden Bern AG,Zentrale Bereiche,46.95477,7.44663,-1,Nordring 4,,3013,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+349,Clinique CIC Riviera,CIC,46.44098,6.89197,-1,Rue du Lac 92,,1815,Clarens,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+350,Lindenhof AG,Lindenhofspital,46.95807,7.42774,-1,Bremgartenstrasse 117,,3012,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+351,Lindenhof AG,Sonnenhofspital,46.94258,7.47413,-1,Buchserstrasse 30,,3006,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+352,Lindenhof AG,Engeriedspital,46.96008,7.4375,-1,Riedweg 15,,3012,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+353,Lindenhof AG,Verwaltungsstandort,46.9443,7.46067,-1,Muristrasse 12,,3006,Bern,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+354,GSMN Neuchâtel SA,Hôpital de la Providence,46.99516,6.9391,-1,Faubourg de l'Hôpital 81,,2000,Neuchâtel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+355,GSMN Neuchâtel SA,La Chaux-de-Fonds,47.11363,6.83195,-1,Chasseral 20,,2300,La Chaux-de-Fonds,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+356,Cereneo Schweiz AG Neurorehabilitationsklinik,Cereneo Schweiz AG,47.01489,8.47808,-1,Seestrasse 18,,6354,Vitznau,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+357,Geburtshaus Basel,Geburtshaus Basel,47.54927,7.57917,-1,Schweizergasse 8,,4054,Basel,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
+358,Geburtshaus Maternité Alpine,Geburtshaus Maternité Alpine,46.56062,7.37394,-1,Eggetlistrasse 5a,,3770,Zweisimmen,CH,Switzerland,,,,,,,,,,,01/01/2017,30/03/2020
