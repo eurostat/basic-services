@@ -12,8 +12,6 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./lib/leaflet/leaflet.css" />
-    <link rel="stylesheet" href="./lib/MarkerCluster.css" />
-    <link rel="stylesheet" href="./lib/MarkerCluster.Default.css" />
     <style>
       #layDiv {
         z-index: 9999999;
@@ -46,7 +44,7 @@
     <table></table>
 
     <script src="./lib/leaflet/leaflet.js"></script>
-    <script src="./lib/leaflet.markercluster.js"></script>
+    <!-- <script src="./lib/leaflet.markercluster.js"></script> -->
     <script src="./lib/d3.min.js"></script>
     <script src="./lib/proj4-compressed.js"></script>
     <script src="./lib/proj4leaflet.js"></script>
@@ -282,10 +280,12 @@
               if (this.value == "def") {
                 //map.addLayer(tiles)
                 map.addLayer(normalCircles);
+                map.options.renderer._update();
                 //$("#bedsLgd").hide();
                 //$("#dateLgd").hide();
               } else if (this.value == "beds") {
                 map.addLayer(propCircles);
+                map.options.renderer._update();
                 //$("#speedLgd").show();
                 //$("#dateLgd").hide();
               }
