@@ -189,33 +189,36 @@ except ImportError:
                        'columns', 'index'] # default metadata fields
     IPATH           = './data/raw/'
 
-    OINDEX          = { 
-        'id':       {'name': 'id',              'type': int,        'desc': "The healthcare service identifier - This identifier is based on national identification codes, if it exists."},
-        'name':     {'name': 'hospital_name',   'type': str,        'desc': "The name of the healthcare institution"},
-        'site':     {'name': 'site_name',       'type': str,        'desc': "The name of the specific site or branch of a healthcare institution"},
-        'lat':      {'name': 'lat',             'type': float,      'desc': "Latitude (WGS 84)"},
-        'lon':      {'name': 'lon',             'type': float,      'desc': "Longitude (WGS 84)"},
-        'geoqual':  {'name': 'geoqual',         'type': int,        'desc': "A quality indicator for the geolocation - 1: Good, 2: Medium, 3: Low, -1: Unknown"},
-        'street':   {'name': 'street',          'type': str,        'desc': "Street name"},
-        'number':   {'name': 'house_number',    'type': int,        'desc': "House number"},
-        'postcode': {'name': 'postcode',        'type': str,        'desc': "Postcode"},
-        'city':     {'name': 'city',            'type': str,        'desc': "City name (sometimes refers to a region or a municipality)"},
-        'cc':       {'name': 'cc',              'type': str,        'desc': "Country code (ISO 3166-1 alpha-2 format)"},
-        'country':  {'name': 'country',         'type': str,        'desc': "Country name"},
-        'ER':       {'name': 'emergency',       'type': bool,       'desc': "Flag 'yes/no' for whether the healthcare site provides emergency medical services"},
-        'beds':     {'name': 'cap_beds',        'type': int,        'desc': "Measure of capacity by number of beds (most common)"},
-        'prac':     {'name': 'cap_prac',        'type': int,        'desc': "Measure of capacity by number of practitioners"},
-        'rooms':    {'name': 'cap_rooms',       'type': int,        'desc': "Measure of capacity by number of rooms"},
-        'type':     {'name': 'facility_type',   'type': str,        'desc': "If the healthcare service provides a specific type of care, e.g. psychiatric hospital"},
-        'PP':       {'name': 'pulic_private',	'type': int,        'desc': "Status 'private/public' of the healthcare service"},
-        'specs':    {'name': 'list_specs',      'type': str,        'desc': "List of specialties recognized in the European Union and European Economic Area according to EU Directive 2005/36/EC"},
-        'tel':      {'name': 'tel',             'type': int,        'desc': "Telephone number"},
-        'email':    {'name': 'email',           'type': str,        'desc': "Email address"},
-        'url':      {'name': 'url',             'type': str,        'desc': "URL link to the institution's website"},
-        'refdate':  {'name': 'ref_date',        'type': datetime,   'desc': "The reference date of the data (DD/MM/YYYY)"},
-        'pubdate':  {'name': 'pub_date',        'type': datetime,   'desc': "The date that the data was last published (DD/MM/YYYY)"}
-        }
-
+    OINDEX          = OrderedDict( [
+        ('id',       {'name': 'id',              'type': int,        'desc': "The healthcare service identifier - This identifier is based on national identification codes, if it exists."}),
+        ('name',     {'name': 'hospital_name',   'type': str,        'desc': "The name of the healthcare institution"}),
+        ('site',     {'name': 'site_name',       'type': str,        'desc': "The name of the specific site or branch of a healthcare institution"}),
+        ('lat',      {'name': 'lat',             'type': float,      'desc': "Latitude (WGS 84)"}),
+        ('lon',      {'name': 'lon',             'type': float,      'desc': "Longitude (WGS 84)"}),
+        ('geoqual',  {'name': 'geoqual',         'type': int,        'desc': "A quality indicator for the geolocation - 1: Good, 2: Medium, 3: Low, -1: Unknown"}),
+        ('street',   {'name': 'street',          'type': str,        'desc': "Street name"}),
+        ('number',   {'name': 'house_number',    'type': str,        'desc': "House number"}),
+        ('postcode', {'name': 'postcode',        'type': str,        'desc': "Postcode"}),
+        ('city',     {'name': 'city',            'type': str,        'desc': "City name (sometimes refers to a region or a municipality)"}),
+        ('cc',       {'name': 'cc',              'type': str,        'desc': "Country code (ISO 3166-1 alpha-2 format)"}),
+        ('country',  {'name': 'country',         'type': str,        'desc': "Country name"}),
+        ('beds',     {'name': 'cap_beds',        'type': int,        'desc': "Measure of capacity by number of beds (most common)"}),
+        ('prac',     {'name': 'cap_prac',        'type': int,        'desc': "Measure of capacity by number of practitioners"}),
+        ('rooms',    {'name': 'cap_rooms',       'type': int,        'desc': "Measure of capacity by number of rooms"}),
+        ('ER',       {'name': 'emergency',       'type': bool,       'desc': "Flag 'yes/no' for whether the healthcare site provides emergency medical services"}),
+        ('type',     {'name': 'facility_type',   'type': str,        'desc': "If the healthcare service provides a specific type of care, e.g. psychiatric hospital"}),
+        ('PP',       {'name': 'pulic_private',	'type': int,        'desc': "Status 'private/public' of the healthcare service"}),
+        ('specs',    {'name': 'list_specs',      'type': str,        'desc': "List of specialties recognized in the European Union and European Economic Area according to EU Directive 2005/36/EC"}),
+        ('tel',      {'name': 'tel',             'type': int,        'desc': "Telephone number"}),
+        ('email',    {'name': 'email',           'type': str,        'desc': "Email address"}),
+        ('url',      {'name': 'url',             'type': str,        'desc': "URL link to the institution's website"}),
+        ('refdate',  {'name': 'ref_date',        'type': datetime,   'desc': "The reference date of the data (DD/MM/YYYY)"}),
+        ('pubdate',  {'name': 'pub_date',        'type': datetime,   'desc': "The date that the data was last published (DD/MM/YYYY)"})
+       ] )
+    # notes: 
+    #  i. house_number should be string, not int.. .e.g. 221b Baker street
+    #  ii. we use an ordered dict to use the same column order when writing the output file
+    
     ODATE           = '%d/%m/%Y'# format DD/MM/YYYY
     OLANG           = 'en'
     OSEP            = ','
@@ -493,11 +496,17 @@ class BaseHCS(object):
         if cast == df[column].dtype:
             return df[column]
         elif cast == datetime:
-            f = lambda s: datetime.strptime(s, ifmt).strftime(ofmt)
-            return df[column].apply(f)
+            try:
+                f = lambda s: datetime.strptime(s, ifmt).strftime(ofmt)
+                return df[column].apply(f)
+            except:
+                return df[column]                
         else:
-            return df[column].astype(cast)
-
+            try:
+                return df[column].astype(cast)
+            except:
+                return df[column].astype(object)
+                
     #/************************************************************************/
     @staticmethod
     def to_json(df, columns):
@@ -580,6 +589,16 @@ class BaseHCS(object):
         index = kwargs.pop('index', None)   # index
         self.oindex = index or self.meta.get('index',{}) or OINDEX.keys()
         
+
+    #/************************************************************************/
+    def __repr__(self):
+        return "<{} data instance at {}>".format(self.__class__.__name__, id(self))
+    def __str__(self):    
+        keys = ['cc', 'country', 'file']
+        l = max([len(k) for k in keys])
+        return reduce(lambda x,y:x+y, ["{} : {}\n".format(k.ljust(l),getattr(self,k))
+            for k in keys if self.get(k) not in ('',None)])    
+
     #/************************************************************************/
     def __getattr__(self, attr):
             try:        return object.__getattribute__(self, attr) 
@@ -856,6 +875,8 @@ class BaseHCS(object):
                 if force_rename is False:       continue
                 else:                           field = ind 
             ofield = OINDEX[ind]['name'] if ind in OINDEX.keys() and force_rename is False else ind
+            if ind in self.oindex: # update the index: this will inform us about which renamings were successful
+                self.oindex.update({ind: ofield})
             if field == ofield:
                 continue
             if not field in fields:
@@ -869,6 +890,68 @@ class BaseHCS(object):
             else: # dumb copy
                 self.data[field] = self.data[fields[field]]
         return columns
+
+    #/************************************************************************/
+    def clean_column(self, *columns, **kwargs):
+        """Filter the dataframe
+        """
+        columns = (columns not in ((None,),()) and columns[0])        or \
+                    kwargs.pop('drop', [])
+        if isinstance(columns, string_types):
+            columns = [columns,]
+        elif not(columns in (None, ())                                  or \
+                 (isinstance(columns, Sequence) and all([isinstance(col,string_types) for col in columns]))):
+            raise TypeError('wrong input format for drop columns - must be a (list of) string(s)')
+        index = kwargs.pop('keep', [])                     
+        if isinstance(index, string_types):
+            index = [index,]
+        elif not(isinstance(index, Sequence) and all([isinstance(ind,string_types) for ind in index])):
+            raise TypeError('wrong input format for keep columns - must be a (list of) string(s)')
+        force_keep = kwargs.pop('force', False)                     
+        # lang = kwargs.pop('lang', None) # OLANG
+        for i, col in enumerate(columns):
+            try:        assert col in self.data.columns
+            except:
+                try:        assert col in self.oindex
+                            # assert col in [col_[lang] for col_ in self.icolumns]
+                except:     continue
+                else:
+                    # col = [col_[self.lang] for col_ in self.icolumns if col_[lang]==col][0]
+                    columns.pop(i)
+                    columns.insert(i, self.oindex[col])
+            else:       continue
+        for i, ind in enumerate(index):
+            try:        assert ind in self.data.columns
+            except:
+                try:        assert ind in self.oindex and self.oindex[ind] is not None
+                except:     continue
+                else:
+                    index.pop(i)
+                    index.insert(i, self.oindex[ind])
+            else:       continue
+        # refine the set of columns to actually drop
+        columns = list(set(columns).difference(set(index)))
+        # drop the columns
+        #try:
+        #    self.data.drop(columns=columns, axis=1, inplace=True)
+        #except:     pass
+        for col in columns:
+            try: # we make a try per column...
+                self.data.drop(columns=col, axis=1, inplace=True)
+            except:     pass
+        # say it in a more Pythonic way:
+        # [self.data.drop(col, axis=1) for col in columns if col in self.data.columns]
+        if force_keep is False:
+            return
+        # 'keep' the others, i.e. when they dont exist create with NaN                
+        for ind in index:
+            if ind in self.data.columns:
+                continue
+            cast = OINDEX[ind]['type'] if ind in OINDEX else object    
+            if cast == datetime:    cast = str
+            try:
+                self.data[ind] = pd.Series(dtype=cast)
+            except:     pass
     
     #/************************************************************************/
     def define_place(self, *place, **kwargs):
@@ -892,11 +975,6 @@ class BaseHCS(object):
         if isinstance(place, Mapping):
             kwargs.update(place)
             place = list(place.keys())
-        if 'country' in self.oindex:
-            index = self.oindex['country'] or 'country'
-            if not index in self.data.columns:   
-                self.data[index] = self.country # self.meta.get('country',{}).get('name')
-                self.oindex.update({'country': index})
         self.place = place if isinstance(place, string_types) else 'place' 
         if 'place' in self.oindex: self.oindex.update({'place': 'place'})
         try:
@@ -940,7 +1018,7 @@ class BaseHCS(object):
         place = kwargs.pop('place', self.place)
         # lang = kwargs.pop('lang', self.lang)
         if latlon in ([],None):
-            lat, lon = self.oindex.get('lat'), self.oindex.get('lon')
+            lat, lon = self.oindex.get('lat', 'lat'), self.oindex.get('lon', 'lon')
             order = 'lL'
         olat, olon = OINDEX['lat']['name'], OINDEX['lon']['name']
         if lat == lon and lat in self.data.columns: #self.icolumns[lang]
@@ -983,36 +1061,84 @@ class BaseHCS(object):
             self.data[olat].astype(OINDEX['lat']['type']), self.data[olon].astype(OINDEX['lon']['type'])
         
     #/************************************************************************/
+    def prepare_data(self, *args, **kwargs):
+        """Abstract method for data preparation.
+        
+            >>> hcs.prepare_data(*args, **kwargs)
+        """
+        pass
+    
+    #/************************************************************************/
     def format_data(self, **kwargs):
         """Run the formatting of the input data according to the harmonised template
         as provided by the index metadata.
         
             >>> hcs.format_data(**index)
         """
-        index = kwargs.pop('index', {})
+        _index = kwargs.pop('index', {})
+        if isinstance(_index, Sequence):
+            _index = dict(zip(_index,_index))
+        elif not isinstance(_index, Mapping):
+            raise TypeError('wrong format for input index - must a mapping dictionary')
         lang = kwargs.pop('lang', OLANG)
-        index.update(self.oindex.copy())
+        if not isinstance(lang, string_types):
+            raise TypeError('wrong format for language - must a string')
+        try:
+            index = self.oindex.copy()
+            index.update(_index) # index overwrites whatever is in oindex
+        except:
+            raise IOError
         try:
             assert lang == self.lang
         except:            
             index = {k: self.get_column(v, ilang=lang, olang=self.lang)     \
                      for (k,v) in index.items() if v not in (None,'')}
+        try:
+            assert index != {}
+        except: # not vey happy with this, but ok... it's a default!
+            index = {col[OLANG]: col[self.lang] for col in self.icolumns}
+        # check for country-related columns - special case
+        if 'country' in index:
+            _index = index['country'] or 'country'
+            if not _index in self.data.columns:   
+                self.data[_index] = self.country 
+                self.oindex.update({'country': _index})
+        if 'cc' in index:
+            _index = index['cc'] or 'cc'
+            if not _index in self.data.columns:   
+                self.data[_index] = self.cc 
+                self.oindex.update({'cc': _index})
+        ## define the place: we actually skip this (see 'assert False' below), and 
+        ## do it only if needed when running find_location later
         #try:
-        #    assert index != {}
-        #except:
+        #    assert False # 
         #    place = [key for key in index.keys() if key in PLACE_FIELDS]
         #    self.define_place(place = place)
-        #finally:
+        #except:
         #    pass
+        #finally:
+        #     index.pop('place',None) # just in case it was created and was present in the list
+        # find the locations associated to the data
         try:
-            assert 'lat' in index and 'lon' in index
-        except:            
-            latlon = [index.get(l) for l in ['lat', 'lon']]
+            latlon = [index.get(l, l) for l in ['lat', 'lon']]
             self.find_location(latlon = latlon)
+        except:
+            warnings.warn('location not assigned for data %s' % self)            
         finally:
             [index.pop(l,None) for l in ['lat', 'lon']]
+        ## update oindex with index (which has been modified by get_column and
+        ## does not contain ['lat','lon'])
+        # self.oindex.update(index)
+        # reset the columns with the right exptected names 
         try:
             self.set_column(columns = index)
+        except:
+            pass
+        # clean the data so that it matches the template; keep even those fields
+        # from index which have no corresponding column
+        index = [v if v is not None else OINDEX[k]['name'] for (k,v) in self.oindex.items()]
+        try:
+            self.clean_column(list(self.data.columns), keep = index)
         except:
             pass
             
@@ -1032,6 +1158,7 @@ class BaseHCS(object):
         else:
             fmt = fmt.lower()
         encoding = kwargs.pop('enc', OENCODING)
+        date = kwargs.pop('date', ODATE)#analysis:ignore
         if not fmt in OFMT.keys():
             raise TypeError('wrong input format - must be any string among %s' % list(OFMT.keys()))
         if dest in (None,''):
@@ -1039,9 +1166,14 @@ class BaseHCS(object):
         #try:
         #    kwargs.update(self.save_data.__dict__)
         #except:         pass
-        columns = [getattr(self, ind, None) or ind for ind in self.oindex]
+        columns = [col for col in [ind['name'] for ind in OINDEX.values()]  \
+                                   if col in self.data.columns]     # self.oindex.copy()
+        # reorder the columns - note this is useful for csv and json data only
+        # but ok, not critical...
+        self.data.reindex(columns = columns)
         if fmt == 'csv':
-            self.data.to_csv(dest)
+            self.data.to_csv(dest, columns=columns, header=True, index=False, encoding=encoding) 
+            #                date_format=date
         elif fmt == 'geojson':
             geom = self.to_geojson(self.data, columns, lat=self.lat, lon=self.lon)
             with open(dest, 'w', encoding=encoding) as f:
