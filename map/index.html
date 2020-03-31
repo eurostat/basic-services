@@ -14,6 +14,22 @@
     <link rel="stylesheet" href="./lib/leaflet/leaflet.css" />
     <link rel="stylesheet" href="./lib/MarkerCluster.css" />
     <link rel="stylesheet" href="./lib/MarkerCluster.Default.css" />
+    <style>
+      #layDiv {
+        z-index: 9999999;
+        position: absolute;
+        padding: 6px;
+        left: 10px;
+        top: 80px;
+      }
+      #circleLegend {
+        top: 120px;
+        left: 10px;
+        position: absolute;
+        z-index: 999999999;
+        padding: 6px;
+      }
+    </style>
   </head>
 
   <body style="margin:0px">
@@ -28,12 +44,7 @@
 
     <script src="./lib/leaflet/leaflet.js"></script>
     <script src="./lib/leaflet.markercluster.js"></script>
-    <script src="./lib/d3dsv.js"></script>
-    <script src="https://d3js.org/d3-array.v2.min.js"></script>
-    <script src="https://d3js.org/d3-color.v1.min.js"></script>
-    <script src="https://d3js.org/d3-format.v1.min.js"></script>
-    <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
-    <script src="https://d3js.org/d3-scale.v3.min.js"></script>
+    <script src="./lib/d3.min.js"></script>
     <script src="./lib/proj4-compressed.js"></script>
     <script src="./lib/proj4leaflet.js"></script>
     <script>
@@ -101,14 +112,8 @@
                 '&copy; <a href="//openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="https://ec.europa.eu/eurostat/web/gisco">GISCO</a>'
             }
           );
-          let osm = L.tileLayer(
-            "https://europa.eu/webtools/rest/gisco/maps/wmts/OSMCartoBackground/EPSG3035/{z}/{x}/{y}.png",
-            {
-              maxZoom: 18,
-              attribution:
-                '&copy; <a href="//openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="https://ec.europa.eu/eurostat/web/gisco">GISCO</a>'
-            }
-          );
+
+          tiles.layerId = "basemap";
 
           // let mcg = L.markerClusterGroup({
           //   chunkedLoading: true,
@@ -121,7 +126,7 @@
 
           var circleScale = d3
             .scaleSqrt()
-            .domain(d3.extent(hospitals, d => d.cap_beds)) //568158 37691912
+            .domain(d3.extent(hospitals, d => d.cap_beds))
             .range([100, 8000]); //metres
 
           let propCircles = L.layerGroup();
@@ -203,15 +208,113 @@
           });
 
           //layer toggle
-          var baseLayers = {
-            Positron: tiles,
-            OpenStreetMap: osm
-          };
-          var overlays = {
-            "Healthcare Centres": normalCircles,
-            "Bed Capacity": propCircles
-          };
-          L.control.layers(baseLayers, overlays).addTo(map);
+          // var baseLayers = {
+          //   Positron: tiles,
+          //   OpenStreetMap: osm
+          // };
+          // var overlays = {
+          //   "Healthcare Centres": normalCircles,
+          //   "Bed Capacity": propCircles
+          // };
+          // L.control.layers(baseLayers, overlays).addTo(map);
+
+          //build control panel
+          let layDiv = document.createElement("div");
+          layDiv.classList.add(
+            "leaflet-control-layers",
+            "leaflet-control",
+            "leaflet-container"
+          );
+          layDiv.id = "layDiv";
+
+          let form = document.createElement("form");
+          layDiv.appendChild(form);
+          document.body.appendChild(layDiv);
+
+          //radio
+          let rdDefault = document.createElement("label");
+          let div = document.createElement("div");
+          rdDefault.appendChild(div);
+          let input = document.createElement("input");
+          input.classList.add("leaflet-control-layers-selector");
+          input.name = "layerChoice";
+          input.checked = "checked";
+          input.value = "def";
+          input.type = "radio";
+          div.appendChild(input);
+          let span = document.createElement("span");
+          span.innerHTML = "Healthcare Services <br>";
+          div.appendChild(span);
+          //radio
+          let rdBeds = document.createElement("label");
+          let div2 = document.createElement("div");
+          rdBeds.appendChild(div);
+          let input2 = document.createElement("input");
+          input2.classList.add("leaflet-control-layers-selector");
+          input2.name = "layerChoice";
+          input2.id = "rdBedsInput";
+          //input2.checked = "false";
+          input2.value = "beds";
+          input2.type = "radio";
+          div.appendChild(input2);
+          let span2 = document.createElement("span");
+          span2.innerHTML = "By Number of Beds";
+          span2.for = "rdBedsInput";
+          div.appendChild(span2);
+
+          form.appendChild(rdDefault);
+          form.appendChild(rdBeds);
+
+          //change layer selection
+          let inputs = document.querySelectorAll(
+            "input[type=radio][name=layerChoice]"
+          );
+
+          inputs.forEach(input => {
+            input.onchange = function() {
+              //remove all layers
+              map.eachLayer(function(layer) {
+                if (layer.layerId !== "basemap") map.removeLayer(layer);
+              });
+              if (this.value == "def") {
+                //map.addLayer(tiles)
+                map.addLayer(normalCircles);
+                //$("#bedsLgd").hide();
+                //$("#dateLgd").hide();
+              } else if (this.value == "beds") {
+                map.addLayer(propCircles);
+                //$("#speedLgd").show();
+                //$("#dateLgd").hide();
+              }
+            };
+          });
+
+          //circle size legend
+          // let svg = d3.create("svg").attr("id", "circleLegend");
+          // svg.style("top", "20%");
+          // svg.style("left", "5%");
+          // document.body.appendChild(svg.node());
+          // const legC = svg
+          //   .append("g")
+          //   .attr("fill", "#444")
+          //   //.attr("transform", "translate(50,130)")
+          //   .attr("text-anchor", "right")
+          //   .style("font", "10px sans-serif")
+          //   .selectAll("g")
+          //   .data([1000, 500, 100])
+          //   .join("g");
+          // legC
+          //   .append("circle")
+          //   .attr("fill", "none")
+          //   .attr("stroke", "#444")
+          //   .attr("cy", 40)
+          //   .attr("r", circleScale);
+          // legC
+          //   .append("text")
+          //   .attr("y", 40)
+          //   .attr("x", 30)
+          //   .attr("dy", "1.3em")
+          //   .text(d3.format(".1s"));
         } else {
           // We reached our target server, but it returned an error
         }
