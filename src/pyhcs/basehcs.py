@@ -195,7 +195,7 @@ except ImportError:
         ('site',     {'name': 'site_name',       'type': str,        'desc': "The name of the specific site or branch of a healthcare institution"}),
         ('lat',      {'name': 'lat',             'type': float,      'desc': "Latitude (WGS 84)"}),
         ('lon',      {'name': 'lon',             'type': float,      'desc': "Longitude (WGS 84)"}),
-        ('geoqual',  {'name': 'geoqual',         'type': int,        'desc': "A quality indicator for the geolocation - 1: Good, 2: Medium, 3: Low, -1: Unknown"}),
+        ('geo_qual', {'name': 'geo_qual',        'type': int,        'desc': "A quality indicator for the geolocation - 1: Good, 2: Medium, 3: Low, -1: Unknown"}),
         ('street',   {'name': 'street',          'type': str,        'desc': "Street name"}),
         ('number',   {'name': 'house_number',    'type': str,        'desc': "House number"}),
         ('postcode', {'name': 'postcode',        'type': str,        'desc': "Postcode"}),
@@ -1028,12 +1028,14 @@ class BaseHCS(object):
             else:
                 raise IOError("unknown order keyword - must be 'lL' or 'Ll'")
             self.data[[lat, lon]] = self.data[latlon].str.split(pat=" +", n=1, expand=True) #.astype(float)
+            geo_qual = 3
         elif lat in self.data.columns and lon in self.data.columns: 
         # elif lat in self.icolumns[lang] and lon in self.icolumns[lang]: 
             if lat != olat:
                 self.data.rename(columns={lat: olat})
             if lon != olon:                
                 self.data.rename(columns={lon: olon})
+            geo_qual =3 
         else:
             if not(isinstance(place, string_types) and place in self.data.columns):
                 self.define_place(**kwargs)
@@ -1046,6 +1048,7 @@ class BaseHCS(object):
                 self.proj = None
             except ImportError:
                 raise IOError('no geocoder available')
+            geo_qual = None # TBD
         if OPROJ is not None and self.proj not in (None,'') and self.proj != OPROJ:
             f = lambda lat, lon : self.project([lat, lon], iproj=self.proj, oproj=OPROJ)
             try:                        f('-1')
@@ -1053,6 +1056,10 @@ class BaseHCS(object):
                 self.data[olat], self.data[olon] = zip(*self.data[[olat, olon]].apply(f))
             except ImportError:
                 raise IOError('no projection transformer available')
+        if 'geo_qual' in OINDEX.keys(): # in self.oindex
+            ind = OINDEX['geo_qual']['name']
+            self.data[ind] = geo_qual 
+            self.oindex.update({'geo_qual': ind})
         if 'lat' in self.oindex and 'lon' in self.oindex:
             self.oindex.update({'lat': olat, 'lon': olon})
         # cast
@@ -1098,16 +1105,13 @@ class BaseHCS(object):
         except: # not vey happy with this, but ok... it's a default!
             index = {col[OLANG]: col[self.lang] for col in self.icolumns}
         # check for country-related columns - special case
-        if 'country' in index:
-            _index = index['country'] or 'country'
-            if not _index in self.data.columns:   
-                self.data[_index] = self.country 
-                self.oindex.update({'country': _index})
-        if 'cc' in index:
-            _index = index['cc'] or 'cc'
-            if not _index in self.data.columns:   
-                self.data[_index] = self.cc 
-                self.oindex.update({'cc': _index})
+        for cc in ['country', 'cc']:
+            if cc in index:
+                _index = index[cc] or cc
+                if not _index in self.data.columns:   
+                    self.data[_index] = getattr(self, cc, None) 
+                    self.oindex.update({cc: _index})
+            else:       pass
         ## define the place: we actually skip this (see 'assert False' below), and 
         ## do it only if needed when running find_location later
         #try:
@@ -1123,7 +1127,7 @@ class BaseHCS(object):
             latlon = [index.get(l, l) for l in ['lat', 'lon']]
             self.find_location(latlon = latlon)
         except:
-            warnings.warn('location not assigned for data %s' % self)            
+            warnings.warn('location not assigned for data')            
         finally:
             [index.pop(l,None) for l in ['lat', 'lon']]
         ## update oindex with index (which has been modified by get_column and
