@@ -179,6 +179,7 @@ else:
     # warnings.warn('Levenshtein help: https://rawgit.com/ztane/python-Levenshtein/master/docs/Levenshtein.html')
     _is_levenshtein_installed = True
 
+from . import BASE, COUNTRIES
 from .config import IPATH, OINDEX, ODATE, OLANG, OSEP, OENC, \
                     OPATH, OFILE, OFMT, OPROJ, IPLACE
 
@@ -579,6 +580,8 @@ class BaseHCS(object):
     def cc(self, cc):
         if not (cc is None or isinstance(cc, string_types)):         
             raise TypeError('wrong format for country code %s - must be a string' % cc)
+        elif not cc in COUNTRIES.values():
+            raise IOError('wrong country code %s - must be any valid code from the %s area' % (cc,list(COUNTRIES.keys())[0]))            
         # self.meta['country'].update({'code': cc})
         self.__cc = cc
 
@@ -1150,7 +1153,7 @@ class BaseHCS(object):
         dest = (dest not in ((None,),()) and dest[0])               or \
              kwargs.pop('dest', None)   
         if dest is None:   
-            dest = '%smeta.json' % self.cc  
+            dest = '%s%s.json' % (self.cc, BASE)  
         try:
             with open(dest, 'w', encoding=self.enc) as f:
                 json.dump(self.meta.__dict__, f, ensure_ascii=False)
