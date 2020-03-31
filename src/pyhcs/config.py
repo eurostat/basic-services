@@ -87,10 +87,6 @@ OFILE           = '%s.%s'
 OFMT            = {'geojson': 'json', 'json': 'json', 'csv': 'csv', 'gpkg': 'gpkg'}    
 OPROJ           = None # 'WGS84'
 
-IPLACE          = ['street', 'number', 'postcode', 'city', 'country']
-# LATLON        = ['lat', 'lon'] # 'coord' # 'latlon'
-# ORDER         = 'lL' # first lat, second Lon 
-
 
 #%%
 
@@ -99,7 +95,7 @@ __cfgfile = '%s%s.json' % (__config, BASE)
 __thisdir = osp.dirname(__file__)
 
 __gvar = ['ipath', 'oindex', 'odate', 'olang', 'osep', 'oenc',  \
-          'opath', 'ofile', 'ofmt', 'oproj', 'iplace'] #analysis:ignore
+          'opath', 'ofile', 'ofmt', 'oproj'] #analysis:ignore
 
 try:
     assert osp.exists(osp.join(__thisdir, __cfgfile))
@@ -113,7 +109,7 @@ except (AssertionError,ImportError):
             exec("__metadata.update({'" + str(var).lower() + "' : " + str(var).upper() + "})")
         except:
             continue
-    # this is nothing else than:
+    # this is not much different from doing:
     #__metadata = {'ipath':      IPATH,
     #              'oindex':     OINDEX,
     #              'odate':      ODATE,
@@ -124,7 +120,6 @@ except (AssertionError,ImportError):
     #              'ofile':      OFILE,
     #              'ofmt':       OFMT,  
     #              'oproj':      OPROJ,
-    #              'iplace':     IPLACE
     #              }
     with open(__cfgfile, 'w') as fp:
         json.dump(__metadata,fp)
@@ -146,4 +141,3 @@ else:
     #OFILE       = __metadata.get('ofile', OFILE)
     #OFMT        = __metadata.get('ofmt', OFMT)    
     #OPROJ       = __metadata.get('oproj', OPROJ)
-    #IPLACE      = __metadata.get('iplace', IPLACE)

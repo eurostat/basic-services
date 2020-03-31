@@ -48,7 +48,7 @@ Note the output schema (see also "attributes" in the documentation [below](#Data
 
 ```python
 >>> from pyhcs import harmonise
->>>  harmonise.run('CZ')
+>>> harmonise.run('CZ')
 ```
 
 <!-- .. ` -->

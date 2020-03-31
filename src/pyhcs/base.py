@@ -181,7 +181,11 @@ else:
 
 from . import BASE, COUNTRIES
 from .config import IPATH, OINDEX, ODATE, OLANG, OSEP, OENC, \
-                    OPATH, OFILE, OFMT, OPROJ, IPLACE
+                    OPATH, OFILE, OFMT, OPROJ
+
+IPLACE          = ['street', 'number', 'postcode', 'city', 'country']
+# LATLON        = ['lat', 'lon'] # 'coord' # 'latlon'
+# ORDER         = 'lL' # first lat, second Lon 
 
 try:
     assert _is_pyproj_installed is True
