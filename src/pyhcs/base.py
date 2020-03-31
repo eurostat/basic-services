@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-.. _basehcs
+.. _base
 
 .. Links
 
@@ -23,8 +23,6 @@ Module enabling the integration of data on Health Care Services (e.g., facilitie
 like hospitals or clinics) collected from Member States into pan-European harmonised 
 format.
 
-**Description**
-    
 **Dependencies**
 
 *require*:      :mod:`os`, :mod:`six`, :mod:`collections`, :mod:`functools`, :mod:`copy`, 
@@ -41,10 +39,10 @@ format.
 #%%                
 
 from os import path as osp
-from six import string_types
 import warnings#analysis:ignore
 
-from collections import OrderedDict, Mapping, Sequence#analysis:ignore
+from collections import Mapping, Sequence
+from six import string_types
 
 from functools import reduce
 from copy import deepcopy
@@ -95,7 +93,7 @@ except AssertionError:
     # raise IOError('no geocoding module available')   
     warnings.warn('no geocoding module available')   
 else:
-    CODERS = {'GISCO':        None,              
+    CODERS = {'GISCO':          None,              
                 'osm':          None, # note: osm and GISCO) are actually... Nominatim on GISCO servers
                 'GoogleV3':     None,           
                 'Bing':         'api_key',          
@@ -181,59 +179,8 @@ else:
     # warnings.warn('Levenshtein help: https://rawgit.com/ztane/python-Levenshtein/master/docs/Levenshtein.html')
     _is_levenshtein_installed = True
 
-    
-try:
-    from . import config#analysis:ignore # any input configuration file ? 
-except ImportError:
-    IMETA_KEYS      = ['country', 'lang', 'proj', 'file', 'path', 'encoding', 'sep', 
-                       'columns', 'index'] # default metadata fields
-    IPATH           = './data/raw/'
-
-    OINDEX          = OrderedDict( [
-        ('id',       {'name': 'id',              'type': int,        'desc': "The healthcare service identifier - This identifier is based on national identification codes, if it exists."}),
-        ('name',     {'name': 'hospital_name',   'type': str,        'desc': "The name of the healthcare institution"}),
-        ('site',     {'name': 'site_name',       'type': str,        'desc': "The name of the specific site or branch of a healthcare institution"}),
-        ('lat',      {'name': 'lat',             'type': float,      'desc': "Latitude (WGS 84)"}),
-        ('lon',      {'name': 'lon',             'type': float,      'desc': "Longitude (WGS 84)"}),
-        ('geo_qual', {'name': 'geo_qual',        'type': int,        'desc': "A quality indicator for the geolocation - 1: Good, 2: Medium, 3: Low, -1: Unknown"}),
-        ('street',   {'name': 'street',          'type': str,        'desc': "Street name"}),
-        ('number',   {'name': 'house_number',    'type': str,        'desc': "House number"}),
-        ('postcode', {'name': 'postcode',        'type': str,        'desc': "Postcode"}),
-        ('city',     {'name': 'city',            'type': str,        'desc': "City name (sometimes refers to a region or a municipality)"}),
-        ('cc',       {'name': 'cc',              'type': str,        'desc': "Country code (ISO 3166-1 alpha-2 format)"}),
-        ('country',  {'name': 'country',         'type': str,        'desc': "Country name"}),
-        ('beds',     {'name': 'cap_beds',        'type': int,        'desc': "Measure of capacity by number of beds (most common)"}),
-        ('prac',     {'name': 'cap_prac',        'type': int,        'desc': "Measure of capacity by number of practitioners"}),
-        ('rooms',    {'name': 'cap_rooms',       'type': int,        'desc': "Measure of capacity by number of rooms"}),
-        ('ER',       {'name': 'emergency',       'type': bool,       'desc': "Flag 'yes/no' for whether the healthcare site provides emergency medical services"}),
-        ('type',     {'name': 'facility_type',   'type': str,        'desc': "If the healthcare service provides a specific type of care, e.g. psychiatric hospital"}),
-        ('PP',       {'name': 'pulic_private',	'type': int,        'desc': "Status 'private/public' of the healthcare service"}),
-        ('specs',    {'name': 'list_specs',      'type': str,        'desc': "List of specialties recognized in the European Union and European Economic Area according to EU Directive 2005/36/EC"}),
-        ('tel',      {'name': 'tel',             'type': int,        'desc': "Telephone number"}),
-        ('email',    {'name': 'email',           'type': str,        'desc': "Email address"}),
-        ('url',      {'name': 'url',             'type': str,        'desc': "URL link to the institution's website"}),
-        ('refdate',  {'name': 'ref_date',        'type': datetime,   'desc': "The reference date of the data (DD/MM/YYYY)"}),
-        ('pubdate',  {'name': 'pub_date',        'type': datetime,   'desc': "The date that the data was last published (DD/MM/YYYY)"})
-       ] )
-    # notes: 
-    #  i. house_number should be string, not int.. .e.g. 221b Baker street
-    #  ii. we use an ordered dict to use the same column order when writing the output file
-    
-    ODATE           = '%d/%m/%Y'# format DD/MM/YYYY
-    OLANG           = 'en'
-    OSEP            = ','
-    OENCODING       = 'utf-8'
-
-    OPATH           = './data/'
-    OFILE           = '%s.%s'#analysis:ignore
-    OFMT            = {'geojson': 'json', 'json': 'json', 'csv': 'csv', 'gpkg': 'gpkg'}    
-    OPROJ           = None # 'WGS84'
-
-    PLACE_FIELDS    = ['street', 'number', 'postcode', 'city', 'country']
-    # LATLON_FIELDS   = ['lat', 'lon'] # 'coord' # 'latlon'
-    # LATLON_ORDER    = 'lL' # first lat, second Lon 
-else:
-    pass
+from .config import IPATH, OINDEX, ODATE, OLANG, OSEP, OENC, \
+                    OPATH, OFILE, OFMT, OPROJ, IPLACE
 
 try:
     assert _is_pyproj_installed is True
@@ -316,8 +263,11 @@ class BaseHCS(object):
         >>> hcs = BaseHCS(**metadata)
     """
     
+    METAKEYS        = ['country', 'lang', 'proj', 'file', 'path', 'enc', 'sep', 
+                       'columns', 'index'] # default metadata fields
+
     # default geocoder... but this can be reset when declaring a subclass
-    CODER           = 'Bing' # 'GoogleV3', 'GMaps', 'GPlace', 'GeoNames'
+    CODER           = 'Bing' # 'GISCO', 'Nominatim', 'GoogleV3', 'GMaps', 'GPlace', 'GeoNames'
     CODERKEY        = None # enter your key here...
         
     try:
@@ -573,13 +523,13 @@ class BaseHCS(object):
             # meta should be initialised in the derived class
             assert getattr(self, 'meta', None) not in ({},None)
         except AssertionError:
-            self.meta = dict(zip(IMETA_KEYS, [{}, {}, None, '', '', None, ',', [], {}]))
+            self.meta = dict(zip(self.METAKEYS, [{}, {}, None, '', '', None, ',', [], {}]))
         country, lang = self.meta.get('country',None), self.meta.get('lang',None)
         self.cc = kwargs.pop('cc', country.get('code', '') if country is not None else None)
         self.country = kwargs.pop('country', country.get('name', '') if country is not None else None)
         self.lang = kwargs.pop('lang', lang.get('code', None) if lang is not None else None) 
-        self.encoding, self.sep = self.meta.get('encoding',None), self.meta.get('sep',None)
-        path, fname = self.meta.get('path',''), self.meta.get('file','')
+        self.enc, self.sep = self.meta.get('enc',None), self.meta.get('sep',None)
+        path, fname = self.meta.get('path',IPATH), self.meta.get('file','')
         self.src = kwargs.pop('src', 
                               None if fname=='' else osp.join(path, fname) if path!='' else fname) # source file
         self.proj = kwargs.pop('proj', self.meta.get('proj',None)) # projection system
@@ -588,7 +538,6 @@ class BaseHCS(object):
         self.icolumns = columns or self.meta.get('columns',[])     # header columns
         index = kwargs.pop('index', None)   # index
         self.oindex = index or self.meta.get('index',{}) or OINDEX.keys()
-        
 
     #/************************************************************************/
     def __repr__(self):
@@ -714,13 +663,13 @@ class BaseHCS(object):
         self.__sep = sep
 
     @property
-    def encoding(self):
+    def enc(self):
         return self.__encoding
-    @encoding.setter#analysis:ignore
-    def encoding(self, enc):
+    @enc.setter#analysis:ignore
+    def enc(self, enc):
         if not (enc is None or isinstance(enc, string_types)):         
             raise TypeError('wrong format for file encoding %s - must be a string' % enc)
-        # self.meta.update({'encoding': enc})
+        # self.meta.update({'enc': enc})
         self.__encoding = enc
 
     @property
@@ -737,10 +686,10 @@ class BaseHCS(object):
         self.__place = place
 
     #/************************************************************************/
-    def load_source(self, *src, **kwargs):
+    def load_data(self, *src, **kwargs):
         """Load data source file.
         
-                >>> hcs.load_source(src='filename')
+                >>> hcs.load_data(src='filename')
         """
         src = (src not in ((None,),()) and src[0])                  or \
              kwargs.pop('src', None)                                or \
@@ -749,12 +698,11 @@ class BaseHCS(object):
              raise IOError("no source filename provided - set 'src' attribute or parameter")
         elif not isinstance(src, string_types):     
              raise TypeError('wrong format for source filename - must be a string')
-        encoding = kwargs.pop('enc', self.encoding) # self.meta.get('encoding')
+        encoding = kwargs.pop('enc', self.enc) # self.meta.get('enc')
         sep = kwargs.pop('sep', self.sep) # self.meta.get('sep')
         kwargs.update({'dtype': object})
-        kwargs.update({'encoding': encoding, 'sep': sep})
         #try:
-        #    kwargs.update(self.load_source.__dict__)
+        #    kwargs.update(self.load_data.__dict__)
         #except:         pass
         try:
             kwargs.update({'encoding': encoding, 'sep': sep})
@@ -775,9 +723,9 @@ class BaseHCS(object):
                 except:
                     raise IOError('impossible to load source data - format not recognised')
             else:
-                self.encoding, self.sep = encoding, sep
+                self.enc, self.sep = encoding, sep
         else:
-            self.encoding, self.sep = encoding, sep
+            self.enc, self.sep = encoding, sep
         # initialise the column header in case it was not passed in the metadata
         try:
             assert self.columns not in (None,[],[{}])
@@ -966,7 +914,7 @@ class BaseHCS(object):
         try:
             assert place in ([],None,'')
             # assert _is_googletrans_installed is True
-            tplace = self.translate(PLACE_FIELDS, ilang='en', olang=lang)
+            tplace = self.translate(IPLACE, ilang='en', olang=lang)
         except (AssertionError,IOError,OSError):
             pass
         else:
@@ -1116,7 +1064,7 @@ class BaseHCS(object):
         ## do it only if needed when running find_location later
         #try:
         #    assert False # 
-        #    place = [key for key in index.keys() if key in PLACE_FIELDS]
+        #    place = [key for key in index.keys() if key in IPLACE]
         #    self.define_place(place = place)
         #except:
         #    pass
@@ -1155,18 +1103,19 @@ class BaseHCS(object):
         """
         dest = (dest not in ((None,),()) and dest[0])               or \
              kwargs.pop('dest', None)                               or \
-             self.dest                                              
+             self.dest        
         fmt = kwargs.pop('fmt', None)
         if not isinstance(fmt, string_types):
             raise TypeError('wrong input format - must be a string key')
         else:
             fmt = fmt.lower()
-        encoding = kwargs.pop('enc', OENCODING)
+        encoding = kwargs.pop('enc', OENC)
+        sep = kwargs.pop('sep', OSEP)
         date = kwargs.pop('date', ODATE)#analysis:ignore
         if not fmt in OFMT.keys():
             raise TypeError('wrong input format - must be any string among %s' % list(OFMT.keys()))
         if dest in (None,''):
-            dest = osp.join(OPATH, fmt, '%s.%s' % (self.cc, OFMT[fmt]))
+            dest = osp.join(OPATH, fmt, OFILE % (self.cc, OFMT[fmt]))
         #try:
         #    kwargs.update(self.save_data.__dict__)
         #except:         pass
@@ -1176,7 +1125,9 @@ class BaseHCS(object):
         # but ok, not critical...
         self.data.reindex(columns = columns)
         if fmt == 'csv':
-            self.data.to_csv(dest, columns=columns, header=True, index=False, encoding=encoding) 
+            kwargs.update({'header': True, 'index': False, 
+                           'encoding': encoding, 'sep': sep})
+            self.data.to_csv(dest, columns=columns, **kwargs) 
             #                date_format=date
         elif fmt == 'geojson':
             geom = self.to_geojson(self.data, columns, lat=self.lat, lon=self.lon)
@@ -1201,7 +1152,7 @@ class BaseHCS(object):
         if dest is None:   
             dest = '%smeta.json' % self.cc  
         try:
-            with open(dest, 'w', encoding=self.encoding) as f:
+            with open(dest, 'w', encoding=self.enc) as f:
                 json.dump(self.meta.__dict__, f, ensure_ascii=False)
         except:
             raise IOError('impossible saving metadata')
