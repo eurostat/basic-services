@@ -27,7 +27,7 @@ the national data:
 
 ```python
 >>> from pyhcs import base, czhcs
->>> CZHCS = base.hcsFactory(czhcs.CCMETA)
+>>> CZHCS = base.hcsFactory(czhcs.METADATA)
 ```
 
 In this case, we create the class using predefined metadata (available from a `czhcs` module dedicated to
@@ -39,7 +39,7 @@ Following, it is pretty straigthforward to create an instance of a national data
 >>> cz = CZHCS()
 >>> cz.load_source()
 >>> cz.format_data()
->>> cz.save_data(fmt='csv')
+>>> cz.save_data(fmt = 'csv')
 ```
 
 Note the output schema (see also "attributes" in the documentation [below](#Data)) is defined in the [`config.py`](config.py) file.
@@ -48,13 +48,21 @@ Note the output schema (see also "attributes" in the documentation [below](#Data
 
 ```python
 >>> from pyhcs import harmonise
->>> harmonise.run('CZ')
+>>> harmonise.run(country = 'CZ')
 ```
 
 <!-- .. ` -->
 ###### Features
 
 * Various possible geocoding, including `GISCO`.
+
+Default coder is `GISCO`, but you can use a different geocoder also using an appropriate key:
+
+```python
+>>> from pyhcs import harmonise
+>>> harmonise.run(country = 'BG', coder = {'Bing': "<your_api_key>")
+```
+
 * Automated translation,
 * ...
 

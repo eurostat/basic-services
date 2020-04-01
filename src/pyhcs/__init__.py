@@ -8,18 +8,21 @@ Initiatlisation module for integration and formatting of data on health care
 services
 """
 
-# *credits*:      `gjacopo <gjacopo@ec.europa.eu>`_ 
+# *credits*:      `gjacopo <jacopo.grazzini@ec.europa.eu>`_ 
 # *since*:        Sun Mar 29 16:21:29 2020
 
-from os import path as __osp
+from os import path as osp
 
-__basename          = 'hcs'
+PACKNAME            = 'pyhcs' # this package...
 
-__packages          = ['numpy', 'pandas', 'json', 
-                       'geopy', 'geojson', 'happygisco', 'pyproj', 
-                       'googletrans']
+BASENAME            = 'hcs'.lower() # whatever we choose, let's make it low...
+__basename          = '' # __base
 
-__all__             = ['%s%s' % (a,__basename) for a in ['base' , 'all']]
+__packages          = ['numpy', 'pandas', 'json', 'geopy', 'geojson', 'happygisco', 'pyproj', 'googletrans']
+
+__modules           = ['__start', 'config', 'base' , 'harmonise']
+
+__all__             = ['%s%s' % (__,__basename) for __ in __modules]
 
 __countries         =  {"EU27_2020": 
                             ["BE", "BG", "CZ", "DK", "DE", "EE", "IE", "EL", "ES", "FR", "HR", "IT", "CY", "LV", "LT", "LU", "HU", "MT", "NL", "AT", "PL", "PT", "RO", "SI", "SK", "FI", "SE"
@@ -35,24 +38,17 @@ __countries         =  {"EU27_2020":
                              ] 
                         }    
 __territories       = {}
+__area              = "EU28"
+COUNTRIES           = {__area: __countries[__area]}
 
-__all_countries     = "EU28"
-    
-COUNTRIES           = __countries[__all_countries]
+__thisdir = osp.dirname(__file__)
 
-__thisdir = __osp.dirname(__file__)
-
-for __cc in COUNTRIES:
-    __basesrc = '%s%s' % (__cc, __basename) 
+for __cc in COUNTRIES[__area]:
+    __basesrc = '%s%s' % (__cc, BASENAME) 
     __fsrc = '%s.py' % __basesrc 
     try:
-        if __osp.exists(__osp.join(__thisdir, __fsrc)):
+        if osp.exists(osp.join(__thisdir, __fsrc)):
             __all__.append(__basesrc)   
     except:
         pass
-    __fmeta = '%smeta.json' % __cc
-    try:
-        if __osp.exists(__osp.join(__thisdir, __fmeta)):
-            pass
-    except:
-        pass
+
