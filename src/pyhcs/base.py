@@ -179,17 +179,24 @@ else:
     # warnings.warn('Levenshtein help: https://rawgit.com/ztane/python-Levenshtein/master/docs/Levenshtein.html')
     _is_levenshtein_installed = True
 
-from . import BASE, COUNTRIES
-from .config import IPATH, OINDEX, ODATE, OLANG, OSEP, OENC, \
-                    OPATH, OFILE, OFMT, OPROJ
+from pyhcs import BASENAME, COUNTRIES
+from pyhcs.config import BASETYPE, INDEX, DATE, LANG, SEP, ENC, \
+                            PATH, FILE, FMT, PROJ # OCONFIGNAME 
+
+IMETANAME       = ['country', 'lang', 'proj', 'file', 'path', 'enc', 'sep', 
+                   'columns', 'index'] # default metadata fields
+"""Metadata fields related to input country data.
+"""
 
 IPLACE          = ['street', 'number', 'postcode', 'city', 'country']
+"""Fields used to defined a toponomy (location/place).
+"""
 # LATLON        = ['lat', 'lon'] # 'coord' # 'latlon'
 # ORDER         = 'lL' # first lat, second Lon 
 
 try:
     assert _is_pyproj_installed is True
-    OCRS = CRS.from_epsg(OPROJ or 4326)
+    OCRS = CRS.from_epsg(PROJ or 4326)
 except:
     OCRS = None
 
@@ -267,12 +274,9 @@ class BaseHCS(object):
     
         >>> hcs = BaseHCS(**metadata)
     """
-    
-    METAKEYS        = ['country', 'lang', 'proj', 'file', 'path', 'enc', 'sep', 
-                       'columns', 'index'] # default metadata fields
 
     # default geocoder... but this can be reset when declaring a subclass
-    CODER           = 'Bing' # 'GISCO', 'Nominatim', 'GoogleV3', 'GMaps', 'GPlace', 'GeoNames'
+    CODER           = 'GISCO' # 'Bing', 'Nominatim', 'GoogleV3', 'GMaps', 'GPlace', 'GeoNames'
     CODERKEY        = None # enter your key here...
         
     try:
@@ -339,7 +343,7 @@ class BaseHCS(object):
         iproj = kwargs.pop('iproj', None) or 'WGS84'
         if not isinstance(iproj, (string_types, int)):
             raise TypeError("projection not recognised - must be a string (e.g., 'WGS84' or 'EPSG:4326') or an integer (e.g., 4326)")
-        oproj = OPROJ or 'WGS84'
+        oproj = PROJ or 'WGS84'
         if iproj == oproj:
             return coord
         if _is_happy_installed is True: 
@@ -366,7 +370,7 @@ class BaseHCS(object):
             return
         else:
             raise TypeError('wrong format for input text')
-        ilang, olang = kwargs.pop('ilang', None), kwargs.pop('olang', OLANG)
+        ilang, olang = kwargs.pop('ilang', None), kwargs.pop('olang', LANG)
         if not (isinstance(ilang, string_types) and isinstance(olang, string_types)):
             raise TypeError('languages not recognised')
         if 'filt' in kwargs:
@@ -528,21 +532,21 @@ class BaseHCS(object):
             # meta should be initialised in the derived class
             assert getattr(self, 'meta', None) not in ({},None)
         except AssertionError:
-            self.meta = dict(zip(self.METAKEYS, [{}, {}, None, '', '', None, ',', [], {}]))
+            self.meta = dict(zip(IMETANAME, [{}, {}, None, '', '', None, ',', [], {}]))
         country, lang = self.meta.get('country',None), self.meta.get('lang',None)
         self.cc = kwargs.pop('cc', country.get('code', '') if country is not None else None)
         self.country = kwargs.pop('country', country.get('name', '') if country is not None else None)
         self.lang = kwargs.pop('lang', lang.get('code', None) if lang is not None else None) 
         self.enc, self.sep = self.meta.get('enc',None), self.meta.get('sep',None)
-        path, fname = self.meta.get('path',IPATH), self.meta.get('file','')
+        path, fname = self.meta.get('path',''), self.meta.get('file','')
         self.src = kwargs.pop('src', 
                               None if fname=='' else osp.join(path, fname) if path!='' else fname) # source file
         self.proj = kwargs.pop('proj', self.meta.get('proj',None)) # projection system
         self.date = kwargs.pop('date', self.meta.get('date','%d-%m-%Y %H:%M')) # input date format
         columns = kwargs.pop('columns', None) # [col[self.lang] for col in COLUMNS]
-        self.icolumns = columns or self.meta.get('columns',[])     # header columns
+        self.icolumns = columns or self.meta.get('columns',{})    # header columns
         index = kwargs.pop('index', None)   # index
-        self.oindex = index or self.meta.get('index',{}) or OINDEX.keys()
+        self.oindex = index or self.meta.get('index',{}).copy() or INDEX.keys()
 
     #/************************************************************************/
     def __repr__(self):
@@ -735,9 +739,9 @@ class BaseHCS(object):
             self.enc, self.sep = encoding, sep
         # initialise the column header in case it was not passed in the metadata
         try:
-            assert self.columns not in (None,[],[{}])
+            assert self.icolumns not in (None,[],[{}])
         except: 
-            self.columns = [{self.lang:col} for col in self.data.columns]
+            self.icolumns = [{self.lang:col} for col in self.data.columns]
         #if set([col[self.lang] for col in self.icolumns]).difference(set(self.data.columns)) != set():
         #    warnings.warn('mismatched data columns and header fields')
         if self.src != src:            self.src = src
@@ -758,7 +762,7 @@ class BaseHCS(object):
         if not (isinstance(columns, Sequence) and all([isinstance(col, string_types) for col in columns])):   
              raise TypeError('wrong input format for columns - must be a (list of) string(s)')
         langs = self.icolumns[0].keys()
-        langs = list(dict.fromkeys([OLANG, *langs])) # trick to reorder with OLANG first default... 
+        langs = list(dict.fromkeys([LANG, *langs])) # trick to reorder with OLANG first default... 
         ilang = kwargs.pop('ilang', None) # OLANG
         if ilang is None and not columns in (None, ('',), ()):
             # try to guess the language in the index
@@ -772,7 +776,7 @@ class BaseHCS(object):
             except TypeError:
                 ilang = self.detect((' ').join(columns.values()))
             else:
-                ilang = OLANG
+                ilang = LANG
         try:
             assert ilang in langs
         except AssertionError:
@@ -829,7 +833,7 @@ class BaseHCS(object):
             if field is None:
                 if force_rename is False:       continue
                 else:                           field = ind 
-            ofield = OINDEX[ind]['name'] if ind in OINDEX.keys() and force_rename is False else ind
+            ofield = INDEX[ind]['name'] if ind in INDEX.keys() and force_rename is False else ind
             if ind in self.oindex: # update the index: this will inform us about which renamings were successful
                 self.oindex.update({ind: ofield})
             if field == ofield:
@@ -838,10 +842,10 @@ class BaseHCS(object):
                 self.data.rename(columns={field: ofield}, inplace=True)
                 # deal with duplicated columns
                 fields.update({field: ofield}) # add it the first time it appears
-                cast = OINDEX[ind]['type']               
+                cast = BASETYPE[INDEX[ind]['type']]            
                 if cast == self.data[ofield].dtype:
                     continue
-                self.data[ofield] = self.to_cast(self.data, ofield, cast, ifmt=idate, ofmt=ODATE)
+                self.data[ofield] = self.to_cast(self.data, ofield, cast, ifmt=idate, ofmt=DATE)
             else: # dumb copy
                 self.data[field] = self.data[fields[field]]
         return columns
@@ -902,7 +906,7 @@ class BaseHCS(object):
         for ind in index:
             if ind in self.data.columns:
                 continue
-            cast = OINDEX[ind]['type'] if ind in OINDEX else object    
+            cast = BASETYPE[INDEX[ind]['type']] if ind in INDEX else object    
             if cast == datetime:    cast = str
             try:
                 self.data[ind] = pd.Series(dtype=cast)
@@ -914,7 +918,7 @@ class BaseHCS(object):
         
                 >>> hcs.define_place(place=['street', 'no', 'city', 'zip', 'country'])
         """
-        lang = kwargs.pop('lang', OLANG)  
+        lang = kwargs.pop('lang', LANG)  
         place = (place not in ((None,),()) and place[0])            or \
                 kwargs.pop('place', None)                           or \
                 self.place
@@ -975,7 +979,7 @@ class BaseHCS(object):
         if latlon in ([],None):
             lat, lon = self.oindex.get('lat', 'lat'), self.oindex.get('lon', 'lon')
             order = 'lL'
-        olat, olon = OINDEX['lat']['name'], OINDEX['lon']['name']
+        olat, olon = INDEX['lat']['name'], INDEX['lon']['name']
         if lat == lon and lat in self.data.columns: #self.icolumns[lang]
             latlon = lat
             if order == 'lL':           lat, lon = olat, olon
@@ -1004,15 +1008,15 @@ class BaseHCS(object):
             except ImportError:
                 raise IOError('no geocoder available')
             geo_qual = None # TBD
-        if OPROJ is not None and self.proj not in (None,'') and self.proj != OPROJ:
-            f = lambda lat, lon : self.project([lat, lon], iproj=self.proj, oproj=OPROJ)
+        if PROJ is not None and self.proj not in (None,'') and self.proj != PROJ:
+            f = lambda lat, lon : self.project([lat, lon], iproj=self.proj, oproj=PROJ)
             try:                        f('-1')
             except TypeError:
                 self.data[olat], self.data[olon] = zip(*self.data[[olat, olon]].apply(f))
             except ImportError:
                 raise IOError('no projection transformer available')
-        if 'geo_qual' in OINDEX.keys(): # in self.oindex
-            ind = OINDEX['geo_qual']['name']
+        if 'geo_qual' in INDEX.keys(): # in self.oindex
+            ind = INDEX['geo_qual']['name']
             self.data[ind] = geo_qual 
             self.oindex.update({'geo_qual': ind})
         if 'lat' in self.oindex and 'lon' in self.oindex:
@@ -1020,7 +1024,8 @@ class BaseHCS(object):
         # cast
         # self.data[olat], self.data[olon] = pd.to_numeric(self.data[olat]), pd.to_numeric(self.data[olon])
         self.data[olat], self.data[olon] =                              \
-            self.data[olat].astype(OINDEX['lat']['type']), self.data[olon].astype(OINDEX['lon']['type'])
+            self.data[olat].astype(BASETYPE[INDEX['lat']['type']]),    \
+            self.data[olon].astype(BASETYPE[INDEX['lon']['type']])
         
     #/************************************************************************/
     def prepare_data(self, *args, **kwargs):
@@ -1042,7 +1047,7 @@ class BaseHCS(object):
             _index = dict(zip(_index,_index))
         elif not isinstance(_index, Mapping):
             raise TypeError('wrong format for input index - must a mapping dictionary')
-        lang = kwargs.pop('lang', OLANG)
+        lang = kwargs.pop('lang', LANG)
         if not isinstance(lang, string_types):
             raise TypeError('wrong format for language - must a string')
         try:
@@ -1058,7 +1063,7 @@ class BaseHCS(object):
         try:
             assert index != {}
         except: # not vey happy with this, but ok... it's a default!
-            index = {col[OLANG]: col[self.lang] for col in self.icolumns}
+            index = {col[LANG]: col[self.lang] for col in self.icolumns}
         # check for country-related columns - special case
         for cc in ['country', 'cc']:
             if cc in index:
@@ -1071,7 +1076,7 @@ class BaseHCS(object):
         ## do it only if needed when running find_location later
         #try:
         #    assert False # 
-        #    place = [key for key in index.keys() if key in IPLACE]
+        #    place = [key for key in index.keys() if key in PLACE]
         #    self.define_place(place = place)
         #except:
         #    pass
@@ -1095,7 +1100,7 @@ class BaseHCS(object):
             pass
         # clean the data so that it matches the template; keep even those fields
         # from index which have no corresponding column
-        index = [v if v is not None else OINDEX[k]['name'] for (k,v) in self.oindex.items()]
+        index = [v if v is not None else INDEX[k]['name'] for (k,v) in self.oindex.items()]
         try:
             self.clean_column(list(self.data.columns), keep = index)
         except:
@@ -1116,17 +1121,17 @@ class BaseHCS(object):
             raise TypeError('wrong input format - must be a string key')
         else:
             fmt = fmt.lower()
-        encoding = kwargs.pop('enc', OENC)
-        sep = kwargs.pop('sep', OSEP)
-        date = kwargs.pop('date', ODATE)#analysis:ignore
-        if not fmt in OFMT.keys():
-            raise TypeError('wrong input format - must be any string among %s' % list(OFMT.keys()))
+        encoding = kwargs.pop('enc', ENC)
+        sep = kwargs.pop('sep', SEP)
+        date = kwargs.pop('date', DATE)#analysis:ignore
+        if not fmt in FMT.keys():
+            raise TypeError('wrong input format - must be any string among %s' % list(FMT.keys()))
         if dest in (None,''):
-            dest = osp.join(OPATH, fmt, OFILE % (self.cc, OFMT[fmt]))
+            dest = osp.join(PATH, fmt, FILE % (self.cc, FMT[fmt]))
         #try:
         #    kwargs.update(self.save_data.__dict__)
         #except:         pass
-        columns = [col for col in [ind['name'] for ind in OINDEX.values()]  \
+        columns = [col for col in [ind['name'] for ind in INDEX.values()]  \
                                    if col in self.data.columns]     # self.oindex.copy()
         # reorder the columns - note this is useful for csv and json data only
         # but ok, not critical...
@@ -1157,7 +1162,7 @@ class BaseHCS(object):
         dest = (dest not in ((None,),()) and dest[0])               or \
              kwargs.pop('dest', None)   
         if dest is None:   
-            dest = '%s%s.json' % (self.cc, BASE)  
+            dest = '%s%s.json' % (self.cc, BASENAME)  
         try:
             with open(dest, 'w', encoding=self.enc) as f:
                 json.dump(self.meta.__dict__, f, ensure_ascii=False)
