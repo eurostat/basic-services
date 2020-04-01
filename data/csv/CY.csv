@@ -1,12 +1,12 @@
 id,hospital_name,site_name,lat,lon,geo_qual,street,house_number,postcode,city,cc,country,cap_beds,cap_prac,cap_rooms,emergency,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date
-1,Nicosia/Lefkosia General Hospital,,35.127389,33.377017,-1,,,49HG+2R," Strovolos",CY,Cyprus,514,,,,General,public,,+357 22 603000,,,01/01/2017,30/03/2020
-2,Archbishop Makarios III Hospital Nicosia,,35.152294,33.357779,-1,,,5925+W4,Nicosia,CY,Cyprus,217,,,,Child and Mother Care Hospital,public,,22405000,,,01/01/2017,30/03/2020
-3,Limassol Old Hospital,,34.679398,33.037800,-1,,,M2HP+PX,Limassol,CY,Cyprus,,,,,,public,,25305333,,moh.gov.cy,01/01/2017,30/03/2020
-4,Limassol General Hospital,,34.706201,32.984410,-1,,,PX4M+HC,Kato Polemidia,CY,Cyprus,422,,,,General,public,,+357 25 801100,,moh.gov.cy,01/01/2017,30/03/2020
-5,Larnaca General Hospital,,34.921266,33.604466,-1,,,WJC4+F2,Larnaca,CY,Cyprus,201,,,,General,public,,+357 24 800500,,moh.gov.cy,01/01/2017,30/03/2020
-6,Paphos General Hospital,,34.788966,32.445741,-1,,,QCQW+J8,Paphos,CY,Cyprus,157,,,,General,public,,+357 26 803100,,moh.gov.cy,01/01/2017,30/03/2020
-7,Famagusta/ Ammochostos General Hospital,,35.062554,33.971162,-1,,,3X7C+2P,Paralimni,CY,Cyprus,97,,,,General,,,+357 23 200000,,moh.gov.cy,01/01/2017,30/03/2020
-8,Famagusta Life Hospital,,35.126954,33.924474,-1,,,4WGF+RQ,Famagusta,CY,Cyprus,,,,,,,,+90 392 444 11 33,,magusayasam.com,01/01/2017,30/03/2020
-9,Kyperounda Rural Hospital,,34.951005,32.952322,-1,,,XX22+CW,Kyperounta,CY,Cyprus,,,,,Rural,,,,,https://www.moh.gov.cy/moh/kph.nsf/index_gr/index_gr?opendocument,01/01/2017,30/03/2020
-10,Evangelismos Polis�Medical Centre,,35.033866,32.427246,-1,Arsinois,15,8820,Polis Chrysoschous,CY,Cyprus,,,,,Rural,,,+357 26 323434,,https://www.moh.gov.cy/moh/pph/pph.nsf/contactus_en/contactus_en?OpenDocument,01/01/2017,30/03/2020
-11,Athalassa Mental Health Hospital,,35.129466,33.375084,-1,,,,Strovolos,CY,Cyprus,,,,,Psychiatric,,,,,,01/01/2017,30/03/2020
+1,Nicosia/Lefkosia General Hospital,,35.127389,33.377017,-1,,,49HG+2R," Strovolos",CY,Cyprus,514,,,,General,public,,+357 22 603000,,,01/01/2017,31/03/2020
+2,Archbishop Makarios III Hospital Nicosia,,35.152294,33.357779,-1,,,5925+W4,Nicosia,CY,Cyprus,217,,,,Child and Mother Care Hospital,public,,22405000,,,01/01/2017,31/03/2020
+3,Limassol Old Hospital,,34.679398,33.037800,-1,,,M2HP+PX,Limassol,CY,Cyprus,,,,,,public,,25305333,,moh.gov.cy,01/01/2017,31/03/2020
+4,Limassol General Hospital,,34.706201,32.984410,-1,,,PX4M+HC,Kato Polemidia,CY,Cyprus,422,,,,General,public,,+357 25 801100,,moh.gov.cy,01/01/2017,31/03/2020
+5,Larnaca General Hospital,,34.921266,33.604466,-1,,,WJC4+F2,Larnaca,CY,Cyprus,201,,,,General,public,,+357 24 800500,,moh.gov.cy,01/01/2017,31/03/2020
+6,Paphos General Hospital,,34.788966,32.445741,-1,,,QCQW+J8,Paphos,CY,Cyprus,157,,,,General,public,,+357 26 803100,,moh.gov.cy,01/01/2017,31/03/2020
+7,Famagusta/ Ammochostos General Hospital,,35.062554,33.971162,-1,,,3X7C+2P,Paralimni,CY,Cyprus,97,,,,General,public,,+357 23 200000,,moh.gov.cy,01/01/2017,31/03/2020
+8,Famagusta Life Hospital,,35.126954,33.924474,-1,,,4WGF+RQ,Famagusta,CY,Cyprus,,,,,,public,,+90 392 444 11 33,,magusayasam.com,01/01/2017,31/03/2020
+9,Kyperounda Rural Hospital,,34.951005,32.952322,-1,,,XX22+CW,Kyperounta,CY,Cyprus,40,,,,,public,,,,https://www.moh.gov.cy/moh/kph.nsf/index_gr/index_gr?opendocument,01/01/2017,31/03/2020
+10,Athalassa Mental Health Hospital,,35.129466,33.375084,-1,,,,Strovolos,CY,Cyprus,132,,,,Psychiatric,public,,,,,01/01/2017,31/03/2020
+11,Polis Hospital,,35.039081,32.424425,-1,,,2CQF+JQ,Poli Crysochous,CY,Cyprus,11,,,,,public,,+357 26 821800,,https://www.moh.gov.cy/moh/pph/pph.nsf/index_gr/index_gr?OpenDocument,01/01/2017,31/03/2020
