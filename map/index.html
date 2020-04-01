@@ -30,6 +30,136 @@
       .leaflet-popup-content {
         overflow: auto !important;
       }
+      /* DISCLAIMER  */
+
+      .disclaimerButton {
+        margin-right: 3px;
+      }
+
+      #referenceDataButton {
+        float: right;
+        margin-top: 3px;
+        color: #fff;
+        background-color: #337ab7;
+        border-color: #2e6da4;
+        margin-bottom: 0;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        background-image: none;
+        border: 1px solid transparent;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        border-radius: 4px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        text-decoration: none;
+      }
+      #referenceDataButton:hover {
+        color: #fff;
+        background-color: #286090;
+        border-color: #204d74;
+      }
+
+      /* The popup */
+      .attributionDiv {
+        visibility: hidden;
+        position: absolute;
+        bottom: 4%;
+        right: 2%;
+        z-index: 9999999;
+        width: 53vh;
+        text-align: justify;
+        background: #f5f5f5;
+        color: #666;
+        padding: 20px;
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+
+      /* disclaimer arrow */
+      #disclaimerText::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 96%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+      }
+
+      #sourcesText::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 90%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+      }
+
+      .close {
+        position: absolute;
+        top: 2px;
+        right: 4px;
+        background: unset;
+        border: none;
+        cursor: pointer;
+      }
+
+      /* Toggle this class - hide and show the disclaimer */
+
+      .show {
+        visibility: visible !important;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s;
+      }
+
+      .hide {
+        visibility: hidden !important;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s;
+      }
+
+      /* Add animation (fade in the disclaimer popup) */
+
+      @-webkit-keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .leaflet-container .leaflet-control-attribution {
+        margin-bottom: 5px;
+      }
+      a {
+        color: #337ab7;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #23527c;
+        text-decoration: underline;
+      }
     </style>
   </head>
 
@@ -41,6 +171,48 @@
       </p>
     <![endif]-->
     <div id="map" style="height:100vh; width:100%;"></div>
+    <div class="attributionDiv" id="disclaimerText">
+      <span class="attributionText"
+        >The designations employed and the presentation of material on the map
+        do not imply the expression of any opinion whatsoever on the part of the
+        European Union concerning the legal status of any country, territory or
+        area or of its authorities, or concerning the delimitation of its
+        frontiers or boundaries. Kosovo* - This designation is without prejudice
+        to positions on status, and is in line with UNSCR 1244/1999 and the ICJ
+        Opinion on the Kosovo declaration of independence.
+
+        <button
+          type="button"
+          class="close"
+          aria-label="Close"
+          onclick="hideDisclaimer()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </span>
+    </div>
+
+    <div class="attributionDiv" id="sourcesText">
+      <span class="attributionText"
+        ><button
+          type="button"
+          class="close"
+          aria-label="Close"
+          onclick="hideSources()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+        <a
+          href="https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data"
+          id="referenceDataButton"
+          class="btn btn-sm btn-primary"
+          target="_blank"
+          role="button"
+          >See reference data</a
+        >
+      </span>
+    </div>
     <table></table>
 
     <script src="./lib/leaflet/leaflet.js"></script>
@@ -49,16 +221,13 @@
     <script src="./lib/proj4-compressed.js"></script>
     <script src="./lib/proj4leaflet.js"></script>
     <script>
+      //define projection
       let crs3035 = new L.Proj.CRS(
         "EPSG:3035",
-
         "+proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +ellps=GRS80 +units=m +no_defs",
-
         {
           origin: [0, 6000000],
-
           bounds: L.bounds([0, 0], [8000000, 6000000]),
-
           resolutions: [
             156543.03392804097,
             78271.51696402048,
@@ -104,13 +273,11 @@
             icon: newIcon
           });
 
-          //build map
+          //define basemap(s)
           let tiles = L.tileLayer(
             "https://europa.eu/webtools/rest/gisco/maps/wmts/OSMPositronBackground/EPSG3035/{z}/{x}/{y}.png",
             {
-              maxZoom: 18,
-              attribution:
-                '&copy; <a href="//openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="https://ec.europa.eu/eurostat/web/gisco">GISCO</a>'
+              maxZoom: 18
             }
           );
 
@@ -125,23 +292,20 @@
           //   removeOutsideVisibleBounds: true
           // });
 
+          // define d3 scale for sizing circles
           var circleScale = d3
             .scaleSqrt()
             .domain(d3.extent(hospitals, d => d.cap_beds))
             .range([100, 8000]); //metres
-
+          //define circle layers
           let propCircles = L.layerGroup();
           let normalCircles = L.layerGroup();
           let defaultRadius = 2000; //metres
 
+          //add each hospital to the different layerGroups
           for (let i = 0; i < hospitals.length; i++) {
             let a = hospitals[i];
-            //clusters
-            // let title = a.name;
-            //let marker = L.marker(new L.LatLng(a.lat, a.lon, { title: title }));
             let popup = generatePopupString(a);
-            //marker.bindPopup(popup);
-            //mcg.addLayer(marker);
             //proportional circles
             if (a.cap_beds) {
               let r = circleScale(a.cap_beds);
@@ -190,8 +354,50 @@
             zoom: 5,
             layers: [tiles, normalCircles],
             renderer: L.canvas(),
-            crs: crs3035
+            crs: crs3035,
+            attributionControl: false
           });
+
+          //add disclaimer & sources buttons
+          L.control.scale().addTo(map);
+          var attribution = L.control
+            .attribution({
+              prefix:
+                '<a href="http://leafletjs.com/" title="A JS library for interactive maps" target"_blank">Leaflet</a>'
+            })
+            .addTo(map);
+          {
+            //add button
+            attribution.addAttribution(
+              '<button type="button" class="disclaimerButton" onclick="showSources()">Sources</button><button type="button" class="disclaimerButton" onclick="showDisclaimer()">Disclaimer</button>'
+            );
+
+            var sourcesText = document.getElementById("sourcesText");
+            sourcesText.innerHTML =
+              "Administrative boundaries: &copy; <a href='http://www.eurogeographics.org/' title='EuroGeographics' target='_blank'>EuroGeographics</a> &copy; <a href='http://www.fao.org/' title='UN-FAO' target='_blank'>UN-FAO</a> &copy; <a href='http://www.instat.gov.al' title='INSTAT' target='_blank'>INSTAT</a> &copy; <a href='http://www.turkstat.gov.tr' title='Turkstat' target='_blank'>Turkstat</a>, Cartography: <a href='https://ec.europa.eu/eurostat/en/web/gisco' title='Eurostat - GISCO' target='_blank'>Eurostat - GISCO</a>, 2019" +
+              sourcesText.innerHTML;
+            // add button click event
+            window.showDisclaimer = function() {
+              var popup = document.getElementById("disclaimerText");
+              popup.classList.toggle("show");
+            };
+
+            window.hideDisclaimer = function() {
+              var popup = document.getElementById("disclaimerText");
+              popup.classList.toggle("show");
+            };
+
+            // add button click event
+            window.showSources = function() {
+              var popup = document.getElementById("sourcesText");
+              popup.classList.toggle("show");
+            };
+
+            window.hideSources = function() {
+              var popup = document.getElementById("sourcesText");
+              popup.classList.toggle("show");
+            };
+          }
 
           map.on("zoomend", function(e) {
             var currentZoom = map.getZoom();
