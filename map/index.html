@@ -280,8 +280,15 @@
               maxZoom: 18
             }
           );
+          let labels = L.tileLayer(
+            "https://europa.eu/webtools/rest/gisco/maps/wmts/OSMPositronLabels/EPSG3035/{z}/{x}/{y}.png",
+            {
+              maxZoom: 18
+            }
+          );
 
-          tiles.layerId = "basemap";
+          tiles.layerClass = "basemap";
+          labels.layerClass = "basemap";
 
           // let mcg = L.markerClusterGroup({
           //   chunkedLoading: true,
@@ -352,7 +359,7 @@
           let map = L.map("map", {
             center: L.latLng(52, 10),
             zoom: 5,
-            layers: [tiles, normalCircles],
+            layers: [tiles, labels, normalCircles],
             renderer: L.canvas(),
             crs: crs3035,
             attributionControl: false
@@ -481,7 +488,7 @@
             input.onchange = function() {
               //remove all layers
               map.eachLayer(function(layer) {
-                if (layer.layerId !== "basemap") map.removeLayer(layer);
+                if (layer.layerClass !== "basemap") map.removeLayer(layer);
               });
               if (this.value == "def") {
                 //map.addLayer(tiles)
