@@ -37,18 +37,10 @@
       }
 
       #referenceDataButton {
-        float: right;
         margin-top: 3px;
         color: #fff;
         background-color: #337ab7;
         border-color: #2e6da4;
-        margin-bottom: 0;
-        font-weight: 400;
-        text-align: center;
-        white-space: nowrap;
-        vertical-align: middle;
-        -ms-touch-action: manipulation;
-        touch-action: manipulation;
         cursor: pointer;
         background-image: none;
         border: 1px solid transparent;
@@ -61,6 +53,7 @@
         -ms-user-select: none;
         user-select: none;
         text-decoration: none;
+        margin-left: 15px;
       }
       #referenceDataButton:hover {
         color: #fff;
@@ -82,6 +75,8 @@
         padding: 20px;
         border: 1px solid black;
         border-radius: 5px;
+        display: flex;
+        align-items: center;
       }
 
       /* disclaimer arrow */
@@ -155,6 +150,8 @@
       a {
         color: #337ab7;
         text-decoration: none;
+        margin-right: 5px;
+        margin-left: 5px;
       }
       a:hover {
         color: #23527c;
@@ -206,7 +203,6 @@
         <a
           href="https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data"
           id="referenceDataButton"
-          class="btn btn-sm btn-primary"
           target="_blank"
           role="button"
           >See reference data</a
@@ -381,7 +377,7 @@
 
             var sourcesText = document.getElementById("sourcesText");
             sourcesText.innerHTML =
-              "Administrative boundaries: &copy; <a href='http://www.eurogeographics.org/' title='EuroGeographics' target='_blank'>EuroGeographics</a> &copy; <a href='http://www.fao.org/' title='UN-FAO' target='_blank'>UN-FAO</a> &copy; <a href='http://www.instat.gov.al' title='INSTAT' target='_blank'>INSTAT</a> &copy; <a href='http://www.turkstat.gov.tr' title='Turkstat' target='_blank'>Turkstat</a>, Cartography: <a href='https://ec.europa.eu/eurostat/en/web/gisco' title='Eurostat - GISCO' target='_blank'>Eurostat - GISCO</a>, 2019" +
+              `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap </a> contributors, <a href="https://ec.europa.eu/eurostat/en/web/gisco" title="Eurostat - GISCO" target="_blank"> Eurostat - GISCO</a>` +
               sourcesText.innerHTML;
             // add button click event
             window.showDisclaimer = function() {
