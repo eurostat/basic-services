@@ -30,6 +30,8 @@ format.
 
 *optional*:     :mod:`geopy`, :mod:`happygisco`, :mod:`geojson`
 
+*call*:         :mod:`pyhcs.config`         
+
 **Contents**
 """
 

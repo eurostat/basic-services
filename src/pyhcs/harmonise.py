@@ -2,18 +2,18 @@
 # -*- coding: utf-8 -*-
 
 """
-.. _allhcs
+.. _harmonise
 
 Module implementing the systematic formatting of data about healthcare services
 from all member states. 
     
 **Dependencies**
 
-*require*:      :mod:`os`, :mod:`sys`
+*require*:      :mod:`os`, :mod:`sys`, :mod:`collections`, :mod:`json`, :mod:`sys`
 
-*optional*:     :mod:`A`
+*optional*:     :mod:`importlib`, :mod:`importlib`
 
-*call*:         :mod:`A`         
+*call*:         :mod:`pyhcs.config`, :mod:`pyhcs.base`         
 
 **Contents**
 """
@@ -41,15 +41,9 @@ except:
     import_module = None#analysis:ignore
     warnings.warn('module importlib missing')
 
-try:    
-    import modulefinder
-except: 
-    modulefinder = None#analysis:ignore
-    warnings.warn('module modulefinder missing')
-
 from pyhcs import PACKNAME, BASENAME, COUNTRIES#analysis:ignore
-from pyhcs.base import IMETANAME, MetaHCS, hcsFactory#analysis:ignore
 from pyhcs.config import OCONFIGNAME#analysis:ignore
+from pyhcs.base import IMETANAME, MetaHCS, hcsFactory#analysis:ignore
 
 __thisdir = osp.dirname(__file__)
 
