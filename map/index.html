@@ -68,7 +68,6 @@
         bottom: 4%;
         right: 2%;
         z-index: 9999999;
-        width: 53vh;
         text-align: justify;
         background: #f5f5f5;
         color: #666;
@@ -77,6 +76,10 @@
         border-radius: 5px;
         display: flex;
         align-items: center;
+      }
+
+      #disclaimerText {
+        width: 53vh;
       }
 
       /* disclaimer arrow */
@@ -95,7 +98,7 @@
         content: "";
         position: absolute;
         top: 100%;
-        left: 90%;
+        left: 82%;
         margin-left: -5px;
         border-width: 5px;
         border-style: solid;
@@ -157,6 +160,40 @@
         color: #23527c;
         text-decoration: underline;
       }
+
+      /* legend */
+      .info {
+        padding: 6px 8px;
+        font: 14px/16px Arial, Helvetica, sans-serif;
+        background: white;
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+      }
+      .info h4 {
+        margin: 0 0 5px;
+        color: #777;
+      }
+      .legend {
+        text-align: left;
+        line-height: 18px;
+        color: #555;
+      }
+      .legend i {
+        width: 18px;
+        height: 18px;
+        float: left;
+        margin-right: 8px;
+        opacity: 0.7;
+      }
+      .legend .circlepadding {
+        border-radius: 50%;
+        margin-top: 0px;
+        background: rgba(255, 255, 255, 0.8);
+      }
+      .bed-legend-item {
+        display: inline-block;
+      }
     </style>
   </head>
 
@@ -217,6 +254,12 @@
     <script src="./lib/proj4-compressed.js"></script>
     <script src="./lib/proj4leaflet.js"></script>
     <script>
+      let circleColor = "#708598";
+      let circleBorderColor = "#537898";
+      let sizeLegend = null;
+      let bedsExtent;
+      let bedsToMetre;
+
       //define projection
       let crs3035 = new L.Proj.CRS(
         "EPSG:3035",
@@ -261,12 +304,14 @@
           let hospitals = d3.csvParse(request.responseText);
 
           //change default marker
-          var newIcon = L.icon({
+          var hospitalIcon = L.icon({
             iconUrl: "lib/leaflet/images/marker-icon.png",
-            iconAnchor: [7, 0]
+            iconAnchor: [7, 0],
+            iconSize: [5, 5]
           });
+          var icon = new L.divIcon({ className: "mydivicon" });
           L.Marker.mergeOptions({
-            icon: newIcon
+            icon: hospitalIcon
           });
 
           //define basemap(s)
@@ -286,24 +331,25 @@
           tiles.layerClass = "basemap";
           labels.layerClass = "basemap";
 
-          // let mcg = L.markerClusterGroup({
-          //   chunkedLoading: true,
-          //   //singleMarkerMode: true,
-          //   maxClusterRadius: 40,
-          //   spiderfyOnMaxZoom: true,
-          //   showCoverageOnHover: false,
-          //   removeOutsideVisibleBounds: true
-          // });
-
-          // define d3 scale for sizing circles
-          var circleScale = d3
-            .scaleSqrt()
-            .domain(d3.extent(hospitals, d => d.cap_beds))
-            .range([100, 8000]); //metres
           //define circle layers
           let propCircles = L.layerGroup();
           let normalCircles = L.layerGroup();
           let defaultRadius = 2000; //metres
+
+          let map = L.map("map", {
+            center: L.latLng(50, 10),
+            zoom: 6,
+            layers: [tiles, labels, normalCircles],
+            renderer: L.canvas(),
+            crs: crs3035,
+            attributionControl: false
+          });
+
+          bedsExtent = d3.extent(hospitals, d => parseInt(d.cap_beds));
+          bedsToMetres = d3
+            .scaleSqrt()
+            .domain(bedsExtent)
+            .range([100, 8000]); //metres
 
           //add each hospital to the different layerGroups
           for (let i = 0; i < hospitals.length; i++) {
@@ -311,31 +357,40 @@
             let popup = generatePopupString(a);
             //proportional circles
             if (a.cap_beds) {
-              let r = circleScale(a.cap_beds);
+              let r = bedsToMetres(a.cap_beds);
               //let circle = L.circle([a.lat, a.lon], r);
-              let circle = L.circle([a.lat, a.lon], r, {
-                fillColor: "#708598",
-                color: "#537898",
-                weight: 1,
-                fillOpacity: 0.6
-              }).on({
+              let circle = L.circle(
+                [
+                  parseFloat(a.lat + 0.001 * Math.random()).toFixed(6),
+                  parseFloat(a.lon + 0.001 * Math.random()).toFixed(6)
+                ],
+                r,
+                {
+                  fillColor: circleColor,
+                  color: circleBorderColor,
+                  weight: 1,
+                  fillOpacity: 0.6
+                }
+              ).on({
                 mouseover: function(e) {
                   //this.openPopup();
                   this.setStyle({ color: "yellow" });
                 },
                 mouseout: function(e) {
                   //this.closePopup();
-                  this.setStyle({ color: "#537898" });
+                  this.setStyle({ color: circleBorderColor });
                 }
               });
               circle.bindPopup(popup);
               propCircles.addLayer(circle);
             }
 
-            //let circle = L.circle([a.lat, a.lon], r);
-            let normalCircle = L.circle([a.lat, a.lon], defaultRadius, {
-              fillColor: "#708598",
-              color: "#537898",
+            // Adding marker to layer
+            let lat = parseFloat(a.lat) + Math.random() * 0.0002 + 0.00002;
+            let lon = parseFloat(a.lon) + Math.random() * 0.0002 + 0.00002;
+            let normalCircle = L.circle([lat, lon], defaultRadius, {
+              fillColor: circleColor,
+              color: circleBorderColor,
               weight: 1,
               fillOpacity: 0.6
             }).on({
@@ -345,67 +400,30 @@
               },
               mouseout: function(e) {
                 //this.closePopup();
-                this.setStyle({ color: "#537898" });
+                this.setStyle({ color: circleBorderColor });
               }
             });
             normalCircle.bindPopup(popup);
             normalCircles.addLayer(normalCircle);
           }
 
-          let map = L.map("map", {
-            center: L.latLng(52, 10),
-            zoom: 5,
-            layers: [tiles, labels, normalCircles],
-            renderer: L.canvas(),
-            crs: crs3035,
-            attributionControl: false
-          });
+          addScaleToMap(map);
+          addAttributionToMap(map);
+          addControlPanelToMap(map, propCircles, normalCircles);
 
-          //add disclaimer & sources buttons
-          L.control.scale().addTo(map);
-          var attribution = L.control
-            .attribution({
-              prefix:
-                '<a href="http://leafletjs.com/" title="A JS library for interactive maps" target"_blank">Leaflet</a>'
-            })
-            .addTo(map);
-          {
-            //add button
-            attribution.addAttribution(
-              '<button type="button" class="disclaimerButton" onclick="showSources()">Sources</button><button type="button" class="disclaimerButton" onclick="showDisclaimer()">Disclaimer</button>'
-            );
-
-            var sourcesText = document.getElementById("sourcesText");
-            sourcesText.innerHTML =
-              `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap </a> contributors, <a href="https://ec.europa.eu/eurostat/en/web/gisco" title="Eurostat - GISCO" target="_blank"> Eurostat - GISCO</a>` +
-              sourcesText.innerHTML;
-            // add button click event
-            window.showDisclaimer = function() {
-              var popup = document.getElementById("disclaimerText");
-              popup.classList.toggle("show");
-            };
-
-            window.hideDisclaimer = function() {
-              var popup = document.getElementById("disclaimerText");
-              popup.classList.toggle("show");
-            };
-
-            // add button click event
-            window.showSources = function() {
-              var popup = document.getElementById("sourcesText");
-              popup.classList.toggle("show");
-            };
-
-            window.hideSources = function() {
-              var popup = document.getElementById("sourcesText");
-              popup.classList.toggle("show");
-            };
-          }
+          //circle legend
+          let mpp =
+            (40075016.686 *
+              Math.abs(Math.cos((map.getCenter().lat * Math.PI) / 180))) /
+            Math.pow(2, map.getZoom() + 8);
+          addCircleSizeLegendToMap(map, mpp);
 
           map.on("zoomend", function(e) {
             var currentZoom = map.getZoom();
             let newRadius;
-            if (currentZoom >= 12) {
+            if (currentZoom >= 14) {
+              newRadius = 50;
+            } else if (currentZoom >= 12) {
               newRadius = 100;
             } else if (currentZoom >= 10 && currentZoom <= 12) {
               newRadius = 500;
@@ -415,118 +433,14 @@
             normalCircles.eachLayer(function(layer) {
               if (layer._mradius !== newRadius) layer.setRadius(newRadius);
             });
+            //update prop circle legend
+            let bedsRadio = document.getElementById("rdBedsInput");
+            if (bedsRadio.checked == true) {
+              let metresPerPixel = getMetresPerPixel(map);
+              updateCircleSizeLegend(map, metresPerPixel);
+              showBedsLegend();
+            }
           });
-
-          //layer toggle
-          // var baseLayers = {
-          //   Positron: tiles,
-          //   OpenStreetMap: osm
-          // };
-          // var overlays = {
-          //   "Healthcare Centres": normalCircles,
-          //   "Bed Capacity": propCircles
-          // };
-          // L.control.layers(baseLayers, overlays).addTo(map);
-
-          //build control panel
-          let layDiv = document.createElement("div");
-          layDiv.classList.add(
-            "leaflet-control-layers",
-            "leaflet-control",
-            "leaflet-container"
-          );
-          layDiv.id = "layDiv";
-
-          let form = document.createElement("form");
-          layDiv.appendChild(form);
-          document.body.appendChild(layDiv);
-
-          //radio
-          let rdDefault = document.createElement("label");
-          let div = document.createElement("div");
-          rdDefault.appendChild(div);
-          let input = document.createElement("input");
-          input.classList.add("leaflet-control-layers-selector");
-          input.name = "layerChoice";
-          input.checked = "checked";
-          input.value = "def";
-          input.type = "radio";
-          div.appendChild(input);
-          let span = document.createElement("span");
-          span.innerHTML = "Healthcare Services <br>";
-          div.appendChild(span);
-          //radio
-          let rdBeds = document.createElement("label");
-          let div2 = document.createElement("div");
-          rdBeds.appendChild(div);
-          let input2 = document.createElement("input");
-          input2.classList.add("leaflet-control-layers-selector");
-          input2.name = "layerChoice";
-          input2.id = "rdBedsInput";
-          //input2.checked = "false";
-          input2.value = "beds";
-          input2.type = "radio";
-          div.appendChild(input2);
-          let span2 = document.createElement("span");
-          span2.innerHTML = "By Number of Beds";
-          span2.for = "rdBedsInput";
-          div.appendChild(span2);
-
-          form.appendChild(rdDefault);
-          form.appendChild(rdBeds);
-
-          //change layer selection
-          let inputs = document.querySelectorAll(
-            "input[type=radio][name=layerChoice]"
-          );
-
-          inputs.forEach(input => {
-            input.onchange = function() {
-              //remove all layers
-              map.eachLayer(function(layer) {
-                if (layer.layerClass !== "basemap") map.removeLayer(layer);
-              });
-              if (this.value == "def") {
-                //map.addLayer(tiles)
-                map.addLayer(normalCircles);
-                map.options.renderer._update();
-                //$("#bedsLgd").hide();
-                //$("#dateLgd").hide();
-              } else if (this.value == "beds") {
-                map.addLayer(propCircles);
-                map.options.renderer._update();
-                //$("#speedLgd").show();
-                //$("#dateLgd").hide();
-              }
-            };
-          });
-
-          //circle size legend
-          // let svg = d3.create("svg").attr("id", "circleLegend");
-          // svg.style("top", "20%");
-          // svg.style("left", "5%");
-          // document.body.appendChild(svg.node());
-          // const legC = svg
-          //   .append("g")
-          //   .attr("fill", "#444")
-          //   //.attr("transform", "translate(50,130)")
-          //   .attr("text-anchor", "right")
-          //   .style("font", "10px sans-serif")
-          //   .selectAll("g")
-          //   .data([1000, 500, 100])
-          //   .join("g");
-          // legC
-          //   .append("circle")
-          //   .attr("fill", "none")
-          //   .attr("stroke", "#444")
-          //   .attr("cy", 40)
-          //   .attr("r", circleScale);
-          // legC
-          //   .append("text")
-          //   .attr("y", 40)
-          //   .attr("x", 30)
-          //   .attr("dy", "1.3em")
-          //   .text(d3.format(".1s"));
         } else {
           // We reached our target server, but it returned an error
         }
@@ -535,6 +449,244 @@
       request.onerror = function() {
         // There was a connection error of some sort
       };
+
+      request.send();
+
+      function getMetresPerPixel(map) {
+        var centerLatLng = map.getCenter(); // get map center
+        var pointC = map.latLngToContainerPoint(centerLatLng); // convert to containerpoint (pixels)
+        var pointX = [pointC.x + 1, pointC.y]; // add one pixel to x
+        var pointY = [pointC.x, pointC.y + 1]; // add one pixel to y
+
+        // convert containerpoints to latlng's
+        var latLngC = map.containerPointToLatLng(pointC);
+        var latLngX = map.containerPointToLatLng(pointX);
+        var latLngY = map.containerPointToLatLng(pointY);
+
+        var distanceX = latLngC.distanceTo(latLngX); // calculate distance between c and x (latitude)
+        var distanceY = latLngC.distanceTo(latLngY); // calculate distance between c and y (longitude)
+
+        return distanceX;
+      }
+
+      function addScaleToMap(map) {
+        L.control.scale().addTo(map);
+      }
+
+      function addControlPanelToMap(map, propCircles, normalCircles) {
+        //build control panel
+        let layDiv = document.createElement("div");
+        layDiv.classList.add(
+          "leaflet-control-layers",
+          "leaflet-control",
+          "leaflet-container"
+        );
+        layDiv.id = "layDiv";
+        let form = document.createElement("form");
+        layDiv.appendChild(form);
+        document.body.appendChild(layDiv);
+
+        //radio
+        let rdDefault = document.createElement("label");
+        let div = document.createElement("div");
+        rdDefault.appendChild(div);
+        let input = document.createElement("input");
+        input.classList.add("leaflet-control-layers-selector");
+        input.name = "layerChoice";
+        input.checked = "checked";
+        input.value = "def";
+        input.type = "radio";
+        div.appendChild(input);
+        let span = document.createElement("span");
+        span.innerHTML = "Healthcare Services <br>";
+        div.appendChild(span);
+        //radio
+        let rdBeds = document.createElement("label");
+        let div2 = document.createElement("div");
+        rdBeds.appendChild(div);
+        let input2 = document.createElement("input");
+        input2.classList.add("leaflet-control-layers-selector");
+        input2.name = "layerChoice";
+        input2.id = "rdBedsInput";
+        //input2.checked = "false";
+        input2.value = "beds";
+        input2.type = "radio";
+        div.appendChild(input2);
+        let span2 = document.createElement("span");
+        span2.innerHTML = "By Number of Beds";
+        span2.for = "rdBedsInput";
+        div.appendChild(span2);
+        form.appendChild(rdDefault);
+        form.appendChild(rdBeds);
+
+        //change layer selection
+        let inputs = document.querySelectorAll(
+          "input[type=radio][name=layerChoice]"
+        );
+
+        inputs.forEach(input => {
+          input.onchange = function() {
+            //remove all layers
+            map.eachLayer(function(layer) {
+              if (layer.layerClass !== "basemap") map.removeLayer(layer);
+            });
+            if (this.value == "def") {
+              //map.addLayer(tiles)
+              map.addLayer(normalCircles);
+              map.options.renderer._update();
+              hideBedsLegend();
+            } else if (this.value == "beds") {
+              map.addLayer(propCircles);
+              map.options.renderer._update();
+              let metresPerPixel = getMetresPerPixel(map);
+              updateCircleSizeLegend(map, metresPerPixel);
+              showBedsLegend();
+            }
+          };
+        });
+      }
+
+      function addAttributionToMap(map) {
+        var attribution = L.control
+          .attribution({
+            prefix:
+              '<a href="http://leafletjs.com/" title="A JS library for interactive maps" target"_blank">Leaflet</a>'
+          })
+          .addTo(map);
+        {
+          //add button
+          attribution.addAttribution(
+            '<button type="button" class="disclaimerButton" onclick="showSources()">Sources</button><button type="button" class="disclaimerButton" onclick="showDisclaimer()">Disclaimer</button>'
+          );
+
+          var sourcesText = document.getElementById("sourcesText");
+          sourcesText.innerHTML =
+            `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap </a> contributors, <a href="https://ec.europa.eu/eurostat/en/web/gisco" title="Eurostat - GISCO" target="_blank"> Eurostat - GISCO</a>` +
+            sourcesText.innerHTML;
+          // add button click event
+          window.showDisclaimer = function() {
+            var popup = document.getElementById("disclaimerText");
+            popup.classList.toggle("show");
+          };
+
+          window.hideDisclaimer = function() {
+            var popup = document.getElementById("disclaimerText");
+            popup.classList.toggle("show");
+          };
+
+          // add button click event
+          window.showSources = function() {
+            var popup = document.getElementById("sourcesText");
+            popup.classList.toggle("show");
+          };
+
+          window.hideSources = function() {
+            var popup = document.getElementById("sourcesText");
+            popup.classList.toggle("show");
+          };
+        }
+      }
+
+      function addCircleSizeLegendToMap(map, mpp) {
+        let currentZoom = map.getZoom();
+
+        if (currentZoom < 13) {
+          //create circle size legend
+          sizeLegend = L.control({
+            position: "bottomleft"
+          });
+
+          //generate legend contents
+          sizeLegend.onAdd = function(map) {
+            //set up legend grades and labels
+            let div = L.DomUtil.create("div", "info legend"),
+              beds = [],
+              radiuses = [],
+              labels = ["<strong>Number of Beds</strong>"],
+              from,
+              to;
+
+            //add values to legend
+            // L.Circles are in metres, so the values must be divided by mpp
+            if (currentZoom <= 11) {
+              //only include largest circles at lower zoom levels
+              beds.push(
+                parseInt(bedsExtent[1] / 6),
+                parseInt(bedsExtent[1] / 4),
+                parseInt(bedsExtent[1] / 2),
+                parseInt(bedsExtent[1])
+              );
+              radiuses.push(
+                bedsToMetres(beds[0]) / mpp,
+                bedsToMetres(beds[1]) / mpp,
+                bedsToMetres(beds[2]) / mpp,
+                bedsToMetres(beds[3]) / mpp
+              );
+            } else {
+              beds.push(
+                parseInt(bedsExtent[1] / 12),
+                parseInt(bedsExtent[1] / 8),
+                parseInt(bedsExtent[1] / 4)
+              );
+              radiuses.push(
+                bedsToMetres(beds[0]) / mpp,
+                bedsToMetres(beds[1]) / mpp,
+                bedsToMetres(beds[2]) / mpp
+              );
+            }
+
+            //iterate through beds and create a scaled circle and label for each
+            for (var i = 0; i < beds.length; i++) {
+              from = beds[i];
+              to = beds[i + 1];
+              labels.push(
+                '<div class="bed-legend-item"><i class="circlepadding" style="width: ' +
+                  Math.max(0, 29 - 1.8 * radiuses[i]) +
+                  'px;"></i> <i style="background: ' +
+                  circleColor +
+                  "; border: 0px solid " +
+                  circleBorderColor +
+                  "; width: " +
+                  radiuses[i] * 2 +
+                  "px; height: " +
+                  radiuses[i] * 2 +
+                  "px; border-radius: 50%; margin-top: " +
+                  Math.max(0, 9 - radiuses[i]) +
+                  'px;"></i>' +
+                  from +
+                  " </div>"
+              );
+            }
+            div.innerHTML = labels.join("<br>");
+            return div;
+          };
+          sizeLegend.addTo(map);
+          let el = sizeLegend.getContainer();
+          el.id = "bedsLegend";
+          el.style.display = "none";
+        }
+      }
+
+      function updateCircleSizeLegend(map, mpp) {
+        //destroy and rebuild prop circle legend with new metresPerPixel value (mpp)
+        sizeLegend.remove();
+        addCircleSizeLegendToMap(map, mpp);
+      }
+
+      function showBedsLegend() {
+        let bedsLegend = document.getElementById("bedsLegend");
+        bedsLegend.style.display = "block";
+      }
+      function hideBedsLegend() {
+        let bedsLegend = document.getElementById("bedsLegend");
+        bedsLegend.style.display = "none";
+      }
+
+      //calculate radius so that resulting circles will be proportional by area
+      function getRadius(y) {
+        r = Math.sqrt(y / Math.PI);
+        return r;
+      }
 
       function generatePopupString(obj) {
         let i = 0;
@@ -566,12 +718,6 @@
         string = string + "</table>";
         return string;
       }
-
-      request.send();
-
-      toRadius = function(val) {
-        return 1 * 0.005 * Math.sqrt(val);
-      };
     </script>
   </body>
 </html>
