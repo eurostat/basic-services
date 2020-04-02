@@ -40,7 +40,7 @@ except ImportError:
             def dump(arg):  
                 return "%s" % arg
 
-from pyhcs import BASENAME
+from pyhcs import BASENAME, COUNTRIES
 
 #%%
 
@@ -56,30 +56,54 @@ OCONFIGNAME     = ["index",                                             \
 """
 
 INDEX           = OrderedDict( [
-    ("id",       {"name": "id",              "type": __type2name(int),        "desc": "The healthcare service identifier - This identifier is based on national identification codes, if it exists."}),
-    ("name",     {"name": "hospital_name",   "type": __type2name(str),        "desc": "The name of the healthcare institution"}),
-    ("site",     {"name": "site_name",       "type": __type2name(str),        "desc": "The name of the specific site or branch of a healthcare institution"}),
-    ("lat",      {"name": "lat",             "type": __type2name(float),      "desc": "Latitude (WGS 84)"}),
-    ("lon",      {"name": "lon",             "type": __type2name(float),      "desc": "Longitude (WGS 84)"}),
-    ("geo_qual", {"name": "geo_qual",        "type": __type2name(int),        "desc": "A quality indicator for the geolocation - 1: Good, 2: Medium, 3: Low, -1: Unknown"}),
-    ("street",   {"name": "street",          "type": __type2name(str),        "desc": "Street name"}),
-    ("number",   {"name": "house_number",    "type": __type2name(str),        "desc": "House number"}),
-    ("postcode", {"name": "postcode",        "type": __type2name(str),        "desc": "Postcode"}),
-    ("city",     {"name": "city",            "type": __type2name(str),        "desc": "City name (sometimes refers to a region or a municipality)"}),
-    ("cc",       {"name": "cc",              "type": __type2name(str),        "desc": "Country code (ISO 3166-1 alpha-2 format)"}),
-    ("country",  {"name": "country",         "type": __type2name(str),        "desc": "Country name"}),
-    ("beds",     {"name": "cap_beds",        "type": __type2name(int),        "desc": "Measure of capacity by number of beds (most common)"}),
-    ("prac",     {"name": "cap_prac",        "type": __type2name(int),        "desc": "Measure of capacity by number of practitioners"}),
-    ("rooms",    {"name": "cap_rooms",       "type": __type2name(int),        "desc": "Measure of capacity by number of rooms"}),
-    ("ER",       {"name": "emergency",       "type": __type2name(bool),       "desc": "Flag 'yes/no' for whether the healthcare site provides emergency medical services"}),
-    ("type",     {"name": "facility_type",   "type": __type2name(str),        "desc": "If the healthcare service provides a specific type of care, e.g. psychiatric hospital"}),
-    ("PP",       {"name": "public_private",	 "type": __type2name(int),        "desc": "Status 'private/public' of the healthcare service"}),
-    ("specs",    {"name": "list_specs",      "type": __type2name(str),        "desc": "List of specialties recognized in the European Union and European Economic Area according to EU Directive 2005/36/EC"}),
-    ("tel",      {"name": "tel",             "type": __type2name(int),        "desc": "Telephone number"}),
-    ("email",    {"name": "email",           "type": __type2name(str),        "desc": "Email address"}),
-    ("url",      {"name": "url",             "type": __type2name(str),        "desc": "URL link to the institution's website"}),
-    ("refdate",  {"name": "ref_date",        "type": __type2name(datetime),   "desc": "The reference date of the data (DD/MM/YYYY)"}),
-    ("pubdate",  {"name": "pub_date",        "type": __type2name(datetime),   "desc": "The date that the data was last published (DD/MM/YYYY)"})
+    ("id",       {"name": "id",                     "desc": "The healthcare service identifier - This identifier is based on national identification codes, if it exists.",
+                  "type": __type2name(int),         "values": None}),
+    ("name",     {"name": "hospital_name",          "desc": "The name of the healthcare institution",   
+                  "type": __type2name(str),         "values": None}),
+    ("site",     {"name": "site_name",              "desc": "The name of the specific site or branch of a healthcare institution",       
+                  "type": __type2name(str),         "values": None}),
+    ("lat",      {"name": "lat",                    "desc": "Latitude (WGS 84)",             
+                  "type": __type2name(float),       "values": None}),
+    ("lon",      {"name": "lon",                    "desc": "Longitude (WGS 84)",             
+                  "type": __type2name(float),       "values": None}),
+    ("geo_qual", {"name": "geo_qual",               "desc": "A quality indicator for the geolocation - 1: Good, 2: Medium, 3: Low, -1: Unknown",        
+                  "type": __type2name(int),         "values": [-1, 1, 2, 3]}),
+    ("street",   {"name": "street",                 "desc": "Street name",          
+                  "type": __type2name(str),         "values": None}),
+    ("number",   {"name": "house_number",           "desc": "House number",    
+                  "type": __type2name(str),         "values": None}),
+    ("postcode", {"name": "postcode",               "desc": "Postcode",        
+                  "type": __type2name(str),         "values": None}),
+    ("city",     {"name": "city", "desc":           "City name (sometimes refers to a region or a municipality)",            
+                  "type": __type2name(str),         "values": None}),
+    ("cc",       {"name": "cc", "desc":             "Country code (ISO 3166-1 alpha-2 format)",              
+                  "type": __type2name(str),         "values": COUNTRIES}),
+    ("country",  {"name": "country",                "desc": "Country name",         
+                  "type": __type2name(str),         "values": None}),
+    ("beds",     {"name": "cap_beds",               "desc": "Measure of capacity by number of beds (most common)",        
+                  "type": __type2name(int),         "values": None}),
+    ("prac",     {"name": "cap_prac",               "desc": "Measure of capacity by number of practitioners",        
+                  "type": __type2name(int),         "values": None}),
+    ("rooms",    {"name": "cap_rooms",              "desc": "Measure of capacity by number of rooms",       
+                  "type": __type2name(int),         "values": None}),
+    ("ER",       {"name": "emergency",              "desc": "Flag 'yes/no' for whether the healthcare site provides emergency medical services",       
+                  "type": __type2name(bool),        "values": ['yes', 'no']}),
+    ("type",     {"name": "facility_type",          "desc": "If the healthcare service provides a specific type of care, e.g. psychiatric hospital",   
+                  "type": __type2name(str),         "values": None}),
+    ("PP",       {"name": "public_private",         "desc": "Status 'private/public' of the healthcare service",	 
+                  "type": __type2name(int),         "values": ['public', 'private']}),
+    ("specs",    {"name": "list_specs",             "desc": "List of specialties recognized in the European Union and European Economic Area according to EU Directive 2005/36/EC",      
+                  "type": __type2name(str),         "values": None}),
+    ("tel",      {"name": "tel", "desc":            "Telephone number",             
+                  "type": __type2name(int),         "values": None}),
+    ("email",    {"name": "email", "desc":          "Email address",           
+                  "type": __type2name(str),         "values": None}),
+    ("url",      {"name": "url", "desc":            "URL link to the institution's website",             
+                  "type": __type2name(str),         "values": None}),
+    ("refdate",  {"name": "ref_date",               "desc": "The reference date of the data (DD/MM/YYYY)",        
+                  "type": __type2name(datetime),    "values": None}),
+    ("pubdate",  {"name": "pub_date",               "desc": "The date that the data was last published (DD/MM/YYYY)",        
+                  "type": __type2name(datetime),    "values": None})
    ] )
 # notes: 
 #  i. house_number should be string, not int.. .e.g. 221b Baker street
