@@ -55,6 +55,16 @@ OCONFIGNAME     = ["index",                                             \
 """Metadata fields related to output template.
 """
 
+FMT             = {"geojson": "json", "json": "json", "csv": "csv", "gpkg": "gpkg"}    
+LANG            = "en"
+SEP             = ","
+ENC             = "utf-8"
+DATE            = "%d/%m/%Y"# format DD/MM/YYYY
+PROJ            = None # "WGS84"
+    
+PATH            = "../data/" # "../data/%s"
+FILE            = "%s.%s"
+
 INDEX           = OrderedDict( [
     ("id",       {"name": "id",                     "desc": "The healthcare service identifier - This identifier is based on national identification codes, if it exists.",
                   "type": __type2name(int),         "values": None}),
@@ -101,23 +111,13 @@ INDEX           = OrderedDict( [
     ("url",      {"name": "url", "desc":            "URL link to the institution's website",             
                   "type": __type2name(str),         "values": None}),
     ("refdate",  {"name": "ref_date",               "desc": "The reference date of the data (DD/MM/YYYY)",        
-                  "type": __type2name(datetime),    "values": None}),
+                  "type": __type2name(datetime),    "values": DATE}),
     ("pubdate",  {"name": "pub_date",               "desc": "The date that the data was last published (DD/MM/YYYY)",        
-                  "type": __type2name(datetime),    "values": None})
+                  "type": __type2name(datetime),    "values": DATE})
    ] )
 # notes: 
 #  i. house_number should be string, not int.. .e.g. 221b Baker street
 #  ii. we use an ordered dict to use the same column order when writing the output file
-
-FMT             = {"geojson": "json", "json": "json", "csv": "csv", "gpkg": "gpkg"}    
-LANG            = "en"
-SEP             = ","
-ENC             = "utf-8"
-DATE            = "%d/%m/%Y"# format DD/MM/YYYY
-PROJ            = None # "WGS84"
-    
-PATH            = "../data/" # "../data/%s"
-FILE            = "%s.%s"
 
 
 #%%

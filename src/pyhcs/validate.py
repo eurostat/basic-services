@@ -62,8 +62,6 @@ def validateCountry(country=None, **kwargs):
         raise TypeError('wrong type for input country code - must the ISO 2-letter string')
     elif not country in COUNTRIES.values():
         raise IOError('country code not recognised - must a code of the %s area' % list(COUNTRIES.keys())[0])
-    if not(coder is None or isinstance(coder,string_types) or isinstance(coder,Mapping)):
-        raise TypeError('coder type not recognised - must be a dictionary or a single string')
     fmt = 'csv'
     src = kwargs.pop('src', None)
     if src is None:
@@ -82,7 +80,7 @@ def validateCountry(country=None, **kwargs):
     index = [col.get('name') for col in INDEX.values()]
     try:
         columns = set(list(df.columns)).difference(set(index))
-        assert cols == set()
+        assert columns == set()
     except AssertionError:
         raise IOError('unknown column present in the dataframe: %s' % list(columns))
     else:
