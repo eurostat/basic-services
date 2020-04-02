@@ -38,8 +38,9 @@ except:
 try:
     from importlib import import_module
 except:
-    import_module = None#analysis:ignore
     warnings.warn('module importlib missing')
+    # import_module = lambda mod: exec('from %s import %s' % mod.split('.'))
+    import_module = lambda _mod, pack: exec('from %s import %s' % (pack, _mod.split('.')[1])) or None
 
 from pyhcs import PACKNAME, BASENAME, COUNTRIES#analysis:ignore
 from pyhcs.config import OCONFIGNAME#analysis:ignore
@@ -53,8 +54,6 @@ __thisdir = osp.dirname(__file__)
 # Function __harmonise
 #==============================================================================
 def __harmonise(metadata, **kwargs):
-    """Generic harmonisation function
-    """
     try:
         assert isinstance(metadata,(MetaHCS,Mapping))  
     except:
@@ -67,26 +66,33 @@ def __harmonise(metadata, **kwargs):
         hcs = HCS()
     except:
         raise IOError('impossible create specific country instance')
-    else:
-        hcs.load_source()
-        hcs.prepare_data()
-        hcs.format_data()
-        hcs.save_data(fmt='geojson')
-        hcs.save_data(fmt='csv')
-        # hcs.save_meta(fmt='json')
+    opt_load = kwargs.pop("opt_load", {})        
+    hcs.load_source(**opt_load)
+    opt_prep = kwargs.pop("opt_prep", {})        
+    hcs.prepare_data(**opt_prep)
+    opt_format = kwargs.pop("opt_format", {})        
+    hcs.format_data(**opt_format)
+    opt_save = kwargs.pop("opt_save", {'geojson': {}, 'csv': {}})        
+    hcs.save_data(fmt='geojson', **opt_save.get('geojson',{}))
+    hcs.save_data(fmt='csv',**opt_save.get('csv',{}))
+    # hcs.save_meta(fmt='json')
 
 #%% 
 #==============================================================================
 # Function harmoniseOneCountry
 #==============================================================================
 
-def harmoniseCountry(country=None, coder=None):
+def harmoniseCountry(country=None, coder=None, **kwargs):
+    """Generic harmonisation function.
+    
+        >>> harmonise.harmoniseCountry(country, coder, **kwargs)
+    """
     if country is None:
         country = list(COUNTRIES.values())
     if isinstance(country, Sequence):
         for ctry in country:
             try:
-                harmoniseCountry(country=ctry, coder=coder) 
+                harmoniseCountry(country=ctry, coder=coder, **kwargs) 
             except:
                 continue
         return
@@ -104,7 +110,8 @@ def harmoniseCountry(country=None, coder=None):
     modname = ccname
     try:
         assert osp.exists(osp.join(__thisdir, fname))
-        exec('from %s import %s' % (PACKNAME,modname))
+        # import_module('%s.%s' % (PACKNAME,modname) )
+        imp = import_module('.%s' % modname, PACKNAME)
     except AssertionError:
         warnings.warn('no country py-file %s found - will proceed without' % fname)
     except ImportError:
@@ -118,12 +125,19 @@ def harmoniseCountry(country=None, coder=None):
         except:
             raise ImportError('country py-module %s not loaded correctly' % modname)
     try:
-        exec('CC = %s.CC' % modname)
+        if imp is not None:
+            # assert 'CC' in dir(imp)
+            CC = getattr(imp, 'CC', None)
+        else:
+            exec('CC = %s.CC' % modname)
     except:
         warnings.warn('global variable CC not set - use default')
-        CC = country
     try:
-        exec('METADATA = %s.METADATA' % modname)
+        if imp is not None:
+            # assert 'METADATA' in dir(imp)
+            METADATA = getattr(imp, 'METADATA', None)
+        else:
+            exec('METADATA = %s.METADATA' % modname)
     except:
         warnings.warn('no default metadata dictionary available')
     else:
@@ -153,7 +167,7 @@ def harmoniseCountry(country=None, coder=None):
     else:
         metadata = MetaHCS(metadata)
     try:
-        kwargs = {'coder': coder, 'country' : {'code': CC}}
+        kwargs.update({'coder': coder, 'country' : {'code': CC or country}})
         harmonise(metadata, **kwargs)
     except:
         raise IOError('harmonisation process for country %s failed...' % country)
