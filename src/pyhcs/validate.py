@@ -17,13 +17,13 @@ Module data validation according to template.
 **Contents**
 """
 
-# *credits*:      `gjacopo <gjacopo@ec.europa.eu>`_ 
+# *credits*:      `gjacopo <jacopo.grazzini@ec.europa.eu>`_ 
 # *since*:        Thu Apr  2 16:30:50 2020
 
 from os import path as osp
 import warnings#analysis:ignore
 
-from collections import Mapping, Sequence
+from collections import Mapping, Sequence#analysis:ignore
 from six import string_types
 
 from datetime import datetime
@@ -32,7 +32,7 @@ import numpy as np#analysis:ignore
 import pandas as pd
 
 from pyhcs import COUNTRIES
-from pyhcs.config import INDEX, PATH, FILE, FMT, DATE, ENC, SEP
+from pyhcs.config import INDEX, PATH, FILE, FMT, DATE, ENC, SEP#analysis:ignore
 
 __thisdir = osp.dirname(__file__)
 
