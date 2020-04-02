@@ -105,15 +105,15 @@ else:
                 'Nominatim':    None,
                 'OpenMapQuest': 'api_key' 
              }      
-    if _is_happy_installed is True:
-        if _is_geopy_installed is False:
-            CODERS.pop('GoogleV3'); CODERS.pop('Bing')         
-            CODERS.pop('GeoNames'); CODERS.pop('Yandex')         
-            CODERS.pop('MapQuest'); CODERS.pop('Nominatim')         
-            CODERS.pop('OpenMapQuest')               
-        pass
-    else:
+    if _is_happy_installed is False: # happyGISCO not loaded
         CODERS.pop('GISCO'); CODERS.pop('osm')         
+    if _is_geopy_installed is False: # geopy not loaded
+        # note: we could simply build it...
+        CODERS.pop('GoogleV3'); CODERS.pop('Bing')         
+        CODERS.pop('GeoNames'); CODERS.pop('Yandex')         
+        CODERS.pop('MapQuest'); CODERS.pop('Nominatim')         
+        CODERS.pop('OpenMapQuest')               
+    elif _is_happy_installed is False:     # happyGISCO not loaded & geopy loaded
         class _GEOCODER(object):
             def __init__(self, **kwargs):
                 self._gc = None
@@ -149,7 +149,7 @@ except ImportError:
 else:
     # warnings.warn('pyproj help: https://pyproj4.github.io/pyproj/latest/')
     _is_pyproj_installed = True
-    from pyproj import CRS, Transformer
+    from pyproj import CRS as crs, Transformer
 
 try:
     import geojson
@@ -198,9 +198,9 @@ IPLACE          = ['street', 'number', 'postcode', 'city', 'country']
 
 try:
     assert _is_pyproj_installed is True
-    OCRS = CRS.from_epsg(PROJ or 4326)
+    CRS = crs.from_epsg(PROJ or 4326)
 except:
-    OCRS = None
+    CRS = None
 
 #%%
 #==============================================================================
@@ -278,29 +278,28 @@ class BaseHCS(object):
     """
 
     # default geocoder... but this can be reset when declaring a subclass
-    CODER           = 'GISCO' # 'Bing', 'Nominatim', 'GoogleV3', 'GMaps', 'GPlace', 'GeoNames'
+    CODER           = 'Bing' # 'GISCO', 'Nominatim', 'GoogleV3', 'GMaps', 'GPlace', 'GeoNames'
     CODERKEY        = None # enter your key here...
-        
+    
     try:
         assert _is_happy_installed is True
-        OSMSERV = services.OSMService()
-        GISCOSERV = services.GISCOService()
-    except:     pass
-
-    try:
-        assert _is_happy_installed is True
-        GEOSERV = services.APIService(**{'coder': CODER, CODERS[CODER]: CODERKEY})
     except:     
         try:
             assert _is_geopy_installed is True
         except:     pass
         else:
+            CODER   = 'Bing' if CODER == 'GISCO' else CODER # reset
             GEOSERV = _GEOCODER(**{'coder': CODER, CODERS[CODER]: CODERKEY})
+    else:
+        OSMSERV     = services.OSMService()
+        GISCOSERV   = services.GISCOService()
+        GEOSERV = services.APIService(**{'coder': CODER, CODERS[CODER]: CODERKEY})
 
     try:
         assert _is_googletrans_installed is True
         UTRANSLATOR = gtrans.Translator()
     except:     pass
+
             
     #/************************************************************************/
     @classmethod
@@ -318,13 +317,18 @@ class BaseHCS(object):
             raise IOError('geocoder %s not available' % coder)
         if 'place' in kwargs:
             place = (kwargs.pop('place', ''),)
-        if _is_happy_installed and coder in ('osm','GISCO'): 
-            kwargs.update({'order': 'lL', 'unique': True})
-            if coder == 'osm':  s = cls.OSMSERV
-            else:               s = cls.GISCOSERV
-        else:
-            kwargs.update({'exactly_one': True})
-            s = cls.GEOSERV
+        kwargs.update({'order': 'lL', 'unique': True, 
+                      'exactly_one': True})
+        if _is_happy_installed is True and coder in ('osm','GISCO'): 
+            kwargs.pop('exactly_one')
+            if coder == 'osm':  s = cls.OSMSERV # = services.OSMService()
+            else:               s = cls.GISCOSERV # = services.GISCOService()
+        elif _is_happy_installed is True:
+            kwargs.pop('exactly_one')
+            s = cls.GEOSERV # = services.APIService(**{'coder': cls.CODER, CODERS[CODER]: cls.CODERKEY})
+        else: # _is_happy_installed is False and, most likely, coder not in ('osm','GISCO')
+            kwargs.pop('order') or kwargs.pop('unique') 
+            s = cls.GEOSERV # = _GEOCODER(**{'coder': cls.CODER, CODERS[CODER]: cls.CODERKEY})
         return s.place2coord(place, **kwargs)
         
     #/************************************************************************/
@@ -351,7 +355,7 @@ class BaseHCS(object):
         if _is_happy_installed is True: 
             return cls.GISCOSERV.coordproject(coord, iproj=iproj, oproj=oproj)
         else:
-            return Transformer.from_crs(CRS.from_epsg(iproj), OCRS).transform(*coord)
+            return Transformer.from_crs(CRS.from_epsg(iproj), CRS).transform(*coord)
     
     #/************************************************************************/
     @classmethod
