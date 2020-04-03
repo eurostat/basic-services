@@ -31,10 +31,15 @@ from datetime import datetime
 import numpy as np#analysis:ignore
 import pandas as pd
 
+try: 
+    from optparse import OptionParser
+except ImportError:
+    warnings.warn('inline command deactivated')
+
 from pyhcs import COUNTRIES
 from pyhcs.config import INDEX, PATH, FILE, FMT, DATE, ENC, SEP#analysis:ignore
 
-__thisdir = osp.dirname(__file__)
+__THISDIR = osp.dirname(__file__)
 
 MINMAX_LL = {'lat': [-90., 90.], 'lon': [-180., 180.]} 
 
@@ -50,8 +55,8 @@ def validateCountry(country=None, **kwargs):
         >>> validate.validateCountry(country, **kwargs)
     """
     if country is None:
-        country = list(COUNTRIES.values())
-    if isinstance(country, Sequence):
+        country = list(COUNTRIES.values())[0]
+    if not isinstance(country, string_types) and isinstance(country, Sequence):
         for ctry in country:
             try:
                 validateCountry(country=ctry, **kwargs) 
@@ -60,7 +65,7 @@ def validateCountry(country=None, **kwargs):
         return
     elif not isinstance(country, string_types):
         raise TypeError('wrong type for input country code - must the ISO 2-letter string')
-    elif not country in COUNTRIES.values():
+    elif not country in list(COUNTRIES.values())[0]:
         raise IOError('country code not recognised - must a code of the %s area' % list(COUNTRIES.keys())[0])
     fmt = 'csv'
     src = kwargs.pop('src', None)
@@ -132,21 +137,46 @@ def validateCountry(country=None, **kwargs):
             except AssertionError:
                 raise IOError('wrong input values for %s geographical coordinate %s' % lL)
     # else?
-    return
-
+    return  
+      
 
 #%% 
 #==============================================================================
-# Function run
+# Main functions
 #==============================================================================
 
 run = validateCountry
-    
 
-#%% 
-#==============================================================================
-# Main function
-#==============================================================================
+def __main():
+    """Parse and check the command line with default arguments.
+    """
+    parser = OptionParser(                                                  \
+        description=                                                        \
+    """Validate output harmonised data on health care services.""",
+        usage=                                                              \
+    """usage:         harmonise [options] <code> 
+    <code> :          country code."""                                      \
+                        )
+    
+    #parser.add_option("-c", "--cc", action="store", dest="cc",
+    #                  help="country ISO-code.",
+    #                  default=None)
+    (opts, args) = parser.parse_args()
+    
+    # define the input metadata file (base)name
+    if not args in (None,()):
+        country = args[0]
+    else:
+        # parser.error("country name is required.")
+        country = list(COUNTRIES.values())[0]
+    
+    # run the generator
+    try:
+        run(country)
+    except IOError:
+        warnings.warn('  ERROR: data file not validated')
+    else:
+        warnings.warn('  OK: data file correctly validated')
 
 if __name__ == '__main__':
-    run()
+    __main()

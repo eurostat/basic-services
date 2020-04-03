@@ -30,11 +30,24 @@ import warnings#analysis:ignore
 from collections import Mapping, Sequence
 from six import string_types
 
+try: 
+    from optparse import OptionParser
+except ImportError:
+    warnings.warn('inline command deactivated')
+
 try:
     import simplejson as json
 except:
-    import json#analysis:ignore
-    
+    try:
+        import json#analysis:ignore
+    except ImportError:
+        class json:
+            def dump(arg):  
+                return '%s' % arg
+            def load(arg):  
+                with open(arg,'r') as f:
+                    return f.read()
+        
 try:
     from importlib import import_module
 except:
@@ -46,28 +59,40 @@ from pyhcs import PACKNAME, BASENAME, COUNTRIES#analysis:ignore
 from pyhcs.config import OCONFIGNAME#analysis:ignore
 from pyhcs.base import IMETANAME, MetaHCS, hcsFactory#analysis:ignore
 
-__thisdir = osp.dirname(__file__)
+__THISDIR       = osp.dirname(__file__)
+__CCNAME        = lambda cc: "%s%s" % (cc,BASENAME)
 
 
 #%% 
 #==============================================================================
 # Function __harmonise
 #==============================================================================
+
 def __harmonise(metadata, **kwargs):
     try:
         assert isinstance(metadata,(MetaHCS,Mapping))  
     except:
         raise TypeError('wrong input metadata')
+    else:
+        metadata = MetaHCS(metadata)
     try:
         HCS = hcsFactory(metadata, **kwargs)
     except:
         raise IOError('impossible create specific country class')
+    fprep = kwargs.pop('met_prep')
+    try:
+        assert fprep is None or callable(fprep) is True
+    except:
+        raise IOError('prepare method not recognised')
+    else:
+        if callable(fprep):     
+            HCS.prepare_data = fprep
     try:
         hcs = HCS()
     except:
         raise IOError('impossible create specific country instance')
     opt_load = kwargs.pop("opt_load", {})        
-    hcs.load_source(**opt_load)
+    hcs.load_data(**opt_load)
     opt_prep = kwargs.pop("opt_prep", {})        
     hcs.prepare_data(**opt_prep)
     opt_format = kwargs.pop("opt_format", {})        
@@ -76,6 +101,7 @@ def __harmonise(metadata, **kwargs):
     hcs.save_data(fmt='geojson', **opt_save.get('geojson',{}))
     hcs.save_data(fmt='csv',**opt_save.get('csv',{}))
     # hcs.save_meta(fmt='json')
+
 
 #%% 
 #==============================================================================
@@ -88,8 +114,8 @@ def harmoniseCountry(country=None, coder=None, **kwargs):
         >>> harmonise.harmoniseCountry(country, coder, **kwargs)
     """
     if country is None:
-        country = list(COUNTRIES.values())
-    if isinstance(country, Sequence):
+        country = list(COUNTRIES.values())[0]
+    if not isinstance(country, string_types) and isinstance(country, Sequence):
         for ctry in country:
             try:
                 harmoniseCountry(country=ctry, coder=coder, **kwargs) 
@@ -97,19 +123,19 @@ def harmoniseCountry(country=None, coder=None, **kwargs):
                 continue
         return
     elif not isinstance(country, string_types):
-        raise TypeError('wrong type for input country code - must the ISO 2-letter string')
-    elif not country in COUNTRIES.values():
-        raise IOError('country code not recognised - must a code of the %s area' % list(COUNTRIES.keys())[0])
+        raise TypeError('wrong type for input country code - must be the ISO 2-letter string')
+    elif not country in list(COUNTRIES.values())[0]:
+        raise IOError('country code not recognised - must be a code of the %s area' % list(COUNTRIES.keys())[0])
     if not(coder is None or isinstance(coder,string_types) or isinstance(coder,Mapping)):
         raise TypeError('coder type not recognised - must be a dictionary or a single string')
     CC, METADATA = None, {}
     # generic name
-    ccname = '%s%s' % (country, BASENAME) 
+    ccname = __CCNAME(country) # '%s%s' % (country, BASENAME) 
     # load country-dedicated module wmmhen available 
-    fname = '%s.py' % ccname 
     modname = ccname
+    fname = '%s.py' % ccname 
     try:
-        assert osp.exists(osp.join(__thisdir, fname))
+        assert osp.exists(osp.join(__THISDIR, fname))
         # import_module('%s.%s' % (PACKNAME,modname) )
         imp = import_module('.%s' % modname, PACKNAME)
     except AssertionError:
@@ -119,41 +145,48 @@ def harmoniseCountry(country=None, coder=None, **kwargs):
     except:
         raise ImportError('no country py-module %s loaded' % modname)
     else:
-        warnings.warn('country py-module %s found' % modname)
+        warnings.warn('country py-module %s found' % imp.__name__)
         try:
-            exec('assert %s in sysmod.values()' % modname)
+            assert imp in sysmod.values()
         except:
-            raise ImportError('country py-module %s not loaded correctly' % modname)
+            raise ImportError('country py-module %s not loaded correctly' % imp.__name__)
     try:
-        if imp is not None:
-            # assert 'CC' in dir(imp)
-            CC = getattr(imp, 'CC', None)
-        else:
-            exec('CC = %s.CC' % modname)
+        # assert 'CC' in dir(imp)
+        CC = getattr(imp, 'CC', None)
     except:
         warnings.warn('global variable CC not set - use default')
     try:
-        if imp is not None:
-            # assert 'METADATA' in dir(imp)
-            METADATA = getattr(imp, 'METADATA', None)
-        else:
-            exec('METADATA = %s.METADATA' % modname)
+        # assert 'METADATA' in dir(imp)
+        METADATA = getattr(imp, 'METADATA', None)
+        assert METADATA is not None
     except:
         warnings.warn('no default metadata dictionary available')
     else:
         warnings.warn('default hard-coded metadata dictionary found')
     try:
-        exec('harmonise = %s.harmonise' % modname)
+        # assert 'harmonise' in dir(imp)
+        harmonise = getattr(imp, 'harmonise', None)
+        assert harmonise is not None
     except:
         warnings.warn('generic formatting/harmonisation methods used')
+        harmonise = __harmonise
     else:
         warnings.warn('country-specific formatting/harmonisation methods used')
-        harmonise = __harmonise
+    try:
+        # assert 'prepare_data' in dir(imp)
+        prepare_data = getattr(imp, 'prepare_data', None)
+        assert prepare_data is not None
+    except:
+        warnings.warn('country-specific data preparation method loaded')
+        prepare_data = None # anyway...
+    else:
+        # warnings.warn('no data preparation method used')
+        pass
     # load country-dedicated metadata when available 
     metadata = None
     metaname = '%s.json' % ccname 
     try:
-        assert osp.exists(osp.join(__thisdir, metaname))
+        assert osp.exists(osp.join(__THISDIR, metaname))
         with open(metaname, 'r') as fp: 
             metadata = json.load(fp)
     except (AssertionError,FileNotFoundError):
@@ -164,10 +197,13 @@ def harmoniseCountry(country=None, coder=None, **kwargs):
     metadata = metadata or METADATA
     if metadata in (None,{}):
         raise IOError('no metadata parsed - this cannot end up well')
-    else:
-        metadata = MetaHCS(metadata)
+    kwargs.update({'coder': coder, 'country' : {'code': CC or country},
+                   'met_prep': prepare_data})
+                    # 'opt_load': {}, 'opt_fmt': {}, 'opt_save': {}
     try:
-        kwargs.update({'coder': coder, 'country' : {'code': CC or country}})
+        kwargs.update({'coder': coder, 'country' : {'code': CC or country},
+                       'met_prep': prepare_data})
+                        # 'opt_load': {}, 'opt_fmt': {}, 'opt_save': {}
         harmonise(metadata, **kwargs)
     except:
         raise IOError('harmonisation process for country %s failed...' % country)
@@ -177,17 +213,58 @@ def harmoniseCountry(country=None, coder=None, **kwargs):
 
 #%% 
 #==============================================================================
-# Function run
+# Main functions
 #==============================================================================
 
 run = harmoniseCountry
-    
 
-#%% 
-#==============================================================================
-# Main function
-#==============================================================================
+def __main():
+    """Parse and check the command line with default arguments.
+    """
+    parser = OptionParser(                                                  \
+        description=                                                        \
+    """Harmonise input national data on health care services.""",
+        usage=                                                              \
+    """usage:         harmonise [options] <code> 
+    <code> :          country code."""                                      \
+                        )
+    
+    #parser.add_option("-c", "--cc", action="store", dest="cc",
+    #                  help="country ISO-code.",
+    #                  default=None)
+    parser.add_option("-c", "--geocoder", action="store", dest="coder",
+                      help="geocoder.",
+                      default=None)
+    parser.add_option("-k", "--geokey", action="store", dest="key",
+                      help="geocoder key.",
+                      default=None)
+    #parser.add_option("-r", "--dry-run", action="store_true", dest="dryrun", 
+    #                  help="run the script without creating the file")
+    (opts, args) = parser.parse_args()
+
+    opts.test=1
+    
+    # define the input metadata file (base)name
+    if not args in (None,()):
+        country = args[0]
+    else:
+        # parser.error("country name is required.")
+        country = list(COUNTRIES.values())[0]
+        
+    coder = opts.coder
+    if isinstance(coder, string_types): 
+        coder = {coder: opts.key}
+    elif coder is not None:
+        parser.error("country name is required.")
+    
+    # run the generator
+    try:
+        run(country, coder)
+    except IOError:
+        warnings.warn('  ERROR: data file not created')
+    else:
+        warnings.warn('  OK: data file correctly created')
 
 if __name__ == '__main__':
-    run()
+    __main()
 
