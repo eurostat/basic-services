@@ -47,6 +47,10 @@ from pyhcs import BASENAME, COUNTRIES
 BASETYPE        = {t.__name__: t for t in [type, bool, int, float, str, datetime]}
 __type2name = lambda t: t.__name__  # lambda t: {v:k for (k,v) in BASETYPE.items()}[t]    
 
+__thisdir = osp.dirname(__file__)
+__cfg = "config"
+__cfgfile = osp.join(__thisdir,  "%s%s.json" % (__cfg, BASENAME))
+
 #%%
 
 OCONFIGNAME     = ["index",                                             \
@@ -87,7 +91,7 @@ INDEX           = OrderedDict( [
     ("city",     {"name": "city", "desc":           "City name (sometimes refers to a region or a municipality)",            
                   "type": __type2name(str),         "values": None}),
     ("cc",       {"name": "cc", "desc":             "Country code (ISO 3166-1 alpha-2 format)",              
-                  "type": __type2name(str),         "values": COUNTRIES}),
+                  "type": __type2name(str),         "values": list(COUNTRIES.values())[0]}),
     ("country",  {"name": "country",                "desc": "Country name",         
                   "type": __type2name(str),         "values": None}),
     ("beds",     {"name": "cap_beds",               "desc": "Measure of capacity by number of beds (most common)",        
@@ -121,6 +125,9 @@ INDEX           = OrderedDict( [
 
 
 #%%
+#==============================================================================
+# Class __JSON
+#==============================================================================
 
 class __JSON(object):
     
@@ -168,17 +175,71 @@ class __JSON(object):
 
 
 #%%
+#==============================================================================
+# Functions reload and save
+#==============================================================================
+        
+def reload():
+    """Reloading metadata from default config file into global configuration 
+    variables.
+    
+        >>> config.reload()
+    """
+    try:
+        assert osp.exists(__cfgfile)
+        with open(__cfgfile, 'r') as fp:
+            __cfgmeta = __JSON.load(fp)#analysis:ignore
+    except (AssertionError,ImportError):
+        raise IOError('config file not available')
+    else:
+        warnings.warn('loading config file...')
+    if __cfgmeta == {}:
+        raise IOError('no global configuration variable loaded')        
+    for var in OCONFIGNAME:
+        try:
+            exec(str(var).upper() + ' = __cfgmeta.get("' + str(var).lower() + '",' + str(var).upper()+ ')')
+        except:
+            warnings.warn('global configuration variable %s not loaded' % var)
 
-__thisdir = osp.dirname(__file__)
-__cfg = "config"
-__cfgfile = osp.join(__thisdir,  "%s%s.json" % (__cfg, BASENAME))
+def save():
+    """Saving global configuration variables as metadata into default config file.
+    
+        >>> config.save()
+    """
+    try:
+        assert osp.exists(__cfgfile)
+    except AssertionError:
+        warnings.warn('config file will be created')
+    else:
+        warnings.warn('config file will be overwritten')
+    __cfgmeta = {}
+    for var in OCONFIGNAME:
+        try:
+            exec('__cfgmeta.update({"' + str(var).lower() + '" : ' + str(var).upper() + '})')
+        except:         
+            warnings.warn('global configuration variable %s not saved' % var)
+    if __cfgmeta == {}:
+        raise IOError('no global configuration variable available')        
+    try:
+        with open(__cfgfile, 'w') as fp:
+            __JSON.dump(__cfgmeta,fp)
+    except:
+        raise IOError('error writing config file')
+    else:
+        warnings.warn('writing config file...')
+
+
+#%%
+#==============================================================================
+# program run when loading the module
+#==============================================================================
 
 try:
     assert osp.exists(__cfgfile)
     with open(__cfgfile, 'r') as fp:
         __cfgmeta = __JSON.load(fp)
 except (AssertionError,ImportError):
-    warnings.warn('metadata file not available - it will be created')
+    warnings.warn('config file not available - it will be created')
     __cfgmeta = {}
     for var in OCONFIGNAME:
         try:
@@ -197,7 +258,7 @@ except (AssertionError,ImportError):
     with open(__cfgfile, 'w') as fp:
         __JSON.dump(__cfgmeta,fp)
 else:
-    warnings.warn('loading configuration parameters from metadata file')
+    warnings.warn('loading configuration parameters from config file')
     for var in OCONFIGNAME:
         try:
             exec(str(var).upper() + ' = __cfgmeta.get("' + str(var).lower() + '",' + str(var).upper()+ ')')
