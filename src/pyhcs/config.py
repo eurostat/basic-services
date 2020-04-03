@@ -20,10 +20,12 @@ the output integrated data.
 # *since*:        Tue Mar 31 22:51:37 2020
 
 #%%
+
+from os import path as osp
 import warnings#analysis:ignore
 
 from collections import OrderedDict, Mapping, Sequence
-from os import path as osp
+from six import string_types
 
 from datetime import datetime
 
@@ -45,11 +47,11 @@ from pyhcs import BASENAME, COUNTRIES
 #%%
 
 BASETYPE        = {t.__name__: t for t in [type, bool, int, float, str, datetime]}
-__type2name = lambda t: t.__name__  # lambda t: {v:k for (k,v) in BASETYPE.items()}[t]    
+__type2name     = lambda t: t.__name__  # lambda t: {v:k for (k,v) in BASETYPE.items()}[t]    
 
-__thisdir = osp.dirname(__file__)
-__cfg = "config"
-__cfgfile = osp.join(__thisdir,  "%s%s.json" % (__cfg, BASENAME))
+__THISDIR       = osp.dirname(__file__)
+__CFGNAME       = "config%s" % BASENAME
+__CFGFILE       = osp.join(__THISDIR,  "%s.json" % __CFGNAME)
 
 #%%
 
@@ -59,14 +61,14 @@ OCONFIGNAME     = ["index",                                             \
 """Metadata fields related to output template.
 """
 
-FMT             = {"geojson": "json", "json": "json", "csv": "csv", "gpkg": "gpkg"}    
+FMT             = {"geojson": "geojson", "json": "json", "csv": "csv", "gpkg": "gpkg"}    
 LANG            = "en"
 SEP             = ","
 ENC             = "utf-8"
 DATE            = "%d/%m/%Y"# format DD/MM/YYYY
 PROJ            = None # "WGS84"
     
-PATH            = "../data/" # "../data/%s"
+PATH            = osp.abspath(osp.join(__THISDIR,"../../data/")) # "../../data/%s"
 FILE            = "%s.%s"
 
 INDEX           = OrderedDict( [
@@ -179,50 +181,58 @@ class __JSON(object):
 # Functions reload and save
 #==============================================================================
         
-def reload():
+def reload(src=None):
     """Reloading metadata from default config file into global configuration 
     variables.
     
         >>> config.reload()
     """
+    if src is None:
+        src = __CFGFILE
+    elif not isinstance(src, string_types):
+        raise TypeError('wrong source config file %s' % src)
     try:
-        assert osp.exists(__cfgfile)
-        with open(__cfgfile, 'r') as fp:
-            __cfgmeta = __JSON.load(fp)#analysis:ignore
+        assert osp.exists(src)
+        with open(src, 'r') as fp:
+            cfgmeta = __JSON.load(fp)#analysis:ignore
     except (AssertionError,ImportError):
         raise IOError('config file not available')
     else:
         warnings.warn('loading config file...')
-    if __cfgmeta == {}:
+    if cfgmeta == {}:
         raise IOError('no global configuration variable loaded')        
     for var in OCONFIGNAME:
         try:
-            exec(str(var).upper() + ' = __cfgmeta.get("' + str(var).lower() + '",' + str(var).upper()+ ')')
+            exec(str(var).upper() + ' = cfgmeta.get("' + str(var).lower() + '",' + str(var).upper()+ ')')
         except:
             warnings.warn('global configuration variable %s not loaded' % var)
 
-def save():
+def save(dest=None):
     """Saving global configuration variables as metadata into default config file.
     
         >>> config.save()
     """
+    if dest is None:
+        dest = __CFGFILE
+    elif not isinstance(dest, string_types):
+        raise TypeError('wrong destination config file %s' % dest)
     try:
-        assert osp.exists(__cfgfile)
+        assert osp.exists(dest)
     except AssertionError:
         warnings.warn('config file will be created')
     else:
         warnings.warn('config file will be overwritten')
-    __cfgmeta = {}
+    cfgmeta = {}
     for var in OCONFIGNAME:
         try:
-            exec('__cfgmeta.update({"' + str(var).lower() + '" : ' + str(var).upper() + '})')
+            exec('cfgmeta.update({"' + str(var).lower() + '" : ' + str(var).upper() + '})')
         except:         
             warnings.warn('global configuration variable %s not saved' % var)
-    if __cfgmeta == {}:
+    if cfgmeta == {}:
         raise IOError('no global configuration variable available')        
     try:
-        with open(__cfgfile, 'w') as fp:
-            __JSON.dump(__cfgmeta,fp)
+        with open(dest, 'w') as fp:
+            __JSON.dump(cfgmeta,fp)
     except:
         raise IOError('error writing config file')
     else:
@@ -235,8 +245,8 @@ def save():
 #==============================================================================
 
 try:
-    assert osp.exists(__cfgfile)
-    with open(__cfgfile, 'r') as fp:
+    assert osp.exists(__CFGFILE)
+    with open(__CFGFILE, 'r') as fp:
         __cfgmeta = __JSON.load(fp)
 except (AssertionError,ImportError):
     warnings.warn('config file not available - it will be created')
@@ -255,7 +265,7 @@ except (AssertionError,ImportError):
     #              "proj":      PROJ,
     #              "path":      PATH,
     #              "file":      FILE}
-    with open(__cfgfile, 'w') as fp:
+    with open(__CFGFILE, 'w') as fp:
         __JSON.dump(__cfgmeta,fp)
 else:
     warnings.warn('loading configuration parameters from config file')
