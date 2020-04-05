@@ -347,7 +347,7 @@ class MetaHCS(dict):
     def save(self, dest=None, **kwargs):
         if dest is None:
             try:
-                dest = osp.join(THISDIR, "%s%s.json" % (self.__cc, BASENAME)))
+                dest = osp.join(THISDIR, "%s%s.json" % (self.__cc, BASENAME))
             except:
                 raise IOError('no destination metadata file defined')
         elif not isinstance(dest, string_types):
