@@ -106,7 +106,7 @@ def validateCountry(country=None, **kwargs):
                 warnings.warn('column %s is filled with missing values only' % col)
         else:
             warnings.warn('no missing values in column %s' % col)
-        # check tyoe
+        # check type
         dtype = index[col].get('type')
         if dtype is not None:
             try:
@@ -129,9 +129,16 @@ def validateCountry(country=None, **kwargs):
                     pd.to_datetime(df[col], format=dfmt, errors='coerce').notnull().all() is True
                 except AssertionError:
                     warnings.warn('unexpected date format for column %s' % col)
+    # check id uniquiness
+    try: # note the use of INDEX here, not index, though the names end up being
+        # the same
+        assert df[INDEX['id']['name']].dropna().is_unique is True
+    except AssertionError:
+        raise IOError('duplicated identifier IDs')  
     # check geographical coordinates
     for lL in ['lat','lon']:
-        if lL in df.columns:
+        col = INDEX[lL]['name']
+        if col in df.columns:
             try:
                 assert df[col].dropna().between(MINMAX_LL[lL][0],MINMAX_LL[lL][1]).all() is True
             except AssertionError:
