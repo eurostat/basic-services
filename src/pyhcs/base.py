@@ -215,7 +215,40 @@ class MetaHCS(dict):
     
         >>> meta = MetaHCS(**metadata)
     """
-
+    
+    #/************************************************************************/
+    @classmethod
+    def template(cls, country=None, **kwargs):
+        """"Create a template country metadata file as a JSON file
+        
+            >>> MetaHCS.template()
+        """
+        if country is None:
+            country = 'CC'
+        elif not isinstance(country, string_types):
+            raise TypeError('wrong type for country code - must be a string')
+        temp = dict.fromkeys(IMETANAME)
+        # dumb initialisation
+        temp.update({ 'country':     {'code': country.upper(), 'name': ''},
+                      'lang':        {'code': country.lower(), 'name': ''},
+                      'file':        '%s.csv' % country ,
+                      # 'proj':        None,
+                      'path':        '../../data/raw/',
+                      'enc':         'latin1',
+                      'sep':         ';', 
+                      'date':        '%d-%m-%Y', 
+                      'columns':     [ ],
+                      'index':       dict.fromkeys(INDEX.keys())
+                      })
+        temp['columns'].append([{country.lower(): 'column1', 'en': 'column1', 'fr': 'colonne1', 'de': 'Spalte1'},
+                             {country.lower(): 'column2', 'en': 'column1', 'fr': 'colonne2', 'de': 'Spalte2'}])
+        [temp['index'].update({list(INDEX.keys())[i]: 'column%s' % str(i+1)}) for i in [0,1]]
+        # create the metadata structure with this dumb template
+        template = cls(temp)
+        # save it...somewhere
+        dest = osp.join(THISDIR, "temp%s%s.json" % (country.upper(), BASENAME))
+        template.save(dest, **kwargs)
+                
     #/************************************************************************/
     def __init__(self, *args, **kwargs):
         if not args in ((),(None,)):
@@ -314,7 +347,7 @@ class MetaHCS(dict):
     def save(self, dest=None, **kwargs):
         if dest is None:
             try:
-                dest = osp.join(THISDIR, "%s%s.json" % (self.__cc, BASENAME))
+                dest = osp.join(THISDIR, "%s%s.json" % (self.__cc, BASENAME)))
             except:
                 raise IOError('no destination metadata file defined')
         elif not isinstance(dest, string_types):
@@ -325,14 +358,14 @@ class MetaHCS(dict):
             warnings.warn('destination metadata file will be created')
         else:
             warnings.warn('destination metadata file will be overwritten')
-            
-        meta = dict(self.copy())
-        [meta.pop(var) for var in meta.keys() if var not in IMETANAME]
+        meta = {k:v for (k,v) in dict(self.copy()).items() if k in IMETANAME}
         if meta == {}:
             raise IOError('no metadata variable available')        
+        with open(dest, 'w') as fp:
+            json.dump(meta, fp, **kwargs)
         try:
             with open(dest, 'w') as fp:
-                json.dump(dest,fp, **kwargs)
+                json.dump(meta, fp, **kwargs)
         except:
             raise IOError('error writing metadata file')
         else:
