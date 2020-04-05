@@ -177,11 +177,10 @@ def harmoniseCountry(country=None, coder=None, **kwargs):
         prepare_data = getattr(imp, 'prepare_data', None)
         assert prepare_data is not None
     except:
-        warnings.warn('country-specific data preparation method loaded')
+        # warnings.warn('no data preparation method used')
         prepare_data = None # anyway...
     else:
-        # warnings.warn('no data preparation method used')
-        pass
+        warnings.warn('country-specific data preparation method loaded')
     # load country-dedicated metadata when available 
     metadata = None
     metaname = '%s.json' % ccname 

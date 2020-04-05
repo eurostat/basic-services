@@ -224,14 +224,14 @@ class MetaHCS(dict):
             >>> MetaHCS.template()
         """
         if country is None:
-            country = 'CC'
+            country = ''
         elif not isinstance(country, string_types):
             raise TypeError('wrong type for country code - must be a string')
         temp = dict.fromkeys(IMETANAME)
         # dumb initialisation
-        temp.update({ 'country':     {'code': country.upper(), 'name': ''},
-                      'lang':        {'code': country.lower(), 'name': ''},
-                      'file':        '%s.csv' % country ,
+        temp.update({ 'country':     {'code': country.upper() or 'CC', 'name': ''},
+                      'lang':        {'code': country.lower() or 'cc', 'name': ''},
+                      'file':        '%s.csv' % country or 'CC' ,
                       # 'proj':        None,
                       'path':        '../../data/raw/',
                       'enc':         'latin1',
@@ -240,13 +240,13 @@ class MetaHCS(dict):
                       'columns':     [ ],
                       'index':       dict.fromkeys(INDEX.keys())
                       })
-        temp['columns'].append([{country.lower(): 'column1', 'en': 'column1', 'fr': 'colonne1', 'de': 'Spalte1'},
-                             {country.lower(): 'column2', 'en': 'column1', 'fr': 'colonne2', 'de': 'Spalte2'}])
+        temp['columns'].extend([{country.lower() or 'cc': 'column1', 'en': 'column1', 'fr': 'colonne1', 'de': 'Spalte1'},
+                             {country.lower() or 'cc': 'column2', 'en': 'column1', 'fr': 'colonne2', 'de': 'Spalte2'}])
         [temp['index'].update({list(INDEX.keys())[i]: 'column%s' % str(i+1)}) for i in [0,1]]
         # create the metadata structure with this dumb template
         template = cls(temp)
         # save it...somewhere
-        dest = osp.join(THISDIR, "temp%s%s.json" % (country.upper(), BASENAME))
+        dest = osp.join(THISDIR, "%s%s.json" % (country.upper() or 'temp', BASENAME))
         template.save(dest, **kwargs)
                 
     #/************************************************************************/
@@ -1168,8 +1168,10 @@ class BaseHCS(object):
             ind = INDEX['geo_qual']['name']
             self.data[ind] = geo_qual 
             self.oindex.update({'geo_qual': ind})
+            # no need: self.icolumns.extend([{'en': ind}])
         if 'lat' in self.oindex and 'lon' in self.oindex:
             self.oindex.update({'lat': olat, 'lon': olon})
+            # no need: self.icolumns.extend([{'en': olat}, {'en': olon}}])
         # cast
         # self.data[olat], self.data[olon] = pd.to_numeric(self.data[olat]), pd.to_numeric(self.data[olon])
         self.data[olat], self.data[olon] =                              \
