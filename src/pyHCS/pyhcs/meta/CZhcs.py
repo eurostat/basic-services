@@ -25,7 +25,7 @@ CC              = 'CZ'
 #                     'lang':        {'code': 'cs', 'name': 'czech'}, 
 #                     'proj':        None,
 #                     'file':        'export-2020-02.csv',
-#                     'path':        '../../data/raw/',
+#                     'path':        '../../../data/raw/',
 #                     'enc':         'latin1',
 #                     'sep':         ';', 
 #                     'date':        '%d-%m-%Y %H:%M',

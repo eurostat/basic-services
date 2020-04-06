@@ -40,7 +40,7 @@ CC              = 'BG'
 #                     'lang':        {'code': 'bg', 'name': 'bulgarian'}, 
 #                     'proj':        None,
 #                     'file':        'HE_HOSP_12_13_EN.xls',
-#                     'path':        '../../data/raw/',
+#                     'path':        '../../../data/raw/',
 #                     'enc':         'latin1',
 #                     'sep':         ';', 
 #                     'date':        None, #'%d-%m-%Y %H:%M',
