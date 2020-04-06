@@ -1,0 +1,8 @@
+json
+geojson
+shapely
+pyproj
+geopy
+folium
+googletrans
+happygisco
