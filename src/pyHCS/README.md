@@ -8,8 +8,6 @@ Harmonised formatting of national data on healthcare services.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/eurostat/healthcare-services/master?filepath=src/pyHCS)
 
-TBC
-
 Once installed, the module can be imported simply:
 
 ```python
@@ -18,7 +16,8 @@ Once installed, the module can be imported simply:
 
 **Notebook examples**
 
-TBC
+* A [basic example](https://nbviewer.jupyter.org/github/eurostat/healthcare-services/blob/master/src/pyHCS/notebooks/basic_example.ipynb) to start with the module.
+* ...
 
 **Usage**
 
