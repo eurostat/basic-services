@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-.. _start
+.. __start__
 
 Dumb start. 
 """
