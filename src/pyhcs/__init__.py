@@ -11,14 +11,24 @@ services
 # *credits*:      `gjacopo <jacopo.grazzini@ec.europa.eu>`_ 
 # *since*:        Sun Mar 29 16:21:29 2020
 
+# 88""Yb Yb  dP 88  88   dP""b8  dP""b8  
+# 88__dP  YbdP  88__88  dP   `"  Yb_
+# 88"""   8P    88""88  Yb         "db
+# 88     dP     88  88  YboodP   boodP
+
+#%%
+
 from os import path as osp
+
+
+#%%
 
 PACKNAME            = 'pyhcs' # this package...
 
 BASENAME            = 'hcs'.lower() # whatever we choose, let's make it low...
 __basename          = '' # __base
 
-__packages          = ['numpy', 'pandas', 'json', 'geopy', 'geojson', 'happygisco', 'pyproj', 'googletrans']
+__packages          = ['numpy', 'pandas', 'json', 'datetime', 'geopy', 'geojson', 'happygisco', 'pyproj', 'googletrans']
 
 __modules           = ['__start', 'config', 'base' , 'harmonise']
 
