@@ -8,8 +8,6 @@ Harmonised formatting of national data on healthcare services.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/eurostat/healthcare-services/master?filepath=src/pyHCS)
 
-https://github.com/eurostat/healthcare-services/tree/master/src/pyhcs
-
 TBC
 
 Once installed, the module can be imported simply:

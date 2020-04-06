@@ -1,4 +1,3 @@
-json
 geojson
 shapely
 pyproj
