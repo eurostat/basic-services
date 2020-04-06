@@ -6,6 +6,8 @@ Harmonised formatting of national data on healthcare services.
 
 **Quick install and start**
 
+[![Binder](https://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/eurostat/statistics-coded/master?filepath=index.ipynb)
+
 TBC
 
 Once installed, the module can be imported simply:
