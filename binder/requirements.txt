@@ -4,4 +4,3 @@ pyproj
 geopy
 folium
 googletrans
-happygisco
