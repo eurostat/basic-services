@@ -152,7 +152,7 @@ else:
     from pyproj import CRS as crs, Transformer
 
 try:
-    import geojson
+    import geojson#analysis:ignore 
 except ImportError: 
     #warnings.warn('missing geosjon package (https://github.com/jazzband/geojson)')   
     _is_geojson_installed = False
@@ -1135,7 +1135,7 @@ class BaseHCS(object):
             elif order == 'Ll':         lat, lon = olon, olat
             else:
                 raise IOError("unknown order keyword - must be 'lL' or 'Ll'")
-            self.data[[lat, lon]] = self.data[latlon].str.split(pat=" +", n=1, expand=True) #.astype(float)
+            self.data[[lat, lon]] = self.data[latlon].str.split(pat=r'\s+', n=1, expand=True) #.astype(float)
             geo_qual = 3
         elif lat in self.data.columns and lon in self.data.columns: 
         # elif lat in self.icolumns[lang] and lon in self.icolumns[lang]: 
