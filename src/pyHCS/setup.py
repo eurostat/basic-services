@@ -5,8 +5,6 @@
 .. _setup
 
 Setup script.
-
-**Description**
     
 **Dependencies**
 
@@ -20,14 +18,14 @@ Setup script.
 
 #%%
 
-import io, os, sys
+import io, sys, os
 from shutil import rmtree
 
 from setuptools import find_packages, setup, Command
 
 #from pyhcs import PACKNAME # of course not...
 
-__thisdir = os.path.abspath(os.path.dirname(__file__))
+__THISDIR = os.path.abspath(os.path.dirname(__file__))
 
 
 #%%
@@ -48,7 +46,7 @@ REQUIRES_PYTHON = '>=3.6.0'
 
 # packages required for this module to be executed
 REQUIRED = [
-    'numpy', 'pandas', 'requests', 'json', 'datetime', 'geopy', 'geojson', 'pyproj'
+    'numpy', 'pandas', 'requests', 'geopy', 'geojson', 'pyproj' #, 'json', 'datetime'
 ]
 
 # optional packages
@@ -61,7 +59,7 @@ EXTRAS = {
 
 # import the README and use it as the long-description.
 try:
-    with io.open(os.path.join(__thisdir, 'README.md'), encoding='utf-8') as f:
+    with io.open(os.path.join(__THISDIR, 'README.md'), encoding='utf-8') as f:
         long_description = '\n' + f.read()
 except FileNotFoundError:
     long_description = DESCRIPTION
@@ -69,7 +67,7 @@ except FileNotFoundError:
 # load the package's __version__.py module as a dictionary.
 about = {}
 if not VERSION:
-    with open(os.path.join(__thisdir, PACKNAME, '__version__.py')) as f:
+    with open(os.path.join(__THISDIR, PACKNAME, '__version__.py')) as f:
         exec(f.read(), about)
 else:
     about['__version__'] = VERSION
@@ -97,7 +95,7 @@ class UploadCommand(Command):
     def run(self):
         try:
             self.status('Removing previous builds…')
-            rmtree(os.path.join(__thisdir, 'dist'))
+            rmtree(os.path.join(__THISDIR, 'dist'))
         except OSError:
             pass
 

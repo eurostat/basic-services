@@ -181,9 +181,9 @@ else:
     # warnings.warn('Levenshtein help: https://rawgit.com/ztane/python-Levenshtein/master/docs/Levenshtein.html')
     _is_levenshtein_installed = True
 
-from pyhcs import BASENAME, COUNTRIES
+from pyhcs import BASENAME, METABASE, COUNTRIES
 from pyhcs.config import BASETYPE, INDEX, DATE, LANG, SEP, ENC, \
-                            PATH, FILE, FMT, PROJ # OCONFIGNAME 
+                            PATH, FILE, FMT, PROJ # OCFGNAME 
 
 IMETANAME       = ['country', 'lang', 'proj', 'file', 'path', 'enc', 'sep', 
                    'columns', 'index'] # default metadata fields
@@ -227,6 +227,7 @@ class MetaHCS(dict):
             country = ''
         elif not isinstance(country, string_types):
             raise TypeError('wrong type for country code - must be a string')
+        as_file = kwargs.pop('as_file', True)
         temp = dict.fromkeys(IMETANAME)
         # dumb initialisation
         temp.update({ 'country':     {'code': country.upper() or 'CC', 'name': ''},
@@ -245,8 +246,10 @@ class MetaHCS(dict):
         [temp['index'].update({list(INDEX.keys())[i]: 'column%s' % str(i+1)}) for i in [0,1]]
         # create the metadata structure with this dumb template
         template = cls(temp)
+        if as_file is False:
+            return template
         # save it...somewhere
-        dest = osp.join(THISDIR, "%s%s.json" % (country.upper() or 'temp', BASENAME))
+        dest = osp.join(THISDIR, METABASE, "%s%s.json" % (country.upper() or 'temp', BASENAME))
         template.save(dest, **kwargs)
                 
     #/************************************************************************/
@@ -593,28 +596,28 @@ class BaseHCS(object):
                 
     #/************************************************************************/
     @staticmethod
-    def to_json(df, columns):
+    def to_json(df, columns=None):
         """JSON output formatting.
         """
         try:
-            assert isinstance(columns, string_types)                    or \
+            assert columns is None or isinstance(columns, string_types)     or \
                 (isinstance(columns, Sequence) and all([isinstance(c,string_types) for c in columns]))
         except:
             raise IOError('wrong format for input columns')
         if isinstance(columns, string_types):
             columns == [columns,]
-        if columns == []:
+        if columns in (None,[]):
             columns = df.columns
         columns = list(set(columns).intersection(df.columns))
         return df[columns].to_dict('records') 
 
     #/************************************************************************/
     @staticmethod
-    def to_geojson(df, columns, latlon=['lat', 'lon']):
+    def to_geojson(df, columns=None, latlon=['lat', 'lon']):
         """GEOsJSON output formatting.
         """
         try:
-            assert isinstance(columns, string_types)                    or \
+            assert columns is None or isinstance(columns, string_types)     or \
                 (isinstance(columns, Sequence) and all([isinstance(c,string_types) for c in columns]))
         except:
             raise IOError('wrong format for input columns')
@@ -625,7 +628,7 @@ class BaseHCS(object):
             raise TypeError('wrong format for input lat/lon columns')
         if isinstance(columns, string_types):
             columns == [columns,]
-        if columns == []:
+        if columns in (None,[]):
             columns = list(set(df.columns))
         columns = list(set(columns).intersection(set(df.columns)).difference(set([lat,lon])))
         if _is_geojson_installed is True: 
@@ -650,7 +653,7 @@ class BaseHCS(object):
     
     #/************************************************************************/
     @staticmethod
-    def to_gpkg(df, columns):
+    def to_gpkg(df, columns=None):
         """
         """
         warnings.warn('method for gpkg not implemented')

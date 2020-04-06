@@ -38,7 +38,7 @@ try:
 except ImportError:
     warnings.warn('inline command deactivated')
 
-from pyhcs import COUNTRIES
+from pyhcs import PACKNAME, COUNTRIES#analysis:ignore
 from pyhcs.config import INDEX, PATH, FILE, FMT, DATE, ENC, SEP#analysis:ignore
 
 __THISDIR = osp.dirname(__file__)

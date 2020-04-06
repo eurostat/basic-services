@@ -55,8 +55,8 @@ except:
     # import_module = lambda mod: exec('from %s import %s' % mod.split('.'))
     import_module = lambda _mod, pack: exec('from %s import %s' % (pack, _mod.split('.')[1])) or None
 
-from pyhcs import PACKNAME, BASENAME, COUNTRIES#analysis:ignore
-from pyhcs.config import OCONFIGNAME#analysis:ignore
+from pyhcs import PACKNAME, BASENAME, METABASE, COUNTRIES#analysis:ignore
+from pyhcs.config import OCFGNAME#analysis:ignore
 from pyhcs.base import IMETANAME, MetaHCS, hcsFactory#analysis:ignore
 
 __THISDIR       = osp.dirname(__file__)
@@ -69,6 +69,7 @@ __CCNAME        = lambda cc: "%s%s" % (cc,BASENAME)
 #==============================================================================
 
 def __harmonise(metadata, **kwargs):
+    as_file = kwargs.pop('as_file', True)
     try:
         assert isinstance(metadata,(MetaHCS,Mapping))  
     except:
@@ -97,10 +98,13 @@ def __harmonise(metadata, **kwargs):
     hcs.prepare_data(**opt_prep)
     opt_format = kwargs.pop("opt_format", {})        
     hcs.format_data(**opt_format)
+    if as_file is False:
+        return hcs
     opt_save = kwargs.pop("opt_save", {'geojson': {}, 'csv': {}})        
     hcs.save_data(fmt='geojson', **opt_save.get('geojson',{}))
     hcs.save_data(fmt='csv',**opt_save.get('csv',{}))
-    # hcs.save_meta(fmt='json')
+    # hcs.save_meta(fmt='json', **opt_save.get('json',{})) 
+    return # hcs
 
 
 #%% 
@@ -135,9 +139,9 @@ def harmoniseCountry(country=None, coder=None, **kwargs):
     modname = ccname
     fname = '%s.py' % ccname 
     try:
-        assert osp.exists(osp.join(__THISDIR, fname))
+        assert osp.exists(osp.join(__THISDIR, METABASE, fname))
         # import_module('%s.%s' % (PACKNAME,modname) )
-        imp = import_module('.%s' % modname, PACKNAME)
+        imp = import_module('.%s' % modname, '%s.%s' % (PACKNAME,METABASE))
     except AssertionError:
         warnings.warn('no country py-file %s found - will proceed without' % fname)
     except ImportError:
@@ -185,7 +189,8 @@ def harmoniseCountry(country=None, coder=None, **kwargs):
     metadata = None
     metaname = '%s.json' % ccname 
     try:
-        assert osp.exists(osp.join(__THISDIR, metaname))
+        metaname = osp.join(__THISDIR, METABASE, metaname)
+        assert osp.exists(metaname)
         with open(metaname, 'r') as fp: 
             metadata = json.load(fp)
     except (AssertionError,FileNotFoundError):
@@ -198,16 +203,17 @@ def harmoniseCountry(country=None, coder=None, **kwargs):
         raise IOError('no metadata parsed - this cannot end up well')
     kwargs.update({'coder': coder, 'country' : {'code': CC or country},
                    'met_prep': prepare_data})
-                    # 'opt_load': {}, 'opt_fmt': {}, 'opt_save': {}
+                    # 'opt_load': {}, 'opt_fmt': {}, 'opt_save': {}        
     try:
         kwargs.update({'coder': coder, 'country' : {'code': CC or country},
                        'met_prep': prepare_data})
                         # 'opt_load': {}, 'opt_fmt': {}, 'opt_save': {}
-        harmonise(metadata, **kwargs)
+        res = harmonise(metadata, **kwargs) 
     except:
         raise IOError('harmonisation process for country %s failed...' % country)
     else:
         warnings.warn('harmonised data for country %s generated' % country)
+    return res
         
 
 #%% 

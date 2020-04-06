@@ -28,11 +28,14 @@ PACKNAME            = 'pyhcs' # this package...
 BASENAME            = 'hcs'.lower() # whatever we choose, let's make it low...
 __basename          = '' # __base
 
+METABASE            = 'meta'
+
 __packages          = ['numpy', 'pandas', 'json', 'datetime', 'geopy', 'geojson', 'happygisco', 'pyproj', 'googletrans']
 
-__modules           = ['__start', 'config', 'base' , 'harmonise']
+__modules           = ['config', 'base', 'harmonise', 'validate']
 
 __all__             = ['%s%s' % (__,__basename) for __ in __modules]
+__all__.extend(['__version__', '__start__', METABASE])
 
 __countries         =  {"EU27_2020": 
                             ["BE", "BG", "CZ", "DK", "DE", "EE", "IE", "EL", "ES", "FR", "HR", "IT", "CY", "LV", "LT", "LU", "HU", "MT", "NL", "AT", "PL", "PT", "RO", "SI", "SK", "FI", "SE"

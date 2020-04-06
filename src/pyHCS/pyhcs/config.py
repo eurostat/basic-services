@@ -55,7 +55,7 @@ __CFGFILE       = osp.join(__THISDIR,  "%s.json" % __CFGNAME)
 
 #%%
 
-OCONFIGNAME     = ["index",                                             \
+OCFGNAME        = ["index",                                             \
                    "fmt", "lang", "sep", "enc", "date", "proj",         \
                    "path", "file"] #analysis:ignore
 """Metadata fields related to output template.
@@ -68,7 +68,7 @@ ENC             = "utf-8"
 DATE            = "%d/%m/%Y"# format DD/MM/YYYY
 PROJ            = None # "WGS84"
     
-PATH            = osp.abspath(osp.join(__THISDIR,"../../data/")) # "../../data/%s"
+PATH            = "../../../data/" # osp.abspath(osp.join(__THISDIR,"../../../data/")) 
 FILE            = "%s.%s"
 
 INDEX           = OrderedDict( [
@@ -201,7 +201,7 @@ def reload(src=None):
         warnings.warn('loading config file...')
     if cfgmeta == {}:
         raise IOError('no global configuration variable loaded')        
-    for var in OCONFIGNAME:
+    for var in OCFGNAME:
         try:
             exec(str(var).upper() + ' = cfgmeta.get("' + str(var).lower() + '",' + str(var).upper()+ ')')
         except:
@@ -223,7 +223,7 @@ def save(dest=None):
     else:
         warnings.warn('config file will be overwritten')
     cfgmeta = {}
-    for var in OCONFIGNAME:
+    for var in OCFGNAME:
         try:
             exec('cfgmeta.update({"' + str(var).lower() + '" : ' + str(var).upper() + '})')
         except:         
@@ -247,16 +247,16 @@ def save(dest=None):
 try:
     assert osp.exists(__CFGFILE)
     with open(__CFGFILE, 'r') as fp:
-        __cfgmeta = __JSON.load(fp)
+        OCFGMETA = __JSON.load(fp)
 except (AssertionError,ImportError):
     warnings.warn('config file not available - it will be created')
-    __cfgmeta = {}
-    for var in OCONFIGNAME:
+    OCFGMETA = {}
+    for var in OCFGNAME:
         try:
-            exec('__cfgmeta.update({"' + str(var).lower() + '" : ' + str(var).upper() + '})')
+            exec('OCFGMETA.update({"' + str(var).lower() + '" : ' + str(var).upper() + '})')
         except:         continue
     # this is not much different from doing:
-    #__cfgmeta  = {"index":     INDEX,
+    #OCFGMETA  = {"index":     INDEX,
     #              "fmt":       FMT,  
     #              "lang":      LANG,
     #              "sep":       SEP,
@@ -266,20 +266,20 @@ except (AssertionError,ImportError):
     #              "path":      PATH,
     #              "file":      FILE}
     with open(__CFGFILE, 'w') as fp:
-        __JSON.dump(__cfgmeta,fp)
+        __JSON.dump(OCFGMETA,fp)
 else:
     warnings.warn('loading configuration parameters from config file')
-    for var in OCONFIGNAME:
+    for var in OCFGNAME:
         try:
-            exec(str(var).upper() + ' = __cfgmeta.get("' + str(var).lower() + '",' + str(var).upper()+ ')')
+            exec(str(var).upper() + ' = OCFGMETA.get("' + str(var).lower() + '",' + str(var).upper()+ ')')
         except:         continue
     # this is nothing else than:
-    #INDEX      = __cfgmeta.get("index", INDEX)
-    #FMT        = __cfgmeta.get("fmt",   FMT)    
-    #LANG       = __cfgmeta.get("lang",  LANG)
-    #SEP        = __cfgmeta.get("sep",   SEP)
-    #ENCODING   = __cfgmeta.get("enc",   ENC)
-    #DATE       = __cfgmeta.get("date",  DATE)
-    #PROJ       = __cfgmeta.get("proj",  PROJ)
-    #PATH       = __cfgmeta.get("path",  PATH)
-    #FILE       = __cfgmeta.get("file",  FILE)
+    #INDEX      = OCFGMETA.get("index", INDEX)
+    #FMT        = OCFGMETA.get("fmt",   FMT)    
+    #LANG       = OCFGMETA.get("lang",  LANG)
+    #SEP        = OCFGMETA.get("sep",   SEP)
+    #ENCODING   = OCFGMETA.get("enc",   ENC)
+    #DATE       = OCFGMETA.get("date",  DATE)
+    #PROJ       = OCFGMETA.get("proj",  PROJ)
+    #PATH       = OCFGMETA.get("path",  PATH)
+    #FILE       = OCFGMETA.get("file",  FILE)
