@@ -1,143 +1,143 @@
 id,hospital_name,site_name,lat,lon,geo_qual,street,house_number,postcode,city,cc,country,cap_beds,cap_prac,cap_rooms,emergency,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date
-1,Vilniaus Universiteto ligoninė Santaros klinikos,,54.75179,25.27778,1,Santariškių,2,LT-08661,Vilnius,LT,Lithuania,1356,,,,general,public,,,,,31/12/2018,07/04/2020
-5,Vilniaus Universiteto ligoninės Santaros klinikos filialas vaikų ligoninė,,54.75488,25.28271,1,Santariškių,7,LT-08406,Vilnius,LT,Lithuania,515,,,,general,public,,,,,31/12/2018,07/04/2020
-32,Respublikinė Vilniaus universitetinė ligoninė,,54.6687,25.2077,1,Šiltnamių,29,,Vilnius,LT,Lithuania,673,,,,general,public,,,,,31/12/2018,07/04/2020
-3,Vilniaus Universiteto ligoninės Žalgirio klinika,,54.70476,25.27883,1,Žalgirio,117,,Vilnius,LT,Lithuania,58,,,,general,public,,,,,31/12/2018,07/04/2020
-10,Respublikinė Vilniaus psichiatrijos ligoninė,,54.68442,25.4182,1,Parko g.,21,,Vilnius,LT,Lithuania,542,,,,psychiatry,public,,,,,31/12/2018,07/04/2020
-11,Valstybinė teismo psichiatrijos tarnyba prie Sveikatos apsaugos miniterijos,,54.69489,25.39893,1,Kojelavičiaus,121,,Vilnius,LT,Lithuania,44,,,,psychiatry,public,,,,,31/12/2018,07/04/2020
-38,Vilniaus gimdymo namai,,54.66825,25.29132,1,Tyzenhauzų,18a,,Vilnius,LT,Lithuania,108,,,,maternity,public,,,,,31/12/2018,07/04/2020
-43,Respublikinis priklausomybės ligų centras,,54.69062042236328,25.269800186157227,2,G.Vilties,3,LT-03147,Vilnius,LT,Lithuania,90,,,,drug and alcohol abuse,public,,,,,31/12/2018,07/04/2020
-31,Vilniaus miesto klinikinė ligoninė,,54.7099,25.31549,1,Antakalnio,57,,Vilnius,LT,Lithuania,495,,,,general,public,,,,,31/12/2018,07/04/2020
-2,Vilniaus miesto klinikinės ligoninės Antakalnio filialas,,54.7206,25.31606,1,Antakalnio,124,LT-10200,Vilnius,LT,Lithuania,208,,,,general,public,,,,,31/12/2018,07/04/2020
-35,M.Marcinkevičiaus ligoninė,,54.67291,25.27649,1,Kauno g.,7,LT-03215,Vilnius,LT,Lithuania,280,,,,general,public,,,,,31/12/2018,07/04/2020
-39,Vilkpėdės ligoninė,,54.66528,25.2431,1,Vilkpėdės,3,,Vilnius,LT,Lithuania,292,,,,nursing,public,,,,,31/12/2018,07/04/2020
-41,Šv. Roko ligoninė,,54.70907,25.31512,1,Klinikų g.,2,,Vilnius,LT,Lithuania,295,,,,nursing,public,,,,,31/12/2018,07/04/2020
-37,Vilniaus m. psichikos sveikatos centras,,54.69174,25.30653,1,Vasaros,5,,Vilnius,LT,Lithuania,168,,,,psychiatry,public,,,,,31/12/2018,07/04/2020
-112,Grigiškių sveikatos priežiūros centras,,54.74487,25.27612,1,Mokyklos,10,,Vilnius,LT,Lithuania,56,,,,nursing,public,,,,,31/12/2018,07/04/2020
-13748,"VšĮ ""Pal. Kun. Mykolo Sopočkos hospisas""",,54.67578,25.29625,1,Rasų g.,4,,Vilnius,LT,Lithuania,14,,,,nursing,private,,,,,31/12/2018,07/04/2020
-10022,"UAB ""SK IMPEKS MEDICINOS DIAGNOSTIKOS CENTRAS""",,54.70568,25.31642,1,V.Grybo g.,32,,Vilnius,LT,Lithuania,16,,,,general,private,,,,,31/12/2018,07/04/2020
-12033,"UAB ""Kardiolita""",,54.71701,25.23024,1,Laisvės pr.,64a,,Vilnius,LT,Lithuania,48,,,,general,private,,,,,31/12/2018,07/04/2020
-12955,"UAB ""Aspersus""",,54.6955,25.43048,1,Pramonės g.,97,,Vilnius,LT,Lithuania,8,,,,psychiatry,private,,,,,31/12/2018,07/04/2020
-10006,"UAB ""BALTIJOS IR AMERIKOS TERAPIJOS IR CHIRURGIJOS KLINIKA",,54.73563,25.33878,1,Nemenčinės pl.,54a,,Vilnius,LT,Lithuania,30,,,,general,private,,,,,31/12/2018,07/04/2020
-13100,"UAB ""Gemma sveikatos centras""",,54.70587,25.32068,1,Bistryčios g.,13,,Vilnius,LT,Lithuania,156,,,,nursing,private,,,,,31/12/2018,07/04/2020
-13107,"UAB ""Socialiniai ir sveikatos projektai"". Ąžuolyno klinika",,54.70789,25.23633,1,Ąžuolyno g.,5a,,Vilnius,LT,Lithuania,30,,,,psychiatry,private,,,,,31/12/2018,07/04/2020
-6,Nacionalinis vėžio institutas,,54.75179,25.2821,1,Santariškių,1,LT-08660,Vilnius,LT,Lithuania,311,,,,oncology,public,,,,,31/12/2018,07/04/2020
-69,Laisvės atėmimo vietų ligoninė,,54.69062042236328,25.269800186157227,2,Pravieniškių g.,57,,Vilnius,LT,Lithuania,163,,,,general,public,,,,,31/12/2018,07/04/2020
-70,LR VRM Medicinos centras,,54.69004,25.28399,1,Žygimantų,8,LT-01102,Vilnius,LT,Lithuania,100,,,,general,public,,,,,31/12/2018,07/04/2020
-85,Šalčininkų r. ligoninė,,54.30597,25.38112,1,Nepriklausomybės,38,,Šalčininkai,LT,Lithuania,135,,,,general,public,,,,,31/12/2018,07/04/2020
-87,Eišiškių asmens sveikatos priežiūros centras,,54.16669,25.00153,1,Ligoninės g.,2a,LT-17176,Šalčininkų r.,LT,Lithuania,35,,,,nursing,public,,,,,31/12/2018,07/04/2020
-95,Širvintų ligoninė,,55.03833,24.96307,1,Vilniaus g.,85,LT-19121,Širvintos,LT,Lithuania,65,,,,general,public,,,,,31/12/2018,07/04/2020
-100,Švenčionių r. ligoninė,,55.12733,26.15651,1,Partizanų,4,LT-18126,Švenčionys,LT,Lithuania,120,,,,general,public,,,,,31/12/2018,07/04/2020
-109,Trakų ligoninė,,54.63757,24.9389,1,Mindaugo,17,,Trakai,LT,Lithuania,120,,,,general,public,,,,,31/12/2018,07/04/2020
-680,Onuškio palaikomojo gydymo ir slaugos ligoninė,,55.337310791015625,23.883544921875,2,K. Petrausko a.,6,,Trakų r.,LT,Lithuania,45,,,,nursing,public,,,,,31/12/2018,07/04/2020
-123,Ukmergės ligoninė,,55.25742,24.78655,1,Vytauto,105,LT-20184,Ukmergė,LT,Lithuania,189,,,,general,public,,,,,31/12/2018,07/04/2020
-138,Vilniaus r. centrinė poliklinika; Riešės slaugos ir palaikomojo gydymo ligoninė,,55.337310791015625,23.883544921875,2,Kalino,,,Vilniaus r.,LT,Lithuania,30,,,,nursing,public,,,,,31/12/2018,07/04/2020
-139,Vilniaus r. centrinė poliklinika; Juodšilių slaugos ir palaikomojo gydymo ligoninė,,55.337310791015625,23.883544921875,2,Šv. Uršulės g.,25,,Vilniaus r.,LT,Lithuania,36,,,,nursing,public,,,,,31/12/2018,07/04/2020
-140,Vilniaus r. centrinė poliklinika; Šumsko slaugos ir palaikomojo gydymo ligoninė,,54.84135728868823,25.4670543986557,2,Vilniaus,40,,Vilniaus r.,LT,Lithuania,35,,,,nursing,public,,,,,31/12/2018,07/04/2020
-143,Vilniaus r. Nemenčinės poliklinika,,54.85223740967964,25.473131975116626,1,Švenčionių g.,86,,Vilniaus r.,LT,Lithuania,38,,,,nursing,public,,,,,31/12/2018,07/04/2020
-120,Abromiškių reabilitacijos ligoninė,,54.76714,24.70849,1,Sanatorijos g.,72,LT-26130,Elektrėnų sav.,LT,Lithuania,300,,,,rehabilitation,public,,,,,31/12/2018,07/04/2020
-111,Elektrėnų ligoninė,,54.78675,24.66622,1,Taikos,8,,Elektrėnai,LT,Lithuania,88,,,,general,public,,,,,31/12/2018,07/04/2020
-1760,Vievio sveikatos priežiūros centras,,54.7642,24.65245,1,Liepų g.,16,,Elektrėnų sav.,LT,Lithuania,35,,,,nursing,public,,,,,31/12/2018,07/04/2020
-154,Lietuvos sveikatos mokslų universiteto ligoninė Kauno klinikos,,54.91852,23.92108,1,Eivienių,2,,Kaunas,LT,Lithuania,1737,,,,general,public,,,,,31/12/2018,07/04/2020
-155,LSMUL Kauno klinikų filialas Romainių tuberkuliozės ligoninė,,54.92328,23.8327,1,Šilainių pl.,21,,Kaunas,LT,Lithuania,165,,,,tuberculosis,public,,,,,31/12/2018,07/04/2020
-180,"LSMUL Kauno klinikų filialas Vaikų reabilitacijos ligoninė ""Lopšelis""",,54.91071,23.87372,1,Lopšelio,10,LT-47180,Kaunas,LT,Lithuania,35,,,,rehabilitation,public,,,,,31/12/2018,07/04/2020
-170,LSMUL Kauno klinikų filialas Onkologijos ligoninė,,54.85975,23.97698,1,Volungių,16,,Kaunas,LT,Lithuania,186,,,,oncology,public,,,,,31/12/2018,07/04/2020
-163,Kauno klinikinė ligoninė,,54.91515,23.85867,1,Josvainių,2,,Kaunas,LT,Lithuania,789,,,,general,public,,,,,31/12/2018,07/04/2020
-164,Respublikinė Kauno ligoninė,,54.87811,23.94312,1,Hipodromo,13,,Kaunas,LT,Lithuania,841,,,,general,public,,,,,31/12/2018,07/04/2020
-2055,Respublikinio priklausomybės ligų centro Kauno filialas,,54.90613,23.92529,1,Giedraičių,8,,Kaunas,LT,Lithuania,39,,,,drug and alcohol abuse,public,,,,,31/12/2018,07/04/2020
-159,K.Griniaus slaugos ir palaikomojo gydymo ligoninė,,54.8854,23.98039,1,Kruonio g.,21,,Kaunas,LT,Lithuania,345,,,,nursing,public,,,,,31/12/2018,07/04/2020
-10530,"AB ""Ortopedijos technika""",,54.91827,23.9527,1,Partizanų g.,17,,Kaunas,LT,Lithuania,20,,,,general,private,,,,,31/12/2018,07/04/2020
-10572,"UAB ""Bendrosios medicinos praktika""",,54.92622,23.96659,1,Savanorių pr.,423,LT-49287,Kaunas,LT,Lithuania,12,,,,general,private,,,,,31/12/2018,07/04/2020
-13537,"UAB ""Tautrimo Aštrausko klinika""",,54.87347,23.96851,1,Vičiūnų g.,24,,Kaunas,LT,Lithuania,5,,,,general,private,,,,,31/12/2018,07/04/2020
-13541,UAB Sauliaus Vikšraičio plastinės chirurgijos centras,,54.90271,23.91132,1,Savanorių pr.,75,,Kaunas,LT,Lithuania,6,,,,general,private,,,,,31/12/2018,07/04/2020
-13981,UAB Artmedica,,54.86956,23.87668,1,Kalvarijos g.,13,,Kaunas,LT,Lithuania,5,,,,general,private,,,,,31/12/2018,07/04/2020
-197,Jonavos ligoninė,,55.07944,24.27038,1,Žeimių,19,,Jonava,LT,Lithuania,151,,,,general,public,,,,,31/12/2018,07/04/2020
-200,Jonavos pirminės sveikatos priežiūros centras Bukonių slaugos ir palaikomojo gydymo ligoninė,,55.337310791015625,23.883544921875,2,Jaunystės,2,,Bukonių km. Jonavos r.,LT,Lithuania,27,,,,nursing,public,,,,,31/12/2018,07/04/2020
-209,Kaišiadorių ligoninė,,54.85388,24.42932,1,Beržyno g.,27,LT-56172,Kaišiadorių r.,LT,Lithuania,131,,,,general,public,,,,,31/12/2018,07/04/2020
-217,LSMUL Kauno klinikų filialas Kulautuvos reabilitacijos ligoninė,,55.337310791015625,23.883544921875,2,Akacijų g.,18,,Kauno r.,LT,Lithuania,82,,,,rehabilitation,public,,,,,31/12/2018,07/04/2020
-1745,Vilkijos pirminės sveikatos priežiūros centras,,54.86425437610662,24.589294394033622,2,Bažnyčios,23,,Kauno r.,LT,Lithuania,80,,,,nursing,public,,,,,31/12/2018,07/04/2020
-239,Kėdainių ligoninė,,55.30939,23.9843,1,Budrio,5,,Kėdainiai,LT,Lithuania,252,,,,general,public,,,,,31/12/2018,07/04/2020
-254,Prienų ligoninė,,54.631293,23.9613854,1,Pušyno,2,,4340 Prienai,LT,Lithuania,89,,,,general,public,,,,,31/12/2018,07/04/2020
-258,Balbieriškio pirminės sveikatos priežiūros centras,,54.51638,23.89177,1,Parko g.,5,LT-59241,Prienų r.,LT,Lithuania,27,,,,nursing,public,,,,,31/12/2018,07/04/2020
-259,Veiverių pirminės sveikatos priežiūros centras,,55.337310791015625,23.883544921875,2,Kauno,56,,Prienų r.,LT,Lithuania,15,,,,nursing,public,,,,,31/12/2018,07/04/2020
-257,Jiezno pirminės sveikatos priežiūros centras,,55.337310791015625,23.883544921875,2,Vilniaus,5,,Prienų r.,LT,Lithuania,15,,,,nursing,public,,,,,31/12/2018,07/04/2020
-264,Raseinių ligoninė,,55.38532,23.11937,1,Ligoninės g.,4,,Raseiniai,LT,Lithuania,150,,,,general,public,,,,,31/12/2018,07/04/2020
-267,Ariogalos pirminės sveikatos priežiūros centras,,55.263447319480626,23.470070701839457,2,Vytauto,96,,Raseinių r.,LT,Lithuania,30,,,,nursing,public,,,,,31/12/2018,07/04/2020
-273,Respublikinė Klaipėdos ligoninė,,55.71832,21.13368,1,S.Nėries,3,,Klaipėda,LT,Lithuania,383,,,,general,public,,,,,31/12/2018,07/04/2020
-279,Respublikinės Klaipėdos ligoninės Tuberkuliozės filialas,,55.73212,21.12361,1,P.Lideikio,2,,Klaipėda,LT,Lithuania,195,,,,tuberculosis,public,,,,,31/12/2018,07/04/2020
-283,Respublikinės Klaipėdos ligoninės Psichiatrijos filialas,,55.70796,21.14308,1,Bangų,6a,,Klaipėda,LT,Lithuania,215,,,,psychiatry,public,,,,,31/12/2018,07/04/2020
-274,Klaipėdos jūrininkų ligoninė,,55.754784461629804,21.127375099657595,1,Liepojos,45,,Klaipėda,LT,Lithuania,390,,,,general,public,,,,,31/12/2018,07/04/2020
-282,Respublikinio priklausomybės ligų centro Klaipėdos filialas,,55.69388,21.14931,1,Taikos pr.,46,,Klaipėda,LT,Lithuania,56,,,,drug and alcohol abuse,public,,,,,31/12/2018,07/04/2020
-278,Klaipėdos medicininės slaugos ligoninė,,55.71579,21.13497,1,Donelaičio,15,,Klaipėda,LT,Lithuania,165,,,,nursing,public,,,,,31/12/2018,07/04/2020
-276,Klaipėdos universitetinė ligoninė,,55.7541250344566,21.126951942952413,1,Liepojos,41,,Klaipėda,LT,Lithuania,958,,,,general,public,,,,,31/12/2018,07/04/2020
-277,Klaipėdos vaikų ligoninė,,55.71462,21.13589,1,K.Donelaičio,7,,Klaipėda,LT,Lithuania,154,,,,general,public,,,,,31/12/2018,07/04/2020
-13337,VšĮ Paliatyvios pagalbos ir šeimos sveikatos centras,,55.64439,22.93844,1,Vakaro g.,16,,Kelmė,LT,Lithuania,24,,,,nursing,private,,,,,31/12/2018,07/04/2020
-297,Klaipėdos Jūrininkų ligoninės Palangos departamentas,,55.93685,21.087,1,Klaipėdos pl.,76,,Palanga,LT,Lithuania,100,,,,general,public,,,,,31/12/2018,07/04/2020
-294,Palangos reabilitacijos ligoninė,,55.93549,21.07568,1,Vytauto,153,,Palanga,LT,Lithuania,215,,,,rehabilitation,public,,,,,31/12/2018,07/04/2020
-306,Neringos pirminės sveikatos priežiūros centras,,55.30267,21.00391,1,Taikos,11,,Neringa,LT,Lithuania,10,,,,nursing,public,,,,,31/12/2018,07/04/2020
-308,Gargždų ligoninė,,55.70972,21.4021,2,Tilto,2,LT-96137,Klaipėdos r.,LT,Lithuania,125,,,,general,public,,,,,31/12/2018,07/04/2020
-1747,Paupių pirminės sveikatos priežiūros centras Plikių ambulatorija,,55.337310791015625,23.883544921875,2,Klaipėdos g.,19,,Plikių miest.,LT,Lithuania,10,,,,nursing,public,,,,,31/12/2018,07/04/2020
-12147,"VšĮ ""Gyvenimo gija""",,55.77568,21.08067,1,Pamarių g.,11-2,,Klaipėdos r.,LT,Lithuania,6,,,,nursing,private,,,,,31/12/2018,07/04/2020
-317,Kretingos ligoninė,,55.89648,21.25311,1,J.Žemaitės al.,1,LT-97106,Kretinga,LT,Lithuania,131,,,,general,public,,,,,31/12/2018,07/04/2020
-319,Kartenos pirminės sveikatos priežiūros centras,,55.92142,21.46958,1,Mokyklos g.,22,LT-97340,Kretingos r.,LT,Lithuania,34,,,,nursing,public,,,,,31/12/2018,07/04/2020
-321,Salantų pirminės sveikatos priežiūros centras,,55.337310791015625,23.883544921875,2,S.Neries,13,,Kretingos r.,LT,Lithuania,36,,,,nursing,public,,,,,31/12/2018,07/04/2020
-326,Skuodo pirminės sveikatos priežiūros centras,,56.27338,21.52996,1,Šatrijos,5,LT-98114,Skuodas,LT,Lithuania,23,,,,nursing,public,,,,,31/12/2018,07/04/2020
-331,Klaipėdos Jūrininkų ligoninės Psichiatrijos departamentas,,55.52097,21.62331,2,Aušros g.,27,LT-99382,Šilutės r.,LT,Lithuania,180,,,,psychiatry,public,,,,,31/12/2018,07/04/2020
-334,Šilutės ligoninė,,55.33786,21.4592,1,Rusnės,1,,Šilutė,LT,Lithuania,150,,,,general,public,,,,,31/12/2018,07/04/2020
-346,Respublikinė Šiaulių ligoninė,,55.94254,23.30226,1,Kudirkos,99,,Šiauliai,LT,Lithuania,1000,,,,general,public,,,,,31/12/2018,07/04/2020
-2057,Respublikinio priklausomybės ligų centro Šiaulių filialas,,55.90638,23.3086,1,Daubos g.,3,,Šiauliai,LT,Lithuania,28,,,,drug and alcohol abuse,public,,,,,31/12/2018,07/04/2020
-351,Šiaulių ilgalaikio gydymo ir geriatrijos centras,,55.92703,23.3215,1,Vilniaus,125,,Šiauliai,LT,Lithuania,236,,,,nursing,public,,,,,31/12/2018,07/04/2020
-367,Naujosios Akmenės ligoninė,,56.32045,22.87264,2,Žemaitijos g.,6,,Naujoji Akmenė,LT,Lithuania,75,,,,general,public,,,,,31/12/2018,07/04/2020
-377,Joniškio ligoninė,,56.23218,23.6277,1,Pašvitinio,21,,Joniškis,LT,Lithuania,113,,,,general,public,,,,,31/12/2018,07/04/2020
-386,Kelmės ligoninė,,55.63092,22.94708,1,Nepriklausomybės,2,,Kelmė,LT,Lithuania,134,,,,general,public,,,,,31/12/2018,07/04/2020
-389,Tytuvėnų pirminės sveikatos priežiūros centras,,55.337310791015625,23.883544921875,2,Basanavičiaus,6,,Kelmės r.,LT,Lithuania,35,,,,nursing,public,,,,,31/12/2018,07/04/2020
-395,Pakruojo ligoninė,,55.97834,23.84259,1,L.Giros,3,,Pakruojis,LT,Lithuania,79,,,,general,public,,,,,31/12/2018,07/04/2020
-401,Radviliškio ligoninė,,55.8112,23.54294,1,Gedimino,9,LT-82174,Radviliškis,LT,Lithuania,127,,,,general,public,,,,,31/12/2018,07/04/2020
-406,Baisogalos pirminės sveikatos priežiūros centras,,55.337310791015625,23.883544921875,2,R. Žebenkos g.,2,,Radviliškio r.,LT,Lithuania,28,,,,nursing,public,,,,,31/12/2018,07/04/2020
-413,Kuršėnų ligoninė,,56.00294,22.93801,1,Basanavičiaus,6,LT-81183,Šiaulių r.,LT,Lithuania,72,,,,general,public,,,,,31/12/2018,07/04/2020
-414,Šiaulių r. pirminės sveikatos priežiūros centras,,56.00294,22.93801,1,J.Basanavičiaus g.,6,LT-81183,Šiaulių r.,LT,Lithuania,40,,,,nursing,public,,,,,31/12/2018,07/04/2020
-424,Respublikinė Panevėžio ligoninė,,55.73492,24.36688,1,Smėlynės,25,,Panevėžys,LT,Lithuania,755,,,,general,public,,,,,31/12/2018,07/04/2020
-2072,Respublikinio priklausomybės ligų centro Panevėžio filialas,,55.73355,24.39286,1,Elektronikos g.,6,LT-35116,Panevėžys,LT,Lithuania,24,,,,drug and alcohol abuse,public,,,,,31/12/2018,07/04/2020
-427,Panevėžio palaikomojo gydymo ir slaugos ligoninė,,55.73169,24.3689,1,Tiškevičiaus,6,,Panevėžys,LT,Lithuania,230,,,,nursing,public,,,,,31/12/2018,07/04/2020
-445,Biržų ligoninė,,56.18848,24.75928,1,Vilniaus,115,LT-41115,Biržai,LT,Lithuania,128,,,,general,public,,,,,31/12/2018,07/04/2020
-454,Kupiškio ligoninė,,55.83728,24.98828,1,Krantinės,28,LT-40117,Kupiškis,LT,Lithuania,80,,,,general,public,,,,,31/12/2018,07/04/2020
-462,Panevėžio r. poliklinikos Ramygalos palaikomojo gydymo ir slaugos ligoninė,,55.73577,24.32382,1,Dariaus ir Girėno,30,,Panevėžio r.,LT,Lithuania,28,,,,nursing,public,,,,,31/12/2018,07/04/2020
-463,Panevėžio r. poliklinikos Naujamiesčio palaikomojo gydymo ir slaugos ligoninė,,55.73515,24.32363,1,Dariaus ir Girėno,28,,Panevėžio r.,LT,Lithuania,25,,,,nursing,public,,,,,31/12/2018,07/04/2020
-2062,Krekenavos pirminės sveikatos priežiūros centras,,55.337310791015625,23.883544921875,2,Maironio,8,,Panevėžio r.,LT,Lithuania,15,,,,nursing,public,,,,,31/12/2018,07/04/2020
-469,Pasvalio ligoninė,,56.0675,24.40692,1,Geležinkeliečių,70,,Pasvalys,LT,Lithuania,139,,,,general,public,,,,,31/12/2018,07/04/2020
-480,Rokiškio psichiatrijos ligoninė,,55.97642,25.58298,1,Vytauto,47,LT-42100,Rokiškis,LT,Lithuania,440,,,,psychiatry,public,,,,,31/12/2018,07/04/2020
-482,Rokiškio ligoninė,,55.97062,25.58179,1,Vl.Lašo,3,LT-42106,Rokiškis,LT,Lithuania,192,,,,general,public,,,,,31/12/2018,07/04/2020
-507,Alytaus apskr. tuberkuliozės ligoninė,,54.4137,24.04071,1,Sanatorijos,51,,Alytus,LT,Lithuania,55,,,,tuberculosis,public,,,,,31/12/2018,07/04/2020
-506,Alytaus apskr. S.Kudirkos ligoninė,,54.39868,24.03967,1,Ligoninės,12,,Alytus,LT,Lithuania,337,,,,general,public,,,,,31/12/2018,07/04/2020
-2053,Alytaus medicininės reabilitacijos ir sporto centras,,54.42273,24.01172,1,Pramonės,9,,Alytus,LT,Lithuania,55,,,,nursing,public,,,,,31/12/2018,07/04/2020
-495,Druskininkų ligoninė,,54.01663,24.00944,1,Sveikatos,30,,Druskininkai,LT,Lithuania,122,,,,general,public,,,,,31/12/2018,07/04/2020
-682,Druskininkų pirminės sveikatos priežiūros centras,,54.01331,23.98712,1,M. K. Čiurlionio g.,82,,Druskininkai,LT,Lithuania,38,,,,nursing,public,,,,,31/12/2018,07/04/2020
-2007,Alytaus r. pirminės sveikatos priežiūros centras,,54.40258,24.02459,1,Naujoji g.,48,,Alytus,LT,Lithuania,43,,,,nursing,public,,,,,31/12/2018,07/04/2020
-519,Lazdijų ligoninė,,54.23587,23.51667,1,Kauno,8,,Lazdijai,LT,Lithuania,108,,,,general,public,,,,,31/12/2018,07/04/2020
-530,Varėnos ligoninė,,54.21808,24.56927,1,Čiurlionio,61,,Varėna,LT,Lithuania,103,,,,general,public,,,,,31/12/2018,07/04/2020
-533,Varėnos pirminės sveikatos priežiūros centras Merkinės filialas,,55.337310791015625,23.883544921875,2,Seinų,3,,Varėnos r.,LT,Lithuania,33,,,,nursing,public,,,,,31/12/2018,07/04/2020
-538,Marijampolės ligoninė,,54.56671,23.34613,1,Palangos,1,,Marijampolė,LT,Lithuania,307,,,,general,public,,,,,31/12/2018,07/04/2020
-542,Marijampolės pirminės sveikatos priežiūros centras,,54.55432,23.3465,1,P.Kriaučiūno g.,2,LT-68298,Marijampolė,LT,Lithuania,80,,,,nursing,public,,,,,31/12/2018,07/04/2020
-553,Šakių ligoninė,,54.95538,23.03171,1,Bažnyčios,37,LT-71123,Šakiai,LT,Lithuania,125,,,,general,public,,,,,31/12/2018,07/04/2020
-565,Vilkaviškio ligoninė,,54.65051,23.02612,1,Maironio,25,LT-70104,Vilkaviškis,LT,Lithuania,166,,,,general,public,,,,,31/12/2018,07/04/2020
-540,Kalvarijos ligoninė,,54.41437,23.22277,1,Vytauto,9,,Kalvarija,LT,Lithuania,40,,,,general,public,,,,,31/12/2018,07/04/2020
-541,Kazlų Rūdos ligoninė,,54.75716,23.49536,1,Vytauto,45,LT-69417,Kazlų Rūda,LT,Lithuania,40,,,,general,public,,,,,31/12/2018,07/04/2020
-574,Jurbarko ligoninė,,55.0849,22.75031,1,Vydūno,56,,Jurbarkas,LT,Lithuania,170,,,,general,public,,,,,31/12/2018,07/04/2020
-584,Šilalės ligoninė,,55.4967,22.1781,1,Vytauto Didžiojo,19,LT-75132,Šilalė,LT,Lithuania,85,,,,general,public,,,,,31/12/2018,07/04/2020
-586,Kaltinėnų pirminės sveikatos priežiūros centras,,55.337310791015625,23.883544921875,2,Varnių,9,,Šilalės r.,LT,Lithuania,40,,,,nursing,public,,,,,31/12/2018,07/04/2020
-591,Tauragės ligoninė,,55.25427,22.2826,1,V.Kudirkos,2,LT-72214,Tauragė,LT,Lithuania,191,,,,general,public,,,,,31/12/2018,07/04/2020
-594,Skaudvilės palaikomojo gydymo ir slaugos ligoninė,,55.3703529918325,23.135291453392533,2,Vilniaus g.,14,,Tauragės r.,LT,Lithuania,50,,,,nursing,public,,,,,31/12/2018,07/04/2020
-2087,Pagėgių palaikomojo gydymo; slaugos ir senelių globos namai,,55.13844,21.90831,1,Žemaičių g.,7,,Pagėgiai,LT,Lithuania,16,,,,nursing,public,,,,,31/12/2018,07/04/2020
-599,Mažeikių ligoninė,,56.31597,22.34476,1,Basanavičiaus g.,24,,Mažeikiai,LT,Lithuania,196,,,,general,public,,,,,31/12/2018,07/04/2020
-602,Sedos pirminės sveikatos priežiūros centras,,56.31775,22.33738,1,Baranausko a.,8,,Mažeikių r.,LT,Lithuania,55,,,,nursing,public,,,,,31/12/2018,07/04/2020
-608,Plungės r. ligoninė,,55.89868,21.82813,1,Vaižganto g.,89,LT-90160,Plungė,LT,Lithuania,176,,,,general,public,,,,,31/12/2018,07/04/2020
-620,Regioninė Telšių ligoninė,,55.98357,22.23275,1,Kalno,40,,Telšiai,LT,Lithuania,168,,,,general,public,,,,,31/12/2018,07/04/2020
-623,Varnių pirminės sveikatos priežiūros centras,,55.74382,22.36647,1,Ligoninės,3,LT-88319,Telšių r.,LT,Lithuania,94,,,,nursing,public,,,,,31/12/2018,07/04/2020
-611,Rietavo pirminės sveikatos priežiūros centras,,55.337310791015625,23.883544921875,2,Parko,8,,Rietavo sav.,LT,Lithuania,32,,,,nursing,public,,,,,31/12/2018,07/04/2020
-629,Anykščių r. ligoninė,,55.52032,25.12204,1,Ramybės g.,15,LT-29166,Anykščiai,LT,Lithuania,193,,,,general,public,,,,,31/12/2018,07/04/2020
-640,Ignalinos ligoninė,,55.34113,26.15009,1,Ligoninės g.,13a,LT-30112,Ignalina,LT,Lithuania,81,,,,general,public,,,,,31/12/2018,07/04/2020
-647,Molėtų ligoninė,,55.22625,25.41135,1,Graužinių g.,3,,Molėtai,LT,Lithuania,92,,,,general,public,,,,,31/12/2018,07/04/2020
-655,Utenos ligoninė,,55.50941,25.59044,1,Aukštakalnio,3,,Utena,LT,Lithuania,285,,,,general,public,,,,,31/12/2018,07/04/2020
-658,Šv.Klaros palaikomojo gydymo ir slaugos ligoninė,,55.49827,25.60817,1,Dariaus ir Girėno,14,LT-28240,Utena,LT,Lithuania,80,,,,nursing,public,,,,,31/12/2018,07/04/2020
-665,Zarasų ligoninė,,55.73201,26.25575,1,Vilniaus g.,1b,,Zarasai,LT,Lithuania,90,,,,general,public,,,,,31/12/2018,07/04/2020
-672,Visagino ligoninė,,55.60639,26.43321,1,Taikos,15a,,Visaginas,LT,Lithuania,188,,,,general,public,,,,,31/12/2018,07/04/2020
+1,Vilniaus Universiteto ligoninė Santaros klinikos,,54.75179,25.27778,1,Santariškių,2,LT-08661,Vilnius,LT,Lithuania,1356,,,,general,public,,,,,31/12/2018,08/04/2020
+5,Vilniaus Universiteto ligoninės Santaros klinikos filialas vaikų ligoninė,,54.75488,25.28271,1,Santariškių,7,LT-08406,Vilnius,LT,Lithuania,515,,,,general,public,,,,,31/12/2018,08/04/2020
+32,Respublikinė Vilniaus universitetinė ligoninė,,54.6687,25.2077,1,Šiltnamių,29,,Vilnius,LT,Lithuania,673,,,,general,public,,,,,31/12/2018,08/04/2020
+3,Vilniaus Universiteto ligoninės Žalgirio klinika,,54.70476,25.27883,1,Žalgirio,117,,Vilnius,LT,Lithuania,58,,,,general,public,,,,,31/12/2018,08/04/2020
+10,Respublikinė Vilniaus psichiatrijos ligoninė,,54.68442,25.4182,1,Parko g.,21,,Vilnius,LT,Lithuania,542,,,,psychiatry,public,,,,,31/12/2018,08/04/2020
+11,Valstybinė teismo psichiatrijos tarnyba prie Sveikatos apsaugos miniterijos,,54.69489,25.39893,1,Kojelavičiaus,121,,Vilnius,LT,Lithuania,44,,,,psychiatry,public,,,,,31/12/2018,08/04/2020
+38,Vilniaus gimdymo namai,,54.66825,25.29132,1,Tyzenhauzų,18a,,Vilnius,LT,Lithuania,108,,,,maternity,public,,,,,31/12/2018,08/04/2020
+43,Respublikinis priklausomybės ligų centras,,54.69062042236328,25.269800186157227,2,G.Vilties,3,LT-03147,Vilnius,LT,Lithuania,90,,,,drug and alcohol abuse,public,,,,,31/12/2018,08/04/2020
+31,Vilniaus miesto klinikinė ligoninė,,54.7099,25.31549,1,Antakalnio,57,,Vilnius,LT,Lithuania,495,,,,general,public,,,,,31/12/2018,08/04/2020
+2,Vilniaus miesto klinikinės ligoninės Antakalnio filialas,,54.7206,25.31606,1,Antakalnio,124,LT-10200,Vilnius,LT,Lithuania,208,,,,general,public,,,,,31/12/2018,08/04/2020
+35,M.Marcinkevičiaus ligoninė,,54.67291,25.27649,1,Kauno g.,7,LT-03215,Vilnius,LT,Lithuania,280,,,,general,public,,,,,31/12/2018,08/04/2020
+39,Vilkpėdės ligoninė,,54.66528,25.2431,1,Vilkpėdės,3,,Vilnius,LT,Lithuania,292,,,,nursing,public,,,,,31/12/2018,08/04/2020
+41,Šv. Roko ligoninė,,54.70907,25.31512,1,Klinikų g.,2,,Vilnius,LT,Lithuania,295,,,,nursing,public,,,,,31/12/2018,08/04/2020
+37,Vilniaus m. psichikos sveikatos centras,,54.69174,25.30653,1,Vasaros,5,,Vilnius,LT,Lithuania,168,,,,psychiatry,public,,,,,31/12/2018,08/04/2020
+112,Grigiškių sveikatos priežiūros centras,,54.74487,25.27612,1,Mokyklos,10,,Vilnius,LT,Lithuania,56,,,,nursing,public,,,,,31/12/2018,08/04/2020
+13748,"VšĮ ""Pal. Kun. Mykolo Sopočkos hospisas""",,54.67578,25.29625,1,Rasų g.,4,,Vilnius,LT,Lithuania,14,,,,nursing,private,,,,,31/12/2018,08/04/2020
+10022,"UAB ""SK IMPEKS MEDICINOS DIAGNOSTIKOS CENTRAS""",,54.70568,25.31642,1,V.Grybo g.,32,,Vilnius,LT,Lithuania,16,,,,general,private,,,,,31/12/2018,08/04/2020
+12033,"UAB ""Kardiolita""",,54.71701,25.23024,1,Laisvės pr.,64a,,Vilnius,LT,Lithuania,48,,,,general,private,,,,,31/12/2018,08/04/2020
+12955,"UAB ""Aspersus""",,54.6955,25.43048,1,Pramonės g.,97,,Vilnius,LT,Lithuania,8,,,,psychiatry,private,,,,,31/12/2018,08/04/2020
+10006,"UAB ""BALTIJOS IR AMERIKOS TERAPIJOS IR CHIRURGIJOS KLINIKA",,54.73563,25.33878,1,Nemenčinės pl.,54a,,Vilnius,LT,Lithuania,30,,,,general,private,,,,,31/12/2018,08/04/2020
+13100,"UAB ""Gemma sveikatos centras""",,54.70587,25.32068,1,Bistryčios g.,13,,Vilnius,LT,Lithuania,156,,,,nursing,private,,,,,31/12/2018,08/04/2020
+13107,"UAB ""Socialiniai ir sveikatos projektai"". Ąžuolyno klinika",,54.70789,25.23633,1,Ąžuolyno g.,5a,,Vilnius,LT,Lithuania,30,,,,psychiatry,private,,,,,31/12/2018,08/04/2020
+6,Nacionalinis vėžio institutas,,54.75179,25.2821,1,Santariškių,1,LT-08660,Vilnius,LT,Lithuania,311,,,,oncology,public,,,,,31/12/2018,08/04/2020
+69,Laisvės atėmimo vietų ligoninė,,54.69062042236328,25.269800186157227,2,Pravieniškių g.,57,,Vilnius,LT,Lithuania,163,,,,general,public,,,,,31/12/2018,08/04/2020
+70,LR VRM Medicinos centras,,54.69004,25.28399,1,Žygimantų,8,LT-01102,Vilnius,LT,Lithuania,100,,,,general,public,,,,,31/12/2018,08/04/2020
+85,Šalčininkų r. ligoninė,,54.30597,25.38112,1,Nepriklausomybės,38,,Šalčininkai,LT,Lithuania,135,,,,general,public,,,,,31/12/2018,08/04/2020
+87,Eišiškių asmens sveikatos priežiūros centras,,54.16669,25.00153,1,Ligoninės g.,2a,LT-17176,Šalčininkų r.,LT,Lithuania,35,,,,nursing,public,,,,,31/12/2018,08/04/2020
+95,Širvintų ligoninė,,55.03833,24.96307,1,Vilniaus g.,85,LT-19121,Širvintos,LT,Lithuania,65,,,,general,public,,,,,31/12/2018,08/04/2020
+100,Švenčionių r. ligoninė,,55.12733,26.15651,1,Partizanų,4,LT-18126,Švenčionys,LT,Lithuania,120,,,,general,public,,,,,31/12/2018,08/04/2020
+109,Trakų ligoninė,,54.63757,24.9389,1,Mindaugo,17,,Trakai,LT,Lithuania,120,,,,general,public,,,,,31/12/2018,08/04/2020
+680,Onuškio palaikomojo gydymo ir slaugos ligoninė,,55.337310791015625,23.883544921875,2,K. Petrausko a.,6,,Trakų r.,LT,Lithuania,45,,,,nursing,public,,,,,31/12/2018,08/04/2020
+123,Ukmergės ligoninė,,55.25742,24.78655,1,Vytauto,105,LT-20184,Ukmergė,LT,Lithuania,189,,,,general,public,,,,,31/12/2018,08/04/2020
+138,Vilniaus r. centrinė poliklinika; Riešės slaugos ir palaikomojo gydymo ligoninė,,55.337310791015625,23.883544921875,2,Kalino,,,Vilniaus r.,LT,Lithuania,30,,,,nursing,public,,,,,31/12/2018,08/04/2020
+139,Vilniaus r. centrinė poliklinika; Juodšilių slaugos ir palaikomojo gydymo ligoninė,,55.337310791015625,23.883544921875,2,Šv. Uršulės g.,25,,Vilniaus r.,LT,Lithuania,36,,,,nursing,public,,,,,31/12/2018,08/04/2020
+140,Vilniaus r. centrinė poliklinika; Šumsko slaugos ir palaikomojo gydymo ligoninė,,54.84135728868823,25.4670543986557,2,Vilniaus,40,,Vilniaus r.,LT,Lithuania,35,,,,nursing,public,,,,,31/12/2018,08/04/2020
+143,Vilniaus r. Nemenčinės poliklinika,,54.85223740967964,25.473131975116626,1,Švenčionių g.,86,,Vilniaus r.,LT,Lithuania,38,,,,nursing,public,,,,,31/12/2018,08/04/2020
+120,Abromiškių reabilitacijos ligoninė,,54.76714,24.70849,1,Sanatorijos g.,72,LT-26130,Elektrėnų sav.,LT,Lithuania,300,,,,rehabilitation,public,,,,,31/12/2018,08/04/2020
+111,Elektrėnų ligoninė,,54.78675,24.66622,1,Taikos,8,,Elektrėnai,LT,Lithuania,88,,,,general,public,,,,,31/12/2018,08/04/2020
+1760,Vievio sveikatos priežiūros centras,,54.7642,24.65245,1,Liepų g.,16,,Elektrėnų sav.,LT,Lithuania,35,,,,nursing,public,,,,,31/12/2018,08/04/2020
+154,Lietuvos sveikatos mokslų universiteto ligoninė Kauno klinikos,,54.91852,23.92108,1,Eivienių,2,,Kaunas,LT,Lithuania,1737,,,,general,public,,,,,31/12/2018,08/04/2020
+155,LSMUL Kauno klinikų filialas Romainių tuberkuliozės ligoninė,,54.92328,23.8327,1,Šilainių pl.,21,,Kaunas,LT,Lithuania,165,,,,tuberculosis,public,,,,,31/12/2018,08/04/2020
+180,"LSMUL Kauno klinikų filialas Vaikų reabilitacijos ligoninė ""Lopšelis""",,54.91071,23.87372,1,Lopšelio,10,LT-47180,Kaunas,LT,Lithuania,35,,,,rehabilitation,public,,,,,31/12/2018,08/04/2020
+170,LSMUL Kauno klinikų filialas Onkologijos ligoninė,,54.85975,23.97698,1,Volungių,16,,Kaunas,LT,Lithuania,186,,,,oncology,public,,,,,31/12/2018,08/04/2020
+163,Kauno klinikinė ligoninė,,54.91515,23.85867,1,Josvainių,2,,Kaunas,LT,Lithuania,789,,,,general,public,,,,,31/12/2018,08/04/2020
+164,Respublikinė Kauno ligoninė,,54.87811,23.94312,1,Hipodromo,13,,Kaunas,LT,Lithuania,841,,,,general,public,,,,,31/12/2018,08/04/2020
+2055,Respublikinio priklausomybės ligų centro Kauno filialas,,54.90613,23.92529,1,Giedraičių,8,,Kaunas,LT,Lithuania,39,,,,drug and alcohol abuse,public,,,,,31/12/2018,08/04/2020
+159,K.Griniaus slaugos ir palaikomojo gydymo ligoninė,,54.8854,23.98039,1,Kruonio g.,21,,Kaunas,LT,Lithuania,345,,,,nursing,public,,,,,31/12/2018,08/04/2020
+10530,"AB ""Ortopedijos technika""",,54.91827,23.9527,1,Partizanų g.,17,,Kaunas,LT,Lithuania,20,,,,general,private,,,,,31/12/2018,08/04/2020
+10572,"UAB ""Bendrosios medicinos praktika""",,54.92622,23.96659,1,Savanorių pr.,423,LT-49287,Kaunas,LT,Lithuania,12,,,,general,private,,,,,31/12/2018,08/04/2020
+13537,"UAB ""Tautrimo Aštrausko klinika""",,54.87347,23.96851,1,Vičiūnų g.,24,,Kaunas,LT,Lithuania,5,,,,general,private,,,,,31/12/2018,08/04/2020
+13541,UAB Sauliaus Vikšraičio plastinės chirurgijos centras,,54.90271,23.91132,1,Savanorių pr.,75,,Kaunas,LT,Lithuania,6,,,,general,private,,,,,31/12/2018,08/04/2020
+13981,UAB Artmedica,,54.86956,23.87668,1,Kalvarijos g.,13,,Kaunas,LT,Lithuania,5,,,,general,private,,,,,31/12/2018,08/04/2020
+197,Jonavos ligoninė,,55.07944,24.27038,1,Žeimių,19,,Jonava,LT,Lithuania,151,,,,general,public,,,,,31/12/2018,08/04/2020
+200,Jonavos pirminės sveikatos priežiūros centras Bukonių slaugos ir palaikomojo gydymo ligoninė,,55.337310791015625,23.883544921875,2,Jaunystės,2,,Bukonių km. Jonavos r.,LT,Lithuania,27,,,,nursing,public,,,,,31/12/2018,08/04/2020
+209,Kaišiadorių ligoninė,,54.85388,24.42932,1,Beržyno g.,27,LT-56172,Kaišiadorių r.,LT,Lithuania,131,,,,general,public,,,,,31/12/2018,08/04/2020
+217,LSMUL Kauno klinikų filialas Kulautuvos reabilitacijos ligoninė,,55.337310791015625,23.883544921875,2,Akacijų g.,18,,Kauno r.,LT,Lithuania,82,,,,rehabilitation,public,,,,,31/12/2018,08/04/2020
+1745,Vilkijos pirminės sveikatos priežiūros centras,,54.86425437610662,24.589294394033622,2,Bažnyčios,23,,Kauno r.,LT,Lithuania,80,,,,nursing,public,,,,,31/12/2018,08/04/2020
+239,Kėdainių ligoninė,,55.30939,23.9843,1,Budrio,5,,Kėdainiai,LT,Lithuania,252,,,,general,public,,,,,31/12/2018,08/04/2020
+254,Prienų ligoninė,,54.631293,23.9613854,1,Pušyno,2,,4340 Prienai,LT,Lithuania,89,,,,general,public,,,,,31/12/2018,08/04/2020
+258,Balbieriškio pirminės sveikatos priežiūros centras,,54.51638,23.89177,1,Parko g.,5,LT-59241,Prienų r.,LT,Lithuania,27,,,,nursing,public,,,,,31/12/2018,08/04/2020
+259,Veiverių pirminės sveikatos priežiūros centras,,55.337310791015625,23.883544921875,2,Kauno,56,,Prienų r.,LT,Lithuania,15,,,,nursing,public,,,,,31/12/2018,08/04/2020
+257,Jiezno pirminės sveikatos priežiūros centras,,55.337310791015625,23.883544921875,2,Vilniaus,5,,Prienų r.,LT,Lithuania,15,,,,nursing,public,,,,,31/12/2018,08/04/2020
+264,Raseinių ligoninė,,55.38532,23.11937,1,Ligoninės g.,4,,Raseiniai,LT,Lithuania,150,,,,general,public,,,,,31/12/2018,08/04/2020
+267,Ariogalos pirminės sveikatos priežiūros centras,,55.263447319480626,23.470070701839457,2,Vytauto,96,,Raseinių r.,LT,Lithuania,30,,,,nursing,public,,,,,31/12/2018,08/04/2020
+273,Respublikinė Klaipėdos ligoninė,,55.71832,21.13368,1,S.Nėries,3,,Klaipėda,LT,Lithuania,383,,,,general,public,,,,,31/12/2018,08/04/2020
+279,Respublikinės Klaipėdos ligoninės Tuberkuliozės filialas,,55.73212,21.12361,1,P.Lideikio,2,,Klaipėda,LT,Lithuania,195,,,,tuberculosis,public,,,,,31/12/2018,08/04/2020
+283,Respublikinės Klaipėdos ligoninės Psichiatrijos filialas,,55.70796,21.14308,1,Bangų,6a,,Klaipėda,LT,Lithuania,215,,,,psychiatry,public,,,,,31/12/2018,08/04/2020
+274,Klaipėdos jūrininkų ligoninė,,55.754784461629804,21.127375099657595,1,Liepojos,45,,Klaipėda,LT,Lithuania,390,,,,general,public,,,,,31/12/2018,08/04/2020
+282,Respublikinio priklausomybės ligų centro Klaipėdos filialas,,55.69388,21.14931,1,Taikos pr.,46,,Klaipėda,LT,Lithuania,56,,,,drug and alcohol abuse,public,,,,,31/12/2018,08/04/2020
+278,Klaipėdos medicininės slaugos ligoninė,,55.71579,21.13497,1,Donelaičio,15,,Klaipėda,LT,Lithuania,165,,,,nursing,public,,,,,31/12/2018,08/04/2020
+276,Klaipėdos universitetinė ligoninė,,55.7541250344566,21.126951942952413,1,Liepojos,41,,Klaipėda,LT,Lithuania,958,,,,general,public,,,,,31/12/2018,08/04/2020
+277,Klaipėdos vaikų ligoninė,,55.71462,21.13589,1,K.Donelaičio,7,,Klaipėda,LT,Lithuania,154,,,,general,public,,,,,31/12/2018,08/04/2020
+13337,VšĮ Paliatyvios pagalbos ir šeimos sveikatos centras,,55.64439,22.93844,1,Vakaro g.,16,,Kelmė,LT,Lithuania,24,,,,nursing,private,,,,,31/12/2018,08/04/2020
+297,Klaipėdos Jūrininkų ligoninės Palangos departamentas,,55.93685,21.087,1,Klaipėdos pl.,76,,Palanga,LT,Lithuania,100,,,,general,public,,,,,31/12/2018,08/04/2020
+294,Palangos reabilitacijos ligoninė,,55.93549,21.07568,1,Vytauto,153,,Palanga,LT,Lithuania,215,,,,rehabilitation,public,,,,,31/12/2018,08/04/2020
+306,Neringos pirminės sveikatos priežiūros centras,,55.30267,21.00391,1,Taikos,11,,Neringa,LT,Lithuania,10,,,,nursing,public,,,,,31/12/2018,08/04/2020
+308,Gargždų ligoninė,,55.70972,21.4021,2,Tilto,2,LT-96137,Klaipėdos r.,LT,Lithuania,125,,,,general,public,,,,,31/12/2018,08/04/2020
+1747,Paupių pirminės sveikatos priežiūros centras Plikių ambulatorija,,55.337310791015625,23.883544921875,2,Klaipėdos g.,19,,Plikių miest.,LT,Lithuania,10,,,,nursing,public,,,,,31/12/2018,08/04/2020
+12147,"VšĮ ""Gyvenimo gija""",,55.77568,21.08067,1,Pamarių g.,11-2,,Klaipėdos r.,LT,Lithuania,6,,,,nursing,private,,,,,31/12/2018,08/04/2020
+317,Kretingos ligoninė,,55.89648,21.25311,1,J.Žemaitės al.,1,LT-97106,Kretinga,LT,Lithuania,131,,,,general,public,,,,,31/12/2018,08/04/2020
+319,Kartenos pirminės sveikatos priežiūros centras,,55.92142,21.46958,1,Mokyklos g.,22,LT-97340,Kretingos r.,LT,Lithuania,34,,,,nursing,public,,,,,31/12/2018,08/04/2020
+321,Salantų pirminės sveikatos priežiūros centras,,55.337310791015625,23.883544921875,2,S.Neries,13,,Kretingos r.,LT,Lithuania,36,,,,nursing,public,,,,,31/12/2018,08/04/2020
+326,Skuodo pirminės sveikatos priežiūros centras,,56.27338,21.52996,1,Šatrijos,5,LT-98114,Skuodas,LT,Lithuania,23,,,,nursing,public,,,,,31/12/2018,08/04/2020
+331,Klaipėdos Jūrininkų ligoninės Psichiatrijos departamentas,,55.52097,21.62331,2,Aušros g.,27,LT-99382,Šilutės r.,LT,Lithuania,180,,,,psychiatry,public,,,,,31/12/2018,08/04/2020
+334,Šilutės ligoninė,,55.33786,21.4592,1,Rusnės,1,,Šilutė,LT,Lithuania,150,,,,general,public,,,,,31/12/2018,08/04/2020
+346,Respublikinė Šiaulių ligoninė,,55.94254,23.30226,1,Kudirkos,99,,Šiauliai,LT,Lithuania,1000,,,,general,public,,,,,31/12/2018,08/04/2020
+2057,Respublikinio priklausomybės ligų centro Šiaulių filialas,,55.90638,23.3086,1,Daubos g.,3,,Šiauliai,LT,Lithuania,28,,,,drug and alcohol abuse,public,,,,,31/12/2018,08/04/2020
+351,Šiaulių ilgalaikio gydymo ir geriatrijos centras,,55.92703,23.3215,1,Vilniaus,125,,Šiauliai,LT,Lithuania,236,,,,nursing,public,,,,,31/12/2018,08/04/2020
+367,Naujosios Akmenės ligoninė,,56.32045,22.87264,2,Žemaitijos g.,6,,Naujoji Akmenė,LT,Lithuania,75,,,,general,public,,,,,31/12/2018,08/04/2020
+377,Joniškio ligoninė,,56.23218,23.6277,1,Pašvitinio,21,,Joniškis,LT,Lithuania,113,,,,general,public,,,,,31/12/2018,08/04/2020
+386,Kelmės ligoninė,,55.63092,22.94708,1,Nepriklausomybės,2,,Kelmė,LT,Lithuania,134,,,,general,public,,,,,31/12/2018,08/04/2020
+389,Tytuvėnų pirminės sveikatos priežiūros centras,,55.337310791015625,23.883544921875,2,Basanavičiaus,6,,Kelmės r.,LT,Lithuania,35,,,,nursing,public,,,,,31/12/2018,08/04/2020
+395,Pakruojo ligoninė,,55.97834,23.84259,1,L.Giros,3,,Pakruojis,LT,Lithuania,79,,,,general,public,,,,,31/12/2018,08/04/2020
+401,Radviliškio ligoninė,,55.8112,23.54294,1,Gedimino,9,LT-82174,Radviliškis,LT,Lithuania,127,,,,general,public,,,,,31/12/2018,08/04/2020
+406,Baisogalos pirminės sveikatos priežiūros centras,,55.337310791015625,23.883544921875,2,R. Žebenkos g.,2,,Radviliškio r.,LT,Lithuania,28,,,,nursing,public,,,,,31/12/2018,08/04/2020
+413,Kuršėnų ligoninė,,56.00294,22.93801,1,Basanavičiaus,6,LT-81183,Šiaulių r.,LT,Lithuania,72,,,,general,public,,,,,31/12/2018,08/04/2020
+414,Šiaulių r. pirminės sveikatos priežiūros centras,,56.00294,22.93801,1,J.Basanavičiaus g.,6,LT-81183,Šiaulių r.,LT,Lithuania,40,,,,nursing,public,,,,,31/12/2018,08/04/2020
+424,Respublikinė Panevėžio ligoninė,,55.73492,24.36688,1,Smėlynės,25,,Panevėžys,LT,Lithuania,755,,,,general,public,,,,,31/12/2018,08/04/2020
+2072,Respublikinio priklausomybės ligų centro Panevėžio filialas,,55.73355,24.39286,1,Elektronikos g.,6,LT-35116,Panevėžys,LT,Lithuania,24,,,,drug and alcohol abuse,public,,,,,31/12/2018,08/04/2020
+427,Panevėžio palaikomojo gydymo ir slaugos ligoninė,,55.73169,24.3689,1,Tiškevičiaus,6,,Panevėžys,LT,Lithuania,230,,,,nursing,public,,,,,31/12/2018,08/04/2020
+445,Biržų ligoninė,,56.18848,24.75928,1,Vilniaus,115,LT-41115,Biržai,LT,Lithuania,128,,,,general,public,,,,,31/12/2018,08/04/2020
+454,Kupiškio ligoninė,,55.83728,24.98828,1,Krantinės,28,LT-40117,Kupiškis,LT,Lithuania,80,,,,general,public,,,,,31/12/2018,08/04/2020
+462,Panevėžio r. poliklinikos Ramygalos palaikomojo gydymo ir slaugos ligoninė,,55.73577,24.32382,1,Dariaus ir Girėno,30,,Panevėžio r.,LT,Lithuania,28,,,,nursing,public,,,,,31/12/2018,08/04/2020
+463,Panevėžio r. poliklinikos Naujamiesčio palaikomojo gydymo ir slaugos ligoninė,,55.73515,24.32363,1,Dariaus ir Girėno,28,,Panevėžio r.,LT,Lithuania,25,,,,nursing,public,,,,,31/12/2018,08/04/2020
+2062,Krekenavos pirminės sveikatos priežiūros centras,,55.337310791015625,23.883544921875,2,Maironio,8,,Panevėžio r.,LT,Lithuania,15,,,,nursing,public,,,,,31/12/2018,08/04/2020
+469,Pasvalio ligoninė,,56.0675,24.40692,1,Geležinkeliečių,70,,Pasvalys,LT,Lithuania,139,,,,general,public,,,,,31/12/2018,08/04/2020
+480,Rokiškio psichiatrijos ligoninė,,55.97642,25.58298,1,Vytauto,47,LT-42100,Rokiškis,LT,Lithuania,440,,,,psychiatry,public,,,,,31/12/2018,08/04/2020
+482,Rokiškio ligoninė,,55.97062,25.58179,1,Vl.Lašo,3,LT-42106,Rokiškis,LT,Lithuania,192,,,,general,public,,,,,31/12/2018,08/04/2020
+507,Alytaus apskr. tuberkuliozės ligoninė,,54.4137,24.04071,1,Sanatorijos,51,,Alytus,LT,Lithuania,55,,,,tuberculosis,public,,,,,31/12/2018,08/04/2020
+506,Alytaus apskr. S.Kudirkos ligoninė,,54.39868,24.03967,1,Ligoninės,12,,Alytus,LT,Lithuania,337,,,,general,public,,,,,31/12/2018,08/04/2020
+2053,Alytaus medicininės reabilitacijos ir sporto centras,,54.42273,24.01172,1,Pramonės,9,,Alytus,LT,Lithuania,55,,,,nursing,public,,,,,31/12/2018,08/04/2020
+495,Druskininkų ligoninė,,54.01663,24.00944,1,Sveikatos,30,,Druskininkai,LT,Lithuania,122,,,,general,public,,,,,31/12/2018,08/04/2020
+682,Druskininkų pirminės sveikatos priežiūros centras,,54.01331,23.98712,1,M. K. Čiurlionio g.,82,,Druskininkai,LT,Lithuania,38,,,,nursing,public,,,,,31/12/2018,08/04/2020
+2007,Alytaus r. pirminės sveikatos priežiūros centras,,54.40258,24.02459,1,Naujoji g.,48,,Alytus,LT,Lithuania,43,,,,nursing,public,,,,,31/12/2018,08/04/2020
+519,Lazdijų ligoninė,,54.23587,23.51667,1,Kauno,8,,Lazdijai,LT,Lithuania,108,,,,general,public,,,,,31/12/2018,08/04/2020
+530,Varėnos ligoninė,,54.21808,24.56927,1,Čiurlionio,61,,Varėna,LT,Lithuania,103,,,,general,public,,,,,31/12/2018,08/04/2020
+533,Varėnos pirminės sveikatos priežiūros centras Merkinės filialas,,55.337310791015625,23.883544921875,2,Seinų,3,,Varėnos r.,LT,Lithuania,33,,,,nursing,public,,,,,31/12/2018,08/04/2020
+538,Marijampolės ligoninė,,54.56671,23.34613,1,Palangos,1,,Marijampolė,LT,Lithuania,307,,,,general,public,,,,,31/12/2018,08/04/2020
+542,Marijampolės pirminės sveikatos priežiūros centras,,54.55432,23.3465,1,P.Kriaučiūno g.,2,LT-68298,Marijampolė,LT,Lithuania,80,,,,nursing,public,,,,,31/12/2018,08/04/2020
+553,Šakių ligoninė,,54.95538,23.03171,1,Bažnyčios,37,LT-71123,Šakiai,LT,Lithuania,125,,,,general,public,,,,,31/12/2018,08/04/2020
+565,Vilkaviškio ligoninė,,54.65051,23.02612,1,Maironio,25,LT-70104,Vilkaviškis,LT,Lithuania,166,,,,general,public,,,,,31/12/2018,08/04/2020
+540,Kalvarijos ligoninė,,54.41437,23.22277,1,Vytauto,9,,Kalvarija,LT,Lithuania,40,,,,general,public,,,,,31/12/2018,08/04/2020
+541,Kazlų Rūdos ligoninė,,54.75716,23.49536,1,Vytauto,45,LT-69417,Kazlų Rūda,LT,Lithuania,40,,,,general,public,,,,,31/12/2018,08/04/2020
+574,Jurbarko ligoninė,,55.0849,22.75031,1,Vydūno,56,,Jurbarkas,LT,Lithuania,170,,,,general,public,,,,,31/12/2018,08/04/2020
+584,Šilalės ligoninė,,55.4967,22.1781,1,Vytauto Didžiojo,19,LT-75132,Šilalė,LT,Lithuania,85,,,,general,public,,,,,31/12/2018,08/04/2020
+586,Kaltinėnų pirminės sveikatos priežiūros centras,,55.337310791015625,23.883544921875,2,Varnių,9,,Šilalės r.,LT,Lithuania,40,,,,nursing,public,,,,,31/12/2018,08/04/2020
+591,Tauragės ligoninė,,55.25427,22.2826,1,V.Kudirkos,2,LT-72214,Tauragė,LT,Lithuania,191,,,,general,public,,,,,31/12/2018,08/04/2020
+594,Skaudvilės palaikomojo gydymo ir slaugos ligoninė,,55.3703529918325,23.135291453392533,2,Vilniaus g.,14,,Tauragės r.,LT,Lithuania,50,,,,nursing,public,,,,,31/12/2018,08/04/2020
+2087,Pagėgių palaikomojo gydymo; slaugos ir senelių globos namai,,55.13844,21.90831,1,Žemaičių g.,7,,Pagėgiai,LT,Lithuania,16,,,,nursing,public,,,,,31/12/2018,08/04/2020
+599,Mažeikių ligoninė,,56.31597,22.34476,1,Basanavičiaus g.,24,,Mažeikiai,LT,Lithuania,196,,,,general,public,,,,,31/12/2018,08/04/2020
+602,Sedos pirminės sveikatos priežiūros centras,,56.31775,22.33738,1,Baranausko a.,8,,Mažeikių r.,LT,Lithuania,55,,,,nursing,public,,,,,31/12/2018,08/04/2020
+608,Plungės r. ligoninė,,55.89868,21.82813,1,Vaižganto g.,89,LT-90160,Plungė,LT,Lithuania,176,,,,general,public,,,,,31/12/2018,08/04/2020
+620,Regioninė Telšių ligoninė,,55.98357,22.23275,1,Kalno,40,,Telšiai,LT,Lithuania,168,,,,general,public,,,,,31/12/2018,08/04/2020
+623,Varnių pirminės sveikatos priežiūros centras,,55.74382,22.36647,1,Ligoninės,3,LT-88319,Telšių r.,LT,Lithuania,94,,,,nursing,public,,,,,31/12/2018,08/04/2020
+611,Rietavo pirminės sveikatos priežiūros centras,,55.337310791015625,23.883544921875,2,Parko,8,,Rietavo sav.,LT,Lithuania,32,,,,nursing,public,,,,,31/12/2018,08/04/2020
+629,Anykščių r. ligoninė,,55.52032,25.12204,1,Ramybės g.,15,LT-29166,Anykščiai,LT,Lithuania,193,,,,general,public,,,,,31/12/2018,08/04/2020
+640,Ignalinos ligoninė,,55.34113,26.15009,1,Ligoninės g.,13a,LT-30112,Ignalina,LT,Lithuania,81,,,,general,public,,,,,31/12/2018,08/04/2020
+647,Molėtų ligoninė,,55.22625,25.41135,1,Graužinių g.,3,,Molėtai,LT,Lithuania,92,,,,general,public,,,,,31/12/2018,08/04/2020
+655,Utenos ligoninė,,55.50941,25.59044,1,Aukštakalnio,3,,Utena,LT,Lithuania,285,,,,general,public,,,,,31/12/2018,08/04/2020
+658,Šv.Klaros palaikomojo gydymo ir slaugos ligoninė,,55.49827,25.60817,1,Dariaus ir Girėno,14,LT-28240,Utena,LT,Lithuania,80,,,,nursing,public,,,,,31/12/2018,08/04/2020
+665,Zarasų ligoninė,,55.73201,26.25575,1,Vilniaus g.,1b,,Zarasai,LT,Lithuania,90,,,,general,public,,,,,31/12/2018,08/04/2020
+672,Visagino ligoninė,,55.60639,26.43321,1,Taikos,15a,,Visaginas,LT,Lithuania,188,,,,general,public,,,,,31/12/2018,08/04/2020
