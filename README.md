@@ -2,4 +2,4 @@
 
 Geospatial datasets on main healthcare services in European countries, published by [Eurostat](https://ec.europa.eu/eurostat/).
 
-**See [this page](https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/healthcare-services) for more information**.
+For more information, **see [this page](https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/healthcare-services)**, the [metadata document](https://github.com/eurostat/healthcare-services/blob/master/data/metadata.pdf) and the [overview map](https://eurostat.github.io/healthcare-services/map/).
