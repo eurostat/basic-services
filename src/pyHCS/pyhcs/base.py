@@ -12,12 +12,6 @@
 .. |healthcare| replace:: `healthcare services data <healthcare_>`_
 .. _GISCO: https://github.com/eurostat/happyGISCO
 .. |GISCO| replace:: `GISCO <GISCO_>`_
-.. _happygisco: https://github.com/geopy/geopy
-.. |happygisco| replace:: `happygisco <happygisco_>`_
-.. _geopy: https://github.com/geopy/geopy
-.. |geopy| replace:: `geopy <geopy_>`_
-.. _geojson: https://github.com/jazzband/geojson
-.. |geojson| replace:: `geojson <geojson_>`_
 
 Module enabling the integration of data on Health Care Services (e.g., facilities
 like hospitals or clinics) collected from Member States into pan-European harmonised 
@@ -28,9 +22,9 @@ format.
 *require*:      :mod:`os`, :mod:`six`, :mod:`collections`, :mod:`functools`, :mod:`copy`, 
                 :mod`datetime`, :mod:`numpy`, :mod:`pandas`
 
-*optional*:     :mod:`geopy`, :mod:`happygisco`, :mod:`geojson`
+*optional*:     :mod:`requests`, :mod:`simplejson`
 
-*call*:         :mod:`pyhcs.config`         
+*call*:         :mod:`pyhcs.config`, :mod:`pyhcs.misc`         
 
 **Contents**
 """
@@ -68,141 +62,25 @@ except ImportError:
                 with open(arg,'r') as f:
                     return f.read()
     
-try:
-    assert False
-    import happygisco#analysis:ignore
-except (AssertionError,ImportError):
-    _is_happy_installed = False
-    warnings.warn('missing happygisco package (https://github.com/eurostat/happyGISCO) - GISCO web services not available')
+try:                
+    SERVICE_AVAILABLE = True                
+    import requests # urllib2
+except ImportError:                 
+    _is_requests_installed = False
+    warnings.warn('\n! missing requests package (https://pypi.python.org/pypi/requests/) - source data cannot be loaded remotely !')
 else:
-    # warnings.warn('happygisco help: hhttp://happygisco.readthedocs.io/')
-    _is_happy_installed = True
-    from happygisco import services
+    # warnings.warn('\n! requests help: https://requests.readthedocs.io/en/master/ !')
+    _is_requests_installed = True
 
-try:
-    import geopy#analysis:ignore 
-except ImportError: 
-    _is_geopy_installed = False
-    warnings.warn('missing geopy package (https://github.com/geopy/geopy)')   
-else:
-    # warnings.warn('geopy help: http://geopy.readthedocs.io/en/latest/')
-    _is_geopy_installed = True
-    # from geopy import geocoders
-    
-try:
-    assert _is_happy_installed is True or _is_geopy_installed is True
-except AssertionError:
-    # raise IOError('no geocoding module available')   
-    warnings.warn('no geocoding module available')   
-else:
-    CODERS = {'GISCO':          None,              
-                'osm':          None, # note: osm and GISCO) are actually... Nominatim on GISCO servers
-                'GoogleV3':     None,           
-                'Bing':         'api_key',          
-                'GeoNames':     'username', 
-                'Yandex':       'api_key',   
-                'MapQuest':     'key',          
-                'Nominatim':    None,
-                'OpenMapQuest': 'api_key' 
-             }      
-    if _is_happy_installed is False: # happyGISCO not loaded
-        CODERS.pop('GISCO'); CODERS.pop('osm')         
-    if _is_geopy_installed is False: # geopy not loaded
-        # note: we could simply build it...
-        CODERS.pop('GoogleV3'); CODERS.pop('Bing')         
-        CODERS.pop('GeoNames'); CODERS.pop('Yandex')         
-        CODERS.pop('MapQuest'); CODERS.pop('Nominatim')         
-        CODERS.pop('OpenMapQuest')               
-    elif _is_happy_installed is False:     # happyGISCO not loaded & geopy loaded
-        class _GEOCODER(object):
-            def __init__(self, **kwargs):
-                self._gc = None
-                coder = kwargs.pop('coder', 'GeoNames')
-                if coder not in CODERS.keys():
-                    raise IOError('geocoder %s not recognised' % coder)
-                try:        gc = getattr(geopy.geocoders, coder)   
-                except:     raise IOError('module geopy not available')
-                key = CODERS[coder]
-                if key is not None:          
-                    self.client_key = kwargs.pop(key,None)
-                    kwargs.update({key: self.client_key})
-                else:   
-                    self.client_key = None                
-                try:    self._gc = gc(**kwargs)  
-                except: raise IOError('geocoder not available')
-            def __getattr__(self, method):
-                if method in ('im_class','__objclass__'): 
-                    return getattr(self._gc, '__class__')
-                elif method.startswith('__'):  # to avoid some bug of the pylint editor
-                    try:        return object.__getattribute__(self, method) 
-                    except:     pass 
-                try:        return getattr(self._gc, method)
-                except:     raise IOError('method %s not implemented' % method)
-            def place2coord(self, *args, **kwargs):
-                return self.geocode(*args, **kwargs) # self._gc.geocode(*args, **kwargs)
-
-try:
-    import pyproj#analysis:ignore 
-except ImportError:
-    #warnings.warn('missing pyproj package (https://github.com/pyproj4/pyproj)')
-    _is_pyproj_installed = False
-else:
-    # warnings.warn('pyproj help: https://pyproj4.github.io/pyproj/latest/')
-    _is_pyproj_installed = True
-    from pyproj import CRS as crs, Transformer
-
-try:
-    import geojson#analysis:ignore 
-except ImportError: 
-    #warnings.warn('missing geosjon package (https://github.com/jazzband/geojson)')   
-    _is_geojson_installed = False
-else:
-    #warnings.warn('geojson help: https://github.com/jazzband/geojson')
-    _is_geojson_installed = True
-    from geojson import Feature, Point, FeatureCollection
-
-try:
-    assert True
-    import googletrans as gtrans
-except (AssertionError,ImportError):
-    #warnings.warn('missing googletrans package (https://github.com/ssut/py-googletrans) - Translations not available')
-    _is_googletrans_installed = False
-else:
-    # warnings.warn('googletrans help: https://py-googletrans.readthedocs.io/en/latest')
-    _is_googletrans_installed = True
-
-try:
-    assert False # not used: ignore 
-    import Levenshtein
-except (AssertionError,ImportError):
-    _is_levenshtein_installed = False
-    # warnings.warn('missing python-Levenshtein package (http://github.com/ztane/python-Levenshtein) - Text matching not available')
-else:
-    # warnings.warn('Levenshtein help: https://rawgit.com/ztane/python-Levenshtein/master/docs/Levenshtein.html')
-    _is_levenshtein_installed = True
-
-from pyhcs import BASENAME, METABASE, COUNTRIES
+from pyhcs import BASENAME, METABASE, EUCOUNTRIES
 from pyhcs.config import BASETYPE, INDEX, DATE, LANG, SEP, ENC, \
-                            PATH, FILE, FMT, PROJ # OCFGNAME 
-
-IMETANAME       = ['country', 'lang', 'proj', 'file', 'path', 'enc', 'sep', 
-                   'columns', 'index'] # default metadata fields
-"""Metadata fields related to input country data.
-"""
-
-IPLACE          = ['street', 'number', 'postcode', 'city', 'country']
-"""Fields used to defined a toponomy (location/place).
-"""
-# LATLON        = ['lat', 'lon'] # 'coord' # 'latlon'
-# ORDER         = 'lL' # first lat, second Lon 
-
-try:
-    assert _is_pyproj_installed is True
-    CRS = crs.from_epsg(PROJ or 4326)
-except:
-    CRS = None
+                            PATH, FILE, FMT, PROJ, OCFGNAME 
+from pyhcs.misc import IOProcess, TextProcess, GeoProcess
 
 THISDIR         = osp.dirname(__file__)
+
+_KEEP_INDEX_AS_ILANG = True # that's actually a debug...that is not a debug anymore!
+_KEEP_META_UPDATED = True
 
 
 #%%
@@ -216,6 +94,11 @@ class MetaHCS(dict):
         >>> meta = MetaHCS(**metadata)
     """
     
+    METANAME = ['country', 'lang', 'proj', 'file', 'path', 'enc', 'sep', 
+                'columns', 'index'] # default metadata fields
+    """Metadata fields related to input country data.
+    """
+
     #/************************************************************************/
     @classmethod
     def template(cls, country=None, **kwargs):
@@ -228,7 +111,7 @@ class MetaHCS(dict):
         elif not isinstance(country, string_types):
             raise TypeError('wrong type for country code - must be a string')
         as_file = kwargs.pop('as_file', True)
-        temp = dict.fromkeys(IMETANAME)
+        temp = dict.fromkeys(cls.METANAME)
         # dumb initialisation
         temp.update({ 'country':     {'code': country.upper() or 'CC', 'name': ''},
                       'lang':        {'code': country.lower() or 'cc', 'name': ''},
@@ -281,18 +164,6 @@ class MetaHCS(dict):
             try:        self.__cc = getattr(meta['country'], 'code', None)
             except:     pass
         else:           self.__cc = None
-
-    #/************************************************************************/
-    #@property
-    #def cc(self):
-    #    return self.__cc
-    #@cc.setter#analysis:ignore
-    #def cc(self, cc):
-    #    if not (cc is None or isinstance(cc, string_types)):         
-    #        raise TypeError('wrong format for country code %s - must be a string' % cc)
-    #    elif not cc in list(COUNTRIES.values())[0]:
-    #        raise IOError('wrong country code %s - must be any valid code from the %s area' % (cc,list(COUNTRIES.keys())[0]))            
-    #    self.__cc = cc
             
     #/************************************************************************/
     def copy(self, *args, **kwargs): # actually new object, like a deepcopy...
@@ -340,10 +211,11 @@ class MetaHCS(dict):
         except (AssertionError,ImportError):
             raise IOError('metadata file not available')
         else:
-            warnings.warn('loading metadata file...')
+            # warnings.warn('\n! loading metadata file... !')
+            pass
         if meta == {}:
             raise IOError('no metadata variable loaded')  
-        self.update({var: meta.get(var) for var in IMETANAME if var in meta})
+        self.update({var: meta.get(var) for var in self.METANAME if var in meta})
         return meta
     
     #/************************************************************************/
@@ -358,10 +230,10 @@ class MetaHCS(dict):
         try:
             assert osp.exists(dest)
         except AssertionError:
-            warnings.warn('destination metadata file will be created')
+            warnings.warn('\n! destination metadata file will be created !')
         else:
-            warnings.warn('destination metadata file will be overwritten')
-        meta = {k:v for (k,v) in dict(self.copy()).items() if k in IMETANAME}
+            warnings.warn('\n! destination metadata file will be overwritten !')
+        meta = {k:v for (k,v) in dict(self.copy()).items() if k in self.METANAME}
         if meta == {}:
             raise IOError('no metadata variable available')        
         with open(dest, 'w') as fp:
@@ -372,8 +244,8 @@ class MetaHCS(dict):
         except:
             raise IOError('error writing metadata file')
         else:
-            warnings.warn('writing metadata file...')
-
+            # warnings.warn('\n! writing metadata file... !')
+            pass
     
 #%%
 #==============================================================================
@@ -385,279 +257,8 @@ class BaseHCS(object):
     
         >>> hcs = BaseHCS(**metadata)
     """
-
-    # default geocoder... but this can be reset when declaring a subclass
-    CODER           = 'Bing' # 'GISCO', 'Nominatim', 'GoogleV3', 'GMaps', 'GPlace', 'GeoNames'
-    CODERKEY        = None # enter your key here...
     
-    try:
-        assert _is_happy_installed is True
-    except:     
-        try:
-            assert _is_geopy_installed is True
-        except:     pass
-        else:
-            CODER   = 'Bing' if CODER == 'GISCO' else CODER # reset
-            GEOSERV = _GEOCODER(**{'coder': CODER, CODERS[CODER]: CODERKEY})
-    else:
-        OSMSERV     = services.OSMService()
-        GISCOSERV   = services.GISCOService()
-        GEOSERV = services.APIService(**{'coder': CODER, CODERS[CODER]: CODERKEY})
-
-    try:
-        assert _is_googletrans_installed is True
-        UTRANSLATOR = gtrans.Translator()
-    except:     pass
-
-            
-    #/************************************************************************/
-    @classmethod
-    def locate(cls, *place, **kwargs):
-        """Geocoding method.
-        """
-        try:
-            assert _is_happy_installed is True or _is_geopy_installed is True
-        except:
-            raise ImportError('locate method not available')
-        coder = kwargs.pop('coder', None) or cls.CODER
-        if not isinstance(coder, string_types):     
-             raise TypeError('wrong format for geocoder - must be a string')
-        elif not coder in CODERS:
-            raise IOError('geocoder %s not available' % coder)
-        if 'place' in kwargs:
-            place = (kwargs.pop('place', ''),)
-        kwargs.update({'order': 'lL', 'unique': True, 
-                      'exactly_one': True})
-        if _is_happy_installed is True and coder in ('osm','GISCO'): 
-            kwargs.pop('exactly_one')
-            if coder == 'osm':  s = cls.OSMSERV # = services.OSMService()
-            else:               s = cls.GISCOSERV # = services.GISCOService()
-        elif _is_happy_installed is True:
-            kwargs.pop('exactly_one')
-            s = cls.GEOSERV # = services.APIService(**{'coder': cls.CODER, CODERS[CODER]: cls.CODERKEY})
-        else: # _is_happy_installed is False and, most likely, coder not in ('osm','GISCO')
-            kwargs.pop('order') or kwargs.pop('unique') 
-            s = cls.GEOSERV # = _GEOCODER(**{'coder': cls.CODER, CODERS[CODER]: cls.CODERKEY})
-        return s.place2coord(place, **kwargs)
-        
-    #/************************************************************************/
-    @classmethod
-    def project(cls, *coord, **kwargs):
-        """Projection method. 
-        """
-        try:
-            assert _is_happy_installed is True or _is_pyproj_installed is True
-        except:
-            raise ImportError('project method not available')
-        if 'lat' in kwargs and 'lon' in kwargs:
-            coord = ([kwargs.pop('lat', None), kwargs.pop('lon', None)],)
-        if coord  in ((),(None,)):
-            raise IOError('no lat/lon coordinates parsed')
-        elif not all([isinstance(c, Sequence) for c in coord]):
-            raise TypeError('wrong lat/lon coordinates parsed')
-        iproj = kwargs.pop('iproj', None) or 'WGS84'
-        if not isinstance(iproj, (string_types, int)):
-            raise TypeError("projection not recognised - must be a string (e.g., 'WGS84' or 'EPSG:4326') or an integer (e.g., 4326)")
-        oproj = PROJ or 'WGS84'
-        if iproj == oproj:
-            return coord
-        if _is_happy_installed is True: 
-            return cls.GISCOSERV.coordproject(coord, iproj=iproj, oproj=oproj)
-        else:
-            return Transformer.from_crs(CRS.from_epsg(iproj), CRS).transform(*coord)
-    
-    #/************************************************************************/
-    @classmethod
-    def translate(cls, *text, **kwargs):
-        """Translation method.
-        """
-        try:
-            assert _is_googletrans_installed is True
-        except:
-            raise ImportError('translate method not available')
-        text = (text not in ((None,),()) and text[0])               or \
-                kwargs.pop('text', '')                                
-        if isinstance(text, string_types):
-            text = [text,]
-        if isinstance(text, Sequence) and all([isinstance(t, string_types) for t in text]):
-            pass
-        elif text in (None,(),''):
-            return
-        else:
-            raise TypeError('wrong format for input text')
-        ilang, olang = kwargs.pop('ilang', None), kwargs.pop('olang', LANG)
-        if not (isinstance(ilang, string_types) and isinstance(olang, string_types)):
-            raise TypeError('languages not recognised')
-        if 'filt' in kwargs:
-            f = kwargs.get('filt')
-            try:                    assert callable(f)
-            except AssertionError:  pass
-            else:   
-                text = [f(t) for t in text]
-        if ilang == olang or text == '':
-            return text
-        return [t.text for t in cls.UTRANSLATOR.translate(text, src=ilang, dest=olang)]
-    
-    #/************************************************************************/
-    @classmethod
-    def detect(cls, *text, **kwargs):
-        """Language detection method.
-        """
-        try:
-            assert _is_googletrans_installed is True
-        except:
-            raise ImportError('detect method not available')
-        text = (text not in ((None,),()) and text[0])               or \
-                kwargs.pop('text', '')                                
-        if isinstance(text, string_types):
-            text = [text,]
-        if isinstance(text, Sequence) and all([isinstance(t, string_types) for t in text]):
-            pass
-        elif text in (None,(),''):
-            return
-        else:
-            raise TypeError('wrong format for input text')
-        return [r['lang'] for r in cls.UTRANSLATOR.detect(text)]
-            
-    #/************************************************************************/
-    @staticmethod
-    def textmatch(t1, t2, dist='jaro_winkler'):
-        """Text matching method.
-        """
-        try:
-            assert _is_levenshtein_installed is True
-        except:
-            raise ImportError('closest method not available')
-        try:
-            distance = getattr(Levenshtein,dist)
-        except AttributeError:
-            raise AttributeError('Levenshtein distance %s not recognised' % distance)
-        else: 
-            return distance(t1.str.upper().str, t2) 
-
-    #/************************************************************************/
-    @staticmethod
-    def textsplit(s, contiguous=True):
-        """Text splitting method.
-        """
-        strlen = len(s)
-        lower_around = (lambda i: s[i-1].islower() or strlen > (i + 1) and s[i + 1].islower())
-        start, parts = 0, []
-        for i in range(1, strlen):
-            if s[i].isupper() and (not contiguous or lower_around(i)):
-                parts.append(s[start: i])
-                start = i
-        parts.append(s[start:])    
-        return (" ").join(parts)
-                    
-    #/************************************************************************/
-    @staticmethod
-    def to_date(df, column, ofmt, ifmt='%d-%m-%Y %H:%M'): # ofmt='%d/%m/%Y'
-        """Cast the column of a dataframe into datetime.
-        """
-        try:
-            assert column in df.columns
-        except:
-            raise IOError('wrong input column - most be in the dataframe')
-        try:
-            assert (ofmt is None or isinstance(ofmt, string_types)) and     \
-                isinstance(ifmt, string_types) 
-        except:
-            raise TypeError('wrong format for input date templates')
-        if ofmt in (None,'') or ofmt == '':
-            return df[column].astype(str)    
-        else:            
-            try:
-                f = lambda s: datetime.strptime(s, ifmt).strftime(ofmt)
-                return df[column].astype(str).apply(f)
-            except:
-                return df[column].astype(str)    
-                    
-    #/************************************************************************/
-    @staticmethod
-    def to_cast(df, column, cast):
-        """Cast the column of a dataframe into special format, excluding datetime.
-        """
-        try:
-            assert column in df.columns
-        except:
-            raise IOError('wrong input column - most be in the dataframe')
-        try:
-            assert isinstance(cast, type)
-        except:
-            raise TypeError('wrong format for input cast type')
-        if cast == df[column].dtype:
-            return df[column]
-        else:
-            try:
-                return df[column].astype(cast)
-            except:
-                return df[column].astype(object)
-                
-    #/************************************************************************/
-    @staticmethod
-    def to_json(df, columns=None):
-        """JSON output formatting.
-        """
-        try:
-            assert columns is None or isinstance(columns, string_types)     or \
-                (isinstance(columns, Sequence) and all([isinstance(c,string_types) for c in columns]))
-        except:
-            raise IOError('wrong format for input columns')
-        if isinstance(columns, string_types):
-            columns == [columns,]
-        if columns in (None,[]):
-            columns = df.columns
-        columns = list(set(columns).intersection(df.columns))
-        return df[columns].to_dict('records') 
-
-    #/************************************************************************/
-    @staticmethod
-    def to_geojson(df, columns=None, latlon=['lat', 'lon']):
-        """GEOsJSON output formatting.
-        """
-        try:
-            assert columns is None or isinstance(columns, string_types)     or \
-                (isinstance(columns, Sequence) and all([isinstance(c,string_types) for c in columns]))
-        except:
-            raise IOError('wrong format for input columns')
-        try:
-            lat, lon = latlon
-            assert isinstance(lat, string_types) and isinstance(lon, string_types)
-        except:
-            raise TypeError('wrong format for input lat/lon columns')
-        if isinstance(columns, string_types):
-            columns == [columns,]
-        if columns in (None,[]):
-            columns = list(set(df.columns))
-        columns = list(set(columns).intersection(set(df.columns)).difference(set([lat,lon])))
-        if _is_geojson_installed is True: 
-            features = df.apply(
-                    lambda row: Feature(geometry=Point((float(row[lon]), float(row[lat])))),
-                    axis=1).tolist() 
-            properties = df[columns].to_dict('records') # columns used as properties
-            # properties = df.drop([lat, lon], axis=1).to_dict('records')
-            geom = FeatureCollection(features=features, properties=properties)
-        else:
-            geom = {'type':'FeatureCollection', 'features':[]}
-            for _, row in df.iterrows():
-                feature = {'type':'Feature',
-                           'properties':{},
-                           'geometry':{'type':'Point',
-                                       'coordinates':[]}}
-                feature['geometry']['coordinates'] = [float(row[lon]), float(row[lat])]
-                for col in columns:
-                    feature['properties'][col] = row[col]
-                geom['features'].append(feature)
-        return geom
-    
-    #/************************************************************************/
-    @staticmethod
-    def to_gpkg(df, columns=None):
-        """
-        """
-        warnings.warn('method for gpkg not implemented')
-        pass
+    CC = None # class attribute... that should not be different from cc
     
     #/************************************************************************/
     def __init__(self, **kwargs):
@@ -668,24 +269,48 @@ class BaseHCS(object):
             # meta should be initialised in the derived class
             assert getattr(self, 'meta', None) not in ({},None)
         except AssertionError:
-            self.meta = dict(zip(IMETANAME, [{}, {}, None, '', '', None, ',', [], {}]))
-        country, lang = self.meta.get('country',None), self.meta.get('lang',None)
-        self.cc = kwargs.pop('cc', country.get('code', '') if country is not None else None)
-        self.country = kwargs.pop('country', country.get('name', '') if country is not None else None)
-        self.lang = kwargs.pop('lang', lang.get('code', None) if lang is not None else None) 
-        self.enc, self.sep = self.meta.get('enc',None), self.meta.get('sep',None)
-        path, fname = self.meta.get('path',''), self.meta.get('file','')
-        path = osp.abspath(osp.join(THISDIR, path)) if not(path in (None,'') or osp.isabs(path)) else path
+            self.meta = dict(zip(MetaHCS.METANAME,          \
+                                 [{},       # init country
+                                  {},       # init lang
+                                  None,     # init proj 
+                                  '',       # init file
+                                  '',       # init path
+                                  None,     # init enc
+                                  ',',      # init sep 
+                                  [],       # init columns
+                                  {}        # init index
+                                  ]))
+        # retrieve country name and code
+        country = GeoProcess.isoCountry(self.meta.get('country',None) or self.CC)
+        self.cc = kwargs.pop('cc', None if country in ({},None) else country.get('code'))
+        # retrieve languge of the input data
+        lang = TextProcess.isoLang(self.meta.get('lang',None))
+        self.lang = kwargs.pop('lang', None if lang in ({},None) else lang.get('code'))
+        # retrieve input data parameters, e.g. name, location, and format 
+        self.enc = kwargs.pop('enc',self.meta.get('enc', None))
+        self.sep = kwargs.pop('sep',self.meta.get('sep', None))
+        path, fname = kwargs.pop('path',self.meta.get('path','')), kwargs.pop('file',self.meta.get('file',''))
+        if osp.basename(fname) != fname:
+            path, fname = osp.join(path, osp.dirname(fname)), osp.basename(fname)
+        if not(path in (None,'') or osp.isabs(path)):
+            path = osp.abspath(osp.join(THISDIR, path))
         self.src = kwargs.pop('src', 
                               None if fname=='' else osp.join(path, fname) if path not in (None,'') else fname) # source file
+        # retrieve data year, if any
+        self.year = kwargs.pop('year', None)
+        # retrieve a default output name
         self.dest = kwargs.pop('dest', None)
-        self.proj = kwargs.pop('proj', self.meta.get('proj',None)) # projection system
+        # retrieve the input data projection
+        self.proj = kwargs.pop('proj', self.meta.get('proj', None)) # projection system
+        # retrieve a default output name
         self.date = kwargs.pop('date', self.meta.get('date','%d-%m-%Y %H:%M')) # input date format
+        # retrieve columns when already known
         columns = kwargs.pop('columns', None) # [col[self.lang] for col in COLUMNS]
         self.icolumns = columns or self.meta.get('columns',{})    # header columns
         [col.update({self.lang: col.get(self.lang,'')}) for col in self.icolumns] # ensure there are 'locale' column names
+        # retrieve matching columns when known
         index = kwargs.pop('index', None)   # index
-        self.oindex = index or self.meta.get('index',{}).copy() or INDEX.keys()
+        self.oindex = index or self.meta.get('index',{}).copy() or list(INDEX.keys())
 
     #/************************************************************************/
     def __repr__(self):
@@ -716,8 +341,8 @@ class BaseHCS(object):
         return self.__metadata # or {}
     @meta.setter#analysis:ignore
     def meta(self, meta):
-        if not (meta is None or isinstance(meta, Mapping)):         
-            raise TypeError('wrong format for country code %s - must be a string' % meta)
+        if not (meta is None or isinstance(meta, (MetaHCS,Mapping))):         
+            raise TypeError('wrong format for country code %s - must be a dictionary' % meta)
         self.__metadata = meta
 
     @property
@@ -725,22 +350,20 @@ class BaseHCS(object):
         return self.__cc
     @cc.setter#analysis:ignore
     def cc(self, cc):
-        if not (cc is None or isinstance(cc, string_types)):         
+        if cc is None:                          pass
+        elif not isinstance(cc, string_types):         
             raise TypeError('wrong format for country code %s - must be a string' % cc)
-        elif not cc in list(COUNTRIES.values())[0]:
-            raise IOError('wrong country code %s - must be any valid code from the %s area' % (cc,list(COUNTRIES.keys())[0]))            
-        # self.meta['country'].update({'code': cc})
+        elif not cc in EUCOUNTRIES: # EUCOUNTRIES.keys()
+            raise IOError('wrong country code %s - must be any valid code from the EU area' % cc)   
+        elif cc != self.CC:
+            warnings.warn("\n! mismatch with class variable 'CC': %s !" % self.CC)
+        if _KEEP_META_UPDATED is True:
+            self.meta.update({'country': {'code': cc, 'name': EUCOUNTRIES[cc]}}) # GeoProcess.isoCountry
         self.__cc = cc
 
     @property
     def country(self):
-        return self.__country
-    @country.setter#analysis:ignore
-    def country(self, ctry):
-        if not (ctry is None or isinstance(ctry, string_types)):         
-            raise TypeError('wrong format for country %s - must be a string' % ctry)
-        # self.meta['country'].update({'name': ctry})
-        self.__country = ctry
+        return EUCOUNTRIES[self.cc]
 
     @property
     def lang(self):
@@ -749,8 +372,20 @@ class BaseHCS(object):
     def lang(self, lang):
         if not (lang is None or isinstance(lang, string_types)):         
             raise TypeError('wrong format for language type %s - must be a string' % lang)
-        # self.meta.update({'lang': lang})
+        if _KEEP_META_UPDATED is True:
+            self.meta.update({'lang': {'code': lang, 'name': TextProcess.LANGS[lang]}}) # TextProcess.isoLang
         self.__lang = lang
+
+    @property
+    def year(self):
+        return self.__refdate
+    @year.setter#analysis:ignore
+    def year(self, year):
+        if not (year is None or isinstance(year, int)):         
+            raise TypeError('wrong format for year: %s - must be an integer' % year)
+        if _KEEP_META_UPDATED is True:
+            self.meta.update({'year': year})
+        self.__refdate = year
 
     @property
     def src(self):
@@ -759,7 +394,23 @@ class BaseHCS(object):
     def src(self, src):
         if not (src is None or isinstance(src, string_types)):         
             raise TypeError('wrong format for source filename %s - must be a string' % src)
-        # self.meta.update({'src': src})
+        elif src is not None:
+            try:
+                assert osp.exists(src) is True
+            except (OSError,AssertionError):
+                warnings.warn("! source file '%s' not found on local disk !" % src)
+                try:
+                    assert _is_requests_installed is True
+                    session = requests.Session()
+                    response = session.head(src)
+                    response.raise_for_status()
+                except AssertionError:
+                    pass
+                except (requests.URLRequired,requests.HTTPError,requests.RequestException):
+                    warnings.warn("\n! source file '%s' not available online !" % src)
+                    raise IOError('no input source file found')
+        if _KEEP_META_UPDATED is True:
+            self.meta.update({'file': osp.basename(src), 'path': osp.dirname(src)})
         self.__src = src
 
     @property
@@ -769,7 +420,8 @@ class BaseHCS(object):
     def proj(self, proj):
         if not (proj is None or isinstance(proj, string_types)):         
             raise TypeError('wrong format for projection type %s - must be a string' % proj)
-        # self.meta.update({'proj': proj})
+        if _KEEP_META_UPDATED is True:
+            self.meta.update({'proj': proj})
         self.__proj = proj
 
     @property
@@ -779,15 +431,16 @@ class BaseHCS(object):
     def icolumns(self, cols):
         if cols is None:                        
             pass # nothing yet
-        elif isinstance(cols, Mapping):
-            cols = [cols,]
         elif isinstance(cols, string_types):
             cols = [{self.lang: cols}]
+        elif isinstance(cols, Mapping):
+            cols = [cols,]
         elif isinstance(cols, Sequence) and all([isinstance(col, string_types) for col in cols]):
             cols = [{self.lang: col} for col in cols]
         elif not(isinstance(cols, Sequence) and all([isinstance(col, Mapping) for col in cols])): 
             raise TypeError('wrong input column headers type %s - must be a sequence of dictionaries' % cols)
-        # self.meta.update({'columns': cols})
+        if _KEEP_META_UPDATED is True:
+            self.meta.update({'columns': cols})
         self.__columns = cols
 
     @property
@@ -803,7 +456,8 @@ class BaseHCS(object):
             ind = dict.fromkeys(ind)
         elif not isinstance(ind, Mapping):
             raise TypeError('wrong output index type %s - must be a dictionary' % ind)
-        # self.meta.update({'index': ind})
+        if _KEEP_META_UPDATED is True:
+            self.meta.update({'index': ind})
         self.__index = ind
 
     @property
@@ -813,7 +467,8 @@ class BaseHCS(object):
     def sep(self, sep):
         if not (sep is None or isinstance(sep, string_types)):         
             raise TypeError('wrong format for separator %s - must be a string' % sep)
-        # self.meta.update({'sep': sep})
+        if _KEEP_META_UPDATED is True:
+            self.meta.update({'sep': sep})
         self.__sep = sep
 
     @property
@@ -823,7 +478,8 @@ class BaseHCS(object):
     def enc(self, enc):
         if not (enc is None or isinstance(enc, string_types)):         
             raise TypeError('wrong format for file encoding %s - must be a string' % enc)
-        # self.meta.update({'enc': enc})
+        if _KEEP_META_UPDATED is True:
+            self.meta.update({'enc': enc})
         self.__encoding = enc
 
     @property
@@ -849,7 +505,7 @@ class BaseHCS(object):
              kwargs.pop('src', None)                                or \
              self.src                                               
         if src in (None,''):     
-             raise IOError("no source filename provided - set 'src' attribute or parameter")
+             raise IOError("no source filename provided - set 'src' attribute/parameter")
         elif not isinstance(src, string_types):     
              raise TypeError('wrong format for source filename - must be a string')
         # ifmt = osp.splitext(src)[-1]
@@ -859,6 +515,8 @@ class BaseHCS(object):
         #try:
         #    kwargs.update(self.load_data.__dict__)
         #except:         pass
+        kwargs.update({'encoding': encoding, 'sep': sep})
+        self.data = pd.read_csv(src, **kwargs)
         try:
             kwargs.update({'encoding': encoding, 'sep': sep})
             self.data = pd.read_csv(src, **kwargs)
@@ -887,15 +545,18 @@ class BaseHCS(object):
         except: 
             self.icolumns = [{self.lang:col} for col in self.data.columns]
         #if set([col[self.lang] for col in self.icolumns]).difference(set(self.data.columns)) != set():
-        #    warnings.warn('mismatched data columns and header fields')
-        if self.src != src:            self.src = src
+        #    warnings.warn('\n! mismatched data columns and header fields !')
+        # if everything worked well, update the fields in case they differ
+        if self.src != src:             self.src = src
+        if self.enc != encoding:        self.enc = encoding 
+        if self.sep != sep:             self.sep = sep 
         
     #/************************************************************************/
     def get_column(self, *columns, **kwargs):
         """Retrieve the name of the column associated to a given field (e.g., manually
         defined), depending on the language.
         
-                >>> hcs.get_column(columns=['col1', 'col2'])
+                >>> hcs.get_column(columns=['col1', 'col2'], ilang=None, olang=None)
         """
         columns = (columns not in ((None,),()) and columns[0])          or \
                     kwargs.pop('columns', None)                                 
@@ -905,9 +566,12 @@ class BaseHCS(object):
             columns = (columns,)
         elif not (isinstance(columns, Sequence) and all([isinstance(col, string_types) for col in columns])):   
              raise TypeError('wrong input format for columns - must be a (list of) string(s)')
-        langs = self.icolumns[0].keys()
-        langs = list(dict.fromkeys([LANG, *langs])) # trick to reorder with OLANG first default... 
-        ilang = kwargs.pop('ilang', None) # OLANG
+        try:
+            langs = list(self.icolumns[0].keys())
+        except:
+            langs = []
+        # langs = list(dict.fromkeys([LANG, *langs])) # reorder with LANG first default... 
+        ilang = kwargs.pop('ilang', self.lang) # OLANG
         if ilang is None and not columns in (None, ('',), ()):
             # try to guess the language in the index
             #for ilang in langs:
@@ -915,21 +579,38 @@ class BaseHCS(object):
             #        assert set(columns).difference([col[ilang] for col in self.icolumns]) == set()
             #    except:    continue
             #    else:      break
-            f = lambda text : self.detect(text)
+            f = lambda text : TextProcess.detect(text)
             try:                        assert False and f(-1)
             except TypeError:
-                ilang = self.detect((' ').join(columns.values()))
+                ilang = TextProcess.detect((' ').join(columns.values()))
             else:
-                ilang = LANG
+                ilang = self.lang # None 
         try:
-            assert ilang in langs
+            assert ilang is not None and ilang in TextProcess.LANGS
         except AssertionError:
-            raise IOError('input column(s) not recognised')            
-        olang = kwargs.pop('olang', self.lang)
+            raise IOError('input language not recognised')            
+        olang = kwargs.pop('olang', LANG) # LANG
         try:
-            assert olang in langs
+            assert olang is not None and olang in TextProcess.LANGS
         except AssertionError:
-            f = lambda cols: self.translate(cols, ilang=self.lang, olang=olang)
+            raise IOError('output language not recognised')            
+        try:
+            assert ilang in langs or ilang == self.lang
+        except AssertionError:
+            f = lambda cols: TextProcess.translate(cols, ilang=self.lang, olang=ilang, **kwargs)
+            try:                    f(-1)#analysis:ignore
+            except TypeError:
+                tcols = f([col[self.lang] for col in self.icolumns])
+                [col.update({ilang: t}) for (col,t) in zip(self.icolumns, tcols)]
+            except ImportError:     
+                pass
+        except KeyError:
+             pass # raise IOError('no columns available')
+        try:
+            assert (olang in langs and 'filt' not in kwargs) or olang == self.lang
+            # if you add a filter, translation is forced
+        except AssertionError:
+            f = lambda cols: TextProcess.translate(cols, ilang=self.lang, olang=olang, **kwargs)
             try:                    f(-1)#analysis:ignore
             except TypeError:
                 tcols = f([col[self.lang] for col in self.icolumns])
@@ -977,12 +658,15 @@ class BaseHCS(object):
         fields = {}
         for (ind, field) in columns.items():
             if field is None:
-                if force_rename is False:       continue
-                else:                           field = ind 
+                if force_rename is False:       
+                    warnings.warn("\n! column '%s' will not be reported in the formatted output table !" % ind)
+                    continue
+                else:                           
+                    field = ind 
             ofield = INDEX[ind]['name'] if ind in INDEX.keys() and force_rename is False else ind
             cast = BASETYPE[INDEX[ind]['type']]            
-            if ind in self.oindex: # update the index: this will inform us about which renamings were successful
-                self.oindex.update({ind: ofield})              
+            #t if ind in self.oindex: # update the index: this will inform us about which renamings were successful
+            #t    self.oindex.update({ind: ofield})              
             if field == ofield:
                 fields.update({field: ofield}) # add it the first time it appears
                 continue
@@ -995,14 +679,14 @@ class BaseHCS(object):
             if cast == self.data[ofield].dtype:
                 continue
             elif cast == datetime:                
-                self.data[ofield] = self.to_date(self.data, ofield, DATE, ifmt=idate) 
+                self.data[ofield] = IOProcess.to_date(self.data, ofield, DATE, ifmt=idate) 
             else:
-                self.data[ofield] = self.to_cast(self.data, ofield, cast)
+                self.data[ofield] = IOProcess.to_cast(self.data, ofield, cast)
         return columns 
 
     #/************************************************************************/
     def clean_column(self, *columns, **kwargs):
-        """Filter the dataframe
+        """Filter the dataframe.
         """
         columns = (columns not in ((None,),()) and columns[0])        or \
                     kwargs.pop('drop', [])
@@ -1022,12 +706,12 @@ class BaseHCS(object):
             try:        assert col in self.data.columns
             except:
                 try:        assert col in self.oindex
-                            # assert col in [col_[lang] for col_ in self.icolumns]
                 except:     continue
                 else:
                     # col = [col_[self.lang] for col_ in self.icolumns if col_[lang]==col][0]
                     columns.pop(i)
-                    columns.insert(i, self.oindex[col])
+                    #t columns.insert(i, self.oindex[col])
+                    columns.insert(i, INDEX[col]) #t
             else:       continue
         for i, ind in enumerate(index):
             try:        assert ind in self.data.columns
@@ -1036,7 +720,8 @@ class BaseHCS(object):
                 except:     continue
                 else:
                     index.pop(i)
-                    index.insert(i, self.oindex[ind])
+                    #t index.insert(i, self.oindex[ind])
+                    index.insert(i, INDEX[col])
             else:       continue
         # refine the set of columns to actually drop
         columns = list(set(columns).difference(set(index)))
@@ -1074,8 +759,7 @@ class BaseHCS(object):
                 self.place
         try:
             assert place in ([],None,'')
-            # assert _is_googletrans_installed is True
-            tplace = self.translate(IPLACE, ilang='en', olang=lang)
+            tplace = TextProcess.translate(GeoProcess.PLACE, ilang='en', olang=lang)
         except (AssertionError,IOError,OSError):
             pass
         else:
@@ -1087,7 +771,8 @@ class BaseHCS(object):
         self.place = place if isinstance(place, string_types) else 'place' 
         if isinstance(place, string_types):
             place = [place,] # just to be sure...
-        if 'place' in self.oindex: self.oindex.update({'place': 'place'})
+        if 'place' in INDEX.keys() and not 'place' in self.oindex: # actually not recorded: always False
+            self.oindex.update({'place': 'place'}) # it is created on the fly
         try:
             assert self.place in self.data.columns
         except:
@@ -1139,20 +824,20 @@ class BaseHCS(object):
             else:
                 raise IOError("unknown order keyword - must be 'lL' or 'Ll'")
             self.data[[lat, lon]] = self.data[latlon].str.split(pat=r'\s+', n=1, expand=True) #.astype(float)
-            geo_qual = 3
+            geo_qual = 1
         elif lat in self.data.columns and lon in self.data.columns: 
         # elif lat in self.icolumns[lang] and lon in self.icolumns[lang]: 
             if lat != olat:
                 self.data.rename(columns={lat: olat}, inplace=True)
             if lon != olon:                
                 self.data.rename(columns={lon: olon}, inplace=True)
-            geo_qual =3 
+            geo_qual = 1
         else:
             if not(isinstance(place, string_types) and place in self.data.columns):
                 self.define_place(**kwargs)
             #elif set(self.place).difference(set(self.data.columns)) == {}: 
             #    self.set_column(**kwargs)         
-            f = lambda place : self.locate(place)
+            f = lambda place : self.geoserv.locate(place)
             try:                        f(coder=-1)
             except TypeError:
                 self.data[olat], self.data[olon] = zip(*self.data[self.place].apply(f))                                     
@@ -1160,21 +845,23 @@ class BaseHCS(object):
             except ImportError:
                 raise IOError('no geocoder available')
             geo_qual = None # TBD
+        ind = INDEX['geo_qual']['name']
+        self.data[ind] = geo_qual 
+        if not 'geo_qual' in self.oindex: 
+            self.oindex.update({'geo_qual': ind})
+        # no need: self.icolumns.extend([{'en': ind}])
+        if not 'lat' in self.oindex:
+            self.oindex.update({'lat': olat})
+        if not 'lon' in self.oindex:
+            self.oindex.update({'lon': olon})
+            # no need: self.icolumns.extend([{'en': olat}, {'en': olon}}])
         if PROJ is not None and self.proj not in (None,'') and self.proj != PROJ:
-            f = lambda lat, lon : self.project([lat, lon], iproj=self.proj, oproj=PROJ)
+            f = lambda lat, lon : self.geoserv.project([lat, lon], iproj=self.proj, oproj=PROJ)
             try:                        f('-1')
             except TypeError:
                 self.data[olat], self.data[olon] = zip(*self.data[[olat, olon]].apply(f))
             except ImportError:
                 raise IOError('no projection transformer available')
-        if 'geo_qual' in INDEX.keys(): # in self.oindex
-            ind = INDEX['geo_qual']['name']
-            self.data[ind] = geo_qual 
-            self.oindex.update({'geo_qual': ind})
-            # no need: self.icolumns.extend([{'en': ind}])
-        if 'lat' in self.oindex and 'lon' in self.oindex:
-            self.oindex.update({'lat': olat, 'lon': olon})
-            # no need: self.icolumns.extend([{'en': olat}, {'en': olon}}])
         # cast
         # self.data[olat], self.data[olon] = pd.to_numeric(self.data[olat]), pd.to_numeric(self.data[olon])
         self.data[olat], self.data[olon] =                              \
@@ -1214,21 +901,27 @@ class BaseHCS(object):
         try:
             assert lang == self.lang
         except:            
-            index = {k: self.get_column(v, ilang=lang, olang=self.lang)     or \
-                        self.get_column(v, ilang=self.lang, olang=self.lang)   \
+            index = {k: self.get_column(v, ilang=lang, olang=self.lang)  or \
+                        self.get_column(v, olang=self.lang)                 \
                      for (k,v) in index.items() if v not in (None,'')}
         try:
             assert index != {}
         except: # not vey happy with this, but ok... it's a default!
-            index = {col[LANG]: col[self.lang] for col in self.icolumns}
-        # check for country-related columns - special case
-        for cc in ['country', 'cc']:
-            if cc in index:
-                _index = index[cc] or cc
+            try:
+                index = {col[LANG]: col[self.lang] for col in self.icolumns}
+            except:
+                raise IOError('nothing to match to the input columns - check the (empty) index')
+        # check for country- and redate-related columns - special cases
+        for attr in ['country', 'cc', 'refdate']:
+            if attr in index:
+                _index = index[attr] or attr
                 if not _index in self.data.columns:   
-                    self.data[_index] = getattr(self, cc, None) 
-                    self.oindex.update({cc: _index})
+                    self.data[_index] = getattr(self, '__' + attr, None) 
+                if not attr in self.oindex:   
+                    self.oindex.update({attr: _index})
             else:       pass
+        # find the locations associated to the data
+        latlon = [index.get(l, l) for l in ['lat', 'lon']]
         ## define the place: we actually skip this (see 'assert False' below), and 
         ## do it only if needed when running find_location later
         #try:
@@ -1237,15 +930,11 @@ class BaseHCS(object):
         #    self.define_place(place = place)
         #except:
         #    pass
-        #finally:
-        #     index.pop('place',None) # just in case it was created and was present in the list
-        # find the locations associated to the data
-        latlon = [index.get(l, l) for l in ['lat', 'lon']]
         try:
             latlon = [index.get(l, l) for l in ['lat', 'lon']]
             self.find_location(latlon = latlon)
         except:
-            warnings.warn('location not assigned for data')            
+            warnings.warn('! location not assigned for data !')            
         finally:
             [index.pop(l,None) for l in ['lat', 'lon']]
         ## update oindex with index (which has been modified by get_column and
@@ -1257,12 +946,15 @@ class BaseHCS(object):
         except:     pass
         # clean the data so that it matches the template; keep even those fields
         # from index which have no corresponding column
-        index = [v if v is not None and k in INDEX else INDEX[k]['name'] for (k,v) in self.oindex.items()]
+        #t keep = [v if v is not None and k in INDEX else INDEX[k]['name'] for (k,v) in self.oindex.items()]
+        keepcol = [INDEX[k]['name'] for (k,v) in self.oindex.items() if k in INDEX and v is not None]
         try:
-            self.clean_column(list(self.data.columns), keep = index)
+            self.clean_column(list(self.data.columns), keep = keepcol)
         except:
             pass
-            
+        if _KEEP_INDEX_AS_ILANG is True:
+            self.oindex.update(index)
+        
     #/************************************************************************/
     def save_data(self, *dest, **kwargs):
         """Store transformed data in GEOJSON or CSV formats.
@@ -1296,25 +988,25 @@ class BaseHCS(object):
         # but ok, not critical...
         self.data.reindex(columns = columns)
         try:
-            lat, lon = self.oindex.get('lat', None), self.oindex.get('lon', None)
-            assert not(fmt in ('geojson','gpkg') and  (lat is None or lon is None))
+            olat, olon = INDEX['lat']['name'], INDEX['lon']['name'] #t self.oindex.get('lat', None), self.oindex.get('lon', None)
+            assert fmt not in ('geojson','gpkg') or (olat in columns and olon in columns)
         except:
             raise IOError('geographic lat/lon columns not set')
         if fmt == 'csv':
             kwargs.update({'header': True, 'index': False, 
                            'encoding': encoding, 'sep': sep})
-            self.data.to_csv(dest, columns=columns, **kwargs) 
+            self.data.to_csv(dest, columns = columns, **kwargs) 
             #                date_format=date
         elif fmt == 'geojson':
-            geom = self.to_geojson(self.data, columns, latlon=[lat,lon])
+            geom = IOProcess.to_geojson(self.data, columns = columns, latlon = [olat, olon])
             with open(dest, 'w', encoding=encoding) as f:
                 json.dump(geom, f, ensure_ascii=False)
         elif  fmt == 'json':
-            records = self.to_json(self.data, columns)
+            records = IOProcess.to_json(self.data, columns = columns)
             with open(dest, 'w', encoding=encoding) as f:
                 json.dump(records, f, ensure_ascii=False)
         elif fmt == 'gpkg':
-            results = self.to_gpkg(self.data, columns, lat=lat, lon=lon)#analysis:ignore
+            results = IOProcess.to_gpkg(self.data, columns = columns)#analysis:ignore
         return
         
     #/************************************************************************/
@@ -1326,9 +1018,24 @@ class BaseHCS(object):
         dest = (dest not in ((None,),()) and dest[0])               or \
              kwargs.pop('dest', None)   
         if dest is None:   
-            dest = '%s%s.json' % (self.cc, BASENAME)  
-        # self.meta.save(dest)
+            dest = '%s%s.json' % (self.cc, BASENAME) 
+        if _KEEP_META_UPDATED is False:
+            for attr in OCFGNAME:
+                if attr == 'columns':
+                    self.meta.update({'columns': self.icolumns})
+                elif attr == 'index':
+                    # NO: self.meta.update({'index': self.oindex})
+                    pass
+                elif attr == 'country':
+                    self.meta.update({'country': GeoProcess.isoCountry(self.cc)})
+                elif attr == 'lang':
+                    self.meta.update({'lang': TextProcess.isoLang(self.cc)})
+                else:
+                    try:
+                        self.meta.update({attr: getattr(self,attr)})
+                    except:         pass
         try:
+            # self.meta.save(dest)
             with open(dest, 'w', encoding=self.enc) as f:
                 json.dump(self.meta.__dict__, f, ensure_ascii=False)
         except:
@@ -1348,7 +1055,7 @@ def hcsFactory(*args, **kwargs):
         >>>  NewHCS = hcsFactory(country=CC1, coder={'Bing', yourkey})
         >>>  NewHCS = hcsFactory(country=CC2, coder='GISCO')
     """
-    base = BaseHCS # kwargs.pop('base', BaseHCS)
+    basecls = BaseHCS # kwargs.pop('base', BaseHCS)
     if args in ((),(None,)):        metadata = None
     else:                           metadata = args[0]
     if not metadata is None:
@@ -1359,7 +1066,7 @@ def hcsFactory(*args, **kwargs):
         elif not isinstance(metadata,MetaHCS):
             raise TypeError('metadata type not recognised - must be a filename, dictionary or %s' % MetaHCS.__name__)
     else:
-        meta = None # {}
+        meta = {}
     attributes = {}
     country = meta.get('country') if 'country' in meta else kwargs.pop('country', None)
     try:
@@ -1367,39 +1074,44 @@ def hcsFactory(*args, **kwargs):
     except AssertionError:
         raise TypeError('country type not recognised - must be a dictionary')
     if country not in (None,{}):
-        if isinstance(country,string_types): 
-            country = {'code': country, 'name': None}
-        try:
-            assert set(country.keys()) == set(['name', 'code'])
-        except AssertionError:
-            raise IOError('country format not recognised')
+        country = GeoProcess.isoCountry(country)
+        #if isinstance(country,string_types): 
+        #    country = {'code': country, 'name': None}
+        #try:
+        #    assert set(country.keys()) == set(['name', 'code'])
+        #except AssertionError:
+        #    raise IOError('country format not recognised')
         CC = country.get('code')
-        COUNTRY = country.get('name')
-        attributes.update({"COUNTRY": {'code': CC, 'name': COUNTRY}})
-        name = CC + base.__name__
+        #COUNTRY = country.get('name')
+        attributes.update({'CC': CC})
+        #attributes.update({"CC": {'code': CC, 'name': COUNTRY}})
+        name = CC + basecls.__name__
     else:
         name = 'NewHCS'
+    #lang = kwargs.pop('lang', None)
+    #if lang not in (None,{}):
+    #    lang = TextProcess.isoLang(lang)
+    #    LANG = lang.get('code')
+    #    attributes.update({'LANG': LANG})
     coder = kwargs.pop('coder', None)
     try:
         assert coder is None or isinstance(coder,string_types) or isinstance(coder,Mapping)
     except AssertionError:
         raise TypeError('coder type not recognised - must be a dictionary or a single string')
-    else:
-        if isinstance(coder,string_types):  coder = {coder: None}
-    if coder not in (None,{}):
-        try:
-            assert len(coder) == 1
-        except AssertionError:
-            raise IOError('coder format not recognised')
-        CODER, CODERKEY = list(coder.items())[0]
-        try:
-            assert CODER in CODERS.keys() and CODERKEY in CODERS.values()
-        except AssertionError:
-            raise IOError('coder not supported')
-        attributes.update({"CODER": CODER, "CODERKEY": CODERKEY})
+    if not coder in ({}, ''): # None accepted, it will be default geocoder defined by the GeoProcess class
+        geoserv = GeoProcess(coder)
+    else: 
+        geoserv = None
     def __init__(self, *args, **kwargs):
+        # one metadata dictionary defined 'per country'
         try:
-            self.meta = meta.copy() 
+            self.meta = meta # meta.copy() 
+        except:
+            pass
+        # the geocoder is defined 'per country', i.e. you may use different geocoders 
+        # for different countries since the quality (e.g., OSM) may differ
+        try:
+            self.geoserv = geoserv
         except:
             pass
         #for key, value in kwargs.items():
@@ -1409,7 +1121,7 @@ def hcsFactory(*args, **kwargs):
         #        raise TypeError("Argument %s not valid for %s" 
         #            % (key, self.__class__.__name__))
         #    setattr(self, key, value)
-        base.__init__(self, *args, **kwargs)
+        basecls.__init__(self, *args, **kwargs)
     attributes.update({"__init__": __init__})
-    return type(name, (base,), attributes)
+    return type(name, (basecls,), attributes)
  

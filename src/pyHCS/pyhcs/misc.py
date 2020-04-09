@@ -65,9 +65,9 @@ try:
     import happygisco#analysis:ignore
 except (AssertionError,ImportError):
     _is_happy_installed = False
-    warnings.warn('! missing happygisco package (https://github.com/eurostat/happyGISCO) - GISCO web services not available !')
+    warnings.warn('\n! missing happygisco package (https://github.com/eurostat/happyGISCO) - GISCO web services not available !')
 else:
-    # warnings.warn('! happygisco help: hhttp://happygisco.readthedocs.io/ !')
+    # warnings.warn('\n! happygisco help: hhttp://happygisco.readthedocs.io/ !')
     _is_happy_installed = True
     from happygisco import services
 
@@ -75,9 +75,9 @@ try:
     import geopy#analysis:ignore 
 except ImportError: 
     _is_geopy_installed = False
-    warnings.warn('! missing geopy package (https://github.com/geopy/geopy) !')   
+    warnings.warn('\n! missing geopy package (https://github.com/geopy/geopy) !')   
 else:
-    # warnings.warn('! geopy help: http://geopy.readthedocs.io/en/latest/ !')
+    # warnings.warn('\n! geopy help: http://geopy.readthedocs.io/en/latest/ !')
     _is_geopy_installed = True
     # from geopy import geocoders
     
@@ -85,25 +85,25 @@ try:
     assert _is_happy_installed is True or _is_geopy_installed is True
 except AssertionError:
     # raise IOError('no geocoding module available')   
-    warnings.warn('! no geocoding module available !')   
+    warnings.warn('\n! no geocoding module available !')   
             
 try:
     import pyproj#analysis:ignore 
 except ImportError:
-    #warnings.warn('! missing pyproj package (https://github.com/pyproj4/pyproj) !')
+    #warnings.warn('\n! missing pyproj package (https://github.com/pyproj4/pyproj) !')
     _is_pyproj_installed = False
 else:
-    # warnings.warn('! pyproj help: https://pyproj4.github.io/pyproj/latest/ !')
+    # warnings.warn('\n! pyproj help: https://pyproj4.github.io/pyproj/latest/ !')
     _is_pyproj_installed = True
     from pyproj import CRS as crs, Transformer
 
 try:
     import geojson#analysis:ignore 
 except ImportError: 
-    #warnings.warn('! missing geosjon package (https://github.com/jazzband/geojson) !')   
+    #warnings.warn('\n! missing geosjon package (https://github.com/jazzband/geojson) !')   
     _is_geojson_installed = False
 else:
-    #warnings.warn('! geojson help: https://github.com/jazzband/geojson !')
+    #warnings.warn('\n! geojson help: https://github.com/jazzband/geojson !')
     _is_geojson_installed = True
     from geojson import Feature, Point, FeatureCollection
 
@@ -111,10 +111,10 @@ try:
     assert True
     import googletrans as gtrans
 except (AssertionError,ImportError):
-    #warnings.warn('! missing googletrans package (https://github.com/ssut/py-googletrans) - Translations not available !')
+    #warnings.warn('\n! missing googletrans package (https://github.com/ssut/py-googletrans) - Translations not available !')
     _is_googletrans_installed = False
 else:
-    # warnings.warn('! googletrans help: https://py-googletrans.readthedocs.io/en/latest !')
+    # warnings.warn('\n! googletrans help: https://py-googletrans.readthedocs.io/en/latest !')
     _is_googletrans_installed = True
 
 try:
@@ -122,9 +122,9 @@ try:
     import Levenshtein
 except (AssertionError,ImportError):
     _is_levenshtein_installed = False
-    # warnings.warn('! missing python-Levenshtein package (http://github.com/ztane/python-Levenshtein) - Text matching not available !')
+    # warnings.warn('\n! missing python-Levenshtein package (http://github.com/ztane/python-Levenshtein) - Text matching not available !')
 else:
-    # warnings.warn('! Levenshtein help: https://rawgit.com/ztane/python-Levenshtein/master/docs/Levenshtein.html !')
+    # warnings.warn('\n! Levenshtein help: https://rawgit.com/ztane/python-Levenshtein/master/docs/Levenshtein.html !')
     _is_levenshtein_installed = True
 
 # LATLON        = ['lat', 'lon'] # 'coord' # 'latlon'
@@ -174,14 +174,15 @@ class GeoProcess(object):
         
             >>> coder = GeoProcess.selectCoder(arg)
         """
-        #if arg is None:
-        #    arg = cls.DEFCODER.copy()
-        if not isinstance(arg, (string_types,Mapping)):
+        if arg is None:
+            #arg = cls.DEFCODER.copy()
+            raise IOError('no geocoder parsed')
+        elif not isinstance(arg, (string_types,Mapping)):
             raise TypeError('wrong format for geocoder %s - must be a string or a dictionary' % arg)
         elif isinstance(arg, string_types):
             coder, key = arg, None
         elif isinstance(arg, Mapping):
-            coder, key = list(arg.items())
+            coder, key = list(arg.items())[0]
         try:
             assert coder in cls.CODERS 
         except:
@@ -477,7 +478,7 @@ class IOProcess(object):
     def to_gpkg(df, columns=None):
         """
         """
-        warnings.warn('! method for gpkg not implemented !')
+        warnings.warn('\n! method for gpkg not implemented !')
         pass
                     
     #/************************************************************************/
