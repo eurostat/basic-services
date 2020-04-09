@@ -205,7 +205,7 @@ def reload(src=None):
         try:
             exec(str(var).upper() + ' = cfgmeta.get("' + str(var).lower() + '",' + str(var).upper()+ ')')
         except:
-            warnings.warn('! global configuration variable %s not loaded !' % var)
+            warnings.warn("\n! global configuration variable '%s' not loaded !" % var)
 
 def save(dest=None):
     """Saving global configuration variables as metadata into default config file.
@@ -219,15 +219,15 @@ def save(dest=None):
     try:
         assert osp.exists(dest)
     except AssertionError:
-        warnings.warn('! config file will be created !')
+        warnings.warn('\n! config file will be created !')
     else:
-        warnings.warn('! config file will be overwritten !')
+        warnings.warn('\n! config file will be overwritten !')
     cfgmeta = {}
     for var in OCFGNAME:
         try:
             exec('cfgmeta.update({"' + str(var).lower() + '" : ' + str(var).upper() + '})')
         except:         
-            warnings.warn('! global configuration variable %s not saved !' % var)
+            warnings.warn("\n! global configuration variable '%s' not saved !" % var)
     if cfgmeta == {}:
         raise IOError('no global configuration variable available')        
     try:
@@ -236,7 +236,7 @@ def save(dest=None):
     except:
         raise IOError('error writing config file')
     else:
-        warnings.warn('! writing config file... !')
+        warnings.warn('\n! writing config file... !')
 
 
 #%%
@@ -249,7 +249,7 @@ try:
     with open(__CFGFILE, 'r') as fp:
         OCFGMETA = __JSON.load(fp)
 except (AssertionError,ImportError):
-    warnings.warn('! config file not available - it will be created !')
+    warnings.warn('\n! config file not available - it will be created !')
     OCFGMETA = {}
     for var in OCFGNAME:
         try:
@@ -268,7 +268,7 @@ except (AssertionError,ImportError):
     with open(__CFGFILE, 'w') as fp:
         __JSON.dump(OCFGMETA,fp)
 else:
-    warnings.warn('! loading configuration parameters from config file !')
+    warnings.warn('\n! loading configuration parameters from config file !')
     for var in OCFGNAME:
         try:
             exec(str(var).upper() + ' = OCFGMETA.get("' + str(var).lower() + '",' + str(var).upper()+ ')')

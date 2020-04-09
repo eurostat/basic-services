@@ -36,7 +36,7 @@ import pandas as pd
 try: 
     from optparse import OptionParser
 except ImportError:
-    warnings.warn('! inline command deactivated !')
+    warnings.warn('\n! inline command deactivated !')
 
 from pyhcs import PACKNAME, COUNTRIES#analysis:ignore
 from pyhcs.config import INDEX, PATH, FILE, FMT, DATE, ENC, SEP#analysis:ignore
@@ -63,7 +63,7 @@ def __validateData(df):
             columns = set(list(index)).difference(set(df.columns))
             assert columns == set()
         except AssertionError:
-            warnings.warn('! missing columns in source file: %s !' % list(columns))
+            warnings.warn("\n! missing columns in source file: '%s' !" % list(columns))
     index = {col.get('name'): col for col in INDEX.values()}
     for col in df.columns:
         # check missing values
@@ -73,16 +73,16 @@ def __validateData(df):
             try:
                 assert df[col].isnull().all() is False
             except AssertionError:
-                warnings.warn('! column %s is filled with missing values only !' % col)
+                warnings.warn("\n! column '%s' is filled with missing values only !" % col)
         else:
-            warnings.warn('! no missing values in column %s !' % col)
+            warnings.warn("\n! no missing values in column '%s' !" % col)
         # check type
         dtype = index[col].get('type')
         if dtype is not None:
             try:
                 assert df[col].dtype == dtype # and dtype != object
             except AssertionError:
-                warnings.warn('! unexpected type %s for column %s !' % (df[col].dtype,col))
+                warnings.warn("\n! unexpected type %s for column '%s' !" % (df[col].dtype,col))
         # check values/format
         dfmt = values = index[col].get('values')
         if values is not None:
@@ -98,7 +98,7 @@ def __validateData(df):
                 try:
                     pd.to_datetime(df[col], format=dfmt, errors='coerce').notnull().all() is True
                 except AssertionError:
-                    warnings.warn('! unexpected date format for column %s !' % col)
+                    warnings.warn("\n! unexpected date format for column '%s' !" % col)
     # check id uniquiness
     try: # note the use of INDEX here, not index, though the names end up being
         # the same
@@ -197,9 +197,9 @@ def __main():
     try:
         run(country)
     except IOError:
-        warnings.warn('!!!  ERROR: data file not validated !!!')
+        warnings.warn('\n!!!  ERROR: data file not validated !!!')
     else:
-        warnings.warn('!  OK: data file correctly validated !')
+        warnings.warn('\n!  OK: data file correctly validated !')
 
 if __name__ == '__main__':
     __main()

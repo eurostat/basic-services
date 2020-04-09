@@ -33,7 +33,7 @@ from six import string_types
 try: 
     from optparse import OptionParser
 except ImportError:
-    warnings.warn('! inline command deactivated !')
+    warnings.warn('\n! inline command deactivated !')
 
 try:
     import simplejson as json
@@ -51,7 +51,7 @@ except:
 try:
     from importlib import import_module
 except:
-    warnings.warn('! module importlib missing !')
+    warnings.warn('\n! module importlib missing !')
     # import_module = lambda mod: exec('from %s import %s' % mod.split('.'))
     import_module = lambda _mod, pack: exec('from %s import %s' % (pack, _mod.split('.')[1])) or None
 
@@ -151,39 +151,39 @@ def harmoniseCountry(country=None, coder=None, **kwargs):
         # import_module('%s.%s' % (PACKNAME,modname) )
         imp = import_module('.%s' % modname, '%s.%s' % (PACKNAME,METABASE))
     except AssertionError:
-        warnings.warn('! no country py-file %s found - will proceed without !' % fname)
+        warnings.warn("\n! no country py-file '%s' found - will proceed without !" % fname)
     except ImportError:
-        warnings.warn('! no country py-module %s found - will proceed without !' % modname)
+        warnings.warn("\n! no country py-module '%s' found - will proceed without !" % modname)
     except:
-        raise ImportError('no country py-module %s loaded' % modname)
+        raise ImportError("no country py-module '%s' loaded" % modname)
     else:
-        warnings.warn('! country py-module %s found !' % imp.__name__)
+        warnings.warn("\n! country py-module '%s' found !" % imp.__name__)
         try:
             assert imp in sysmod.values()
         except:
-            raise ImportError('country py-module %s not loaded correctly' % imp.__name__)
+            raise ImportError("\ncountry py-module '%s' not loaded correctly" % imp.__name__)
     try:
         # assert 'CC' in dir(imp)
         CC = getattr(imp, 'CC', None)
     except:
-        warnings.warn('! global variable CC not set - use default !')
+        warnings.warn("\n! global variable 'CC' not set - use default !")
     try:
         # assert 'METADATA' in dir(imp)
         METADATA = getattr(imp, 'METADATA', None)
         assert METADATA is not None
     except:
-        warnings.warn('! no default metadata dictionary available !')
+        warnings.warn('\n! no default metadata dictionary available !')
     else:
-        warnings.warn('! default hard-coded metadata dictionary found !')
+        warnings.warn('\n! default hard-coded metadata dictionary found !')
     try:
         # assert 'harmonise' in dir(imp)
         harmonise = getattr(imp, 'harmonise', None)
         assert harmonise is not None
     except:
-        warnings.warn('! generic formatting/harmonisation methods used !')
+        warnings.warn('\n! generic formatting/harmonisation methods used !')
         harmonise = __harmoniseMetaData
     else:
-        warnings.warn('! country-specific formatting/harmonisation methods used !')
+        warnings.warn('\n! country-specific formatting/harmonisation methods used !')
     try:
         # assert 'prepare_data' in dir(imp)
         prepare_data = getattr(imp, 'prepare_data', None)
@@ -192,7 +192,7 @@ def harmoniseCountry(country=None, coder=None, **kwargs):
         # warnings.warn('! no data preparation method used !')
         prepare_data = None # anyway...
     else:
-        warnings.warn('! country-specific data preparation method loaded !')
+        warnings.warn('\n! country-specific data preparation method loaded !')
     # load country-dedicated metadata when available 
     metadata = None
     metaname = '%s.json' % ccname 
@@ -202,9 +202,9 @@ def harmoniseCountry(country=None, coder=None, **kwargs):
         with open(metaname, 'r') as fp: 
             metadata = json.load(fp)
     except (AssertionError,FileNotFoundError):
-        warnings.warn('! no metadata JSON-file %s found - will proceed without !' % metaname)
+        warnings.warn("\n! no metadata JSON-file '%s' found - will proceed without !" % metaname)
     else:
-        warnings.warn('! ad-hoc metadata found - JSON-file %s loaded ! ' % metaname)
+        warnings.warn("! ad-hoc metadata found - JSON-file '%s' loaded !" % metaname)
     # define the actual metadata: the one loaded, or the default
     metadata = metadata or METADATA
     if metadata in (None,{}):
@@ -218,9 +218,9 @@ def harmoniseCountry(country=None, coder=None, **kwargs):
                         # 'opt_load': {}, 'opt_fmt': {}, 'opt_save': {}
         res = harmonise(metadata, **kwargs) 
     except:
-        raise IOError('harmonisation process for country %s failed...' % country)
+        raise IOError("harmonisation process for country '%s' failed..." % country)
     else:
-        warnings.warn('! harmonised data for country %s generated !' % country)
+        warnings.warn("\n! harmonised data for country '%s' generated !" % country)
     return res
         
 
@@ -274,9 +274,9 @@ def __main():
     try:
         run(country, coder)
     except IOError:
-        warnings.warn('!!!  ERROR: data file not created !!!')
+        warnings.warn('\n!!!  ERROR: data file not created !!!')
     else:
-        warnings.warn('!  OK: data file correctly created !')
+        warnings.warn('\n!  OK: data file correctly created !')
 
 if __name__ == '__main__':
     __main()
