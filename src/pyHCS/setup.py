@@ -73,6 +73,11 @@ else:
     about['__version__'] = VERSION
 
 
+#%%
+#==============================================================================
+# Class UploadCommand
+#==============================================================================
+
 class UploadCommand(Command):
     """Support setup.py upload.
     """
@@ -110,6 +115,12 @@ class UploadCommand(Command):
         os.system('git push --tags')
         
         sys.exit()
+
+
+#%%
+#==============================================================================
+# setup
+#==============================================================================
 
 # where the magic happens...
 # note: To use the 'upload' functionality of this file, you must:
