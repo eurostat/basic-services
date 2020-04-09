@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>eu.europa.ec.eurostat</groupId>
+	<artifactId>healthservices</artifactId>
+	<version>0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>health-services</name>
+	<url>https://github.com/eurostat/healthcare-services</url>
+	<description></description>
+
+	<licenses>
+		<license>
+			<name>European Union Public License, version 1.2 (EUPL-1.2)</name>
+			<url>https://opensource.org/licenses/EUPL-1.2</url>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>https://github.com/eurostat/healthcare-services</url>
+		<connection>scm:git:git://github.com/eurostat/healthcare-services.git</connection>
+		<developerConnection>scm:git:git@github.com:eurostat/healthcare-services.git</developerConnection>
+	</scm>
+
+	<issueManagement>
+		<url>https://github.com/eurostat/healthcare-services/issues</url>
+		<system>GitHub Issues</system>
+	</issueManagement>
+
+	<properties>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>eu.europa.ec.eurostat</groupId>
+			<artifactId>JGiscoTools</artifactId>
+			<version>0.8.4</version>
+		</dependency>
+	</dependencies>
+
+</project>
