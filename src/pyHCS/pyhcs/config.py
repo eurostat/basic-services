@@ -42,7 +42,7 @@ except ImportError:
             def dump(arg):  
                 return "%s" % arg
 
-from pyhcs import BASENAME, COUNTRIES
+from pyhcs import BASENAME, EUCOUNTRIES
 
 #%%
 
@@ -71,7 +71,7 @@ PROJ            = None # "WGS84"
 PATH            = "../../../data/" # osp.abspath(osp.join(__THISDIR,"../../../data/")) 
 FILE            = "%s.%s"
 
-INDEX           = OrderedDict( [
+INDEX           = OrderedDict( [ # in Python 3, order of keys is actually preserved
     ("id",       {"name": "id",                     "desc": "The healthcare service identifier - This identifier is based on national identification codes, if it exists.",
                   "type": __type2name(int),         "values": None}),
     ("name",     {"name": "hospital_name",          "desc": "The name of the healthcare institution",   
@@ -93,7 +93,7 @@ INDEX           = OrderedDict( [
     ("city",     {"name": "city", "desc":           "City name (sometimes refers to a region or a municipality)",            
                   "type": __type2name(str),         "values": None}),
     ("cc",       {"name": "cc", "desc":             "Country code (ISO 3166-1 alpha-2 format)",              
-                  "type": __type2name(str),         "values": list(COUNTRIES.values())[0]}),
+                  "type": __type2name(str),         "values": list(EUCOUNTRIES.keys())}),
     ("country",  {"name": "country",                "desc": "Country name",         
                   "type": __type2name(str),         "values": None}),
     ("beds",     {"name": "cap_beds",               "desc": "Measure of capacity by number of beds (most common)",        
@@ -198,14 +198,14 @@ def reload(src=None):
     except (AssertionError,ImportError):
         raise IOError('config file not available')
     else:
-        warnings.warn('loading config file...')
+        warnings.warn('! loading config file... !')
     if cfgmeta == {}:
         raise IOError('no global configuration variable loaded')        
     for var in OCFGNAME:
         try:
             exec(str(var).upper() + ' = cfgmeta.get("' + str(var).lower() + '",' + str(var).upper()+ ')')
         except:
-            warnings.warn('global configuration variable %s not loaded' % var)
+            warnings.warn('! global configuration variable %s not loaded !' % var)
 
 def save(dest=None):
     """Saving global configuration variables as metadata into default config file.
@@ -219,15 +219,15 @@ def save(dest=None):
     try:
         assert osp.exists(dest)
     except AssertionError:
-        warnings.warn('config file will be created')
+        warnings.warn('! config file will be created !')
     else:
-        warnings.warn('config file will be overwritten')
+        warnings.warn('! config file will be overwritten !')
     cfgmeta = {}
     for var in OCFGNAME:
         try:
             exec('cfgmeta.update({"' + str(var).lower() + '" : ' + str(var).upper() + '})')
         except:         
-            warnings.warn('global configuration variable %s not saved' % var)
+            warnings.warn('! global configuration variable %s not saved !' % var)
     if cfgmeta == {}:
         raise IOError('no global configuration variable available')        
     try:
@@ -236,7 +236,7 @@ def save(dest=None):
     except:
         raise IOError('error writing config file')
     else:
-        warnings.warn('writing config file...')
+        warnings.warn('! writing config file... !')
 
 
 #%%
@@ -249,7 +249,7 @@ try:
     with open(__CFGFILE, 'r') as fp:
         OCFGMETA = __JSON.load(fp)
 except (AssertionError,ImportError):
-    warnings.warn('config file not available - it will be created')
+    warnings.warn('! config file not available - it will be created !')
     OCFGMETA = {}
     for var in OCFGNAME:
         try:
@@ -268,7 +268,7 @@ except (AssertionError,ImportError):
     with open(__CFGFILE, 'w') as fp:
         __JSON.dump(OCFGMETA,fp)
 else:
-    warnings.warn('loading configuration parameters from config file')
+    warnings.warn('! loading configuration parameters from config file !')
     for var in OCFGNAME:
         try:
             exec(str(var).upper() + ' = OCFGMETA.get("' + str(var).lower() + '",' + str(var).upper()+ ')')
