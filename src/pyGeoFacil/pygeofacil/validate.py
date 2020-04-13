@@ -12,7 +12,7 @@ Module data validation according to template.
 
 *optional*:     :mod:`A`
 
-*call*:         :mod:`pyhcs.config`, :mod:`pyhcs.base`         
+*call*:         :mod:`pygeofacil`, :mod:`pygeofacil.config`         
 
 **Contents**
 """
@@ -38,8 +38,8 @@ try:
 except ImportError:
     warnings.warn('\n! inline command deactivated !')
 
-from pyhcs import PACKNAME, COUNTRIES#analysis:ignore
-from pyhcs.config import INDEX, PATH, FILE, FMT, DATE, ENC, SEP#analysis:ignore
+from pygeofacil import PACKNAME, COUNTRIES#analysis:ignore
+from pygeofacil.config import INDEX, PATH, FILE, FMT, DATE, ENC, SEP#analysis:ignore
 
 __THISDIR = osp.dirname(__file__)
 

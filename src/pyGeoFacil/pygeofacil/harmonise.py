@@ -13,7 +13,7 @@ from all member states.
 
 *optional*:     :mod:`importlib`, :mod:`importlib`
 
-*call*:         :mod:`pyhcs.config`, :mod:`pyhcs.base`         
+*call*:         :mod:`pygeofacil`, :mod:`pygeofacil.config`, :mod:`pygeofacil.base`         
 
 **Contents**
 """
@@ -55,9 +55,13 @@ except:
     # import_module = lambda mod: exec('from %s import %s' % mod.split('.'))
     import_module = lambda _mod, pack: exec('from %s import %s' % (pack, _mod.split('.')[1])) or None
 
-from pyhcs import PACKNAME, BASENAME, METABASE, COUNTRIES#analysis:ignore
-from pyhcs.config import OCFGNAME#analysis:ignore
-from pyhcs.base import IMETANAME, MetaHCS, BaseHCS, hcsFactory#analysis:ignore
+from pygeofacil.config import OCFGNAME#analysis:ignore
+from pygeofacil.base import IMETANAME, MetaFacility, BaseFacility, facilityFactory#analysis:ignore
+
+from pygeofacil import PACKPATH, FACILITIES, COUNTRIES
+from pygeofacil.config import OBASETYPE, OCFGDATA, TypeFacility
+from pygeofacil.misc import MetaData, IOProcess, TextProcess, GeoService
+
 
 __THISDIR       = osp.dirname(__file__)
 __CCNAME        = lambda cc: "%s%s" % (cc,BASENAME)
@@ -68,35 +72,35 @@ __CCNAME        = lambda cc: "%s%s" % (cc,BASENAME)
 # Function __harmoniseData, __harmoniseMetaData
 #==============================================================================
 
-def __harmoniseData(hcs, **kwargs):
-    as_file = kwargs.pop('as_file', True)
+def __harmoniseData(facility, **kwargs):
+    on_disk = kwargs.pop('on_disk', True)
     try:
-        assert isinstance(hcs, BaseHCS)
+        assert isinstance(facility, BaseFacility)
     except:
         raise TypeError('wrong input HCS data')
     opt_load = kwargs.pop("opt_load", {})        
-    hcs.load_data(**opt_load)
+    facility.load_data(**opt_load)
     opt_prep = kwargs.pop("opt_prep", {})        
-    hcs.prepare_data(**opt_prep)
+    facility.prepare_data(**opt_prep)
     opt_format = kwargs.pop("opt_format", {})        
-    hcs.format_data(**opt_format)
-    if as_file is False:
+    facility.format_data(**opt_format)
+    if on_disk is False:
         return
     opt_save = kwargs.pop("opt_save", {'geojson': {}, 'csv': {}})        
-    hcs.save_data(fmt='geojson', **opt_save.get('geojson',{}))
-    hcs.save_data(fmt='csv',**opt_save.get('csv',{}))
-    # hcs.save_meta(fmt='json', **opt_save.get('json',{})) 
+    facility.dump_data(fmt='geojson', **opt_save.get('geojson',{}))
+    facility.dump_data(fmt='csv',**opt_save.get('csv',{}))
+    # facility.dump_meta(fmt='json', **opt_save.get('json',{})) 
     return 
 
 def __harmoniseMetaData(metadata, **kwargs):
     try:
-        assert isinstance(metadata,(MetaHCS,Mapping))  
+        assert isinstance(metadata,(MetaFacility,Mapping))  
     except:
         raise TypeError('wrong input metadata')
     else:
-        metadata = MetaHCS(metadata)
+        metadata = MetaFacility(metadata)
     try:
-        HCS = hcsFactory(metadata, **kwargs)
+        Facility = facilityFactory(metadata, **kwargs)
     except:
         raise IOError('impossible create specific country class')
     fprep = kwargs.pop('met_prep')
@@ -106,13 +110,13 @@ def __harmoniseMetaData(metadata, **kwargs):
         raise IOError('prepare method not recognised')
     else:
         if callable(fprep):     
-            HCS.prepare_data = fprep
+            Facility.prepare_data = fprep
     try:
-        hcs = HCS()
+        facility = Facility()
     except:
         raise IOError('impossible create specific country instance')
-    __harmoniseData(hcs, **kwargs)
-    return hcs
+    __harmoniseData(facility, **kwargs)
+    return facility
 
 
 #%% 
