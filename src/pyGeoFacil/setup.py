@@ -4,7 +4,7 @@
 """
 .. _setup
 
-Setup script.
+Setup script of the `pygeofacil` package.
     
 **Dependencies**
 
@@ -32,10 +32,10 @@ __THISDIR = os.path.abspath(os.path.dirname(__file__))
 
 # Package meta-data.
 
-PACKNAME            = 'pyhcs' # this package...
-PACKURL             = 'https://github.com/eurostat/healthcare-services/src/pyhcs'
+PACKNAME            = 'pygeofacil' # this package...
+PACKURL             = 'https://github.com/eurostat/healthcare-services/src/pyGeoFacil'
 DESCRIPTION         = 'Python package for the automated creation of harmonised  \
-    geospatial datasets on main healthcare services in European countries,      \
+    geospatial datasets on various facilities (e.g., healthcare services, education facilities, etc..) in European countries,      \
     as published by Eurostat.'
 VERSION             = None
 
@@ -46,7 +46,7 @@ REQUIRES_PYTHON = '>=3.6.0'
 
 # packages required for this module to be executed
 REQUIRED = [
-    'numpy', 'pandas', 'requests', 'geopy', 'geojson', 'pyproj' #, 'json', 'datetime'
+    'numpy', 'pandas', 'requests', 'geopy', 'geojson', 'pyproj' #, 'requests', 'json', 'datetime'
 ]
 
 # optional packages

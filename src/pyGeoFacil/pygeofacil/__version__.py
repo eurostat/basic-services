@@ -4,7 +4,7 @@
 """
 .. __version__
 
-Versioning module.
+Versioning module of package `pygeofacil`.
 
 **Contents**
 """

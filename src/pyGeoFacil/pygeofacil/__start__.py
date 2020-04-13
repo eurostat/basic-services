@@ -4,7 +4,7 @@
 """
 .. __start__
 
-Dumb start. 
+Dumb start of module `pygeofacil`. 
 """
 
 # *credits*:      `gjacopo <jacopo.grazzini@ec.europa.eu>`_ 
@@ -16,6 +16,6 @@ from os import path as osp
 sysp.insert(0, osp.abspath(__file__))
 
 try:
-    import pyhcs#analysis:ignore
+    import pygeofacil#analysis:ignore
 except ImportError:
-    raise IOError('environment not set to import pyhcs')
+    raise IOError("environment not set to import 'pygeofacil'")
