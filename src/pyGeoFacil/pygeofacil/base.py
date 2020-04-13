@@ -24,7 +24,7 @@ format.
 
 *optional*:     :mod:`requests`, :mod:`simplejson`
 
-*call*:         :mod:`pyhcs.config`, :mod:`pyhcs.misc`         
+*call*:         :mod:`pygeofacil`, :mod:`pygeofacil.config`, :mod:`pygeofacil.misc`         
 
 **Contents**
 """
@@ -40,11 +40,8 @@ import warnings#analysis:ignore
 from collections import Mapping, Sequence
 from six import string_types
 
-from functools import reduce
-from copy import deepcopy
-# import itertools
-
 from datetime import datetime
+from copy import deepcopy
 
 import numpy as np#analysis:ignore
 import pandas as pd
@@ -67,17 +64,16 @@ try:
     import requests # urllib2
 except ImportError:                 
     _is_requests_installed = False
-    warnings.warn('\n! missing requests package (https://pypi.python.org/pypi/requests/) - source data cannot be loaded remotely !')
+    warnings.warn('\n! missing requests package (https://pypi.python.org/pypi/requests/) - source data cannot be loaded remotely !', ImportWarning)
 else:
     # warnings.warn('\n! requests help: https://requests.readthedocs.io/en/master/ !')
     _is_requests_installed = True
 
-from pyhcs import BASENAME, METABASE, EUCOUNTRIES
-from pyhcs.config import BASETYPE, INDEX, DATE, LANG, SEP, ENC, \
-                            PATH, FILE, FMT, PROJ, OCFGNAME 
-from pyhcs.misc import IOProcess, TextProcess, GeoProcess
+from pygeofacil import PACKPATH, FACILITIES, COUNTRIES
+from pygeofacil.config import OBASETYPE, OCFGDATA, TypeFacility
+from pygeofacil.misc import MetaData, IOProcess, TextProcess, GeoService
 
-THISDIR         = osp.dirname(__file__)
+__THISDIR         = osp.dirname(__file__)
 
 _KEEP_INDEX_AS_ILANG = True # that's actually a debug...that is not a debug anymore!
 _KEEP_META_UPDATED = True
@@ -85,34 +81,38 @@ _KEEP_META_UPDATED = True
 
 #%%
 #==============================================================================
-# Class MetaHCS
+# Class MetaFacility
 #==============================================================================
 
-class MetaHCS(dict):
-    """Generic class used to represent metadata instances as dictionary.
+class MetaFacility(MetaData):
+    """Generic class used to represent country metadata instances as dictionary.
     
-        >>> meta = MetaHCS(**metadata)
+        >>> meta = MetaFacility(**metadata)
     """
     
-    METANAME = ['country', 'lang', 'proj', 'file', 'path', 'enc', 'sep', 
-                'columns', 'index'] # default metadata fields
-    """Metadata fields related to input country data.
-    """
-
+    METAKEYS = ['country', 'lang', 'proj', 'file', 'path', 'enc', 'sep', 'columns', 'index']
+    #          {'country':{}, 'lang':{}, 'proj':None, 'file':'', 'path':'', 'enc':None, 'sep':',', 'columns':{}, 'index':[]}
+    
     #/************************************************************************/
     @classmethod
-    def template(cls, country=None, **kwargs):
+    def template(cls, facility=None, country=None, **kwargs):
         """"Create a template country metadata file as a JSON file
         
-            >>> MetaHCS.template()
+            >>> MetaFacility.template()
         """
         if country is None:
             country = ''
         elif not isinstance(country, string_types):
             raise TypeError('wrong type for country code - must be a string')
+        if facility is None:
+            facility = ''
+        elif not isinstance(facility, string_types) and facility in FACILITIES:
+            facility = FACILITIES.get(facility)
+        else:
+            raise TypeError('wrong type for facility type - must be a string')
         as_file = kwargs.pop('as_file', True)
-        temp = dict.fromkeys(cls.METANAME)
         # dumb initialisation
+        temp = dict.fromkeys(cls.METAKEYS)
         temp.update({ 'country':     {'code': country.upper() or 'CC', 'name': ''},
                       'lang':        {'code': country.lower() or 'cc', 'name': ''},
                       'file':        '%s.csv' % country or 'CC' ,
@@ -122,178 +122,113 @@ class MetaHCS(dict):
                       'sep':         ';', 
                       'date':        '%d-%m-%Y', 
                       'columns':     [ ],
-                      'index':       dict.fromkeys(INDEX.keys())
+                      'index':       { }
                       })
-        temp['columns'].extend([{country.lower() or 'cc': 'column1', 'en': 'column1', 'fr': 'colonne1', 'de': 'Spalte1'},
-                             {country.lower() or 'cc': 'column2', 'en': 'column1', 'fr': 'colonne2', 'de': 'Spalte2'}])
-        [temp['index'].update({list(INDEX.keys())[i]: 'column%s' % str(i+1)}) for i in [0,1]]
+        temp['columns'].extend([{country.lower() or 'cc': 'icol1', 'en': 'icol1', 'fr': 'icol1', 'de': 'iSpal1'},
+                             {country.lower() or 'cc': 'icol2', 'en': 'icol1', 'fr': 'icol2', 'de': 'iSpal2'}])
+        [temp['index'].update({'ocol%s': 'icol%s' % str(i+1)}) for i in [0,1]]
         # create the metadata structure with this dumb template
         template = cls(temp)
-        if as_file is False:
+        try:
+            assert as_file is True
+            # save it...somewhere
+            dest = osp.join(PACKPATH, facility, "%s%s.json" % (country.upper() or 'temp', facility))
+            template.save(dest, **kwargs)
+        except AssertionError:
             return template
-        # save it...somewhere
-        dest = osp.join(THISDIR, METABASE, "%s%s.json" % (country.upper() or 'temp', BASENAME))
-        template.save(dest, **kwargs)
+        except:
+            raise IOError('impossible saving template metadata as a file')
                 
     #/************************************************************************/
     def __init__(self, *args, **kwargs):
-        if not args in ((),(None,)):
-            try:
-                meta = deepcopy(args[0]) # deepcopy to avoid updating the default variables!!!
-            except:
-                meta = args[0]
-        else:       
-            meta = {}
-        if isinstance(meta, MetaHCS):
-            meta = dict(meta).copy()
-        elif isinstance(meta, string_types):
-            if not osp.exists(meta):
-                raise IOError('input metadata filename %s not recognised' % meta)
-            try:
-                with open(meta, 'rt') as f:
-                    meta = json.load(f)#analysis:ignore
-            except:
-                raise TypeError('input metadata file %s must be in JSON format' % meta)
-        elif not isinstance(meta, Mapping):
-            raise TypeError('input metadata format not recognised - must be a mapping dictionary or a string')
-        if not kwargs is {}:
-            meta.update(deepcopy(kwargs))            
-        super(MetaHCS,self).__init__(self, **meta)
-        self.__dict__ = self
-        if 'country' in meta:
-            try:        self.__cc = getattr(meta['country'], 'code', None)
-            except:     pass
-        else:           self.__cc = None
-            
-    #/************************************************************************/
-    def copy(self, *args, **kwargs): # actually new object, like a deepcopy...
-        return self.__class__(**self.__dict__)
-
-    #/************************************************************************/
-    def __repr__(self):
-        return "<{} metadata instance at {}>".format(self.__class__.__name__, id(self))
-    def __str__(self):    
-        keys = list(set(self.keys()).difference(set(['__cc'])))
-        if keys == []:
-            return ""
-        l = max([len(k) for k in keys])
-        return reduce(lambda x,y:x+y, ["{} : {}\n".format(k.ljust(l),getattr(self,k))
-            for k in keys if self.get(k) not in ('',None)])    
-
-    #/************************************************************************/
-    def __getattr__(self, attr):
-        if attr.startswith('__'):
-            try:        nattr = attr[2:-2]
-            except:     nattr = attr # for compatibility with the use of '__cc', else None
-        else:
-            nattr = attr
-        if nattr in self.keys():  
-            r = self.get(nattr)
-        else:
-            try:        object.__getattribute__(self, attr) 
-            except:     pass
-            r = None
-        return r
+        #facility = kwargs.pop('facility')
+        super(MetaFacility,self).__init__(*args, **kwargs)
+        # self.__dict__ = self
+        self.__metakeys = self.METAKEYS 
+        try:
+            self.__cc = self['country'].get('code','')
+        except:
+            self.__cc = ''
+        #self.__facility = FACILITIES.get(facility, '')
     
     #/************************************************************************/
-    def load(self, src=None, **kwargs):
+    def loads(self, src=None, **kwargs):
         if src is None:
             try:
-                src = osp.join(THISDIR, "%s%s.json" % (self.__cc, BASENAME))
+                #src = osp.join(PACKPATH, self.__facility, "%s%s.json" % (self.__cc.upper(), self.__facility))
+                src = osp.join(PACKPATH, "%s%s.json" % self.__cc.upper())
             except:
                 raise IOError('no source metadata file defined')
-        elif not isinstance(src, string_types):
-            raise TypeError('wrong source metadata file %s' % src)
-        try:
-            assert osp.exists(src)
-            with open(src, 'r') as fp:
-                meta = json.load(fp, **kwargs)#analysis:ignore
-        except (AssertionError,ImportError):
-            raise IOError('metadata file not available')
-        else:
-            # warnings.warn('\n! loading metadata file... !')
-            pass
-        if meta == {}:
-            raise IOError('no metadata variable loaded')  
-        self.update({var: meta.get(var) for var in self.METANAME if var in meta})
-        return meta
+        return super(MetaFacility,self).load(src=src, **kwargs)
     
     #/************************************************************************/
-    def save(self, dest=None, **kwargs):
+    #def load(self, src=None, **kwargs):
+    #same a super method
+    #    super(TypeFacilty,self).load(self, src=src, **kwargs)
+
+    #/************************************************************************/
+    def dump(self, dest=None, **kwargs):
         if dest is None:
             try:
-                dest = osp.join(THISDIR, "%s%s.json" % (self.__cc, BASENAME))
+                # dest = osp.join(PACKPATH, self.__facility, "%s%s.json" % (self.__cc.upper(), self.__facility))
+                dest = osp.join(PACKPATH, "%s%s.json" % self.__cc.upper())
             except:
                 raise IOError('no destination metadata file defined')
-        elif not isinstance(dest, string_types):
-            raise TypeError('wrong destination metadata file %s' % dest)
-        try:
-            assert osp.exists(dest)
-        except AssertionError:
-            warnings.warn('\n! destination metadata file will be created !')
-        else:
-            warnings.warn('\n! destination metadata file will be overwritten !')
-        meta = {k:v for (k,v) in dict(self.copy()).items() if k in self.METANAME}
-        if meta == {}:
-            raise IOError('no metadata variable available')        
-        with open(dest, 'w') as fp:
-            json.dump(meta, fp, **kwargs)
-        try:
-            with open(dest, 'w') as fp:
-                json.dump(meta, fp, **kwargs)
-        except:
-            raise IOError('error writing metadata file')
-        else:
-            # warnings.warn('\n! writing metadata file... !')
-            pass
+        super(MetaFacility,self).dump(dest=dest, **kwargs)
+    
     
 #%%
 #==============================================================================
-# Class BaseHCS
+# Class BaseFacility
 #==============================================================================
 
-class BaseHCS(object):
+class BaseFacility(object):
     """Base class used to represent health care data sources.
     
-        >>> hcs = BaseHCS(**metadata)
+        >>> hcs = BaseFacility(**metadata)
     """
     
-    CC = None # class attribute... that should not be different from cc
+    FACILITY = None
+    COUNTRY = None # class attribute... that should not be different from cc
     
     #/************************************************************************/
     def __init__(self, **kwargs):
+        # self.__config, self.__metadata = {}, {}
         self.__data = None                # data
         self.__place = ''                 # key field to store a place                              
         self.__latlon = ['', '']          # key fields for lat/lon coordinates
         try:
-            # meta should be initialised in the derived class
-            assert getattr(self, 'meta', None) not in ({},None)
+            # config should be initialised in the derived class
+            assert self.__config not in ({},None)
         except AssertionError:
-            self.meta = dict(zip(MetaHCS.METANAME,          \
-                                 [{},       # init country
-                                  {},       # init lang
-                                  None,     # init proj 
-                                  '',       # init file
-                                  '',       # init path
-                                  None,     # init enc
-                                  ',',      # init sep 
-                                  [],       # init columns
-                                  {}        # init index
-                                  ]))
+            try:
+                self.cfg = dict.fromkeys(TypeFacility.METAKEYS, None)
+            except:
+                self.cfg = {}
+        try:
+            # meta should be initialised in the derived class
+            assert self.__metadata not in ({},None)
+        except AssertionError:
+            try:
+                self.meta = dict.fromkeys(MetaFacility.METAKEYS, None)
+            except:
+                self.meta = {}
+        # retrieve facility
+        self.facility = kwargs.pop('facility', self.cfg.get('type') or {})
         # retrieve country name and code
-        country = GeoProcess.isoCountry(self.meta.get('country',None) or self.CC)
+        country = GeoService.isoCountry(self.meta.get('country') or next(iter(self.COUNTRY)))
         self.cc = kwargs.pop('cc', None if country in ({},None) else country.get('code'))
         # retrieve languge of the input data
-        lang = TextProcess.isoLang(self.meta.get('lang',None))
+        lang = TextProcess.isoLang(self.meta.get('lang'))
         self.lang = kwargs.pop('lang', None if lang in ({},None) else lang.get('code'))
         # retrieve input data parameters, e.g. name, location, and format 
-        self.enc = kwargs.pop('enc',self.meta.get('enc', None))
-        self.sep = kwargs.pop('sep',self.meta.get('sep', None))
-        path, fname = kwargs.pop('path',self.meta.get('path','')), kwargs.pop('file',self.meta.get('file',''))
+        self.enc = kwargs.pop('enc',self.meta.get('enc'))
+        self.sep = kwargs.pop('sep',self.meta.get('sep'))
+        path, fname = kwargs.pop('path',self.meta.get('path') or ''), kwargs.pop('file',self.meta.get('file') or '')
         if osp.basename(fname) != fname:
             path, fname = osp.join(path, osp.dirname(fname)), osp.basename(fname)
         if not(path in (None,'') or osp.isabs(path)):
-            path = osp.abspath(osp.join(THISDIR, path))
+            path = osp.abspath(osp.join(PACKPATH, path))
         self.src = kwargs.pop('src', 
                               None if fname=='' else osp.join(path, fname) if path not in (None,'') else fname) # source file
         # retrieve data year, if any
@@ -301,39 +236,49 @@ class BaseHCS(object):
         # retrieve a default output name
         self.dest = kwargs.pop('dest', None)
         # retrieve the input data projection
-        self.proj = kwargs.pop('proj', self.meta.get('proj', None)) # projection system
+        self.proj = kwargs.pop('proj', self.meta.get('proj')) # projection system
         # retrieve a default output name
-        self.date = kwargs.pop('date', self.meta.get('date','%d-%m-%Y %H:%M')) # input date format
+        self.date = kwargs.pop('date', self.meta.get('date') or '%d-%m-%Y %H:%M') # input date format
         # retrieve columns when already known
-        columns = kwargs.pop('columns', None) # [col[self.lang] for col in COLUMNS]
-        self.icolumns = columns or self.meta.get('columns',{})    # header columns
-        [col.update({self.lang: col.get(self.lang,'')}) for col in self.icolumns] # ensure there are 'locale' column names
+        columns = kwargs.pop('columns', None) 
+        self.icolumns = columns or self.meta.get('columns') or []    # header columns
+        [col.update({self.lang: col.get(self.lang) or ''}) for col in self.icolumns] # ensure there are 'locale' column names
         # retrieve matching columns when known
         index = kwargs.pop('index', None)   # index
-        self.oindex = index or self.meta.get('index',{}).copy() or list(INDEX.keys())
+        self.oindex = index or self.meta.get('index') or {}
 
-    #/************************************************************************/
-    def __repr__(self):
-        return "<{} data instance at {}>".format(self.__class__.__name__, id(self))
-    def __str__(self):    
-        keys = ['cc', 'country', 'file']
-        l = max([len(k) for k in keys])
-        return reduce(lambda x,y:x+y, ["{} : {}\n".format(k.ljust(l),getattr(self,k))
-            for k in keys if self.get(k) not in ('',None)])    
+    ##/************************************************************************/
+    #def __repr__(self):
+    #    return "<{} data instance at {}>".format(self.__class__.__name__, id(self))
+    #def __str__(self):    
+    #    keys = ['cc', 'country', 'file']
+    #    l = max([len(k) for k in keys])
+    #    return reduce(lambda x,y:x+y, ["{} : {}\n".format(k.ljust(l),getattr(self,k))
+    #        for k in keys if self.get(k) not in ('',None)])    
 
     #/************************************************************************/
     def __getattr__(self, attr):
-            try:        return object.__getattribute__(self, attr) 
-            except AttributeError: 
+        if attr.startswith('meta_'):
+        # if not object.__getattribute__(self,'__metadata') in (None,{}) and attr.startswith('meta_'):
+            try:        return self.meta.get(attr[len('meta_'):]) 
+            except:     pass
+        elif attr.startswith('cfg_'):
+        #elif not object.__getattribute__(self,'__config') in (None,{}) and attr.startswith('cfg_'):
+            try:        return self.cfg.get(attr[len('cfg_'):]) 
+            except:     pass
+        else:
+            pass
+        try:        return object.__getattribute__(self, attr) 
+        except AttributeError: 
+            try:
+                # assert attr in self.meta
+                return object.__getattribute__(self, '__' + attr)
+            except (AttributeError,AssertionError): 
                 try:
-                    # assert attr in self.meta
-                    return object.__getattribute__(self, '__' + attr)
-                except (AttributeError,AssertionError): 
-                    try:
-                        assert False
-                        # return getattr(self.__class__, attr)
-                    except AssertionError:
-                        raise AttributeError ("'%s' object has no attribute %s" % (type(self),attr))
+                    assert False
+                    # return getattr(self.__class__, attr)
+                except AssertionError:
+                    raise AttributeError("%s object has no attribute '%s'" % (type(self),attr))
 
     #/************************************************************************/
     @property
@@ -341,9 +286,33 @@ class BaseHCS(object):
         return self.__metadata # or {}
     @meta.setter#analysis:ignore
     def meta(self, meta):
-        if not (meta is None or isinstance(meta, (MetaHCS,Mapping))):         
-            raise TypeError('wrong format for country code %s - must be a dictionary' % meta)
+        if not (meta is None or isinstance(meta, (MetaFacility,Mapping))):         
+            raise TypeError("wrong format for country metadata '%s' - must be a dictionary" % meta)
         self.__metadata = meta
+
+    @property
+    def cfg(self):
+        return self.__config # or {}
+    @cfg.setter#analysis:ignore
+    def cfg(self, cfg):
+        if not (cfg is None or isinstance(cfg, (TypeFacility,Mapping))):         
+            raise TypeError("wrong format for country code '%s' - must be a dictionary" % cfg)
+        self.__config = cfg
+
+    @property
+    def facility(self):
+        return self.__facility or {}
+    @facility.setter#analysis:ignore
+    def facility(self, fac):
+        if isinstance(fac, string_types) and fac in FACILITIES.keys():
+            fac = FACILITIES[fac] 
+        elif fac is None or isinstance(fac, Mapping):                          
+            pass
+        elif isinstance(fac, string_types):         
+            raise IOError("wrong facility type name '%s' - must one among '%s'" % (fac,list(FACILITIES.keys())))
+        else:
+            raise TypeError("wrong format for facility type '%s' - must be a string or a dictionary" % fac)
+        self.__facility = fac
 
     @property
     def cc(self):
@@ -352,18 +321,18 @@ class BaseHCS(object):
     def cc(self, cc):
         if cc is None:                          pass
         elif not isinstance(cc, string_types):         
-            raise TypeError('wrong format for country code %s - must be a string' % cc)
-        elif not cc in EUCOUNTRIES: # EUCOUNTRIES.keys()
-            raise IOError('wrong country code %s - must be any valid code from the EU area' % cc)   
-        elif cc != self.CC:
-            warnings.warn("\n! mismatch with class variable 'CC': %s !" % self.CC)
+            raise TypeError("wrong format for country code '%s' - must be a string" % cc)
+        elif not cc in COUNTRIES: # COUNTRIES.keys()
+            raise IOError("wrong country code '%s' - must be any valid code from the EU area" % cc)   
+        elif cc != next(iter(self.COUNTRY)):
+            warnings.warn("\n! mismatch with class variable 'CC': %s !" % next(iter(self.COUNTRY)))
         if _KEEP_META_UPDATED is True:
-            self.meta.update({'country': {'code': cc, 'name': EUCOUNTRIES[cc]}}) # GeoProcess.isoCountry
+            self.meta.update({'country': {'code': cc, 'name': COUNTRIES[cc]}}) # GeoProcess.isoCountry
         self.__cc = cc
 
     @property
     def country(self):
-        return EUCOUNTRIES[self.cc]
+        return COUNTRIES[self.cc]
 
     @property
     def lang(self):
@@ -371,7 +340,7 @@ class BaseHCS(object):
     @lang.setter#analysis:ignore
     def lang(self, lang):
         if not (lang is None or isinstance(lang, string_types)):         
-            raise TypeError('wrong format for language type %s - must be a string' % lang)
+            raise TypeError("wrong format for language type '%s' - must be a string" % lang)
         if _KEEP_META_UPDATED is True:
             self.meta.update({'lang': {'code': lang, 'name': TextProcess.LANGS[lang]}}) # TextProcess.isoLang
         self.__lang = lang
@@ -382,7 +351,7 @@ class BaseHCS(object):
     @year.setter#analysis:ignore
     def year(self, year):
         if not (year is None or isinstance(year, int)):         
-            raise TypeError('wrong format for year: %s - must be an integer' % year)
+            raise TypeError("wrong format for year: '%s' - must be an integer" % year)
         if _KEEP_META_UPDATED is True:
             self.meta.update({'year': year})
         self.__refdate = year
@@ -393,7 +362,7 @@ class BaseHCS(object):
     @src.setter#analysis:ignore
     def src(self, src):
         if not (src is None or isinstance(src, string_types)):         
-            raise TypeError('wrong format for source filename %s - must be a string' % src)
+            raise TypeError("wrong format for source filename '%s' - must be a string" % src)
         elif src is not None:
             try:
                 assert osp.exists(src) is True
@@ -408,7 +377,7 @@ class BaseHCS(object):
                     pass
                 except (requests.URLRequired,requests.HTTPError,requests.RequestException):
                     warnings.warn("\n! source file '%s' not available online !" % src)
-                    raise IOError('no input source file found')
+                    raise IOError("no input source file found")
         if _KEEP_META_UPDATED is True:
             self.meta.update({'file': osp.basename(src), 'path': osp.dirname(src)})
         self.__src = src
@@ -419,7 +388,7 @@ class BaseHCS(object):
     @proj.setter#analysis:ignore
     def proj(self, proj):
         if not (proj is None or isinstance(proj, string_types)):         
-            raise TypeError('wrong format for projection type %s - must be a string' % proj)
+            raise TypeError("wrong format for projection type '%s' - must be a string" % proj)
         if _KEEP_META_UPDATED is True:
             self.meta.update({'proj': proj})
         self.__proj = proj
@@ -438,7 +407,7 @@ class BaseHCS(object):
         elif isinstance(cols, Sequence) and all([isinstance(col, string_types) for col in cols]):
             cols = [{self.lang: col} for col in cols]
         elif not(isinstance(cols, Sequence) and all([isinstance(col, Mapping) for col in cols])): 
-            raise TypeError('wrong input column headers type %s - must be a sequence of dictionaries' % cols)
+            raise TypeError("wrong input column headers type '%s' - must be a sequence of dictionaries" % cols)
         if _KEEP_META_UPDATED is True:
             self.meta.update({'columns': cols})
         self.__columns = cols
@@ -455,7 +424,7 @@ class BaseHCS(object):
         elif isinstance(ind, Sequence):
             ind = dict.fromkeys(ind)
         elif not isinstance(ind, Mapping):
-            raise TypeError('wrong output index type %s - must be a dictionary' % ind)
+            raise TypeError("wrong output index type '%s' - must be a dictionary" % ind)
         if _KEEP_META_UPDATED is True:
             self.meta.update({'index': ind})
         self.__index = ind
@@ -466,7 +435,7 @@ class BaseHCS(object):
     @sep.setter#analysis:ignore
     def sep(self, sep):
         if not (sep is None or isinstance(sep, string_types)):         
-            raise TypeError('wrong format for separator %s - must be a string' % sep)
+            raise TypeError("wrong format for separator '%s' - must be a string" % sep)
         if _KEEP_META_UPDATED is True:
             self.meta.update({'sep': sep})
         self.__sep = sep
@@ -477,7 +446,7 @@ class BaseHCS(object):
     @enc.setter#analysis:ignore
     def enc(self, enc):
         if not (enc is None or isinstance(enc, string_types)):         
-            raise TypeError('wrong format for file encoding %s - must be a string' % enc)
+            raise TypeError("wrong format for file encoding '%s' - must be a string" % enc)
         if _KEEP_META_UPDATED is True:
             self.meta.update({'enc': enc})
         self.__encoding = enc
@@ -492,20 +461,20 @@ class BaseHCS(object):
         elif isinstance(place, string_types):
             pass # place = [place,]
         elif not(isinstance(place, Sequence) and all([isinstance(p, string_types) for p in place])):
-            raise TypeError('wrong input format for place - must be a (list of) string(s) or a mapping dictionary')            
+            raise TypeError("wrong input format for place '%s' - must be a (list of) string(s) or a mapping dictionary" % place)            
         self.__place = place
 
     #/************************************************************************/
     def load_data(self, *src, **kwargs):
         """Load data source file.
         
-                >>> hcs.load_data(src='filename')
+                >>> fac.load_data(src='filename')
         """
         src = (src not in ((None,),()) and src[0])                  or \
              kwargs.pop('src', None)                                or \
              self.src                                               
         if src in (None,''):     
-             raise IOError("no source filename provided - set 'src' attribute/parameter")
+             raise IOError("no source filename provided - set keyword 'src' attribute/parameter")
         elif not isinstance(src, string_types):     
              raise TypeError('wrong format for source filename - must be a string')
         # ifmt = osp.splitext(src)[-1]
@@ -521,7 +490,7 @@ class BaseHCS(object):
             kwargs.update({'encoding': encoding, 'sep': sep})
             self.data = pd.read_csv(src, **kwargs)
         except FileNotFoundError:            
-            raise FileNotFoundError('impossible to load source data - file %s not found' % self.src)
+            raise FileNotFoundError("impossible to load source data - file '%s' not found" % self.src)
         except:
             kwargs.pop('encoding'); kwargs.pop('sep')
             try:
@@ -534,7 +503,7 @@ class BaseHCS(object):
                     kwargs.update({'encoding': encoding, 'sep': sep, 'compression': 'infer'})
                     self.data = pd.read_table(src, **kwargs)
                 except:
-                    raise IOError('impossible to load source data - format not recognised')
+                    raise IOError("impossible to load source data - format not recognised")
             else:
                 self.enc, self.sep = encoding, sep
         else:
@@ -556,7 +525,7 @@ class BaseHCS(object):
         """Retrieve the name of the column associated to a given field (e.g., manually
         defined), depending on the language.
         
-                >>> hcs.get_column(columns=['col1', 'col2'], ilang=None, olang=None)
+                >>> fac.get_column(columns=['col1', 'col2'], ilang=None, olang=None)
         """
         columns = (columns not in ((None,),()) and columns[0])          or \
                     kwargs.pop('columns', None)                                 
@@ -565,7 +534,7 @@ class BaseHCS(object):
         elif isinstance(columns, string_types):     
             columns = (columns,)
         elif not (isinstance(columns, Sequence) and all([isinstance(col, string_types) for col in columns])):   
-             raise TypeError('wrong input format for columns - must be a (list of) string(s)')
+             raise TypeError("wrong input format for columns - must be a (list of) string(s)")
         try:
             langs = list(self.icolumns[0].keys())
         except:
@@ -588,12 +557,12 @@ class BaseHCS(object):
         try:
             assert ilang is not None and ilang in TextProcess.LANGS
         except AssertionError:
-            raise IOError('input language not recognised')            
-        olang = kwargs.pop('olang', LANG) # LANG
+            raise IOError("input language '%s' not recognised" % ilang)            
+        olang = kwargs.pop('olang', self.cfg.get('lang')) 
         try:
             assert olang is not None and olang in TextProcess.LANGS
         except AssertionError:
-            raise IOError('output language not recognised')            
+            raise IOError("output language '%s' not recognised" % olang)            
         try:
             assert ilang in langs or ilang == self.lang
         except AssertionError:
@@ -625,7 +594,7 @@ class BaseHCS(object):
         [ncolumns.update({col[ilang]: col}) for col in self.icolumns]
         #[ncolumns.update({col[ilang]: col.pop(ilang) and col})    \
         #                 for col in [col.copy() for col in self.icolumns]]
-        res = [ncolumns[col].get(olang,None) or ncolumns[col].get(ilang,None)   \
+        res = [ncolumns[col].get(olang) or ncolumns[col].get(ilang)   \
                if col in ncolumns.keys() else None for col in columns]
         return res if len(res)>1 else res[0]
 
@@ -634,14 +603,14 @@ class BaseHCS(object):
         """Rename (and cast) the column associated to a given field (e.g., as identified
         in the index), depending on the language.
         
-                >>> hcs.set_column(columns={'newcol': 'oldcol'})
+                >>> fac.set_column(columns={'newcol': 'oldcol'})
         """
         columns = (columns not in ((None,),()) and columns[0])        or \
                     kwargs.pop('columns', None)                     
         if columns in (None, ()):
             columns = {}  # will actually set all columns in that case
         elif not isinstance(columns, Mapping):
-            raise TypeError('wrong input format for columns - must be a mapping dictionary')
+            raise TypeError("wrong input format for columns - must be a mapping dictionary")
         force_rename = kwargs.pop('force', False)
         lang = kwargs.pop('lang', self.lang)
         idate = kwargs.pop('date', self.date)
@@ -656,15 +625,20 @@ class BaseHCS(object):
             columns = {k:col[self.lang] for col in self.icolumns      \
                        for (k,v) in columns.items() if (col[lang]==v and v not in ('',None))}
         fields = {}
+        try:
+            INDEX = self.cfg['index']
+        except:
+            # INDEX = {}
+            return
         for (ind, field) in columns.items():
             if field is None:
                 if force_rename is False:       
-                    warnings.warn("\n! column '%s' will not be reported in the formatted output table !" % ind)
+                    # warnings.warn("\n! column '%s' will not be reported in the formatted output table !" % ind)
                     continue
                 else:                           
                     field = ind 
             ofield = INDEX[ind]['name'] if ind in INDEX.keys() and force_rename is False else ind
-            cast = BASETYPE[INDEX[ind]['type']]            
+            cast = OBASETYPE[INDEX[ind]['type']]            
             #t if ind in self.oindex: # update the index: this will inform us about which renamings were successful
             #t    self.oindex.update({ind: ofield})              
             if field == ofield:
@@ -679,7 +653,7 @@ class BaseHCS(object):
             if cast == self.data[ofield].dtype:
                 continue
             elif cast == datetime:                
-                self.data[ofield] = IOProcess.to_date(self.data, ofield, DATE, ifmt=idate) 
+                self.data[ofield] = IOProcess.to_date(self.data, ofield, self.cfg.get('date') or '', ifmt=idate) 
             else:
                 self.data[ofield] = IOProcess.to_cast(self.data, ofield, cast)
         return columns 
@@ -694,14 +668,19 @@ class BaseHCS(object):
             columns = [columns,]
         elif not(columns in (None, ())                                  or \
                  (isinstance(columns, Sequence) and all([isinstance(col,string_types) for col in columns]))):
-            raise TypeError('wrong input format for drop columns - must be a (list of) string(s)')
-        index = kwargs.pop('keep', [])                     
-        if isinstance(index, string_types):
-            index = [index,]
-        elif not(isinstance(index, Sequence) and all([isinstance(ind,string_types) for ind in index])):
-            raise TypeError('wrong input format for keep columns - must be a (list of) string(s)')
+            raise TypeError("wrong input format for drop columns - must be a (list of) string(s)")
+        keepcols = kwargs.pop('keep', [])                     
+        if isinstance(keepcols, string_types):
+            keepcols = [keepcols,]
+        elif not(isinstance(keepcols, Sequence) and all([isinstance(col,string_types) for col in keepcols])):
+            raise TypeError("wrong input format for keep columns - must be a (list of) string(s)")
         force_keep = kwargs.pop('force', False)                     
         # lang = kwargs.pop('lang', None) # OLANG
+        try:
+            INDEX = self.cfg['index']
+        except:
+            # INDEX = {}
+            return
         for i, col in enumerate(columns):
             try:        assert col in self.data.columns
             except:
@@ -713,18 +692,18 @@ class BaseHCS(object):
                     #t columns.insert(i, self.oindex[col])
                     columns.insert(i, INDEX[col]) #t
             else:       continue
-        for i, ind in enumerate(index):
+        for i, ind in enumerate(keepcols):
             try:        assert ind in self.data.columns
             except:
                 try:        assert ind in self.oindex and self.oindex[ind] is not None
                 except:     continue
                 else:
-                    index.pop(i)
-                    #t index.insert(i, self.oindex[ind])
-                    index.insert(i, INDEX[col])
+                    keepcols.pop(i)
+                    #t keepcols.insert(i, self.oindex[ind])
+                    keepcols.insert(i, INDEX[col])
             else:       continue
         # refine the set of columns to actually drop
-        columns = list(set(columns).difference(set(index)))
+        columns = list(set(columns).difference(set(keepcols)))
         # drop the columns
         #try:
         #    self.data.drop(columns=columns, axis=1, inplace=True)
@@ -738,10 +717,10 @@ class BaseHCS(object):
         if force_keep is False:
             return
         # 'keep' the others, i.e. when they dont exist create with NaN                
-        for ind in index:
+        for ind in keepcols:
             if ind in self.data.columns:
                 continue
-            cast = BASETYPE[INDEX[ind]['type']] if ind in INDEX else object    
+            cast = OBASETYPE[INDEX[ind]['type']] if ind in INDEX.keys() else object    
             if cast == datetime:    cast = str
             try:
                 self.data[ind] = pd.Series(dtype=cast)
@@ -751,15 +730,15 @@ class BaseHCS(object):
     def define_place(self, *place, **kwargs):
         """Build the place field as a concatenation of existing columns.
         
-                >>> hcs.define_place(place=['street', 'no', 'city', 'zip', 'country'])
+                >>> fac.define_place(place=['street', 'no', 'city', 'zip', 'country'])
         """
-        lang = kwargs.pop('lang', LANG)  
+        lang = kwargs.pop('lang', self.cfg.get('lang'))  
         place = (place not in ((None,),()) and place[0])            or \
                 kwargs.pop('place', None)                           or \
                 self.place
         try:
             assert place in ([],None,'')
-            tplace = TextProcess.translate(GeoProcess.PLACE, ilang='en', olang=lang)
+            tplace = TextProcess.translate(GeoService.PLACE, ilang='en', olang=lang)
         except (AssertionError,IOError,OSError):
             pass
         else:
@@ -771,6 +750,10 @@ class BaseHCS(object):
         self.place = place if isinstance(place, string_types) else 'place' 
         if isinstance(place, string_types):
             place = [place,] # just to be sure...
+        try:
+            INDEX = self.cfg['index']
+        except:
+            INDEX = {}
         if 'place' in INDEX.keys() and not 'place' in self.oindex: # actually not recorded: always False
             self.oindex.update({'place': 'place'}) # it is created on the fly
         try:
@@ -797,7 +780,7 @@ class BaseHCS(object):
         """Retrieve the geographical coordinates, may that be from existing lat/lon
         columns in the source file, or by geocoding the location name. 
         
-            >>> hcs.find_location(latlon=['lat', 'lon'])
+            >>> fac.find_location(latlon=['lat', 'lon'])
         """
         latlon = (latlon not in ((None,),()) and latlon)            or \
                 kwargs.pop('latlon', None)                        
@@ -816,7 +799,14 @@ class BaseHCS(object):
         if latlon in ([],None):
             lat, lon = self.oindex.get('lat', 'lat'), self.oindex.get('lon', 'lon')
             order = 'lL'
-        olat, olon = INDEX['lat']['name'], INDEX['lon']['name']
+        try:
+            INDEX = self.cfg['index']
+        except:
+            olat, olon = 'lat', 'lon'
+            otlat, otlon = None, None
+        else:
+            olat, olon = INDEX['lat']['name'], INDEX['lon']['name']
+            otlat, otlon = INDEX['lat']['type'], INDEX['lon']['type']
         if lat == lon and lat in self.data.columns: #self.icolumns[lang]
             latlon = lat
             if order == 'lL':           lat, lon = olat, olon
@@ -845,16 +835,21 @@ class BaseHCS(object):
             except ImportError:
                 raise IOError('no geocoder available')
             geo_qual = None # TBD
-        ind = INDEX['geo_qual']['name']
-        self.data[ind] = geo_qual 
-        if not 'geo_qual' in self.oindex: 
-            self.oindex.update({'geo_qual': ind})
+        try:    
+            ind = INDEX['geo_qual']['name']
+        except:
+            pass
+        else:
+            self.data[ind] = geo_qual 
+            if not 'geo_qual' in self.oindex: 
+                self.oindex.update({'geo_qual': ind})
         # no need: self.icolumns.extend([{'en': ind}])
         if not 'lat' in self.oindex:
             self.oindex.update({'lat': olat})
         if not 'lon' in self.oindex:
             self.oindex.update({'lon': olon})
             # no need: self.icolumns.extend([{'en': olat}, {'en': olon}}])
+        PROJ = self.cfg.get('proj')
         if PROJ is not None and self.proj not in (None,'') and self.proj != PROJ:
             f = lambda lat, lon : self.geoserv.project([lat, lon], iproj=self.proj, oproj=PROJ)
             try:                        f('-1')
@@ -864,15 +859,18 @@ class BaseHCS(object):
                 raise IOError('no projection transformer available')
         # cast
         # self.data[olat], self.data[olon] = pd.to_numeric(self.data[olat]), pd.to_numeric(self.data[olon])
-        self.data[olat], self.data[olon] =                              \
-            self.data[olat].astype(BASETYPE[INDEX['lat']['type']]),    \
-            self.data[olon].astype(BASETYPE[INDEX['lon']['type']])
+        try:
+            self.data[olat], self.data[olon] =                              \
+                self.data[olat].astype(OBASETYPE.get(otlat)),    \
+                self.data[olon].astype(OBASETYPE.get(otlon))
+        except:
+            pass
         
     #/************************************************************************/
     def prepare_data(self, *args, **kwargs):
         """Abstract method for data preparation.
         
-            >>> hcs.prepare_data(*args, **kwargs)
+            >>> fac.prepare_data(*args, **kwargs)
         """
         pass
     
@@ -881,86 +879,143 @@ class BaseHCS(object):
         """Run the formatting of the input data according to the harmonised template
         as provided by the index metadata.
         
-            >>> hcs.format_data(**index)
+            >>> fac.format_data(**index)
         """
-        _index = kwargs.pop('index', {})
-        if isinstance(_index, string_types):
-            _index = {_index: None}  
-        elif isinstance(_index, Sequence):
-            _index = dict(zip(_index,_index))
-        elif not isinstance(_index, Mapping):
-            raise TypeError('wrong format for input index - must a mapping dictionary')
-        lang = kwargs.pop('lang', LANG)
+        _columns = kwargs.pop('index', {})
+        if isinstance(_columns, string_types):
+            _columns = {_columns: None}  
+        elif isinstance(_columns, Sequence):
+            _columns = dict(zip(_columns,_columns))
+        elif not isinstance(_columns, Mapping):
+            raise TypeError("wrong format for input index - must a mapping dictionary")
+        lang = kwargs.pop('lang', self.cfg.get('lang'))
         if not isinstance(lang, string_types):
-            raise TypeError('wrong format for language - must a string')
+            raise TypeError("wrong format for language - must a string")
         try:
-            index = self.oindex.copy()
-            index.update(_index) # index overwrites whatever is in oindex
+            columns = self.oindex.copy()
+            columns.update(_columns) # index overwrites whatever is in oindex
         except:
             raise IOError
         try:
             assert lang == self.lang
         except:            
-            index = {k: self.get_column(v, ilang=lang, olang=self.lang)  or \
+            columns = {k: self.get_column(v, ilang=lang, olang=self.lang)  or \
                         self.get_column(v, olang=self.lang)                 \
-                     for (k,v) in index.items() if v not in (None,'')}
+                     for (k,v) in columns.items() if v not in (None,'')}
         try:
-            assert index != {}
+            assert columns != {}
         except: # not vey happy with this, but ok... it's a default!
             try:
-                index = {col[LANG]: col[self.lang] for col in self.icolumns}
+                columns = {col[lang]: col[self.lang] for col in self.icolumns}
             except:
-                raise IOError('nothing to match to the input columns - check the (empty) index')
+                raise IOError("nothing to match to the input columns - check the (empty) index")
         # check for country- and redate-related columns - special cases
         for attr in ['country', 'cc', 'refdate']:
-            if attr in index:
-                _index = index[attr] or attr
-                if not _index in self.data.columns:   
-                    self.data[_index] = getattr(self, '__' + attr, None) 
+            if attr in columns:
+                _column = columns[attr] or attr
+                if not _column in self.data.columns:   
+                    self.data[_column] = getattr(self, '__' + attr, None) 
                 if not attr in self.oindex:   
-                    self.oindex.update({attr: _index})
+                    self.oindex.update({attr: _column})
             else:       pass
         # find the locations associated to the data
-        latlon = [index.get(l, l) for l in ['lat', 'lon']]
+        latlon = [columns.get(l, l) for l in ['lat', 'lon']]
         ## define the place: we actually skip this (see 'assert False' below), and 
         ## do it only if needed when running find_location later
         #try:
         #    assert False # 
-        #    place = [key for key in index.keys() if key in PLACE]
+        #    place = [key for key in columns.keys() if key in PLACE]
         #    self.define_place(place = place)
         #except:
         #    pass
         try:
-            latlon = [index.get(l, l) for l in ['lat', 'lon']]
+            latlon = [columns.get(l, l) for l in ['lat', 'lon']]
             self.find_location(latlon = latlon)
         except:
             warnings.warn('! location not assigned for data !')            
         finally:
-            [index.pop(l,None) for l in ['lat', 'lon']]
+            [columns.pop(l,None) for l in ['lat', 'lon']]
         ## update oindex with index (which has been modified by get_column and
         ## does not contain ['lat','lon'])
         # self.oindex.update(index)
         # reset the columns with the right exptected names 
         try:
-            self.set_column(columns = index)
+            self.set_column(columns = columns)
         except:     pass
         # clean the data so that it matches the template; keep even those fields
         # from index which have no corresponding column
         #t keep = [v if v is not None and k in INDEX else INDEX[k]['name'] for (k,v) in self.oindex.items()]
-        keepcol = [INDEX[k]['name'] for (k,v) in self.oindex.items() if k in INDEX and v is not None]
+        try:
+            INDEX = self.cfg['index']
+        except:
+            keepcol = columns # self.oindex.keys()
+        else:
+            keepcol = [INDEX[k]['name'] for (k,v) in self.oindex.items()    \
+                       if k in INDEX and v is not None]
         try:
             self.clean_column(list(self.data.columns), keep = keepcol)
         except:
             pass
         if _KEEP_INDEX_AS_ILANG is True:
-            self.oindex.update(index)
+            self.oindex.update(columns)
         
     #/************************************************************************/
-    def save_data(self, *dest, **kwargs):
+    def dumps_data(self, **kwargs):
+        """Return JSON or GEOJSON formatted data.
+        
+            >>> dic = fac.dumps_data(fmt='json')
+            >>> geom = fac.dumps_data(fmt='geojson')
+        """
+        fmt = kwargs.pop('fmt', None)
+        if fmt is None: # we give it a default value...
+            fmt = 'json'
+        elif not isinstance(fmt, string_types):
+            raise TypeError("wrong input format - must be a string key")
+        else:
+            fmt = fmt.lower()
+        try:
+            FMT = self.cfg.get('fmt')
+        except:
+            FMT = {}
+        if not fmt in FMT:
+            raise IOError("wrong input format - must be any string among '%s'" % list(FMT.keys()))
+        elif fmt in ('csv','gpkg'):
+            raise IOError("format '%s' not supported" % fmt)
+        INDEX = self.cfg.get('index') or {}
+        columns = [col for col in [ind['name'] for ind in INDEX.values()]  \
+                                   if col in self.data.columns]     # self.oindex.copy()
+        # reorder the columns - note this is useful for csv and json data only
+        # but ok, not critical...
+        self.data.reindex(columns = columns)
+        if fmt == 'geojson':
+            try:
+                olat, olon = INDEX['lat']['name'], INDEX['lon']['name'] #t self.oindex.get('lat', None), self.oindex.get('lon', None)
+                assert olat in columns and olon in columns
+            except:
+                raise IOError('geographic lat/lon columns not set')
+            try:
+                results = IOProcess.to_geojson(self.data, columns = columns, latlon = [olat, olon])
+            except:
+                raise IOError("issue when creating GEOJSON geometries")
+        elif  fmt == 'json':
+            try:
+                results = IOProcess.to_json(self.data, columns = columns)
+            except:
+                raise IOError("issue when creating JSON attributes")
+        try:
+            assert kwargs.pop('as_str', False) is False
+            return results
+        except AssertionError:
+            return json.dumps(results, ensure_ascii=False)
+        except:     
+            raise IOError("issue when dumping '%s' attributes" % fmt.upper())
+            
+    #/************************************************************************/
+    def dump_data(self, *dest, **kwargs):
         """Store transformed data in GEOJSON or CSV formats.
         
-            >>> hcs.save_data(dest=filename, fmt='csv')
-            >>> hcs.save_data(dest=filename, fmt='geojson')
+            >>> fac.dump_data(dest=filename, fmt='csv')
+            >>> fac.dump_data(dest=filename, fmt='geojson')
         """
         dest = (dest not in ((None,),()) and dest[0])               or \
              kwargs.pop('dest', None)                               or \
@@ -968,144 +1023,239 @@ class BaseHCS(object):
         fmt = kwargs.pop('fmt', None)
         if fmt is None: # we give it a default value...
             fmt = 'csv'
-        if not isinstance(fmt, string_types):
-            raise TypeError('wrong input format - must be a string key')
+        elif not isinstance(fmt, string_types):
+            raise TypeError("wrong input format - must be a string key")
         else:
             fmt = fmt.lower()
-        encoding = kwargs.pop('enc', ENC)
-        sep = kwargs.pop('sep', SEP)
-        date = kwargs.pop('date', DATE)#analysis:ignore
-        if not fmt in FMT.keys():
-            raise TypeError('wrong input format - must be any string among %s' % list(FMT.keys()))
+        encoding = kwargs.pop('enc', self.cfg.get('enc'))
+        sep = kwargs.pop('sep', self.cfg.get('sep'))
+        date = kwargs.pop('date', self.cfg.get('date'))#analysis:ignore
+        FMT = self.cfg.get('fmt') or {}
+        if not fmt in FMT:
+            raise TypeError("wrong input format - must be any string among '%s'" % list(FMT.keys()))
         if dest in (None,''):
-            dest = osp.abspath(osp.join(PATH, fmt, FILE % (self.cc, FMT[fmt])))
+            dest = osp.abspath(osp.join(self.cfg.get('path'), fmt, self.cfg.get('file') % (self.cc, FMT.get(fmt))))
         #try:
         #    kwargs.update(self.save_data.__dict__)
         #except:         pass
-        columns = [col for col in [ind['name'] for ind in INDEX.values()]  \
-                                   if col in self.data.columns]     # self.oindex.copy()
-        # reorder the columns - note this is useful for csv and json data only
-        # but ok, not critical...
-        self.data.reindex(columns = columns)
-        try:
-            olat, olon = INDEX['lat']['name'], INDEX['lon']['name'] #t self.oindex.get('lat', None), self.oindex.get('lon', None)
-            assert fmt not in ('geojson','gpkg') or (olat in columns and olon in columns)
-        except:
-            raise IOError('geographic lat/lon columns not set')
         if fmt == 'csv':
+            INDEX = self.cfg.get('index') or {}
+            columns = [col for col in [ind['name'] for ind in INDEX.values()]  \
+                                       if col in self.data.columns]     # self.oindex.copy()
+            # reorder the columns - note this is useful for csv and json data only
+            # but ok, not critical...
+            self.data.reindex(columns = columns)
             kwargs.update({'header': True, 'index': False, 
                            'encoding': encoding, 'sep': sep})
-            self.data.to_csv(dest, columns = columns, **kwargs) 
-            #                date_format=date
-        elif fmt == 'geojson':
-            geom = IOProcess.to_geojson(self.data, columns = columns, latlon = [olat, olon])
-            with open(dest, 'w', encoding=encoding) as f:
-                json.dump(geom, f, ensure_ascii=False)
-        elif  fmt == 'json':
-            records = IOProcess.to_json(self.data, columns = columns)
-            with open(dest, 'w', encoding=encoding) as f:
-                json.dump(records, f, ensure_ascii=False)
+            try:
+                self.data.to_csv(dest, columns = columns, **kwargs) 
+                #                date_format=date
+            except:
+                raise IOError("issue when creating CSV file")
+        elif fmt in ('json','geojson'):
+            kwargs.update({'fmt': fmt, 'as_str':False})
+            try:
+                resuls = self.dumps_data(**kwargs)
+            except:
+                raise IOError("issue when creating %s geometries" % fmt.upper())
+            try:
+                with open(dest, 'w', encoding=encoding) as f:
+                    json.dump(resuls, f, ensure_ascii=False)
+            except:
+                raise IOError("impossible saving metadata file")
         elif fmt == 'gpkg':
             results = IOProcess.to_gpkg(self.data, columns = columns)#analysis:ignore
         return
+            
+    #/************************************************************************/
+    def save_cfg(self, *dest, **kwargs):
+        warnings.warn("\n! method not implemented !")
+        return
+
+    #/************************************************************************/
+    def __update_meta(self):    
+        meta = deepcopy(self.meta.to_dict()) # self.meta.__dict__
+        for attr in meta.keys():
+            if attr == 'columns':
+                meta.update({'columns': self.icolumns})
+            elif attr == 'index':
+                # NO: self.meta.update({'index': self.oindex})
+                pass
+            elif attr == 'country':
+                meta.update({'country': GeoService.isoCountry(self.cc)})
+            elif attr == 'lang':
+                meta.update({'lang': TextProcess.isoLang(self.cc)})
+            else:
+                try:
+                    meta.update({attr: getattr(self,attr)})
+                except:         pass
+        return meta
+    
+    #/************************************************************************/
+    def update_meta(self):    
+        """Update the metadata file.
+        """
+        self.meta.update(self.__update_meta())
         
     #/************************************************************************/
-    def save_meta(self, *dest, **kwargs):
-        """Save metadata into a JSON file.
+    def dumps_meta(self, **kwargs):
+        """Dump metadata as output JSON dictionary.
         
-            >>> hcs.save_meta(dest=metaname)
+            >>> meta = fac.dumps_meta()
+        """# basically... nothing much more than self.meta.to_dict()
+        if _KEEP_META_UPDATED is False:
+            meta = self.__update_meta()
+        else:
+            meta = None
+        try:
+            assert kwargs.pop('as_str', False) is False
+            return meta or self.meta.to_dict()
+        except AssertionError:
+            return json.dumps(meta or self.meta.to_dict(), ensure_ascii=False)
+        except:     
+            raise IOError("impossible dumping metadata file")
+
+    #/************************************************************************/
+    def dump_meta(self, *dest, **kwargs):
+        """Dump metadata into a JSON file.
+        
+            >>> fac.dump_meta(dest=metaname)
         """
         dest = (dest not in ((None,),()) and dest[0])               or \
              kwargs.pop('dest', None)   
+        fmt = kwargs.pop('fmt', None)
+        if fmt is None: 
+            fmt = 'json'
+        elif not isinstance(fmt, string_types):
+            raise TypeError("wrong input format - must be a string key")
+        else:
+            fmt = fmt.lower()
+        if fmt != 'json':
+            raise IOError("metadata output to a JSON format only")
         if dest is None:   
-            dest = '%s%s.json' % (self.cc, BASENAME) 
+            try:
+                dest = osp.join(PACKPATH, self.facility.get('code'), '%s%s.json' % (self.cc, self.facility.get('code')))
+            except:
+                dest = osp.join(PACKPATH, '%s.json' % self.cc)
         if _KEEP_META_UPDATED is False:
-            for attr in OCFGNAME:
-                if attr == 'columns':
-                    self.meta.update({'columns': self.icolumns})
-                elif attr == 'index':
-                    # NO: self.meta.update({'index': self.oindex})
-                    pass
-                elif attr == 'country':
-                    self.meta.update({'country': GeoProcess.isoCountry(self.cc)})
-                elif attr == 'lang':
-                    self.meta.update({'lang': TextProcess.isoLang(self.cc)})
-                else:
-                    try:
-                        self.meta.update({attr: getattr(self,attr)})
-                    except:         pass
+            meta = self.__update_meta()
+        else:
+            meta = None
         try:
-            # self.meta.save(dest)
+            # self.meta.dump(dest)
             with open(dest, 'w', encoding=self.enc) as f:
-                json.dump(self.meta.__dict__, f, ensure_ascii=False)
+                json.dump(meta or self.meta.to_dict(), f, ensure_ascii=False)
         except:
-            raise IOError('impossible saving metadata')
-            
-            
+            raise IOError("impossible saving metadata file")
+          
+    
 #%% 
 #==============================================================================
-# Function hcsFactory
+# Function facilityFactory
 #==============================================================================
         
-def hcsFactory(*args, **kwargs):
-    """Generic function to derive a class from the base class :class:`BaseHCS`
+def facilityFactory(*args, **kwargs):
+    """Generic function to derive a class from the base class :class:`BaseFacility`
     depending on specific metadata and a given geocoder.
     
-        >>>  NewHCS = hcsFactory(metadata)
-        >>>  NewHCS = hcsFactory(country=CC1, coder={'Bing', yourkey})
-        >>>  NewHCS = hcsFactory(country=CC2, coder='GISCO')
+        >>>  NewFacility = facilityFactory(facility, metadata=None, country=None, coder=None)
+        
+    Examples
+    --------
+    
+        >>>  NewHCS = facilityFactory(HCS, country=CC1, coder={'Bing', yourkey})
+        >>>  NewFacility = facilityFactory(country=CC2, coder='GISCO')
     """
-    basecls = BaseHCS # kwargs.pop('base', BaseHCS)
-    if args in ((),(None,)):        metadata = None
-    else:                           metadata = args[0]
-    if not metadata is None:
-        if isinstance(metadata,MetaHCS):
-            meta = metadata.copy()
-        elif isinstance(metadata, (string_types,Mapping)):
-            meta = MetaHCS(metadata)
-        elif not isinstance(metadata,MetaHCS):
-            raise TypeError('metadata type not recognised - must be a filename, dictionary or %s' % MetaHCS.__name__)
-    else:
-        meta = {}
+    basecls = BaseFacility # kwargs.pop('base', BaseFacility)
     attributes = {}
+    # check facility to define output data configuration format
+    if args in ((),(None,)):        facility = None
+    else:                           facility = args[0]
+    facility = facility or kwargs.pop('facility', None)
+    try:
+        assert facility is None or isinstance(facility,(string_types,Mapping,TypeFacility))  
+    except AssertionError:
+        raise TypeError("facility type '%s' not recognised - must be a string" % type(facility))
+    if facility is None:
+        cfgmeta = {}
+    elif isinstance(facility, string_types):
+        try:
+            cfgmeta = OCFGDATA[facility] 
+        except AttributeError:
+            raise TypeError("facility string '%s' not recognised - must be in '%s'" % (facility, list(FACILITIES.keys())))
+        else:
+            cfgmeta = TypeFacility(deepcopy(cfgmeta))
+    elif isinstance(facility, Mapping):
+        cfgmeta = TypeFacility(facility)  
+    elif isinstance(facility,TypeFacility):
+        cfgmeta = facility.copy()
+    if not facility in (None,{}):
+        try:
+            FACILITY = FACILITIES.get(facility) or cfgmeta["type"] 
+        except:
+            pass
+        else:
+            attributes.update({'FACILITY': {FACILITY['code']: FACILITY['name']}})
+    # check metadata of input data
+    metadata = kwargs.pop('metadata', None)
+    try:
+        assert metadata is None or isinstance(metadata,(string_types,Mapping,MetaFacility))
+    except AssertionError:
+        raise TypeError("metadata type '%s' not recognised - must be a filename, dictionary or '%s'" % (type(metadata),MetaFacility.__name__))
+    if metadata is None:
+        metadata = {}
+    if isinstance(metadata, (string_types, Mapping)):
+        meta = MetaFacility(metadata)
+    elif isinstance(metadata,MetaFacility):
+        meta = metadata.copy()
+    # check country
     country = meta.get('country') if 'country' in meta else kwargs.pop('country', None)
     try:
-        assert country is None or isinstance(country,Mapping) or isinstance(country,string_types)
+        assert country is None or isinstance(country,(Mapping,string_types))
     except AssertionError:
-        raise TypeError('country type not recognised - must be a dictionary')
-    if country not in (None,{}):
-        country = GeoProcess.isoCountry(country)
-        #if isinstance(country,string_types): 
-        #    country = {'code': country, 'name': None}
-        #try:
-        #    assert set(country.keys()) == set(['name', 'code'])
-        #except AssertionError:
-        #    raise IOError('country format not recognised')
-        CC = country.get('code')
-        #COUNTRY = country.get('name')
-        attributes.update({'CC': CC})
-        #attributes.update({"CC": {'code': CC, 'name': COUNTRY}})
-        name = CC + basecls.__name__
+        raise TypeError("country type '%s' not recognised - must be a string or a dictionary" % type(country))
+    if not country in (None,{}):
+        try:
+            COUNTRY = GeoService.isoCountry(country)
+        except:
+            pass
+        else:
+            CC = COUNTRY.get('code')
+            attributes.update({'COUNTRY': {COUNTRY['code']: COUNTRY['name']}})
+            # attributes.update({'CC': CC})
     else:
-        name = 'NewHCS'
+        CC = ''
+    ## check language
     #lang = kwargs.pop('lang', None)
     #if lang not in (None,{}):
     #    lang = TextProcess.isoLang(lang)
     #    LANG = lang.get('code')
     #    attributes.update({'LANG': LANG})
+    #else:
+    #   LANG = ''
+    # check geocoder
     coder = kwargs.pop('coder', None)
     try:
         assert coder is None or isinstance(coder,string_types) or isinstance(coder,Mapping)
     except AssertionError:
-        raise TypeError('coder type not recognised - must be a dictionary or a single string')
+        raise TypeError("coder type '%s' not recognised - must be a dictionary or a single string" % type(coder))
     if not coder in ({}, ''): # None accepted, it will be default geocoder defined by the GeoProcess class
-        geoserv = GeoProcess(coder)
+        geoserv = GeoService(coder)
     else: 
         geoserv = None
+    # redefine the initialisation method
     def __init__(self, *args, **kwargs):
+        # one configuration dictionary defined 'per facility'
+        try:
+            self.cfg = cfgmeta.copy() 
+            # note: creating a "copy" actually creates another TypeFacility instance, 
+            # so that this attribute differs from one instance to the other!
+        except:
+            pass
         # one metadata dictionary defined 'per country'
         try:
-            self.meta = meta # meta.copy() 
+            self.meta = meta.copy()
+            # ibid: creating a "copy" actually creates another MetaFacility instance
         except:
             pass
         # the geocoder is defined 'per country', i.e. you may use different geocoders 
@@ -1122,6 +1272,12 @@ def hcsFactory(*args, **kwargs):
         #            % (key, self.__class__.__name__))
         #    setattr(self, key, value)
         basecls.__init__(self, *args, **kwargs)
+        # super(self.__class__, self).__init__(*args, **kwargs)) ... abstract, we don't know the class yet
     attributes.update({"__init__": __init__})
+    try:
+        name = '%s%s' % (CC.upper(),facility)
+    except:
+        name = 'New%s' % basecls.__name__.replace('Base','')
+    coder = kwargs.pop('coder', None)
     return type(name, (basecls,), attributes)
  
