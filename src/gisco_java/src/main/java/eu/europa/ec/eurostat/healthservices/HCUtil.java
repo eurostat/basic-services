@@ -5,7 +5,6 @@ package eu.europa.ec.eurostat.healthservices;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -24,10 +23,10 @@ public class HCUtil {
 	public static String path = "E:/dissemination/shared-data/MS_data/Service - Health/";
 
 	//country codes covered
-	static String[] ccs = new String[] { "AT", "BE", "BG","CH", "CY", "DE", "DK", "ES", "FI", "FR", /*"HU",*/ "IE", "IT", "LT", "LU", "LV", "MT", "NL", "NO", "PL", "PT", "RO", "SE", "SI"/*, "UK"*/ };
+	static String[] ccs = { "AT", "BE", "BG","CH", "CY", "DE", "DK", "ES", "FI", "FR", /*"HU",*/ "IE", "IT", "LT", "LU", "LV", "MT", "NL", "NO", "PL", "PT", "RO", "SE", "SI"/*, "UK"*/ };
 
 	//CSV columns
-	public static String[] cols = new String[] {
+	public static String[] cols = {
 			"id", "hospital_name", "site_name",
 			"lat", "lon", "geo_qual",
 			"street", "house_number", "postcode", "city", "cc", "country",
@@ -36,7 +35,7 @@ public class HCUtil {
 			"tel", "email", "url",
 			"ref_date", "pub_date"
 	};
-	public static List<String> cols_ = Arrays.asList(cols);
+	public static List<String> cols_ = List.of(cols);
 
 	//date format
 	static SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -45,14 +44,14 @@ public class HCUtil {
 
 	static void applyTypes(Collection<Feature> fs) {
 		for(Feature f : fs) {
-			for(String att : new String[] {"cap_beds", "cap_prac", "cap_rooms"}) {
-				Object v = f.getAttribute(att);
+			for(String att : new String[]{"cap_beds", "cap_prac", "cap_rooms"}) {
+				var v = f.getAttribute(att);
 				if(v==null) continue;
 				if("".equals(v)) f.setAttribute(att, null);
 				else f.setAttribute(att, Integer.parseInt(v.toString()));
 			}
 			for(String att : new String[] {"lat", "lon"}) {
-				Object v = f.getAttribute(att);
+				var v = f.getAttribute(att);
 				if(v==null) continue;
 				if("".equals(v)) f.setAttribute(att, null);
 				else f.setAttribute(att, Double.parseDouble(v.toString()));

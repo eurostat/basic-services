@@ -30,21 +30,21 @@ public class FR {
 	private static void format() {
 
 		//load input data
-		ArrayList<Map<String, String>> data = CSVUtil.load(HCUtil.path+cc + "/finess_clean.csv");
+		var data = CSVUtil.load(HCUtil.path+cc + "/finess_clean.csv");
 		System.out.println(data.size());
 
-		ArrayList<Map<String, String>> out = new ArrayList<>();
-		for(Map<String, String> r : data) {
-			Map<String, String> hf = new HashMap<>();
+		var out = new ArrayList<Map<String, String>>();
+		for(var r : data) {
+			var hf = new HashMap<String, String>();
 
 			//Keep only "Etablissements Hospitaliers", that is: "categagretab = 11**"
-			String cat = r.get("categagretab").substring(0,2);
+			var cat = r.get("categagretab").substring(0,2);
 			if(!"11".equals(cat)) continue;
 
 
-			String id = r.get("nofinesset");
+			var id = r.get("nofinesset");
 			hf.put("id", id);
-			String hname = !r.get("rslongue").equals("")? r.get("rslongue") : r.get("rs");
+			var hname = !r.get("rslongue").equals("")? r.get("rslongue") : r.get("rs");
 			hf.put("hospital_name", hname);
 			hf.put("site_name", r.get("complrs"));
 
@@ -77,7 +77,7 @@ public class FR {
 			hf.put("house_number", r.get("numvoie") + r.get("compvoie"));
 
 			//street
-			String tv = r.get("typvoie");
+			var tv = r.get("typvoie");
 			switch (tv) {
 			case "": break;
 			case "R": tv="RUE"; break;
@@ -101,11 +101,11 @@ public class FR {
 			hf.put("street", street);
 
 			//postcode - TODO convert cedex to noncedex?
-			String lia = r.get("ligneacheminement");
+			var lia = r.get("ligneacheminement");
 			hf.put("postcode", lia.substring(0, 5));
 
 			//city
-			String city = lia.substring(6, lia.length());
+			var city = lia.substring(6, lia.length());
 			for(int cedex = 30; cedex>0; cedex--) city = city.replace("CEDEX " + cedex, "");
 			city = city.replace("CEDEX", "");
 			city = city.trim();
@@ -113,7 +113,7 @@ public class FR {
 			if(city==null || city.equals("")) System.err.println("No city for " + id);
 
 			//country code. Take into account oversea territories.
-			String cc = "";
+			var cc = "";
 			switch (hf.get("postcode").substring(0,3)) {
 			case "971": cc="GP"; break;
 			case "972": cc="MQ"; break;
@@ -147,7 +147,7 @@ public class FR {
 	public static void geocode() {
 
 		//load input data
-		ArrayList<Map<String, String>> data = CSVUtil.load(HCUtil.path+cc + "/"+cc+"_formated.csv");
+		var data = CSVUtil.load(HCUtil.path+cc + "/"+cc+"_formated.csv");
 		System.out.println(data.size());
 
 		LocalParameters.loadProxySettings();
