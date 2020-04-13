@@ -5,7 +5,6 @@ package eu.europa.ec.eurostat.healthservices;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -36,7 +35,7 @@ public class HCUtil {
 			"tel", "email", "url",
 			"ref_date", "pub_date"
 	};
-	public static List<String> cols_ = Arrays.asList(cols);
+	public static List<String> cols_ = List.of(cols);
 
 	//date format
 	static SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
