@@ -26,7 +26,7 @@ processing.
 
 *optional*:     :mod:`geopy`, :mod:`happygisco`, :mod:`geojson`, :mod:`pyproj`, :mod:`googletrans`
 
-*call*:         :mod:`pyhcs`         
+*call*:         :mod:`pygeofacil`         
 
 **Contents**
 """
@@ -39,10 +39,13 @@ processing.
 from os import path as osp
 import warnings#analysis:ignore
 
-from collections import Mapping, Sequence#analysis:ignore
+from collections import OrderedDict, Mapping, Sequence#analysis:ignore
 from six import string_types
 
 from datetime import datetime
+from functools import reduce
+from copy import deepcopy
+# import itertools
 
 import numpy as np#analysis:ignore
 import pandas as pd#analysis:ignore
@@ -130,17 +133,167 @@ else:
 # LATLON        = ['lat', 'lon'] # 'coord' # 'latlon'
 # ORDER         = 'lL' # first lat, second Lon 
 
-from pyhcs import EUCOUNTRIES
+from pygeofacil import COUNTRIES
 
-THISDIR         = osp.dirname(__file__)
+__THISDIR         = osp.dirname(__file__)
 
 
 #%%
 #==============================================================================
-# Class GeoProcess
+# Class MetaData
+#==============================================================================
+
+class MetaData(dict):
+    """Generic class used to represent metadata instances as dictionary.
+    
+        >>> meta = MetaData(**metadata)
+    """
+                
+    #/************************************************************************/
+    def __init__(self, *args, **kwargs):
+        if not args in ((),(None,)):
+            try:
+                meta = deepcopy(args[0]) # deepcopy to avoid updating the default variables!!!
+            except:
+                meta = args[0]
+        else:       
+            meta = {}
+        if isinstance(meta, MetaData):
+            meta = dict(meta).copy()
+        elif isinstance(meta, string_types):
+            if not osp.exists(meta):
+                raise IOError("input metadata filename '%s' not recognised" % meta)
+            try:
+                with open(meta, 'rt') as f:
+                    meta = json.load(f)#analysis:ignore
+            except:
+                raise TypeError("input metadata file '%s' must be in JSON format" % meta)
+        elif not isinstance(meta, Mapping):
+            raise TypeError("input metadata format '%s' not recognised - must be a mapping dictionary or a string" % type(meta))
+        meta.update(kwargs)
+        super(MetaData,self).__init__(self, **meta)
+        try:
+            self.__metakeys = self.METAKEYS
+        except:
+            self.__metakeys = None
+        self.__dict__ = self
+            
+    #/************************************************************************/
+    @property
+    def metakeys(self):
+        return self.__metakeys or self.keys()
+    @metakeys.setter#analysis:ignore
+    def metakeys(self, keys):
+        if not (keys is None or isinstance(keys, Sequence)):         
+            raise TypeError("wrong format for meta keys '%s' - must be a list" % keys)
+        self.__metakeys = keys
+  
+    #/************************************************************************/
+    def copy(self, *args, **kwargs): # actually new object, like a deepcopy...
+        #return self.__class__(self.__dict__) # would work as well, see __init__
+        return self.__class__(**self.__dict__)
+  
+    #/************************************************************************/
+    def to_dict(self): # actually new object, like a deepcopy...
+        d = dict(**self.__dict__)
+        keys = list(d.keys())
+        [d.pop(key) for key in keys if key.startswith('__') or key.startswith('_' + self.__class__.__name__)]
+        return d
+    
+    #/************************************************************************/
+    def __repr__(self):
+        return "<{} metadata instance at {}>".format(self.__class__.__name__, id(self))
+    def __str__(self):    
+        keys = [key for key in self.keys() \
+                if not (key.startswith('__') or key.startswith('_' + self.__class__.__name__))]
+        if keys == []:
+            return " "
+        l = max([len(k) for k in keys])
+        return reduce(lambda x,y:x+y, ["{} : {}\n".format(k.ljust(l),getattr(self,k))
+            for k in keys if self.get(k) not in ('',None)])    
+
+    #/************************************************************************/
+    def __getattr__(self, attr):
+        if attr.startswith('__'):
+            try:        nattr = attr[2:-2]
+            except:     nattr = attr # for compatibility with the use of '__cc', else None
+        else:
+            nattr = attr
+        if nattr in self.keys():  
+            r = self.get(nattr)
+        else:
+            try:        object.__getattribute__(self, attr) 
+            except:     pass
+            r = None
+        return r
+     
+    #/************************************************************************/
+    def loads(self, src=None, **kwargs):
+        if src is None:
+            raise IOError("no source metadata file defined")
+        elif not isinstance(src, string_types):
+            raise TypeError("wrong source metadata file '%s'" % src)
+        try:
+            assert osp.exists(src)
+        except AssertionError:
+            raise IOError("metadata file '%s' do not exist" % src)
+        with open(src, 'r') as fp:
+            try:
+                meta = IOProcess.json.load(fp)
+            except:
+                try:
+                    meta = json.load(fp)
+                except:
+                    raise IOError("error saving metadata file")
+        return meta
+   
+    #/************************************************************************/
+    def load(self, src=None, **kwargs):
+        meta = self.loads(src=src, **kwargs)
+        try:
+            assert meta != {}
+        except:
+            raise IOError('no metadata variable loaded') 
+            # warnings.warn("\n! empty metadata !")
+            # return
+        else:
+            warnings.warn("\n! loading metadata file '%s'... !" % src)
+        if kwargs.pop('keep_all', True) is False:
+            [self.pop(key) for key in self.keys()]
+        keys = self.metakeys or list(meta.keys())
+        self.update({var: meta.get(var) for var in keys if var in meta})
+    
+    #/************************************************************************/
+    def dump(self, dest=None, **kwargs):
+        if dest is None:
+            raise IOError("no destination metadata file defined")
+        elif not isinstance(dest, string_types):
+            raise TypeError("wrong destination metadata file '%s'" % dest)
+        try:
+            assert osp.exists(dest)
+        except AssertionError:
+            warnings.warn('\n! destination metadata file will be created !')
+        else:
+            warnings.warn('\n! destination metadata file will be overwritten !')
+        meta = {k:v for (k,v) in dict(self.copy()).items() if k in self.metakeys}
+        if meta == {}:
+            raise IOError("no metadata variable available")        
+        with open(dest, 'w') as fp:
+            try:
+                IOProcess.json.dump(meta, fp, **kwargs)
+            except:
+                try:
+                    json.dump(meta, fp, **kwargs)
+                except:
+                    raise IOError("error saing metadata file")
+
+
+#%%
+#==============================================================================
+# Class GeoService
 #==============================================================================
     
-class GeoProcess(object):
+class GeoService(object):
     """Instantiation class for geoprocessing module.
     
         >>> geoproc = GeoProcess()
@@ -216,21 +369,21 @@ class GeoProcess(object):
         if not (arg is None or isinstance(arg, (string_types,Mapping))):
             raise TypeError('wrong format for country/code %s - must be a string or a dictionary' % arg)
         elif isinstance(arg, string_types):
-            if arg in EUCOUNTRIES.keys():     
+            if arg in COUNTRIES.keys():     
                 cc, country = arg, None
-            elif arg in EUCOUNTRIES.values():
+            elif arg in COUNTRIES.values():
                 cc, country = None, arg
             else:
                 raise IOError('country/code %s not recognised' % arg)    
         elif isinstance(arg, Mapping):
-            cc, country = arg.get('cc', None), arg.get('country', None)
+            cc, country = arg.get('code', None), arg.get('name', None)
         else:
             country, cc = None, None
         if cc in ('', None) and country in ('', {}, None):
             raise IOError('missing parameters to define country/code')
         elif cc in ('', None): # and NOT country in ('', {}, None)
             try:
-                cc = dict(map(reversed, EUCOUNTRIES.items())).get(country)
+                cc = dict(map(reversed, COUNTRIES.items())).get(country)
             except:     
                 #cc = country.split()
                 #if len(cc) >1:              cc = ''.join([c[0].upper() for c in country.split()])
@@ -238,7 +391,7 @@ class GeoProcess(object):
                 cc = None
         elif country in ('', {}, None): # and NOT cc in ('', None)
             try:
-                country = EUCOUNTRIES.get(cc) 
+                country = COUNTRIES.get(cc) 
             except:     country = None
         return {'code': cc, 'name': country}
                     
@@ -481,6 +634,52 @@ class IOProcess(object):
         warnings.warn('\n! method for gpkg not implemented !')
         pass
                     
+    #/************************************************************************/
+    class json(object):
+        
+        is_order_preserved = False # True
+        # note: when is_order_preserved is False, this entire class can actually be
+        # ignored since the dump/load methods are exactly equivalent to the original
+        # dump/load method of the json package
+        is_OrderedDict_use = True
+        
+        @classmethod
+        def serialize(cls, data):
+            if data is None or isinstance(data, (type, bool, int, float, str)):
+                return data
+            elif isinstance(data, Sequence):    
+                if isinstance(data, list):          return [cls.serialize(val) for val in data]
+                elif isinstance(data, tuple):       return {"tup": [cls.serialize(val) for val in data]}
+            elif isinstance(data, Mapping):    
+                if isinstance(data, OrderedDict):   return {"odic": [[cls.serialize(k), cls.serialize(v)] for k, v in data.items()]}
+                elif isinstance(data, dict):
+                    if all(isinstance(k, str) for k in data):
+                        return {k: cls.serialize(v) for k, v in data.items()}
+                    return {"dic": [[cls.serialize(k), cls.serialize(v)] for k, v in data.items()]}
+            elif isinstance(data, set):             return {"set": [cls.serialize(val) for val in data]}
+            raise TypeError("Type %s not data-serializable" % type(data))
+        
+        @classmethod
+        def restore(cls, dct):
+            if "dic" in dct:            return dict(dct["dic"])
+            elif "tup" in dct:          return tuple(dct["tup"])
+            elif "set" in dct:          return set(dct["set"])
+            elif "odic" in dct:         return OrderedDict(dct["odic"])
+            return dct
+        
+        @classmethod
+        def dump(cls, data, f, **kwargs):
+            try:        assert cls.is_OrderedDict_use is True and cls.is_order_preserved is True 
+            except:     json.dump(data, f, **kwargs)
+            else:       json.dump(cls.serialize(data), f, **kwargs)
+        
+        @classmethod
+        def load(cls, s, **kwargs):
+            try:        assert cls.is_OrderedDict_use is True and cls.is_order_preserved is True 
+            except:     return json.load(s, **kwargs)
+            else:       return json.load(s, object_hook=cls.restore, **kwargs)
+
+
     #/************************************************************************/
     def __init__(self,*args,  **kwargs):
         # no instance defined
