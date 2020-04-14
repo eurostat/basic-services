@@ -14,7 +14,9 @@ import org.locationtech.jts.geom.Point;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 import eu.europa.ec.eurostat.healthservices.HCUtil;
+import eu.europa.ec.eurostat.healthservices.Validation;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
+import eu.europa.ec.eurostat.jgiscotools.io.GeoData;
 import eu.europa.ec.eurostat.jgiscotools.util.ProjectionUtil;
 
 public class FR {
@@ -43,7 +45,13 @@ public class FR {
 				"ej_finess", "ej_rs", "siren", "siret", "date_autorisation", "date_ouverture",
 				"date_maj_finess", "telecopie", "com_code", "gestion_ars",
 				"gestion_drjcs", "gestion_drihl", "antenne_possible", "ditep", "dateconv",
-		"geoloc_datemaj" })
+				"statut_jur_code","statut_jur_lib", "statut_jur_etat","statut_jur_niv3_code","statut_jur_niv3_lib",
+				"statut_jur_niv2_code", "statut_jur_niv2_lib", "statut_jur_niv1_code", "statut_jur_niv1_lib",
+				"categ_code","categ_lib","categ_lib_court", "categ_etat","categ_niv3_code","categ_niv2_code",
+				"categ_niv2_lib","categ_niv1_code","categ_niv1_lib",
+				"mft_code", "mft_lib",
+				"geoloc_datemaj"
+		})
 			CSVUtil.removeColumn(data, col);
 
 		//rename columns
@@ -87,7 +95,7 @@ public class FR {
 			street += (d.get("adresse_lieuditbp").contains("BP")? "" : d.get("adresse_lieuditbp"));
 			street = street.trim();
 			d.put("street", street);
-		} );
+		});
 		CSVUtil.removeColumn(data, "adresse_type_voie");
 		CSVUtil.removeColumn(data, "adresse_nom_voie");
 		CSVUtil.removeColumn(data, "adresse_lieuditbp");
@@ -98,27 +106,38 @@ public class FR {
 		CSVUtil.renameColumn(data, "telephone", "tel");
 
 
-
-		//date_extract_finess 2020-03-04 - ref_date 
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		//public_private
 		data.stream().forEach(d -> {
-			try {
-				Date date = df.parse(d.get("date_extract_finess"));
-				d.put("ref_date", HCUtil.dateFormat.format(date));
-			} catch (ParseException e) { e.printStackTrace(); }
-		} );
-		CSVUtil.removeColumn(data, "date_extract_finess");
+			String pp = "";
+			switch (d.get("sph_code")) {
+			case "": pp = ""; break;
+			case "0": pp = ""; break;
+			case "1": pp = "public"; break;
+			case "2": pp = "public"; break; //PSPH
+			case "3": pp = "public"; break; //PSPH
+			case "4": pp = "public"; break; //PSPH
+			case "5": pp = "private"; break;
+			case "6": pp = "private"; break; //Etablissement de santé privé d'intérêt collectif
+			case "7": pp = "private"; break; //Etab de santé privé non lucratif, non déclar intérêt collect
+			case "9": pp = ""; break; //indeterminé
+			default:
+				System.out.println("Unhandled codesph = " + d.get("sph_code") + " --- " + d.get("sph_lib") );
+				System.out.println(d.get("hospital_name"));
+				break;
+			}
+			d.put("public_private", pp);
+		});
+		CSVUtil.removeColumn(data, "sph_code");
+		CSVUtil.removeColumn(data, "sph_lib");
 
-		//data.stream().forEach(d -> System.out.println(d.get("categ_niv3_code")) );
 
-		/*"statut_jur_code","statut_jur_lib",
-		"statut_jur_etat","statut_jur_niv3_code","statut_jur_niv3_lib",
-		"statut_jur_niv2_code","statut_jur_niv2_lib","statut_jur_niv1_code",
-		"statut_jur_niv1_lib","categ_code","categ_lib","categ_lib_court",
-		"categ_etat","categ_niv3_code","categ_niv3_lib","categ_niv2_code",
-		"categ_niv2_lib","categ_niv1_code","categ_niv1_lib",
-		"mft_code","mft_lib","sph_code","sph_lib"*/
+		//TODO find info somewhere
+		CSVUtil.addColumn(data, "emergency", "");
 
+		//
+		CSVUtil.renameColumn(data, "categ_niv3_lib", "facility_type");
+
+		//lat lon
 		Map<String, CoordinateReferenceSystem> crsDict = Map.of(
 				"LAMBERT_93", CRS.decode("EPSG:2154"),
 				"UTM_N20", CRS.decode("EPSG:32620"),
@@ -127,7 +146,6 @@ public class FR {
 				"UTM_S40", CRS.decode("EPSG:32740"),
 				"UTM_S38", CRS.decode("EPSG:32738")
 				);
-
 		GeometryFactory gf = new GeometryFactory();
 		data.stream().forEach(d -> {
 			double x = Double.parseDouble( d.get("geoloc_x") );
@@ -144,10 +162,36 @@ public class FR {
 		CSVUtil.renameColumn(data, "geoloc_precision", "geo_qual");
 
 
+		//date_extract_finess 2020-03-04 - ref_date 
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		data.stream().forEach(d -> {
+			try {
+				Date date = df.parse(d.get("date_extract_finess"));
+				d.put("ref_date", HCUtil.dateFormat.format(date));
+			} catch (ParseException e) { e.printStackTrace(); }
+		} );
+		CSVUtil.removeColumn(data, "date_extract_finess");
+
+
+		//country code. Take into account oversea territories.
+		data.stream().forEach(d -> {
+			var cc = "";
+			switch (d.get("postcode").substring(0,3)) {
+			case "971": cc="GP"; break;
+			case "972": cc="MQ"; break;
+			case "973": cc="GF"; break;
+			case "974": cc="RE"; break;
+			case "975": cc="PM"; break;
+			case "976": cc="YT"; break;
+			default: cc="FR"; break;
+			}
+			d.put("cc", cc);
+		} );
+
 		//CSVUtil.addColumns(data, HCUtil.cols, "");
-		//Validation.validate(data, cc);
-		//CSVUtil.save(data, HCUtil.path+cc + "/"+cc+"___.csv");
-		//GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path+cc + "/"+cc+".gpkg", ProjectionUtil.getWGS_84_CRS());
+		Validation.validate(data, cc);
+		CSVUtil.save(data, HCUtil.path+cc + "/"+cc+"___.csv");
+		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path+cc + "/"+cc+".gpkg", ProjectionUtil.getWGS_84_CRS());
 
 		System.out.println("End");
 	}
