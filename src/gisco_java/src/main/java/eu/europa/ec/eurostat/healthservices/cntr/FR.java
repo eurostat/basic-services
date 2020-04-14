@@ -33,8 +33,10 @@ public class FR {
 		data = data.stream().filter(
 				d ->
 				!d.get("categ_niv3_code").isBlank()
+				//keep only hospitals
 				&& "11".equals(d.get("categ_niv3_code").substring(0,2))
-				&& "1111".equals(d.get("categ_niv3_code"))
+				//keep exclude some of them...
+				&& !"1111".equals(d.get("categ_niv3_code"))
 				&& "ACTUEL".equals(d.get("etat"))
 				&& "ET".equals(d.get("type"))
 				).collect(Collectors.toList());
@@ -190,7 +192,7 @@ public class FR {
 
 		//CSVUtil.addColumns(data, HCUtil.cols, "");
 		Validation.validate(data, cc);
-		CSVUtil.save(data, HCUtil.path+cc + "/"+cc+"___.csv");
+		CSVUtil.save(data, HCUtil.path+cc + "/"+cc+".csv");
 		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path+cc + "/"+cc+".gpkg", ProjectionUtil.getWGS_84_CRS());
 
 		System.out.println("End");

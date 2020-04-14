@@ -51,7 +51,7 @@ public class Validation {
 
 	public static void validate(Collection<Map<String, String>> data, String cc) {
 
-		//check presence of all columns
+		//check no presence of some columns besides the expected ones
 		Set<String> ch = checkNoUnexpectedColumn(data, HCUtil.cols_);
 		if(ch.size()>0) System.err.println(ch);
 
