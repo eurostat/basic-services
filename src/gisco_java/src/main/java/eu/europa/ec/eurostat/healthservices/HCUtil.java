@@ -38,7 +38,7 @@ public class HCUtil {
 	public static List<String> cols_ = List.of(cols);
 
 	//date format
-	static SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+	public static SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
 
 
