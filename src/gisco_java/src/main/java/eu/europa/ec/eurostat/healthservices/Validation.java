@@ -22,6 +22,12 @@ import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
  */
 public class Validation {
 
+	//TODO detect duplicates?
+	//those with exact same data
+	//those with exact same data, but different ids
+	//those with same name/site_name
+	//those at the same location
+
 	/**
 	 * @param args
 	 */
