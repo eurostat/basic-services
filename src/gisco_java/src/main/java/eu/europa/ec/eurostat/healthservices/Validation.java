@@ -33,9 +33,6 @@ public class Validation {
 		//validate(HCUtil.path + "NO/CSV/NO_from_Web.csv", "NO");
 		//validate(HCUtil.path + "BG/BG.csv", "BG");
 
-		//var i=0;
-		//Object meth = System.out::println;
-		
 		System.out.println("End");
 	}
 
