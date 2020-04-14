@@ -303,17 +303,6 @@
         if (request.status >= 200 && request.status < 400) {
           let hospitals = d3.csvParse(request.responseText);
 
-          //change default marker
-          var hospitalIcon = L.icon({
-            iconUrl: "lib/leaflet/images/marker-icon.png",
-            iconAnchor: [7, 0],
-            iconSize: [5, 5]
-          });
-          var icon = new L.divIcon({ className: "mydivicon" });
-          L.Marker.mergeOptions({
-            icon: hospitalIcon
-          });
-
           //define basemap(s)
           let tiles = L.tileLayer(
             "https://europa.eu/webtools/rest/gisco/maps/wmts/OSMPositronBackground/EPSG3035/{z}/{x}/{y}.png",
@@ -334,7 +323,7 @@
           //define circle layers
           let propCircles = L.layerGroup();
           let normalCircles = L.layerGroup();
-          let defaultRadius = 2000; //metres
+          let defaultRadius = 1000; //metres
 
           let map = L.map("map", {
             center: L.latLng(50, 10),
@@ -349,7 +338,7 @@
           bedsToMetres = d3
             .scaleSqrt()
             .domain(bedsExtent)
-            .range([100, 8000]); //metres
+            .range([100, 15000]); //metres
 
           //add each hospital to the different layerGroups
           for (let i = 0; i < hospitals.length; i++) {
@@ -368,8 +357,8 @@
                 {
                   fillColor: circleColor,
                   color: circleBorderColor,
-                  weight: 1,
-                  fillOpacity: 0.6
+                  weight: 0.5,
+                  fillOpacity: 0.3
                 }
               ).on({
                 mouseover: function(e) {
@@ -411,7 +400,7 @@
           addAttributionToMap(map);
           addControlPanelToMap(map, propCircles, normalCircles);
 
-          //circle legend
+          // get metres per pixel for legend
           let mpp =
             (40075016.686 *
               Math.abs(Math.cos((map.getCenter().lat * Math.PI) / 180))) /
