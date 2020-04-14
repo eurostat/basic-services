@@ -2,7 +2,9 @@ package eu.europa.ec.eurostat.healthservices.cntr;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import eu.europa.ec.eurostat.healthservices.HCUtil;
 import eu.europa.ec.eurostat.healthservices.Validation;
@@ -20,9 +22,35 @@ public class FR {
 	public static void main(String[] args) {
 		System.out.println("Start");
 
-		//format();
-		//HCUtil.CSVToGPKG(cc);
-		//geocode();
+		List<Map<String,String>> data = CSVUtil.load(HCUtil.path+cc + "/finess_atlasante_18_03_2020/t-finess.csv");
+		System.out.println(data.size());
+
+		//filter
+		data = data.stream().filter(
+				d ->
+				!d.get("categ_niv3_code").isBlank()
+				&& "11".equals(d.get("categ_niv3_code").substring(0,2))
+				&& "1111".equals(d.get("categ_niv3_code"))
+				).collect(Collectors.toList());
+		System.out.println(data.size());
+
+		data.stream().forEach(d -> System.out.println(d.get("categ_niv3_code")) );
+
+		/*"source","date_maj","finess","finess8","etat","date_extract_finess",
+		"rs","type","ej_finess","ej_rs","et_finess","et_rs","siren","siret",
+		"date_autorisation","date_ouverture","date_maj_finess","adresse_num_voie",
+		"adresse_comp_voie","adresse_type_voie","adresse_nom_voie",
+		"adresse_lieuditbp","adresse_code_postal","adresse_lib_routage",
+		"telephone","telecopie","com_code","statut_jur_code","statut_jur_lib",
+		"statut_jur_etat","statut_jur_niv3_code","statut_jur_niv3_lib",
+		"statut_jur_niv2_code","statut_jur_niv2_lib","statut_jur_niv1_code",
+		"statut_jur_niv1_lib","categ_code","categ_lib","categ_lib_court",
+		"categ_etat","categ_niv3_code","categ_niv3_lib","categ_niv2_code",
+		"categ_niv2_lib","categ_niv1_code","categ_niv1_lib","gestion_ars",
+		"gestion_drjcs","gestion_drihl","antenne_possible","ditep","dateconv",
+		"mft_code","mft_lib","sph_code","sph_lib",
+		"geoloc_x","geoloc_y","geoloc_precision","geoloc_projection","geoloc_datemaj"*/
+
 
 		System.out.println("End");
 	}
