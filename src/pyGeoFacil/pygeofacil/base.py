@@ -190,6 +190,7 @@ class BaseFacility(object):
     
     FACILITY = None
     COUNTRY = None # class attribute... that should not be different from cc
+    YEAR = None # for future...
     
     #/************************************************************************/
     def __init__(self, **kwargs):
@@ -1227,12 +1228,16 @@ def facilityFactory(*args, **kwargs):
         CC = ''
     ## check language
     #lang = kwargs.pop('lang', None)
-    #if lang not in (None,{}):
+    #if lang not in (None,'',{):
     #    lang = TextProcess.isoLang(lang)
     #    LANG = lang.get('code')
     #    attributes.update({'LANG': LANG})
     #else:
     #   LANG = ''
+    # check survey year
+    year = kwargs.pop('year', None)
+    if year is not None and isinstance(year,int):
+        attributes.update({'YEAR': year})
     # check geocoder
     coder = kwargs.pop('coder', None)
     try:
