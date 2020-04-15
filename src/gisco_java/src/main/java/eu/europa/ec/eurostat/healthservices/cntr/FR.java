@@ -3,6 +3,7 @@ package eu.europa.ec.eurostat.healthservices.cntr;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -139,29 +140,37 @@ public class FR {
 		//
 		CSVUtil.renameColumn(data, "categ_niv3_lib", "facility_type");
 
+
+
+		//load geom
+		List<Map<String,String>> datag = CSVUtil.load(HCUtil.path+cc + "/finess_atlasante_base/geom.csv");
+		//finess,loc_score,x_wgs84,y_wgs84
+		join(data, "id", datag, "finess", true);
+		datag = null;
+		CSVUtil.removeColumn(data, "finess");
+
 		//lat lon
-		Map<String, CoordinateReferenceSystem> crsDict = Map.of(
-				"LAMBERT_93", CRS.decode("EPSG:2154"),
-				"UTM_N20", CRS.decode("EPSG:32620"),
-				"UTM_N21", CRS.decode("EPSG:32621"),
-				"UTM_N22", CRS.decode("EPSG:32622"),
-				"UTM_S40", CRS.decode("EPSG:32740"),
-				"UTM_S38", CRS.decode("EPSG:32738")
-				);
+		CoordinateReferenceSystem crs = CRS.decode("EPSG:32738");
 		GeometryFactory gf = new GeometryFactory();
 		data.stream().forEach(d -> {
-			double x = Double.parseDouble( d.get("geoloc_x") );
-			double y = Double.parseDouble( d.get("geoloc_y") );
-			CoordinateReferenceSystem crs = crsDict.get( d.get("geoloc_projection") );
+			if( d.get("x_wgs84") == null ) {
+				d.put("lon", "0");
+				d.put("lat", "0");
+				return;
+			}
+			double x = Double.parseDouble( d.get("x_wgs84") );
+			double y = Double.parseDouble( d.get("y_wgs84") );
 			Point pt = (Point) ProjectionUtil.project(gf.createPoint(new Coordinate(x,y)), crs, ProjectionUtil.getWGS_84_CRS());
 			d.put("lon", ""+pt.getY());
 			d.put("lat", ""+pt.getX());
 		} );
-		CSVUtil.removeColumn(data, "geoloc_x");
-		CSVUtil.removeColumn(data, "geoloc_y");
-		CSVUtil.removeColumn(data, "geoloc_projection");
+		CSVUtil.removeColumn(data, "x_wgs84");
+		CSVUtil.removeColumn(data, "y_wgs84");
 
-		CSVUtil.renameColumn(data, "geoloc_precision", "geo_qual");
+		//TODO
+		CSVUtil.removeColumn(data, "loc_score");
+		CSVUtil.addColumn(data, "geo_qual", "-1");
+		//CSVUtil.renameColumn(data, "geoloc_precision", "geo_qual");
 
 
 		//date_extract_finess 2020-03-04 - ref_date 
@@ -197,6 +206,35 @@ public class FR {
 
 		System.out.println("End");
 	}
+
+
+	public static void join(List<Map<String, String>> data1, String key1, List<Map<String, String>> data2, String key2, boolean printWarnings) {
+		//index data2 by key
+		var ind2 = new HashMap<String,Map<String,String>>();
+		for(Map<String, String> elt : data2) ind2.put(elt.get(key2), elt);
+
+		//join
+		for(Map<String, String> elt : data1) {
+			String k1 = elt.get(key1);
+			Map<String, String> elt2 = ind2.get(k1);
+			if(elt2 == null) {System.out.println("No element to join for key: " + k1); continue;}
+			elt.putAll(elt2);
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	/*
 	private static void format() {
@@ -332,5 +370,16 @@ public class FR {
 
 	}
 	 */
+
+
+
+	/*Map<String, CoordinateReferenceSystem> crsDict = Map.of(
+	"LAMBERT_93", CRS.decode("EPSG:2154"),
+	"UTM_N20", CRS.decode("EPSG:32620"),
+	"UTM_N21", CRS.decode("EPSG:32621"),
+	"UTM_N22", CRS.decode("EPSG:32622"),
+	"UTM_S40", CRS.decode("EPSG:32740"),
+	"UTM_S38", CRS.decode("EPSG:32738")
+	);*/
 
 }
