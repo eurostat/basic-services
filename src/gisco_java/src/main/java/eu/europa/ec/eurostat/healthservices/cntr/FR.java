@@ -150,7 +150,7 @@ public class FR {
 		CSVUtil.removeColumn(data, "finess");
 
 		//lat lon
-		CoordinateReferenceSystem crs = CRS.decode("EPSG:32738");
+		CoordinateReferenceSystem crs = CRS.decode("EPSG:3857");
 		GeometryFactory gf = new GeometryFactory();
 		data.stream().forEach(d -> {
 			if( d.get("x_wgs84") == null ) {
