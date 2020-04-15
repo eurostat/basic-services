@@ -1,18 +1,9 @@
 package eu.europa.ec.eurostat.healthservices.cntr;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import org.geotools.referencing.CRS;
-import org.locationtech.jts.geom.Coordinate;
-import org.locationtech.jts.geom.GeometryFactory;
-import org.locationtech.jts.geom.Point;
-import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 import eu.europa.ec.eurostat.healthservices.HCUtil;
 import eu.europa.ec.eurostat.healthservices.Validation;
@@ -24,6 +15,48 @@ public class FR {
 
 	static String cc = "FR";
 
+	public static void main(String[] args) throws Exception {
+		System.out.println("Start");
+
+		List<Map<String,String>> data = CSVUtil.load(HCUtil.path+cc + "/FR_2020_04_02.csv");
+		System.out.println(data.size());
+
+		data = data.stream().filter(d -> {
+			switch (d.get("facility_type")) {
+			case "Appartement Thérapeutique": return false;
+			case "Atelier Thérapeutique": return false;
+			case "Centre Crise Accueil Permanent": return false;
+			case "Centre d'Accueil Thérapeutique à temps partiel (C.A.T.T.P.)": return false;
+			case "Centre de Lutte Contre Cancer": return true;
+			case "Centre Hospitalier (C.H.)": return true;
+			case "Centre Hospitalier Régional (C.H.R.)": return true;
+			case "Centre Hospitalier Spécialisé lutte Maladies Mentales": return true;
+			case "Centre hospitalier, ex Hôpital local": return true;
+			case "Centre Médico-Psychologique (C.M.P.)": return false;
+			case "Centre Postcure Malades Mentaux": return false;
+			case "Etablissement de santé privé autorisé en SSR": return true;
+			case "Etablissement de Soins Chirurgicaux": return true;
+			case "Etablissement de Soins Longue Durée": return true;
+			case "Etablissement de Soins Médicaux": return true;
+			case "Etablissement de Soins Pluridisciplinaire": return true;
+			case "Etablissement Soins Obstétriques Chirurgico-Gynécologiques": return true;
+			case "Maison de Santé pour Maladies Mentales": return false;
+			case "Service Médico-Psychologique Régional (S.M.P.R.)": return false;
+			default:
+				System.out.println(d.get("facility_type"));
+				return true;
+			}
+		}).collect(Collectors.toList());
+		System.out.println(data.size());
+
+		Validation.validate(data, cc);
+		CSVUtil.save(data, HCUtil.path+cc + "/"+cc+".csv");
+		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path+cc + "/"+cc+".gpkg", ProjectionUtil.getWGS_84_CRS());
+
+		System.out.println("End");
+	}
+
+	/*
 	public static void main(String[] args) throws Exception {
 		System.out.println("Start");
 
@@ -106,6 +139,7 @@ public class FR {
 
 		CSVUtil.renameColumn(data, "adresse_code_postal", "postcode");
 		CSVUtil.renameColumn(data, "adresse_lib_routage", "city");
+		//TODO remove CEDEX from city names
 		CSVUtil.renameColumn(data, "telephone", "tel");
 
 
@@ -145,33 +179,48 @@ public class FR {
 		//load geom
 		List<Map<String,String>> datag = CSVUtil.load(HCUtil.path+cc + "/finess_atlasante_base/geom.csv");
 		//finess,loc_score,x_wgs84,y_wgs84
-		join(data, "id", datag, "finess", true);
+		join(data, "id", datag, "finess", false);
 		datag = null;
 		CSVUtil.removeColumn(data, "finess");
 
 		//lat lon
-		CoordinateReferenceSystem crs = CRS.decode("EPSG:3857");
+		Map<String, CoordinateReferenceSystem> crsDict = Map.of(
+				"LAMBERT_93", CRS.decode("EPSG:2154"),
+				"UTM_N20", CRS.decode("EPSG:32620"),
+				"UTM_N21", CRS.decode("EPSG:32621"),
+				"UTM_N22", CRS.decode("EPSG:32622"),
+				"UTM_S40", CRS.decode("EPSG:32740"),
+				"UTM_S38", CRS.decode("EPSG:32738")
+				);
+		CoordinateReferenceSystem crs3857 = CRS.decode("EPSG:3857");
 		GeometryFactory gf = new GeometryFactory();
 		data.stream().forEach(d -> {
 			if( d.get("x_wgs84") == null ) {
-				d.put("lon", "0");
-				d.put("lat", "0");
-				return;
+				CoordinateReferenceSystem crs = crsDict.get(d.get("geoloc_projection"));
+				double x = Double.parseDouble( d.get("geoloc_x") );
+				double y = Double.parseDouble( d.get("geoloc_y") );
+				Point pt = (Point) ProjectionUtil.project(gf.createPoint(new Coordinate(x,y)), crs, ProjectionUtil.getWGS_84_CRS());
+				d.put("lon", ""+pt.getY());
+				d.put("lat", ""+pt.getX());
+				d.put("geo_qual", d.get("geoloc_precision"));
+			} else {
+				double x = Double.parseDouble( d.get("x_wgs84") );
+				double y = Double.parseDouble( d.get("y_wgs84") );
+				Point pt = (Point) ProjectionUtil.project(gf.createPoint(new Coordinate(x,y)), crs3857, ProjectionUtil.getWGS_84_CRS());
+				d.put("lon", ""+pt.getY());
+				d.put("lat", ""+pt.getX());
+				int score = Integer.parseInt(d.get("loc_score"));
+				d.put("geo_qual", ""+(score==100?1:score>=90?2:3));
 			}
-			double x = Double.parseDouble( d.get("x_wgs84") );
-			double y = Double.parseDouble( d.get("y_wgs84") );
-			Point pt = (Point) ProjectionUtil.project(gf.createPoint(new Coordinate(x,y)), crs, ProjectionUtil.getWGS_84_CRS());
-			d.put("lon", ""+pt.getY());
-			d.put("lat", ""+pt.getX());
 		} );
+
+		CSVUtil.removeColumn(data, "geoloc_x");
+		CSVUtil.removeColumn(data, "geoloc_y");
+		CSVUtil.removeColumn(data, "geoloc_projection");
+		CSVUtil.removeColumn(data, "geoloc_precision");
 		CSVUtil.removeColumn(data, "x_wgs84");
 		CSVUtil.removeColumn(data, "y_wgs84");
-
-		//TODO
 		CSVUtil.removeColumn(data, "loc_score");
-		CSVUtil.addColumn(data, "geo_qual", "-1");
-		//CSVUtil.renameColumn(data, "geoloc_precision", "geo_qual");
-
 
 		//date_extract_finess 2020-03-04 - ref_date 
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
@@ -183,6 +232,17 @@ public class FR {
 		} );
 		CSVUtil.removeColumn(data, "date_extract_finess");
 
+		//TODO saint-bartelemy
+		//970100384
+		//970112470
+		//SPMQ
+		//970500039
+		//970500013
+		//GY
+		//970305520
+		//saint martin
+		//970115044
+		//970466504
 
 		//country code. Take into account oversea territories.
 		data.stream().forEach(d -> {
@@ -194,6 +254,7 @@ public class FR {
 			case "974": cc="RE"; break;
 			case "975": cc="PM"; break;
 			case "976": cc="YT"; break;
+			case "978": cc="RE"; break;
 			default: cc="FR"; break;
 			}
 			d.put("cc", cc);
@@ -206,6 +267,7 @@ public class FR {
 
 		System.out.println("End");
 	}
+*/
 
 
 	public static void join(List<Map<String, String>> data1, String key1, List<Map<String, String>> data2, String key2, boolean printWarnings) {
@@ -217,7 +279,10 @@ public class FR {
 		for(Map<String, String> elt : data1) {
 			String k1 = elt.get(key1);
 			Map<String, String> elt2 = ind2.get(k1);
-			if(elt2 == null) {System.out.println("No element to join for key: " + k1); continue;}
+			if(elt2 == null) {
+				if(printWarnings) System.out.println("No element to join for key: " + k1);
+				continue;
+			}
 			elt.putAll(elt2);
 		}
 	}
@@ -370,16 +435,5 @@ public class FR {
 
 	}
 	 */
-
-
-
-	/*Map<String, CoordinateReferenceSystem> crsDict = Map.of(
-	"LAMBERT_93", CRS.decode("EPSG:2154"),
-	"UTM_N20", CRS.decode("EPSG:32620"),
-	"UTM_N21", CRS.decode("EPSG:32621"),
-	"UTM_N22", CRS.decode("EPSG:32622"),
-	"UTM_S40", CRS.decode("EPSG:32740"),
-	"UTM_S38", CRS.decode("EPSG:32738")
-	);*/
 
 }
