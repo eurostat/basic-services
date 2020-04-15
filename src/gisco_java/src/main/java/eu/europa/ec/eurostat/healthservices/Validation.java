@@ -35,7 +35,7 @@ public class Validation {
 		System.out.println("Start");
 		for(String cc : HCUtil.ccs) validate(HCUtil.path + cc+"/"+cc+".csv", cc);
 
-		//validate(HCUtil.path + "ES/ES.csv", "ES");
+		//validate(HCUtil.path + "HR/HR.csv", "HR");
 		//validate(HCUtil.path + "NO/CSV/NO_from_Web.csv", "NO");
 		//validate(HCUtil.path + "BG/BG.csv", "BG");
 
