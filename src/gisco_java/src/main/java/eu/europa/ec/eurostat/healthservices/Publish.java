@@ -4,6 +4,9 @@
 package eu.europa.ec.eurostat.healthservices;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.attribute.FileTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
@@ -44,12 +47,32 @@ public class Publish {
 		new File(destinationPath + "data/geojson/").mkdirs();
 		new File(destinationPath + "data/gpkg/").mkdirs();
 
-		ArrayList<Map<String, String>> all = new ArrayList<Map<String, String>>();
+		var all = new ArrayList<Map<String, String>>();
+		var changed = false;
 		for(String cc : HCUtil.ccs) {
+
+			var inCsvFile = HCUtil.path + cc+"/"+cc+".csv";
+			var outCsvFile = destinationPath+"data/csv/"+cc+".csv";
+
+			//compare file dates, skip the ones that have not been updated
+			try {
+				FileTime tIn = Files.getLastModifiedTime(new File(inCsvFile).toPath());
+				FileTime tOut = Files.getLastModifiedTime(new File(outCsvFile).toPath());
+				if(tOut.compareTo(tIn) >= 0) {
+					System.out.println("No change found for: " + cc);
+					//if(tOut.compareTo(tIn) > 0)
+					//	Files.copy(new File(outCsvFile).toPath(), new File(inCsvFile).toPath(), StandardCopyOption.REPLACE_EXISTING);
+					continue;
+				}
+			} catch (IOException e) { e.printStackTrace(); }
+
+			changed = true;
+
 			System.out.println("*** " + cc);
+			System.out.println("Update");
 
 			//load data
-			ArrayList<Map<String, String>> data = CSVUtil.load(HCUtil.path + cc+"/"+cc+".csv");
+			ArrayList<Map<String, String>> data = CSVUtil.load(inCsvFile);
 			System.out.println(data.size());
 
 			//cc, country
@@ -72,60 +95,63 @@ public class Publish {
 			all.addAll(data);
 
 			//export as geojson and GPKG
-			CSVUtil.save(data, destinationPath+"data/csv/"+cc+".csv", HCUtil.cols_);
+			CSVUtil.save(data, outCsvFile, HCUtil.cols_);
 			Collection<Feature> fs = CSVUtil.CSVToFeatures(data, "lon", "lat");
 			HCUtil.applyTypes(fs);
 			GeoData.save(fs, destinationPath+"data/geojson/"+cc+".geojson", ProjectionUtil.getWGS_84_CRS());
 			GeoData.save(fs, destinationPath+"data/gpkg/"+cc+".gpkg", ProjectionUtil.getWGS_84_CRS());
 		}
 
-		//append cc to id
-		for(Map<String, String> h : all) {
-			String cc = h.get("cc");
-			String id = h.get("id");
-			if(id == null || "".equals(id)) {
-				System.err.println("No identifier for items in " + cc);
-				break;
-			}
-			String cc_ = id.length()>=2? id.substring(0, 2) : "";
-			if(cc_.equals(cc)) continue;
-			h.put("id", cc + "_" + id);
-		}
+		//handle "all" files
+		if(changed) {
 
-		//export all
-		System.out.println("*** All");
-		System.out.println(all.size());
-		CSVUtil.save(all, destinationPath+"data/csv/all.csv", HCUtil.cols_);
-		Collection<Feature> fs = CSVUtil.CSVToFeatures(all, "lon", "lat");
-		HCUtil.applyTypes(fs);
-		GeoData.save(fs, destinationPath+"data/geojson/all.geojson", ProjectionUtil.getWGS_84_CRS());
-		GeoData.save(fs, destinationPath+"data/gpkg/all.gpkg", ProjectionUtil.getWGS_84_CRS());
-
-		{
-			//export for web
-			ArrayList<Map<String, String>> data = CSVUtil.load(destinationPath+"data/csv/all.csv");
-			for(Map<String, String> d : data) {
-				//load lat/lon
-				double lon = Double.parseDouble(d.get("lon"));
-				d.remove("lon");
-				double lat = Double.parseDouble(d.get("lat"));
-				d.remove("lat");
-
-				//project to LAEA
-				Coordinate c = ProjectionUtil.project(new Coordinate(lat,lon), ProjectionUtil.getWGS_84_CRS(), ProjectionUtil.getETRS89_LAEA_CRS());
-				d.put("x", ""+(int)c.y);
-				d.put("y", ""+(int)c.x);
-
-				d.remove("id");
-				d.remove("cc");
-				d.remove("geo_qual");
+			//append cc to id
+			for(Map<String, String> h : all) {
+				String cc = h.get("cc");
+				String id = h.get("id");
+				if(id == null || "".equals(id)) {
+					System.err.println("No identifier for items in " + cc);
+					break;
+				}
+				String cc_ = id.length()>=2? id.substring(0, 2) : "";
+				if(cc_.equals(cc)) continue;
+				h.put("id", cc + "_" + id);
 			}
 
-			//save
-			CSVUtil.save(data, destinationPath+"map/hcs.csv");
+			//export all
+			System.out.println("*** All");
+			System.out.println(all.size());
+			CSVUtil.save(all, destinationPath+"data/csv/all.csv", HCUtil.cols_);
+			Collection<Feature> fs = CSVUtil.CSVToFeatures(all, "lon", "lat");
+			HCUtil.applyTypes(fs);
+			GeoData.save(fs, destinationPath + "data/geojson/all.geojson", ProjectionUtil.getWGS_84_CRS());
+			GeoData.save(fs, destinationPath + "data/gpkg/all.gpkg", ProjectionUtil.getWGS_84_CRS());
+
+			{
+				//export for web
+				ArrayList<Map<String, String>> data = CSVUtil.load(destinationPath+"data/csv/all.csv");
+				for(Map<String, String> d : data) {
+					//load lat/lon
+					double lon = Double.parseDouble(d.get("lon"));
+					d.remove("lon");
+					double lat = Double.parseDouble(d.get("lat"));
+					d.remove("lat");
+
+					//project to LAEA
+					Coordinate c = ProjectionUtil.project(new Coordinate(lat,lon), ProjectionUtil.getWGS_84_CRS(), ProjectionUtil.getETRS89_LAEA_CRS());
+					d.put("x", ""+(int)c.y);
+					d.put("y", ""+(int)c.x);
+
+					d.remove("id");
+					d.remove("cc");
+					d.remove("geo_qual");
+				}
+
+				//save
+				CSVUtil.save(data, destinationPath+"map/hcs.csv");
+			}
 		}
-		
-		
+
 		System.out.println("End");
 	}
 
