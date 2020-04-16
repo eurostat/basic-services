@@ -1,6 +1,5 @@
 package eu.europa.ec.eurostat.healthservices.cntr;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -44,7 +43,7 @@ public class HU {
 		System.out.println(data.size());
 
 		//remove columns
-		for(String col : new String[]{
+		CSVUtil.removeColumn(data,
 				"Megyekód",
 				"Megye név", //county name. keep it for address?
 				"Pénzügyi típus kódja - megnevezése (2017.01.01-től)", "a", "Tulajdonos", "Vezető", "Beosztás",
@@ -92,23 +91,46 @@ public class HU {
 				//Active only
 				"Csak Aktív",
 				//Only Chronic
-				"Csak Krónikus",
-		})
-			CSVUtil.removeColumn(data, col);
+				"Csak Krónikus"
+				);
 
 		CSVUtil.renameColumn(data, "Int.kód", "id");
-		CSVUtil.renameColumn(data, "Szolgáltató", "hospital_name");
 		CSVUtil.renameColumn(data, "Irányítószám", "postcode");
 		CSVUtil.renameColumn(data, "Település", "city");
-		CSVUtil.renameColumn(data, "Utca", "street");
-		//CSVUtil.renameColumn(data, "", "");
 
-		//tel
 		for(Map<String, String> d : data) {
+
+			//hospital name
+			//remove city name in the end
+			{
+				var hn = d.get("Szolgáltató");
+				var parts = hn.split(", ");
+				if(parts.length > 1 && parts[parts.length-1].split("\\s+").length == 1)
+					hn = hn.replace(", "+parts[parts.length-1], "");
+				d.put("hospital_name", hn);
+			}
+
+			//split street/housenumber
+			{
+				String utca = d.get("Utca");
+				var parts = utca.split(" ");
+				var hn = parts[parts.length-1];
+				//check if last part contains digits
+				if(hn.matches(".*\\d.*")) {
+					String street = utca.replace(hn, "").trim();
+					d.put("street", street);
+					d.put("house_number", hn.replace(".", ""));
+				} else {
+					d.put("street", utca);
+					d.put("house_number", "");
+				}
+			}
+
 			//tel
 			d.put("tel", d.get("Tel.körzet") + "-" + d.get("Telefonszám"));
-			//System.out.println(d.get("hospital_name"));
 		}
+		CSVUtil.removeColumn(data, "Szolgáltató");
+		CSVUtil.removeColumn(data, "Utca");
 		CSVUtil.removeColumn(data, "Telefonszám");
 		CSVUtil.removeColumn(data, "Tel.körzet");
 
@@ -122,16 +144,14 @@ public class HU {
 		CSVUtil.addColumn(data, "lat", "0");
 		CSVUtil.addColumn(data, "lon", "0");
 
-
-
 		//join number of beds
 		CSVUtil.addColumn(data, "cap_beds", "");
 		List<Map<String, String>> nbbeds = CSVUtil.load(HCUtil.path + "HU/number_of_beds.csv");
 		System.out.println(nbbeds.size());
-		join(data, "id", nbbeds, "id", false);
+		CSVUtil.join(data, "id", nbbeds, "id", false);
 
 		Validation.validate(data, cc);
-		
+
 		LocalParameters.loadProxySettings();
 		ServicesGeocoding.set(BingGeocoder.get(), data, "lon", "lat", true, true);
 
@@ -140,25 +160,5 @@ public class HU {
 		CSVUtil.save(data, HCUtil.path+cc + "/"+cc+".csv");
 		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path+cc + "/"+cc+".gpkg", ProjectionUtil.getWGS_84_CRS());
 	}
-
-
-	//TODO use CSVutil version
-	private static void join(List<Map<String, String>> data1, String key1, List<Map<String, String>> data2, String key2, boolean printWarnings) {
-		//index data2 by key
-		HashMap<String,Map<String,String>> ind2 = new HashMap<>();
-		for(Map<String, String> elt : data2) ind2.put(elt.get(key2), elt);
-
-		//join
-		for(Map<String, String> elt : data1) {
-			String k1 = elt.get(key1);
-			Map<String, String> elt2 = ind2.get(k1);
-			if(elt2 == null) {
-				if(printWarnings) System.out.println("No element to join for key: " + k1);
-				continue;
-			}
-			elt.putAll(elt2);
-		}
-	}
-
 
 }
