@@ -1,62 +1,62 @@
-id,hospital_name,site_name,lat,lon,geo_qual,street,house_number,postcode,city,cc,country,cap_beds,cap_prac,cap_rooms,emergency,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date
-1,Amager og Hvidovre Hospital – Amager,,55.6549,12.62042,-1,Italiensvej 1,,2300,København S,DK,Denmark,,,,,,,,,,,,15/04/2020
-2,Bispebjerg og Frederiksberg Hospital – Bispebjerg,,55.71217,12.54179,-1,Bispebjerg Bakke 23,,2400,København NV,DK,Denmark,,,,,,,,,,,,15/04/2020
-3,Bornholms Hospital,,55.09154,14.70777,-1,Ullasvej 8,,3700,Rønne,DK,Denmark,,,,,,,,,,,,15/04/2020
-4,Herlev og Gentofte Hospital – Herlev,,55.73123,12.44332,-1,Herlev Ringvej 75,,2730,Herlev,DK,Denmark,,,,,,,,,,,,15/04/2020
-5,Nordsjællands Hospital – Hillerød,,55.93128,12.32522,-1,Dyrehavevej 29,,3400,Hillerød,DK,Denmark,,,,,,,,,,,,15/04/2020
-6,Nordsjællands Hospital – Helsingør (sundheds-hus),,56.0334932,12.6044629,-1,Murergade 5,,3000,Helsingør,DK,Denmark,,,,,,,,,,,,15/04/2020
-7,Amager og Hvidovre Hospital – Hvidovre,,55.64876,12.47032,-1,Kettegård Alle 30,,2650,Hvidovre,DK,Denmark,,,,,,,,,,,,15/04/2020
-8,Bispebjerg og Frederiksberg Hospital – Frederiksberg,,55.68515,12.52496,-1,Nordre Fasanvej 57,,2000,Frederiksberg,DK,Denmark,,,,,,,,,,,,15/04/2020
-9,Nordsjællands Hospital,,55.83654022216797,12.06921672821045,-1,,,,Frederikssund,DK,Denmark,,,,,,,,,,,,15/04/2020
-10,Herlev og Gentofte Hospital – Gentofte,,55.7369288,12.5493654,-1,Kildegårdsvej 28,,2900,Hellerup,DK,Denmark,,,,,,,,,,,,15/04/2020
-11,Rigshospitalet – Glostrup,,55.67013,12.38986,-1,Valdemar Hansens Vej 1-23,,2600,Glostrup,DK,Denmark,,,,,,,,,,,,15/04/2020
-12,Rigshospitalet,,55.69597,12.56665,-1,Blegdamsvej 9,,2100,København Ø,DK,Denmark,,,,,,,,,,,,15/04/2020
-13,Rigshospitalet – Klinik for Rygmarvsskader,,56.09238,12.4566,-1,Havnevej 25,,3100,Hornbæk,DK,Denmark,,,,,,,,,,,,15/04/2020
-14,Sjællands Universitetshospital – Køge,,55.47732,12.16594,-1,Lykkebækvej 1,,4600,Køge,DK,Denmark,,,,,,,,,,,,15/04/2020
-15,Sjællands Universitetshospital – Roskilde,,55.63675,12.09045,-1,Sygehusvej 10,,4000,Roskilde,DK,Denmark,,,,,,,,,,,,15/04/2020
-16,Sjællands Universitetshospital – Faxe Røntgenklinik,,55.24913,12.10664,-1,Præstøvej 78,,4640,Faxe,DK,Denmark,,,,,,,,,,,,15/04/2020
-17,Slagelse Sygehus,,55.40285,11.36582,-1,Ingemannsvej 18,,4200,Slagelse,DK,Denmark,,,,,,,,,,,,15/04/2020
-18,Næstved Sygehus,,55.2366,11.76058,-1,Ringstedgade 61,,4700,Næstved,DK,Denmark,,,,,,,,,,,,15/04/2020
-19,Ringsted Sygehus,,55.44958,11.79113,-1,Bøllingsvej 30,,4100,Ringsted,DK,Denmark,,,,,,,,,,,,15/04/2020
-20,Holbæk Sygehus,,55.71136,11.71702,-1,Smedelundsgade 60,,4300,Holbæk,DK,Denmark,,,,,,,,,,,,15/04/2020
-21,Nykøbing Falster Sygehus,,54.77871,11.85988,-1,Fjordvej 15,,4800,Nykøbing Falster,DK,Denmark,,,,,,,,,,,,15/04/2020
-22,Sygehus Sønderjylland – Sønderborg,,54.9166,9.78539,-1,Sydvang 1,,6400,Sønderborg,DK,Denmark,,,,,,,,,,,,15/04/2020
-23,Sygehus Sønderjylland – Aabenraa,,55.06319,9.37684,-1,Kresten Philipsens Vej 15,,6200,Aabenraa,DK,Denmark,,,,,,,,,,,,15/04/2020
-24,Sygehus Sønderjylland – Tønder,,54.94076,8.87573,-1,Carstensgade 6-10,,6270,Tønder,DK,Denmark,,,,,,,,,,,,15/04/2020
-25,Sydvestjysk Sygehus – Esbjerg,,55.47385,8.4567,-1,Finsensgade 35,,6700,Esbjerg,DK,Denmark,,,,,,,,,,,,15/04/2020
-26,Sydvestjysk Sygehus – Grindsted,,55.75502,8.92826,-1,Engparken 1,,7200,Grindsted,DK,Denmark,,,,,,,,,,,,15/04/2020
-27,Sydvestjysk Sygehus – Brørup Veneklinik,,55.48116,9.02187,-1,Skolegade 12 A,,6650,Brørup,DK,Denmark,,,,,,,,,,,,15/04/2020
-28,Sygehus Lillebælt – Kolding,,55.50175,9.48419,-1,Sygehusvej 24,,6000,Kolding,DK,Denmark,,,,,,,,,,,,15/04/2020
-29,Sygehus Lillebælt – Middelfart,,55.49683,9.73839,-1,Østre Hougvej 55,,5500,Middelfart,DK,Denmark,,,,,,,,,,,,15/04/2020
-30,Sygehus Lillebælt – Vejle,,55.71463,9.53747,-1,Beriderbakken 4,,7100,Vejle,DK,Denmark,,,,,,,,,,,,15/04/2020
-31,Odense Universitetshospital/Svendborg –Odense,,55.3860350333772,10.3591600050427,-1,J.B. Winsløws Vej 4,,5000,Odense C,DK,Denmark,,,,,,,,,,,,15/04/2020
-32,Odense Universitetshospital/Svendborg – Nyborg,,55.31639,10.78713,-1,Vestergade 17,,5800,Nyborg,DK,Denmark,,,,,,,,,,,,15/04/2020
-33,Odense Universitetshospital/Svendborg – Svendborg,,55.05566,10.60619,-1,Baagøes Alle 15,,5700,Svendborg,DK,Denmark,,,,,,,,,,,,15/04/2020
-34,Odense Universitetshospital/Svendborg – Ærøskøbing,,54.89261,10.40626,-1,Sygehusvejen 18,,5970,Ærøskøbing,DK,Denmark,,,,,,,,,,,,15/04/2020
-35,Aarhus Universitetshospital – Skejby,,56.19191,10.17211,-1,Palle Juul-Jensens Blvd 99,,8200,Aarhus,DK,Denmark,,,,,,,,,,,,15/04/2020
-36,Aarhus Universitetshospital,,56.1662,10.20881,-1,Nørrebrogade 44,,8000,Aarhus C,DK,Denmark,,,,,,,,,,,,15/04/2020
-37,Aarhus Universitetshospital,,56.15901,10.18488,-1,Tage-Hansens Gade 2,,8000,Aarhus,DK,Denmark,,,,,,,,,,,,15/04/2020
-38,Aarhus Universitetshospital,,56.1422093,10.1879341,-1,P.P. Ørums Gade 11,,8000,Aarhus,DK,Denmark,,,,,,,,,,,,15/04/2020
-39,Aarhus Universitetshospital – Samsø,,55.83064,10.59116,-1,Sygehusvej 26,,8305,Samsø,DK,Denmark,,,,,,,,,,,,15/04/2020
-40,Regionshospitalet Randers – Randers,,56.47055,10.05018,-1,Skovlyvej 15,,8930,Randers NØ,DK,Denmark,,,,,,,,,,,,15/04/2020
-41,Regionshospitalet Randers – Grenaa (sundhedshus),,56.41847,10.86303,-1,Sygehusvej 15-19,,8500,Grenå,DK,Denmark,,,,,,,,,,,,15/04/2020
-42,Hospitalsenheden Midt – Viborg,,56.44573,9.40471,-1,Heibergs Allé 4,,8800,Viborg,DK,Denmark,,,,,,,,,,,,15/04/2020
-43,Hospitalsenheden Midt – Silkeborg,,56.17005,9.55954,-1,Falkevej 1A,,8600,Silkeborg,DK,Denmark,,,,,,,,,,,,15/04/2020
-44,Hospitalsenheden Midt – Skive,,56.57271,9.02908,-1,Resensvej 25,,7800,Skive,DK,Denmark,,,,,,,,,,,,15/04/2020
-45,Hospitalsenheden Midt – Hammel Neurocenter,,56.25599,9.8698,-1,Voldbyvej 15A,,8450,Hammel,DK,Denmark,,,,,,,,,,,,15/04/2020
-46,Hospitalsenheden Vest – Lemvig,,56.54989,8.31487,-1,Østergade 30,,7620,Lemvig,DK,Denmark,,,,,,,,,,,,15/04/2020
-47,Hospitalsenheden Vest – Holstebro,,56.3616649,8.6242278,-1,Lægårdvej 12,,7500,Holstebro,DK,Denmark,,,,,,,,,,,,15/04/2020
-48,Hospitalsenheden Vest – Herning,,56.13347244262695,8.949889183044434,-1,Gl. Landevej 61,,7400,Herning,DK,Denmark,,,,,,,,,,,,15/04/2020
-49,Hospitalsenheden Vest – Tarm (sundhedshus),,55.9067747,8.5225795,-1,Kirkegade 3,,6880,Tarm,DK,Denmark,,,,,,,,,,,,15/04/2020
-50,Hospitalsenheden Vest – Ringkøbing (sundhedshus),,56.09065,8.25021,-1,Nørreport 18,,6950,Ringkøbing,DK,Denmark,,,,,,,,,,,,15/04/2020
-51,Regionshospitalet Horsens – Horsens,,55.8635951,9.8732295,-1,Sundvej 30,,8700,Horsens,DK,Denmark,,,,,,,,,,,,15/04/2020
-52,Regionshospitalet Horsens – Brædstrup Livsstilscenter,,55.97382,9.6167,-1,Sygehusvej 20,,8740,Brædstrup,DK,Denmark,,,,,,,,,,,,15/04/2020
-53,Aalborg Universitetshospital – Nord,,57.04996,9.90947,-1,Reberbansgade,,9000,Aalborg,DK,Denmark,,,,,,,,,,,,15/04/2020
-54,"Aalborg Universitetshospital – Syd (Onkologibygningen, Medicinerhuset m.fl.)",,57.0372081,9.906858,-1,Hobrovej 18-22 og Mølleparkvej 4,,9000,Aalborg,DK,Denmark,,,,,,,,,,,,15/04/2020
-55,Aalborg Universitetshospital – Farsø,,56.77763,9.33689,-1,Højgårdsvej 11,,9640,Farsø,DK,Denmark,,,,,,,,,,,,15/04/2020
-56,Aalborg Universitetshospital – Hobro,,56.63326,9.79754,-1,Stolbjergvej 8,,9500,Hobro,DK,Denmark,,,,,,,,,,,,15/04/2020
-57,Regionshospital Nordjylland – Brønderslev Neuroenhed Nord,,57.27724,9.94948,-1,Nørregade 77,,9700,Brønderslev,DK,Denmark,,,,,,,,,,,,15/04/2020
-58,Regionshospital Nordjylland – Skagen (gigt- og rygcenter),,57.71889,10.57651,-1,Hans Baghs Vej 25,,9990,Skagen,DK,Denmark,,,,,,,,,,,,15/04/2020
-59,Regionshospital Nordjylland – Frederikshavn,,57.44646,10.53329,-1,Barfredsvej 83,,9900,Frederikshavn,DK,Denmark,,,,,,,,,,,,15/04/2020
-60,Regionshospital Nordjylland – Hjørring,,57.45156,9.99708,-1,Bispensgade 37,,9800,Hjørring,DK,Denmark,,,,,,,,,,,,15/04/2020
-61,Regionshospital Nordjylland – Thisted,,56.95704,8.69574,-1,Højtoftevej 2,,7700,Thisted,DK,Denmark,,,,,,,,,,,,15/04/2020
+id,hospital_name,site_name,lat,lon,geo_qual,street,house_number,postcode,city,cc,country,cap_beds,cap_prac,cap_rooms,emergency,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date,comments
+1,Amager og Hvidovre Hospital – Amager,,55.6549,12.62042,-1,Italiensvej 1,,2300,København S,DK,Denmark,,,,,,,,,,,,16/04/2020,
+2,Bispebjerg og Frederiksberg Hospital – Bispebjerg,,55.71217,12.54179,-1,Bispebjerg Bakke 23,,2400,København NV,DK,Denmark,,,,,,,,,,,,16/04/2020,
+3,Bornholms Hospital,,55.09154,14.70777,-1,Ullasvej 8,,3700,Rønne,DK,Denmark,,,,,,,,,,,,16/04/2020,
+4,Herlev og Gentofte Hospital – Herlev,,55.73123,12.44332,-1,Herlev Ringvej 75,,2730,Herlev,DK,Denmark,,,,,,,,,,,,16/04/2020,
+5,Nordsjællands Hospital – Hillerød,,55.93128,12.32522,-1,Dyrehavevej 29,,3400,Hillerød,DK,Denmark,,,,,,,,,,,,16/04/2020,
+6,Nordsjællands Hospital – Helsingør (sundheds-hus),,56.0334932,12.6044629,-1,Murergade 5,,3000,Helsingør,DK,Denmark,,,,,,,,,,,,16/04/2020,
+7,Amager og Hvidovre Hospital – Hvidovre,,55.64876,12.47032,-1,Kettegård Alle 30,,2650,Hvidovre,DK,Denmark,,,,,,,,,,,,16/04/2020,
+8,Bispebjerg og Frederiksberg Hospital – Frederiksberg,,55.68515,12.52496,-1,Nordre Fasanvej 57,,2000,Frederiksberg,DK,Denmark,,,,,,,,,,,,16/04/2020,
+9,Nordsjællands Hospital,,55.83654022216797,12.06921672821045,-1,,,,Frederikssund,DK,Denmark,,,,,,,,,,,,16/04/2020,
+10,Herlev og Gentofte Hospital – Gentofte,,55.7369288,12.5493654,-1,Kildegårdsvej 28,,2900,Hellerup,DK,Denmark,,,,,,,,,,,,16/04/2020,
+11,Rigshospitalet – Glostrup,,55.67013,12.38986,-1,Valdemar Hansens Vej 1-23,,2600,Glostrup,DK,Denmark,,,,,,,,,,,,16/04/2020,
+12,Rigshospitalet,,55.69597,12.56665,-1,Blegdamsvej 9,,2100,København Ø,DK,Denmark,,,,,,,,,,,,16/04/2020,
+13,Rigshospitalet – Klinik for Rygmarvsskader,,56.09238,12.4566,-1,Havnevej 25,,3100,Hornbæk,DK,Denmark,,,,,,,,,,,,16/04/2020,
+14,Sjællands Universitetshospital – Køge,,55.47732,12.16594,-1,Lykkebækvej 1,,4600,Køge,DK,Denmark,,,,,,,,,,,,16/04/2020,
+15,Sjællands Universitetshospital – Roskilde,,55.63675,12.09045,-1,Sygehusvej 10,,4000,Roskilde,DK,Denmark,,,,,,,,,,,,16/04/2020,
+16,Sjællands Universitetshospital – Faxe Røntgenklinik,,55.24913,12.10664,-1,Præstøvej 78,,4640,Faxe,DK,Denmark,,,,,,,,,,,,16/04/2020,
+17,Slagelse Sygehus,,55.40285,11.36582,-1,Ingemannsvej 18,,4200,Slagelse,DK,Denmark,,,,,,,,,,,,16/04/2020,
+18,Næstved Sygehus,,55.2366,11.76058,-1,Ringstedgade 61,,4700,Næstved,DK,Denmark,,,,,,,,,,,,16/04/2020,
+19,Ringsted Sygehus,,55.44958,11.79113,-1,Bøllingsvej 30,,4100,Ringsted,DK,Denmark,,,,,,,,,,,,16/04/2020,
+20,Holbæk Sygehus,,55.71136,11.71702,-1,Smedelundsgade 60,,4300,Holbæk,DK,Denmark,,,,,,,,,,,,16/04/2020,
+21,Nykøbing Falster Sygehus,,54.77871,11.85988,-1,Fjordvej 15,,4800,Nykøbing Falster,DK,Denmark,,,,,,,,,,,,16/04/2020,
+22,Sygehus Sønderjylland – Sønderborg,,54.9166,9.78539,-1,Sydvang 1,,6400,Sønderborg,DK,Denmark,,,,,,,,,,,,16/04/2020,
+23,Sygehus Sønderjylland – Aabenraa,,55.06319,9.37684,-1,Kresten Philipsens Vej 15,,6200,Aabenraa,DK,Denmark,,,,,,,,,,,,16/04/2020,
+24,Sygehus Sønderjylland – Tønder,,54.94076,8.87573,-1,Carstensgade 6-10,,6270,Tønder,DK,Denmark,,,,,,,,,,,,16/04/2020,
+25,Sydvestjysk Sygehus – Esbjerg,,55.47385,8.4567,-1,Finsensgade 35,,6700,Esbjerg,DK,Denmark,,,,,,,,,,,,16/04/2020,
+26,Sydvestjysk Sygehus – Grindsted,,55.75502,8.92826,-1,Engparken 1,,7200,Grindsted,DK,Denmark,,,,,,,,,,,,16/04/2020,
+27,Sydvestjysk Sygehus – Brørup Veneklinik,,55.48116,9.02187,-1,Skolegade 12 A,,6650,Brørup,DK,Denmark,,,,,,,,,,,,16/04/2020,
+28,Sygehus Lillebælt – Kolding,,55.50175,9.48419,-1,Sygehusvej 24,,6000,Kolding,DK,Denmark,,,,,,,,,,,,16/04/2020,
+29,Sygehus Lillebælt – Middelfart,,55.49683,9.73839,-1,Østre Hougvej 55,,5500,Middelfart,DK,Denmark,,,,,,,,,,,,16/04/2020,
+30,Sygehus Lillebælt – Vejle,,55.71463,9.53747,-1,Beriderbakken 4,,7100,Vejle,DK,Denmark,,,,,,,,,,,,16/04/2020,
+31,Odense Universitetshospital/Svendborg –Odense,,55.3860350333772,10.3591600050427,-1,J.B. Winsløws Vej 4,,5000,Odense C,DK,Denmark,,,,,,,,,,,,16/04/2020,
+32,Odense Universitetshospital/Svendborg – Nyborg,,55.31639,10.78713,-1,Vestergade 17,,5800,Nyborg,DK,Denmark,,,,,,,,,,,,16/04/2020,
+33,Odense Universitetshospital/Svendborg – Svendborg,,55.05566,10.60619,-1,Baagøes Alle 15,,5700,Svendborg,DK,Denmark,,,,,,,,,,,,16/04/2020,
+34,Odense Universitetshospital/Svendborg – Ærøskøbing,,54.89261,10.40626,-1,Sygehusvejen 18,,5970,Ærøskøbing,DK,Denmark,,,,,,,,,,,,16/04/2020,
+35,Aarhus Universitetshospital – Skejby,,56.19191,10.17211,-1,Palle Juul-Jensens Blvd 99,,8200,Aarhus,DK,Denmark,,,,,,,,,,,,16/04/2020,
+36,Aarhus Universitetshospital,,56.1662,10.20881,-1,Nørrebrogade 44,,8000,Aarhus C,DK,Denmark,,,,,,,,,,,,16/04/2020,
+37,Aarhus Universitetshospital,,56.15901,10.18488,-1,Tage-Hansens Gade 2,,8000,Aarhus,DK,Denmark,,,,,,,,,,,,16/04/2020,
+38,Aarhus Universitetshospital,,56.1422093,10.1879341,-1,P.P. Ørums Gade 11,,8000,Aarhus,DK,Denmark,,,,,,,,,,,,16/04/2020,
+39,Aarhus Universitetshospital – Samsø,,55.83064,10.59116,-1,Sygehusvej 26,,8305,Samsø,DK,Denmark,,,,,,,,,,,,16/04/2020,
+40,Regionshospitalet Randers – Randers,,56.47055,10.05018,-1,Skovlyvej 15,,8930,Randers NØ,DK,Denmark,,,,,,,,,,,,16/04/2020,
+41,Regionshospitalet Randers – Grenaa (sundhedshus),,56.41847,10.86303,-1,Sygehusvej 15-19,,8500,Grenå,DK,Denmark,,,,,,,,,,,,16/04/2020,
+42,Hospitalsenheden Midt – Viborg,,56.44573,9.40471,-1,Heibergs Allé 4,,8800,Viborg,DK,Denmark,,,,,,,,,,,,16/04/2020,
+43,Hospitalsenheden Midt – Silkeborg,,56.17005,9.55954,-1,Falkevej 1A,,8600,Silkeborg,DK,Denmark,,,,,,,,,,,,16/04/2020,
+44,Hospitalsenheden Midt – Skive,,56.57271,9.02908,-1,Resensvej 25,,7800,Skive,DK,Denmark,,,,,,,,,,,,16/04/2020,
+45,Hospitalsenheden Midt – Hammel Neurocenter,,56.25599,9.8698,-1,Voldbyvej 15A,,8450,Hammel,DK,Denmark,,,,,,,,,,,,16/04/2020,
+46,Hospitalsenheden Vest – Lemvig,,56.54989,8.31487,-1,Østergade 30,,7620,Lemvig,DK,Denmark,,,,,,,,,,,,16/04/2020,
+47,Hospitalsenheden Vest – Holstebro,,56.3616649,8.6242278,-1,Lægårdvej 12,,7500,Holstebro,DK,Denmark,,,,,,,,,,,,16/04/2020,
+48,Hospitalsenheden Vest – Herning,,56.13347244262695,8.949889183044434,-1,Gl. Landevej 61,,7400,Herning,DK,Denmark,,,,,,,,,,,,16/04/2020,
+49,Hospitalsenheden Vest – Tarm (sundhedshus),,55.9067747,8.5225795,-1,Kirkegade 3,,6880,Tarm,DK,Denmark,,,,,,,,,,,,16/04/2020,
+50,Hospitalsenheden Vest – Ringkøbing (sundhedshus),,56.09065,8.25021,-1,Nørreport 18,,6950,Ringkøbing,DK,Denmark,,,,,,,,,,,,16/04/2020,
+51,Regionshospitalet Horsens – Horsens,,55.8635951,9.8732295,-1,Sundvej 30,,8700,Horsens,DK,Denmark,,,,,,,,,,,,16/04/2020,
+52,Regionshospitalet Horsens – Brædstrup Livsstilscenter,,55.97382,9.6167,-1,Sygehusvej 20,,8740,Brædstrup,DK,Denmark,,,,,,,,,,,,16/04/2020,
+53,Aalborg Universitetshospital – Nord,,57.04996,9.90947,-1,Reberbansgade,,9000,Aalborg,DK,Denmark,,,,,,,,,,,,16/04/2020,
+54,"Aalborg Universitetshospital – Syd (Onkologibygningen, Medicinerhuset m.fl.)",,57.0372081,9.906858,-1,Hobrovej 18-22 og Mølleparkvej 4,,9000,Aalborg,DK,Denmark,,,,,,,,,,,,16/04/2020,
+55,Aalborg Universitetshospital – Farsø,,56.77763,9.33689,-1,Højgårdsvej 11,,9640,Farsø,DK,Denmark,,,,,,,,,,,,16/04/2020,
+56,Aalborg Universitetshospital – Hobro,,56.63326,9.79754,-1,Stolbjergvej 8,,9500,Hobro,DK,Denmark,,,,,,,,,,,,16/04/2020,
+57,Regionshospital Nordjylland – Brønderslev Neuroenhed Nord,,57.27724,9.94948,-1,Nørregade 77,,9700,Brønderslev,DK,Denmark,,,,,,,,,,,,16/04/2020,
+58,Regionshospital Nordjylland – Skagen (gigt- og rygcenter),,57.71889,10.57651,-1,Hans Baghs Vej 25,,9990,Skagen,DK,Denmark,,,,,,,,,,,,16/04/2020,
+59,Regionshospital Nordjylland – Frederikshavn,,57.44646,10.53329,-1,Barfredsvej 83,,9900,Frederikshavn,DK,Denmark,,,,,,,,,,,,16/04/2020,
+60,Regionshospital Nordjylland – Hjørring,,57.45156,9.99708,-1,Bispensgade 37,,9800,Hjørring,DK,Denmark,,,,,,,,,,,,16/04/2020,
+61,Regionshospital Nordjylland – Thisted,,56.95704,8.69574,-1,Højtoftevej 2,,7700,Thisted,DK,Denmark,,,,,,,,,,,,16/04/2020,
