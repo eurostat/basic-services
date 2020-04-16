@@ -8,6 +8,11 @@ import org.apache.commons.csv.CSVFormat;
 
 import eu.europa.ec.eurostat.healthservices.HCUtil;
 import eu.europa.ec.eurostat.healthservices.Validation;
+import eu.europa.ec.eurostat.jgiscotools.geocoding.BingGeocoder;
+import eu.europa.ec.eurostat.jgiscotools.geocoding.base.Geocoder;
+import eu.europa.ec.eurostat.jgiscotools.geocoding.base.GeocodingResult;
+import eu.europa.ec.eurostat.jgiscotools.gisco_processes.LocalParameters;
+import eu.europa.ec.eurostat.jgiscotools.gisco_processes.services.ServicesGeocoding;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.GeoData;
 import eu.europa.ec.eurostat.jgiscotools.util.ProjectionUtil;
@@ -120,7 +125,10 @@ public class CZ {
 		CSVUtil.addColumn(data, "emergency", "");
 		CSVUtil.addColumn(data, "public_private", "");
 
-		//TODO geocode missing ones
+		//geocode missing ones
+		LocalParameters.loadProxySettings();
+		for(Map<String, String> d : data)
+			improve(BingGeocoder.get(), d, true, true);
 
 		Validation.validate(data, cc);
 
@@ -128,6 +136,29 @@ public class CZ {
 		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path+cc + "/"+cc+".gpkg", ProjectionUtil.getWGS_84_CRS());
 
 		System.out.println("End");
+	}
+
+
+
+	//TODO replace !
+	private static void improve(Geocoder gc, Map<String, String> s, boolean usePostcode, boolean print) {
+
+		//check if position is not already perfect
+		int geoqIni = Integer.parseInt(s.get("geo_qual"));
+		if(geoqIni == 1 || geoqIni == -1) {
+			//if(print) System.out.println("Position already OK for " + s.get("id"));
+			return;
+		}
+
+		//find new candidate position
+		GeocodingResult gr = ServicesGeocoding.get(gc, s, usePostcode, print);
+		if(gr.quality >= geoqIni) {
+			if(print) System.out.println("No positionning improvement for " + s.get("id"));
+			return;
+		}
+
+		if(print) System.out.println("Positionning improvement for " + s.get("id") + ". "+ geoqIni + " -> " + gr.quality);
+		ServicesGeocoding.set(s, gr, "lon", "lat");
 	}
 
 }
