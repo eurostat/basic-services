@@ -55,16 +55,17 @@ public class Publish {
 			var outCsvFile = destinationPath+"data/csv/"+cc+".csv";
 
 			//compare file dates, skip the ones that have not been updated
-			try {
-				FileTime tIn = Files.getLastModifiedTime(new File(inCsvFile).toPath());
-				FileTime tOut = Files.getLastModifiedTime(new File(outCsvFile).toPath());
-				if(tOut.compareTo(tIn) >= 0) {
-					System.out.println("No change found for: " + cc);
-					//if(tOut.compareTo(tIn) > 0)
-					//	Files.copy(new File(outCsvFile).toPath(), new File(inCsvFile).toPath(), StandardCopyOption.REPLACE_EXISTING);
-					continue;
-				}
-			} catch (IOException e) { e.printStackTrace(); }
+			if(new File(outCsvFile).exists())
+				try {
+					FileTime tIn = Files.getLastModifiedTime(new File(inCsvFile).toPath());
+					FileTime tOut = Files.getLastModifiedTime(new File(outCsvFile).toPath());
+					if(tOut.compareTo(tIn) >= 0) {
+						System.out.println("No change found for: " + cc);
+						//if(tOut.compareTo(tIn) > 0)
+						//	Files.copy(new File(outCsvFile).toPath(), new File(inCsvFile).toPath(), StandardCopyOption.REPLACE_EXISTING);
+						continue;
+					}
+				} catch (IOException e) { e.printStackTrace(); }
 
 			changed = true;
 
