@@ -33,7 +33,8 @@ public class HCUtil {
 			"cap_beds", "cap_prac", "cap_rooms",
 			"emergency", "facility_type", "public_private", "list_specs",
 			"tel", "email", "url",
-			"ref_date", "pub_date"
+			"ref_date", "pub_date",
+			"comments"
 	};
 	public static List<String> cols_ = List.of(cols);
 
