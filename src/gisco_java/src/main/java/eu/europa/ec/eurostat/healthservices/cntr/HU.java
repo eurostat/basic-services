@@ -1,5 +1,6 @@
 package eu.europa.ec.eurostat.healthservices.cntr;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -8,14 +9,26 @@ import org.apache.commons.csv.CSVFormat;
 
 import eu.europa.ec.eurostat.healthservices.HCUtil;
 import eu.europa.ec.eurostat.healthservices.Validation;
+import eu.europa.ec.eurostat.jgiscotools.geocoding.BingGeocoder;
+import eu.europa.ec.eurostat.jgiscotools.gisco_processes.LocalParameters;
+import eu.europa.ec.eurostat.jgiscotools.gisco_processes.services.ServicesGeocoding;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
+import eu.europa.ec.eurostat.jgiscotools.io.GeoData;
+import eu.europa.ec.eurostat.jgiscotools.util.ProjectionUtil;
 
 public class HU {
+
+	private static final String cc = "HU";
 
 	public static void main(String[] args) {
 		System.out.println("Start");
 
-		String cc = "HU";
+		format();
+
+		System.out.println("End");
+	}
+
+	private static void format() {
 
 		//load data
 		CSVFormat cf = CSVFormat.DEFAULT.withDelimiter('\t').withFirstRecordAsHeader();
@@ -23,7 +36,11 @@ public class HU {
 		System.out.println(data.size());
 
 		//filter
-		data = data.stream().filter(d -> !d.get("Aktív fekvőbeteg-szakellátás").isEmpty()).collect(Collectors.toList());
+		data = data.stream().filter(
+				d ->
+				! d.get("Aktív fekvőbeteg-szakellátás").isEmpty()
+				//&& ! d.get("Járó és - vagy fekvőbeteg-szakellátás").isEmpty()
+				).collect(Collectors.toList());
 		System.out.println(data.size());
 
 		//remove columns
@@ -56,7 +73,7 @@ public class HU {
 				"Extra finanszírozás",
 				"Nagyértékű gyógyszerfin.",
 				"Speciális finanszírozás",
-				"Összesen", //this is the total bidget? Indicator for capacity?
+				"Összesen", //this is the total financing? Indicator for capacity?
 
 				//Active inpatient specialist care
 				"Aktív fekvőbeteg-szakellátás",
@@ -90,7 +107,6 @@ public class HU {
 		for(Map<String, String> d : data) {
 			//tel
 			d.put("tel", d.get("Tel.körzet") + "-" + d.get("Telefonszám"));
-
 			//System.out.println(d.get("hospital_name"));
 		}
 		CSVUtil.removeColumn(data, "Telefonszám");
@@ -106,9 +122,43 @@ public class HU {
 		CSVUtil.addColumn(data, "lat", "0");
 		CSVUtil.addColumn(data, "lon", "0");
 
-		Validation.validate(data, "HU");
 
-		System.out.println("End");
+
+		//join number of beds
+		CSVUtil.addColumn(data, "cap_beds", "");
+		List<Map<String, String>> nbbeds = CSVUtil.load(HCUtil.path + "HU/number_of_beds.csv");
+		System.out.println(nbbeds.size());
+		join(data, "id", nbbeds, "id", false);
+
+		Validation.validate(data, cc);
+		
+		LocalParameters.loadProxySettings();
+		ServicesGeocoding.set(BingGeocoder.get(), data, "lon", "lat", true, true);
+
+		CSVUtil.addColumns(data, HCUtil.cols, "");
+		Validation.validate(data, cc);
+		CSVUtil.save(data, HCUtil.path+cc + "/"+cc+".csv");
+		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path+cc + "/"+cc+".gpkg", ProjectionUtil.getWGS_84_CRS());
 	}
+
+
+	//TODO use CSVutil version
+	private static void join(List<Map<String, String>> data1, String key1, List<Map<String, String>> data2, String key2, boolean printWarnings) {
+		//index data2 by key
+		HashMap<String,Map<String,String>> ind2 = new HashMap<>();
+		for(Map<String, String> elt : data2) ind2.put(elt.get(key2), elt);
+
+		//join
+		for(Map<String, String> elt : data1) {
+			String k1 = elt.get(key1);
+			Map<String, String> elt2 = ind2.get(k1);
+			if(elt2 == null) {
+				if(printWarnings) System.out.println("No element to join for key: " + k1);
+				continue;
+			}
+			elt.putAll(elt2);
+		}
+	}
+
 
 }

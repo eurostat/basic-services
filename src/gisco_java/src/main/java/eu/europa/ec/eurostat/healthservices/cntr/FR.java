@@ -1,6 +1,5 @@
 package eu.europa.ec.eurostat.healthservices.cntr;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -268,33 +267,6 @@ public class FR {
 		System.out.println("End");
 	}
 */
-
-
-	public static void join(List<Map<String, String>> data1, String key1, List<Map<String, String>> data2, String key2, boolean printWarnings) {
-		//index data2 by key
-		var ind2 = new HashMap<String,Map<String,String>>();
-		for(Map<String, String> elt : data2) ind2.put(elt.get(key2), elt);
-
-		//join
-		for(Map<String, String> elt : data1) {
-			String k1 = elt.get(key1);
-			Map<String, String> elt2 = ind2.get(k1);
-			if(elt2 == null) {
-				if(printWarnings) System.out.println("No element to join for key: " + k1);
-				continue;
-			}
-			elt.putAll(elt2);
-		}
-	}
-
-
-
-
-
-
-
-
-
 
 
 

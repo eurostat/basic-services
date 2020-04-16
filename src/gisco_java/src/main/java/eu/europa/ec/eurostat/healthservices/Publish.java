@@ -47,7 +47,6 @@ public class Publish {
 		new File(destinationPath + "data/geojson/").mkdirs();
 		new File(destinationPath + "data/gpkg/").mkdirs();
 
-		var all = new ArrayList<Map<String, String>>();
 		var changed = false;
 		for(String cc : HCUtil.ccs) {
 
@@ -92,9 +91,6 @@ public class Publish {
 			//CSVUtil.removeColumn(data, "geo_matching");
 			//CSVUtil.removeColumn(data, "geo_confidence");
 
-			//store for big EU file
-			all.addAll(data);
-
 			//export as geojson and GPKG
 			CSVUtil.save(data, outCsvFile, HCUtil.cols_);
 			Collection<Feature> fs = CSVUtil.CSVToFeatures(data, "lon", "lat");
@@ -105,6 +101,10 @@ public class Publish {
 
 		//handle "all" files
 		if(changed) {
+
+			var all = new ArrayList<Map<String, String>>();
+			for(String cc : HCUtil.ccs)
+				all.addAll( CSVUtil.load(destinationPath+"data/csv/"+cc+".csv") );
 
 			//append cc to id
 			for(Map<String, String> h : all) {
