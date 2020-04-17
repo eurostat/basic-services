@@ -33,11 +33,9 @@ public class Validation {
 	 */
 	public static void main(String[] args) {
 		System.out.println("Start");
-		for(String cc : HCUtil.ccs) validate(HCUtil.path + cc+"/"+cc+".csv", cc);
 
-		//validate(HCUtil.path + "EL/EL.csv", "EL");
-		//validate(HCUtil.path + "NO/CSV/NO_from_Web.csv", "NO");
-		//validate(HCUtil.path + "BG/BG.csv", "BG");
+		for(String cc : HCUtil.ccs) validate(HCUtil.path + cc+"/"+cc+".csv", cc);
+		//validate(HCUtil.path + "LV/LV.csv", "LV");
 
 		System.out.println("End");
 	}
