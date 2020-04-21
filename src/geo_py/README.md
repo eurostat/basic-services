@@ -17,7 +17,7 @@ Once installed, the module can be imported simply:
 
 **Notebook examples**
 
-* A [basic example](https://nbviewer.jupyter.org/github/eurostat/healthcare-services/blob/master/src/geo-py/notebooks/01_HCS_basic_example.ipynb) regarding healthcare services to start with the module.
+* A [basic example](https://nbviewer.jupyter.org/github/eurostat/healthcare-services/blob/master/src/geo_py/notebooks/01_HCS_basic_example.ipynb) regarding healthcare services to start with the module.
 * ...
 
 **Usage**
