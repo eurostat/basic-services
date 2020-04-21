@@ -588,7 +588,7 @@
     function addCircleSizeLegendToMap(map, mpp) {
       let currentZoom = map.getZoom();
 
-      if (currentZoom < 11) {
+      if (currentZoom < 12) {
         //create circle size legend
         sizeLegend = L.control({
           position: "bottomleft"
@@ -673,11 +673,13 @@
 
     function showBedsLegend() {
       let bedsLegend = document.getElementById("bedsLegend");
-      bedsLegend.style.display = "block";
+      if (bedsLegend)
+        bedsLegend.style.display = "block";
     }
     function hideBedsLegend() {
       let bedsLegend = document.getElementById("bedsLegend");
-      bedsLegend.style.display = "none";
+      if (bedsLegend)
+        bedsLegend.style.display = "none";
     }
 
     //calculate radius so that resulting circles will be proportional by area
