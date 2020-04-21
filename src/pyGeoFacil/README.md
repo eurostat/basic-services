@@ -1,22 +1,23 @@
-pyhcs
-=====
+pygeofacil
+========
 
-Harmonised formatting of national data on healthcare services.
+Module for the integration and harmonisation of EU data on nation-wide facilities (e.g., healthcare services, education services, etc..).
 ---
 
 **Quick install and start**
 
-TBC
+[![Binder](https://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/eurostat/healthcare-services/master?filepath=src/pyGeoFacil)
 
 Once installed, the module can be imported simply:
 
 ```python
->>> import pyhcs
+>>> import pygeofacil
 ```
 
 **Notebook examples**
 
-TBC
+* A [basic example](https://nbviewer.jupyter.org/github/eurostat/healthcare-services/blob/master/src/pyGeoFacil/notebooks/01_HCS_basic_example.ipynb) regarding healthcare services to start with the module.
+* ...
 
 **Usage**
 
@@ -26,8 +27,9 @@ You will need first to create a special class given the metadata associated each
 the national data:
 
 ```python
->>> from pyhcs import base, czhcs
->>> CZHCS = base.hcsFactory(czhcs.METADATA)
+>>> from pygeofacil import base
+>>> from pygeofacil.hcs import czhcs
+>>> CZhcs = base.facilityFactory(facility = 'HCS', country = 'CZ')
 ```
 
 In this case, we create the class using predefined metadata (available from a `czhcs` module dedicated to
@@ -36,7 +38,7 @@ CZ data) that configure the input schema of the data. Instead you could use meta
 Following, it is pretty straigthforward to create an instance of a national dataset:
 
 ```python
->>> cz = CZHCS()
+>>> cz = CZhcs()
 >>> cz.load_source()
 >>> cz.format_data()
 >>> cz.save_data(fmt = 'csv')
@@ -47,8 +49,8 @@ Note the output schema (see also "attributes" in the documentation [below](#Data
 ###### Automated running
 
 ```python
->>> from pyhcs import harmonise
->>> harmonise.run(country = 'CZ')
+>>> from pygeofacil import harmonise
+>>> harmonise.run(facility = 'HCS',country = 'CZ')
 ```
 
 <!-- .. ` -->
@@ -59,8 +61,8 @@ Note the output schema (see also "attributes" in the documentation [below](#Data
 Default coder is `GISCO`, but you can use a different geocoder also using an appropriate key:
 
 ```python
->>> from pyhcs import harmonise
->>> harmonise.run(country = 'BG', coder = {'Bing': "<your_api_key>")
+>>> from pygeofacil import harmonise
+>>> harmonise.run(facility = 'HCS', country = 'BG', coder = {'Bing': "<your_api_key>")
 ```
 
 * Automated translation,

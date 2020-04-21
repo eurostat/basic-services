@@ -347,7 +347,7 @@
         bedsToMetres = d3
           .scaleSqrt()
           .domain(bedsExtent)
-          .range([100, 8000]); //metres
+          .range([100, 30000]); //metres
 
         //add each hospital to the different layerGroups
         for (let i = 0; i < hospitals.length; i++) {
@@ -366,17 +366,17 @@
               {
                 fillColor: circleColor,
                 color: circleBorderColor,
-                weight: 1,
-                fillOpacity: 0.6
+                weight: 0,
+                fillOpacity: 0.5
               }
             ).on({
               mouseover: function (e) {
                 //this.openPopup();
-                this.setStyle({ color: "yellow" });
+                this.setStyle({ color: "yellow", weight: 1 });
               },
               mouseout: function (e) {
                 //this.closePopup();
-                this.setStyle({ color: circleBorderColor });
+                this.setStyle({ color: circleBorderColor, weight: 0 });
               }
             });
             circle.bindPopup(popup);
@@ -588,7 +588,7 @@
     function addCircleSizeLegendToMap(map, mpp) {
       let currentZoom = map.getZoom();
 
-      if (currentZoom < 12) {
+      if (currentZoom < 11) {
         //create circle size legend
         sizeLegend = L.control({
           position: "bottomleft"

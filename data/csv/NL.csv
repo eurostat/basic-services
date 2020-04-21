@@ -1,246 +1,246 @@
-id,hospital_name,site_name,lat,lon,geo_qual,street,house_number,postcode,city,cc,country,cap_beds,cap_prac,cap_rooms,emergency,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date
-100101,Amsterdam UMC,AMC,52.294127658893,4.95808226736153,-1,Meibergdreef,9,1105 AZ,Amsterdam Zuidoost,NL,Netherlands,,,,,Academisch ziekenhuis,,,,,,01/01/19,02/04/2020
-100102,Amsterdam UMC,Emma Kinderziekenhuis,52.294127658893,4.95808226736153,-1,Meibergdreef,9,1105 AZ,Amsterdam,NL,Netherlands,,,,,Kinderziekenhuis,,,,,,01/01/19,02/04/2020
-100103,Amsterdam UMC,Vumc,52.3335170128498,4.86535948707326,-1,de Boelelaan,1117,1081 HV,Amsterdam,NL,Netherlands,,,,,Academisch ziekenhuis,,,,,,01/01/19,02/04/2020
-100201,Maastricht UMC+,Maastricht UMC+,50.8346626630743,5.71350226641577,-1,P. Debijelaan,25,6229 HX,Maastricht,NL,Netherlands,,,,,Academisch ziekenhuis,,,,,,01/01/19,02/04/2020
-100202,Maastricht UMC+,Medisch centrum Annadal,50.8472740976704,5.66905064066851,-1,Brouwersweg,100,6216 EG,Maastricht,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-100203,Maastricht UMC+,Stadspoli Oost,50.8466835327547,5.70929906747765,-1,Vijverdalseweg,2-4,6224 NB,Maastricht,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-100204,Maastricht UMC+,Stadspoli West,50.8592416657474,5.66763226878035,-1,Clavecymbelstraat,71A-77A,6217 CS,Maastricht,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-100301,Albert Schweitzer Ziekenhuis,Albert Schweitzer Ziekenhuis Dordwijk,51.7919385455141,4.68251773148278,-1,A. Schweitzerplaats," 25",3318 AT,Dordrecht,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-100302,Albert Schweitzer Ziekenhuis,Albert Schweitzer Ziekenhuis Zwijndrecht,51.8270641592495,4.63020914931586,-1,Langeweg,336,3331 LZ,Zwijndrecht,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-100303,Albert Schweitzer Ziekenhuis,Albert Schweitzer Ziekenhuis Sliedrecht,51.8288005484033,4.77712195007627,-1,Stationspark,400,3364 DA,Sliedrecht,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-100306,Albert Schweitzer Ziekenhuis,Albert Schweitzer Ziekenhuis Buitenpoli GOED Ridderkerk,51.8660226942933,4.60305659289931,-1,Jan Luykenstraat,8,2985 BV,Ridderkerk,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-100401,Rijnstate Ziekenhuis,Rijnstate Ziekenhuis,52.0009790188271,5.91019634511386,-1,Wagnerlaan,55,6815 AD,Arnhem,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-100402,Rijnstate Ziekenhuis,Rijnstate Ziekenhuis Zevenaar,51.9418067755618,6.06692513555976,-1,Hunneveldweg,14A,6903 ZN,Zevenaar,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-100403,Rijnstate Ziekenhuis,Rijnstate Polikliniek Arnhem-zuid,51.9479159897816,5.88438542645525,-1,Marga Klompélaan,6,6836 BH,Arnhem,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-100404,Rijnstate Ziekenhuis,Rijnstate Ziekenhuis Velp,51.9862484657851,5.97645177489875,-1,President Kennedylaan,100,6883 AZ,Velp Gld,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-100501,Amphia Ziekenhuis,Amphia Ziekenhuis Breda Molengracht,51.5818587812159,4.79729570071227,-1,Molengracht,21,4818 CK,Breda,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-100502,Amphia Ziekenhuis,Amphia Ziekenhuis Breda Langendijk,51.5748356171275,4.76213051041552,-1,Langendijk,75,4819 EV,Breda,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-100503,Amphia Ziekenhuis,Amphia Ziekenhuis Oosterhout,51.6485552490238,4.86946778944431,-1,Pasteurlaan,9,4901 DH,Oosterhout,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-100504,Amphia Ziekenhuis,Amphia Ziekenhuis Etten-Leur,51.5711086509055,4.66446950170741,-1,Trivium,76,4873 LP,Etten-Leur,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-100601,Antonius Zorggroep,Antonius Ziekenhuis Sneek,53.0346890086692,5.64286705876973,-1,Bolswarderbaan," 1",8601 ZK,Sneek,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-100602,Antonius Zorggroep,Antonius Ziekenhuis Emmeloord,52.7008597899031,5.731088833024,-1,Urkerweg,4,8303 BX,Emmeloord,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-100604,Antonius Zorggroep,Emmeloord Dokter Jansencentrum,52.7008597899031,5.731088833024,-1,Urkerweg,1,8303 BX,Emmeloord,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-100701,Zuyderland Medisch Centrum,Zuyderland Medisch Centrum Heerlen,50.8686489987287,5.97686266409637,-1,H. Dunantstraat,5,6419 PC,Heerlen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-100702,Zuyderland Medisch Centrum,Zuyderland Medisch Centrum Brunssum,50.9421042222857,5.97740145927491,-1,Prins Hendriklaan,376,6443 AE,Brunssum,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-100703,Zuyderland Medisch Centrum,Zuyderland Medisch Centrum Kerkrade,50.8665609247933,6.06123990091914,-1,Wijngracht,45,6461 AL,Kerkrade,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-100704,Zuyderland Medisch Centrum,Zuyderland Medisch Centrum Sittard-Geleen,50.9843213198697,5.84295346298125,-1,Dr. H. van der Hoffplein,1,6162 BG,Sittard-Geleen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-100705,Zuyderland Medisch Centrum,Zuyderland Medisch Centrum Buitenpoli De Egthe,51.1049959914842,5.87428976356163,-1,De Egthe,1,6101 EX,Echt,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-100801,BovenIJ Ziekenhuis,BovenIJ Ziekenhuis,52.4044513282275,4.92221682869633,-1,Statenjachtstraat,1,1034 CS,Amsterdam,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-100901,Canisius-Wilhelmina Ziekenhuis,Canisius-Wilhelmina Ziekenhuis,51.8147186068856,5.82996716089086,-1,Weg door Jonkerbos,100,6532 SZ,Nijmegen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-100902,Canisius-Wilhelmina Ziekenhuis,Canisius-Wilhelmina Ziekenhuis Waalsprong,51.8814754031544,5.84645522682745,-1,Carbatinastraat,3,6515 GM,Nijmegen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-100903,Canisius-Wilhelmina Ziekenhuis,Canisius-Wilhelmina Ziekenhuis Druten,51.8876328498322,5.61638747956099,-1,Kerkeland,3,6651 KN,Druten,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-100905,Canisius-Wilhelmina Ziekenhuis,Canisius-Wilhelmina Polikliniek Jonkerbosch,51.8181660452081,5.83578788853305,-1,Burgemeester Daleslaan,27,6532 CL,Nijmegen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-101001,Catharina Ziekenhuis,Catharina Ziekenhuis,51.4643337223888,5.47080900195615,-1,Michelangelolaan,2,5623 EJ,Eindhoven,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-101301,Alrijne Zorggroep,Alrijne Leiden,52.17384894849,4.48217288568743,-1,Houtlaan,55,2334 CK,Leiden,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-101303,Alrijne Zorggroep,Alrijne Ziekenhuis Buitenlocatie  Katwijk,52.20007712357,4.4056909662,-1,Randweg,47,2225 PJ,Katwijk,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-101304,Alrijne Zorggroep,Alrijne Ziekenhuis Buitenlocatie Sassenheim,52.2297002568729,4.52389756481223,-1,Jan van Brabantweg,33,2171 HE,Sassenheim,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-101305,Alrijne Zorggroep,Alrijne Ziekenhuis Leiderdorp,52.1562762234255,4.54022407072839,-1,Simon Smitweg,1,2353 GA,Leiderdorp,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-101306,Alrijne Zorggroep,Alrijne Ziekenhuis Alphen aan den Rijn,52.1439415201641,4.66260811654516,-1,Metoorlaan,4,2402 WC,Alphen a/d Rijn,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-101401,Diakonessenhuis,Diakonessenhuis Utrecht,52.0822446887749,5.13961736514826,-1,Bosboomstraat,1,3582 KE,Utrecht,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-101402,Diakonessenhuis,Diakonessenhuis Zeist,52.0906069680292,5.26079735319452,-1,Jagersingel,1,3707 JA,Zeist,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-101403,Diakonessenhuis,Diakonessenhuis Buitenpolikliniek Doorn,52.0351588917166,5.3513088403478,-1,Bergweg,2,3941 RB,Doorn,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-101701,Elkerliek Ziekenhuis,Elkerliek Ziekenhuis Helmond,51.4818058498297,5.64434056785101,-1,Wesselmanlaan,25,5707 HA,Helmond,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-101702,Elkerliek Ziekenhuis,Elkerliek Ziekenhuis Deurne,51.4686456333946,5.7906453328946,-1,Dunantweg,16,5751 CB,Deurne,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-101703,Elkerliek Ziekenhuis,Elkerliek Ziekenhuis Gemert,51.5546146443229,5.68565972622946,-1,Julianastraat,2,5421 DB,Gemert,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-101704,Elkerliek Ziekenhuis,Elkerliek Ziekenhuis Polikliniek Asten,51.405272213683,5.75330686077073,-1,Floralaan,30,5721  CV,Asten,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-101801,Erasmus Medisch Centrum,Erasmus Medisch Centrum,51.9096587891515,4.46623395399512,-1,Dr. Molewaterplein,40,3015 GD,Rotterdam,NL,Netherlands,,,,,Academisch ziekenhuis,,,,,,01/01/19,02/04/2020
-101802,Erasmus Medisch Centrum,Erasmus Medisch Centrum Sophia kinderziekenhuis,51.9122005900314,4.46942303249812,-1,Wytemaweg,80,3015 CN,Rotterdam,NL,Netherlands,,,,,Kinderziekenhuis,,,,,,01/01/19,02/04/2020
-101803,Erasmus Medisch Centrum,Erasmus Medisch Centrum Kanker Instituut,51.8847766902239,4.50472739059917,-1,Groene hilledijk,301,3075 EA,Rotterdam,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-101804,Admiraal De Ruyter Ziekenhuis,Admiraal De Ruyter Ziekenhuis Goes,51.4862778054271,3.90467080451415,-1,s-Gravenpolderseweg,114,4462 RA,Goes,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-101805,Admiraal De Ruyter Ziekenhuis,Admiraal De Ruyter Ziekenhuis Middelburg Kalverstraat,51.4964763910009,3.61001298621682,-1,Kalverstraat,1,4331 LZ,Middelburg,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-101807,Admiraal De Ruyter Ziekenhuis,Admiraal De Ruyter Ziekenhuis Vlissingen,51.4513683907843,3.56611626549922,-1,Koudekerkseweg,88,4382 EE,Vlissingen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-101808,Admiraal De Ruyter Ziekenhuis,Admiraal De Ruyter Ziekenhuis Zierikzee,51.6565922449283,3.92838030604625,-1,Koning Gustaafweg,2,4301 NP,Zierikzee,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-101901,Flevoziekenhuis,Flevoziekenhuis,52.3698394312418,5.22333906616218,-1,Hospitaalweg,1,1315 RA,Almere,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-101902,Flevoziekenhuis,Flevoland ziekenhuis Buitenpoli Almere Poort,52.3484196051261,5.15250262768298,-1,Beneluxlaan,573-579,"	1363 BJ",Almere,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-102001,Bravis Ziekenhuis,Bravis Ziekenhuis Bergen op Zoom,51.5284468387608,4.44379036589664,-1,Boerhaavelaan,25,4708 AE,Roosendaal,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-102002,Bravis Ziekenhuis,Bravis Ziekenhuis Oudenbosch Medisch Centrum,51.5897440946281,4.52415161633698,-1,West-Vaardeke,11A,4731 MA,Oudenbosch,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-102003,Bravis Ziekenhuis,Bravis Ziekenhuis Polikliniek Etten-Leur,51.5738706137252,4.65187529396726,-1,Schoonhout,215,4872 MC,Etten-Leur,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-102004,Bravis Ziekenhuis,Bravis Ziekenhuis Polikliniek Steenbergen,51.58663883562,4.31999731849861,-1,De Wei,26,4651 EZ,Steenbergen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-102005,Bravis Ziekenhuis,Bravis Ziekenhuis Roosendaal,51.4875939005905,4.31497752198322,-1,Boerhaaveplein,1,4624 VT,Bergen Op Zoom,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-102101,Gelre Ziekenhuizen,Gelre Ziekenhuizen Zutphen,52.1234520220188,6.21723448993993,-1,Den Elterweg,77,7207 AE,Zutphen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-102103,Gelre Ziekenhuizen,Gelre Ziekenhuizen Apeldoorn,52.1817180299437,5.94831376641652,-1,A. Schweitzerlaan,31,7334 DZ,Apeldoorn,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-102104,Gelre Ziekenhuizen,Gelre Ziekenhuizen Polikliniek Lochem,52.1554946798651,6.42300454545159,-1,Zwiepseweg,105,7241 GR,Lochem,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-102105,Gelre Ziekenhuizen,Gelre Ziekenhuizen Polikliniek Epe,52.3492762158615,5.9822219347216,-1,Willem Tellstraat,17,8162 ET,Epe,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-102106,Gelre Ziekenhuizen,Gelre Ziekenhuizen Polikliniek Dieren,52.05134159286,6.09856293526358,-1,Wilhelminaweg,80AA,6951 BR,Dieren,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-102107,Gelre Ziekenhuizen,Gelre Ziekenhuis Polikliniek Doesburg,52.0071883605752,6.1421826510483,-1,De Linie,3b,6982 AZ,Doesburg,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-102301,Groene Hart Ziekenhuis,Groene Hart Ziekenhuis Bleulandlocatie,52.0206926664309,4.70306448050724,-1,Bleulandweg,10,2803 HH,Gouda,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-102303,Groene Hart Ziekenhuis,Groene Hart Ziekenhuis Polikliniek Zuidplas,51.9668374294647,4.61641514175448,-1,Doortocht,40,2914 KA,Nieuwerkerk a/d IJssel,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-102304,Groene Hart Ziekenhuis,Groene Hart Ziekenhuis Polikliniek Schoonhoven,51.9459832515023,4.84685836890613,-1,Oranjeplaats,21,2871 TL,Schoonhoven,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-102305,Groene Hart Ziekenhuis,Groene Hart Ziekenhuis Bodegraven,52.0889895221974,4.75017149764354,-1,Willem de Zwijgerstraat,9,2411 VT,Bodegraven,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-102401,Stichting Reinier Haga Groep,HagaZiekenhuis Leyweg,52.0524779860673,4.26215080325915,-1,Els Borst-Eilersplein,275,2545 AA,s-Gravenhage,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-102402,Stichting Reinier Haga Groep,HagaZiekenhuis Sportlaan,52.0807465741226,4.26202339595592,-1,Sportlaan,600,2566 MJ,s-Gravenhage,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-102403,Stichting Reinier Haga Groep,HagaZiekenhuis Juliana Kinderziekenhuis,52.0671289490983,4.24432413219607,-1,Els Borst-Eilersplein,275,2566 AA,s-Gravenhage,NL,Netherlands,,,,,Kinderziekenhuis,,,,,,01/01/19,02/04/2020
-102404,Stichting Reinier Haga Groep,HagaZiekenhuis Zorgplein Westland,52.0024279281775,4.15876407277702,-1,Zandeveltplein,3,2692 AH,’s-Gravenzande,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-102405,Stichting Reinier Haga Groep,Reinier de Graaf Diaconessenhuis Voorburg,52.0615736588233,4.35223548082575,-1,Fonteynenburghlaan,5,2275 CX,Voorburg,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-102406,Stichting Reinier Haga Groep,Reinier de Graaf  Ypenburg,52.0517544937685,4.38509210689849,-1,Kiekendiefstraat,17,2496 RP,s-Gravenhage,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-102407,Stichting Reinier Haga Groep,Reinier de Graaf Naaldwijk,51.9910076511932,4.21744971062144,-1,Middelbroekweg,2a,2671 ME,Naaldwijk,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-102408,Stichting Reinier Haga Groep,Reinier de Graaf Gasthuis,51.997557394585,4.33920949817535,-1,Reinier de Graafweg,5,2625 AD,Delft,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-102410,Stichting Reinier Haga Groep,LangeLand Ziekenhuis,52.0688882631086,4.49958184358532,-1,Toneellaan,1,2725 NA,Zoetermeer,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-102412,Stichting Reinier Haga Groep,Langeland Ziekenhuis Huidkliniek en Plastische chirurgie,52.0641650204742,4.49544627829139,-1,Europaweg,151,2711 ER,Zoetermeer,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-102501,Havenpolikliniek,Havenziekenhuis,51.9200129805316,4.49644736200477,-1,Haringvliet,2,3011 TD,Rotterdam,NL,Netherlands,,,,,Havenziekenhuis,,,,,,01/01/19,02/04/2020
-102503,Havenpolikliniek,Havenziekenhuis Locatie Buitenhaven,51.919437517692,4.49523769167513,-1,Haringvliet,72,3011 TG,Rotterdam,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-102601,IJsselland Ziekenhuis,IJsselland Ziekenhuis,51.938921517338,4.56247515292387,-1,Prins Constantijnweg,2,2906 ZC,Capelle a/d IJssel,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-102602,IJsselland Ziekenhuis,IJsselland Ziekenhuis Buitenpolikliniek Nesselande,51.9841301107823,4.58397525503315,-1,Cypruslaan,410,3059 XA,Rotterdam,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-102603,IJsselland Ziekenhuis,IJsselland Ziekenhuis Buitenpolikliniek Krimpen,51.92008791125,4.60148838453623,-1,Groenendaal,1,2922 CJ,Krimpen a/d Ijssel,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-102801,Ikazia Ziekenhuis,Ikazia Ziekenhuis,51.8855875380115,4.49426752634476,-1,Montessoriweg,1,3083 AN,Rotterdam,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-102802,Ikazia Ziekenhuis,Ikazia Ziekenhuis Buitenpolikliniek Carnisselande,51.848335758598,4.50108745136302,-1,Middeldijkerplein,36,2993 DL,Barendrecht,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-102804,Ikazia Ziekenhuis,Ikazia Ziekenhuis Polikliniek Slikkerveer,51.8785002476141,4.60459647212083,-1,Prinses Margrietstraat,42,2983 EH,Ridderkerk,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-102902,Isala klinieken,Isala Zwolle,52.5137561621386,6.12515328630083,-1,Dokter van Heesweg,2,8025 AB,Zwolle,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-102903,Isala klinieken,Isala Polikliniek Kampen,52.5515383977514,5.92076857777129,-1,Engelenbergplantsoen,7,8266 AB,Kampen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-102904,Isala klinieken,Isala Polikliniek Heerde,52.4298917393382,6.06502802059777,-1,Groteweg,5,8191 JS,Wapenveld,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-102905,Isala klinieken,Isala Diaconessenhuis Meppel,52.6896073764777,6.2148239223606,-1,Hoogeveenseweg,38,7943 KA,Meppel,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-102907,Isala klinieken,Isala Diaconessenhuis Steenwijk,52.7934112627188,6.12133769891549,-1,Sluisweg,2,8332 JC,Steenwijk,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103004,Jeroen Bosch Ziekenhuis,Jeroen Bosch Ziekenhuis Boxtel,51.593513921035,5.32523349094735,-1,Liduinahof,35,5281 AD,Boxtel,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103005,Jeroen Bosch Ziekenhuis,Jeroen Bosch Ziekenhuis Zaltbommel,51.8134348321143,5.25050958502453,-1,Kerkstraat,2,5301 EH,Zaltbommel,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103006,Jeroen Bosch Ziekenhuis,Jeroen Bosch Ziekenhuis Rosmalen,51.7116102331119,5.36395029136052,-1,De Hoef,90,5242 CN,Rosmalen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103007,Jeroen Bosch Ziekenhuis,Jeroen Bosch Ziekenhuis 's-Hertogenbosch,51.6845861152513,5.2767392369813,-1,Henri Dunantstraat,1,5223 GZ,s-Hertogenbosch,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-103009,Jeroen Bosch Ziekenhuis,Sport Medisch Centrum Jeroen Bosch Ziekenhuis,51.7226550944925,5.31488277637024,-1,Marathonloop,9,5235 AA,s-Hertogenbosch,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103010,Jeroen Bosch Ziekenhuis,Jeoren Bosch Ziekenhuis Drunen,51.690237422551,5.14402044893506,-1,Tinie de Munnikstraat,17,5151 VW,Drunen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103011,Jeroen Bosch Ziekenhuis,Jeroen Bosch Ziekenhuis Gamerschestraat,51.81334867206,5.24605783792244,-1,Gamerschestraat,32a,5301 AS,Zaltbommel,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103101,Spaarne Gasthuis,Spaarne Gasthuis locatie Haarlem-Zuid,52.3673843276697,4.65082659608409,-1,Boerhaavelaan,22,2035 RC,Haarlem,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-103102,Spaarne Gasthuis,Spaarne Gasthuis locatie Haarlem-Noord,52.4227956452814,4.64958195831807,-1,Vondelweg,999,2026 BW,Haarlem,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-103103,Spaarne Gasthuis,Spaarne Gasthuis Hoofddorp,52.3242518163467,4.65381548271983,-1,Spaarnepoort,1,2134 TM,Hoofddorp,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-103104,Spaarne Gasthuis,Spaarne Gasthuis  Heemstede,52.3552487927512,4.6333985433339,-1,Händellaan,2,2102 CW,Heemstede,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103105,Spaarne Gasthuis,Spaarne ziekenhuis Nieuw Vennep,52.27282587084,4.62872989861052,-1,Lucas Bolsstraat,10,2152 CZ,Nieuw Vennep,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103106,Spaarne Gasthuis,Spaarne Ziekenhuis Polikliniek Hillegom,52.2850259337894,4.57902902912026,-1,Abellalaan,1,2182 TX,Hillegom,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103107,Spaarne Gasthuis,Spaarne Gasthuis  Velsen-Noord,52.471062712092,4.645715777311,-1,Wijkstraatweg,160,1951 EK,Velsen-Noord,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103201,Laurentius Ziekenhuis,Laurentius Ziekenhuis,51.1910472529456,5.99789586569354,-1,Mgr. Driessenstraat,6,6043 CV,Roermond,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-103202,Laurentius Ziekenhuis,Laurentius Buitenpolikliniek Echt,51.1175755016978,5.87760791088159,-1,Nobelweg,10,6101 XB,Echt,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103301,Leids Universitair Medisch Centrum,Leids Universitair Medisch Centrum,52.1677096948457,4.47747365158566,-1,Albinusdreef,2,2333 ZA,Leiden,NL,Netherlands,,,,,Academisch ziekenhuis,,,,,,01/01/19,02/04/2020
-103302,Leids Universitair Medisch Centrum,Willem-Alexander Kinderziekenhuis,52.1677096948457,4.47747365158566,-1,Albinusdreef,2,2333 ZA,Leiden,NL,Netherlands,,,,,Kinderziekenhuis,,,,,,01/01/19,02/04/2020
-103401,Martini Ziekenhuis,Martini Ziekenhuis van Swieten,53.1916644201023,6.55175819930606,-1,Van Swietenlaan,1,9728 NT,Groningen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-103501,Máxima Medisch Centrum,Máxima Medisch Centrum Veldhoven,51.4059689456898,5.41902031235405,-1,De Run,4600,5504 DB,Veldhoven,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-103502,Máxima Medisch Centrum,Máxima Medisch Centrum Eindhoven,51.4556097573196,5.48838898939342,-1,Ds. Th. Fliednerstraat,1,5631 BM,Eindhoven,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-103602,Meander Medisch Centrum,Meander Medisch Centrum Baarn,52.2148095406325,5.27699450847979,-1,Molenweg,2,3743 CM,Baarn,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-103604,Meander Medisch Centrum,Meander Medisch Centrum Amersfoort,52.1710797503703,5.37046626803297,-1,Maatweg,3,3813 TZ,Amersfoort,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-103606,Meander Medisch Centrum,"Meander Medisch Centrum de Mulderij ",52.131445737127,5.4287541967322,-1,De Mulderij,2,3831 NV,Leusden,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103607,Meander Medisch Centrum,Meander Medisch Centrum Nijkerk,52.2239291441757,5.49051326921006,-1,Oranjelaan,83-85,3862 CX,Nijkerk,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103608,Meander Medisch Centrum,Meander Medisch Centrum Barneveld,52.12662857954,5.58114928135249,-1,Nederwoudse weg,,3772 TD,Barneveld,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103609,Meander Medisch Centrum,Meander Medisch Centrum Bunschoten,52.2441063766972,5.37346993069828,-1,Chopinstraat,2D,3752 HR,Bunschoten-Spakenburg,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103701,Noodwest Ziekenhuisgroep,Noordwest Ziekenhuisgroep  Alkmaar,52.6267443462011,4.73612706300838,-1,Wilhelminalaan,12,1815 JD,Alkmaar,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-103702,Noodwest Ziekenhuisgroep,Noordwest Ziekenhuisgroep  Den Helder,52.9582374148449,4.74633050170215,-1,Huisduinerweg,3,1782 GZ,Den Helder,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-103703,Noodwest Ziekenhuisgroep,Noordwest Ziekenhuisgroep  Schagen,52.7834853641488,4.80859149343264,-1,Kaagweg,25,1741 LC,Schagen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103704,Noodwest Ziekenhuisgroep,Noordwest Ziekenhuisgroep  Polikliniek Texel,53.0496249364296,4.79255532052513,-1,Pontweg,106,1791 LB,Den Burg,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103705,Noodwest Ziekenhuisgroep,Noordwest Ziekenhuisgroep  Heerhugowaard,52.669681240093,4.82329162542588,-1,Stationsplein,49,1703 WD,Heerhugowaard,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103706,Noodwest Ziekenhuisgroep,Noordwest Ziekenhuisgroep  Limmen,52.5731148436582,4.69912615143503,-1,Zonnedauw,1906,1906 HA,Limmen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103801,Haaglanden Medisch Centrum,HMC Antoniushove,52.0926661605166,4.3834894525524,-1,Burgemeester Banninglaan,1,2262 BA,Leidschendam,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-103802,Haaglanden Medisch Centrum,HMC Westeinde,52.0739046488319,4.30016597905874,-1,Lijnbaan,32,2512 VA,s-Gravenhage,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-103805,Haaglanden Medisch Centrum,HMC Bronovo,52.102096204293,4.31619328745056,-1,Bronovolaan,5,2597 AX,s-Gravenhage,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-103808,Haaglanden Medisch Centrum,HMC  Gezondheidscentrum Wassenaar,52.1450089271788,4.40295711051004,-1,Hofcampweg,65,2241 KE,Wassenaar,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103811,Haaglanden Medisch Centrum,HMC Buitenpolikliniek Savallelaan,52.0795062682838,4.35327946986469,-1,Savallelaan,2,2273 JX,Voorburg,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103812,Haaglanden Medisch Centrum,HMC Sport Medisch Centrum,52.0558681719974,4.28993052576785,-1,Mr. P. Droogleever Fortuynweg,22,2533 SR,s-Gravenhage,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-103903,Maasstad ziekenhuis,Maasstad Ziekenhuis,51.8794620292125,4.53608654332678,-1,Maasstadweg,21,3079 DZ,Rotterdam,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-104001,Medisch Spectrum Twente,Medisch Spectrum Twente Ariënsplein,52.2150095789065,6.8886891344327,-1,Haaksbergerstraat,55,7513 ER,Enschede,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-104002,Medisch Spectrum Twente,Medisch Spectrum Twente Koningsplein,52.2172719314424,6.89456092825443,-1,Koningsplein,1,7512 KZ,Enschede,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-104003,Medisch Spectrum Twente,Medisch Spectrum Twente Oldenzaal,52.307572942637,6.93106066505734,-1,Pr. Bernhardstraat,17,7573 AM,Oldenzaal,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-104004,Medisch Spectrum Twente,Medisch Spectrum Twente Buitenpolikliniek Haaksbergen,52.1608420406479,6.75091816141793,-1,Wiedenbroeksingel,4,7481 BT,Haaksbergen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-104602,Pantein,Maasziekenhuis Pantein,51.6632123563463,5.94071749142032,-1,Dokter Kopstraat,11,5835 DV,Beugen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-105001,Rivas Zorggroep,Rivas Zorggroep Beatrixziekenhuis,51.8386898567604,4.95836371622344,-1,Banneweg,57,4204 AA,Gorinchem,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-105002,Rivas Zorggroep,Rivas Zorggroep Lingepolikliniek,51.8912261257885,5.1069958158624,-1,Lingesteynplantsoen,3,4141 GH,Leerdam,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-105101,Rode Kruis Ziekenhuis,Rode Kruis Ziekenhuis Beverwijk,52.4800014437409,4.64939316131901,-1,Vondellaan,13,1942 LE,Beverwijk,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-105201,Spijkenisse Medisch Centrum,Spijkenisse Medisch Centrum,51.8467911621576,4.33669666622922,-1,Ruwaard van Puttenweg,500,3201 GZ,Spijkenisse,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-105202,Spijkenisse Medisch Centrum,Spijkenisse Medisch Centrum Buitenpoli Hoogvliet,51.870688287027,4.35340453413149,-1,Oude Wal,24L,3193 EN,Hoogvliet,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-105203,Spijkenisse Medisch Centrum,Spijkenisse Medisch Centrum Buitenpoli Rozenburg,51.9011418997738,4.25575315592357,-1,Blankenburg,6,3181 BC,Rozenburg,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-105301,Saxenburgh Groep,Saxenburgh Groep Ziekenhuis Röpcke Zweers,52.5705948929088,6.63792318083927,-1,Jan Weitkamplaan,4a,7772 SE,Hardenberg,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-105303,Saxenburgh Groep,Saxenburgh Groep Polikliniek Ommen,52.5191380134313,6.42856549076457,-1,Hessel Mulertstraat,22,7731 CL,Ommen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-105305,Saxenburgh Groep,Saxenburgh Groep Polikliniek Westhaar,52.4545970824911,6.6229445383463,-1,Beeklaan,1,7676 BC,Westerhaar,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-105401,Santiz,Slingeland Ziekenhuis,51.9751004729931,6.28644567948041,-1,Kruisbergseweg,25,7009 BL,Doetinchem,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-105402,Santiz,Slingeland Ziekenhuis Locatie Gezellenlaan,51.95358819317,6.30190071595092,-1,Gezellenlaan,10,7005 AZ,Doetiechem,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-105404,Santiz,Streekziekenhuis Koningin Beatrix,51.9787479261187,6.70124135083323,-1,Beatrixpark,1,7101 BN,Winterswijk,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-105407,Santiz,Streekziekenhuis Koningin Beatrix Buitenpoli Eibergen,52.0998406913897,6.65108686026869,-1,J W Hagemanstraat,46-2,7151 AH,Eibergen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-105701,St. Anna Zorggroep,St. Anna Ziekenhuis Geldrop,51.4198606028669,5.55853786228254,-1,Bogardeind,2,5664 EH,Geldrop,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-105702,St. Anna Zorggroep,St. Anna Ziekenhuis Eindhoven,51.4165903848235,5.4768020168277,-1,Antoon Coolenlaan,1-03,5644 RX,Eindhoven,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-105801,St. Antonius Ziekenhuis,St. Antonius Ziekenhuis Nieuwegein,52.0251572202684,5.08061733934817,-1,Koekoekslaan,1,3435 CM,Nieuwegein,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-105804,St. Antonius Ziekenhuis,St. Antonius Ziekenhuis Polikliniek Houten,52.0251708546006,5.17697011678428,-1,Hofspoor,2,3994 VT,Houten,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-105806,St. Antonius Ziekenhuis,St. Antonius Ziekenhuis Utrecht,52.1037220736632,5.05720714935115,-1,Soestwetering,1,3543 AZ,Utrecht,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-105807,St. Antonius Ziekenhuis,St. Antonius Ziekenhuis Spatadercentrum,52.0828566422463,5.01938571550518,-1,Van Lawick van Pabstlaan,12,3453 RB,Utrecht,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-105808,St. Antonius Ziekenhuis,St. Antonius Ziekenhuis Polikliniek Overvecht,52.1148981009565,5.12296836052599,-1,Neckardreef,6,3562 CN,Utrecht,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-105809,St. Antonius Ziekenhuis,St. Antonius Ziekenhuis Woerden,52.0804046629203,4.89432556710744,-1,Polanerbaan,2,3447 GN,Woerden,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-105810,St. Antonius Ziekenhuis,St. Antonius Ziekenhuis Polikliniek Mijdrecht,52.2051836378836,4.86241527939824,-1,Hoofdweg,1,3641 PN,Mijdrecht,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-105812,St. Antonius Ziekenhuis,St. Antonius Ziekenhuis Dialysecentrum Tiel,51.8899833454565,5.41622623583313,-1,President Kennedylaan,1,4201 WT,Tiel,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-106101,St. Jans Gasthuis,St. Jans Gasthuis,51.2538599025033,5.71261786418179,-1,Vogelsbleek,5,6001 BE,Weert,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-106102,St. Jans Gasthuis,St. Jans Gasthuis Buitenpoli Budel,51.2612574123881,5.56245649979376,-1,Grensweg,1,6021 JW,Budel,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-106201,Ziekenhuis St. Jansdal,Ziekenhuis St. Jansdal,52.3449734764729,5.6143447327342,-1,Weth. Jansenlaan,90,3844 DG,Harderwijk,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-106202,Ziekenhuis St. Jansdal,Ziekenhuis St. Jansdal Polikliniek Dronten,52.5382815975137,5.70225782354754,-1,Het Zwarte Water,77-83,8253 PD,Dronten,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-106203,Ziekenhuis St. Jansdal,Ziekenhuis St. Jansdal Polikliniek Nijkerk,52.2102347602697,5.46277102560549,-1,Henri Nouwenstraat,18,3863 HV,Nijkerk,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-106204,Ziekenhuis St. Jansdal,Ziekenhuis St. Jansdal Polikliniek Putten,52.2573910096851,5.608097268628,-1,Klaas Frisohof,20,3881 SZ,Putten,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-106206,Ziekenhuis St. Jansdal,MC Ziekenhuis St. Jansdal Lelystad,52.5043077504485,5.47697170137552,-1,Ziekenhuisweg,100,8233 AA,Lelystad,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-106301,Onze Lieve Vrouwe Gasthuis,Onze Lieve Vrouwe Gasthuis locatie Oost,52.3599373054595,4.91588642113367,-1,Oosterpark,9,1091 AC,Amsterdam,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-106302,Onze Lieve Vrouwe Gasthuis,Onze Lieve Vrouwe Gasthuis Spuistraat,52.3709287825245,4.88941212564865,-1,Spuistraat,239A,1012 VP,Amsterdam,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-106303,Onze Lieve Vrouwe Gasthuis,Onze Lieve Vrouwe Gasthuis IJburg,52.3576171218287,4.99161273510584,-1,IJburglaan,727,1087 CH,Amsterdam,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-106304,Onze Lieve Vrouwe Gasthuis,Onze Lieve Vrouwe Gasthuis locatie West,52.3715108937553,4.83811408663427,-1,Jan Tooropstraat,164,1061 AE,Amsterdam,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-106601,Nij Smellinghe,Nij Smellinghe,53.0998559575906,6.11082649101664,-1,Compagnonsplein,1,9202 NN,Drachten,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-106702,Deventer Ziekenhuis,Deventer Ziekenhuisgroep,52.2611442165818,6.19245497636492,-1,Nico Bolkesteinlaan,75,7416 SE,Deventer,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-106703,Deventer Ziekenhuis,Deventer Ziekenhuis Polikliniek Raalte,52.3997240277929,6.27267416476056,-1,Vrieswijk,6b,8103 PB,Raalte,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-106704,Deventer Ziekenhuis,Deventer ZiekenhuisPolikliniek Rijssen,52.3013913495377,6.51853916634126,-1,Wijnand Zeeuwstraat,26-101,7462 DE,Rijssen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-106801,Het Van Weel-Bethesda Ziekenhuis,Het Van Weel-Bethesda Polikliniek Hellevoetsluis,51.8327512213984,4.14872454752598,-1,Vliet,4,3224 HE,Hellevoetsluis,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-106802,Het Van Weel-Bethesda Ziekenhuis,Het Van Weel-Bethesda Dirksland,51.7495655307043,4.10125857202621,-1,Stationsweg,22,3247 BW,Dirksland,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-106803,Het Van Weel-Bethesda Ziekenhuis,Het Van Weel-Bethesda Polikliniek Brielle,51.8971565260872,4.17346850061822,-1,Amer,21,3232 HA,Brielle,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-106901,Tergooiziekenhuizen,Tergooiziekenhuizen Hilversum,52.2168826040226,5.20244969876349,-1,van Riebeeckweg,212,1213 XZ,Hilversum,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-106902,Tergooiziekenhuizen,Tergooiziekenhuizen Blaricum,52.2676359540496,5.20776199062079,-1,Rijksstraatweg,1,1261 AN,Blaricum,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-106903,Tergooiziekenhuizen,Tergooiziekenhuizen Buitenpoli Weesp,52.3118819486853,5.04765602072754,-1,Korte Muiderweg 2A,,1382 LR,Weesp,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-107301,Elisabeth-TweeSteden,ETZ Tilburg,51.5766616015023,5.06392964327763,-1,Dr. Deelenlaan,5,5042 AD,Tilburg,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-107302,Elisabeth-TweeSteden,ETZ Waalwijk,51.6866697721091,5.05312272234981,-1,Kasteellaan,2,5141 BM,Waalwijk,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-107303,Elisabeth-TweeSteden,ETZ Oisterwijk,51.5725315293744,5.18123188135769,-1,Moergestelseweg,32G,5062 JW,Oisterwijk,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-107304,Elisabeth-TweeSteden,ETZ Elisabeth,51.539900814354,5.10308105358352,-1,Hilvarenbeekseweg,60,5022 GC,Tilburg,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-107401,Universitair Medisch Centrum Groningen,Universitair Medisch Centrum Groningen,53.2210623366902,6.57706084648936,-1,Hanzeplein,1,9713 GZ,Groningen,NL,Netherlands,,,,,Academisch ziekenhuis,,,,,,01/01/19,02/04/2020
-107402,Universitair Medisch Centrum Groningen,Universitair Medisch Centrum Groningen Beatrixoord,53.1826457509133,6.5949882116405,-1,Dilgtweg,5,9751 ND,Haren,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-107404,Ommelander Ziekenhuis Groep,Ommelander Ziekenhuis Groep Ziekenhuis Scheemda,53.1806620087028,6.95850866209852,-1,Pastorieweg,1,9679 BJ,Scheemda,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-107405,Ommelander Ziekenhuis Groep,Ommelander Ziekenhuis Groep Servicepunt  Veendam,53.1009708034753,6.86323438245072,-1,Kaap de Goede Hoop,1,9642 AP,Veendam,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-107406,Ommelander Ziekenhuis Groep,Ommelander Ziekenhuis Groep Servicepunt Delfzijl,53.3306700997569,6.92530634895373,-1,Schoolstraat,7,9934 CD,Delfzijl,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-107501,Universitair Medisch Centrum St. Radboud,Universitair Medisch Centrum St. Radboud,51.82365966798,5.86274966514735,-1,G. Grooteplein-Zuid,10,6525 GA,Nijmegen,NL,Netherlands,,,,,Academisch ziekenhuis,,,,,,01/01/19,02/04/2020
-107502,Universitair Medisch Centrum St. Radboud,Radboud UMC Amalia kinderziekenhuis,51.82365966798,5.86274966514735,-1,Geert Grooteplein-Zuid,10,6525 GA,Nijmegen,NL,Netherlands,,,,,Kinderziekenhuis,,,,,,01/01/19,02/04/2020
-107601,Universitair Medisch Centrum Utrecht,Universitair Medisch Centrum Utrecht,52.0860518874474,5.17958759538107,-1,Heidelberglaan,100,3584 CX,Utrecht,NL,Netherlands,,,,,Academisch ziekenhuis,,,,,,01/01/19,02/04/2020
-107602,Universitair Medisch Centrum Utrecht,Universitair Medisch Centrum Utrecht Wilhelmina Kinderziekenhuis,52.0886561858428,5.17832069725358,-1,Lundlaan,6,3584 EA,Utrecht,NL,Netherlands,,,,,Kinderziekenhuis,,,,,,01/01/19,02/04/2020
-107701,VieCuri Medisch Centrum,VieCuri Medisch Centrum Venlo,51.360465794903,6.15934843342247,-1,Tegelseweg,210,5912 BL,Venlo,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-107702,VieCuri Medisch Centrum,VieCuri Medisch Centrum Venray,51.526720574029,5.964358619763,-1,Merseloseweg,130,5801CE,Venray,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-107703,VieCuri Medisch Centrum,VieCuri Medisch Centrum Regiopoli Horst,51.4461254337563,6.0476040386732,-1,Westsingel,100,5961 DH,Horst,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-107704,VieCuri Medisch Centrum,VieCuri Medisch Centrum Regiopoli Panningen,51.3284820745281,5.96934278348586,-1,John F. Kennedylaan,321,5981 WZ,Panningen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-107705,VieCuri Medisch Centrum,VieCuri Medisch Centrum Regiopoli Reuver,51.2823461757582,6.08161753377756,-1,Broeklaan,4,5953 NB,Reuver,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-107801,Franciscus Gasthuis & Vlietland Groep,Franciscus Vlietland  Schiedam,51.9226229545058,4.37994822501664,-1,Vlietlandplein,2,3118 JH,Schiedam,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-107802,Franciscus Gasthuis & Vlietland Groep,Franciscus Gasthuis Locatie Het Oogziekenhuis,51.9152137256744,4.48008855178362,-1,Schiedamse Vest,180,3011 BH,Rotterdam,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-107803,Franciscus Gasthuis & Vlietland Groep,Franciscus Maassluis,51.9297536381909,4.24364747284127,-1,De Vloot,206,3144 PK,Maassluis,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-107804,Franciscus Gasthuis & Vlietland Groep,Franciscus Berkel,51.996624993653,4.47436481747524,-1,Boerhaavestraat,19,2652 EP,Berkel Rodenrijs,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-107805,Franciscus Gasthuis & Vlietland Groep,Franciscus Gasthuis,51.9452300355169,4.46429731177486,-1,Kleiweg,500,3045 PM,Rotterdam,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-107807,Franciscus Gasthuis & Vlietland Groep,Franciscus  Haven,51.9200129805316,4.49644736200477,-1,Haringvliet,2,3011 TF,Rotterdam,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-108001,Dijklander Ziekenhuis,Waterlandziekenhuis,52.5006707133648,4.9626462701274,-1,Waterlandlaan,250,1441 RN,Purmerend,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-108002,Dijklander Ziekenhuis,Waterlandziekenhuis Behandelcentrum Waterland-Oost,52.4931771128735,5.05642415838057,-1,Heideweg,1b,1132 DA,Volendam,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-108003,Dijklander Ziekenhuis,Westfries Gasthuis,52.6480451397384,5.05317719287213,-1,Fr. Maelsonstraat,3,1624 NP,Hoorn Nh,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-108004,Dijklander Ziekenhuis,Westfries Gasthuis Enkhuizen,52.7035753873478,5.28188189452002,-1,Molenweg,9b,1601 SR,Enkhuizen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-108201,Wilhelmina Ziekenhuis Assen,Wilhelmina Ziekenhuis Assen,52.984524044993,6.56511007914358,-1,Europaweg-Zuid,1,9401 RK,Assen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-108202,Wilhelmina Ziekenhuis Assen,Het Medisch Centrum Wilhelmina,53.012943423782,6.57122918798054,-1,Borgstee,17,9403 TS,Assen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-108301,Zaans Medisch Centrum,Zaans Medisch Centrum,52.4533164689792,4.82655127202979,-1,Koningin Julianaplein,58,1502 DV,Zaandam,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-108302,Zaans Medisch Centrum,Zaans Medisch Centrum Polikliniek Saendelft,52.4886765033122,4.75223711560051,-1,Kaaikhof,69,1567 JP,Assendelft,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-108401,Ziekenhuis Amstelland,Ziekenhuis Amstelland,52.2943921119536,4.86924890364837,-1,Laan van de Helende Meesters,8,1186 AM,Amstelveen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-108402,Ziekenhuis Amstelland,Ziekenhuis Amstelland Buitenpolikliniek Uithoorn,52.2453204131327,4.80779441958182,-1,Koningin Máximalaan,30,1421 LC,Uithoorn,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-108501,Ziekenhuis Bernhoven,Ziekenhuis Bernhoven Oss,51.7574107533526,5.52297206725702,-1,Gezondheidslaan,1a,5342 JW,Oss,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-108503,Ziekenhuis Bernhoven,Ziekenhuis Bernhoven Uden,51.6748322943586,5.60184855219613,-1,Nistelrodeseweg,10,5406 PT,Uden,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-108601,Ziekenhuis De Gelderse Vallei,Ziekenhuis De Gelderse Vallei Ede,52.0210837903572,5.64550876896496,-1,Willy Brandtlaan,10,6716 RP,Ede,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-108602,Ziekenhuis De Gelderse Vallei,Ziekenhuis De Gelderse Vallei Polikliniek Barneveld,52.1397277678853,5.59984548251501,-1,Klaverweide,1a,3773 AW,Barneveld,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-108603,Ziekenhuis De Gelderse Vallei,Ziekenhuis De Gelderse Vallei Polikliniek Veenendaal,52.0185496731211,5.54975294985866,-1,Spoorlaan,5,3903 XS,Veenendaal,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-108604,Ziekenhuis De Gelderse Vallei,Ziekenhuis De Gelderse Vallei Polikliniek Wageningen,51.9669006740948,5.66235260384563,-1,Plantsoen,57b,6701 AS,Wageningen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-108701,Ziekenhuis Rivierenland,Ziekenhuis Rivierenland,51.8899833454565,5.41622623583313,-1,Pres. Kennedylaan,1,4002 WP,Tiel,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-108702,Ziekenhuis Rivierenland,Ziekenhuis Rivierenland Barbara Polikliniek Culemborg,51.9588744833887,5.22895731960409,-1,Elisabethdreef,4,4101 KL,Culemborg,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-108703,Ziekenhuis Rivierenland,Ziekenhuis Rivierenland Waterpoort Polikliniek Beneden Leeuwen,51.8815805445397,5.51913525217238,-1,Beatrixstraat,20,6658 EK,Beneden Leeuwen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-108801,ZorgSaam Zeeuws-Vlaanderen,Zorgsaam Zeeuw-Vlaanderen Locatie De Honte,51.3090277933966,3.86125025871109,-1,Wielingenlaan,2,4535 PA,Terneuzen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-108802,ZorgSaam Zeeuws-Vlaanderen,Zorgsaam Zeeuw-Vlaanderen Locatie Antonius,51.3247859317318,3.48163426205206,-1,Pastoor van Genklaan,6,4501 AJ,Oostburg,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-108803,ZorgSaam Zeeuws-Vlaanderen,Zorgsaam Zeeuw-Vlaanderen Locatie Liduina,51.2863750887884,4.04922283685445,-1,Lyceumstraat,20,4561 HV,Hulst,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-108805,ZorgSaam Zeeuws-Vlaanderen,Zorgsaam Zeeuw-Vlaanderen Cardiologie centrum Middelburg,51.4921772884167,3.61759802095778,-1,Buitenruststraat,16,4337 EH,Middelburg,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-109001,Ziekenhuisgroep Twente,Ziekenhuisgroep Twente Locatie Hengelo,52.2638416330889,6.77142107725599,-1,Geerdinksweg,141,7555 DL,Hengelo Ov,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-109002,Ziekenhuisgroep Twente,Ziekenhuisgroep Twente Locatie Almeo,52.3370503654025,6.64219451940869,-1,Zilvermeeuw,1,7609 PP,Almelo,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-109005,Ziekenhuisgroep Twente,Ziekenhuisgroep Twente Buitenpolikliniek Rijssen,52.3013913495377,6.51853916634126,-1,Wijnand Zeeuwtraat,26-101,7462 DE,Rijssen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-109007,Ziekenhuisgroep Twente,Ziekenhuisgroep Twente Buitenpost Ootmarsum,52.4106193821884,6.89859530404136,-1,De Meijer,1,7631 AM,Ootmarsum,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-109008,Ziekenhuisgroep Twente,Ziekenhuisgroep Twente Buitenpost Geesteren,52.4208112217932,6.734896435453,-1,De aanleg,17,7678VZ,Geesteren,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-109201,Zorgpartners Friesland,Medisch Centrum Leeuwarden,53.1903531229813,5.80277725643905,-1,H. Dunantweg,2,8934 AD,Leeuwarden,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-109202,Zorgpartners Friesland,Medisch Centrum Leeuwarden Harlingen,53.1637016524625,5.4372954562201,-1,Achlumerdijk,2,8862 AJ,Harlingen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-109203,Zorgpartners Friesland,De Tjongerschans Polikliniek Steenwijk,52.7900476403216,6.10998505783241,-1,Mr. Zigher ter Steghestraat,9,8331KG,Steenwijk,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-109204,Zorgpartners Friesland,De Tjongerschans Polikliniek Sportstad,52.9575036704879,5.93692440382716,-1,Abe Lenstra Boulevard,21,8448 JA,Heerenveen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-109205,Zorgpartners Friesland,De Tjongerschans Polikliniek Lemmer,52.8461772179416,5.69800361545576,-1,Van Rijgersmapark,1,8531 JA,Lemmer,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-109206,Zorgpartners Friesland,De Tjongerschans Heerenveen,52.9667713121585,5.91846573944367,-1,Thialfweg,44,8441 PW,Heerenveen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-109301,Treant Zorggroep,Ziekehuislocatie Scheper Emmen,52.7843346877321,6.91332955925776,-1,Boermarkeweg,60,7824 AA,Emmen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-109302,Treant Zorggroep,Ziekenhuislocatie Bethesda Hoogeveen,52.7272567499061,6.46102263843069,-1,Dr. G.H. Amshoffweg,1,7909 AA,Hoogeveen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-109303,Treant Zorggroep,Ziekenhuislocatie Refaja Stadskanaal,53.0005707714767,6.93519564625975,-1,Boerhaavestraat,1,9501 HE,Stadskanaal,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-109304,Treant Zorggroep,Buitenpoli Veenkade,53.1009708034753,6.86323438245072,-1,Kaap de Goede Hoop,1,9642 AP,Veendam,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,02/04/2020
-109801,Antoni van Leeuwenhoek,Antoni van Leeuwenhoek,52.3508629608673,4.81843779441175,-1,Plesmanlaan,121,1066 CX,Amsterdam,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,02/04/2020
-109901,Prinses Máxima Centrum voor kinderoncologie,Prinses Máxima Centrum,52.0845753167085,5.1731458642881,-1,Heidelberglaan,25,3584 CS,Utrecht,NL,Netherlands,,,,,Kinderziekenhuis,,,,,,01/01/19,02/04/2020
+id,hospital_name,site_name,lat,lon,geo_qual,street,house_number,postcode,city,cc,country,cap_beds,cap_prac,cap_rooms,emergency,facility_type,public_private,list_specs,tel,email,url,ref_date,pub_date,comments
+100101,Amsterdam UMC,AMC,52.294127658893,4.95808226736153,-1,Meibergdreef,9,1105 AZ,Amsterdam Zuidoost,NL,Netherlands,,,,,Academisch ziekenhuis,,,,,,01/01/19,16/04/2020,
+100102,Amsterdam UMC,Emma Kinderziekenhuis,52.294127658893,4.95808226736153,-1,Meibergdreef,9,1105 AZ,Amsterdam,NL,Netherlands,,,,,Kinderziekenhuis,,,,,,01/01/19,16/04/2020,
+100103,Amsterdam UMC,Vumc,52.3335170128498,4.86535948707326,-1,de Boelelaan,1117,1081 HV,Amsterdam,NL,Netherlands,,,,,Academisch ziekenhuis,,,,,,01/01/19,16/04/2020,
+100201,Maastricht UMC+,Maastricht UMC+,50.8346626630743,5.71350226641577,-1,P. Debijelaan,25,6229 HX,Maastricht,NL,Netherlands,,,,,Academisch ziekenhuis,,,,,,01/01/19,16/04/2020,
+100202,Maastricht UMC+,Medisch centrum Annadal,50.8472740976704,5.66905064066851,-1,Brouwersweg,100,6216 EG,Maastricht,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+100203,Maastricht UMC+,Stadspoli Oost,50.8466835327547,5.70929906747765,-1,Vijverdalseweg,2-4,6224 NB,Maastricht,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+100204,Maastricht UMC+,Stadspoli West,50.8592416657474,5.66763226878035,-1,Clavecymbelstraat,71A-77A,6217 CS,Maastricht,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+100301,Albert Schweitzer Ziekenhuis,Albert Schweitzer Ziekenhuis Dordwijk,51.7919385455141,4.68251773148278,-1,A. Schweitzerplaats," 25",3318 AT,Dordrecht,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+100302,Albert Schweitzer Ziekenhuis,Albert Schweitzer Ziekenhuis Zwijndrecht,51.8270641592495,4.63020914931586,-1,Langeweg,336,3331 LZ,Zwijndrecht,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+100303,Albert Schweitzer Ziekenhuis,Albert Schweitzer Ziekenhuis Sliedrecht,51.8288005484033,4.77712195007627,-1,Stationspark,400,3364 DA,Sliedrecht,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+100306,Albert Schweitzer Ziekenhuis,Albert Schweitzer Ziekenhuis Buitenpoli GOED Ridderkerk,51.8660226942933,4.60305659289931,-1,Jan Luykenstraat,8,2985 BV,Ridderkerk,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+100401,Rijnstate Ziekenhuis,Rijnstate Ziekenhuis,52.0009790188271,5.91019634511386,-1,Wagnerlaan,55,6815 AD,Arnhem,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+100402,Rijnstate Ziekenhuis,Rijnstate Ziekenhuis Zevenaar,51.9418067755618,6.06692513555976,-1,Hunneveldweg,14A,6903 ZN,Zevenaar,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+100403,Rijnstate Ziekenhuis,Rijnstate Polikliniek Arnhem-zuid,51.9479159897816,5.88438542645525,-1,Marga Klompélaan,6,6836 BH,Arnhem,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+100404,Rijnstate Ziekenhuis,Rijnstate Ziekenhuis Velp,51.9862484657851,5.97645177489875,-1,President Kennedylaan,100,6883 AZ,Velp Gld,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+100501,Amphia Ziekenhuis,Amphia Ziekenhuis Breda Molengracht,51.5818587812159,4.79729570071227,-1,Molengracht,21,4818 CK,Breda,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+100502,Amphia Ziekenhuis,Amphia Ziekenhuis Breda Langendijk,51.5748356171275,4.76213051041552,-1,Langendijk,75,4819 EV,Breda,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+100503,Amphia Ziekenhuis,Amphia Ziekenhuis Oosterhout,51.6485552490238,4.86946778944431,-1,Pasteurlaan,9,4901 DH,Oosterhout,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+100504,Amphia Ziekenhuis,Amphia Ziekenhuis Etten-Leur,51.5711086509055,4.66446950170741,-1,Trivium,76,4873 LP,Etten-Leur,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+100601,Antonius Zorggroep,Antonius Ziekenhuis Sneek,53.0346890086692,5.64286705876973,-1,Bolswarderbaan," 1",8601 ZK,Sneek,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+100602,Antonius Zorggroep,Antonius Ziekenhuis Emmeloord,52.7008597899031,5.731088833024,-1,Urkerweg,4,8303 BX,Emmeloord,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+100604,Antonius Zorggroep,Emmeloord Dokter Jansencentrum,52.7008597899031,5.731088833024,-1,Urkerweg,1,8303 BX,Emmeloord,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+100701,Zuyderland Medisch Centrum,Zuyderland Medisch Centrum Heerlen,50.8686489987287,5.97686266409637,-1,H. Dunantstraat,5,6419 PC,Heerlen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+100702,Zuyderland Medisch Centrum,Zuyderland Medisch Centrum Brunssum,50.9421042222857,5.97740145927491,-1,Prins Hendriklaan,376,6443 AE,Brunssum,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+100703,Zuyderland Medisch Centrum,Zuyderland Medisch Centrum Kerkrade,50.8665609247933,6.06123990091914,-1,Wijngracht,45,6461 AL,Kerkrade,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+100704,Zuyderland Medisch Centrum,Zuyderland Medisch Centrum Sittard-Geleen,50.9843213198697,5.84295346298125,-1,Dr. H. van der Hoffplein,1,6162 BG,Sittard-Geleen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+100705,Zuyderland Medisch Centrum,Zuyderland Medisch Centrum Buitenpoli De Egthe,51.1049959914842,5.87428976356163,-1,De Egthe,1,6101 EX,Echt,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+100801,BovenIJ Ziekenhuis,BovenIJ Ziekenhuis,52.4044513282275,4.92221682869633,-1,Statenjachtstraat,1,1034 CS,Amsterdam,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+100901,Canisius-Wilhelmina Ziekenhuis,Canisius-Wilhelmina Ziekenhuis,51.8147186068856,5.82996716089086,-1,Weg door Jonkerbos,100,6532 SZ,Nijmegen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+100902,Canisius-Wilhelmina Ziekenhuis,Canisius-Wilhelmina Ziekenhuis Waalsprong,51.8814754031544,5.84645522682745,-1,Carbatinastraat,3,6515 GM,Nijmegen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+100903,Canisius-Wilhelmina Ziekenhuis,Canisius-Wilhelmina Ziekenhuis Druten,51.8876328498322,5.61638747956099,-1,Kerkeland,3,6651 KN,Druten,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+100905,Canisius-Wilhelmina Ziekenhuis,Canisius-Wilhelmina Polikliniek Jonkerbosch,51.8181660452081,5.83578788853305,-1,Burgemeester Daleslaan,27,6532 CL,Nijmegen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+101001,Catharina Ziekenhuis,Catharina Ziekenhuis,51.4643337223888,5.47080900195615,-1,Michelangelolaan,2,5623 EJ,Eindhoven,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+101301,Alrijne Zorggroep,Alrijne Leiden,52.17384894849,4.48217288568743,-1,Houtlaan,55,2334 CK,Leiden,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+101303,Alrijne Zorggroep,Alrijne Ziekenhuis Buitenlocatie  Katwijk,52.20007712357,4.4056909662,-1,Randweg,47,2225 PJ,Katwijk,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+101304,Alrijne Zorggroep,Alrijne Ziekenhuis Buitenlocatie Sassenheim,52.2297002568729,4.52389756481223,-1,Jan van Brabantweg,33,2171 HE,Sassenheim,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+101305,Alrijne Zorggroep,Alrijne Ziekenhuis Leiderdorp,52.1562762234255,4.54022407072839,-1,Simon Smitweg,1,2353 GA,Leiderdorp,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+101306,Alrijne Zorggroep,Alrijne Ziekenhuis Alphen aan den Rijn,52.1439415201641,4.66260811654516,-1,Metoorlaan,4,2402 WC,Alphen a/d Rijn,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+101401,Diakonessenhuis,Diakonessenhuis Utrecht,52.0822446887749,5.13961736514826,-1,Bosboomstraat,1,3582 KE,Utrecht,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+101402,Diakonessenhuis,Diakonessenhuis Zeist,52.0906069680292,5.26079735319452,-1,Jagersingel,1,3707 JA,Zeist,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+101403,Diakonessenhuis,Diakonessenhuis Buitenpolikliniek Doorn,52.0351588917166,5.3513088403478,-1,Bergweg,2,3941 RB,Doorn,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+101701,Elkerliek Ziekenhuis,Elkerliek Ziekenhuis Helmond,51.4818058498297,5.64434056785101,-1,Wesselmanlaan,25,5707 HA,Helmond,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+101702,Elkerliek Ziekenhuis,Elkerliek Ziekenhuis Deurne,51.4686456333946,5.7906453328946,-1,Dunantweg,16,5751 CB,Deurne,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+101703,Elkerliek Ziekenhuis,Elkerliek Ziekenhuis Gemert,51.5546146443229,5.68565972622946,-1,Julianastraat,2,5421 DB,Gemert,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+101704,Elkerliek Ziekenhuis,Elkerliek Ziekenhuis Polikliniek Asten,51.405272213683,5.75330686077073,-1,Floralaan,30,5721  CV,Asten,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+101801,Erasmus Medisch Centrum,Erasmus Medisch Centrum,51.9096587891515,4.46623395399512,-1,Dr. Molewaterplein,40,3015 GD,Rotterdam,NL,Netherlands,,,,,Academisch ziekenhuis,,,,,,01/01/19,16/04/2020,
+101802,Erasmus Medisch Centrum,Erasmus Medisch Centrum Sophia kinderziekenhuis,51.9122005900314,4.46942303249812,-1,Wytemaweg,80,3015 CN,Rotterdam,NL,Netherlands,,,,,Kinderziekenhuis,,,,,,01/01/19,16/04/2020,
+101803,Erasmus Medisch Centrum,Erasmus Medisch Centrum Kanker Instituut,51.8847766902239,4.50472739059917,-1,Groene hilledijk,301,3075 EA,Rotterdam,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+101804,Admiraal De Ruyter Ziekenhuis,Admiraal De Ruyter Ziekenhuis Goes,51.4862778054271,3.90467080451415,-1,s-Gravenpolderseweg,114,4462 RA,Goes,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+101805,Admiraal De Ruyter Ziekenhuis,Admiraal De Ruyter Ziekenhuis Middelburg Kalverstraat,51.4964763910009,3.61001298621682,-1,Kalverstraat,1,4331 LZ,Middelburg,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+101807,Admiraal De Ruyter Ziekenhuis,Admiraal De Ruyter Ziekenhuis Vlissingen,51.4513683907843,3.56611626549922,-1,Koudekerkseweg,88,4382 EE,Vlissingen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+101808,Admiraal De Ruyter Ziekenhuis,Admiraal De Ruyter Ziekenhuis Zierikzee,51.6565922449283,3.92838030604625,-1,Koning Gustaafweg,2,4301 NP,Zierikzee,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+101901,Flevoziekenhuis,Flevoziekenhuis,52.3698394312418,5.22333906616218,-1,Hospitaalweg,1,1315 RA,Almere,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+101902,Flevoziekenhuis,Flevoland ziekenhuis Buitenpoli Almere Poort,52.3484196051261,5.15250262768298,-1,Beneluxlaan,573-579,"	1363 BJ",Almere,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+102001,Bravis Ziekenhuis,Bravis Ziekenhuis Bergen op Zoom,51.5284468387608,4.44379036589664,-1,Boerhaavelaan,25,4708 AE,Roosendaal,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+102002,Bravis Ziekenhuis,Bravis Ziekenhuis Oudenbosch Medisch Centrum,51.5897440946281,4.52415161633698,-1,West-Vaardeke,11A,4731 MA,Oudenbosch,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+102003,Bravis Ziekenhuis,Bravis Ziekenhuis Polikliniek Etten-Leur,51.5738706137252,4.65187529396726,-1,Schoonhout,215,4872 MC,Etten-Leur,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+102004,Bravis Ziekenhuis,Bravis Ziekenhuis Polikliniek Steenbergen,51.58663883562,4.31999731849861,-1,De Wei,26,4651 EZ,Steenbergen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+102005,Bravis Ziekenhuis,Bravis Ziekenhuis Roosendaal,51.4875939005905,4.31497752198322,-1,Boerhaaveplein,1,4624 VT,Bergen Op Zoom,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+102101,Gelre Ziekenhuizen,Gelre Ziekenhuizen Zutphen,52.1234520220188,6.21723448993993,-1,Den Elterweg,77,7207 AE,Zutphen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+102103,Gelre Ziekenhuizen,Gelre Ziekenhuizen Apeldoorn,52.1817180299437,5.94831376641652,-1,A. Schweitzerlaan,31,7334 DZ,Apeldoorn,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+102104,Gelre Ziekenhuizen,Gelre Ziekenhuizen Polikliniek Lochem,52.1554946798651,6.42300454545159,-1,Zwiepseweg,105,7241 GR,Lochem,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+102105,Gelre Ziekenhuizen,Gelre Ziekenhuizen Polikliniek Epe,52.3492762158615,5.9822219347216,-1,Willem Tellstraat,17,8162 ET,Epe,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+102106,Gelre Ziekenhuizen,Gelre Ziekenhuizen Polikliniek Dieren,52.05134159286,6.09856293526358,-1,Wilhelminaweg,80AA,6951 BR,Dieren,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+102107,Gelre Ziekenhuizen,Gelre Ziekenhuis Polikliniek Doesburg,52.0071883605752,6.1421826510483,-1,De Linie,3b,6982 AZ,Doesburg,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+102301,Groene Hart Ziekenhuis,Groene Hart Ziekenhuis Bleulandlocatie,52.0206926664309,4.70306448050724,-1,Bleulandweg,10,2803 HH,Gouda,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+102303,Groene Hart Ziekenhuis,Groene Hart Ziekenhuis Polikliniek Zuidplas,51.9668374294647,4.61641514175448,-1,Doortocht,40,2914 KA,Nieuwerkerk a/d IJssel,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+102304,Groene Hart Ziekenhuis,Groene Hart Ziekenhuis Polikliniek Schoonhoven,51.9459832515023,4.84685836890613,-1,Oranjeplaats,21,2871 TL,Schoonhoven,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+102305,Groene Hart Ziekenhuis,Groene Hart Ziekenhuis Bodegraven,52.0889895221974,4.75017149764354,-1,Willem de Zwijgerstraat,9,2411 VT,Bodegraven,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+102401,Stichting Reinier Haga Groep,HagaZiekenhuis Leyweg,52.0524779860673,4.26215080325915,-1,Els Borst-Eilersplein,275,2545 AA,s-Gravenhage,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+102402,Stichting Reinier Haga Groep,HagaZiekenhuis Sportlaan,52.0807465741226,4.26202339595592,-1,Sportlaan,600,2566 MJ,s-Gravenhage,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+102403,Stichting Reinier Haga Groep,HagaZiekenhuis Juliana Kinderziekenhuis,52.0671289490983,4.24432413219607,-1,Els Borst-Eilersplein,275,2566 AA,s-Gravenhage,NL,Netherlands,,,,,Kinderziekenhuis,,,,,,01/01/19,16/04/2020,
+102404,Stichting Reinier Haga Groep,HagaZiekenhuis Zorgplein Westland,52.0024279281775,4.15876407277702,-1,Zandeveltplein,3,2692 AH,’s-Gravenzande,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+102405,Stichting Reinier Haga Groep,Reinier de Graaf Diaconessenhuis Voorburg,52.0615736588233,4.35223548082575,-1,Fonteynenburghlaan,5,2275 CX,Voorburg,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+102406,Stichting Reinier Haga Groep,Reinier de Graaf  Ypenburg,52.0517544937685,4.38509210689849,-1,Kiekendiefstraat,17,2496 RP,s-Gravenhage,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+102407,Stichting Reinier Haga Groep,Reinier de Graaf Naaldwijk,51.9910076511932,4.21744971062144,-1,Middelbroekweg,2a,2671 ME,Naaldwijk,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+102408,Stichting Reinier Haga Groep,Reinier de Graaf Gasthuis,51.997557394585,4.33920949817535,-1,Reinier de Graafweg,5,2625 AD,Delft,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+102410,Stichting Reinier Haga Groep,LangeLand Ziekenhuis,52.0688882631086,4.49958184358532,-1,Toneellaan,1,2725 NA,Zoetermeer,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+102412,Stichting Reinier Haga Groep,Langeland Ziekenhuis Huidkliniek en Plastische chirurgie,52.0641650204742,4.49544627829139,-1,Europaweg,151,2711 ER,Zoetermeer,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+102501,Havenpolikliniek,Havenziekenhuis,51.9200129805316,4.49644736200477,-1,Haringvliet,2,3011 TD,Rotterdam,NL,Netherlands,,,,,Havenziekenhuis,,,,,,01/01/19,16/04/2020,
+102503,Havenpolikliniek,Havenziekenhuis Locatie Buitenhaven,51.919437517692,4.49523769167513,-1,Haringvliet,72,3011 TG,Rotterdam,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+102601,IJsselland Ziekenhuis,IJsselland Ziekenhuis,51.938921517338,4.56247515292387,-1,Prins Constantijnweg,2,2906 ZC,Capelle a/d IJssel,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+102602,IJsselland Ziekenhuis,IJsselland Ziekenhuis Buitenpolikliniek Nesselande,51.9841301107823,4.58397525503315,-1,Cypruslaan,410,3059 XA,Rotterdam,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+102603,IJsselland Ziekenhuis,IJsselland Ziekenhuis Buitenpolikliniek Krimpen,51.92008791125,4.60148838453623,-1,Groenendaal,1,2922 CJ,Krimpen a/d Ijssel,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+102801,Ikazia Ziekenhuis,Ikazia Ziekenhuis,51.8855875380115,4.49426752634476,-1,Montessoriweg,1,3083 AN,Rotterdam,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+102802,Ikazia Ziekenhuis,Ikazia Ziekenhuis Buitenpolikliniek Carnisselande,51.848335758598,4.50108745136302,-1,Middeldijkerplein,36,2993 DL,Barendrecht,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+102804,Ikazia Ziekenhuis,Ikazia Ziekenhuis Polikliniek Slikkerveer,51.8785002476141,4.60459647212083,-1,Prinses Margrietstraat,42,2983 EH,Ridderkerk,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+102902,Isala klinieken,Isala Zwolle,52.5137561621386,6.12515328630083,-1,Dokter van Heesweg,2,8025 AB,Zwolle,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+102903,Isala klinieken,Isala Polikliniek Kampen,52.5515383977514,5.92076857777129,-1,Engelenbergplantsoen,7,8266 AB,Kampen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+102904,Isala klinieken,Isala Polikliniek Heerde,52.4298917393382,6.06502802059777,-1,Groteweg,5,8191 JS,Wapenveld,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+102905,Isala klinieken,Isala Diaconessenhuis Meppel,52.6896073764777,6.2148239223606,-1,Hoogeveenseweg,38,7943 KA,Meppel,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+102907,Isala klinieken,Isala Diaconessenhuis Steenwijk,52.7934112627188,6.12133769891549,-1,Sluisweg,2,8332 JC,Steenwijk,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103004,Jeroen Bosch Ziekenhuis,Jeroen Bosch Ziekenhuis Boxtel,51.593513921035,5.32523349094735,-1,Liduinahof,35,5281 AD,Boxtel,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103005,Jeroen Bosch Ziekenhuis,Jeroen Bosch Ziekenhuis Zaltbommel,51.8134348321143,5.25050958502453,-1,Kerkstraat,2,5301 EH,Zaltbommel,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103006,Jeroen Bosch Ziekenhuis,Jeroen Bosch Ziekenhuis Rosmalen,51.7116102331119,5.36395029136052,-1,De Hoef,90,5242 CN,Rosmalen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103007,Jeroen Bosch Ziekenhuis,Jeroen Bosch Ziekenhuis 's-Hertogenbosch,51.6845861152513,5.2767392369813,-1,Henri Dunantstraat,1,5223 GZ,s-Hertogenbosch,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+103009,Jeroen Bosch Ziekenhuis,Sport Medisch Centrum Jeroen Bosch Ziekenhuis,51.7226550944925,5.31488277637024,-1,Marathonloop,9,5235 AA,s-Hertogenbosch,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103010,Jeroen Bosch Ziekenhuis,Jeoren Bosch Ziekenhuis Drunen,51.690237422551,5.14402044893506,-1,Tinie de Munnikstraat,17,5151 VW,Drunen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103011,Jeroen Bosch Ziekenhuis,Jeroen Bosch Ziekenhuis Gamerschestraat,51.81334867206,5.24605783792244,-1,Gamerschestraat,32a,5301 AS,Zaltbommel,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103101,Spaarne Gasthuis,Spaarne Gasthuis locatie Haarlem-Zuid,52.3673843276697,4.65082659608409,-1,Boerhaavelaan,22,2035 RC,Haarlem,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+103102,Spaarne Gasthuis,Spaarne Gasthuis locatie Haarlem-Noord,52.4227956452814,4.64958195831807,-1,Vondelweg,999,2026 BW,Haarlem,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+103103,Spaarne Gasthuis,Spaarne Gasthuis Hoofddorp,52.3242518163467,4.65381548271983,-1,Spaarnepoort,1,2134 TM,Hoofddorp,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+103104,Spaarne Gasthuis,Spaarne Gasthuis  Heemstede,52.3552487927512,4.6333985433339,-1,Händellaan,2,2102 CW,Heemstede,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103105,Spaarne Gasthuis,Spaarne ziekenhuis Nieuw Vennep,52.27282587084,4.62872989861052,-1,Lucas Bolsstraat,10,2152 CZ,Nieuw Vennep,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103106,Spaarne Gasthuis,Spaarne Ziekenhuis Polikliniek Hillegom,52.2850259337894,4.57902902912026,-1,Abellalaan,1,2182 TX,Hillegom,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103107,Spaarne Gasthuis,Spaarne Gasthuis  Velsen-Noord,52.471062712092,4.645715777311,-1,Wijkstraatweg,160,1951 EK,Velsen-Noord,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103201,Laurentius Ziekenhuis,Laurentius Ziekenhuis,51.1910472529456,5.99789586569354,-1,Mgr. Driessenstraat,6,6043 CV,Roermond,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+103202,Laurentius Ziekenhuis,Laurentius Buitenpolikliniek Echt,51.1175755016978,5.87760791088159,-1,Nobelweg,10,6101 XB,Echt,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103301,Leids Universitair Medisch Centrum,Leids Universitair Medisch Centrum,52.1677096948457,4.47747365158566,-1,Albinusdreef,2,2333 ZA,Leiden,NL,Netherlands,,,,,Academisch ziekenhuis,,,,,,01/01/19,16/04/2020,
+103302,Leids Universitair Medisch Centrum,Willem-Alexander Kinderziekenhuis,52.1677096948457,4.47747365158566,-1,Albinusdreef,2,2333 ZA,Leiden,NL,Netherlands,,,,,Kinderziekenhuis,,,,,,01/01/19,16/04/2020,
+103401,Martini Ziekenhuis,Martini Ziekenhuis van Swieten,53.1916644201023,6.55175819930606,-1,Van Swietenlaan,1,9728 NT,Groningen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+103501,Máxima Medisch Centrum,Máxima Medisch Centrum Veldhoven,51.4059689456898,5.41902031235405,-1,De Run,4600,5504 DB,Veldhoven,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+103502,Máxima Medisch Centrum,Máxima Medisch Centrum Eindhoven,51.4556097573196,5.48838898939342,-1,Ds. Th. Fliednerstraat,1,5631 BM,Eindhoven,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+103602,Meander Medisch Centrum,Meander Medisch Centrum Baarn,52.2148095406325,5.27699450847979,-1,Molenweg,2,3743 CM,Baarn,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+103604,Meander Medisch Centrum,Meander Medisch Centrum Amersfoort,52.1710797503703,5.37046626803297,-1,Maatweg,3,3813 TZ,Amersfoort,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+103606,Meander Medisch Centrum,"Meander Medisch Centrum de Mulderij ",52.131445737127,5.4287541967322,-1,De Mulderij,2,3831 NV,Leusden,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103607,Meander Medisch Centrum,Meander Medisch Centrum Nijkerk,52.2239291441757,5.49051326921006,-1,Oranjelaan,83-85,3862 CX,Nijkerk,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103608,Meander Medisch Centrum,Meander Medisch Centrum Barneveld,52.12662857954,5.58114928135249,-1,Nederwoudse weg,,3772 TD,Barneveld,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103609,Meander Medisch Centrum,Meander Medisch Centrum Bunschoten,52.2441063766972,5.37346993069828,-1,Chopinstraat,2D,3752 HR,Bunschoten-Spakenburg,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103701,Noodwest Ziekenhuisgroep,Noordwest Ziekenhuisgroep  Alkmaar,52.6267443462011,4.73612706300838,-1,Wilhelminalaan,12,1815 JD,Alkmaar,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+103702,Noodwest Ziekenhuisgroep,Noordwest Ziekenhuisgroep  Den Helder,52.9582374148449,4.74633050170215,-1,Huisduinerweg,3,1782 GZ,Den Helder,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+103703,Noodwest Ziekenhuisgroep,Noordwest Ziekenhuisgroep  Schagen,52.7834853641488,4.80859149343264,-1,Kaagweg,25,1741 LC,Schagen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103704,Noodwest Ziekenhuisgroep,Noordwest Ziekenhuisgroep  Polikliniek Texel,53.0496249364296,4.79255532052513,-1,Pontweg,106,1791 LB,Den Burg,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103705,Noodwest Ziekenhuisgroep,Noordwest Ziekenhuisgroep  Heerhugowaard,52.669681240093,4.82329162542588,-1,Stationsplein,49,1703 WD,Heerhugowaard,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103706,Noodwest Ziekenhuisgroep,Noordwest Ziekenhuisgroep  Limmen,52.5731148436582,4.69912615143503,-1,Zonnedauw,1906,1906 HA,Limmen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103801,Haaglanden Medisch Centrum,HMC Antoniushove,52.0926661605166,4.3834894525524,-1,Burgemeester Banninglaan,1,2262 BA,Leidschendam,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+103802,Haaglanden Medisch Centrum,HMC Westeinde,52.0739046488319,4.30016597905874,-1,Lijnbaan,32,2512 VA,s-Gravenhage,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+103805,Haaglanden Medisch Centrum,HMC Bronovo,52.102096204293,4.31619328745056,-1,Bronovolaan,5,2597 AX,s-Gravenhage,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+103808,Haaglanden Medisch Centrum,HMC  Gezondheidscentrum Wassenaar,52.1450089271788,4.40295711051004,-1,Hofcampweg,65,2241 KE,Wassenaar,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103811,Haaglanden Medisch Centrum,HMC Buitenpolikliniek Savallelaan,52.0795062682838,4.35327946986469,-1,Savallelaan,2,2273 JX,Voorburg,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103812,Haaglanden Medisch Centrum,HMC Sport Medisch Centrum,52.0558681719974,4.28993052576785,-1,Mr. P. Droogleever Fortuynweg,22,2533 SR,s-Gravenhage,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+103903,Maasstad ziekenhuis,Maasstad Ziekenhuis,51.8794620292125,4.53608654332678,-1,Maasstadweg,21,3079 DZ,Rotterdam,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+104001,Medisch Spectrum Twente,Medisch Spectrum Twente Ariënsplein,52.2150095789065,6.8886891344327,-1,Haaksbergerstraat,55,7513 ER,Enschede,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+104002,Medisch Spectrum Twente,Medisch Spectrum Twente Koningsplein,52.2172719314424,6.89456092825443,-1,Koningsplein,1,7512 KZ,Enschede,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+104003,Medisch Spectrum Twente,Medisch Spectrum Twente Oldenzaal,52.307572942637,6.93106066505734,-1,Pr. Bernhardstraat,17,7573 AM,Oldenzaal,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+104004,Medisch Spectrum Twente,Medisch Spectrum Twente Buitenpolikliniek Haaksbergen,52.1608420406479,6.75091816141793,-1,Wiedenbroeksingel,4,7481 BT,Haaksbergen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+104602,Pantein,Maasziekenhuis Pantein,51.6632123563463,5.94071749142032,-1,Dokter Kopstraat,11,5835 DV,Beugen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+105001,Rivas Zorggroep,Rivas Zorggroep Beatrixziekenhuis,51.8386898567604,4.95836371622344,-1,Banneweg,57,4204 AA,Gorinchem,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+105002,Rivas Zorggroep,Rivas Zorggroep Lingepolikliniek,51.8912261257885,5.1069958158624,-1,Lingesteynplantsoen,3,4141 GH,Leerdam,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+105101,Rode Kruis Ziekenhuis,Rode Kruis Ziekenhuis Beverwijk,52.4800014437409,4.64939316131901,-1,Vondellaan,13,1942 LE,Beverwijk,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+105201,Spijkenisse Medisch Centrum,Spijkenisse Medisch Centrum,51.8467911621576,4.33669666622922,-1,Ruwaard van Puttenweg,500,3201 GZ,Spijkenisse,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+105202,Spijkenisse Medisch Centrum,Spijkenisse Medisch Centrum Buitenpoli Hoogvliet,51.870688287027,4.35340453413149,-1,Oude Wal,24L,3193 EN,Hoogvliet,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+105203,Spijkenisse Medisch Centrum,Spijkenisse Medisch Centrum Buitenpoli Rozenburg,51.9011418997738,4.25575315592357,-1,Blankenburg,6,3181 BC,Rozenburg,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+105301,Saxenburgh Groep,Saxenburgh Groep Ziekenhuis Röpcke Zweers,52.5705948929088,6.63792318083927,-1,Jan Weitkamplaan,4a,7772 SE,Hardenberg,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+105303,Saxenburgh Groep,Saxenburgh Groep Polikliniek Ommen,52.5191380134313,6.42856549076457,-1,Hessel Mulertstraat,22,7731 CL,Ommen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+105305,Saxenburgh Groep,Saxenburgh Groep Polikliniek Westhaar,52.4545970824911,6.6229445383463,-1,Beeklaan,1,7676 BC,Westerhaar,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+105401,Santiz,Slingeland Ziekenhuis,51.9751004729931,6.28644567948041,-1,Kruisbergseweg,25,7009 BL,Doetinchem,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+105402,Santiz,Slingeland Ziekenhuis Locatie Gezellenlaan,51.95358819317,6.30190071595092,-1,Gezellenlaan,10,7005 AZ,Doetiechem,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+105404,Santiz,Streekziekenhuis Koningin Beatrix,51.9787479261187,6.70124135083323,-1,Beatrixpark,1,7101 BN,Winterswijk,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+105407,Santiz,Streekziekenhuis Koningin Beatrix Buitenpoli Eibergen,52.0998406913897,6.65108686026869,-1,J W Hagemanstraat,46-2,7151 AH,Eibergen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+105701,St. Anna Zorggroep,St. Anna Ziekenhuis Geldrop,51.4198606028669,5.55853786228254,-1,Bogardeind,2,5664 EH,Geldrop,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+105702,St. Anna Zorggroep,St. Anna Ziekenhuis Eindhoven,51.4165903848235,5.4768020168277,-1,Antoon Coolenlaan,1-03,5644 RX,Eindhoven,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+105801,St. Antonius Ziekenhuis,St. Antonius Ziekenhuis Nieuwegein,52.0251572202684,5.08061733934817,-1,Koekoekslaan,1,3435 CM,Nieuwegein,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+105804,St. Antonius Ziekenhuis,St. Antonius Ziekenhuis Polikliniek Houten,52.0251708546006,5.17697011678428,-1,Hofspoor,2,3994 VT,Houten,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+105806,St. Antonius Ziekenhuis,St. Antonius Ziekenhuis Utrecht,52.1037220736632,5.05720714935115,-1,Soestwetering,1,3543 AZ,Utrecht,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+105807,St. Antonius Ziekenhuis,St. Antonius Ziekenhuis Spatadercentrum,52.0828566422463,5.01938571550518,-1,Van Lawick van Pabstlaan,12,3453 RB,Utrecht,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+105808,St. Antonius Ziekenhuis,St. Antonius Ziekenhuis Polikliniek Overvecht,52.1148981009565,5.12296836052599,-1,Neckardreef,6,3562 CN,Utrecht,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+105809,St. Antonius Ziekenhuis,St. Antonius Ziekenhuis Woerden,52.0804046629203,4.89432556710744,-1,Polanerbaan,2,3447 GN,Woerden,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+105810,St. Antonius Ziekenhuis,St. Antonius Ziekenhuis Polikliniek Mijdrecht,52.2051836378836,4.86241527939824,-1,Hoofdweg,1,3641 PN,Mijdrecht,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+105812,St. Antonius Ziekenhuis,St. Antonius Ziekenhuis Dialysecentrum Tiel,51.8899833454565,5.41622623583313,-1,President Kennedylaan,1,4201 WT,Tiel,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+106101,St. Jans Gasthuis,St. Jans Gasthuis,51.2538599025033,5.71261786418179,-1,Vogelsbleek,5,6001 BE,Weert,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+106102,St. Jans Gasthuis,St. Jans Gasthuis Buitenpoli Budel,51.2612574123881,5.56245649979376,-1,Grensweg,1,6021 JW,Budel,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+106201,Ziekenhuis St. Jansdal,Ziekenhuis St. Jansdal,52.3449734764729,5.6143447327342,-1,Weth. Jansenlaan,90,3844 DG,Harderwijk,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+106202,Ziekenhuis St. Jansdal,Ziekenhuis St. Jansdal Polikliniek Dronten,52.5382815975137,5.70225782354754,-1,Het Zwarte Water,77-83,8253 PD,Dronten,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+106203,Ziekenhuis St. Jansdal,Ziekenhuis St. Jansdal Polikliniek Nijkerk,52.2102347602697,5.46277102560549,-1,Henri Nouwenstraat,18,3863 HV,Nijkerk,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+106204,Ziekenhuis St. Jansdal,Ziekenhuis St. Jansdal Polikliniek Putten,52.2573910096851,5.608097268628,-1,Klaas Frisohof,20,3881 SZ,Putten,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+106206,Ziekenhuis St. Jansdal,MC Ziekenhuis St. Jansdal Lelystad,52.5043077504485,5.47697170137552,-1,Ziekenhuisweg,100,8233 AA,Lelystad,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+106301,Onze Lieve Vrouwe Gasthuis,Onze Lieve Vrouwe Gasthuis locatie Oost,52.3599373054595,4.91588642113367,-1,Oosterpark,9,1091 AC,Amsterdam,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+106302,Onze Lieve Vrouwe Gasthuis,Onze Lieve Vrouwe Gasthuis Spuistraat,52.3709287825245,4.88941212564865,-1,Spuistraat,239A,1012 VP,Amsterdam,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+106303,Onze Lieve Vrouwe Gasthuis,Onze Lieve Vrouwe Gasthuis IJburg,52.3576171218287,4.99161273510584,-1,IJburglaan,727,1087 CH,Amsterdam,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+106304,Onze Lieve Vrouwe Gasthuis,Onze Lieve Vrouwe Gasthuis locatie West,52.3715108937553,4.83811408663427,-1,Jan Tooropstraat,164,1061 AE,Amsterdam,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+106601,Nij Smellinghe,Nij Smellinghe,53.0998559575906,6.11082649101664,-1,Compagnonsplein,1,9202 NN,Drachten,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+106702,Deventer Ziekenhuis,Deventer Ziekenhuisgroep,52.2611442165818,6.19245497636492,-1,Nico Bolkesteinlaan,75,7416 SE,Deventer,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+106703,Deventer Ziekenhuis,Deventer Ziekenhuis Polikliniek Raalte,52.3997240277929,6.27267416476056,-1,Vrieswijk,6b,8103 PB,Raalte,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+106704,Deventer Ziekenhuis,Deventer ZiekenhuisPolikliniek Rijssen,52.3013913495377,6.51853916634126,-1,Wijnand Zeeuwstraat,26-101,7462 DE,Rijssen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+106801,Het Van Weel-Bethesda Ziekenhuis,Het Van Weel-Bethesda Polikliniek Hellevoetsluis,51.8327512213984,4.14872454752598,-1,Vliet,4,3224 HE,Hellevoetsluis,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+106802,Het Van Weel-Bethesda Ziekenhuis,Het Van Weel-Bethesda Dirksland,51.7495655307043,4.10125857202621,-1,Stationsweg,22,3247 BW,Dirksland,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+106803,Het Van Weel-Bethesda Ziekenhuis,Het Van Weel-Bethesda Polikliniek Brielle,51.8971565260872,4.17346850061822,-1,Amer,21,3232 HA,Brielle,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+106901,Tergooiziekenhuizen,Tergooiziekenhuizen Hilversum,52.2168826040226,5.20244969876349,-1,van Riebeeckweg,212,1213 XZ,Hilversum,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+106902,Tergooiziekenhuizen,Tergooiziekenhuizen Blaricum,52.2676359540496,5.20776199062079,-1,Rijksstraatweg,1,1261 AN,Blaricum,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+106903,Tergooiziekenhuizen,Tergooiziekenhuizen Buitenpoli Weesp,52.3118819486853,5.04765602072754,-1,Korte Muiderweg 2A,,1382 LR,Weesp,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+107301,Elisabeth-TweeSteden,ETZ Tilburg,51.5766616015023,5.06392964327763,-1,Dr. Deelenlaan,5,5042 AD,Tilburg,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+107302,Elisabeth-TweeSteden,ETZ Waalwijk,51.6866697721091,5.05312272234981,-1,Kasteellaan,2,5141 BM,Waalwijk,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+107303,Elisabeth-TweeSteden,ETZ Oisterwijk,51.5725315293744,5.18123188135769,-1,Moergestelseweg,32G,5062 JW,Oisterwijk,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+107304,Elisabeth-TweeSteden,ETZ Elisabeth,51.539900814354,5.10308105358352,-1,Hilvarenbeekseweg,60,5022 GC,Tilburg,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+107401,Universitair Medisch Centrum Groningen,Universitair Medisch Centrum Groningen,53.2210623366902,6.57706084648936,-1,Hanzeplein,1,9713 GZ,Groningen,NL,Netherlands,,,,,Academisch ziekenhuis,,,,,,01/01/19,16/04/2020,
+107402,Universitair Medisch Centrum Groningen,Universitair Medisch Centrum Groningen Beatrixoord,53.1826457509133,6.5949882116405,-1,Dilgtweg,5,9751 ND,Haren,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+107404,Ommelander Ziekenhuis Groep,Ommelander Ziekenhuis Groep Ziekenhuis Scheemda,53.1806620087028,6.95850866209852,-1,Pastorieweg,1,9679 BJ,Scheemda,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+107405,Ommelander Ziekenhuis Groep,Ommelander Ziekenhuis Groep Servicepunt  Veendam,53.1009708034753,6.86323438245072,-1,Kaap de Goede Hoop,1,9642 AP,Veendam,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+107406,Ommelander Ziekenhuis Groep,Ommelander Ziekenhuis Groep Servicepunt Delfzijl,53.3306700997569,6.92530634895373,-1,Schoolstraat,7,9934 CD,Delfzijl,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+107501,Universitair Medisch Centrum St. Radboud,Universitair Medisch Centrum St. Radboud,51.82365966798,5.86274966514735,-1,G. Grooteplein-Zuid,10,6525 GA,Nijmegen,NL,Netherlands,,,,,Academisch ziekenhuis,,,,,,01/01/19,16/04/2020,
+107502,Universitair Medisch Centrum St. Radboud,Radboud UMC Amalia kinderziekenhuis,51.82365966798,5.86274966514735,-1,Geert Grooteplein-Zuid,10,6525 GA,Nijmegen,NL,Netherlands,,,,,Kinderziekenhuis,,,,,,01/01/19,16/04/2020,
+107601,Universitair Medisch Centrum Utrecht,Universitair Medisch Centrum Utrecht,52.0860518874474,5.17958759538107,-1,Heidelberglaan,100,3584 CX,Utrecht,NL,Netherlands,,,,,Academisch ziekenhuis,,,,,,01/01/19,16/04/2020,
+107602,Universitair Medisch Centrum Utrecht,Universitair Medisch Centrum Utrecht Wilhelmina Kinderziekenhuis,52.0886561858428,5.17832069725358,-1,Lundlaan,6,3584 EA,Utrecht,NL,Netherlands,,,,,Kinderziekenhuis,,,,,,01/01/19,16/04/2020,
+107701,VieCuri Medisch Centrum,VieCuri Medisch Centrum Venlo,51.360465794903,6.15934843342247,-1,Tegelseweg,210,5912 BL,Venlo,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+107702,VieCuri Medisch Centrum,VieCuri Medisch Centrum Venray,51.526720574029,5.964358619763,-1,Merseloseweg,130,5801CE,Venray,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+107703,VieCuri Medisch Centrum,VieCuri Medisch Centrum Regiopoli Horst,51.4461254337563,6.0476040386732,-1,Westsingel,100,5961 DH,Horst,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+107704,VieCuri Medisch Centrum,VieCuri Medisch Centrum Regiopoli Panningen,51.3284820745281,5.96934278348586,-1,John F. Kennedylaan,321,5981 WZ,Panningen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+107705,VieCuri Medisch Centrum,VieCuri Medisch Centrum Regiopoli Reuver,51.2823461757582,6.08161753377756,-1,Broeklaan,4,5953 NB,Reuver,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+107801,Franciscus Gasthuis & Vlietland Groep,Franciscus Vlietland  Schiedam,51.9226229545058,4.37994822501664,-1,Vlietlandplein,2,3118 JH,Schiedam,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+107802,Franciscus Gasthuis & Vlietland Groep,Franciscus Gasthuis Locatie Het Oogziekenhuis,51.9152137256744,4.48008855178362,-1,Schiedamse Vest,180,3011 BH,Rotterdam,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+107803,Franciscus Gasthuis & Vlietland Groep,Franciscus Maassluis,51.9297536381909,4.24364747284127,-1,De Vloot,206,3144 PK,Maassluis,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+107804,Franciscus Gasthuis & Vlietland Groep,Franciscus Berkel,51.996624993653,4.47436481747524,-1,Boerhaavestraat,19,2652 EP,Berkel Rodenrijs,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+107805,Franciscus Gasthuis & Vlietland Groep,Franciscus Gasthuis,51.9452300355169,4.46429731177486,-1,Kleiweg,500,3045 PM,Rotterdam,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+107807,Franciscus Gasthuis & Vlietland Groep,Franciscus  Haven,51.9200129805316,4.49644736200477,-1,Haringvliet,2,3011 TF,Rotterdam,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+108001,Dijklander Ziekenhuis,Waterlandziekenhuis,52.5006707133648,4.9626462701274,-1,Waterlandlaan,250,1441 RN,Purmerend,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+108002,Dijklander Ziekenhuis,Waterlandziekenhuis Behandelcentrum Waterland-Oost,52.4931771128735,5.05642415838057,-1,Heideweg,1b,1132 DA,Volendam,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+108003,Dijklander Ziekenhuis,Westfries Gasthuis,52.6480451397384,5.05317719287213,-1,Fr. Maelsonstraat,3,1624 NP,Hoorn Nh,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+108004,Dijklander Ziekenhuis,Westfries Gasthuis Enkhuizen,52.7035753873478,5.28188189452002,-1,Molenweg,9b,1601 SR,Enkhuizen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+108201,Wilhelmina Ziekenhuis Assen,Wilhelmina Ziekenhuis Assen,52.984524044993,6.56511007914358,-1,Europaweg-Zuid,1,9401 RK,Assen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+108202,Wilhelmina Ziekenhuis Assen,Het Medisch Centrum Wilhelmina,53.012943423782,6.57122918798054,-1,Borgstee,17,9403 TS,Assen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+108301,Zaans Medisch Centrum,Zaans Medisch Centrum,52.4533164689792,4.82655127202979,-1,Koningin Julianaplein,58,1502 DV,Zaandam,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+108302,Zaans Medisch Centrum,Zaans Medisch Centrum Polikliniek Saendelft,52.4886765033122,4.75223711560051,-1,Kaaikhof,69,1567 JP,Assendelft,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+108401,Ziekenhuis Amstelland,Ziekenhuis Amstelland,52.2943921119536,4.86924890364837,-1,Laan van de Helende Meesters,8,1186 AM,Amstelveen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+108402,Ziekenhuis Amstelland,Ziekenhuis Amstelland Buitenpolikliniek Uithoorn,52.2453204131327,4.80779441958182,-1,Koningin Máximalaan,30,1421 LC,Uithoorn,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+108501,Ziekenhuis Bernhoven,Ziekenhuis Bernhoven Oss,51.7574107533526,5.52297206725702,-1,Gezondheidslaan,1a,5342 JW,Oss,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+108503,Ziekenhuis Bernhoven,Ziekenhuis Bernhoven Uden,51.6748322943586,5.60184855219613,-1,Nistelrodeseweg,10,5406 PT,Uden,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+108601,Ziekenhuis De Gelderse Vallei,Ziekenhuis De Gelderse Vallei Ede,52.0210837903572,5.64550876896496,-1,Willy Brandtlaan,10,6716 RP,Ede,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+108602,Ziekenhuis De Gelderse Vallei,Ziekenhuis De Gelderse Vallei Polikliniek Barneveld,52.1397277678853,5.59984548251501,-1,Klaverweide,1a,3773 AW,Barneveld,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+108603,Ziekenhuis De Gelderse Vallei,Ziekenhuis De Gelderse Vallei Polikliniek Veenendaal,52.0185496731211,5.54975294985866,-1,Spoorlaan,5,3903 XS,Veenendaal,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+108604,Ziekenhuis De Gelderse Vallei,Ziekenhuis De Gelderse Vallei Polikliniek Wageningen,51.9669006740948,5.66235260384563,-1,Plantsoen,57b,6701 AS,Wageningen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+108701,Ziekenhuis Rivierenland,Ziekenhuis Rivierenland,51.8899833454565,5.41622623583313,-1,Pres. Kennedylaan,1,4002 WP,Tiel,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+108702,Ziekenhuis Rivierenland,Ziekenhuis Rivierenland Barbara Polikliniek Culemborg,51.9588744833887,5.22895731960409,-1,Elisabethdreef,4,4101 KL,Culemborg,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+108703,Ziekenhuis Rivierenland,Ziekenhuis Rivierenland Waterpoort Polikliniek Beneden Leeuwen,51.8815805445397,5.51913525217238,-1,Beatrixstraat,20,6658 EK,Beneden Leeuwen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+108801,ZorgSaam Zeeuws-Vlaanderen,Zorgsaam Zeeuw-Vlaanderen Locatie De Honte,51.3090277933966,3.86125025871109,-1,Wielingenlaan,2,4535 PA,Terneuzen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+108802,ZorgSaam Zeeuws-Vlaanderen,Zorgsaam Zeeuw-Vlaanderen Locatie Antonius,51.3247859317318,3.48163426205206,-1,Pastoor van Genklaan,6,4501 AJ,Oostburg,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+108803,ZorgSaam Zeeuws-Vlaanderen,Zorgsaam Zeeuw-Vlaanderen Locatie Liduina,51.2863750887884,4.04922283685445,-1,Lyceumstraat,20,4561 HV,Hulst,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+108805,ZorgSaam Zeeuws-Vlaanderen,Zorgsaam Zeeuw-Vlaanderen Cardiologie centrum Middelburg,51.4921772884167,3.61759802095778,-1,Buitenruststraat,16,4337 EH,Middelburg,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+109001,Ziekenhuisgroep Twente,Ziekenhuisgroep Twente Locatie Hengelo,52.2638416330889,6.77142107725599,-1,Geerdinksweg,141,7555 DL,Hengelo Ov,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+109002,Ziekenhuisgroep Twente,Ziekenhuisgroep Twente Locatie Almeo,52.3370503654025,6.64219451940869,-1,Zilvermeeuw,1,7609 PP,Almelo,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+109005,Ziekenhuisgroep Twente,Ziekenhuisgroep Twente Buitenpolikliniek Rijssen,52.3013913495377,6.51853916634126,-1,Wijnand Zeeuwtraat,26-101,7462 DE,Rijssen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+109007,Ziekenhuisgroep Twente,Ziekenhuisgroep Twente Buitenpost Ootmarsum,52.4106193821884,6.89859530404136,-1,De Meijer,1,7631 AM,Ootmarsum,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+109008,Ziekenhuisgroep Twente,Ziekenhuisgroep Twente Buitenpost Geesteren,52.4208112217932,6.734896435453,-1,De aanleg,17,7678VZ,Geesteren,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+109201,Zorgpartners Friesland,Medisch Centrum Leeuwarden,53.1903531229813,5.80277725643905,-1,H. Dunantweg,2,8934 AD,Leeuwarden,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+109202,Zorgpartners Friesland,Medisch Centrum Leeuwarden Harlingen,53.1637016524625,5.4372954562201,-1,Achlumerdijk,2,8862 AJ,Harlingen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+109203,Zorgpartners Friesland,De Tjongerschans Polikliniek Steenwijk,52.7900476403216,6.10998505783241,-1,Mr. Zigher ter Steghestraat,9,8331KG,Steenwijk,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+109204,Zorgpartners Friesland,De Tjongerschans Polikliniek Sportstad,52.9575036704879,5.93692440382716,-1,Abe Lenstra Boulevard,21,8448 JA,Heerenveen,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+109205,Zorgpartners Friesland,De Tjongerschans Polikliniek Lemmer,52.8461772179416,5.69800361545576,-1,Van Rijgersmapark,1,8531 JA,Lemmer,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+109206,Zorgpartners Friesland,De Tjongerschans Heerenveen,52.9667713121585,5.91846573944367,-1,Thialfweg,44,8441 PW,Heerenveen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+109301,Treant Zorggroep,Ziekehuislocatie Scheper Emmen,52.7843346877321,6.91332955925776,-1,Boermarkeweg,60,7824 AA,Emmen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+109302,Treant Zorggroep,Ziekenhuislocatie Bethesda Hoogeveen,52.7272567499061,6.46102263843069,-1,Dr. G.H. Amshoffweg,1,7909 AA,Hoogeveen,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+109303,Treant Zorggroep,Ziekenhuislocatie Refaja Stadskanaal,53.0005707714767,6.93519564625975,-1,Boerhaavestraat,1,9501 HE,Stadskanaal,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+109304,Treant Zorggroep,Buitenpoli Veenkade,53.1009708034753,6.86323438245072,-1,Kaap de Goede Hoop,1,9642 AP,Veendam,NL,Netherlands,,,,,Buitenpolikliniek,,,,,,01/01/19,16/04/2020,
+109801,Antoni van Leeuwenhoek,Antoni van Leeuwenhoek,52.3508629608673,4.81843779441175,-1,Plesmanlaan,121,1066 CX,Amsterdam,NL,Netherlands,,,,,Algemeen ziekenhuis,,,,,,01/01/19,16/04/2020,
+109901,Prinses Máxima Centrum voor kinderoncologie,Prinses Máxima Centrum,52.0845753167085,5.1731458642881,-1,Heidelberglaan,25,3584 CS,Utrecht,NL,Netherlands,,,,,Kinderziekenhuis,,,,,,01/01/19,16/04/2020,
