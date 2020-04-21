@@ -1,6 +1,0 @@
-geojson
-shapely
-pyproj
-geopy
-folium
-googletrans
