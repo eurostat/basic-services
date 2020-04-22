@@ -20,8 +20,8 @@ Dumb module implementing integration of CZ data on health care.
 
 CC              = 'CZ'
 
-# METADATA will be loaded from the CZhcs.json metadata file
-#METADATA        =  { 'country':     {'code': CC, 'name': 'Czech Republic'},
+# METADATNAT will be loaded from the CZhcs.json metadata file
+#METADATNAT        =  { 'country':     {'code': CC, 'name': 'Czech Republic'},
 #                     'lang':        {'code': 'cs', 'name': 'czech'}, 
 #                     'proj':        None,
 #                     'file':        'export-2020-02.csv',

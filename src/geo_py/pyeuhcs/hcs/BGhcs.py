@@ -22,10 +22,6 @@ Module implementing integration of BG data on health care.
 import re
 # from collections import Mapping, Sequence
 
-from pyhcs import PACKNAME, BASENAME, COUNTRIES#analysis:ignore
-from pyhcs.config import OCONFIGNAME#analysis:ignore
-from pyhcs.base import IMETANAME, MetaHCS, hcsFactory#analysis:ignore
-
 import numpy as np
 import pandas as pd
 
@@ -34,9 +30,9 @@ import pandas as pd
     
 CC              = 'BG'
 
-# METADATA : will be read from the BGhcs.json file
+# METADATNAT : will be read from the BGhcs.json file
 
-#METADATA        =  { 'country':     {'code': 'BG', 'name': 'Bulgaria'},
+#METADATNAT        =  { 'country':     {'code': 'BG', 'name': 'Bulgaria'},
 #                     'lang':        {'code': 'bg', 'name': 'bulgarian'}, 
 #                     'proj':        None,
 #                     'file':        'HE_HOSP_12_13_EN.xls',
@@ -118,11 +114,11 @@ def prepare_data(self):
 
 #def harmoniseBG(metadata, **kwargs):
 #    try:
-#        assert isinstance(metadata,(MetaHCS,Mapping))  
+#        assert isinstance(metadata,(MetaDatNat,Mapping))  
 #    except:
 #        raise TypeError('wrong input metadata')
 #    try:
-#        BGHCS = hcsFactory(metadata, **kwargs)
+#        BGHCS = facilityFactory(facility='HCS', meta=metadata, **kwargs)
 #    except:
 #        raise IOError('impossible create BG country class')
 #    else:
@@ -132,7 +128,7 @@ def prepare_data(self):
 #    except:
 #        raise IOError('impossible create specific country instance')
 #    opt_load = kwargs.pop("opt_load", {})        
-#    bg.load_source(**opt_load)
+#    bg.load_data(**opt_load)
 #    opt_prep = kwargs.pop("opt_prep", {})        
 #    bg.prepare_data(**opt_prep)
 #    opt_format = kwargs.pop("opt_format", {})        

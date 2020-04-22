@@ -26,7 +26,7 @@ import pandas as pd#analysis:ignore
     
 CC              = 'AT'
 
-# METADATA : will be read from the AThcs.json file
+# METADATNAT : will be read from the AThcs.json file
 
 
 #%%

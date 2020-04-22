@@ -24,7 +24,7 @@ import pandas as pd#analysis:ignore
     
 CC              = 'HU'
 
-# METADATA : will be read from the HUhcs.json file
+# METADATNAT : will be read from the HUhcs.json file
 
 
 #%%
