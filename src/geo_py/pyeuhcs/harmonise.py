@@ -13,7 +13,7 @@ from all member states.
 
 *optional*:     :mod:`importlib`, :mod:`importlib`
 
-*call*:         :mod:`pygeofacil`, :mod:`pygeofacil.config`, :mod:`pygeofacil.base`         
+*call*:         :mod:`pyeudatnat`, :mod:`pyeuhcs`, :mod:`pyeuhcs.config`         
 
 **Contents**
 """
@@ -34,19 +34,6 @@ try:
     from optparse import OptionParser
 except ImportError:
     warnings.warn('\n! inline command deactivated !')
-
-try:
-    import simplejson as json
-except:
-    try:
-        import json#analysis:ignore
-    except ImportError:
-        class json:
-            def dump(arg):  
-                return '%s' % arg
-            def load(arg):  
-                with open(arg,'r') as f:
-                    return f.read()
         
 try:
     from importlib import import_module
@@ -55,67 +42,67 @@ except:
     # import_module = lambda mod: exec('from %s import %s' % mod.split('.'))
     import_module = lambda _mod, pack: exec('from %s import %s' % (pack, _mod.split('.')[1])) or None
 
-from pygeofacil.config import OCFGNAME#analysis:ignore
-from pygeofacil.base import IMETANAME, MetaFacility, BaseFacility, facilityFactory#analysis:ignore
+from pyeudatnat import COUNTRIES
+from pyeudatnat.io import Json
 
-from pygeofacil import PACKPATH, FACILITIES, COUNTRIES
-from pygeofacil.config import OBASETYPE, OCFGDATA, TypeFacility
-from pygeofacil.misc import MetaData, IOProcess, TextProcess, GeoService
+from pyeuhcs import PACKNAME, BASENAME, METANAME, HARMNAME, PREPNAME, FACILITIES
+from pyeuhcs.config import MetaDatNatFacility, facilityFactory
 
-
+__THISFACILITY  = 'HCS'
 __THISDIR       = osp.dirname(__file__)
-__CCNAME        = lambda cc: "%s%s" % (cc,BASENAME)
-
+__METADIR       = FACILITIES[__THISFACILITY].get('code')
+__fccname       = lambda cc: "%s%s" % (cc, BASENAME[__THISFACILITY])
 
 #%% 
 #==============================================================================
 # Function __harmoniseData, __harmoniseMetaData
 #==============================================================================
 
-def __harmoniseData(facility, **kwargs):
+def __harmoniseData(metadata, **kwargs):
+    try:
+        assert isinstance(metadata,(Mapping, MetaDatNatFacility))  
+    except:
+        raise TypeError("Wrong input metadata for '%s' facility" % __THISFACILITY)
+    #else:
+    #    metadata = MetaDatNatFacility(metadata)
     on_disk = kwargs.pop('on_disk', True)
     try:
-        assert isinstance(facility, BaseFacility)
+        assert isinstance(on_disk,bool)
     except:
-        raise TypeError('wrong input HCS data')
-    opt_load = kwargs.pop("opt_load", {})        
-    facility.load_data(**opt_load)
+        raise TypeError("Wrong ON_DISK flag")
+    f_prep = kwargs.pop('met_prep')       
+    try:
+        assert f_prep is None or callable(f_prep) is True
+    except:
+        raise TypeError("Wrong option MET_PREP - 'prepare_data' method not recognised")
     opt_prep = kwargs.pop("opt_prep", {})        
-    facility.prepare_data(**opt_prep)
+    opt_load = kwargs.pop("opt_load", {})        
     opt_format = kwargs.pop("opt_format", {})        
-    facility.format_data(**opt_format)
-    if on_disk is False:
-        return
     opt_save = kwargs.pop("opt_save", {'geojson': {}, 'csv': {}})        
-    facility.dump_data(fmt='geojson', **opt_save.get('geojson',{}))
-    facility.dump_data(fmt='csv',**opt_save.get('csv',{}))
-    # facility.dump_meta(fmt='json', **opt_save.get('json',{})) 
-    return 
-
-def __harmoniseMetaData(metadata, **kwargs):
     try:
-        assert isinstance(metadata,(MetaFacility,Mapping))  
+        assert isinstance(opt_load,Mapping) and isinstance(opt_prep,Mapping) \
+            and isinstance(opt_format,Mapping) and isinstance(opt_save,Mapping) 
     except:
-        raise TypeError('wrong input metadata')
+        raise TypeError("Wrong additional options")
+    try:
+        Facility = facilityFactory(facility = __THISFACILITY, meta = metadata, **kwargs)
+    except:
+        raise IOError("Impossible to create specific country class")
     else:
-        metadata = MetaFacility(metadata)
-    try:
-        Facility = facilityFactory(metadata, **kwargs)
-    except:
-        raise IOError('impossible create specific country class')
-    fprep = kwargs.pop('met_prep')
-    try:
-        assert fprep is None or callable(fprep) is True
-    except:
-        raise IOError('prepare method not recognised')
-    else:
-        if callable(fprep):     
-            Facility.prepare_data = fprep
+        if callable(f_prep):     
+            setattr(Facility, PREPNAME, f_prep) # Facility.prepare_data = f_prep
     try:
         facility = Facility()
     except:
-        raise IOError('impossible create specific country instance')
-    __harmoniseData(facility, **kwargs)
+        raise IOError("Impossible to create specific facility instance")
+    facility.load_data(**opt_load)
+    getattr(facility, PREPNAME)(**opt_prep) # facility.prepare_data(**opt_prep)
+    facility.format_data(**opt_format)
+    if on_disk is False:
+        return
+    facility.dump_data(fmt='geojson', **opt_save.get('geojson',{}))
+    facility.dump_data(fmt='csv',**opt_save.get('csv',{}))
+    # facility.dump_meta(fmt='json', **opt_save.get('json',{})) 
     return facility
 
 
@@ -127,10 +114,10 @@ def __harmoniseMetaData(metadata, **kwargs):
 def harmoniseCountry(country=None, coder=None, **kwargs):
     """Generic harmonisation function.
     
-        >>> harmonise.harmoniseCountry(country, coder, **kwargs)
+        >>> harmonise.harmoniseCountry(country=None, coder=None, **kwargs)
     """
     if country is None:
-        country = list(COUNTRIES.values())[0]
+        country = list(COUNTRIES.keys())
     if not isinstance(country, string_types) and isinstance(country, Sequence):
         for ctry in country:
             try:
@@ -139,58 +126,58 @@ def harmoniseCountry(country=None, coder=None, **kwargs):
                 continue
         return
     elif not isinstance(country, string_types):
-        raise TypeError('wrong type for input country code - must be the ISO 2-letter string')
-    elif not country in list(COUNTRIES.values())[0]:
-        raise IOError('country code not recognised - must be a code of the %s area' % list(COUNTRIES.keys())[0])
+        raise TypeError("Wrong type for input country code - must be the ISO 2-letter string")
+    elif not country in COUNTRIES.keys():
+        raise IOError("Country code not recognised - must be a code of the '%s' area(s)" % list(COUNTRIES.keys()))
     if not(coder is None or isinstance(coder,string_types) or isinstance(coder,Mapping)):
-        raise TypeError('coder type not recognised - must be a dictionary or a single string')
-    CC, METADATA = None, {}
+        raise TypeError("Coder type not recognised - must be a dictionary or a single string")
+    CC, METADATNAT = None, {}
     # generic name
-    ccname = __CCNAME(country) # '%s%s' % (country, BASENAME) 
+    ccname = __fccname(country) # '%s%s' % (country,BASENAME.get(__THISFACILITY)) 
     # load country-dedicated module wmmhen available 
     modname = ccname
     fname = '%s.py' % ccname 
     try:
-        assert osp.exists(osp.join(__THISDIR, METABASE, fname))
+        assert osp.exists(osp.join(__THISDIR, __METADIR, fname))
         # import_module('%s.%s' % (PACKNAME,modname) )
-        imp = import_module('.%s' % modname, '%s.%s' % (PACKNAME,METABASE))
+        imp = import_module('.%s' % modname, '%s.%s' % (PACKNAME,__METADIR))
     except AssertionError:
-        warnings.warn("\n! no country py-file '%s' found - will proceed without !" % fname)
+        warnings.warn("\n! No country py-file '%s' found - will proceed without !" % fname)
     except ImportError:
-        warnings.warn("\n! no country py-module '%s' found - will proceed without !" % modname)
+        warnings.warn("\n! No country py-module '%s' found - will proceed without !" % modname)
     except:
-        raise ImportError("no country py-module '%s' loaded" % modname)
+        raise ImportError("No country py-module '%s' loaded" % modname)
     else:
-        warnings.warn("\n! country py-module '%s' found !" % imp.__name__)
+        warnings.warn("\n! Country py-module '%s' found !" % imp.__name__)
         try:
             assert imp in sysmod.values()
         except:
-            raise ImportError("\ncountry py-module '%s' not loaded correctly" % imp.__name__)
+            raise ImportError("Country py-module '%s' not loaded correctly" % imp.__name__)
     try:
         # assert 'CC' in dir(imp)
         CC = getattr(imp, 'CC', None)
     except:
-        warnings.warn("\n! global variable 'CC' not set - use default !")
+        warnings.warn("\n! Global variable 'CC' not set - use default !")
     try:
-        # assert 'METADATA' in dir(imp)
-        METADATA = getattr(imp, 'METADATA', None)
-        assert METADATA is not None
+        # assert METANAME in dir(imp)
+        METADATNAT = getattr(imp, METANAME, None)
+        assert METADATNAT is not None
     except:
-        warnings.warn('\n! no default metadata dictionary available !')
+        warnings.warn("\n! No default metadata dictionary '%s' available !" % METANAME)
     else:
-        warnings.warn('\n! default hard-coded metadata dictionary found !')
+        warnings.warn("\n! Default hard-coded metadata dictionary '%s' found !" % METANAME)
     try:
         # assert 'harmonise' in dir(imp)
-        harmonise = getattr(imp, 'harmonise', None)
+        harmonise = getattr(imp, HARMNAME, None)
         assert harmonise is not None
     except:
-        warnings.warn('\n! generic formatting/harmonisation methods used !')
-        harmonise = __harmoniseMetaData
+        warnings.warn('\n! Generic formatting/harmonisation methods used !')
+        harmonise = __harmoniseData
     else:
-        warnings.warn('\n! country-specific formatting/harmonisation methods used !')
+        warnings.warn('\n! Country-specific formatting/harmonisation methods used !')
     try:
         # assert 'prepare_data' in dir(imp)
-        prepare_data = getattr(imp, 'prepare_data', None)
+        prepare_data = getattr(imp, PREPNAME, None) # getattr(imp, 'prepare_data', None)
         assert prepare_data is not None
     except:
         # warnings.warn('! no data preparation method used !')
@@ -199,34 +186,31 @@ def harmoniseCountry(country=None, coder=None, **kwargs):
         warnings.warn('\n! country-specific data preparation method loaded !')
     # load country-dedicated metadata when available 
     metadata = None
-    metaname = '%s.json' % ccname 
+    metafname = '%s.json' % ccname 
     try:
-        metaname = osp.join(__THISDIR, METABASE, metaname)
-        assert osp.exists(metaname)
-        with open(metaname, 'r') as fp: 
-            metadata = json.load(fp)
+        metafname = osp.join(__THISDIR, __METADIR, metafname)
+        assert osp.exists(metafname)
+        with open(metafname, 'r') as fp: 
+            metadata = Json.load(fp)
     except (AssertionError,FileNotFoundError):
-        warnings.warn("\n! no metadata JSON-file '%s' found - will proceed without !" % metaname)
+        warnings.warn("\n! No metadata JSON-file '%s' found - will proceed without !" % metafname)
     else:
-        warnings.warn("! ad-hoc metadata found - JSON-file '%s' loaded !" % metaname)
+        warnings.warn("! Ad-hoc metadata found - JSON-file '%s' loaded !" % metafname)
     # define the actual metadata: the one loaded, or the default
-    metadata = metadata or METADATA
+    metadata = metadata or METADATNAT
     if metadata in (None,{}):
-        raise IOError('no metadata parsed - this cannot end up well')
-    kwargs.update({'coder': coder, 'country' : {'code': CC or country},
-                   'met_prep': prepare_data})
-                    # 'opt_load': {}, 'opt_fmt': {}, 'opt_save': {}        
+        raise IOError('No metadata parsed - this cannot end up well')
     try:
         kwargs.update({'coder': coder, 'country' : {'code': CC or country},
                        'met_prep': prepare_data})
                         # 'opt_load': {}, 'opt_fmt': {}, 'opt_save': {}
         res = harmonise(metadata, **kwargs) 
     except:
-        raise IOError("harmonisation process for country '%s' failed..." % country)
+        raise IOError("Harmonisation process for country '%s' failed..." % country)
     else:
-        warnings.warn("\n! harmonised data for country '%s' generated !" % country)
+        warnings.warn("\n! Harmonised data for country '%s' generated !" % country)
     return res
-        
+      
 
 #%% 
 #==============================================================================
@@ -281,6 +265,11 @@ def __main():
         warnings.warn('\n!!!  ERROR: data file not created !!!')
     else:
         warnings.warn('\n!  OK: data file correctly created !')
+
+#try:
+#    del(__THISFACILITY, __THISDIR, __METADIR, __fccname)
+#except:
+#    pass
 
 if __name__ == '__main__':
     __main()
