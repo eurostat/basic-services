@@ -28,6 +28,15 @@ except:
 __THISFILE          = __file__ # useles...
 __THISDIR           = osp.dirname(__THISFILE)
 
+
+PACKNAME            = 'pyeuhcs' # this package...
+"""Name of this package.
+"""
+
+PACKPATH            = osp.dirname(__file__) 
+"""Path to this package.
+"""
+
 # put here the services managed by this package
 FACILITIES          = { 'HCS': 
                         {'code': "hcs", 'name': "Healthcare services"},
@@ -36,6 +45,12 @@ FACILITIES          = { 'HCS':
                        } 
 """Type of services provided.
 """
+
+BASENAME            = {k:v['code'] for (k,v) in FACILITIES.items()}
+
+METANAME            = 'METADATNAT'
+HARMNAME            = 'harmonise'
+PREPNAME            = 'prepare_data'
 
 #%%
 

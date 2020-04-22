@@ -186,6 +186,7 @@ class ConfigFacility(MetaDat):
             except:
                 path = ''
             src = osp.join(path, "%s%s.json" % (self.facility, CONFIGFILE))
+            warnings.warn("\n! Input data file '%s' will be loaded" % src)
         return super(ConfigFacility,self).load(src = src, **kwargs)
     
     #/************************************************************************/
@@ -199,6 +200,7 @@ class ConfigFacility(MetaDat):
             except:
                 path = ''
             dest = osp.join(path, "%s%s.json" % (self.facility, CONFIGFILE))
+            warnings.warn("\n! Output data file '%s' will be created" % dest)
         super(ConfigFacility,self).dump(dest = dest, **kwargs)
 
 
@@ -272,7 +274,7 @@ def facilityFactory(*args, **kwargs):
     """Generic function to derive a class from the base class :class:`BaseFacility`
     depending on specific metadata and a given geocoder.
     
-        >>>  NewFacility = facilityFactory(facility, metadata=None, country=None, coder=None)
+        >>>  NewFacility = facilityFactory(facility=facility, meta=None, country=None, coder=None)
         
     Examples
     --------
@@ -302,7 +304,7 @@ def facilityFactory(*args, **kwargs):
     elif isinstance(facility,ConfigFacility):
         config = facility.copy()
     # kwargs.update({'config': cfgmeta})
-    return datnatFactory(config, **kwargs)
+    return datnatFactory(config = config, **kwargs)
 
 
 #%%
