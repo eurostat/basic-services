@@ -39,19 +39,6 @@ from copy import deepcopy
 
 from datetime import datetime
 
-try:                          
-    import simplejson as json
-except ImportError:
-    try:                          
-        import json
-    except ImportError:
-        class json:
-            def load(arg):  
-                with open(arg,"r") as f:
-                    return f.read()
-            def dump(arg):  
-                return "%s" % arg
-
 from pyeudatnat import COUNTRIES
 from pyeudatnat.meta import MetaDat, MetaDatNat
 from pyeudatnat.base import datnatFactory
@@ -65,10 +52,10 @@ __THISFILE      = __file__
 CONFIGDIR       = osp.dirname(__THISFILE)
 CONFIGFILE      = osp.basename(__THISFILE).split('.')[0] # "config"
 
+
 #%%
 
 __type2name     = lambda t: t.__name__  # lambda t: {v:k for (k,v) in BASETYPE.items()}[t]    
-
 
 __CONFIGINFO    = dict.fromkeys(list(FACILITIES.keys()), {})
 __CONFIGINFO.update( { 
