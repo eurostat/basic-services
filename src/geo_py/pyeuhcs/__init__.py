@@ -19,11 +19,7 @@ Initialisation module of facility configuration programs.
 #%%
 from os import path as osp
 
-try:
-    from pyeudatnat import BASENAME as __BASENAME, COUNTRIES as __COUNTRIES
-except:
-    __BASENAME = ''
-    __COUNTRIES = {}
+from pyeudatnat import COUNTRIES
 
 __THISFILE          = __file__ # useles...
 __THISDIR           = osp.dirname(__THISFILE)
@@ -70,8 +66,8 @@ for __fac in FACILITIES.keys():
     except:
         continue
     __all__.append(__fac)
-    for __cc in __COUNTRIES.keys():
-        __src = '%s%s%s' % (__BASENAME, __cc, __fac) 
+    for __cc in COUNTRIES.keys():
+        __src = '%s%s' % (__cc, __fac) 
         __fsrc = '%s.py' % __src 
         try:
             assert osp.exists(osp.join(__path, __fsrc)) and osp.isfile(osp.join(__path, __fsrc))
@@ -80,7 +76,6 @@ for __fac in FACILITIES.keys():
             __modules.append(__src)   
             
 try:
-    del(__BASENAME, __COUNTRIES)
     del(__fac, __path)
     del(__cc, __src, __fsrc)
 except: pass

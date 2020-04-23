@@ -158,7 +158,7 @@ def validateCountry(country=None, **kwargs):
     elif not country in COUNTRIES.keys():
         raise IOError('country code not recognised - must a code of the %s area' % list(COUNTRIES.keys()))
     fmt = 'csv'
-    src = kwargs.pop('src', None)
+    src = kwargs.pop('source', None)
     if src is None:
         src = osp.join(__CONFIG.get('path'), fmt, __CONFIG.get('file') % (country, __CONFIG.get('fmt',{})[fmt]))
         warnings.warn("\n! Input data file '%s' will be controlled for validation" % src)

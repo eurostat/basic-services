@@ -99,10 +99,9 @@ def __harmoniseData(metadata, **kwargs):
     facility.load_data(**opt_load)
     getattr(facility, PREPNAME)(**opt_prep) # facility.prepare_data(**opt_prep)
     facility.format_data(**opt_format)
-    if on_disk is False:
-        return
-    facility.dump_data(fmt='geojson', **opt_save.get('geojson',{}))
-    facility.dump_data(fmt='csv',**opt_save.get('csv',{}))
+    if on_disk is True:
+        facility.dump_data(fmt='geojson', **opt_save.get('geojson',{}))
+        facility.dump_data(fmt='csv',**opt_save.get('csv',{}))
     # facility.dump_meta(fmt='json', **opt_save.get('json',{})) 
     return facility
 
