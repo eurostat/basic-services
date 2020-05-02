@@ -28,12 +28,12 @@ integrated data on healthcare facilities.
 # *credits*:      `gjacopo <jacopo.grazzini@ec.europa.eu>`_ 
 # *since*:        Tue Mar 31 22:51:37 2020
 
-#%%
+#%% Settings 
 
 from os import path as osp
 import warnings
 
-from collections import OrderedDict, Mapping, Sequence#analysis:ignore
+from collections import OrderedDict, Mapping
 from six import string_types
 from copy import deepcopy
 
@@ -46,14 +46,11 @@ from pyeudatnat.base import datnatFactory
 from . import FACILITIES
 
 
-#%%
+#%% Global vars
 
 __THISFILE      = __file__ 
 CONFIGDIR       = osp.dirname(__THISFILE)
 CONFIGFILE      = osp.basename(__THISFILE).split('.')[0] # "config"
-
-
-#%%
 
 __type2name     = lambda t: t.__name__  # lambda t: {v:k for (k,v) in BASETYPE.items()}[t]    
 
@@ -64,7 +61,7 @@ __CONFIGINFO.update( {
                 "lang":     "en",
                 "sep":      ",",
                 "enc":      "utf-8",
-                "date":     "%d/%m/%Y", # format DD/MM/YYYY
+                "dfmt":     "%d/%m/%Y", # date format DD/MM/YYYY
                 "proj":     None, # "WGS84"
                 "path":     "../../../data/", # osp.abspath(osp.join(__THISDIR,"../../../data/")) 
                 "file":     "%s.%s",
@@ -131,10 +128,8 @@ __CONFIGINFO.update( {
 CONFIGINFO         = deepcopy(__CONFIGINFO)
 
 
-#%%
 #==============================================================================
-# Class ConfigFacility
-#==============================================================================
+#%% Class ConfigFacility
       
 class ConfigFacility(MetaDat):
     """
@@ -191,10 +186,8 @@ class ConfigFacility(MetaDat):
         super(ConfigFacility,self).dump(dest = dest, **kwargs)
 
 
-#%%
 #==============================================================================
-# Class MetaDatNatFacility
-#==============================================================================
+#%% Class MetaDatNatFacility
 
 class MetaDatNatFacility(MetaDatNat):
     """Generic class used to represent country metadata instances as dictionary.
@@ -225,16 +218,18 @@ class MetaDatNatFacility(MetaDatNat):
         as_file = kwargs.pop('as_file', True)
         # dumb initialisation
         temp = dict.fromkeys(cls.PROPERTIES)
-        temp.update({ 'country':     {'code': country.upper() or 'CC', 'name': ''},
-                      'lang':        {'code': country.lower() or 'cc', 'name': ''},
-                      'file':        '%s.csv' % country or 'CC' ,
-                      # 'proj':        None,
-                      'path':        '../../data/raw/',
-                      'enc':         'latin1',
-                      'sep':         ';', 
-                      'date':        '%d-%m-%Y', 
-                      'columns':     [ ],
-                      'index':       { }
+        temp.update({ 'country':    {'code': country.upper() or 'CC', 'name': ''},
+                      'lang':       {'code': country.lower() or 'cc', 'name': ''},
+                      'file':       '%s.csv' % country or 'CC' ,
+                      'proj':       None,
+                      'path':       '../../data/raw/',
+                      'enc':        'latin1',
+                      'sep':        ';', 
+                      'dfmt':       '%d-%m-%Y', 
+                      'columns':    [ ],
+                      'index':      { },
+                      #'provider':   None,
+                      #'date':       None
                       })
         temp['columns'].extend([{country.lower() or 'cc': 'icol1', 'en': 'icol1', 'fr': 'icol1', 'de': 'iSpal1'},
                              {country.lower() or 'cc': 'icol2', 'en': 'icol1', 'fr': 'icol2', 'de': 'iSpal2'}])
@@ -252,10 +247,8 @@ class MetaDatNatFacility(MetaDatNat):
             raise IOError("Impossible saving template metadata as a file")
 
 
-#%% 
 #==============================================================================
-# Function facilityFactory
-#==============================================================================
+#%% Function facilityFactory 
     
 def facilityFactory(*args, **kwargs):
     """Generic function to derive a class from the base class :class:`BaseFacility`
@@ -294,10 +287,8 @@ def facilityFactory(*args, **kwargs):
     return datnatFactory(config = config, **kwargs)
 
 
-#%%
 #==============================================================================
-# program run when loading the module
-#==============================================================================
+#%% Program run when loading the module
 
 for __fac in list(FACILITIES.keys()):
     __ffac = FACILITIES[__fac]['code']
