@@ -167,7 +167,12 @@ def validateCountry(country=None, **kwargs):
     except:
         raise FileNotFoundError("Input file '%s' not found" % src)
     validate = __validateData
-    validate(src)
+    try:
+        validate(src)
+    except:
+        raise IOError("Data error detected - See warning/error reports")
+    else:
+        print("! Data passed validation (see warning reports) !")
     return  
   
 
