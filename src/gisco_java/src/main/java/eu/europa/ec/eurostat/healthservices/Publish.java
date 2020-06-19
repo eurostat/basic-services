@@ -30,7 +30,7 @@ import eu.europa.ec.eurostat.jgiscotools.util.ProjectionUtil;
  */
 public class Publish {
 
-	static String destinationPath = "C:/Users/gaffuju/workspace/healthcare-services/";
+	static String destinationPath = "C:/Users/clemoki/workspace/healthcare-services/";
 
 	/**
 	 * @param args
