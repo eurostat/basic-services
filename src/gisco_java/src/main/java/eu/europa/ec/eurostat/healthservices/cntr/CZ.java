@@ -120,6 +120,7 @@ public class CZ {
 		CSVUtil.removeColumn(data, "GPS");
 
 		CSVUtil.addColumn(data, "cc", cc);
+		CSVUtil.addColumn(data, "country", "Czechia");
 		CSVUtil.addColumn(data, "ref_date", "01/04/2020");
 
 		CSVUtil.addColumn(data, "emergency", "");
