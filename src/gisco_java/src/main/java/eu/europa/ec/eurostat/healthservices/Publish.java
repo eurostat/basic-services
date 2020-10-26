@@ -30,7 +30,7 @@ import eu.europa.ec.eurostat.jgiscotools.util.ProjectionUtil;
  */
 public class Publish {
 
-	static String destinationPath = "C:/Users/gaffuju/workspace/healthcare-services/";
+	static String destinationPath = "E:\\users\\clemoki\\workspace\\healthcare-services\\";
 
 	/**
 	 * @param args
@@ -91,15 +91,16 @@ public class Publish {
 			//CSVUtil.removeColumn(data, "geo_matching");
 			//CSVUtil.removeColumn(data, "geo_confidence");
 
-			//export as geojson and GPKG
+			//export as CSV
 			CSVUtil.save(data, outCsvFile, HCUtil.cols_);
+			//export as geojson and GPKG
 			Collection<Feature> fs = CSVUtil.CSVToFeatures(data, "lon", "lat");
 			HCUtil.applyTypes(fs);
 			GeoData.save(fs, destinationPath+"data/geojson/"+cc+".geojson", ProjectionUtil.getWGS_84_CRS());
 			GeoData.save(fs, destinationPath+"data/gpkg/"+cc+".gpkg", ProjectionUtil.getWGS_84_CRS());
 		}
 
-		//handle "all" files
+		//handle files combining all country data
 		if(changed) {
 
 			var all = new ArrayList<Map<String, String>>();

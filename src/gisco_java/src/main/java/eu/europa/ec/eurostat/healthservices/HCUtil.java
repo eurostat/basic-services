@@ -23,7 +23,7 @@ public class HCUtil {
 	public static String path = "E:/dissemination/shared-data/MS_data/Service - Health/";
 
 	//country codes covered
-	static String[] ccs = { "AT", "BE", "BG","CH", "CY", "CZ", "DE", "DK", "EL", "ES", "FI", "FR", "HR", "HU", "IE", "IT", "LT", "LU", "LV", "MT", "NL", "NO", "PL", "PT", "RO", "SE", "SI"/*, "UK"*/ };
+	static String[] ccs = { "AT", "BE", "BG", "CH", "CY", "CZ", "DE", "DK", "EL", "ES", "FI", "FR", "HR", "HU", "IE", "IT", "LT", "LU", "LV", "MT", "NL", "NO", "PL", "PT", "RO", "SE", "SI", "SK"/* "UK"*/};
 
 	//CSV columns
 	public static String[] cols = {
@@ -42,7 +42,7 @@ public class HCUtil {
 	public static SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
 
-
+	//forces datatype as int and double for gpkg
 	static void applyTypes(Collection<Feature> fs) {
 		for(Feature f : fs) {
 			for(String att : new String[]{"cap_beds", "cap_prac", "cap_rooms"}) {
