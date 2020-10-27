@@ -30,7 +30,8 @@ import eu.europa.ec.eurostat.jgiscotools.util.ProjectionUtil;
  */
 public class Publish {
 
-	static String destinationPath = "E:\\users\\clemoki\\workspace\\healthcare-services\\";
+	static String destinationBasePath = "E:\\users\\clemoki\\workspace\\healthcare-services\\";
+	static String destinationDataPath = destinationBasePath + "data\\healthcare\\";
 
 	/**
 	 * @param args
@@ -43,15 +44,15 @@ public class Publish {
 		System.out.println(timeStamp);
 
 		//make outpur folders
-		new File(destinationPath + "data/csv/").mkdirs();
-		new File(destinationPath + "data/geojson/").mkdirs();
-		new File(destinationPath + "data/gpkg/").mkdirs();
+		new File(destinationDataPath + "csv/").mkdirs();
+		new File(destinationDataPath + "geojson/").mkdirs();
+		new File(destinationDataPath + "gpkg/").mkdirs();
 
 		var changed = false;
 		for(String cc : HCUtil.ccs) {
 
 			var inCsvFile = HCUtil.path + cc+"/"+cc+".csv";
-			var outCsvFile = destinationPath+"data/csv/"+cc+".csv";
+			var outCsvFile = destinationDataPath+"csv/"+cc+".csv";
 
 			//compare file dates, skip the ones that have not been updated
 			if(new File(outCsvFile).exists())
@@ -95,8 +96,8 @@ public class Publish {
 			CSVUtil.save(data, outCsvFile, HCUtil.cols_);
 			Collection<Feature> fs = CSVUtil.CSVToFeatures(data, "lon", "lat");
 			HCUtil.applyTypes(fs);
-			GeoData.save(fs, destinationPath+"data/geojson/"+cc+".geojson", ProjectionUtil.getWGS_84_CRS());
-			GeoData.save(fs, destinationPath+"data/gpkg/"+cc+".gpkg", ProjectionUtil.getWGS_84_CRS());
+			GeoData.save(fs, destinationDataPath+"geojson/"+cc+".geojson", ProjectionUtil.getWGS_84_CRS());
+			GeoData.save(fs, destinationDataPath+"gpkg/"+cc+".gpkg", ProjectionUtil.getWGS_84_CRS());
 		}
 
 		//handle "all" files
@@ -104,7 +105,7 @@ public class Publish {
 
 			var all = new ArrayList<Map<String, String>>();
 			for(String cc : HCUtil.ccs)
-				all.addAll( CSVUtil.load(destinationPath+"data/csv/"+cc+".csv") );
+				all.addAll( CSVUtil.load(destinationDataPath+"csv/"+cc+".csv") );
 
 			//append cc to id
 			for(Map<String, String> h : all) {
@@ -122,15 +123,15 @@ public class Publish {
 			//export all
 			System.out.println("*** All");
 			System.out.println(all.size());
-			CSVUtil.save(all, destinationPath+"data/csv/all.csv", HCUtil.cols_);
+			CSVUtil.save(all, destinationDataPath+"csv/all.csv", HCUtil.cols_);
 			Collection<Feature> fs = CSVUtil.CSVToFeatures(all, "lon", "lat");
 			HCUtil.applyTypes(fs);
-			GeoData.save(fs, destinationPath + "data/geojson/all.geojson", ProjectionUtil.getWGS_84_CRS());
-			GeoData.save(fs, destinationPath + "data/gpkg/all.gpkg", ProjectionUtil.getWGS_84_CRS());
+			GeoData.save(fs, destinationDataPath + "geojson/all.geojson", ProjectionUtil.getWGS_84_CRS());
+			GeoData.save(fs, destinationDataPath + "gpkg/all.gpkg", ProjectionUtil.getWGS_84_CRS());
 
 			{
 				//export for web
-				ArrayList<Map<String, String>> data = CSVUtil.load(destinationPath+"data/csv/all.csv");
+				ArrayList<Map<String, String>> data = CSVUtil.load(destinationDataPath+"csv/all.csv");
 				for(Map<String, String> d : data) {
 					//load lat/lon
 					double lon = Double.parseDouble(d.get("lon"));
@@ -149,7 +150,7 @@ public class Publish {
 				}
 
 				//save
-				CSVUtil.save(data, destinationPath+"map/hcs.csv");
+				CSVUtil.save(data, destinationBasePath + "map/hcs.csv");
 			}
 		}
 
