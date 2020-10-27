@@ -21,8 +21,8 @@ import eu.europa.ec.eurostat.jgiscotools.geocoding.base.GeocodingAddress;
 import eu.europa.ec.eurostat.jgiscotools.geocoding.base.GeocodingResult;
 import eu.europa.ec.eurostat.jgiscotools.gisco_processes.LocalParameters;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
-import eu.europa.ec.eurostat.jgiscotools.io.GeoData;
 import eu.europa.ec.eurostat.jgiscotools.io.geo.CRSUtil;
+import eu.europa.ec.eurostat.jgiscotools.io.geo.GeoData;
 import eu.europa.ec.eurostat.jgiscotools.util.GeoDistanceUtil;
 
 public class GeocodingTest {

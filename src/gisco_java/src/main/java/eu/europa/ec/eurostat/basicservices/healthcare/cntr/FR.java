@@ -7,8 +7,8 @@ import java.util.stream.Collectors;
 import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
 import eu.europa.ec.eurostat.basicservices.healthcare.Validation;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
-import eu.europa.ec.eurostat.jgiscotools.io.GeoData;
-import eu.europa.ec.eurostat.jgiscotools.util.ProjectionUtil;
+import eu.europa.ec.eurostat.jgiscotools.io.geo.CRSUtil;
+import eu.europa.ec.eurostat.jgiscotools.io.geo.GeoData;
 
 public class FR {
 
@@ -50,7 +50,7 @@ public class FR {
 
 		Validation.validate(data, cc);
 		CSVUtil.save(data, HCUtil.path+cc + "/"+cc+".csv");
-		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path+cc + "/"+cc+".gpkg", ProjectionUtil.getWGS_84_CRS());
+		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path+cc + "/"+cc+".gpkg", CRSUtil.getWGS_84_CRS());
 
 		System.out.println("End");
 	}

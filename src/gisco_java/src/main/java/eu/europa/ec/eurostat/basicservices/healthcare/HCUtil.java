@@ -11,8 +11,8 @@ import java.util.Map;
 
 import eu.europa.ec.eurostat.jgiscotools.feature.Feature;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
-import eu.europa.ec.eurostat.jgiscotools.io.GeoData;
-import eu.europa.ec.eurostat.jgiscotools.util.ProjectionUtil;
+import eu.europa.ec.eurostat.jgiscotools.io.geo.CRSUtil;
+import eu.europa.ec.eurostat.jgiscotools.io.geo.GeoData;
 
 /**
  * @author julien Gaffuri
@@ -101,7 +101,7 @@ public class HCUtil {
 
 	public static void CSVToGPKG(String cc) {
 		ArrayList<Map<String, String>> data = CSVUtil.load(HCUtil.path + cc+"/"+cc+".csv");
-		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path + cc+"/"+cc+".gpkg", ProjectionUtil.getWGS_84_CRS());
+		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path + cc+"/"+cc+".gpkg", CRSUtil.getWGS_84_CRS());
 	}
 
 }

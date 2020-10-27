@@ -12,14 +12,14 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import eu.europa.ec.eurostat.basicservices.ServicesGeocoding;
 import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
 import eu.europa.ec.eurostat.jgiscotools.geocoding.BingGeocoder;
 import eu.europa.ec.eurostat.jgiscotools.gisco_processes.LocalParameters;
-import eu.europa.ec.eurostat.jgiscotools.gisco_processes.services.ServicesGeocoding;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
-import eu.europa.ec.eurostat.jgiscotools.io.GeoData;
 import eu.europa.ec.eurostat.jgiscotools.io.XMLUtils;
-import eu.europa.ec.eurostat.jgiscotools.util.ProjectionUtil;
+import eu.europa.ec.eurostat.jgiscotools.io.geo.CRSUtil;
+import eu.europa.ec.eurostat.jgiscotools.io.geo.GeoData;
 
 public class PL {
 
@@ -107,7 +107,7 @@ public class PL {
 
 			// save 2
 			CSVUtil.save(out, HCUtil.path + "PL/PL.csv");
-			GeoData.save(CSVUtil.CSVToFeatures(out, "lon", "lat"), HCUtil.path + "PL/PL.gpkg", ProjectionUtil.getWGS_84_CRS());
+			GeoData.save(CSVUtil.CSVToFeatures(out, "lon", "lat"), HCUtil.path + "PL/PL.gpkg", CRSUtil.getWGS_84_CRS());
 
 		} catch (Exception e) {
 			e.printStackTrace();

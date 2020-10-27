@@ -17,8 +17,8 @@ import org.locationtech.jts.geom.Coordinate;
 import eu.europa.ec.eurostat.jgiscotools.deprecated.NUTSUtils;
 import eu.europa.ec.eurostat.jgiscotools.feature.Feature;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
-import eu.europa.ec.eurostat.jgiscotools.io.GeoData;
-import eu.europa.ec.eurostat.jgiscotools.util.ProjectionUtil;
+import eu.europa.ec.eurostat.jgiscotools.io.geo.CRSUtil;
+import eu.europa.ec.eurostat.jgiscotools.io.geo.GeoData;
 
 /**
  * Copy country CSV files to github repository.
@@ -96,8 +96,8 @@ public class Publish {
 			CSVUtil.save(data, outCsvFile, HCUtil.cols_);
 			Collection<Feature> fs = CSVUtil.CSVToFeatures(data, "lon", "lat");
 			HCUtil.applyTypes(fs);
-			GeoData.save(fs, destinationDataPath+"geojson/"+cc+".geojson", ProjectionUtil.getWGS_84_CRS());
-			GeoData.save(fs, destinationDataPath+"gpkg/"+cc+".gpkg", ProjectionUtil.getWGS_84_CRS());
+			GeoData.save(fs, destinationDataPath+"geojson/"+cc+".geojson", CRSUtil.getWGS_84_CRS());
+			GeoData.save(fs, destinationDataPath+"gpkg/"+cc+".gpkg", CRSUtil.getWGS_84_CRS());
 		}
 
 		//handle "all" files
@@ -126,8 +126,8 @@ public class Publish {
 			CSVUtil.save(all, destinationDataPath+"csv/all.csv", HCUtil.cols_);
 			Collection<Feature> fs = CSVUtil.CSVToFeatures(all, "lon", "lat");
 			HCUtil.applyTypes(fs);
-			GeoData.save(fs, destinationDataPath + "geojson/all.geojson", ProjectionUtil.getWGS_84_CRS());
-			GeoData.save(fs, destinationDataPath + "gpkg/all.gpkg", ProjectionUtil.getWGS_84_CRS());
+			GeoData.save(fs, destinationDataPath + "geojson/all.geojson", CRSUtil.getWGS_84_CRS());
+			GeoData.save(fs, destinationDataPath + "gpkg/all.gpkg", CRSUtil.getWGS_84_CRS());
 
 			{
 				//export for web
@@ -140,7 +140,7 @@ public class Publish {
 					d.remove("lat");
 
 					//project to LAEA
-					Coordinate c = ProjectionUtil.project(new Coordinate(lat,lon), ProjectionUtil.getWGS_84_CRS(), ProjectionUtil.getETRS89_LAEA_CRS());
+					Coordinate c = CRSUtil.project(new Coordinate(lat,lon), CRSUtil.getWGS_84_CRS(), CRSUtil.getETRS89_LAEA_CRS());
 					d.put("x", ""+(int)c.y);
 					d.put("y", ""+(int)c.x);
 

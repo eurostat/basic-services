@@ -9,8 +9,8 @@ import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
 import eu.europa.ec.eurostat.basicservices.healthcare.Validation;
 import eu.europa.ec.eurostat.jgiscotools.gisco_processes.LocalParameters;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
-import eu.europa.ec.eurostat.jgiscotools.io.GeoData;
-import eu.europa.ec.eurostat.jgiscotools.util.ProjectionUtil; 
+import eu.europa.ec.eurostat.jgiscotools.io.geo.CRSUtil;
+import eu.europa.ec.eurostat.jgiscotools.io.geo.GeoData; 
 
 public class SK {
 
@@ -36,7 +36,7 @@ public class SK {
 		// save
 		System.out.println(data.size());
 		CSVUtil.save(data, HCUtil.path + "SK/SK.csv");
-		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path + "SK/SK.gpkg", ProjectionUtil.getWGS_84_CRS());
+		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path + "SK/SK.gpkg", CRSUtil.getWGS_84_CRS());
 
 		System.out.println("End");
 	}

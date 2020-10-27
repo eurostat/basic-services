@@ -13,9 +13,9 @@ import org.w3c.dom.NodeList;
 import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
 import eu.europa.ec.eurostat.basicservices.healthcare.Validation;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
-import eu.europa.ec.eurostat.jgiscotools.io.GeoData;
 import eu.europa.ec.eurostat.jgiscotools.io.XMLUtils;
-import eu.europa.ec.eurostat.jgiscotools.util.ProjectionUtil;
+import eu.europa.ec.eurostat.jgiscotools.io.geo.CRSUtil;
+import eu.europa.ec.eurostat.jgiscotools.io.geo.GeoData;
 
 public class DE {
 
@@ -99,7 +99,7 @@ public class DE {
 		CSVUtil.addColumns(data, HCUtil.cols, "");
 		Validation.validate(data, "DE");
 		CSVUtil.save(data, HCUtil.path + "DE/DE.csv");
-		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path + "DE/DE.gpkg", ProjectionUtil.getWGS_84_CRS());
+		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path + "DE/DE.gpkg", CRSUtil.getWGS_84_CRS());
 	}
 
 }

@@ -6,14 +6,14 @@ package eu.europa.ec.eurostat.basicservices.healthcare.cntr;
 import java.util.ArrayList;
 import java.util.Map;
 
+import eu.europa.ec.eurostat.basicservices.ServicesGeocoding;
 import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
 import eu.europa.ec.eurostat.basicservices.healthcare.Validation;
 import eu.europa.ec.eurostat.jgiscotools.geocoding.BingGeocoder;
 import eu.europa.ec.eurostat.jgiscotools.gisco_processes.LocalParameters;
-import eu.europa.ec.eurostat.jgiscotools.gisco_processes.services.ServicesGeocoding;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
-import eu.europa.ec.eurostat.jgiscotools.io.GeoData;
-import eu.europa.ec.eurostat.jgiscotools.util.ProjectionUtil;
+import eu.europa.ec.eurostat.jgiscotools.io.geo.CRSUtil;
+import eu.europa.ec.eurostat.jgiscotools.io.geo.GeoData;
 
 /**
  * @author gaffuju
@@ -35,7 +35,7 @@ public class ES {
 		CSVUtil.addColumns(data, HCUtil.cols, "");
 		Validation.validate(data, cc);
 		CSVUtil.save(data, HCUtil.path+cc + "/"+cc+".csv");
-		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path+cc + "/"+cc+".gpkg", ProjectionUtil.getWGS_84_CRS());
+		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path+cc + "/"+cc+".gpkg", CRSUtil.getWGS_84_CRS());
 
 	}
 }
