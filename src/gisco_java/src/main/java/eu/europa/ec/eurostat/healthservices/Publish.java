@@ -91,16 +91,15 @@ public class Publish {
 			//CSVUtil.removeColumn(data, "geo_matching");
 			//CSVUtil.removeColumn(data, "geo_confidence");
 
-			//export as CSV
-			CSVUtil.save(data, outCsvFile, HCUtil.cols_);
 			//export as geojson and GPKG
+			CSVUtil.save(data, outCsvFile, HCUtil.cols_);
 			Collection<Feature> fs = CSVUtil.CSVToFeatures(data, "lon", "lat");
 			HCUtil.applyTypes(fs);
 			GeoData.save(fs, destinationPath+"data/geojson/"+cc+".geojson", ProjectionUtil.getWGS_84_CRS());
 			GeoData.save(fs, destinationPath+"data/gpkg/"+cc+".gpkg", ProjectionUtil.getWGS_84_CRS());
 		}
 
-		//handle files combining all country data
+		//handle "all" files
 		if(changed) {
 
 			var all = new ArrayList<Map<String, String>>();

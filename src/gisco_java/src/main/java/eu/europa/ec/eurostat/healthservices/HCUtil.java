@@ -42,7 +42,7 @@ public class HCUtil {
 	public static SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
 
-	//forces datatype as int and double for gpkg
+
 	static void applyTypes(Collection<Feature> fs) {
 		for(Feature f : fs) {
 			for(String att : new String[]{"cap_beds", "cap_prac", "cap_rooms"}) {
