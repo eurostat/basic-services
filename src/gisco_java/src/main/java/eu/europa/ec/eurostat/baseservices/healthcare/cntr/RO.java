@@ -1,4 +1,4 @@
-package eu.europa.ec.eurostat.healthservices.cntr;
+package eu.europa.ec.eurostat.baseservices.healthcare.cntr;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import eu.europa.ec.eurostat.healthservices.HCUtil;
+import eu.europa.ec.eurostat.baseservices.healthcare.HCUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 
 public class RO {

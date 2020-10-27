@@ -1,10 +1,10 @@
-package eu.europa.ec.eurostat.healthservices.cntr;
+package eu.europa.ec.eurostat.baseservices.healthcare.cntr;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import eu.europa.ec.eurostat.healthservices.HCUtil;
+import eu.europa.ec.eurostat.baseservices.healthcare.HCUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 import eu.europa.ec.eurostat.jgiscotools.util.Util;
 

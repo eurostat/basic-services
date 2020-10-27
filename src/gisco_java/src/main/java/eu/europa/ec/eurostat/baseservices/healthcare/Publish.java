@@ -1,7 +1,7 @@
 /**
  * 
  */
-package eu.europa.ec.eurostat.healthservices;
+package eu.europa.ec.eurostat.baseservices.healthcare;
 
 import java.io.File;
 import java.io.IOException;

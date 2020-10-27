@@ -1,4 +1,4 @@
-package eu.europa.ec.eurostat.healthservices.cntr;
+package eu.europa.ec.eurostat.baseservices.healthcare.cntr;
 
 import java.io.FileInputStream;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import eu.europa.ec.eurostat.healthservices.HCUtil;
+import eu.europa.ec.eurostat.baseservices.healthcare.HCUtil;
 import eu.europa.ec.eurostat.jgiscotools.geocoding.BingGeocoder;
 import eu.europa.ec.eurostat.jgiscotools.gisco_processes.LocalParameters;
 import eu.europa.ec.eurostat.jgiscotools.gisco_processes.services.ServicesGeocoding;

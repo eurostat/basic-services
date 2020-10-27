@@ -1,7 +1,7 @@
 /**
  * 
  */
-package eu.europa.ec.eurostat.healthservices;
+package eu.europa.ec.eurostat.baseservices.healthcare;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
