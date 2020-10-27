@@ -3,11 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>eu.europa.ec.eurostat</groupId>
-	<artifactId>healthservices</artifactId>
+	<artifactId>basicservices</artifactId>
 	<version>0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>health-services</name>
-	<url>https://github.com/eurostat/healthcare-services</url>
+	<name>basic-services</name>
+	<url>https://github.com/eurostat/basic-services</url>
 	<description></description>
 
 	<licenses>
@@ -18,13 +18,13 @@
 	</licenses>
 
 	<scm>
-		<url>https://github.com/eurostat/healthcare-services</url>
-		<connection>scm:git:git://github.com/eurostat/healthcare-services.git</connection>
-		<developerConnection>scm:git:git@github.com:eurostat/healthcare-services.git</developerConnection>
+		<url>https://github.com/eurostat/basic-services</url>
+		<connection>scm:git:git://github.com/eurostat/basic-services.git</connection>
+		<developerConnection>scm:git:git@github.com:eurostat/basic-services.git</developerConnection>
 	</scm>
 
 	<issueManagement>
-		<url>https://github.com/eurostat/healthcare-services/issues</url>
+		<url>https://github.com/eurostat/basic-services/issues</url>
 		<system>GitHub Issues</system>
 	</issueManagement>
 
