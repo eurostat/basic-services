@@ -30,8 +30,8 @@ public class AT {
 
 			// copy columns
 
-			// country - AT
-			hf.put("country", "AT");
+			// cc - AT
+			hf.put("cc", "AT");
 			// id - KA-Nr
 			hf.put("id", h.get("KA-Nr"));
 			// name - Bezeichnung
