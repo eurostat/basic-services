@@ -31,8 +31,9 @@ import eu.europa.ec.eurostat.jgiscotools.io.geo.GeoData;
  */
 public class Publish {
 
-	static String destinationBasePath = "E:\\users\\clemoki\\workspace\\healthcare-services\\";
-	static String destinationDataPath = destinationBasePath + "data\\healthcare\\";
+	static String destinationBasePath = "E:/users/gaffuju/eclipse_workspace/basic-services/";
+	//static String destinationBasePath = "E:/users/clemoki/workspace/basic-services/";
+	static String destinationDataPath = destinationBasePath + "data/healthcare/";
 
 	/**
 	 * @param args
