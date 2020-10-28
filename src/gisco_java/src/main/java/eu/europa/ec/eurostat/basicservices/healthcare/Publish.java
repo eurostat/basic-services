@@ -152,7 +152,7 @@ public class Publish {
 				}
 
 				//save
-				CSVUtil.save(data, destinationBasePath + "map/hcs.csv");
+				CSVUtil.save(data, destinationBasePath + "map/healthcare/hcs.csv");
 			}
 		}
 
