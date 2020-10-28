@@ -10,6 +10,7 @@ import java.nio.file.attribute.FileTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 import org.locationtech.jts.geom.Coordinate;
@@ -33,15 +34,28 @@ public class Publish {
 
 	static String destinationBasePath = "E:/users/gaffuju/eclipse_workspace/basic-services/";
 	//static String destinationBasePath = "E:/users/clemoki/workspace/basic-services/";
-	static String destinationDataPath = destinationBasePath + "data/healthcare/";
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		publish("healthcare", HealthcareUtil.path, destinationBasePath, HealthcareUtil.ccs, HealthcareUtil.cols_);
+	}
+
+	/**
+	 * @param serviceType 
+	 * @param inDataPath 
+	 * @param destinationBasePath 
+	 * @param ccs 
+	 * @param cols_ 
+	 * @param args
+	 */
+	public static void publish(String serviceType, String inDataPath, String destinationBasePath, String[] ccs, List<String> cols_) {
 		System.out.println("Start");
 
-		//publication date
+		String destinationDataPath = destinationBasePath + "data/"+serviceType+"/";
+
+		//get publication date
 		String timeStamp = BasicServicesUtil.dateFormat.format(Calendar.getInstance().getTime());
 		System.out.println(timeStamp);
 
@@ -51,9 +65,9 @@ public class Publish {
 		new File(destinationDataPath + "gpkg/").mkdirs();
 
 		var changed = false;
-		for(String cc : HealthcareUtil.ccs) {
+		for(String cc : ccs) {
 
-			var inCsvFile = HealthcareUtil.path + cc+"/"+cc+".csv";
+			var inCsvFile = inDataPath + cc+"/"+cc+".csv";
 			var outCsvFile = destinationDataPath+"csv/"+cc+".csv";
 
 			//compare file dates, skip the ones that have not been updated
@@ -95,7 +109,7 @@ public class Publish {
 			//CSVUtil.removeColumn(data, "geo_confidence");
 
 			//export as geojson and GPKG
-			CSVUtil.save(data, outCsvFile, HealthcareUtil.cols_);
+			CSVUtil.save(data, outCsvFile, cols_);
 			Collection<Feature> fs = CSVUtil.CSVToFeatures(data, "lon", "lat");
 			HealthcareUtil.setAttributeTypes(fs);
 			GeoData.save(fs, destinationDataPath+"geojson/"+cc+".geojson", CRSUtil.getWGS_84_CRS());
@@ -106,7 +120,7 @@ public class Publish {
 		if(changed) {
 
 			var all = new ArrayList<Map<String, String>>();
-			for(String cc : HealthcareUtil.ccs)
+			for(String cc : ccs)
 				all.addAll( CSVUtil.load(destinationDataPath+"csv/"+cc+".csv") );
 
 			//append cc to id
@@ -125,7 +139,7 @@ public class Publish {
 			//export all
 			System.out.println("*** All");
 			System.out.println(all.size());
-			CSVUtil.save(all, destinationDataPath+"csv/all.csv", HealthcareUtil.cols_);
+			CSVUtil.save(all, destinationDataPath+"csv/all.csv", cols_);
 			Collection<Feature> fs = CSVUtil.CSVToFeatures(all, "lon", "lat");
 			HealthcareUtil.setAttributeTypes(fs);
 			GeoData.save(fs, destinationDataPath + "geojson/all.geojson", CRSUtil.getWGS_84_CRS());
@@ -152,7 +166,8 @@ public class Publish {
 				}
 
 				//save
-				CSVUtil.save(data, destinationBasePath + "map/healthcare/hcs.csv");
+				new File(destinationBasePath + "map/"+serviceType+"/").mkdirs();
+				CSVUtil.save(data, destinationBasePath + "map/"+serviceType+"/hcs.csv");
 			}
 		}
 
