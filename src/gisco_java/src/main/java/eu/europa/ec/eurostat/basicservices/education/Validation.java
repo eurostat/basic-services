@@ -18,7 +18,10 @@ import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
  */
 public class Validation {
 
-	//run validation process for each country
+	/**
+	 * run validation process for each country
+	 * @param args 
+	 */
 	public static void main(String[] args) {
 		System.out.println("Start");
 		for(String cc : EducationUtil.ccs) {
@@ -30,7 +33,12 @@ public class Validation {
 		System.out.println("End");
 	}
 
-	//validate 
+	/**
+	 * Validate data for a specific country.
+	 * 
+	 * @param data
+	 * @param cc
+	 */
 	public static void validate(Collection<Map<String, String>> data, String cc) {
 		boolean b;
 

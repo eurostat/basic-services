@@ -51,7 +51,7 @@ public class BasicServicePublication {
 
 		//get publication date
 		String timeStamp = BasicServicesUtil.dateFormat.format(Calendar.getInstance().getTime());
-		System.out.println(timeStamp);
+		System.out.println("Publication date: " + timeStamp);
 
 		//make outpur folders
 		new File(destinationDataPath + "csv/").mkdirs();
@@ -167,7 +167,7 @@ public class BasicServicePublication {
 
 		System.out.println("End");
 	}
-	
+
 
 	/**
 	 * A function specifying how to set the type of some attributes.
