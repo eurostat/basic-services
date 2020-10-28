@@ -8,7 +8,7 @@ import org.apache.commons.csv.CSVFormat;
 
 import eu.europa.ec.eurostat.basicservices.ServicesGeocoding;
 import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
-import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareValidation;
+import eu.europa.ec.eurostat.basicservices.healthcare.Validation;
 import eu.europa.ec.eurostat.jgiscotools.geocoding.BingGeocoder;
 import eu.europa.ec.eurostat.jgiscotools.gisco_processes.LocalParameters;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
@@ -150,13 +150,13 @@ public class HU {
 		System.out.println(nbbeds.size());
 		CSVUtil.join(data, "id", nbbeds, "id", false);
 
-		HealthcareValidation.validate(data, cc, HealthcareUtil.cols_);
+		Validation.validate(data, cc, HealthcareUtil.cols_);
 
 		LocalParameters.loadProxySettings();
 		ServicesGeocoding.set(BingGeocoder.get(), data, "lon", "lat", true, true);
 
 		CSVUtil.addColumns(data, HealthcareUtil.cols, "");
-		HealthcareValidation.validate(data, cc, HealthcareUtil.cols_);
+		Validation.validate(data, cc, HealthcareUtil.cols_);
 		CSVUtil.save(data, HealthcareUtil.path+cc + "/"+cc+".csv");
 		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HealthcareUtil.path+cc + "/"+cc+".gpkg", CRSUtil.getWGS_84_CRS());
 	}

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
-import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareValidation;
+import eu.europa.ec.eurostat.basicservices.healthcare.Validation;
 import eu.europa.ec.eurostat.jgiscotools.gisco_processes.LocalParameters;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.geo.CRSUtil;
@@ -31,7 +31,7 @@ public class SK {
 	//	ServicesGeocoding.set(BingGeocoder.get(), data, "lon", "lat", true, true);
 
 		CSVUtil.addColumns(data, HealthcareUtil.cols, "");
-		HealthcareValidation.validate(data, "SK", HealthcareUtil.cols_);
+		Validation.validate(data, "SK", HealthcareUtil.cols_);
 
 		// save
 		System.out.println(data.size());

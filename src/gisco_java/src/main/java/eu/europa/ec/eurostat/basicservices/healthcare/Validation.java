@@ -17,7 +17,7 @@ import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
  * @author julien Gaffuri
  *
  */
-public class HealthcareValidation {
+public class Validation {
 
 	//run validation process for each country
 	public static void main(String[] args) {

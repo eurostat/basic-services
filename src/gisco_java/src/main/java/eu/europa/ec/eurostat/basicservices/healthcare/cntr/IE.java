@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
-import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareValidation;
+import eu.europa.ec.eurostat.basicservices.healthcare.Validation;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.geo.CRSUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.geo.GeoData;
@@ -86,7 +86,7 @@ public class IE {
 		CSVUtil.removeColumn(data, "alternate_name");
 
 		//validation
-		HealthcareValidation.validate(data, cc, HealthcareUtil.cols_);
+		Validation.validate(data, cc, HealthcareUtil.cols_);
 
 		//save
 		System.out.println("Save " + data.size());

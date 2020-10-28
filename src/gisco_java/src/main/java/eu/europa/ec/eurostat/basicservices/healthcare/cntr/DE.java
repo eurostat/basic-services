@@ -11,7 +11,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
-import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareValidation;
+import eu.europa.ec.eurostat.basicservices.healthcare.Validation;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.XMLUtils;
 import eu.europa.ec.eurostat.jgiscotools.io.geo.CRSUtil;
@@ -97,7 +97,7 @@ public class DE {
 		// save
 		System.out.println(data.size());
 		CSVUtil.addColumns(data, HealthcareUtil.cols, "");
-		HealthcareValidation.validate(data, "DE", HealthcareUtil.cols_);
+		Validation.validate(data, "DE", HealthcareUtil.cols_);
 		CSVUtil.save(data, HealthcareUtil.path + "DE/DE.csv");
 		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HealthcareUtil.path + "DE/DE.gpkg", CRSUtil.getWGS_84_CRS());
 	}

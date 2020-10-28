@@ -7,7 +7,7 @@ import org.apache.commons.csv.CSVFormat;
 
 import eu.europa.ec.eurostat.basicservices.ServicesGeocoding;
 import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
-import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareValidation;
+import eu.europa.ec.eurostat.basicservices.healthcare.Validation;
 import eu.europa.ec.eurostat.jgiscotools.geocoding.BingGeocoder;
 import eu.europa.ec.eurostat.jgiscotools.gisco_processes.LocalParameters;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
@@ -30,7 +30,7 @@ public class EE {
 
 		CSVUtil.addColumns(data, HealthcareUtil.cols, "");
 		//CSVUtil.addColumn(data, "ref_date", "22/05/2020");
-		HealthcareValidation.validate(data, "EE", HealthcareUtil.cols_);
+		Validation.validate(data, "EE", HealthcareUtil.cols_);
 		CSVUtil.removeColumn(data, "address");
 
 		// save
