@@ -32,8 +32,8 @@ import eu.europa.ec.eurostat.jgiscotools.io.geo.GeoData;
  */
 public class Publish {
 
-	static String destinationBasePath = "E:/users/gaffuju/eclipse_workspace/basic-services/";
-	//static String destinationBasePath = "E:/users/clemoki/workspace/basic-services/";
+	//static String destinationBasePath = "E:/users/gaffuju/eclipse_workspace/basic-services/";
+	static String destinationBasePath = "E:/users/clemoki/workspace/basic-services/";
 
 	/**
 	 * @param args
