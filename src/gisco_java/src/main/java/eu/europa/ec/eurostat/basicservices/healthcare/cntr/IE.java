@@ -3,7 +3,7 @@ package eu.europa.ec.eurostat.basicservices.healthcare.cntr;
 import java.util.ArrayList;
 import java.util.Map;
 
-import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
+import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
 import eu.europa.ec.eurostat.basicservices.healthcare.Validation;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.geo.CRSUtil;
@@ -17,7 +17,7 @@ public class IE {
 		System.out.println("Start");
 
 		//load input data
-		ArrayList<Map<String, String>> data = CSVUtil.load(HCUtil.path+cc + "/IE_raw.csv");
+		ArrayList<Map<String, String>> data = CSVUtil.load(HealthcareUtil.path+cc + "/IE_raw.csv");
 		System.out.println(data.size());
 
 		//rename and delete columns
@@ -90,8 +90,8 @@ public class IE {
 
 		//save
 		System.out.println("Save " + data.size());
-		CSVUtil.save(data, HCUtil.path+cc + "/"+cc+".csv");
-		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path+cc + "/"+cc+".gpkg", CRSUtil.getWGS_84_CRS());
+		CSVUtil.save(data, HealthcareUtil.path+cc + "/"+cc+".csv");
+		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HealthcareUtil.path+cc + "/"+cc+".gpkg", CRSUtil.getWGS_84_CRS());
 
 		System.out.println("End");
 	}

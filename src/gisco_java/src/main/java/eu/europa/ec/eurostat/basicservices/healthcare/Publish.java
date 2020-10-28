@@ -14,6 +14,7 @@ import java.util.Map;
 
 import org.locationtech.jts.geom.Coordinate;
 
+import eu.europa.ec.eurostat.basicservices.BasicServicesUtil;
 import eu.europa.ec.eurostat.jgiscotools.deprecated.NUTSUtils;
 import eu.europa.ec.eurostat.jgiscotools.feature.Feature;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
@@ -40,7 +41,7 @@ public class Publish {
 		System.out.println("Start");
 
 		//publication date
-		String timeStamp = HCUtil.dateFormat.format(Calendar.getInstance().getTime());
+		String timeStamp = BasicServicesUtil.dateFormat.format(Calendar.getInstance().getTime());
 		System.out.println(timeStamp);
 
 		//make outpur folders
@@ -49,9 +50,9 @@ public class Publish {
 		new File(destinationDataPath + "gpkg/").mkdirs();
 
 		var changed = false;
-		for(String cc : HCUtil.ccs) {
+		for(String cc : HealthcareUtil.ccs) {
 
-			var inCsvFile = HCUtil.path + cc+"/"+cc+".csv";
+			var inCsvFile = HealthcareUtil.path + cc+"/"+cc+".csv";
 			var outCsvFile = destinationDataPath+"csv/"+cc+".csv";
 
 			//compare file dates, skip the ones that have not been updated
@@ -93,9 +94,9 @@ public class Publish {
 			//CSVUtil.removeColumn(data, "geo_confidence");
 
 			//export as geojson and GPKG
-			CSVUtil.save(data, outCsvFile, HCUtil.cols_);
+			CSVUtil.save(data, outCsvFile, HealthcareUtil.cols_);
 			Collection<Feature> fs = CSVUtil.CSVToFeatures(data, "lon", "lat");
-			HCUtil.applyTypes(fs);
+			HealthcareUtil.applyTypes(fs);
 			GeoData.save(fs, destinationDataPath+"geojson/"+cc+".geojson", CRSUtil.getWGS_84_CRS());
 			GeoData.save(fs, destinationDataPath+"gpkg/"+cc+".gpkg", CRSUtil.getWGS_84_CRS());
 		}
@@ -104,7 +105,7 @@ public class Publish {
 		if(changed) {
 
 			var all = new ArrayList<Map<String, String>>();
-			for(String cc : HCUtil.ccs)
+			for(String cc : HealthcareUtil.ccs)
 				all.addAll( CSVUtil.load(destinationDataPath+"csv/"+cc+".csv") );
 
 			//append cc to id
@@ -123,9 +124,9 @@ public class Publish {
 			//export all
 			System.out.println("*** All");
 			System.out.println(all.size());
-			CSVUtil.save(all, destinationDataPath+"csv/all.csv", HCUtil.cols_);
+			CSVUtil.save(all, destinationDataPath+"csv/all.csv", HealthcareUtil.cols_);
 			Collection<Feature> fs = CSVUtil.CSVToFeatures(all, "lon", "lat");
-			HCUtil.applyTypes(fs);
+			HealthcareUtil.applyTypes(fs);
 			GeoData.save(fs, destinationDataPath + "geojson/all.geojson", CRSUtil.getWGS_84_CRS());
 			GeoData.save(fs, destinationDataPath + "gpkg/all.gpkg", CRSUtil.getWGS_84_CRS());
 

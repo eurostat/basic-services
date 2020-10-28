@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
+import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 
 public class DK {
 
 	public static void formatDK() {
 		try {
-			ArrayList<Map<String, String>> raw = CSVUtil.load(HCUtil.path + "DK/DK_geolocated.csv");
+			ArrayList<Map<String, String>> raw = CSVUtil.load(HealthcareUtil.path + "DK/DK_geolocated.csv");
 			System.out.println(raw.size());
 
 			ArrayList<Map<String, String>> out = new ArrayList<>();
@@ -44,7 +44,7 @@ public class DK {
 			}
 
 			System.out.println("Save " + out.size());
-			CSVUtil.save(out, HCUtil.path + "DK/DK.csv");		
+			CSVUtil.save(out, HealthcareUtil.path + "DK/DK.csv");		
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

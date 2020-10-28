@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
+import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
 import eu.europa.ec.eurostat.basicservices.healthcare.Validation;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.geo.CRSUtil;
@@ -17,7 +17,7 @@ public class FR {
 	public static void main(String[] args) throws Exception {
 		System.out.println("Start");
 
-		List<Map<String,String>> data = CSVUtil.load(HCUtil.path+cc + "/FR_2020_04_02.csv");
+		List<Map<String,String>> data = CSVUtil.load(HealthcareUtil.path+cc + "/FR_2020_04_02.csv");
 		System.out.println(data.size());
 
 		data = data.stream().filter(d -> {
@@ -49,8 +49,8 @@ public class FR {
 		System.out.println(data.size());
 
 		Validation.validate(data, cc);
-		CSVUtil.save(data, HCUtil.path+cc + "/"+cc+".csv");
-		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path+cc + "/"+cc+".gpkg", CRSUtil.getWGS_84_CRS());
+		CSVUtil.save(data, HealthcareUtil.path+cc + "/"+cc+".csv");
+		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HealthcareUtil.path+cc + "/"+cc+".gpkg", CRSUtil.getWGS_84_CRS());
 
 		System.out.println("End");
 	}

@@ -3,24 +3,19 @@
  */
 package eu.europa.ec.eurostat.basicservices.healthcare;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 
+import eu.europa.ec.eurostat.basicservices.BasicServicesUtil;
 import eu.europa.ec.eurostat.jgiscotools.feature.Feature;
-import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
-import eu.europa.ec.eurostat.jgiscotools.io.geo.CRSUtil;
-import eu.europa.ec.eurostat.jgiscotools.io.geo.GeoData;
 
 /**
  * @author julien Gaffuri
  *
  */
-public class HCUtil {
+public class HealthcareUtil {
 
-	public static String path = "E:/dissemination/shared-data/MS_data/Service - Health/";
+	public static String path = BasicServicesUtil.path + "Service - Health/";
 
 	//country codes covered
 	static String[] ccs = { "AT", "BE", "BG", "CH", "CY", "CZ", "DE", "DK", "EL", "ES", "FI", "FR", "HR", "HU", "IE", "IT", "LT", "LU", "LV", "MT", "NL", "NO", "PL", "PT", "RO", "SE", "SI", "SK"/* "UK"*/};
@@ -38,11 +33,7 @@ public class HCUtil {
 	};
 	public static List<String> cols_ = List.of(cols);
 
-	//date format
-	public static SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-
-
-
+	//
 	static void applyTypes(Collection<Feature> fs) {
 		for(Feature f : fs) {
 			for(String att : new String[]{"cap_beds", "cap_prac", "cap_rooms"}) {
@@ -59,7 +50,6 @@ public class HCUtil {
 			}
 		}
 	}
-
 
 
 
@@ -99,9 +89,9 @@ public class HCUtil {
 	}
 	 */
 
-	public static void CSVToGPKG(String cc) {
-		ArrayList<Map<String, String>> data = CSVUtil.load(HCUtil.path + cc+"/"+cc+".csv");
-		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path + cc+"/"+cc+".gpkg", CRSUtil.getWGS_84_CRS());
-	}
+	/*public static void CSVToGPKG(String cc) {
+		ArrayList<Map<String, String>> data = CSVUtil.load(HealthcareUtil.path + cc+"/"+cc+".csv");
+		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HealthcareUtil.path + cc+"/"+cc+".gpkg", CRSUtil.getWGS_84_CRS());
+	}*/
 
 }

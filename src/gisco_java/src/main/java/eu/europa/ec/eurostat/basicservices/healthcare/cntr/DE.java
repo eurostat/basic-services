@@ -10,7 +10,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
+import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
 import eu.europa.ec.eurostat.basicservices.healthcare.Validation;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.XMLUtils;
@@ -20,7 +20,7 @@ import eu.europa.ec.eurostat.jgiscotools.io.geo.GeoData;
 public class DE {
 
 	public static void main(String[] args) throws Exception {
-		String filePath = HCUtil.path + "DE/20200308_Verzeichnisabruf_aktuell.xml";
+		String filePath = HealthcareUtil.path + "DE/20200308_Verzeichnisabruf_aktuell.xml";
 		Document doc = XMLUtils.parse(new FileInputStream(filePath));
 
 		NodeList elts = doc.getDocumentElement().getChildNodes();
@@ -96,10 +96,10 @@ public class DE {
 
 		// save
 		System.out.println(data.size());
-		CSVUtil.addColumns(data, HCUtil.cols, "");
+		CSVUtil.addColumns(data, HealthcareUtil.cols, "");
 		Validation.validate(data, "DE");
-		CSVUtil.save(data, HCUtil.path + "DE/DE.csv");
-		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path + "DE/DE.gpkg", CRSUtil.getWGS_84_CRS());
+		CSVUtil.save(data, HealthcareUtil.path + "DE/DE.csv");
+		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HealthcareUtil.path + "DE/DE.gpkg", CRSUtil.getWGS_84_CRS());
 	}
 
 }

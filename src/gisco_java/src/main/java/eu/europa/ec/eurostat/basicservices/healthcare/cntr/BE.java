@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
+import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 import eu.europa.ec.eurostat.jgiscotools.util.Util;
 
@@ -12,10 +12,10 @@ public class BE {
 
 	public static void formatBE() {
 		//load csv
-		ArrayList<Map<String, String>> raw = CSVUtil.load(HCUtil.path + "BE/BE_raw.csv");
+		ArrayList<Map<String, String>> raw = CSVUtil.load(HealthcareUtil.path + "BE/BE_raw.csv");
 		System.out.println(raw.size());
 		HashMap<String, Map<String, String>> rawI = Util.index(raw, "NUMERO DE SITE");
-		ArrayList<Map<String, String>> rawLonLat = CSVUtil.load(HCUtil.path + "BE/BE_raw_lonlat.csv");
+		ArrayList<Map<String, String>> rawLonLat = CSVUtil.load(HealthcareUtil.path + "BE/BE_raw_lonlat.csv");
 		System.out.println(rawLonLat.size());
 
 		ArrayList<Map<String, String>> out = new ArrayList<>();
@@ -48,7 +48,7 @@ public class BE {
 		}
 
 		System.out.println("Save "+out.size());
-		CSVUtil.save(out, HCUtil.path + "BE/BE.csv");
+		CSVUtil.save(out, HealthcareUtil.path + "BE/BE.csv");
 	}
 
 	

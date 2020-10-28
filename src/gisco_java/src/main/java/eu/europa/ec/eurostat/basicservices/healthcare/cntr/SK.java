@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Map;
 
-import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
+import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
 import eu.europa.ec.eurostat.basicservices.healthcare.Validation;
 import eu.europa.ec.eurostat.jgiscotools.gisco_processes.LocalParameters;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
@@ -18,7 +18,7 @@ public class SK {
 		System.out.println("Start");
 
 		//load data
-		ArrayList<Map<String, String>> data = CSVUtil.load(HCUtil.path + "SK/SK_formatted.csv");
+		ArrayList<Map<String, String>> data = CSVUtil.load(HealthcareUtil.path + "SK/SK_formatted.csv");
 		System.out.println(data.size());
 		
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");  
@@ -30,13 +30,13 @@ public class SK {
 		LocalParameters.loadProxySettings();
 	//	ServicesGeocoding.set(BingGeocoder.get(), data, "lon", "lat", true, true);
 
-		CSVUtil.addColumns(data, HCUtil.cols, "");
+		CSVUtil.addColumns(data, HealthcareUtil.cols, "");
 		Validation.validate(data, "SK");
 
 		// save
 		System.out.println(data.size());
-		CSVUtil.save(data, HCUtil.path + "SK/SK.csv");
-		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path + "SK/SK.gpkg", CRSUtil.getWGS_84_CRS());
+		CSVUtil.save(data, HealthcareUtil.path + "SK/SK.csv");
+		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HealthcareUtil.path + "SK/SK.gpkg", CRSUtil.getWGS_84_CRS());
 
 		System.out.println("End");
 	}

@@ -3,14 +3,14 @@ package eu.europa.ec.eurostat.basicservices.healthcare.cntr;
 import java.util.ArrayList;
 import java.util.Map;
 
-import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
+import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 
 public class LT {
 
 	public static void formatLT() {
 		try {
-			ArrayList<Map<String, String>> hs = CSVUtil.load(HCUtil.path + "LT/LT_.csv");
+			ArrayList<Map<String, String>> hs = CSVUtil.load(HealthcareUtil.path + "LT/LT_.csv");
 			System.out.println(hs.size());
 
 			for(Map<String, String> h : hs) {
@@ -90,7 +90,7 @@ public class LT {
 			}
 
 			System.out.println("Save " + hs.size());
-			CSVUtil.save(hs, HCUtil.path + "LT/LT_formatted.csv");
+			CSVUtil.save(hs, HealthcareUtil.path + "LT/LT_formatted.csv");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}		

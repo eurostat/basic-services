@@ -6,7 +6,7 @@ import java.util.Map;
 import org.apache.commons.csv.CSVFormat;
 
 import eu.europa.ec.eurostat.basicservices.ServicesGeocoding;
-import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
+import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
 import eu.europa.ec.eurostat.basicservices.healthcare.Validation;
 import eu.europa.ec.eurostat.jgiscotools.geocoding.BingGeocoder;
 import eu.europa.ec.eurostat.jgiscotools.gisco_processes.LocalParameters;
@@ -21,22 +21,22 @@ public class EE {
 
 		//load data
 		CSVFormat csvF = CSVFormat.DEFAULT.withFirstRecordAsHeader().withDelimiter(';');
-		ArrayList<Map<String, String>> data = CSVUtil.load(HCUtil.path + "EE/EE_addr_formatted.csv", csvF);
+		ArrayList<Map<String, String>> data = CSVUtil.load(HealthcareUtil.path + "EE/EE_addr_formatted.csv", csvF);
 		System.out.println(data.size());
 
 		//geocode
 		LocalParameters.loadProxySettings();
 		ServicesGeocoding.set(BingGeocoder.get(), data, "lon", "lat", true, true);
 
-		CSVUtil.addColumns(data, HCUtil.cols, "");
+		CSVUtil.addColumns(data, HealthcareUtil.cols, "");
 		//CSVUtil.addColumn(data, "ref_date", "22/05/2020");
 		Validation.validate(data, "EE");
 		CSVUtil.removeColumn(data, "address");
 
 		// save
 		System.out.println(data.size());
-		CSVUtil.save(data, HCUtil.path + "EE/EE.csv");
-		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path + "EE/EE.gpkg", CRSUtil.getWGS_84_CRS());
+		CSVUtil.save(data, HealthcareUtil.path + "EE/EE.csv");
+		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HealthcareUtil.path + "EE/EE.gpkg", CRSUtil.getWGS_84_CRS());
 
 		System.out.println("End");
 	}

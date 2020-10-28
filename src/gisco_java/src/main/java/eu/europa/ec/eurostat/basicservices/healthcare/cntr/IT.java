@@ -7,14 +7,14 @@ import java.util.Map;
 
 import org.apache.commons.csv.CSVFormat;
 
-import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
+import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 
 public class IT {
 
 	public static void formatIT() {
 
-		String filePath = HCUtil.path + "IT/C_17_dataset_96_0_upFile.csv";
+		String filePath = HealthcareUtil.path + "IT/C_17_dataset_96_0_upFile.csv";
 		ArrayList<Map<String, String>> hospitals = CSVUtil.load(filePath,
 				CSVFormat.DEFAULT.withFirstRecordAsHeader().withDelimiter(';'));
 		System.out.println(hospitals.size());
@@ -57,7 +57,7 @@ public class IT {
 
 
 		// save
-		CSVUtil.save(hospitalsFormatted, HCUtil.path + "IT/IT_formatted.csv");
+		CSVUtil.save(hospitalsFormatted, HealthcareUtil.path + "IT/IT_formatted.csv");
 	}
 
 }

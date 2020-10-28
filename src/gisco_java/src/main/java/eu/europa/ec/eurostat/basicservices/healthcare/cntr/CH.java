@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
+import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 
 public class CH {
@@ -15,7 +15,7 @@ public class CH {
 	 */
 	public static void formatCH() {
 
-		ArrayList<Map<String, String>> hs = CSVUtil.load(HCUtil.path + "CH/CH_geolocated.csv");
+		ArrayList<Map<String, String>> hs = CSVUtil.load(HealthcareUtil.path + "CH/CH_geolocated.csv");
 		System.out.println(hs.size());
 
 		Collection<Map<String, String>> out = new ArrayList<Map<String, String>>();
@@ -45,10 +45,10 @@ public class CH {
 			out.add(hf);
 		}
 
-		CSVUtil.addColumns(out, HCUtil.cols, "");
+		CSVUtil.addColumns(out, HealthcareUtil.cols, "");
 
 		// save
-		CSVUtil.save(out, HCUtil.path + "CH/CH.csv");
+		CSVUtil.save(out, HealthcareUtil.path + "CH/CH.csv");
 	}
 
 }

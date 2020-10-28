@@ -12,6 +12,7 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
+import eu.europa.ec.eurostat.basicservices.BasicServicesUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 
 /**
@@ -34,7 +35,7 @@ public class Validation {
 	public static void main(String[] args) {
 		System.out.println("Start");
 
-		for(String cc : HCUtil.ccs) validate(HCUtil.path + cc+"/"+cc+".csv", cc);
+		for(String cc : HealthcareUtil.ccs) validate(HealthcareUtil.path + cc+"/"+cc+".csv", cc);
 		//validate(HCUtil.path + "LV/LV.csv", "LV");
 
 		System.out.println("End");
@@ -50,7 +51,7 @@ public class Validation {
 	public static void validate(Collection<Map<String, String>> data, String cc) {
 
 		//check no presence of some columns besides the expected ones
-		Set<String> ch = checkNoUnexpectedColumn(data, HCUtil.cols_);
+		Set<String> ch = checkNoUnexpectedColumn(data, HealthcareUtil.cols_);
 		if(ch.size()>0) System.err.println(ch);
 
 		boolean b;
@@ -84,9 +85,9 @@ public class Validation {
 		if(!b) System.err.println("Problem with geo_qual values for " + cc);
 
 		//check date format DD/MM/YYYY
-		b = checkDateFormat(data, "ref_date", HCUtil.dateFormat);
+		b = checkDateFormat(data, "ref_date", BasicServicesUtil.dateFormat);
 		if(!b) System.err.println("Problem with ref_date format for " + cc);
-		checkDateFormat(data, "pub_date", HCUtil.dateFormat);
+		checkDateFormat(data, "pub_date", BasicServicesUtil.dateFormat);
 		if(!b) System.err.println("Problem with pub_date format for " + cc);
 
 		//non null columns

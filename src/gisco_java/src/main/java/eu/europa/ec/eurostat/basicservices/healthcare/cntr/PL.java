@@ -13,7 +13,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import eu.europa.ec.eurostat.basicservices.ServicesGeocoding;
-import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
+import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
 import eu.europa.ec.eurostat.jgiscotools.geocoding.BingGeocoder;
 import eu.europa.ec.eurostat.jgiscotools.gisco_processes.LocalParameters;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
@@ -27,7 +27,7 @@ public class PL {
 		System.out.println("Start");
 
 		try {
-			String filePath = HCUtil.path + "PL/PublicznyRaportJednostekArt23A_2020-03-29.xml";
+			String filePath = HealthcareUtil.path + "PL/PublicznyRaportJednostekArt23A_2020-03-29.xml";
 			Document doc = XMLUtils.parse(new FileInputStream(filePath));
 
 			Collection<Map<String, String>> out = new ArrayList<Map<String, String>>();
@@ -98,16 +98,16 @@ public class PL {
 
 			// save 1
 			System.out.println(out.size());
-			CSVUtil.addColumns(out, HCUtil.cols, "");
-			CSVUtil.save(out, HCUtil.path + "PL/PL_formatted.csv");
+			CSVUtil.addColumns(out, HealthcareUtil.cols, "");
+			CSVUtil.save(out, HealthcareUtil.path + "PL/PL_formatted.csv");
 
 			//geocode
 			LocalParameters.loadProxySettings();
 			ServicesGeocoding.set(BingGeocoder.get(), out, "lon", "lat", true, true);
 
 			// save 2
-			CSVUtil.save(out, HCUtil.path + "PL/PL.csv");
-			GeoData.save(CSVUtil.CSVToFeatures(out, "lon", "lat"), HCUtil.path + "PL/PL.gpkg", CRSUtil.getWGS_84_CRS());
+			CSVUtil.save(out, HealthcareUtil.path + "PL/PL.csv");
+			GeoData.save(CSVUtil.CSVToFeatures(out, "lon", "lat"), HealthcareUtil.path + "PL/PL.gpkg", CRSUtil.getWGS_84_CRS());
 
 		} catch (Exception e) {
 			e.printStackTrace();

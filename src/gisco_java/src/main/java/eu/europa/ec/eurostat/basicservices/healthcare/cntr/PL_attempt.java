@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.apache.commons.csv.CSVFormat;
 
-import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
+import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 
 public class PL_attempt {
@@ -16,7 +16,7 @@ public class PL_attempt {
 		try {
 			//load data
 			CSVFormat f = CSVFormat.DEFAULT.withFirstRecordAsHeader().withDelimiter(';');
-			Collection<Map<String, String>> data = CSVUtil.load(HCUtil.path + "PL/CSV_Rpm_aktywne/komorki_cells.csv", f);
+			Collection<Map<String, String>> data = CSVUtil.load(HealthcareUtil.path + "PL/CSV_Rpm_aktywne/komorki_cells.csv", f);
 			System.out.println(data.size());
 
 			data = CSVUtil.aggregateById(data, "ID Jednostki", "Liczba łóżek ogółem" );
@@ -82,8 +82,8 @@ public class PL_attempt {
 
 			// save 1
 			System.out.println(data.size());
-			CSVUtil.addColumns(data, HCUtil.cols, "");
-			CSVUtil.save(data, HCUtil.path + "PL/PL_formatted.csv");
+			CSVUtil.addColumns(data, HealthcareUtil.cols, "");
+			CSVUtil.save(data, HealthcareUtil.path + "PL/PL_formatted.csv");
 
 			//geocode
 			//LocalParameters.loadProxySettings();

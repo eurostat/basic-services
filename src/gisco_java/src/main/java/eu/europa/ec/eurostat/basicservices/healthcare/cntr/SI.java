@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import eu.europa.ec.eurostat.basicservices.ServicesGeocoding;
-import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
+import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
 import eu.europa.ec.eurostat.basicservices.healthcare.Validation;
 import eu.europa.ec.eurostat.jgiscotools.geocoding.BingGeocoder;
 import eu.europa.ec.eurostat.jgiscotools.gisco_processes.LocalParameters;
@@ -18,7 +18,7 @@ public class SI {
 		System.out.println("Start");
 
 		//load data
-		ArrayList<Map<String, String>> data = CSVUtil.load(HCUtil.path + "SI/SI_geolocated.csv");
+		ArrayList<Map<String, String>> data = CSVUtil.load(HealthcareUtil.path + "SI/SI_geolocated.csv");
 		System.out.println(data.size());
 
 		CSVUtil.addColumn(data, "cc", "SI");
@@ -45,13 +45,13 @@ public class SI {
 		LocalParameters.loadProxySettings();
 		ServicesGeocoding.set(BingGeocoder.get(), data, "lon", "lat", true, true);
 
-		CSVUtil.addColumns(data, HCUtil.cols, "");
+		CSVUtil.addColumns(data, HealthcareUtil.cols, "");
 		Validation.validate(data, "SI");
 
 		// save
 		System.out.println(data.size());
-		CSVUtil.save(data, HCUtil.path + "SI/SI.csv");
-		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path + "SI/SI.gpkg", CRSUtil.getWGS_84_CRS());
+		CSVUtil.save(data, HealthcareUtil.path + "SI/SI.csv");
+		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HealthcareUtil.path + "SI/SI.gpkg", CRSUtil.getWGS_84_CRS());
 
 		System.out.println("End");
 	}

@@ -7,13 +7,13 @@ import java.util.Map;
 
 import org.apache.commons.csv.CSVFormat;
 
-import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
+import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 
 public class FI {
 	public static void formatFI() {
 
-		String filePath = HCUtil.path + "FI/FI_geolocated.csv";
+		String filePath = HealthcareUtil.path + "FI/FI_geolocated.csv";
 		ArrayList<Map<String, String>> hospitals_FI = CSVUtil.load(filePath,
 				CSVFormat.DEFAULT.withFirstRecordAsHeader().withDelimiter(';'));
 		System.out.println(hospitals_FI.size());

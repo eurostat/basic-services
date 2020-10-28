@@ -7,7 +7,7 @@ import java.util.Map;
 
 import org.apache.commons.csv.CSVFormat;
 
-import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
+import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 
 public class AT {
@@ -17,7 +17,7 @@ public class AT {
 	 */
 	public static void formatAT() {
 
-		String filePath = HCUtil.path + "AT/KA-Verzeichnis 2019-10-15.csv";
+		String filePath = HealthcareUtil.path + "AT/KA-Verzeichnis 2019-10-15.csv";
 		ArrayList<Map<String, String>> hospitals = CSVUtil.load(filePath,
 				CSVFormat.DEFAULT.withFirstRecordAsHeader().withDelimiter(';'));
 		System.out.println(hospitals.size());

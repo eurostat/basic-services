@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import org.apache.commons.csv.CSVFormat;
 
 import eu.europa.ec.eurostat.basicservices.ServicesGeocoding;
-import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
+import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
 import eu.europa.ec.eurostat.basicservices.healthcare.Validation;
 import eu.europa.ec.eurostat.jgiscotools.geocoding.BingGeocoder;
 import eu.europa.ec.eurostat.jgiscotools.gisco_processes.LocalParameters;
@@ -31,7 +31,7 @@ public class HU {
 
 		//load data
 		CSVFormat cf = CSVFormat.DEFAULT.withDelimiter('\t').withFirstRecordAsHeader();
-		List<Map<String, String>> data = CSVUtil.load(HCUtil.path + "HU/NEAK_Fin_2020.01_02.csv", cf);
+		List<Map<String, String>> data = CSVUtil.load(HealthcareUtil.path + "HU/NEAK_Fin_2020.01_02.csv", cf);
 		System.out.println(data.size());
 
 		//filter
@@ -146,7 +146,7 @@ public class HU {
 
 		//join number of beds
 		CSVUtil.addColumn(data, "cap_beds", "");
-		List<Map<String, String>> nbbeds = CSVUtil.load(HCUtil.path + "HU/number_of_beds.csv");
+		List<Map<String, String>> nbbeds = CSVUtil.load(HealthcareUtil.path + "HU/number_of_beds.csv");
 		System.out.println(nbbeds.size());
 		CSVUtil.join(data, "id", nbbeds, "id", false);
 
@@ -155,10 +155,10 @@ public class HU {
 		LocalParameters.loadProxySettings();
 		ServicesGeocoding.set(BingGeocoder.get(), data, "lon", "lat", true, true);
 
-		CSVUtil.addColumns(data, HCUtil.cols, "");
+		CSVUtil.addColumns(data, HealthcareUtil.cols, "");
 		Validation.validate(data, cc);
-		CSVUtil.save(data, HCUtil.path+cc + "/"+cc+".csv");
-		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path+cc + "/"+cc+".gpkg", CRSUtil.getWGS_84_CRS());
+		CSVUtil.save(data, HealthcareUtil.path+cc + "/"+cc+".csv");
+		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HealthcareUtil.path+cc + "/"+cc+".gpkg", CRSUtil.getWGS_84_CRS());
 	}
 
 }

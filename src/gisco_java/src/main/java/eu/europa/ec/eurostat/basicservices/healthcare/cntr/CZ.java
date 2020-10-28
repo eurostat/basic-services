@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import org.apache.commons.csv.CSVFormat;
 
 import eu.europa.ec.eurostat.basicservices.ServicesGeocoding;
-import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
+import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
 import eu.europa.ec.eurostat.basicservices.healthcare.Validation;
 import eu.europa.ec.eurostat.jgiscotools.geocoding.BingGeocoder;
 import eu.europa.ec.eurostat.jgiscotools.geocoding.base.Geocoder;
@@ -26,7 +26,7 @@ public class CZ {
 
 		//load data
 		CSVFormat cf = CSVFormat.DEFAULT.withDelimiter(';').withFirstRecordAsHeader();
-		List<Map<String, String>> data = CSVUtil.load(HCUtil.path + "CZ/export-2020-04.csv", cf);
+		List<Map<String, String>> data = CSVUtil.load(HealthcareUtil.path + "CZ/export-2020-04.csv", cf);
 		System.out.println(data.size());
 
 		//filter
@@ -133,8 +133,8 @@ public class CZ {
 
 		Validation.validate(data, cc);
 
-		CSVUtil.save(data, HCUtil.path+cc + "/"+cc+".csv");
-		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HCUtil.path+cc + "/"+cc+".gpkg", CRSUtil.getWGS_84_CRS());
+		CSVUtil.save(data, HealthcareUtil.path+cc + "/"+cc+".csv");
+		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HealthcareUtil.path+cc + "/"+cc+".gpkg", CRSUtil.getWGS_84_CRS());
 
 		System.out.println("End");
 	}

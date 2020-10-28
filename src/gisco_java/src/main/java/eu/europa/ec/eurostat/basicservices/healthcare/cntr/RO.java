@@ -11,7 +11,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import eu.europa.ec.eurostat.basicservices.healthcare.HCUtil;
+import eu.europa.ec.eurostat.basicservices.healthcare.HealthcareUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 
 public class RO {
@@ -29,7 +29,7 @@ public class RO {
 			 * System.out.println(line); //String[] parts = line.split(",");
 			 */
 
-			Scanner scanner = new Scanner(new File(HCUtil.path + "RO/extractSpitaleGPS.html"));
+			Scanner scanner = new Scanner(new File(HealthcareUtil.path + "RO/extractSpitaleGPS.html"));
 			String line = scanner.nextLine();
 			scanner.close();
 
@@ -58,7 +58,7 @@ public class RO {
 				hospitalsFormatted.add(hf);
 			}
 			// save
-			CSVUtil.save(hospitalsFormatted, HCUtil.path + "RO/RO_geolocated.csv");
+			CSVUtil.save(hospitalsFormatted, HealthcareUtil.path + "RO/RO_geolocated.csv");
 
 		} catch (Exception e) {
 			e.printStackTrace();
