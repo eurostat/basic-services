@@ -1,7 +1,7 @@
 /**
  * 
  */
-package eu.europa.ec.eurostat.basicservices.healthcare;
+package eu.europa.ec.eurostat.basicservices;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -9,19 +9,19 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import eu.europa.ec.eurostat.basicservices.BasicServicesUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 
 /**
- * Check the country CSV files are complant with the specs.
+ * Validation for all basic services
  * 
- * @author julien Gaffuri
+ * @author gaffuju
  *
  */
-public class Validation {
+public class BasicServicesValidation {
 
 	//TODO detect duplicates?
 	//those with exact same data
@@ -29,29 +29,9 @@ public class Validation {
 	//those with same name/site_name
 	//those at the same location
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		System.out.println("Start");
-
-		for(String cc : HealthcareUtil.ccs) validate(HealthcareUtil.path + cc+"/"+cc+".csv", cc);
-		//validate(HCUtil.path + "LV/LV.csv", "LV");
-
-		System.out.println("End");
-	}
-
-	public static void validate(String filePath, String cc) {
-		System.out.println("*** " + cc);
-		ArrayList<Map<String, String>> data = CSVUtil.load(filePath);
-		System.out.println(data.size());
-		validate(data, cc);
-	}
-
-	public static void validate(Collection<Map<String, String>> data, String cc) {
-
+	public static void validate(Collection<Map<String, String>> data, String cc, List<String> cols_) {
 		//check no presence of some columns besides the expected ones
-		Set<String> ch = checkNoUnexpectedColumn(data, HealthcareUtil.cols_);
+		Set<String> ch = checkNoUnexpectedColumn(data, cols_);
 		if(ch.size()>0) System.err.println(ch);
 
 		boolean b;
@@ -72,18 +52,10 @@ public class Validation {
 		b = checkValuesAmong(data, "cc", cc);
 		if(!b) System.err.println("Problem with cc values for " + cc);
 
-		//check emergency -yes/no
-		b = checkValuesAmong(data, "emergency", "", "yes", "no");
-		if(!b) System.err.println("Problem with emergency values for " + cc);
-
-		//check public_private - public/private
-		b = checkValuesAmong(data, "public_private", "", "public", "private");
-		if(!b) System.err.println("Problem with public_private values for " + cc);
 
 		//check geo_qual -1,1,2,3
 		b = checkValuesAmong(data, "geo_qual", "-1", "1", "2", "3");
 		if(!b) System.err.println("Problem with geo_qual values for " + cc);
-
 		//check date format DD/MM/YYYY
 		b = checkDateFormat(data, "ref_date", BasicServicesUtil.dateFormat);
 		if(!b) System.err.println("Problem with ref_date format for " + cc);
@@ -91,8 +63,6 @@ public class Validation {
 		if(!b) System.err.println("Problem with pub_date format for " + cc);
 
 		//non null columns
-		b = checkValuesNotNullOrEmpty(data, "hospital_name");
-		if(!b) System.err.println("Missing values for hospital_name format for " + cc);
 		b = checkValuesNotNullOrEmpty(data, "lat");
 		if(!b) System.err.println("Missing values for lat format for " + cc);
 		b = checkValuesNotNullOrEmpty(data, "lon");
@@ -103,12 +73,9 @@ public class Validation {
 		//check lon,lat extends
 		checkGeoExtent(data, "lon", "lat");
 
-		//TODO other tests ?
-		//check list_specs
-		//check empty columns
 	}
 
-	private static void checkGeoExtent(Collection<Map<String, String>> data, String lonCol, String latCol) {
+	public static void checkGeoExtent(Collection<Map<String, String>> data, String lonCol, String latCol) {
 		for(Map<String, String> h : data) {
 			String lon_ = h.get(lonCol);
 			String lat_ = h.get(latCol);
@@ -135,7 +102,7 @@ public class Validation {
 		}
 	}
 
-	private static Set<String> checkIdUnicity(Collection<Map<String, String>> data, String idCol) {
+	public static Set<String> checkIdUnicity(Collection<Map<String, String>> data, String idCol) {
 		ArrayList<String> ids = CSVUtil.getValues(data, idCol);
 
 		Set<String> duplicates = new LinkedHashSet<>();
@@ -146,7 +113,7 @@ public class Validation {
 		return duplicates;
 	}
 
-	private static boolean checkDateFormat(Collection<Map<String, String>> data, String col, SimpleDateFormat df) {
+	public static boolean checkDateFormat(Collection<Map<String, String>> data, String col, SimpleDateFormat df) {
 		for(Map<String, String> h : data) {
 			String val = h.get(col);
 			if(val == null || val.isEmpty())
@@ -161,7 +128,7 @@ public class Validation {
 		return true;
 	}
 
-	private static boolean checkValuesNotNullOrEmpty(Collection<Map<String, String>> data, String col) {
+	public static boolean checkValuesNotNullOrEmpty(Collection<Map<String, String>> data, String col) {
 		for(Map<String, String> h : data) {
 			String val = h.get(col);
 			if(val == null || val.isEmpty())
@@ -170,7 +137,7 @@ public class Validation {
 		return true;
 	}
 
-	private static boolean checkValuesAmong(Collection<Map<String, String>> data, String col, String... values) {
+	public static boolean checkValuesAmong(Collection<Map<String, String>> data, String col, String... values) {
 		for(Map<String, String> h : data) {
 			String val = h.get(col);
 			boolean found = false;
@@ -186,7 +153,7 @@ public class Validation {
 		return true;
 	}
 
-	static Set<String> checkNoUnexpectedColumn(Collection<Map<String, String>> data, Collection<String> cols) {
+	public static Set<String> checkNoUnexpectedColumn(Collection<Map<String, String>> data, Collection<String> cols) {
 		for(Map<String, String> h : data) {
 			Set<String> cs = new HashSet<>(h.keySet());
 			cs.removeAll(cols);
