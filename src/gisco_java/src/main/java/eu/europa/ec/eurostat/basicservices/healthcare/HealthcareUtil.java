@@ -6,6 +6,7 @@ package eu.europa.ec.eurostat.basicservices.healthcare;
 import java.util.Collection;
 import java.util.List;
 
+import eu.europa.ec.eurostat.basicservices.BasicServicePublication.AttributeTypeSetter;
 import eu.europa.ec.eurostat.basicservices.BasicServicesUtil;
 import eu.europa.ec.eurostat.jgiscotools.feature.Feature;
 
@@ -33,11 +34,13 @@ public class HealthcareUtil {
 	};
 	public static List<String> cols_ = List.of(cols);
 
-	//
-	static void setAttributeTypes(Collection<Feature> fs) {
-		BasicServicesUtil.setAttributeTypeAsIntegerTypes(fs, "cap_beds", "cap_prac", "cap_rooms");
-		BasicServicesUtil.setAttributeTypeAsDoubleTypes(fs, "lat", "lon");
-	}
+	
+	static AttributeTypeSetter ats = new AttributeTypeSetter() {
+		public void setAttributeTypes(Collection<Feature> fs) {
+			BasicServicesUtil.setAttributeTypeAsIntegerTypes(fs, "cap_beds", "cap_prac", "cap_rooms");
+			BasicServicesUtil.setAttributeTypeAsDoubleTypes(fs, "lat", "lon");
+		}
+	};
 
 
 

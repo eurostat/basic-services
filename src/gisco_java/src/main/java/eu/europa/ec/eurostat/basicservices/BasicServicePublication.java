@@ -1,7 +1,7 @@
 /**
  * 
  */
-package eu.europa.ec.eurostat.basicservices.healthcare;
+package eu.europa.ec.eurostat.basicservices;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,7 +15,6 @@ import java.util.Map;
 
 import org.locationtech.jts.geom.Coordinate;
 
-import eu.europa.ec.eurostat.basicservices.BasicServicesUtil;
 import eu.europa.ec.eurostat.jgiscotools.deprecated.NUTSUtils;
 import eu.europa.ec.eurostat.jgiscotools.feature.Feature;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
@@ -23,24 +22,18 @@ import eu.europa.ec.eurostat.jgiscotools.io.geo.CRSUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.geo.GeoData;
 
 /**
- * Copy country CSV files to github repository.
- * Combine them in the all.csv file.
- * Convert as GeoJSON and GPKG format.
+ * Generic publication script for basic services.
+ * 
+ * - Copy country CSV files to github repository.
+ * - Set the publication date and country name.
+ * - Combine them in the all.csv file.
+ * - Convert as GeoJSON and GPKG format.
  * 
  * @author julien Gaffuri
  *
  */
-public class Publish {
+public class BasicServicePublication {
 
-	//static String destinationBasePath = "E:/users/gaffuju/eclipse_workspace/basic-services/";
-	static String destinationBasePath = "E:/users/clemoki/workspace/basic-services/";
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		publish("healthcare", HealthcareUtil.path, destinationBasePath, HealthcareUtil.ccs, HealthcareUtil.cols_);
-	}
 
 	/**
 	 * @param serviceType 
@@ -48,9 +41,10 @@ public class Publish {
 	 * @param destinationBasePath 
 	 * @param ccs 
 	 * @param cols_ 
+	 * @param ats 
 	 * @param args
 	 */
-	public static void publish(String serviceType, String inDataPath, String destinationBasePath, String[] ccs, List<String> cols_) {
+	public static void publish(String serviceType, String inDataPath, String destinationBasePath, String[] ccs, List<String> cols_, AttributeTypeSetter ats) {
 		System.out.println("Start");
 
 		String destinationDataPath = destinationBasePath + "data/"+serviceType+"/";
@@ -111,7 +105,7 @@ public class Publish {
 			//export as geojson and GPKG
 			CSVUtil.save(data, outCsvFile, cols_);
 			Collection<Feature> fs = CSVUtil.CSVToFeatures(data, "lon", "lat");
-			HealthcareUtil.setAttributeTypes(fs);
+			ats.setAttributeTypes(fs);
 			GeoData.save(fs, destinationDataPath+"geojson/"+cc+".geojson", CRSUtil.getWGS_84_CRS());
 			GeoData.save(fs, destinationDataPath+"gpkg/"+cc+".gpkg", CRSUtil.getWGS_84_CRS());
 		}
@@ -141,7 +135,7 @@ public class Publish {
 			System.out.println(all.size());
 			CSVUtil.save(all, destinationDataPath+"csv/all.csv", cols_);
 			Collection<Feature> fs = CSVUtil.CSVToFeatures(all, "lon", "lat");
-			HealthcareUtil.setAttributeTypes(fs);
+			ats.setAttributeTypes(fs);
 			GeoData.save(fs, destinationDataPath + "geojson/all.geojson", CRSUtil.getWGS_84_CRS());
 			GeoData.save(fs, destinationDataPath + "gpkg/all.gpkg", CRSUtil.getWGS_84_CRS());
 
@@ -172,6 +166,20 @@ public class Publish {
 		}
 
 		System.out.println("End");
+	}
+	
+
+	/**
+	 * A function specifying how to set the type of some attributes.
+	 * 
+	 * @author julien Gaffuri
+	 *
+	 */
+	public interface AttributeTypeSetter {
+		/**
+		 * @param fs The list of features to set the attributes of.
+		 */
+		void setAttributeTypes(Collection<Feature> fs);
 	}
 
 }
