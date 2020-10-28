@@ -131,7 +131,7 @@ public class CZ {
 		for(Map<String, String> d : data)
 			improve(BingGeocoder.get(), d, true, true);
 
-		Validation.validate(data, cc, HealthcareUtil.cols_);
+		Validation.validate(data, cc);
 
 		CSVUtil.save(data, HealthcareUtil.path+cc + "/"+cc+".csv");
 		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HealthcareUtil.path+cc + "/"+cc+".gpkg", CRSUtil.getWGS_84_CRS());

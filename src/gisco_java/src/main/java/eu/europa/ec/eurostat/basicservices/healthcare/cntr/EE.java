@@ -30,7 +30,7 @@ public class EE {
 
 		CSVUtil.addColumns(data, HealthcareUtil.cols, "");
 		//CSVUtil.addColumn(data, "ref_date", "22/05/2020");
-		Validation.validate(data, "EE", HealthcareUtil.cols_);
+		Validation.validate(data, "EE");
 		CSVUtil.removeColumn(data, "address");
 
 		// save

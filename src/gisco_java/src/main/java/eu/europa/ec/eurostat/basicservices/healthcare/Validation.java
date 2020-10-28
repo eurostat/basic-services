@@ -5,7 +5,6 @@ package eu.europa.ec.eurostat.basicservices.healthcare;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import java.util.Map;
 
 import eu.europa.ec.eurostat.basicservices.BasicServicesValidation;
@@ -26,17 +25,17 @@ public class Validation {
 			System.out.println("*** " + cc);
 			ArrayList<Map<String, String>> data = CSVUtil.load(HealthcareUtil.path + cc+"/"+cc+".csv");
 			System.out.println(data.size());
-			validate(data, cc, HealthcareUtil.cols_);
+			validate(data, cc);
 		}
 		System.out.println("End");
 	}
 
 	//validate 
-	public static void validate(Collection<Map<String, String>> data, String cc, List<String> cols_) {
+	public static void validate(Collection<Map<String, String>> data, String cc) {
 		boolean b;
 
 		//validation on all aspects common to other basic services
-		BasicServicesValidation.validate(data, cc, cols_);
+		BasicServicesValidation.validate(data, cc, HealthcareUtil.cols_);
 
 		//TODO other tests ?
 		//check list_specs

@@ -97,7 +97,7 @@ public class DE {
 		// save
 		System.out.println(data.size());
 		CSVUtil.addColumns(data, HealthcareUtil.cols, "");
-		Validation.validate(data, "DE", HealthcareUtil.cols_);
+		Validation.validate(data, "DE");
 		CSVUtil.save(data, HealthcareUtil.path + "DE/DE.csv");
 		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HealthcareUtil.path + "DE/DE.gpkg", CRSUtil.getWGS_84_CRS());
 	}
