@@ -26,7 +26,7 @@ public class BasicServicesUtil {
 	 * @param fs
 	 * @param atts
 	 */
-	public static void applyIntegerTypes(Collection<Feature> fs, String... atts) {
+	public static void setAttributeTypeAsIntegerTypes(Collection<Feature> fs, String... atts) {
 		for(Feature f : fs) {
 			for(String att : atts) {
 				var v = f.getAttribute(att);
@@ -43,7 +43,7 @@ public class BasicServicesUtil {
 	 * @param fs
 	 * @param atts
 	 */
-	public static void applyDoubleTypes(Collection<Feature> fs, String... atts) {
+	public static void setAttributeTypeAsDoubleTypes(Collection<Feature> fs, String... atts) {
 		for(Feature f : fs) {
 			for(String att : atts) {
 				var v = f.getAttribute(att);

@@ -96,7 +96,7 @@ public class Publish {
 			//export as geojson and GPKG
 			CSVUtil.save(data, outCsvFile, HealthcareUtil.cols_);
 			Collection<Feature> fs = CSVUtil.CSVToFeatures(data, "lon", "lat");
-			HealthcareUtil.applyTypes(fs);
+			HealthcareUtil.setAttributeTypes(fs);
 			GeoData.save(fs, destinationDataPath+"geojson/"+cc+".geojson", CRSUtil.getWGS_84_CRS());
 			GeoData.save(fs, destinationDataPath+"gpkg/"+cc+".gpkg", CRSUtil.getWGS_84_CRS());
 		}
@@ -126,7 +126,7 @@ public class Publish {
 			System.out.println(all.size());
 			CSVUtil.save(all, destinationDataPath+"csv/all.csv", HealthcareUtil.cols_);
 			Collection<Feature> fs = CSVUtil.CSVToFeatures(all, "lon", "lat");
-			HealthcareUtil.applyTypes(fs);
+			HealthcareUtil.setAttributeTypes(fs);
 			GeoData.save(fs, destinationDataPath + "geojson/all.geojson", CRSUtil.getWGS_84_CRS());
 			GeoData.save(fs, destinationDataPath + "gpkg/all.gpkg", CRSUtil.getWGS_84_CRS());
 

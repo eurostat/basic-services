@@ -17,10 +17,10 @@ public class HealthcareUtil {
 
 	public static String path = BasicServicesUtil.path + "Service - Health/";
 
-	//country codes covered
+	//countries covered
 	static String[] ccs = { "AT", "BE", "BG", "CH", "CY", "CZ", "DE", "DK", "EL", "ES", "FI", "FR", "HR", "HU", "IE", "IT", "LT", "LU", "LV", "MT", "NL", "NO", "PL", "PT", "RO", "SE", "SI", "SK"/* "UK"*/};
 
-	//CSV columns
+	//required attributes
 	public static String[] cols = {
 			"id", "hospital_name", "site_name",
 			"lat", "lon", "geo_qual",
@@ -34,9 +34,9 @@ public class HealthcareUtil {
 	public static List<String> cols_ = List.of(cols);
 
 	//
-	static void applyTypes(Collection<Feature> fs) {
-		BasicServicesUtil.applyIntegerTypes(fs, "cap_beds", "cap_prac", "cap_rooms");
-		BasicServicesUtil.applyDoubleTypes(fs, "lat", "lon");
+	static void setAttributeTypes(Collection<Feature> fs) {
+		BasicServicesUtil.setAttributeTypeAsIntegerTypes(fs, "cap_beds", "cap_prac", "cap_rooms");
+		BasicServicesUtil.setAttributeTypeAsDoubleTypes(fs, "lat", "lon");
 	}
 
 
