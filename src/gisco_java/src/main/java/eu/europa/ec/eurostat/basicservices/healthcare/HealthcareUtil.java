@@ -35,20 +35,8 @@ public class HealthcareUtil {
 
 	//
 	static void applyTypes(Collection<Feature> fs) {
-		for(Feature f : fs) {
-			for(String att : new String[]{"cap_beds", "cap_prac", "cap_rooms"}) {
-				var v = f.getAttribute(att);
-				if(v==null) continue;
-				if("".equals(v)) f.setAttribute(att, null);
-				else f.setAttribute(att, Integer.parseInt(v.toString()));
-			}
-			for(String att : new String[] {"lat", "lon"}) {
-				var v = f.getAttribute(att);
-				if(v==null) continue;
-				if("".equals(v)) f.setAttribute(att, null);
-				else f.setAttribute(att, Double.parseDouble(v.toString()));
-			}
-		}
+		BasicServicesUtil.applyIntegerTypes(fs, "cap_beds", "cap_prac", "cap_rooms");
+		BasicServicesUtil.applyDoubleTypes(fs, "lat", "lon");
 	}
 
 
