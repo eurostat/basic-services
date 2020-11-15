@@ -11,7 +11,7 @@ Module implementing integration of CH data on health care.
 **Contents**
 """
 
-# *credits*:      `gjacopo <jacopo.grazzini@ec.europa.eu>`_ 
+# *credits*:      `gjacopo <jacopo.grazzini@ec.europa.eu>`_
 # *since*:        Mon Apr  6 10:00:28 2020
 
 #%%
@@ -23,7 +23,7 @@ import pandas as pd#analysis:ignore
 
 
 #%%
-    
+
 CC              = 'CH'
 
 # METADATNAT : will be read from the CHhcs.json file
@@ -32,44 +32,44 @@ CC              = 'CH'
 #%%
 
 def prepare_data(self):
-    """Prepare CH data. 
-    
+    """Prepare CH data.
+
     * Ort => postcode city
     * Adr => street house_number
     """
-    #self.data['Ort'].replace('\s+',' ',regex=True,inplace=True)    
+    #self.data['Ort'].replace('\s+',' ',regex=True,inplace=True)
     #df = self.data['Ort'].str.split(pat=",", n=1, expand=True)
     #self.data[['postcode', 'city']] = df[1].str.split(pat=' ', n=2, expand=True)
-    #self.data['Adr'].replace('\s+',' ',regex=True,inplace=True)    
+    #self.data['Adr'].replace('\s+',' ',regex=True,inplace=True)
     #self.data[['street', 'number']] = self.data['Adr'].str.split(pat=" ", n=2, expand=True)
     def split_ort(s):
         left, right = re.compile(r'\s*,\s').split(s)
         while left == '' and len(right)>1:
-            left = right[-1].strip()      
-            right = right[:-1]      
+            left = right[-1].strip()
+            right = right[:-1]
         if len(right) == 1 and left == '':
-            return "", left[0]
+            return "", right[0]
         rights = re.compile(r'\s+').split(right)
         postcode = rights[0].strip()
         if postcode.isnumeric():
             city = " ".join(rights[1:])
         else:
             city, postcode = right, "" # np.nan
-        return postcode, city        
+        return postcode, city
     def split_adr(s):
         left, right = re.compile(r'\s*,\s').split(s)
         while right == '' and len(left)>1:
-            right = left[-1].strip()      
-            left = left[:-1]      
+            right = left[-1].strip()
+            left = left[:-1]
         if len(left) == 1 and right == '':
-            return left[0], "", "", "" #np.nan, np.nan, np.nan
+            return left[0], "" #np.nan
         lefts = re.compile(r'\s+').split(left)
         number = lefts[-1].strip()
         if number[0].isdigit():
             street = " ".join(lefts[:-1])
         else:
             street, number = left, "" # np.nan
-        return street, number        
+        return street, number
     self.data[['street', 'number']] = self.data.apply(
             lambda row: pd.Series(split_adr(row['Adr'])), axis=1)
     self.data[['postcode', 'city']] = self.data.apply(
