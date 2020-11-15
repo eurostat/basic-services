@@ -5,22 +5,22 @@
 .. _validate
 
 Module data validation according to template.
-    
+
 **Dependencies**
 
 *require*:      :mod:`os`, :mod:`sys`
 
 *optional*:     :mod:`A`
 
-*call*:         :mod:`pyeudatnat`, :mod:`pyeuhcs.config`         
+*call*:         :mod:`pyeudatnat`, :mod:`pyeufacility.config`
 
 **Contents**
 """
 
-# *credits*:      `gjacopo <jacopo.grazzini@ec.europa.eu>`_ 
+# *credits*:      `gjacopo <jacopo.grazzini@ec.europa.eu>`_
 # *since*:        Thu Apr  2 16:30:50 2020
 
-#%% 
+#%%
 
 from os import path as osp
 import warnings#analysis:ignore
@@ -31,23 +31,23 @@ from six import string_types
 import numpy as np#analysis:ignore
 import pandas as pd
 
-try: 
+try:
     from optparse import OptionParser
 except ImportError:
     warnings.warn('\n! inline command deactivated !')
 
 from pyeudatnat import COUNTRIES
 from pyeudatnat.misc import Type
-from pyeuhcs.config import CONFIGINFO
+from pyeufacility.config import CONFIGINFO
 
 __THISFACILITY  = 'HCS'
 __THISDIR       = osp.dirname(__file__)
 __CONFIG        = CONFIGINFO[__THISFACILITY]
 
-MINMAX_LL = {'lat': [-90., 90.], 'lon': [-180., 180.]} 
+MINMAX_LL = {'lat': [-90., 90.], 'lon': [-180., 180.]}
 
 
-#%% 
+#%%
 #==============================================================================
 # Function __validateData
 #==============================================================================
@@ -58,7 +58,7 @@ def __validateData(src):
     #    raise FileNotFoundError('input file %s not found - nothing to check' % src)
     try:
         df = pd.read_csv(src, encoding=ENC, sep=SEP)
-    #except FileNotFoundError:      # we tested that already...      
+    #except FileNotFoundError:      # we tested that already...
     #    raise FileNotFoundError('input file %s not found - nothing to check' % src)
     except:
         try:
@@ -95,7 +95,7 @@ def __validateData(src):
         # check type
         dtype = index[col].get('type')
         if dtype == 'str':
-            pass # 
+            pass #
         elif dtype is not None:
             try:
                 assert df[col].dtype==object or df[col].dtype in Type.pytname2npt(dtype) # and dtype != object
@@ -106,7 +106,7 @@ def __validateData(src):
         if values is not None:
             # check values range
             if dtype == "datetime":
-                # check date format    
+                # check date format
                 try:
                     pd.to_datetime(df[col], format=dfmt, errors='coerce').notnull().all() is True
                 except AssertionError:
@@ -122,7 +122,7 @@ def __validateData(src):
         # the same
         assert df[INDEX.get('id',{})['name']].dropna().is_unique is True
     except AssertionError:
-        raise IOError("Duplicated identifier IDs")  
+        raise IOError("Duplicated identifier IDs")
     # check geographical coordinates
     for lL in ['lat','lon']:
         col = INDEX.get(lL,{})['name']
@@ -134,14 +134,14 @@ def __validateData(src):
     # something else to check?
 
 
-#%% 
+#%%
 #==============================================================================
 # Function validateCountry
 #==============================================================================
 
 def validateCountry(country=None, **kwargs):
     """Generic validation function.
-    
+
         >>> validate.validateCountry(country, **kwargs)
     """
     if country is None:
@@ -149,7 +149,7 @@ def validateCountry(country=None, **kwargs):
     if not isinstance(country, string_types) and isinstance(country, Sequence):
         for ctry in country:
             try:
-                validateCountry(country=ctry, **kwargs) 
+                validateCountry(country=ctry, **kwargs)
             except:
                 continue
         return
@@ -173,10 +173,10 @@ def validateCountry(country=None, **kwargs):
         raise IOError("Data error detected - See warning/error reports")
     else:
         print("! Data passed validation (see warning reports) !")
-    return  
-  
+    return
 
-#%% 
+
+#%%
 #==============================================================================
 # Main functions
 #==============================================================================
@@ -190,22 +190,22 @@ def __main():
         description=                                                        \
     """Validate output harmonised data on health care services.""",
         usage=                                                              \
-    """usage:         harmonise [options] <code> 
+    """usage:         harmonise [options] <code>
     <code> :          country code."""                                      \
                         )
-    
+
     #parser.add_option("-c", "--cc", action="store", dest="cc",
     #                  help="country ISO-code.",
     #                  default=None)
     (opts, args) = parser.parse_args()
-    
+
     # define the input metadata file (base)name
     if not args in (None,()):
         country = args[0]
     else:
         # parser.error("country name is required.")
         country = list(COUNTRIES.values())[0]
-    
+
     # run the generator
     try:
         run(country)
