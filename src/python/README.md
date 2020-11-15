@@ -1,5 +1,5 @@
-pyeuhcs
-=======
+pyeufacility
+============
 
 Module for the integration and harmonisation of EU data on nation-wide facility services, (_e.g._, hospitals, schools, _etc_...).
 ---
