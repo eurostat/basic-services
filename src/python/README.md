@@ -1,23 +1,23 @@
-pyeuhcs
-=======
+pyeufacility
+============
 
-Module for the integration and harmonisation of EU data on nation-wide  healthcare services.
+Module for the integration and harmonisation of EU data on nation-wide facility services, (_e.g._, hospitals, schools, _etc_...).
 ---
 
 **Quick install and start**
 
-[![Binder](https://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/eurostat/healthcare-services/master?filepath=src/geo-py)
+[![Binder](https://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/eurostat/basic-services/master?filepath=src/python)
 
 Once installed, the module can be imported simply:
 
 ```python
 >>> import pyeudatnat
->>> import pyeuhcs
+>>> import pyeufacility
 ```
 
 **Notebook examples**
 
-* A [basic example](https://nbviewer.jupyter.org/github/eurostat/healthcare-services/blob/master/src/geo_py/notebooks/01_HCS_basic_example.ipynb) regarding healthcare services to start with the module.
+* A [basic example](https://nbviewer.jupyter.org/github/eurostat/basic-services/blob/master/src/python/notebooks/01_HCS_basic_example.ipynb) regarding healthcare services to start with the module.
 * ...
 
 **Usage**
@@ -28,7 +28,7 @@ You will need first to create a special class given the metadata associated each
 the national data:
 
 ```python
->>> from pyeuhcs import config
+>>> from pyeufacility import config
 >>> CZhcs = config.facilityFactory(facility = 'HCS', country = 'CZ')
 ```
 
@@ -49,7 +49,7 @@ Note the output schema (see also "attributes" in the documentation [below](#Data
 ###### Automated running
 
 ```python
->>> from pyeuhcs import harmonise
+>>> from pyeufacility import harmonise
 >>> harmonise.run(facility = 'HCS',country = 'CZ')
 ```
 
@@ -59,13 +59,13 @@ Note the output schema (see also "attributes" in the documentation [below](#Data
 Default coder is `GISCO`, but you can use a different geocoder also using an appropriate key:
 
 ```python
->>> from pyeuhcs import harmonise
+>>> from pyeufacility import harmonise
 >>> harmonise.run(facility = 'HCS', country = 'BG', coder = {'Bing': "<your_api_key>")
 ```
 
 **<a name="Data"></a>Data resources**
  
-* National resources: see documentation regarding the [metadata about healthcare services](https://github.com/eurostat/healthcare-services/blob/master/docs/GISCO_healthcare_services_metadata.pdf).
+* National resources: see documentation/metadata regarding the [metadata about healthcare services](https://github.com/eurostat/basic-services/blob/master/docs/GISCO_healthcare_services_metadata.pdf).
 * The Geographic Information System of the Commission at _Eurostat_: [_GISCO_ ](http://ec.europa.eu/eurostat/web/gisco/overview).
 * _GISCO_ webservices: [_find-nuts_](http://europa.eu/webtools/rest/gisco/nuts/find-nuts.py) and [_geocode_](http://europa.eu/webtools/rest/gisco/api?).
  

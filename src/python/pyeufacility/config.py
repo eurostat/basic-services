@@ -6,13 +6,13 @@
 
 .. Links
 
-.. _healthcare: https://github.com/eurostat/healthcare-services
-.. |healthcare| replace:: `healthcare services data <healthcare_>`_
+.. _services: https://github.com/eurostat/basic-services
+.. |services| replace:: `facility services data <services_>`_
 .. _GISCO: https://github.com/eurostat/happyGISCO
 .. |GISCO| replace:: `GISCO <GISCO_>`_
 
-Configuration module providing with the formatting template for the output 
-integrated data on healthcare facilities.
+Configuration module providing with the formatting template for the output
+integrated data on national facilities.
 
 **Dependencies**
 
@@ -20,15 +20,15 @@ integrated data on healthcare facilities.
 
 *optional*:     :mod:`json`
 
-*call*:         :mod:`pyeudatnat`, :mod:`pyeudatnat.meta`, :mod:`pyeudatnat.base`         
+*call*:         :mod:`pyeudatnat`, :mod:`pyeudatnat.meta`, :mod:`pyeudatnat.base`
 
 **Contents**
 """
 
-# *credits*:      `gjacopo <jacopo.grazzini@ec.europa.eu>`_ 
+# *credits*:      `gjacopo <jacopo.grazzini@ec.europa.eu>`_
 # *since*:        Tue Mar 31 22:51:37 2020
 
-#%% Settings 
+#%% Settings
 
 from os import path as osp
 import warnings
@@ -48,14 +48,14 @@ from . import FACILITIES
 
 #%% Global vars
 
-__THISFILE      = __file__ 
+__THISFILE      = __file__
 CONFIGDIR       = osp.dirname(__THISFILE)
 CONFIGFILE      = osp.basename(__THISFILE).split('.')[0] # "config"
 
-__type2name     = lambda t: t.__name__  # lambda t: {v:k for (k,v) in BASETYPE.items()}[t]    
+__type2name     = lambda t: t.__name__  # lambda t: {v:k for (k,v) in BASETYPE.items()}[t]
 
 __CONFIGINFO    = dict.fromkeys(list(FACILITIES.keys()), {})
-__CONFIGINFO.update( { 
+__CONFIGINFO.update( {
         "HCS": {
                 "fmt":      {"geojson": "geojson", "json": "json", "csv": "csv", "gpkg": "gpkg"},
                 "lang":     "en",
@@ -63,65 +63,127 @@ __CONFIGINFO.update( {
                 "enc":      "utf-8",
                 "dfmt":     "%d/%m/%Y", # date format DD/MM/YYYY
                 "proj":     None, # "WGS84"
-                "path":     "../../../data/", # osp.abspath(osp.join(__THISDIR,"../../../data/")) 
+                "path":     "../../data/healthcare", # osp.abspath(osp.join(__THISDIR,"../../data/healthcare"))
+                "info":     "../../data/healthcare/metadata.pdf",
                 "file":     "%s.%s",
                 "index":    OrderedDict( [ # in Python 3, order of keys is actually preserved
                         ("id",       {"name": "id",                     "desc": "The healthcare service identifier - This identifier is based on national identification codes, if it exists.",
                                       "type": __type2name(int),         "values": None}),
-                        ("name",     {"name": "hospital_name",          "desc": "The name of the healthcare institution",   
+                        ("name",     {"name": "hospital_name",          "desc": "The name of the healthcare institution",
                                       "type": __type2name(str),         "values": None}),
-                        ("site",     {"name": "site_name",              "desc": "The name of the specific site or branch of a healthcare institution",       
+                        ("site",     {"name": "site_name",              "desc": "The name of the specific site or branch of a healthcare institution",
                                       "type": __type2name(str),         "values": None}),
-                        ("lat",      {"name": "lat",                    "desc": "Latitude (WGS 84)",             
+                        ("lat",      {"name": "lat",                    "desc": "Latitude (WGS 84)",
                                       "type": __type2name(float),       "values": None}),
-                        ("lon",      {"name": "lon",                    "desc": "Longitude (WGS 84)",             
+                        ("lon",      {"name": "lon",                    "desc": "Longitude (WGS 84)",
                                       "type": __type2name(float),       "values": None}),
-                        ("geo_qual", {"name": "geo_qual",               "desc": "A quality indicator for the geolocation - 1: Good, 2: Medium, 3: Low, -1: Unknown",        
+                        ("geo_qual", {"name": "geo_qual",               "desc": "A quality indicator for the geolocation - 1: Good, 2: Medium, 3: Low, -1: Unknown",
                                       "type": __type2name(int),         "values": [-1, 1, 2, 3]}),
-                        ("street",   {"name": "street",                 "desc": "Street name",          
+                        ("street",   {"name": "street",                 "desc": "Street name",
                                       "type": __type2name(str),         "values": None}),
-                        ("number",   {"name": "house_number",           "desc": "House number",    
+                        ("number",   {"name": "house_number",           "desc": "House number",
                                       "type": __type2name(str),         "values": None}),
-                        ("postcode", {"name": "postcode",               "desc": "Postcode",        
+                        ("postcode", {"name": "postcode",               "desc": "Postcode",
                                       "type": __type2name(str),         "values": None}),
-                        ("city",     {"name": "city", "desc":           "City name (sometimes refers to a region or a municipality)",            
+                        ("city",     {"name": "city", "desc":           "City name (sometimes refers to a region or a municipality)",
                                       "type": __type2name(str),         "values": None}),
-                        ("cc",       {"name": "cc", "desc":             "Country code (ISO 3166-1 alpha-2 format)",              
+                        ("cc",       {"name": "cc", "desc":             "Country code (ISO 3166-1 alpha-2 format)",
                                       "type": __type2name(str),         "values": list(COUNTRIES.keys())}),
-                        ("country",  {"name": "country",                "desc": "Country name",         
+                        ("country",  {"name": "country",                "desc": "Country name",
                                       "type": __type2name(str),         "values": None}),
-                        ("beds",     {"name": "cap_beds",               "desc": "Measure of capacity by number of beds (most common)",        
+                        ("students", {"name": "cap_students",           "desc": "Measure of capacity by maximum number of students",
                                       "type": __type2name(int),         "values": None}),
-                        ("prac",     {"name": "cap_prac",               "desc": "Measure of capacity by number of practitioners",        
+                        ("enrolled", {"name": "cap_students_enrolled",  "desc": "Measure of capacity by number of enrolled students",
                                       "type": __type2name(int),         "values": None}),
-                        ("rooms",    {"name": "cap_rooms",              "desc": "Measure of capacity by number of rooms",       
-                                      "type": __type2name(int),         "values": None}),
-                        ("ER",       {"name": "emergency",              "desc": "Flag 'yes/no' for whether the healthcare site provides emergency medical services",       
-                                      "type": __type2name(bool),        "values": ['yes', 'no']}),
-                        ("type",     {"name": "facility_type",          "desc": "If the healthcare service provides a specific type of care, e.g. psychiatric hospital",   
+                        ("level",    {"name": "level",                  "desc": "Education level, following the International Standard Classification of Education (ISCED 2011) classification.",
                                       "type": __type2name(str),         "values": None}),
-                        ("PP",       {"name": "public_private",         "desc": "Status 'private/public' of the healthcare service",	 
+                        ("PP",       {"name": "public_private",         "desc": "Status 'private/public' of the education service",
                                       "type": __type2name(int),         "values": ['public', 'private']}),
-                        ("specs",    {"name": "list_specs",             "desc": "List of specialties recognized in the European Union and European Economic Area according to EU Directive 2005/36/EC",      
+                        ("fields",   {"name": "fields",                 "desc": "Field of education and training, following the ISCED-F 2013 classification",
                                       "type": __type2name(str),         "values": None}),
-                        ("tel",      {"name": "tel", "desc":            "Telephone number",             
+                        ("tel",      {"name": "tel", "desc":            "Telephone number",
                                       "type": __type2name(int),         "values": None}),
-                        ("email",    {"name": "email", "desc":          "Email address",           
+                        ("email",    {"name": "email", "desc":          "Email address",
                                       "type": __type2name(str),         "values": None}),
-                        ("url",      {"name": "url", "desc":            "URL link to the institution's website",             
+                        ("url",      {"name": "url", "desc":            "URL link to the institution's website",
                                       "type": __type2name(str),         "values": None}),
-                        ("refdate",  {"name": "ref_date",               "desc": "The reference date of the data (DD/MM/YYYY)",        
+                        ("refdate",  {"name": "ref_date",               "desc": "The reference date (DD/MM/YYYY) the data refers to. The dataset represents the reality as it was at this date.",
                                       "type": __type2name(datetime),    "values": "%d/%m/%Y"}),
-                        ("pubdate",  {"name": "pub_date",               "desc": "The date that the data was last published (DD/MM/YYYY)",        
-                                      "type": __type2name(datetime),    "values": "%d/%m/%Y"})
+                        ("pubdate",  {"name": "pub_date",               "desc": "The publication date of the dataset by Eurostat (DD/MM/YYYY). This should be used to track when this Eurostat dataset has changed.",
+                                      "type": __type2name(datetime),    "values": "%d/%m/%Y"}),
+                        ("comments", {"name": "comments",               "desc": "Comments",
+                                      "type": __type2name(str),         "values": None})
                        ] ),
-                    # notes: 
+                    # notes:
                     #  i. house_number should be string, not int.. .e.g. 221b Baker street
                     #  ii. we use an ordered dict to use the same column order when writing the output file
                 },
-        #"Edu": { 
-        #       "CFGKEYS": []         
-        #        }                        
+        "Edu": {
+                "fmt":      {"geojson": "geojson", "json": "json", "csv": "csv", "gpkg": "gpkg"},
+                "lang":     "en",
+                "sep":      ",",
+                "enc":      "utf-8",
+                "dfmt":     "%d/%m/%Y", # date format DD/MM/YYYY
+                "proj":     None, # "WGS84"
+                "path":     "../../data/education", # osp.abspath(osp.join(__THISDIR,"../../data/education"))
+                "info":     "../../data/education/metadata.pdf",
+                "file":     "%s.%s",
+                "index":    OrderedDict( [ # in Python 3, order of keys is actually preserved
+                        ("id",       {"name": "id",                     "desc": "The education service identifier - This identifier is based on national identification codes, if it exists.",
+                                      "type": __type2name(int),         "values": None}),
+                        ("name",     {"name": "name",                   "desc": "The name of the education institution",
+                                      "type": __type2name(str),         "values": None}),
+                        ("site",     {"name": "site_name",              "desc": "The name of the specific site or branch of a healthcare institution",
+                                      "type": __type2name(str),         "values": None}),
+                        ("lat",      {"name": "lat",                    "desc": "Latitude (WGS 84)",
+                                      "type": __type2name(float),       "values": None}),
+                        ("lon",      {"name": "lon",                    "desc": "Longitude (WGS 84)",
+                                      "type": __type2name(float),       "values": None}),
+                        ("geo_qual", {"name": "geo_qual",               "desc": "A quality indicator for the geolocation - 1: Good, 2: Medium, 3: Low, -1: Unknown",
+                                      "type": __type2name(int),         "values": [-1, 1, 2, 3]}),
+                        ("street",   {"name": "street",                 "desc": "Street name",
+                                      "type": __type2name(str),         "values": None}),
+                        ("number",   {"name": "house_number",           "desc": "House number",
+                                      "type": __type2name(str),         "values": None}),
+                        ("postcode", {"name": "postcode",               "desc": "Postcode",
+                                      "type": __type2name(str),         "values": None}),
+                        ("city",     {"name": "city", "desc":           "City name (sometimes refers to a region or a municipality)",
+                                      "type": __type2name(str),         "values": None}),
+                        ("cc",       {"name": "cc", "desc":             "Country code (ISO 3166-1 alpha-2 format)",
+                                      "type": __type2name(str),         "values": list(COUNTRIES.keys())}),
+                        ("country",  {"name": "country",                "desc": "Country name",
+                                      "type": __type2name(str),         "values": None}),
+                        ("beds",     {"name": "cap_beds",               "desc": "Measure of capacity by number of beds (most common)",
+                                      "type": __type2name(int),         "values": None}),
+                        ("prac",     {"name": "cap_prac",               "desc": "Measure of capacity by number of practitioners",
+                                      "type": __type2name(int),         "values": None}),
+                        ("rooms",    {"name": "cap_rooms",              "desc": "Measure of capacity by number of rooms",
+                                      "type": __type2name(int),         "values": None}),
+                        ("ER",       {"name": "emergency",              "desc": "Flag 'yes/no' for whether the healthcare site provides emergency medical services",
+                                      "type": __type2name(bool),        "values": ['yes', 'no']}),
+                        ("type",     {"name": "facility_type",          "desc": "If the healthcare service provides a specific type of care, e.g. psychiatric hospital",
+                                      "type": __type2name(str),         "values": None}),
+                        ("PP",       {"name": "public_private",         "desc": "Status 'private/public' of the healthcare service",
+                                      "type": __type2name(int),         "values": ['public', 'private']}),
+                        ("specs",    {"name": "list_specs",             "desc": "List of specialties recognized in the European Union and European Economic Area according to EU Directive 2005/36/EC",
+                                      "type": __type2name(str),         "values": None}),
+                        ("tel",      {"name": "tel", "desc":            "Telephone number",
+                                      "type": __type2name(int),         "values": None}),
+                        ("email",    {"name": "email", "desc":          "Email address",
+                                      "type": __type2name(str),         "values": None}),
+                        ("url",      {"name": "url", "desc":            "URL link to the institution's website",
+                                      "type": __type2name(str),         "values": None}),
+                        ("refdate",  {"name": "ref_date",               "desc": "The reference date (DD/MM/YYYY) the data refers to. The dataset represents the reality as it was at this date.",
+                                      "type": __type2name(datetime),    "values": "%d/%m/%Y"}),
+                        ("pubdate",  {"name": "pub_date",               "desc": "The publication date of the dataset by Eurostat (DD/MM/YYYY). This should be used to track when this Eurostat dataset has changed.",
+                                      "type": __type2name(datetime),    "values": "%d/%m/%Y"}),
+                        ("comments", {"name": "comments",               "desc": "Comments",
+                                      "type": __type2name(str),         "values": None})
+                       ] ),
+                    # notes:
+                    #  i. house_number should be string, not int.. .e.g. 221b Baker street
+                    #  ii. we use an ordered dict to use the same column order when writing the output file
+                }
             })
 [v.update({"category": FACILITIES[k].copy()}) for (k,v) in __CONFIGINFO.items()]
 
@@ -130,14 +192,14 @@ CONFIGINFO         = deepcopy(__CONFIGINFO)
 
 #==============================================================================
 #%% Class ConfigFacility
-      
+
 class ConfigFacility(MetaDat):
     """
     """
-    
+
     # CATEGORY = 'HCS' # if only HCS...
     # PROPERTIES = [info['name'] for info in CONFIGINFO[CATEGORY].values()]
-    
+
     #/************************************************************************/
     def __init__(self, *args, **kwargs):
         facility = kwargs.pop('facility', None)
@@ -146,19 +208,19 @@ class ConfigFacility(MetaDat):
         elif facility is not None:
             kwargs.update({'category': facility})
         super(ConfigFacility, self).__init__(*args, **kwargs)
-            
+
     #/************************************************************************/
     @property
     def facility(self):
         try:
             assert hasattr(self.category, 'code')
-            return self.category.get('code') 
+            return self.category.get('code')
         except:
             return self.category
-            
+
     #/************************************************************************/
     def load(self, src=None, **kwargs):
-        """Reloading metadata from default config file into global configuration 
+        """Reloading metadata from default config file into global configuration
         variables.
         """
         if src is None:
@@ -170,7 +232,7 @@ class ConfigFacility(MetaDat):
             src = osp.join(path, "%s%s.json" % (self.facility, CONFIGFILE))
             warnings.warn("\n! Input data file '%s' will be loaded" % src)
         return super(ConfigFacility,self).load(src = src, **kwargs)
-    
+
     #/************************************************************************/
     def dump(self, dest=None, **kwargs):
         """Saving global configuration variables as metadata into default config file.
@@ -191,18 +253,18 @@ class ConfigFacility(MetaDat):
 
 class MetaDatNatFacility(MetaDatNat):
     """Generic class used to represent country metadata instances as dictionary.
-    
+
         >>> meta = MetaDatNatFacility(**metadata)
     """
-    
+
     PROPERTIES = ['country', 'lang', 'proj', 'file', 'path', 'enc', 'sep', 'columns', 'index']
     #          {'country':{}, 'lang':{}, 'proj':None, 'file':'', 'path':'', 'enc':None, 'sep':',', 'columns':{}, 'index':[]}
-    
+
     #/************************************************************************/
     @classmethod
     def template(cls, facility=None, country=None, **kwargs):
         """"Create a template country metadata file as a JSON file
-        
+
             >>> MetaFacility.template()
         """
         if country is None:
@@ -224,8 +286,8 @@ class MetaDatNatFacility(MetaDatNat):
                       'proj':       None,
                       'path':       '../../data/raw/',
                       'enc':        'latin1',
-                      'sep':        ';', 
-                      'dfmt':       '%d-%m-%Y', 
+                      'sep':        ';',
+                      'dfmt':       '%d-%m-%Y',
                       'columns':    [ ],
                       'index':      { },
                       #'provider':   None,
@@ -248,39 +310,39 @@ class MetaDatNatFacility(MetaDatNat):
 
 
 #==============================================================================
-#%% Function facilityFactory 
-    
+#%% Function facilityFactory
+
 def facilityFactory(*args, **kwargs):
     """Generic function to derive a class from the base class :class:`BaseFacility`
     depending on specific metadata and a given geocoder.
-    
+
         >>>  NewFacility = facilityFactory(facility=facility, meta=None, country=None, coder=None)
-        
+
     Examples
     --------
-    
+
         >>>  NewHCS = facilityFactory(HCS, country=CC1, coder={'Bing', yourkey})
         >>>  NewFacility = facilityFactory(country=CC2, coder='GISCO')
-    """    
+    """
     # check facility to define output data configuration format
     if args in ((),(None,)):        facility = None
     else:                           facility = args[0]
     facility = facility or kwargs.pop('facility', None)
     try:
-        assert facility is None or isinstance(facility, (string_types,Mapping,MetaDat))  
+        assert facility is None or isinstance(facility, (string_types,Mapping,MetaDat))
     except AssertionError:
         raise TypeError("Facility type '%s' not recognised - must be a string" % type(facility))
     if facility is None:
         config = {}
     elif isinstance(facility, string_types):
         try:
-            config = CONFIGINFO[facility] 
+            config = CONFIGINFO[facility]
         except AttributeError:
             raise TypeError("Facility string '%s' not recognised - must be in '%s'" % (facility, list(FACILITIES.keys())))
         else:
             config = ConfigFacility(deepcopy(config), facility = facility)
     elif isinstance(facility, Mapping):
-        config = ConfigFacility(facility)  
+        config = ConfigFacility(facility)
     elif isinstance(facility,ConfigFacility):
         config = facility.copy()
     # kwargs.update({'config': cfgmeta})
@@ -314,7 +376,7 @@ for __fac in list(FACILITIES.keys()):
     __cfgfile = osp.join(__path, "%s%s.json" % (__ffac, CONFIGFILE))
     try:
         __cfg = ConfigFacility(facility=__fac)
-        __config = __cfg.loads(src=__cfgfile) 
+        __config = __cfg.loads(src=__cfgfile)
     except:
         __config = None
         try:
@@ -326,7 +388,7 @@ for __fac in list(FACILITIES.keys()):
             __cfg = ConfigFacility(CONFIGINFO.get(__fac), facility=__fac)
             __cfg.dump(dest=__cfgfile)
         except:
-            warnings.warn("\n! No config saved for facility '%s' !" % __fac)            
+            warnings.warn("\n! No config saved for facility '%s' !" % __fac)
         else:
             warnings.warn("\n! Configuration file for facility '%s' will be created !" % __fac)
     else:
