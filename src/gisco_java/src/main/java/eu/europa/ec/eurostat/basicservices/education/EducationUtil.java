@@ -36,7 +36,7 @@ public class EducationUtil {
 
 	static AttributeTypeSetter ats = new AttributeTypeSetter() {
 		public void setAttributeTypes(Collection<Feature> fs) {
-			BasicServicesUtil.setAttributeTypeAsIntegerTypes(fs, "max_students", "enrollment");
+			BasicServicesUtil.setAttributeTypeAsIntegerTypes(fs, "max_students", "enrollment", "levels");
 			BasicServicesUtil.setAttributeTypeAsDoubleTypes(fs, "lat", "lon");
 		}
 	};
