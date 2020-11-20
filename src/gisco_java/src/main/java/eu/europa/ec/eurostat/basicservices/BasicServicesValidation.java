@@ -30,9 +30,13 @@ public class BasicServicesValidation {
 	//those at the same location
 
 	public static void validate(Collection<Map<String, String>> data, String cc, List<String> cols_) {
+
 		//check no presence of some columns besides the expected ones
 		Set<String> ch = checkNoUnexpectedColumn(data, cols_);
-		if(ch.size()>0) System.err.println(ch);
+		if(ch.size()>0) {
+			System.err.println("Unexpected columns: ");
+			System.err.println(ch);
+		}
 
 		boolean b;
 

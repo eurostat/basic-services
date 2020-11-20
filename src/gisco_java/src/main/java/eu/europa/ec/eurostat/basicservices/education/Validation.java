@@ -46,7 +46,7 @@ public class Validation {
 		BasicServicesValidation.validate(data, cc, EducationUtil.cols_);
 
 		//TODO other tests ?
-		//checks on "level"
+		//checks on "levels"
 		//checks on "fields"
 		//check empty columns
 
