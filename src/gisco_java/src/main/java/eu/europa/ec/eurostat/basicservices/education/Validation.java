@@ -46,9 +46,12 @@ public class Validation {
 		BasicServicesValidation.validate(data, cc, EducationUtil.cols_);
 
 		//TODO other tests ?
-		//checks on "level"
 		//checks on "fields"
 		//check empty columns
+
+		//check levels - 1/2/3
+		b = BasicServicesValidation.checkValuesAmong(data, "levels", "", "1", "2", "3");
+		if(!b) System.err.println("Problem with levels values for " + cc);
 
 		//check public_private - public/private
 		b = BasicServicesValidation.checkValuesAmong(data, "public_private", "", "public", "private");
