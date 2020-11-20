@@ -31,7 +31,7 @@ public class EE {
 		Collection<Map<String, String>> schoolsFormatted = new ArrayList<Map<String, String>>();
 		for (Map<String, String> s : data) {
 
-			// new formatted hospital
+			// new formatted school
 			HashMap<String, String> sf = new HashMap<String, String>();
 
 			// copy columns
@@ -49,16 +49,22 @@ public class EE {
 			// address 
 			//Kooli tänav, 1
 			String ad = sf.get("ADDRESS");
-			String[] parts = ad.split(",");
-			//if there's no comma, sf.put("ADDRESS", street);
-			if (parts.length != 2)
-				System.err.println(ad);
-			// rightPart
-			String houseNumber = parts[1];
-			sf.put("house_number", houseNumber);
-			// leftPart
-			String street = parts[0];
-			sf.put("street", street);	
+			
+			//if ad contains a comma, split it. else put address in street
+			if (ad.contains(",")) {
+				String[] parts = ad.split(",");
+				String houseNumber = parts[1];
+				sf.put("house_number", houseNumber);
+				String street = parts[0];
+				sf.put("street", street);
+					
+				if (parts.length != 2)
+					System.err.println(ad);
+			}
+			else {	
+				sf.put("street", s.get("ADDRESS"));
+			}
+			
 			
 
 			// add to list
