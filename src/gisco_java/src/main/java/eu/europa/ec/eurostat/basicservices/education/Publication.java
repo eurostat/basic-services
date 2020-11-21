@@ -4,7 +4,6 @@
 package eu.europa.ec.eurostat.basicservices.education;
 
 import eu.europa.ec.eurostat.basicservices.BasicServicePublication;
-import eu.europa.ec.eurostat.basicservices.education.EducationUtil;
 
 /**
  * Publication script for education.
