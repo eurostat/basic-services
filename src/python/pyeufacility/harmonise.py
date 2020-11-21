@@ -24,6 +24,7 @@ from all member states.
 #%%
 
 from os import path as osp
+import inspect
 from sys import modules as sysmod#analysis:ignore
 import warnings#analysis:ignore
 
@@ -72,7 +73,7 @@ def __harmoniseData(facility, metadata, **kwargs):
     try:
         assert f_prep is None or callable(f_prep) is True
     except:
-        raise TypeError("Wrong option MET_PREP - 'prepare_data' method not recognised")
+        raise TypeError("Wrong option MET_PREP: data preparation method not recognised")
     opt_prep = kwargs.pop("opt_prep", {})
     opt_load = kwargs.pop("opt_load", {})
     opt_format = kwargs.pop("opt_format", {})
@@ -85,15 +86,17 @@ def __harmoniseData(facility, metadata, **kwargs):
         Facility = facilityFactory(facility = facility, meta = metadata, **kwargs)
     except:
         raise IOError("Impossible to create specific country class")
-    else:
-        if callable(f_prep):
-            setattr(Facility, PREPNAME, f_prep) # Facility.prepare_data = f_prep
+    if f_prep is not None:
+        setattr(Facility, 'prepare_data', f_prep) # Facility.prepare_data = f_prep
     try:
         natFacility = Facility()
     except:
         raise IOError("Impossible to create specific facility instance")
     natFacility.load_data(**opt_load)
-    getattr(natFacility, PREPNAME)(**opt_prep) # facility.prepare_data(**opt_prep)
+    if inspect.isclass(natFacility.prepare_data):
+        natFacility.prepare_data()(natFacility, **opt_prep)
+    elif callable(natFacility.prepare_data) # inspect.ismethod(natFacility.prepare_data)
+        atFacility.prepare_data(**opt_prep)
     natFacility.format_data(**opt_format)
     if on_disk is False:
         return natFacility
@@ -194,7 +197,7 @@ def harmoniseCountryService(facility, country = None, coder = None, **kwargs):
         warnings.warn('\n! Country-specific formatting/harmonisation methods used !')
     try:
         # assert 'prepare_data' in dir(imp)
-        prepare_data = getattr(imp, PREPNAME, None) # getattr(imp, 'prepare_data', None)
+        prepare_data = getattr(imp, PREPNAME, None)
         assert prepare_data is not None
     except:
         # warnings.warn('! no data preparation method used !')

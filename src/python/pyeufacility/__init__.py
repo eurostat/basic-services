@@ -5,15 +5,15 @@
 .. __init__
 
 Initialisation module of facility configuration programs.
-    
+
 *require*:      :mod:`os`
 
-*call*:         :mod:`pyeudatnat`         
+*call*:         :mod:`pyeudatnat`
 
 **Contents**
 """
 
-# *credits*:      `gjacopo <jacopo.grazzini@ec.europa.eu>`_ 
+# *credits*:      `gjacopo <jacopo.grazzini@ec.europa.eu>`_
 # *since*:        Mon Apr  6 18:30:09 2020
 
 #%%
@@ -25,20 +25,20 @@ __THISFILE          = __file__ # useles...
 __THISDIR           = osp.dirname(__THISFILE)
 
 
-PACKNAME            = 'pyeuhcs' # this package...
+PACKNAME            = 'pyeufacility' # this package...
 """Name of this package.
 """
 
-PACKPATH            = osp.dirname(__file__) 
+PACKPATH            = osp.dirname(__file__)
 """Path to this package.
 """
 
 # put here the services managed by this package
-FACILITIES          = { 'HCS': 
+FACILITIES          = { 'HCS':
                         {'code': "hcs", 'name': "Healthcare services"},
-                        'Edu': 
+                        'Edu':
                         {'code': "edu", 'name': "Educational facilities"} # 'edu' here for testing since it does not exist yet
-                       } 
+                       }
 """Type of services provided.
 """
 
@@ -50,7 +50,7 @@ PREPNAME            = 'prepare_data'
 
 #%%
 
-__modules           = [] 
+__modules           = []
 # __all__ = ['%s%s' % (cc,BASENAME) for cc in list(COUNTRIES.values())]
 __all__             = ['config', 'harmonise', 'validate']#analysis:ignore
 
@@ -67,14 +67,14 @@ for __fac in FACILITIES.keys():
         continue
     __all__.append(__fac)
     for __cc in COUNTRIES.keys():
-        __src = '%s%s' % (__cc, __fac) 
-        __fsrc = '%s.py' % __src 
+        __src = '%s%s' % (__cc, __fac)
+        __fsrc = '%s.py' % __src
         try:
             assert osp.exists(osp.join(__path, __fsrc)) and osp.isfile(osp.join(__path, __fsrc))
         except:     pass
         else:
-            __modules.append(__src)   
-            
+            __modules.append(__src)
+
 try:
     del(__fac, __path)
     del(__cc, __src, __fsrc)
