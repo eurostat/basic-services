@@ -36,13 +36,13 @@ try:
 except ImportError:
     warnings.warn('\n! inline command deactivated !')
 
-from pyeudatnat import COUNTRIES
+from pyeudatnat import COUNTRIES, AREAS
 from pyeudatnat.misc import Type
 from pyeufacility.config import CONFIGINFO
 
-__THISFACILITY  = 'HCS'
+from pyeufacility import FACILITIES
+
 __THISDIR       = osp.dirname(__file__)
-__CONFIG        = CONFIGINFO[__THISFACILITY]
 
 MINMAX_LL = {'lat': [-90., 90.], 'lon': [-180., 180.]}
 
@@ -52,8 +52,9 @@ MINMAX_LL = {'lat': [-90., 90.], 'lon': [-180., 180.]}
 # Function __validateData
 #==============================================================================
 
-def __validateData(src):
-    ENC, SEP = __CONFIG.get('enc'), __CONFIG.get('sep')
+def __validateData(facility, src):
+    cfg = CONFIGINFO[facility]
+    ENC, SEP = cfg.get('enc'), cfg.get('sep')
     #if not osp.exists(src):
     #    raise FileNotFoundError('input file %s not found - nothing to check' % src)
     try:
@@ -65,20 +66,20 @@ def __validateData(src):
             df = pd.read_table(src, encoding=ENC, sep=SEP, compression='infer')
         except:
             raise IOError("Impossible to load source data - format not recognised")
-    INDEX = __CONFIG.get('index',{}).copy()
-    index = [col.get('name') for col in INDEX.values()]
+    index = cfg.get('index',{}).copy()
+    nindex = [col.get('name') for col in index.values()]
     try:
-        columns = set(list(df.columns)).difference(set(index))
+        columns = set(list(df.columns)).difference(set(nindex))
         assert columns == set()
     except AssertionError:
         raise IOError("Unknown column present in the dataframe: '%s'" % list(columns))
     else:
         try:
-            columns = set(list(index)).difference(set(df.columns))
+            columns = set(list(nindex)).difference(set(df.columns))
             assert columns == set()
         except AssertionError:
             warnings.warn("\n! Missing columns in source file: '%s' !" % list(columns))
-    index = {col.get('name'): col for col in INDEX.values()}
+    nindex = {col.get('name'): col for col in index.values()}
     for col in df.columns:
         # check missing values
         try:
@@ -93,7 +94,7 @@ def __validateData(src):
             # warnings.warn("\n! No missing values in column '%s' !" % col)
             pass
         # check type
-        dtype = index[col].get('type')
+        dtype = nindex[col].get('type')
         if dtype == 'str':
             pass #
         elif dtype is not None:
@@ -102,7 +103,7 @@ def __validateData(src):
             except AssertionError:
                 warnings.warn("\n! Unexpected type '%s' for column '%s' !" % (df[col].dtype,col))
         # check values/format
-        dfmt = values = index[col].get('values')
+        dfmt = values = nindex[col].get('values')
         if values is not None:
             # check values range
             if dtype == "datetime":
@@ -118,14 +119,14 @@ def __validateData(src):
                 except AssertionError:
                     raise IOError("Wrong input values in column '%s'" % col)
     # check id uniquiness
-    try: # note the use of INDEX here, not index, though the names end up being
+    try: # note the use of INDEX here, not nindex, though the names end up being
         # the same
-        assert df[INDEX.get('id',{})['name']].dropna().is_unique is True
+        assert df[index.get('id',{})['name']].dropna().is_unique is True
     except AssertionError:
         raise IOError("Duplicated identifier IDs")
     # check geographical coordinates
     for lL in ['lat','lon']:
-        col = INDEX.get(lL,{})['name']
+        col = index.get(lL,{})['name']
         if col in df.columns:
             try:
                 assert df[col].dropna().between(MINMAX_LL[lL][0],MINMAX_LL[lL][1]).all() is np.bool_(True)
@@ -136,14 +137,18 @@ def __validateData(src):
 
 #%%
 #==============================================================================
-# Function validateCountry
+# Function validateCountryService
 #==============================================================================
 
-def validateCountry(country=None, **kwargs):
+def validateCountryService(facility, country = None, **kwargs):
     """Generic validation function.
 
         >>> validate.validateCountry(country, **kwargs)
     """
+    if not isinstance(facility, string_types):
+        raise TypeError("Wrong type for input service - must be the facility type")
+    elif not facility in FACILITIES.keys():
+        raise IOError("Service type not recognised - must be a string in the list '%s'" % list(FACILITIES.keys()))
     if country is None:
         country = list(COUNTRIES.keys())
     if not isinstance(country, string_types) and isinstance(country, Sequence):
@@ -157,10 +162,11 @@ def validateCountry(country=None, **kwargs):
         raise TypeError('wrong type for input country code - must the ISO 2-letter string')
     elif not country in COUNTRIES.keys():
         raise IOError('country code not recognised - must a code of the %s area' % list(COUNTRIES.keys()))
+    cfg = CONFIGINFO[facility]
     fmt = 'csv'
-    src = kwargs.pop('source', None)
+    src = kwargs.pop('src', None)
     if src is None:
-        src = osp.join(__CONFIG.get('path'), fmt, __CONFIG.get('file') % (country, __CONFIG.get('fmt',{})[fmt]))
+        src = osp.join(cfg.get('path'), fmt, cfg.get('file') % (country, cfg.get('fmt',{})[fmt]))
         warnings.warn("\n! Input data file '%s' will be controlled for validation" % src)
     try:
         assert osp.exists(src)
@@ -168,7 +174,7 @@ def validateCountry(country=None, **kwargs):
         raise FileNotFoundError("Input file '%s' not found" % src)
     validate = __validateData
     try:
-        validate(src)
+        validate(facility, src)
     except:
         raise IOError("Data error detected - See warning/error reports")
     else:
@@ -181,7 +187,7 @@ def validateCountry(country=None, **kwargs):
 # Main functions
 #==============================================================================
 
-run = validateCountry
+run = validateCountryService
 
 def __main():
     """Parse and check the command line with default arguments.
@@ -190,25 +196,36 @@ def __main():
         description=                                                        \
     """Validate output harmonised data on health care services.""",
         usage=                                                              \
-    """usage:         harmonise [options] <code>
+    """usage:         validate facility <code>
+    facility :        Type of service.
     <code> :          country code."""                                      \
                         )
 
-    #parser.add_option("-c", "--cc", action="store", dest="cc",
-    #                  help="country ISO-code.",
-    #                  default=None)
+    parser.add_option("-c", "--cc", action="store", dest="country",
+                      help="Country.",
+                      default=None)
     (opts, args) = parser.parse_args()
 
-    # define the input metadata file (base)name
     if not args in (None,()):
-        country = args[0]
-    else:
+        facility = args[0]
+    #else:
+    #    facility = list(FACILITIES.keys())[0]
+
+    country = opts.country
+    if isinstance(coder, string_types):
+        if country.upper() == 'ALL':
+            country = None
+        elif country.upper() in AREAS:
+            country = AREAS.get(country)
+    elif country is not None:
+        parser.error("country name is required.")
+    if country in (None,[]) :
         # parser.error("country name is required.")
         country = list(COUNTRIES.values())[0]
 
     # run the generator
     try:
-        run(country)
+        run(facility, country)
     except IOError:
         warnings.warn('\n!!!  ERROR: data file not validated !!!')
     else:
