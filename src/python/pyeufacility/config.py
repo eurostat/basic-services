@@ -55,6 +55,7 @@ CONFIGFILE      = osp.basename(__THISFILE).split('.')[0] # "config"
 __type2name     = lambda t: t.__name__  # lambda t: {v:k for (k,v) in BASETYPE.items()}[t]
 
 __CONFIGINFO    = dict.fromkeys(list(FACILITIES.keys()), {})
+
 __CONFIGINFO.update( {
         "HCS": {
                 "fmt":      {"geojson": "geojson", "json": "json", "csv": "csv", "gpkg": "gpkg"},
@@ -91,15 +92,19 @@ __CONFIGINFO.update( {
                                       "type": __type2name(str),         "values": list(COUNTRIES.keys())}),
                         ("country",  {"name": "country",                "desc": "Country name",
                                       "type": __type2name(str),         "values": None}),
-                        ("students", {"name": "cap_students",           "desc": "Measure of capacity by maximum number of students",
+                        ("beds",     {"name": "cap_beds",               "desc": "Measure of capacity by number of beds (most common)",
                                       "type": __type2name(int),         "values": None}),
-                        ("enrolled", {"name": "cap_students_enrolled",  "desc": "Measure of capacity by number of enrolled students",
+                        ("prac",     {"name": "cap_prac",               "desc": "Measure of capacity by number of practitioners",
                                       "type": __type2name(int),         "values": None}),
-                        ("level",    {"name": "level",                  "desc": "Education level, following the International Standard Classification of Education (ISCED 2011) classification.",
+                        ("rooms",    {"name": "cap_rooms",              "desc": "Measure of capacity by number of rooms",
+                                      "type": __type2name(int),         "values": None}),
+                        ("ER",       {"name": "emergency",              "desc": "Flag 'yes/no' for whether the healthcare site provides emergency medical services",
+                                      "type": __type2name(bool),        "values": ['yes', 'no']}),
+                        ("type",     {"name": "facility_type",          "desc": "If the healthcare service provides a specific type of care, e.g. psychiatric hospital",
                                       "type": __type2name(str),         "values": None}),
-                        ("PP",       {"name": "public_private",         "desc": "Status 'private/public' of the education service",
+                        ("PP",       {"name": "public_private",         "desc": "Status 'private/public' of the healthcare service",
                                       "type": __type2name(int),         "values": ['public', 'private']}),
-                        ("fields",   {"name": "fields",                 "desc": "Field of education and training, following the ISCED-F 2013 classification",
+                        ("specs",    {"name": "list_specs",             "desc": "List of specialties recognized in the European Union and European Economic Area according to EU Directive 2005/36/EC",
                                       "type": __type2name(str),         "values": None}),
                         ("tel",      {"name": "tel", "desc":            "Telephone number",
                                       "type": __type2name(int),         "values": None}),
@@ -153,19 +158,15 @@ __CONFIGINFO.update( {
                                       "type": __type2name(str),         "values": list(COUNTRIES.keys())}),
                         ("country",  {"name": "country",                "desc": "Country name",
                                       "type": __type2name(str),         "values": None}),
-                        ("beds",     {"name": "cap_beds",               "desc": "Measure of capacity by number of beds (most common)",
+                        ("students", {"name": "cap_students",           "desc": "Measure of capacity by maximum number of students",
                                       "type": __type2name(int),         "values": None}),
-                        ("prac",     {"name": "cap_prac",               "desc": "Measure of capacity by number of practitioners",
+                        ("enrolled", {"name": "cap_students_enrolled",  "desc": "Measure of capacity by number of enrolled students",
                                       "type": __type2name(int),         "values": None}),
-                        ("rooms",    {"name": "cap_rooms",              "desc": "Measure of capacity by number of rooms",
-                                      "type": __type2name(int),         "values": None}),
-                        ("ER",       {"name": "emergency",              "desc": "Flag 'yes/no' for whether the healthcare site provides emergency medical services",
-                                      "type": __type2name(bool),        "values": ['yes', 'no']}),
-                        ("type",     {"name": "facility_type",          "desc": "If the healthcare service provides a specific type of care, e.g. psychiatric hospital",
+                        ("level",    {"name": "level",                  "desc": "Education level, following the International Standard Classification of Education (ISCED 2011) classification.",
                                       "type": __type2name(str),         "values": None}),
-                        ("PP",       {"name": "public_private",         "desc": "Status 'private/public' of the healthcare service",
+                        ("PP",       {"name": "public_private",         "desc": "Status 'private/public' of the education service",
                                       "type": __type2name(int),         "values": ['public', 'private']}),
-                        ("specs",    {"name": "list_specs",             "desc": "List of specialties recognized in the European Union and European Economic Area according to EU Directive 2005/36/EC",
+                        ("fields",   {"name": "fields",                 "desc": "Field of education and training, following the ISCED-F 2013 classification",
                                       "type": __type2name(str),         "values": None}),
                         ("tel",      {"name": "tel", "desc":            "Telephone number",
                                       "type": __type2name(int),         "values": None}),
@@ -191,10 +192,13 @@ CONFIGINFO         = deepcopy(__CONFIGINFO)
 
 
 #==============================================================================
-#%% Class ConfigFacility
+#%% Class MetaDatEUFacility
 
-class ConfigFacility(MetaDat):
-    """
+class MetaDatEUFacility(MetaDat):
+    """Class representing used to represent metadata for harmonised dataset at
+    EU level.
+
+        >>> EUmeta = MetaDatEUFacility(**metadata)
     """
 
     # CATEGORY = 'HCS' # if only HCS...
@@ -207,7 +211,7 @@ class ConfigFacility(MetaDat):
             kwargs.update({'category': FACILITIES.get(facility)})
         elif facility is not None:
             kwargs.update({'category': facility})
-        super(ConfigFacility, self).__init__(*args, **kwargs)
+        super(MetaDatEUFacility, self).__init__(*args, **kwargs)
 
     #/************************************************************************/
     @property
@@ -231,7 +235,7 @@ class ConfigFacility(MetaDat):
                 path = ''
             src = osp.join(path, "%s%s.json" % (self.facility, CONFIGFILE))
             warnings.warn("\n! Input data file '%s' will be loaded" % src)
-        return super(ConfigFacility,self).load(src = src, **kwargs)
+        return super(MetaDatEUFacility,self).load(src = src, **kwargs)
 
     #/************************************************************************/
     def dump(self, dest=None, **kwargs):
@@ -245,16 +249,17 @@ class ConfigFacility(MetaDat):
                 path = ''
             dest = osp.join(path, "%s%s.json" % (self.facility, CONFIGFILE))
             warnings.warn("\n! Output data file '%s' will be created" % dest)
-        super(ConfigFacility,self).dump(dest = dest, **kwargs)
+        super(MetaDatEUFacility,self).dump(dest = dest, **kwargs)
 
 
 #==============================================================================
 #%% Class MetaDatNatFacility
 
 class MetaDatNatFacility(MetaDatNat):
-    """Generic class used to represent country metadata instances as dictionary.
+    """Generic class used to represent metadata for datasets at national (country)
+    level as dictionary-like instances.
 
-        >>> meta = MetaDatNatFacility(**metadata)
+        >>> CCmeta = MetaDatNatFacility(**metadata)
     """
 
     PROPERTIES = ['country', 'lang', 'proj', 'file', 'path', 'enc', 'sep', 'columns', 'index']
@@ -316,20 +321,25 @@ def facilityFactory(*args, **kwargs):
     """Generic function to derive a class from the base class :class:`BaseFacility`
     depending on specific metadata and a given geocoder.
 
-        >>>  NewFacility = facilityFactory(facility=facility, meta=None, country=None, coder=None)
+        >>>  NewFacility = facilityFactory(facility = facility, meta = None,
+                                           country = None, coder = None)
 
     Examples
     --------
 
-        >>>  NewHCS = facilityFactory(HCS, country=CC1, coder={'Bing', yourkey})
-        >>>  NewFacility = facilityFactory(country=CC2, coder='GISCO')
+        >>>  NewHCS = facilityFactory(HCS, country = CC1, coder = {'Bing', yourkey})
+        >>>  NewFacility = facilityFactory(country = CC2, coder = 'GISCO')
+
+    See also
+    --------
+    :meth:`~pyeudatnat.base.datnatFactory`.
     """
     # check facility to define output data configuration format
     if args in ((),(None,)):        facility = None
     else:                           facility = args[0]
     facility = facility or kwargs.pop('facility', None)
     try:
-        assert facility is None or isinstance(facility, (string_types,Mapping,MetaDat))
+        assert facility is None or isinstance(facility, (string_types, Mapping, MetaDat))
     except AssertionError:
         raise TypeError("Facility type '%s' not recognised - must be a string" % type(facility))
     if facility is None:
@@ -340,10 +350,10 @@ def facilityFactory(*args, **kwargs):
         except AttributeError:
             raise TypeError("Facility string '%s' not recognised - must be in '%s'" % (facility, list(FACILITIES.keys())))
         else:
-            config = ConfigFacility(deepcopy(config), facility = facility)
+            config = MetaDatEUFacility(deepcopy(config), facility = facility)
     elif isinstance(facility, Mapping):
-        config = ConfigFacility(facility)
-    elif isinstance(facility,ConfigFacility):
+        config = MetaDatEUFacility(facility)
+    elif isinstance(facility, MetaDatEUFacility):
         config = facility.copy()
     # kwargs.update({'config': cfgmeta})
     return datnatFactory(config = config, **kwargs)
@@ -375,7 +385,7 @@ for __fac in list(FACILITIES.keys()):
         __path = ''
     __cfgfile = osp.join(__path, "%s%s.json" % (__ffac, CONFIGFILE))
     try:
-        __cfg = ConfigFacility(facility=__fac)
+        __cfg = MetaDatEUFacility(facility=__fac)
         __config = __cfg.loads(src=__cfgfile)
     except:
         __config = None
@@ -385,7 +395,7 @@ for __fac in list(FACILITIES.keys()):
             warnings.warn("\n! No config available for facility '%s' !" % __fac)
             continue
         try:
-            __cfg = ConfigFacility(CONFIGINFO.get(__fac), facility=__fac)
+            __cfg = MetaDatEUFacility(CONFIGINFO.get(__fac), facility=__fac)
             __cfg.dump(dest=__cfgfile)
         except:
             warnings.warn("\n! No config saved for facility '%s' !" % __fac)
