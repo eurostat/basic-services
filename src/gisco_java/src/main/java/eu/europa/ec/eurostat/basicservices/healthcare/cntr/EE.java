@@ -24,14 +24,17 @@ public class EE {
 		ArrayList<Map<String, String>> data = CSVUtil.load(HealthcareUtil.path + "EE/EE_addr_formatted.csv", csvF);
 		System.out.println(data.size());
 
+		//add - remove data
+		CSVUtil.addColumns(data, HealthcareUtil.cols, "");
+		CSVUtil.setValue(data, "ref_date", "22/02/2020");
+		CSVUtil.setValue(data, "cc", "EE");
+		//CSVUtil.setValue(data, "country", "Estonia");
+	
 		//geocode
 		LocalParameters.loadProxySettings();
 		ServicesGeocoding.set(BingGeocoder.get(), data, "lon", "lat", true, true);
-
-		CSVUtil.addColumns(data, HealthcareUtil.cols, "");
-		//CSVUtil.addColumn(data, "ref_date", "22/05/2020");
+		
 		Validation.validate(data, "EE");
-		CSVUtil.removeColumn(data, "address");
 
 		// save
 		System.out.println(data.size());
