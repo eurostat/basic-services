@@ -95,8 +95,8 @@ def __harmoniseData(facility, metadata, **kwargs):
     natFacility.load_data(**opt_load)
     if inspect.isclass(natFacility.prepare_data):
         natFacility.prepare_data()(natFacility, **opt_prep)
-    elif callable(natFacility.prepare_data) # inspect.ismethod(natFacility.prepare_data)
-        atFacility.prepare_data(**opt_prep)
+    elif callable(natFacility.prepare_data): # inspect.ismethod(natFacility.prepare_data)
+        natFacility.prepare_data(**opt_prep)
     natFacility.format_data(**opt_format)
     if on_disk is False:
         return natFacility
