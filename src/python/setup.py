@@ -74,13 +74,13 @@ try:
 except FileNotFoundError:
     long_description = DESCRIPTION
 
-# load the package's __version__.py module as a dictionary.
-about = {}
-if not VERSION:
-    with open(os.path.join(__THISDIR, PACKNAME, '__version__.py')) as f:
-        exec(f.read(), about)
-else:
-    about['__version__'] = VERSION
+## load the package's __version__.py module as a dictionary.
+#about = {}
+#if not VERSION:
+#    with open(os.path.join(__THISDIR, PACKNAME, '__version__.py')) as f:
+#        exec(f.read(), about)
+#else:
+#    about['__version__'] = VERSION
 
 
 #%%
@@ -121,7 +121,7 @@ class UploadCommand(Command):
         os.system('twine upload dist/*')
 
         self.status('Pushing git tags…')
-        os.system('git tag v{0}'.format(about['__version__']))
+        # os.system('git tag v{0}'.format(about['__version__']))
         os.system('git push --tags')
         
         sys.exit()
@@ -137,7 +137,7 @@ class UploadCommand(Command):
 #   $ pip install twine
 setup(
     name =                              PACKNAME,
-    version =                           about['__version__'],
+    # version =                           about['__version__'],
     description =                       DESCRIPTION,
     long_description =                  long_description,
     long_description_content_type =     'text/markdown',
