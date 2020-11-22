@@ -46,7 +46,7 @@ REQUIRES_PYTHON = '>=3.6.0'
 
 # packages required for this module to be executed
 REQUIRED = [
-    'numpy', 'pandas', 'geopandas', 'pyeudatnat', 'requests', 'chardet'
+    'numpy', 'pandas', 'geopandas', 'requests', 'chardet'
 ]
 # in Python standard library (see https://docs.python.org/3/library/):
 # 'collections', 'collections.abc', 'json', 'urllib', 'zipfile',
@@ -61,7 +61,8 @@ EXTRAS = {
     'gtrans': 'googletrans',
     'bs4': 'bs4',
     'chardet': 'chardet',
-    'gisco': 'happygisco'
+    'gisco': 'happygisco',
+    'datnat': 'pyeudatnat' # installed separately
 }
 
 
