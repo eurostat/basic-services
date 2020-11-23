@@ -48,15 +48,18 @@ public class Validation {
 		//TODO other tests ?
 		//checks on "fields"
 		//check empty columns
+		
+		//check fields - 0/1/2/3/4/5/6/7/8
+		b = BasicServicesValidation.checkValuesAmong(data, "fields", "", "0", "1", "2", "3", "4", "5", "6", "7", "8");
+		if(!b) System.err.println("Problem with fields values for " + cc);		
 
-		//check levels - 1/2/3
-		b = BasicServicesValidation.checkValuesAmong(data, "levels", "", "1", "2", "3");
+		//check levels - 0/1/2/3
+		b = BasicServicesValidation.checkValuesAmong(data, "levels", "", "0", "1", "2", "3");
 		if(!b) System.err.println("Problem with levels values for " + cc);
 
 		//check public_private - public/private
 		b = BasicServicesValidation.checkValuesAmong(data, "public_private", "", "public", "private");
 		if(!b) System.err.println("Problem with public_private values for " + cc);
-
 
 		//non null columns
 		b = BasicServicesValidation.checkValuesNotNullOrEmpty(data, "name");

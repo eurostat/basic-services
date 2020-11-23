@@ -19,7 +19,7 @@ public class EducationUtil {
 	public static String path = BasicServicesUtil.path + "Service - Education/";
 
 	//countries covered
-	static String[] ccs = { "NL", "IE", "SI", "SK" };
+	static String[] ccs = { "NL", "IE", "SI", "SK", "LU" };
 
 	//required attributes
 	public static String[] cols = {
