@@ -62,7 +62,7 @@ public class Validation {
 
 		//non null columns
 		b = BasicServicesValidation.checkValuesNotNullOrEmpty(data, "name");
-		if(!b) System.err.println("Missing values for hospital_name format for " + cc);
+		if(!b) System.err.println("Missing name values for " + cc);
 
 	}
 
