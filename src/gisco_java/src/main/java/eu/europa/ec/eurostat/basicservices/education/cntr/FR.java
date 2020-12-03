@@ -15,6 +15,8 @@ import eu.europa.ec.eurostat.basicservices.education.EducationUtil;
 import eu.europa.ec.eurostat.basicservices.education.Validation;
 import eu.europa.ec.eurostat.jgiscotools.gisco_processes.LocalParameters;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
+import eu.europa.ec.eurostat.jgiscotools.io.geo.CRSUtil;
+import eu.europa.ec.eurostat.jgiscotools.io.geo.GeoData;
 import eu.europa.ec.eurostat.jgiscotools.io.web.HTTPUtil;
 
 public class FR {
@@ -208,7 +210,7 @@ public class FR {
 		//save
 		System.out.println(data.size());
 		CSVUtil.save(data, EducationUtil.path + "FR/FR.csv");
-		//GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), EducationUtil.path + "FR/FR.gpkg", CRSUtil.getWGS_84_CRS());
+		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), EducationUtil.path + "FR/FR.gpkg", CRSUtil.getWGS_84_CRS());
 
 		System.out.println("End");
 	}
