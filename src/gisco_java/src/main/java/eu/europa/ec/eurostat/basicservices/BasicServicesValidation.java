@@ -191,9 +191,26 @@ public class BasicServicesValidation {
 		return new HashSet<String>();
 	}
 
-	public static boolean checkIntValues(boolean showErrorMessage, Collection<Map<String, String>> data, String string) {
+	/**
+	 * Check a column has all values as integer numbers
+	 * 
+	 * @param showErrorMessage
+	 * @param data
+	 * @param col
+	 * @return
+	 */
+	public static boolean checkIntValues(boolean showErrorMessage, Collection<Map<String, String>> data, String col) {
 		for(Map<String, String> h : data) {
-			
+			String val = h.get(col);
+			if(val == null) return false;
+			if(val.length() == 0) continue;
+			try {
+				int c = Integer.parseInt(val);
+			} catch (NumberFormatException e) {
+				if(showErrorMessage)
+					System.err.println("Unepxected non-integer value for column "+col+". Value="+val);
+				return false;
+			}
 		}
 		return true;
 	}
