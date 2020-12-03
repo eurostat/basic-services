@@ -192,7 +192,7 @@ public class FR {
 		CSVUtil.addColumn(data, "fields", "");
 
 		//validation
-		//Validation.validate(true, data, "FR");
+		Validation.validate(true, data, "FR");
 
 		//save
 		System.out.println(data.size());
