@@ -70,8 +70,9 @@ public class FR {
 				"Code_type_contrat_prive",
 				"PIAL",
 				"etablissement_mere", "type_rattachement_etablissement_mere",
+				"Type_contrat_prive",
 				"code_bassin_formation", "libelle_bassin_formation");
-		
+
 
 		//filter by "Type_etablissement"
 		//[Service Administratif, Ecole, Lycée, EREA, Collège, Information et orientation]
@@ -120,10 +121,12 @@ public class FR {
 		CSVUtil.removeColumn(data, "Adresse_1", "Adresse_2", "Adresse_3");
 
 
-		//TODO public_private
-		CSVUtil.getUniqueValues(data, "Statut_public_prive", true);
-		CSVUtil.getUniqueValues(data, "Type_contrat_prive", true);
-		
+		//public_private
+		CSVUtil.renameColumn(data, "Statut_public_prive", "public_private");
+		CSVUtil.replaceValue(data, "public_private", "Privé", "private");
+		CSVUtil.replaceValue(data, "public_private", "Public", "public");
+
+
 		//set geo_qual - 1: Good, 2: Medium, 3: Low, -1: Unknown.
 		for (Map<String, String> s : data) {
 			int gq = -1;
