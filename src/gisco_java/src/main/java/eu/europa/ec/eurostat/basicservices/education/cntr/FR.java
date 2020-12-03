@@ -52,8 +52,7 @@ public class FR {
 		//Post_BAC;Appartenance_Education_Prioritaire;GRETA;SIREN_SIRET
 		//Fiche_onisep;position
 		//;Type_contrat_prive;Libelle_departement;Libelle_academie;Libelle_region;
-		//coordonnee_X;coordonnee_Y;epsg;nom_circonscription;
-		//latitude;longitude;precision_localisation;
+		//;
 		//date_ouverture;
 		//date_maj_ligne
 		//;etat;ministere_tutelle;etablissement_multi_lignes;
@@ -61,16 +60,13 @@ public class FR {
 		//;"code_nature";"libelle_nature;
 
 		//"site_name",
-		//"lat", "lon", "geo_qual",
 		//"levels", "max_students", "",
 		//"fields", "facility_type", "public_private",
 		//"ref_date"
 		//"comments"
 
-
-
 		//remove useless columns
-		CSVUtil.removeColumn(data, "Fax", "Code_departement", "Code_academie", "Code_region", "Code_commune", "Code_type_contrat_prive", "PIAL", "etablissement_mere", "type_rattachement_etablissement_mere", "code_bassin_formation", "libelle_bassin_formation");
+		CSVUtil.removeColumn(data, "coordonnee_X", "coordonnee_Y", "position", "epsg", "Fax", "Code_departement", "Code_academie", "Code_region", "Code_commune", "Code_type_contrat_prive", "PIAL", "etablissement_mere", "type_rattachement_etablissement_mere", "code_bassin_formation", "libelle_bassin_formation");
 
 		//filter Type_etablissement
 		//[Service Administratif, Ecole, Lycée, EREA, Collège, Information et orientation]
@@ -80,6 +76,8 @@ public class FR {
 					return t.equals("Ecole") || t.equals("Lycée") || t.equals("Collège");
 				}).collect(Collectors.toList());
 		System.out.println(data.size());
+
+		CSVUtil.getUniqueValues(data, "nom_circonscription", true);
 
 		//TODO
 		//"street", "house_number" 
@@ -92,10 +90,15 @@ public class FR {
 		CSVUtil.renameColumn(data, "Code postal", "postcode");
 		CSVUtil.renameColumn(data, "Nom_commune", "city");
 		CSVUtil.renameColumn(data, "Nombre_d_eleves", "enrollment");
+		CSVUtil.renameColumn(data, "latitude", "lat");
+		CSVUtil.renameColumn(data, "longitude", "lon");
 		CSVUtil.renameColumn(data, "Telephone", "tel");
 		CSVUtil.renameColumn(data, "Web", "url");
 		CSVUtil.renameColumn(data, "Mail", "email");
 
+		//TODO
+		//"geo_qual",
+		//precision_localisation;
 
 		//for (Map<String, String> s : data) {
 		//}
