@@ -191,6 +191,20 @@ public class FR {
 		CSVUtil.addColumn(data, "site_name", "");
 		CSVUtil.addColumn(data, "fields", "");
 
+
+
+		//TODO geocode the remaining ones
+		/*for (Map<String, String> s : data) {
+			if(s.get("lat").length()>0) continue;
+			System.out.println(s.get("street") + " - " + s.get("postcode") + " - " + s.get("city"));
+			//System.out.println(s.get("postcode"));
+		}*/
+
+		//
+		System.out.println(data.size());
+		data = data.stream().filter(d -> d.get("lat").length()>0).collect(Collectors.toList());
+		System.out.println(data.size());
+
 		//validation
 		Validation.validate(true, data, "FR");
 
