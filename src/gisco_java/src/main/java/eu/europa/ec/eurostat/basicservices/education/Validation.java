@@ -65,8 +65,10 @@ public class Validation {
 		if(!b) System.err.println("Missing name values for " + cc);
 
 		//check int values
-		//BasicServicesValidation.checkIntValues(data, "max_students");
-		//BasicServicesValidation.checkIntValues(data, "enrollment");
+		BasicServicesValidation.checkIntValues(showErrorMessage, data, "max_students");
+		if(!b) System.err.println("Problem (non integer values) for max_students values for " + cc);
+		BasicServicesValidation.checkIntValues(showErrorMessage, data, "enrollment");
+		if(!b) System.err.println("Problem (non integer values) for enrollment values for " + cc);
 
 	}
 
