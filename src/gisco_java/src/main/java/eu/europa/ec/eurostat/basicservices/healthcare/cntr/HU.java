@@ -150,13 +150,13 @@ public class HU {
 		System.out.println(nbbeds.size());
 		CSVUtil.join(data, "id", nbbeds, "id", false);
 
-		Validation.validate(data, cc);
+		Validation.validate(true, data, cc);
 
 		LocalParameters.loadProxySettings();
 		ServicesGeocoding.set(BingGeocoder.get(), data, "lon", "lat", true, true);
 
 		CSVUtil.addColumns(data, HealthcareUtil.cols, "");
-		Validation.validate(data, cc);
+		Validation.validate(true, data, cc);
 		CSVUtil.save(data, HealthcareUtil.path+cc + "/"+cc+".csv");
 		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HealthcareUtil.path+cc + "/"+cc+".gpkg", CRSUtil.getWGS_84_CRS());
 	}

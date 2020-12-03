@@ -86,7 +86,7 @@ public class IE {
 		CSVUtil.removeColumn(data, "alternate_name");
 
 		//validation
-		Validation.validate(data, cc);
+		Validation.validate(true, data, cc);
 
 		//save
 		System.out.println("Save " + data.size());
