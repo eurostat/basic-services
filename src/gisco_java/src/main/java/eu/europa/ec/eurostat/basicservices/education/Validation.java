@@ -64,6 +64,10 @@ public class Validation {
 		b = BasicServicesValidation.checkValuesNotNullOrEmpty(data, "name");
 		if(!b) System.err.println("Missing name values for " + cc);
 
+		//check int values
+		//BasicServicesValidation.checkIntValues(data, "max_students");
+		//BasicServicesValidation.checkIntValues(data, "enrollment");
+
 	}
 
 }
