@@ -51,6 +51,7 @@ public class FR {
 
 		//remove unused columns
 		CSVUtil.removeColumn(data,
+				"code_nature",
 				"date_ouverture",
 				"Appartenance_Education_Prioritaire", "GRETA", "SIREN_SIRET",
 				"Libelle_departement", "Libelle_academie", "Libelle_region",
@@ -70,6 +71,7 @@ public class FR {
 				"PIAL",
 				"etablissement_mere", "type_rattachement_etablissement_mere",
 				"code_bassin_formation", "libelle_bassin_formation");
+		
 
 		//filter by "Type_etablissement"
 		//[Service Administratif, Ecole, Lycée, EREA, Collège, Information et orientation]
@@ -119,13 +121,9 @@ public class FR {
 
 
 		//TODO public_private
-		//CSVUtil.getUniqueValues(data, "Statut_public_prive", true);
-		//[, Privé, Public, -]
-		//;Type_contrat_prive
-		//;"code_nature";"libelle_nature;
-		//CSVUtil.getUniqueValues(data, "date_maj_ligne", true);
-		//CSVUtil.getUniqueValues(data, "precision_localisation", true);
-
+		CSVUtil.getUniqueValues(data, "Statut_public_prive", true);
+		CSVUtil.getUniqueValues(data, "Type_contrat_prive", true);
+		
 		//set geo_qual - 1: Good, 2: Medium, 3: Low, -1: Unknown.
 		for (Map<String, String> s : data) {
 			int gq = -1;
@@ -172,6 +170,7 @@ public class FR {
 		CSVUtil.renameColumn(data, "Identifiant_de_l_etablissement", "id");
 		CSVUtil.renameColumn(data, "Nom_etablissement", "name");
 		CSVUtil.renameColumn(data, "Code postal", "postcode");
+		CSVUtil.renameColumn(data, "libelle_nature", "facility_type");
 		CSVUtil.renameColumn(data, "Nom_commune", "city");
 		CSVUtil.renameColumn(data, "Nombre_d_eleves", "enrollment");
 		CSVUtil.renameColumn(data, "latitude", "lat");
@@ -188,10 +187,9 @@ public class FR {
 		CSVUtil.addColumn(data, "comments", "");
 		CSVUtil.addColumn(data, "site_name", "");
 		CSVUtil.addColumn(data, "fields", "");
-		CSVUtil.addColumn(data, "facility_type", "");
 
 		//validation
-		Validation.validate(true, data, "FR");
+		//Validation.validate(true, data, "FR");
 
 		//save
 		System.out.println(data.size());
