@@ -46,7 +46,7 @@ public class SI {
 		ServicesGeocoding.set(BingGeocoder.get(), data, "lon", "lat", true, true);
 
 		CSVUtil.addColumns(data, HealthcareUtil.cols, "");
-		Validation.validate(data, "SI");
+		Validation.validate(true, data, "SI");
 
 		// save
 		System.out.println(data.size());

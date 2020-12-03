@@ -31,7 +31,7 @@ public class SK {
 	//	ServicesGeocoding.set(BingGeocoder.get(), data, "lon", "lat", true, true);
 
 		CSVUtil.addColumns(data, HealthcareUtil.cols, "");
-		Validation.validate(data, "SK");
+		Validation.validate(true, data, "SK");
 
 		// save
 		System.out.println(data.size());

@@ -48,7 +48,7 @@ public class FR {
 		}).collect(Collectors.toList());
 		System.out.println(data.size());
 
-		Validation.validate(data, cc);
+		Validation.validate(true, data, cc);
 		CSVUtil.save(data, HealthcareUtil.path+cc + "/"+cc+".csv");
 		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), HealthcareUtil.path+cc + "/"+cc+".gpkg", CRSUtil.getWGS_84_CRS());
 

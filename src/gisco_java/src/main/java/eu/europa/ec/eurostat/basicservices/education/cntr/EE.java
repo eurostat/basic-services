@@ -74,7 +74,7 @@ public class EE {
 			LocalParameters.loadProxySettings();
 			ServicesGeocoding.set(BingGeocoder.get(), schoolsFormatted, "lon", "lat", true, true);
 
-			Validation.validate(schoolsFormatted, "EE");
+			Validation.validate(true, schoolsFormatted, "EE");
 
 			// save
 			System.out.println(schoolsFormatted.size());

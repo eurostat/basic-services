@@ -34,7 +34,7 @@ public class EE {
 		LocalParameters.loadProxySettings();
 		ServicesGeocoding.set(BingGeocoder.get(), data, "lon", "lat", true, true);
 		
-		Validation.validate(data, "EE");
+		Validation.validate(true, data, "EE");
 
 		// save
 		System.out.println(data.size());

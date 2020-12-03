@@ -28,7 +28,7 @@ public class Validation {
 			System.out.println("*** " + cc);
 			ArrayList<Map<String, String>> data = CSVUtil.load(HealthcareUtil.path + cc+"/"+cc+".csv");
 			System.out.println(data.size());
-			validate(data, cc);
+			validate(true, data, cc);
 		}
 		System.out.println("End");
 	}
@@ -39,22 +39,22 @@ public class Validation {
 	 * @param data
 	 * @param cc
 	 */
-	public static void validate(Collection<Map<String, String>> data, String cc) {
+	public static void validate(boolean showErrorMessage, Collection<Map<String, String>> data, String cc) {
 		boolean b;
 
 		//validation on all aspects common to other basic services
-		BasicServicesValidation.validate(data, cc, HealthcareUtil.cols_);
+		BasicServicesValidation.validate(showErrorMessage, data, cc, HealthcareUtil.cols_);
 
 		//TODO other tests ?
 		//check list_specs
 		//check empty columns
 
 		//check emergency -yes/no
-		b = BasicServicesValidation.checkValuesAmong(data, "emergency", "", "yes", "no");
+		b = BasicServicesValidation.checkValuesAmong(showErrorMessage, data, "emergency", "", "yes", "no");
 		if(!b) System.err.println("Problem with emergency values for " + cc);
 
 		//check public_private - public/private
-		b = BasicServicesValidation.checkValuesAmong(data, "public_private", "", "public", "private");
+		b = BasicServicesValidation.checkValuesAmong(showErrorMessage, data, "public_private", "", "public", "private");
 		if(!b) System.err.println("Problem with public_private values for " + cc);
 
 		//non null columns

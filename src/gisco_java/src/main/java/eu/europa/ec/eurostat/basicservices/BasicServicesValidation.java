@@ -8,10 +8,12 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.StringTokenizer;
 
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 
@@ -29,7 +31,7 @@ public class BasicServicesValidation {
 	//those with same name/site_name
 	//those at the same location
 
-	public static void validate(Collection<Map<String, String>> data, String cc, List<String> cols_) {
+	public static void validate(boolean showErrorMessage, Collection<Map<String, String>> data, String cc, List<String> cols_) {
 
 		//check no presence of some columns besides the expected ones
 		Set<String> ch = checkNoUnexpectedColumn(data, cols_);
@@ -53,12 +55,12 @@ public class BasicServicesValidation {
 		}
 
 		//check cc
-		b = checkValuesAmong(data, "cc", cc);
+		b = checkValuesAmong(showErrorMessage, data, "cc", cc);
 		if(!b) System.err.println("Problem with cc values for " + cc);
 
 
 		//check geo_qual -1,1,2,3
-		b = checkValuesAmong(data, "geo_qual", "-1", "1", "2", "3");
+		b = checkValuesAmong(showErrorMessage, data, "geo_qual", "-1", "1", "2", "3");
 		if(!b) System.err.println("Problem with geo_qual values for " + cc);
 		//check date format DD/MM/YYYY
 		b = checkDateFormat(data, "ref_date", BasicServicesUtil.dateFormat);
@@ -141,18 +143,40 @@ public class BasicServicesValidation {
 		return true;
 	}
 
-	public static boolean checkValuesAmong(Collection<Map<String, String>> data, String col, String... values) {
+	public static boolean checkValuesAmong(boolean showErrorMessage, Collection<Map<String, String>> data, String col, String... values) {
+		return checkValuesAmongWithDelim(showErrorMessage, data, col, null, values);
+	}
+
+	public static boolean checkValuesAmongWithDelim(boolean showErrorMessage, Collection<Map<String, String>> data, String col, String delim, String... values) {
 		for(Map<String, String> h : data) {
-			String val = h.get(col);
-			boolean found = false;
-			for(String v : values)
-				if(val==null && v==null || v.equals(val)) {
-					found=true; break;
-				}
-			if(!found) {
-				//System.err.println("Unexpected value '" + val + "' for column '" + col + "'");
-				return false;
+			String val_ = h.get(col);
+
+			Iterator<Object> it = null;
+			if(delim == null) {
+				//make singleton
+				ArrayList<Object> a = new ArrayList<Object>();
+				a.add(val_);
+				it = a.iterator();
+			} else {
+				//get list of values, based on delimiter
+				it = new StringTokenizer(val_, delim).asIterator();
 			}
+
+			//check each value
+			while(it.hasNext()) {
+				String val = it.next().toString();
+				boolean found = false;
+				for(String v : values)
+					if(val==null && v==null || v.equals(val)) {
+						found=true; break;
+					}
+				if(!found) {
+					if(showErrorMessage)
+						System.err.println("Unexpected value '" + val + "' for column '" + col + "'");
+					return false;
+				}
+			}
+
 		}
 		return true;
 	}
@@ -165,6 +189,30 @@ public class BasicServicesValidation {
 				return cs;
 		}
 		return new HashSet<String>();
+	}
+
+	/**
+	 * Check a column has all values as integer numbers
+	 * 
+	 * @param showErrorMessage
+	 * @param data
+	 * @param col
+	 * @return
+	 */
+	public static boolean checkIntValues(boolean showErrorMessage, Collection<Map<String, String>> data, String col) {
+		for(Map<String, String> h : data) {
+			String val = h.get(col);
+			if(val == null) return false;
+			if(val.length() == 0) continue;
+			try {
+				int c = Integer.parseInt(val);
+			} catch (NumberFormatException e) {
+				if(showErrorMessage)
+					System.err.println("Unepxected non-integer value for column "+col+". Value="+val);
+				return false;
+			}
+		}
+		return true;
 	}
 
 }
