@@ -10,6 +10,8 @@ import org.apache.commons.csv.CSVFormat;
 import eu.europa.ec.eurostat.basicservices.education.EducationUtil;
 import eu.europa.ec.eurostat.jgiscotools.gisco_processes.LocalParameters;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
+import eu.europa.ec.eurostat.jgiscotools.io.geo.CRSUtil;
+import eu.europa.ec.eurostat.jgiscotools.io.geo.GeoData;
 import eu.europa.ec.eurostat.jgiscotools.io.web.HTTPUtil;
 
 public class FR {
@@ -44,7 +46,6 @@ public class FR {
 		List<Map<String, String>> data = CSVUtil.load(inFilePath, csvF);
 		System.out.println(data.size());
 
-		//;Ecole_maternelle;Ecole_elementaire
 		//Voie_generale;Voie_technologique;Voie_professionnelle;
 		//Restauration;Hebergement;ULIS;Apprentissage;Segpa;
 		//Section_arts;Section_cinema;Section_theatre;Section_sport;Section_internationale;Section_europeenne;
@@ -65,8 +66,9 @@ public class FR {
 		//"ref_date"
 		//"comments"
 
+
 		//remove useless columns
-		CSVUtil.removeColumn(data, "coordonnee_X", "coordonnee_Y", "position", "epsg", "Fax", "Code_departement", "Code_academie", "Code_region", "Code_commune", "Code_type_contrat_prive", "PIAL", "etablissement_mere", "type_rattachement_etablissement_mere", "code_bassin_formation", "libelle_bassin_formation");
+		CSVUtil.removeColumn(data, "nom_circonscription", "coordonnee_X", "coordonnee_Y", "position", "epsg", "Fax", "Code_departement", "Code_academie", "Code_region", "Code_commune", "Code_type_contrat_prive", "PIAL", "etablissement_mere", "type_rattachement_etablissement_mere", "code_bassin_formation", "libelle_bassin_formation");
 
 		//filter Type_etablissement
 		//[Service Administratif, Ecole, Lycée, EREA, Collège, Information et orientation]
@@ -77,7 +79,26 @@ public class FR {
 				}).collect(Collectors.toList());
 		System.out.println(data.size());
 
-		CSVUtil.getUniqueValues(data, "nom_circonscription", true);
+		//levels
+		for (Map<String, String> s : data) {
+			String mat = s.get("Ecole_maternelle");
+			String elem = s.get("Ecole_elementaire");
+			String tet = s.get("Type_etablissement");
+			String lvls = "";
+			if(tet.equals("Lycée") || tet.equals("Collège"))
+				lvls = "2";
+			else if(mat.contentEquals("0") && elem.contentEquals("1"))
+				lvls = "1";
+			else if(mat.contentEquals("1") && elem.contentEquals("0"))
+				lvls = "0";
+			else if(mat.contentEquals("1") && elem.contentEquals("1"))
+				lvls = "0-1";
+			else {
+				System.err.println("aaa");
+			}
+			s.put("levels", lvls);
+		}
+		CSVUtil.removeColumn(data, "Ecole_maternelle", "Ecole_elementaire", "Type_etablissement");
 
 		//TODO
 		//"street", "house_number" 
@@ -100,9 +121,6 @@ public class FR {
 		//"geo_qual",
 		//precision_localisation;
 
-		//for (Map<String, String> s : data) {
-		//}
-		
 		//add columns
 		CSVUtil.addColumn(data, "cc", "FR");
 		CSVUtil.addColumn(data, "country", "France");
@@ -114,11 +132,9 @@ public class FR {
 		//Validation.validate(true, out, "FR");
 
 		//save
-		//System.out.println(out.size());
-		//CSVUtil.save(out, EducationUtil.path + "FR/FR.csv");
-		//GeoData.save(CSVUtil.CSVToFeatures(out, "lon", "lat"), EducationUtil.path + "FR/FR.gpkg", CRSUtil.getWGS_84_CRS());
-
-
+		System.out.println(data.size());
+		CSVUtil.save(data, EducationUtil.path + "FR/FR.csv");
+		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), EducationUtil.path + "FR/FR.gpkg", CRSUtil.getWGS_84_CRS());
 
 		System.out.println("End");
 	}
