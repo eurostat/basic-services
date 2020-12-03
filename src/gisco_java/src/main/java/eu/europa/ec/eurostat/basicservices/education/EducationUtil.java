@@ -19,7 +19,7 @@ public class EducationUtil {
 	public static String path = BasicServicesUtil.path + "Service - Education/";
 
 	//countries covered
-	static String[] ccs = { "AT", "BE", "RO", "LT", "NL", "IE", "SI", "SK", "LU", "BG", "HU", "ES", "NO"};
+	static String[] ccs = { "FR" /*"AT", "BE", "RO", "LT", "NL", "IE", "SI", "SK", "LU", "BG", "HU", "ES", "NO"*/};
 
 	//required attributes
 	public static String[] cols = {
@@ -36,7 +36,7 @@ public class EducationUtil {
 
 	static AttributeTypeSetter ats = new AttributeTypeSetter() {
 		public void setAttributeTypes(Collection<Feature> fs) {
-			BasicServicesUtil.setAttributeTypeAsIntegerTypes(fs, "max_students", "enrollment", "levels");
+			BasicServicesUtil.setAttributeTypeAsIntegerTypes(fs, "max_students", "enrollment");
 			BasicServicesUtil.setAttributeTypeAsDoubleTypes(fs, "lat", "lon");
 		}
 	};
