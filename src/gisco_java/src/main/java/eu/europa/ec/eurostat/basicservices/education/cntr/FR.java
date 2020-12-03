@@ -3,7 +3,6 @@ package eu.europa.ec.eurostat.basicservices.education.cntr;
 import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -13,7 +12,6 @@ import org.apache.commons.csv.CSVFormat;
 
 import eu.europa.ec.eurostat.basicservices.BasicServicesUtil;
 import eu.europa.ec.eurostat.basicservices.education.EducationUtil;
-import eu.europa.ec.eurostat.basicservices.education.Validation;
 import eu.europa.ec.eurostat.jgiscotools.gisco_processes.LocalParameters;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.web.HTTPUtil;
