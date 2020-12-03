@@ -191,9 +191,11 @@ public class BasicServicesValidation {
 		return new HashSet<String>();
 	}
 
-	public static void checkIntValues(boolean showErrorMessage, Collection<Map<String, String>> data, String string) {
+	public static boolean checkIntValues(boolean showErrorMessage, Collection<Map<String, String>> data, String string) {
 		for(Map<String, String> h : data) {
-		
+			
+		}
+		return true;
 	}
 
 }
