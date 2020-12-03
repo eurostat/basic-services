@@ -199,11 +199,8 @@ public class FR {
 			System.out.println(s.get("street") + " - " + s.get("postcode") + " - " + s.get("city"));
 			//System.out.println(s.get("postcode"));
 		}*/
-
-		//
-		System.out.println(data.size());
+		//63845 -> 62987
 		data = data.stream().filter(d -> d.get("lat").length()>0).collect(Collectors.toList());
-		System.out.println(data.size());
 
 		//validation
 		Validation.validate(true, data, "FR");
