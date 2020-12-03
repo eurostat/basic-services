@@ -12,6 +12,7 @@ import org.apache.commons.csv.CSVFormat;
 
 import eu.europa.ec.eurostat.basicservices.BasicServicesUtil;
 import eu.europa.ec.eurostat.basicservices.education.EducationUtil;
+import eu.europa.ec.eurostat.basicservices.education.Validation;
 import eu.europa.ec.eurostat.jgiscotools.gisco_processes.LocalParameters;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.web.HTTPUtil;
@@ -106,9 +107,16 @@ public class FR {
 				"Ecole_maternelle", "Ecole_elementaire");
 
 
-		//TODO
-		//"street", "house_number" 
-		//Adresse_1;Adresse_2;Adresse_3
+		//addresses
+		for (Map<String, String> s : data) {
+			String ad1 = s.get("Adresse_1"); //street number + street name
+			//String ad2 = s.get("Adresse_2"); //postal box
+			//String ad3 = s.get("Adresse_3"); //post code + city name
+			s.put("street", ad1);
+			s.put("house_number", "");
+		}
+		CSVUtil.removeColumn(data, "Adresse_1", "Adresse_2", "Adresse_3");
+
 
 		//TODO public_private
 		//CSVUtil.getUniqueValues(data, "Statut_public_prive", true);
@@ -183,7 +191,7 @@ public class FR {
 		CSVUtil.addColumn(data, "facility_type", "");
 
 		//validation
-		//Validation.validate(true, data, "FR");
+		Validation.validate(true, data, "FR");
 
 		//save
 		System.out.println(data.size());
