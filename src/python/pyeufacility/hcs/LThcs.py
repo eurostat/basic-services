@@ -31,10 +31,12 @@ CC              = 'LT'
 
 #%%
 
-def prepare_data(self):
+class prepare_data():
     """Prepare LT data.
     """
-    def split_Adr(s):
+
+    @classmethod
+    def split_Adr(cls, s):
         postcode, city, street, number = "", "", "", ""
         left, right = re.compile(r'\s*,\s').split(s)
         while left == '' and len(right)>1:
@@ -59,9 +61,15 @@ def prepare_data(self):
             else:
                 street = street.join(l)
         return postcode, city, street, number
-    self.data[['postcode', 'city', 'street', 'number']] = self.data.apply(
-            lambda row: pd.Series(split_Adr(row['Adress'])), axis=1)
-    # add the columns as inputs (they were created)
-    self.icolumns.extend([{'en':'street'}, {'en': 'number'}, {'en':'postcode'}, {'en': 'city'}])
-    # add the data as outputs (they will be stored)
-    self.oindex.update({'street': 'street', 'number': 'number', 'postcode': 'postcode', 'city': 'city'})
+
+    def __call__(self, facility):
+        facility.data[['postcode', 'city', 'street', 'number']] = (
+            facility.data
+            .apply(lambda row: pd.Series(self.split_Adr(row['Adress'])), axis=1)
+            )
+        # add the columns as inputs (they were created)
+        facility.icolumns.extend([{'en':'street'}, {'en': 'number'},
+                                  {'en':'postcode'}, {'en': 'city'}])
+        # add the data as outputs (they will be stored)
+        facility.oindex.update({'street': 'street', 'number': 'number',
+                                'postcode': 'postcode', 'city': 'city'})
