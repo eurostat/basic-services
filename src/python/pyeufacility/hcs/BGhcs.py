@@ -13,7 +13,7 @@ Module implementing integration of BG data on health care.
 **Contents**
 """
 
-# *credits*:      `gjacopo <jacopo.grazzini@ec.europa.eu>`_ 
+# *credits*:      `gjacopo <jacopo.grazzini@ec.europa.eu>`_
 # *since*:        Sun Mar 29 19:00:32 2020
 
 
@@ -27,20 +27,20 @@ import pandas as pd
 
 
 #%%
-    
+
 CC              = 'BG'
 
 # METADATNAT : will be read from the BGhcs.json file
 
 #METADATNAT        =  { 'country':     {'code': 'BG', 'name': 'Bulgaria'},
-#                     'lang':        {'code': 'bg', 'name': 'bulgarian'}, 
+#                     'lang':        {'code': 'bg', 'name': 'bulgarian'},
 #                     'proj':        None,
 #                     'file':        'HE_HOSP_12_13_EN.xls',
 #                     'path':        '../../../data/raw/',
 #                     'enc':         'latin1',
-#                     'sep':         ';', 
+#                     'sep':         ';',
 #                     'date':        None, #'%d-%m-%Y %H:%M',
-#                     'columns':     [ 
+#                     'columns':     [
 #                             {'en': 'OBJECTID',          'bg': '', 'fr': '', 'de': ''},
 #                             {'en': 'NUTS3',             'bg': '', 'fr': '', 'de': ''},
 #                             {'en': 'area_code',         'bg': '', 'fr': '', 'de': ''},
@@ -85,56 +85,36 @@ CC              = 'BG'
 #                             'pubdate':     None
 #                             }
 #                     }
-                     
+
 
 #%%
-        
-def prepare_data(self):
+
+class prepare_data():
     # nope, this wouldn't work:
-    # self.data[['street', 'number']] = self.data['address'].str.split(pat=',', n=2, expand=True)
-    def split_address(s):
+
+    @classmethod
+    def split_address(cls, s):
         ss, last = re.compile(r'\s*,\s').split(s), ''
         while last == '' and len(ss)>1:
-            last = ss[-1].strip()      
-            ss = ss[:-1]      
+            last = ss[-1].strip()
+            ss = ss[:-1]
         if len(ss) == 1 and last == '':
             return ss[0], np.nan
         if last[0].isdigit():
-            street, number = ', '.join(ss), last 
+            street, number = ', '.join(ss), last
         else:
             street, number = ss, np.nan
-        return street, number    
-    self.data[['street', 'number']] = self.data.apply(
-            lambda row: pd.Series(split_address(row['address'])), axis=1)
-    # add the columns as inputs (they were created)
-    self.icolumns.extend([{'en':'street'}, {'en': 'number'}])
-    # add the data as outputs (they will be stored)
-    self.oindex.update({'street': 'street', 'number': 'number'})
+        return street, number
 
+    def __call__(self, facility):
+        # facility.data[['street', 'number']] = facility.data['address'].str.split(pat=',', n=2, expand=True)
+        facility.data[['street', 'number']] = (
+            facility.data
+            .apply(lambda row: pd.Series(self.split_address(row['address'])), axis=1)
+            )
+        # add the columns as inputs (they were created)
+        facility.icolumns.extend([{'en':'street'}, {'en': 'number'}])
+        # add the data as outputs (they will be stored)
+        facility.oindex.update({'street': 'street', 'number': 'number'})
 
-#def harmoniseBG(metadata, **kwargs):
-#    try:
-#        assert isinstance(metadata,(MetaDatNat,Mapping))  
-#    except:
-#        raise TypeError('wrong input metadata')
-#    try:
-#        BGHCS = facilityFactory(facility='HCS', meta=metadata, **kwargs)
-#    except:
-#        raise IOError('impossible create BG country class')
-#    else:
-#        BGHCS.prepare_data = prepare_data
-#    try:
-#        bg = BGHCS()
-#    except:
-#        raise IOError('impossible create specific country instance')
-#    opt_load = kwargs.pop("opt_load", {})        
-#    bg.load_data(**opt_load)
-#    opt_prep = kwargs.pop("opt_prep", {})        
-#    bg.prepare_data(**opt_prep)
-#    opt_format = kwargs.pop("opt_format", {})        
-#    bg.format_data(**opt_format)
-#    opt_save = kwargs.pop("opt_save", {'geojson': {}, 'csv': {}})        
-#    bg.save_data(fmt='geojson', **opt_save.get('geojson',{}))
-#    bg.save_data(fmt='csv',**opt_save.get('csv',{}))
-#    # hcs.save_meta(fmt='json')
 

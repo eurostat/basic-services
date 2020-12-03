@@ -31,18 +31,13 @@ CC              = 'CH'
 
 #%%
 
-def prepare_data(self):
+class prepare_data():
     """Prepare CH data.
-
-    * Ort => postcode city
-    * Adr => street house_number
     """
-    #self.data['Ort'].replace('\s+',' ',regex=True,inplace=True)
-    #df = self.data['Ort'].str.split(pat=",", n=1, expand=True)
-    #self.data[['postcode', 'city']] = df[1].str.split(pat=' ', n=2, expand=True)
-    #self.data['Adr'].replace('\s+',' ',regex=True,inplace=True)
-    #self.data[['street', 'number']] = self.data['Adr'].str.split(pat=" ", n=2, expand=True)
-    def split_ort(s):
+
+    @classmethod
+    def split_ort(cls, s):
+        # * Ort => postcode city
         left, right = re.compile(r'\s*,\s').split(s)
         while left == '' and len(right)>1:
             left = right[-1].strip()
@@ -56,7 +51,10 @@ def prepare_data(self):
         else:
             city, postcode = right, "" # np.nan
         return postcode, city
-    def split_adr(s):
+
+    @classmethod
+    def split_adr(cls, s):
+        # * Adr => street house_number
         left, right = re.compile(r'\s*,\s').split(s)
         while right == '' and len(left)>1:
             right = left[-1].strip()
@@ -70,11 +68,21 @@ def prepare_data(self):
         else:
             street, number = left, "" # np.nan
         return street, number
-    self.data[['street', 'number']] = self.data.apply(
-            lambda row: pd.Series(split_adr(row['Adr'])), axis=1)
-    self.data[['postcode', 'city']] = self.data.apply(
-            lambda row: pd.Series(split_ort(row['Ort'])), axis=1)
-    # add the columns as inputs (they were created)
-    self.icolumns.extend([{'en':'street'}, {'en': 'number'}, {'en':'postcode'}, {'en': 'city'}])
-    # add the data as outputs (they will be stored)
-    self.oindex.update({'street': 'street', 'number': 'number', 'postcode': 'postcode', 'city': 'city'})
+
+    def __call__(self, facility):
+        #facility.data['Ort'].replace('\s+',' ',regex=True,inplace=True)
+        #df = facility.data['Ort'].str.split(pat=",", n=1, expand=True)
+        #facility.data[['postcode', 'city']] = df[1].str.split(pat=' ', n=2, expand=True)
+        #facility.data['Adr'].replace('\s+',' ',regex=True,inplace=True)
+        #facility.data[['street', 'number']] = facility.data['Adr'].str.split(pat=" ", n=2, expand=True)
+        facility.data[['street', 'number']] = facility.data.apply(
+                lambda row: pd.Series(self.split_adr(row['Adr'])), axis=1)
+        facility.data[['postcode', 'city']] = facility.data.apply(
+                lambda row: pd.Series(self.split_ort(row['Ort'])), axis=1)
+        # add the columns as inputs (they were created)
+        facility.icolumns.extend([{'en':'street'}, {'en': 'number'},
+                                  {'en':'postcode'}, {'en': 'city'}])
+        # add the data as outputs (they will be stored)
+        facility.oindex.update({'street': 'street', 'number': 'number',
+                                'postcode': 'postcode', 'city': 'city'})
+
