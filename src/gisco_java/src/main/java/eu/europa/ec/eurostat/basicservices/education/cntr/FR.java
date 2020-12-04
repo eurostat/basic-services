@@ -52,7 +52,7 @@ Cartographie des formations Parcoursup 2020
 Ce jeu de données présente les données sous-jacentes à la carte interactive de l’ensemble des formations accessibles via Parcoursup en 2020 (https://dossier.parcoursup.fr/Candidat/carte).
 fr-esr-cartographie_formations_parcoursup
 16990
-YES. only parcourssup. No HEC, no ENPC.
+YES. only parcourssup. No HEC, no ENPC. Capacity on pages: https://data.enseignementsup-recherche.gouv.fr/pages/parcoursupdata_info/?disjunctive.fili&refine.gta=6138
 
 Cartographie de l'enseignement supérieur et de la recherche
 Cartes issues de l'" Atlas régional, les effectifs d'étudiants " et de l'"Atlas des brevets" édités par la sous-direction des systèmes d'information et des études statistiques du Ministère en charge de l'Enseignement supérieur, de la Recherche et de l'Innovation.
