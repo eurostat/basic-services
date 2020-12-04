@@ -35,7 +35,38 @@ public class FR {
 
 			#https://data.education.gouv.fr/explore/dataset/fr-en-annuaire-education/table/?disjunctive.nom_etablissement&disjunctive.type_etablissement&disjunctive.appartenance_education_prioritaire&disjunctive.type_contrat_prive&disjunctive.code_type_contrat_prive&disjunctive.pial
 			#https://data.education.gouv.fr/explore/dataset/fr-en-annuaire-education/download/?format=csv&timezone=Europe/Berlin&lang=fr&use_labels_for_header=true&csv_separator=%3B
-		 */
+
+
+https://data.enseignementsup-recherche.gouv.fr/
+
+dataesr@recherche.gouv.fr, DGESIP DGRI A2-4 - Département des outils d’aide à la décision
+atlas.regional@enseignementsup.gouv.fr, DGESIP DGRI A2-4 - Département des outils d’aide à la décision
+
+Implantations des établissements d'enseignement supérieur publics
+Ce jeu de données présente la localisation des implantations des établissements d'enseignement supérieur publics : universités, université de technologie, INP, grands établissements, écoles d'ingénieur.
+fr-esr-implantations_etablissements_d_enseignement_superieur_publics
+2561
+YES. only public? No HEC, ENSG, ENPC. capacity data from 2015-2016.
+
+Cartographie des formations Parcoursup 2020
+Ce jeu de données présente les données sous-jacentes à la carte interactive de l’ensemble des formations accessibles via Parcoursup en 2020 (https://dossier.parcoursup.fr/Candidat/carte).
+fr-esr-cartographie_formations_parcoursup
+16990
+YES. only parcourssup. No HEC, no ENPC.
+
+Cartographie de l'enseignement supérieur et de la recherche
+Cartes issues de l'" Atlas régional, les effectifs d'étudiants " et de l'"Atlas des brevets" édités par la sous-direction des systèmes d'information et des études statistiques du Ministère en charge de l'Enseignement supérieur, de la Recherche et de l'Innovation.
+fr-esr-cartographie
+1283
+NO
+
+Principaux établissements d'enseignement supérieur
+Caractéristiques des principaux établissements d'enseignement supérieur. Situation à date.
+fr-esr-principaux-etablissements-enseignement-superieur
+266
+NO
+
+ */
 
 		//download data when FR_raw.csv file is not present
 		String url = "https://data.education.gouv.fr/explore/dataset/fr-en-annuaire-education/download/?format=csv&timezone=Europe/Berlin&lang=fr&use_labels_for_header=true&csv_separator=%3B";
