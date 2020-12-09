@@ -52,8 +52,17 @@ public class Validation {
 		b = BasicServicesValidation.checkValuesAmongWithDelim(showErrorMessage, data, "fields", "-", "", "0", "1", "2", "3", "4", "5", "6", "7", "8");
 		if(!b) System.err.println("Problem with fields values for " + cc);		
 
-		//check levels - 0/1/2/3
-		b = BasicServicesValidation.checkValuesAmongWithDelim(showErrorMessage, data, "levels", "-", "", "0", "1", "2", "3");
+		//https://webgate.ec.europa.eu/fpfis/wikis/pages/viewpage.action?spaceKey=GISCO&title=Education+services+in+Europe
+		//		0 – Early childhood education
+		//		1 – Primary education
+		//		2 – Lower secondary education
+		//		3 – Upper secondary education
+		//		4 – Post-secondary non-tertiary education
+		//		5 – Short-cycle tertiary education
+		//		6 – Bachelor’s or equivalent level
+		//		7 – Master’s or equivalent level
+		//		8 – Doctoral or equivalent level
+		b = BasicServicesValidation.checkValuesAmongWithDelim(showErrorMessage, data, "levels", "-", "", "0", "1", "2", "3", "4", "5", "6", "7", "8");
 		if(!b) System.err.println("Problem with levels values for " + cc);
 
 		//check public_private - public/private
