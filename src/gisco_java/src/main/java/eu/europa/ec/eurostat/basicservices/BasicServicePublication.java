@@ -138,6 +138,7 @@ public class BasicServicePublication {
 			ats.setAttributeTypes(fs);
 			GeoData.save(fs, destinationDataPath + "geojson/all.geojson", CRSUtil.getWGS_84_CRS());
 			GeoData.save(fs, destinationDataPath + "gpkg/all.gpkg", CRSUtil.getWGS_84_CRS());
+			
 
 			{
 				//export for web
