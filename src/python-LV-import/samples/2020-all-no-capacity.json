@@ -1,0 +1,92 @@
+{
+  "id": {"mapping-name": "Reģistrācijas numurs"},
+  "name": {"mapping-name": "Nosaukums"},
+  "site_name": {},
+  "lat": {},
+  "lon": {},
+  "street": {},
+  "house_number": {},
+  "postcode": {},
+  "city": {},
+  "cc": {"default": "LV"},
+  "country": {"default": "Latvia"},
+  "levels": {
+    "mapping-name": "Tips",
+    "mapping": {
+      "0": ["Pirmsskolas izglītības iestāde","Pirmsskolas izglītības konsultatīvais centrs",
+        "Speciālā pirmsskolas iestāde","Speciālā sākumskola"],
+      "1": ["Internātskola - attīstības centrs","Internātskola - rehabilitācijas centrs",
+        "Sociālās korekcijas iestāde","Speciālā pamatskola","Speciālās izglītības iestāde",
+        "Vispārizglītojošā sākumskola"],
+      "2": ["Internātskola - attīstības centrs","Internātskola - rehabilitācijas centrs",
+        "Profesionālās pamatizglītības iestāde","Sanatorijas internātskola","Sociālās korekcijas iestāde",
+        "Speciālā pamatskola","Speciālā vidusskola","Vispārizglītojošā pamatskola"],
+      "3": ["Arodizglītības iestāde","Ģimnāzija","Internātskola - attīstības centrs","Neklātienes vidusskola",
+        "Profesionālās izglītības kompetences centrs","Profesionālās vidējās izglītības iestāde",
+        "Sociālās korekcijas iestāde","Speciālā vidusskola","Valsts ģimnāzija",
+        "Vispārizglītojošā vakara (maiņu) vidusskola","Vispārizglītojošā vidusskola"],
+      "4": ["Bērnu un jauniešu interešu izglītības iestāde","Deju skola","Mākslas skola","Mūzikas skola",
+        "Mūzikas un mākslas skola","Pieaugušo izglītības iestāde","Pieaugušo neformālās izglītības iestāde",
+        "Profesionālās tālākizglītības un pilnveides izglītības iestāde","Sporta skola"],
+      "5": ["Akadēmija","Ārvalstu augstskolas filiāle","Augstskola","Latvijas augstskolas filiāle", "Koledža","Koledžas filiāle"],
+      "6": ["Akadēmija","Ārvalstu augstskolas filiāle","Augstskola","Latvijas augstskolas filiāle", "Koledža","Koledžas filiāle"],
+      "7": ["Akadēmija","Ārvalstu augstskolas filiāle","Augstskola","Latvijas augstskolas filiāle"],
+      "8": []
+    },
+    "classification": {
+      "0": "Early childhood education",
+      "1": "Primary education",
+      "2": "Lower secondary education",
+      "3": "Upper secondary education",
+      "4": "Post-secondary non-tertiary education",
+      "5": "Short-cycle tertiary education",
+      "6": "Bachelor’s or equivalent level",
+      "7": "Master’s or equivalent level",
+      "8": "Doctoral or equivalent level"
+    },
+    "delim": "-"
+  },
+  "max_students": {},
+  "enrollment": {},
+  "fields": {},
+  "facility_type": {},
+  "public_private": {
+    "mapping-name": "Juridiskais status",
+    "mapping": {
+      "public": [
+        "Ārvalsts augstskolas filiāle","Atvasināta publiskā persona",
+        "Biedrība","Biedrības struktūrvienība","Latvijas augstskolas filiāle",
+        "Latvijas Universitātes aģentūra","Pastarpinātās pārvaldes iestāde",
+        "Pašvaldība","Publiskā aģentūra","Reliģiskas organizācijas iestāde",
+        "Valsts","Valsts iestāde","Valsts iestādes struktūrvienība",
+        "Valsts kapitālsabiedrība","Valsts tiešās pārvaldes iestāde"
+      ],
+      "private": [
+        "Fiziskas personas dibināta iestāde","Juridiskā vai fiziskā persona",
+        "Komercsabiedrība","Komercsabiedrības struktūrvienība",
+        "Nodibinājuma struktūrvienība","Nodibinājums",
+        "Privāto tiesību juridiskās pers. struktūrvienība"
+      ]
+    }
+  },
+  "tel": {"mapping-name": "Tālrunis"},
+  "email": {"mapping-name": "E-pasts"},
+  "url": {},
+  "ref_date": {"default": "current-date"},
+  "pub_date": {},
+  "geo_qual": {},
+  "comments": {},
+  "address": {
+    "mapping-name": "Adrese",
+    "temporary": true
+  },
+  "georesult": {
+    "comment": "Best geocoding result",
+    "temporary": true
+  },
+  "geo_type": {"temporary": true},
+  "geo_id": {"temporary": true},
+  "errors-geocoding": {"temporary": true},
+  "errors-map": {"temporary": true},
+  "errors-check": {"temporary": true}
+}

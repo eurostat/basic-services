@@ -59,8 +59,8 @@ public class BasicServicesValidation {
 		if(!b) System.err.println("Problem with cc values for " + cc);
 
 
-		//check geo_qual -1,1,2,3
-		b = checkValuesAmong(showErrorMessage, data, "geo_qual", "-1", "1", "2", "3");
+		//check geo_qual -1,1,2,3,4
+		b = checkValuesAmong(showErrorMessage, data, "geo_qual", "-1", "1", "2", "3", "4");
 		if(!b) System.err.println("Problem with geo_qual values for " + cc);
 		//check date format DD/MM/YYYY
 		b = checkDateFormat(data, "ref_date", BasicServicesUtil.dateFormat);

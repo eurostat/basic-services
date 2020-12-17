@@ -52,8 +52,8 @@ public class Validation {
 		b = BasicServicesValidation.checkValuesAmongWithDelim(showErrorMessage, data, "fields", "-", "", "0", "1", "2", "3", "4", "5", "6", "7", "8");
 		if(!b) System.err.println("Problem with fields values for " + cc);		
 
-		//check levels - 0/1/2/3
-		b = BasicServicesValidation.checkValuesAmongWithDelim(showErrorMessage, data, "levels", "-", "", "0", "1", "2", "3");
+		//check levels - 0/1/2/3/4/5/6/7/8
+		b = BasicServicesValidation.checkValuesAmongWithDelim(showErrorMessage, data, "levels", "-", "", "0", "1", "2", "3", "4", "5", "6", "7", "8");
 		if(!b) System.err.println("Problem with levels values for " + cc);
 
 		//check public_private - public/private
