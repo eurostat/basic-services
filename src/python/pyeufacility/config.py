@@ -31,7 +31,7 @@ integrated data on national facilities.
 #%% Settings
 
 from os import path as osp
-import warnings
+import logging
 
 from collections import OrderedDict, Mapping
 from six import string_types
@@ -39,174 +39,40 @@ from copy import deepcopy
 
 from datetime import datetime
 
+try:
+    from importlib import import_module
+except:
+    # import_module = lambda mod: exec('from %s import %s' % mod.split('.'))
+    import_module = lambda _mod, pack: exec('from %s import %s' % (pack, _mod.split('.')[1])) or None
+
 from pyeudatnat import COUNTRIES
 from pyeudatnat.meta import MetaDat, MetaDatNat
 from pyeudatnat.base import datnatFactory
 
-from . import FACILITIES
+from . import FACILITIES, PACKNAME, PACKPATH#analysis:ignore
 
 
-#%% Global vars
+#%% Global var
 
-__THISFILE      = __file__
-CONFIGDIR       = osp.dirname(__THISFILE)
-CONFIGFILE      = osp.basename(__THISFILE).split('.')[0] # "config"
-
-__type2name     = lambda t: t.__name__  # lambda t: {v:k for (k,v) in BASETYPE.items()}[t]
-
-__CONFIGINFO    = dict.fromkeys(list(FACILITIES.keys()), {})
-
-__CONFIGINFO.update( {
-        "HCS": {
-                "fmt":      {"geojson": "geojson", "json": "json", "csv": "csv", "gpkg": "gpkg"},
-                "lang":     "en",
-                "sep":      ",",
-                "enc":      "utf-8",
-                "dfmt":     "%d/%m/%Y", # date format DD/MM/YYYY
-                "proj":     None, # "WGS84"
-                "path":     "../../data/healthcare", # osp.abspath(osp.join(__THISDIR,"../../data/healthcare"))
-                "info":     "../../data/healthcare/metadata.pdf",
-                "file":     "%s.%s",
-                "index":    OrderedDict( [ # in Python 3, order of keys is actually preserved
-                        ("id",       {"name": "id",                     "desc": "The healthcare service identifier - This identifier is based on national identification codes, if it exists.",
-                                      "type": __type2name(int),         "values": None}),
-                        ("name",     {"name": "hospital_name",          "desc": "The name of the healthcare institution",
-                                      "type": __type2name(str),         "values": None}),
-                        ("site",     {"name": "site_name",              "desc": "The name of the specific site or branch of a healthcare institution",
-                                      "type": __type2name(str),         "values": None}),
-                        ("lat",      {"name": "lat",                    "desc": "Latitude (WGS 84)",
-                                      "type": __type2name(float),       "values": None}),
-                        ("lon",      {"name": "lon",                    "desc": "Longitude (WGS 84)",
-                                      "type": __type2name(float),       "values": None}),
-                        ("geo_qual", {"name": "geo_qual",               "desc": "A quality indicator for the geolocation - 1: Good, 2: Medium, 3: Low, -1: Unknown",
-                                      "type": __type2name(int),         "values": [-1, 1, 2, 3]}),
-                        ("street",   {"name": "street",                 "desc": "Street name",
-                                      "type": __type2name(str),         "values": None}),
-                        ("number",   {"name": "house_number",           "desc": "House number",
-                                      "type": __type2name(str),         "values": None}),
-                        ("postcode", {"name": "postcode",               "desc": "Postcode",
-                                      "type": __type2name(str),         "values": None}),
-                        ("city",     {"name": "city", "desc":           "City name (sometimes refers to a region or a municipality)",
-                                      "type": __type2name(str),         "values": None}),
-                        ("cc",       {"name": "cc", "desc":             "Country code (ISO 3166-1 alpha-2 format)",
-                                      "type": __type2name(str),         "values": list(COUNTRIES.keys())}),
-                        ("country",  {"name": "country",                "desc": "Country name",
-                                      "type": __type2name(str),         "values": None}),
-                        ("beds",     {"name": "cap_beds",               "desc": "Measure of capacity by number of beds (most common)",
-                                      "type": __type2name(int),         "values": None}),
-                        ("prac",     {"name": "cap_prac",               "desc": "Measure of capacity by number of practitioners",
-                                      "type": __type2name(int),         "values": None}),
-                        ("rooms",    {"name": "cap_rooms",              "desc": "Measure of capacity by number of rooms",
-                                      "type": __type2name(int),         "values": None}),
-                        ("ER",       {"name": "emergency",              "desc": "Flag 'yes/no' for whether the healthcare site provides emergency medical services",
-                                      "type": __type2name(bool),        "values": ['yes', 'no']}),
-                        ("type",     {"name": "facility_type",          "desc": "If the healthcare service provides a specific type of care, e.g. psychiatric hospital",
-                                      "type": __type2name(str),         "values": None}),
-                        ("PP",       {"name": "public_private",         "desc": "Status 'private/public' of the healthcare service",
-                                      "type": __type2name(int),         "values": ['public', 'private']}),
-                        ("specs",    {"name": "list_specs",             "desc": "List of specialties recognized in the European Union and European Economic Area according to EU Directive 2005/36/EC",
-                                      "type": __type2name(str),         "values": None}),
-                        ("tel",      {"name": "tel", "desc":            "Telephone number",
-                                      "type": __type2name(int),         "values": None}),
-                        ("email",    {"name": "email", "desc":          "Email address",
-                                      "type": __type2name(str),         "values": None}),
-                        ("url",      {"name": "url", "desc":            "URL link to the institution's website",
-                                      "type": __type2name(str),         "values": None}),
-                        ("refdate",  {"name": "ref_date",               "desc": "The reference date (DD/MM/YYYY) the data refers to. The dataset represents the reality as it was at this date.",
-                                      "type": __type2name(datetime),    "values": "%d/%m/%Y"}),
-                        ("pubdate",  {"name": "pub_date",               "desc": "The publication date of the dataset by Eurostat (DD/MM/YYYY). This should be used to track when this Eurostat dataset has changed.",
-                                      "type": __type2name(datetime),    "values": "%d/%m/%Y"}),
-                        ("comments", {"name": "comments",               "desc": "Comments",
-                                      "type": __type2name(str),         "values": None})
-                       ] ),
-                    # notes:
-                    #  i. house_number should be string, not int.. .e.g. 221b Baker street
-                    #  ii. we use an ordered dict to use the same column order when writing the output file
-                },
-        "Edu": {
-                "fmt":      {"geojson": "geojson", "json": "json", "csv": "csv", "gpkg": "gpkg"},
-                "lang":     "en",
-                "sep":      ",",
-                "enc":      "utf-8",
-                "dfmt":     "%d/%m/%Y", # date format DD/MM/YYYY
-                "proj":     None, # "WGS84"
-                "path":     "../../data/education", # osp.abspath(osp.join(__THISDIR,"../../data/education"))
-                "info":     "../../data/education/metadata.pdf",
-                "file":     "%s.%s",
-                "index":    OrderedDict( [ # in Python 3, order of keys is actually preserved
-                        ("id",       {"name": "id",                     "desc": "The education service identifier - This identifier is based on national identification codes, if it exists.",
-                                      "type": __type2name(int),         "values": None}),
-                        ("name",     {"name": "name",                   "desc": "The name of the education institution",
-                                      "type": __type2name(str),         "values": None}),
-                        ("site",     {"name": "site_name",              "desc": "The name of the specific site or branch of a healthcare institution",
-                                      "type": __type2name(str),         "values": None}),
-                        ("lat",      {"name": "lat",                    "desc": "Latitude (WGS 84)",
-                                      "type": __type2name(float),       "values": None}),
-                        ("lon",      {"name": "lon",                    "desc": "Longitude (WGS 84)",
-                                      "type": __type2name(float),       "values": None}),
-                        ("geo_qual", {"name": "geo_qual",               "desc": "A quality indicator for the geolocation - 1: Good, 2: Medium, 3: Low, -1: Unknown",
-                                      "type": __type2name(int),         "values": [-1, 1, 2, 3]}),
-                        ("street",   {"name": "street",                 "desc": "Street name",
-                                      "type": __type2name(str),         "values": None}),
-                        ("number",   {"name": "house_number",           "desc": "House number",
-                                      "type": __type2name(str),         "values": None}),
-                        ("postcode", {"name": "postcode",               "desc": "Postcode",
-                                      "type": __type2name(str),         "values": None}),
-                        ("city",     {"name": "city", "desc":           "City name (sometimes refers to a region or a municipality)",
-                                      "type": __type2name(str),         "values": None}),
-                        ("cc",       {"name": "cc", "desc":             "Country code (ISO 3166-1 alpha-2 format)",
-                                      "type": __type2name(str),         "values": list(COUNTRIES.keys())}),
-                        ("country",  {"name": "country",                "desc": "Country name",
-                                      "type": __type2name(str),         "values": None}),
-                        ("students", {"name": "cap_students",           "desc": "Measure of capacity by maximum number of students",
-                                      "type": __type2name(int),         "values": None}),
-                        ("enrolled", {"name": "cap_students_enrolled",  "desc": "Measure of capacity by number of enrolled students",
-                                      "type": __type2name(int),         "values": None}),
-                        ("level",    {"name": "level",                  "desc": "Education level, following the International Standard Classification of Education (ISCED 2011) classification.",
-                                      "type": __type2name(str),         "values": None}),
-                        ("PP",       {"name": "public_private",         "desc": "Status 'private/public' of the education service",
-                                      "type": __type2name(int),         "values": ['public', 'private']}),
-                        ("fields",   {"name": "fields",                 "desc": "Field of education and training, following the ISCED-F 2013 classification",
-                                      "type": __type2name(str),         "values": None}),
-                        ("tel",      {"name": "tel", "desc":            "Telephone number",
-                                      "type": __type2name(int),         "values": None}),
-                        ("email",    {"name": "email", "desc":          "Email address",
-                                      "type": __type2name(str),         "values": None}),
-                        ("url",      {"name": "url", "desc":            "URL link to the institution's website",
-                                      "type": __type2name(str),         "values": None}),
-                        ("refdate",  {"name": "ref_date",               "desc": "The reference date (DD/MM/YYYY) the data refers to. The dataset represents the reality as it was at this date.",
-                                      "type": __type2name(datetime),    "values": "%d/%m/%Y"}),
-                        ("pubdate",  {"name": "pub_date",               "desc": "The publication date of the dataset by Eurostat (DD/MM/YYYY). This should be used to track when this Eurostat dataset has changed.",
-                                      "type": __type2name(datetime),    "values": "%d/%m/%Y"}),
-                        ("comments", {"name": "comments",               "desc": "Comments",
-                                      "type": __type2name(str),         "values": None})
-                       ] ),
-                    # notes:
-                    #  i. house_number should be string, not int.. .e.g. 221b Baker street
-                    #  ii. we use an ordered dict to use the same column order when writing the output file
-                }
-            })
-[v.update({"category": FACILITIES[k].copy()}) for (k,v) in __CONFIGINFO.items()]
-
-CONFIGINFO         = deepcopy(__CONFIGINFO)
+FACMETADATA         = {__fac:{} for __fac in FACILITIES.keys() if __fac!='Oth'}
+# dict.fromkeys(list(FACILITIES.keys()), {})
 
 
 #==============================================================================
 #%% Class MetaDatEUFacility
 
 class MetaDatEUFacility(MetaDat):
-    """Class representing used to represent metadata for harmonised dataset at
-    EU level.
+    """Class used to represent metadata for harmonised dataset at EU level.
 
         >>> EUmeta = MetaDatEUFacility(**metadata)
     """
 
     # CATEGORY = 'HCS' # if only HCS...
-    # PROPERTIES = [info['name'] for info in CONFIGINFO[CATEGORY].values()]
+    # PROPERTIES = [meta['name'] for meta in FACMETADATA[CATEGORY].values()]
 
     #/************************************************************************/
     def __init__(self, *args, **kwargs):
-        facility = kwargs.pop('facility', None)
+        facility = kwargs.pop('fac', None)
         if isinstance(facility, string_types) and facility in FACILITIES:
             kwargs.update({'category': FACILITIES.get(facility)})
         elif facility is not None:
@@ -233,8 +99,8 @@ class MetaDatEUFacility(MetaDat):
                 assert osp.exists(path) and osp.isdir(path) # useless...just in case we change the def
             except:
                 path = ''
-            src = osp.join(path, "%s%s.json" % (self.facility, CONFIGFILE))
-            warnings.warn("\n! Input data file '%s' will be loaded" % src)
+            src = osp.join(path, "%s%s.json" % (self.facility, FACMETADATA))
+            logging.warning("\n! Input data file '%s' will be loaded" % src)
         return super(MetaDatEUFacility,self).load(src = src, **kwargs)
 
     #/************************************************************************/
@@ -247,8 +113,8 @@ class MetaDatEUFacility(MetaDat):
                 assert osp.exists(path) and osp.isdir(path)
             except:
                 path = ''
-            dest = osp.join(path, "%s%s.json" % (self.facility, CONFIGFILE))
-            warnings.warn("\n! Output data file '%s' will be created" % dest)
+            dest = osp.join(path, "%s%s.json" % (self.facility, FACMETADATA))
+            logging.warning("\n! Output data file '%s' will be created" % dest)
         super(MetaDatEUFacility,self).dump(dest = dest, **kwargs)
 
 
@@ -262,12 +128,13 @@ class MetaDatNatFacility(MetaDatNat):
         >>> CCmeta = MetaDatNatFacility(**metadata)
     """
 
-    PROPERTIES = ['country', 'lang', 'proj', 'file', 'path', 'enc', 'sep', 'columns', 'index']
-    #          {'country':{}, 'lang':{}, 'proj':None, 'file':'', 'path':'', 'enc':None, 'sep':',', 'columns':{}, 'index':[]}
+    PROPERTIES = ['provider', 'country', 'lang', 'proj', 'file', 'path',
+                  'columns', 'index', 'options', 'category', 'date']
+    #          {'country':{}, 'lang':{}, 'proj':None, 'file':'', 'path':'', 'columns':{}, 'index':[], 'options':{}}
 
     #/************************************************************************/
     @classmethod
-    def template(cls, facility=None, country=None, **kwargs):
+    def template(cls, fac=None, country=None, **kwargs):
         """"Create a template country metadata file as a JSON file
 
             >>> MetaFacility.template()
@@ -276,12 +143,12 @@ class MetaDatNatFacility(MetaDatNat):
             country = ''
         elif not isinstance(country, string_types):
             raise TypeError("Wrong type for country code '%s' - must be a string" % country)
-        if facility is None:
-            facility = ''
-        elif isinstance(facility, string_types) and facility in FACILITIES:
-            facility = FACILITIES.get(facility)
+        if fac is None:
+            fac = ''
+        elif isinstance(fac, string_types) and fac in FACILITIES:
+            fac = FACILITIES.get(fac)
         else:
-            raise TypeError("Wrong type for facility type - must be a string" % country)
+            raise TypeError("Wrong type for facility type '%s' - must be a string" % fac)
         as_file = kwargs.pop('as_file', True)
         # dumb initialisation
         temp = dict.fromkeys(cls.PROPERTIES)
@@ -290,11 +157,21 @@ class MetaDatNatFacility(MetaDatNat):
                       'file':       '%s.csv' % country or 'CC' ,
                       'proj':       None,
                       'path':       '../../data/raw/',
-                      'enc':        'latin1',
-                      'sep':        ';',
-                      'dfmt':       '%d-%m-%Y',
                       'columns':    [ ],
                       'index':      { },
+                      'options':    {
+                          'fetch': {},
+                          'load': {
+                              'enc':        'latin1',
+                              'sep':        ';',
+                              'dtfmt':      '%d-%m-%Y'
+                              },
+                          'clean': {},
+                          'prepare': {},
+                          'locate': {},
+                          'format': {},
+                          'save': {}
+                          }
                       #'provider':   None,
                       #'date':       None
                       })
@@ -306,7 +183,7 @@ class MetaDatNatFacility(MetaDatNat):
         try:
             assert as_file is True
             # save it...somewhere
-            dest = osp.join(CONFIGDIR, facility, "%s%s.json" % (country.upper() or 'temp', facility))
+            dest = osp.join(PACKPATH, facil, "%s%s.json" % (country.upper() or 'temp', facil))
             template.save(dest, **kwargs)
         except AssertionError:
             return template
@@ -321,14 +198,14 @@ def facilityFactory(*args, **kwargs):
     """Generic function to derive a class from the base class :class:`BaseFacility`
     depending on specific metadata and a given geocoder.
 
-        >>>  NewFacility = facilityFactory(facility = facility, meta = None,
+        >>>  NewFacility = facilityFactory(fac = facility, meta = None,
                                            country = None, coder = None)
 
     Examples
     --------
 
-        >>>  NewHCS = facilityFactory(HCS, country = CC1, coder = {'Bing', yourkey})
-        >>>  NewFacility = facilityFactory(country = CC2, coder = 'GISCO')
+        >>>  NewHCS = facilityFactory(HCS, cc = CC1, coder = {'Bing', yourkey})
+        >>>  NewFacility = facilityFactory(cc = CC2, coder = 'GISCO')
 
     See also
     --------
@@ -337,7 +214,7 @@ def facilityFactory(*args, **kwargs):
     # check facility to define output data configuration format
     if args in ((),(None,)):        facility = None
     else:                           facility = args[0]
-    facility = facility or kwargs.pop('facility', None)
+    facility = facility or kwargs.pop('fac', None)
     try:
         assert facility is None or isinstance(facility, (string_types, Mapping, MetaDat))
     except AssertionError:
@@ -346,11 +223,11 @@ def facilityFactory(*args, **kwargs):
         config = {}
     elif isinstance(facility, string_types):
         try:
-            config = CONFIGINFO[facility]
+            config = FACMETADATA[facility]
         except AttributeError:
             raise TypeError("Facility string '%s' not recognised - must be in '%s'" % (facility, list(FACILITIES.keys())))
         else:
-            config = MetaDatEUFacility(deepcopy(config), facility = facility)
+            config = MetaDatEUFacility(deepcopy(config), fac = facility)
     elif isinstance(facility, Mapping):
         config = MetaDatEUFacility(facility)
     elif isinstance(facility, MetaDatEUFacility):
@@ -362,50 +239,47 @@ def facilityFactory(*args, **kwargs):
 #==============================================================================
 #%% Program run when loading the module
 
-for __fac in list(FACILITIES.keys()):
-    __ffac = FACILITIES[__fac]['code']
-    # if the variable OCFGDATA is set already, we assume this doesnt need to be
-    # reloaded. To force it, use the config.load function above.
-    try:
-        assert CONFIGINFO is not None
-    except: # NameError
-        pass
-    else:
-        try:
-            assert CONFIGINFO.get(__fac) not in ({},None)
-        except:
-            pass
-        else:
-            continue
-    # it has to be loaded/created then...
-    try:
-        __path = CONFIGDIR
-        assert osp.exists(__path) and osp.isdir(__path)
-    except:
-        __path = ''
-    __cfgfile = osp.join(__path, "%s%s.json" % (__ffac, CONFIGFILE))
-    try:
-        __cfg = MetaDatEUFacility(facility=__fac)
-        __config = __cfg.loads(src=__cfgfile)
-    except:
-        __config = None
-        try:
-            assert CONFIGINFO.get(__fac, None) not in ({},None)
-        except:
-            warnings.warn("\n! No config available for facility '%s' !" % __fac)
-            continue
-        try:
-            __cfg = MetaDatEUFacility(CONFIGINFO.get(__fac), facility=__fac)
-            __cfg.dump(dest=__cfgfile)
-        except:
-            warnings.warn("\n! No config saved for facility '%s' !" % __fac)
-        else:
-            warnings.warn("\n! Configuration file for facility '%s' will be created !" % __fac)
-    else:
-        warnings.warn("\n! Loading configuration data for facility '%s' !" % __fac)
-        CONFIGINFO[__fac] = __config.copy()
+for __fac in FACMETADATA.keys():
+    # for a given facility
+    __cfac = FACILITIES[__fac]['code']
 
-del(__THISFILE, __CONFIGINFO, __fac, __ffac)
+    # check facility's configuration file
+    __path = PACKPATH
+    try:
+        __fcfg = osp.join(__path, "%s.json" % __cfac)
+        assert osp.exists(__fcfg) and osp.isfile(__fcfg)
+    except AssertionError:
+        try:
+            __ccfg = osp.join(__path, "%s" % __cfac, "__init__.py")
+            # __ccfg = osp.join(__path, "%s.py" % __cfac)
+            assert osp.exists(__ccfg) and osp.isfile(__ccfg)
+        except AssertionError:
+            logging.warning("\n! No config file available for facility '%s' !" % __fac)
+            continue
+        else:
+            try:
+                imp = import_module('.%s' % __cfac, '%s' % PACKNAME)
+                assert __fac in dir(imp)
+                __info = getattr(imp, __fac, None)
+            except ImportError:
+                logging.warning("\n! Error with py-module for facility '%s' - will proceed without !" % __fac)
+                continue
+            else:
+                logging.warning("\n! Configuration file for facility '%s' will be created !" % __fac)
+                # with open(__fcfg, 'w') as __fp: Json.dump(__info, __fp)
+                __cfg = MetaDatEUFacility(__info, facil=__fac)
+                __cfg.dump(dest=__fcfg)
+    else:
+        # with open(__fcfg, 'r') as __fp: __info = Json.load(__fp)
+        __cfg = MetaDatEUFacility(facil=__fac)
+        __info = __cfg.load(src=__fcfg)
+    finally:
+        # logging.warning("\n! Loading configuration data for facility '%s' !" % __fac)
+        FACMETADATA[__fac] = deepcopy(__info) # __info.copy()
+        FACMETADATA[__fac].update({"category": FACILITIES[__fac]})
+
+
 try:
-    del(__path, __cfg, __config, __cfgfile)
+    del(__fac, __cfac, __path)
+    del(__cfg, __info, __fcfg, __ccfg)
 except: pass
