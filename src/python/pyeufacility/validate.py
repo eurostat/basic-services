@@ -23,7 +23,7 @@ Module data validation according to template.
 #%%
 
 from os import path as osp
-import warnings#analysis:ignore
+import logging
 
 from collections import Mapping, Sequence#analysis:ignore
 from six import string_types
@@ -34,13 +34,14 @@ import pandas as pd
 try:
     from optparse import OptionParser
 except ImportError:
-    warnings.warn('\n! inline command deactivated !')
+    logging.warning('\n! inline command deactivated !')
 
 from pyeudatnat import COUNTRIES, AREAS
 from pyeudatnat.misc import Type
-from pyeufacility.config import CONFIGINFO
+from pyeufacility.config import FACMETADATA
+from pyeudatnat.io import DEF_ENCODING, DEF_SEP
 
-from pyeufacility import FACILITIES
+from pyeufacility import PACKNAME, VALIDATE, FACILITIES
 
 __THISDIR       = osp.dirname(__file__)
 
@@ -53,21 +54,21 @@ MINMAX_LL = {'lat': [-90., 90.], 'lon': [-180., 180.]}
 #==============================================================================
 
 def __validateData(facility, src):
-    cfg = CONFIGINFO[facility]
-    ENC, SEP = cfg.get('enc'), cfg.get('sep')
+    ocfg = FACMETADATA[facility]
+    oopts = ocfg.get('options', {})
+    enc, sep = oopts.get('enc', DEF_ENCODING), oopts.get('sep', DEF_SEP)
     #if not osp.exists(src):
     #    raise FileNotFoundError('input file %s not found - nothing to check' % src)
     try:
-        df = pd.read_csv(src, encoding=ENC, sep=SEP)
+        df = pd.read_csv(src, encoding = enc, sep = sep)
     #except FileNotFoundError:      # we tested that already...
     #    raise FileNotFoundError('input file %s not found - nothing to check' % src)
     except:
         try:
-            df = pd.read_table(src, encoding=ENC, sep=SEP, compression='infer')
-        except:
-            raise IOError("Impossible to load source data - format not recognised")
-    index = cfg.get('index',{}).copy()
-    nindex = [col.get('name') for col in index.values()]
+            df = pd.read_table(src, encoding = enc, sep = sep, compression = 'infer')
+        except:     raise IOError("Impossible to load source data - format not recognised")
+    oindex = ocfg.get('index',{}).copy()
+    nindex = [col.get('name') for col in oindex.values()]
     try:
         columns = set(list(df.columns)).difference(set(nindex))
         assert columns == set()
@@ -78,8 +79,8 @@ def __validateData(facility, src):
             columns = set(list(nindex)).difference(set(df.columns))
             assert columns == set()
         except AssertionError:
-            warnings.warn("\n! Missing columns in source file: '%s' !" % list(columns))
-    nindex = {col.get('name'): col for col in index.values()}
+            logging.warning("\n! Missing columns in source file: '%s' !" % list(columns))
+    nindex = {col.get('name'): col for col in oindex.values()}
     for col in df.columns:
         # check missing values
         try:
@@ -88,10 +89,10 @@ def __validateData(facility, src):
             try:
                 assert df[col].isnull().all() is np.bool_(False)
             except AssertionError:
-                warnings.warn("\n! Column '%s' empty - missing values only !" % col)
+                logging.warning("\n! Column '%s' empty - missing values only !" % col)
                 continue
         else:
-            # warnings.warn("\n! No missing values in column '%s' !" % col)
+            # logging.warning("\n! No missing values in column '%s' !" % col)
             pass
         # check type
         dtype = nindex[col].get('type')
@@ -101,7 +102,7 @@ def __validateData(facility, src):
             try:
                 assert df[col].dtype==object or df[col].dtype in Type.pytname2npt(dtype) # and dtype != object
             except AssertionError:
-                warnings.warn("\n! Unexpected type '%s' for column '%s' !" % (df[col].dtype,col))
+                logging.warning("\n! Unexpected type '%s' for column '%s' !" % (df[col].dtype,col))
         # check values/format
         dfmt = values = nindex[col].get('values')
         if values is not None:
@@ -111,25 +112,28 @@ def __validateData(facility, src):
                 try:
                     pd.to_datetime(df[col], format=dfmt, errors='coerce').notnull().all() is True
                 except AssertionError:
-                    warnings.warn("\n! Unexpected date format for column '%s' !" % col)
+                    logging.warning("\n! Unexpected date format for column '%s' !" % col)
             else:
                 try:
                     values = [values,] if not isinstance(values, Sequence) else values
-                    assert df[col].dropna().isin(values).all() is True
+                    assert df[col].dropna().isin(values).all()
                 except AssertionError:
                     raise IOError("Wrong input values in column '%s'" % col)
     # check id uniquiness
     try: # note the use of INDEX here, not nindex, though the names end up being
         # the same
-        assert df[index.get('id',{})['name']].dropna().is_unique is True
+        assert df[oindex.get('id',{})['name']].dropna().is_unique is True
     except AssertionError:
         raise IOError("Duplicated identifier IDs")
     # check geographical coordinates
     for lL in ['lat','lon']:
-        col = index.get(lL,{})['name']
+        col = oindex.get(lL,{})['name']
         if col in df.columns:
             try:
-                assert df[col].dropna().between(MINMAX_LL[lL][0],MINMAX_LL[lL][1]).all() is np.bool_(True)
+                assert (df[col]
+                        .dropna()
+                        .between(MINMAX_LL[lL][0],MINMAX_LL[lL][1])
+                        .all()) is np.bool_(True)
             except AssertionError:
                 raise IOError("Wrong input values for %s geographical coordinate '%s'" % lL)
     # something else to check?
@@ -162,12 +166,12 @@ def validateCountryService(facility, country = None, **kwargs):
         raise TypeError('wrong type for input country code - must the ISO 2-letter string')
     elif not country in COUNTRIES.keys():
         raise IOError('country code not recognised - must a code of the %s area' % list(COUNTRIES.keys()))
-    cfg = CONFIGINFO[facility]
+    cfg = FACMETADATA[facility]
     fmt = 'csv'
     src = kwargs.pop('src', None)
     if src is None:
         src = osp.join(cfg.get('path'), fmt, cfg.get('file') % (country, cfg.get('fmt',{})[fmt]))
-        warnings.warn("\n! Input data file '%s' will be controlled for validation" % src)
+        logging.warning("\n! Input data file '%s' will be controlled for validation" % src)
     try:
         assert osp.exists(src)
     except:
@@ -227,9 +231,9 @@ def __main():
     try:
         run(facility, country)
     except IOError:
-        warnings.warn('\n!!!  ERROR: data file not validated !!!')
+        logging.warning('\n!!!  ERROR: data file not validated !!!')
     else:
-        warnings.warn('\n!  OK: data file correctly validated !')
+        logging.warning('\n!  OK: data file correctly validated !')
 
 if __name__ == '__main__':
     __main()
