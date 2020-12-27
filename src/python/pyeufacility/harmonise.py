@@ -26,7 +26,7 @@ from all member states.
 from os import path as osp
 import inspect
 from sys import modules as sysmod#analysis:ignore
-import warnings#analysis:ignore
+import logging
 
 from collections import Mapping, Sequence
 from six import string_types
@@ -34,19 +34,20 @@ from six import string_types
 try:
     from optparse import OptionParser
 except ImportError:
-    warnings.warn('\n! inline command deactivated !')
+    logging.warning('\n! inline command deactivated !')
 
 try:
     from importlib import import_module
 except:
-    warnings.warn('\n! module importlib missing !')
+    logging.warning('\n! module importlib missing !')
     # import_module = lambda mod: exec('from %s import %s' % mod.split('.'))
     import_module = lambda _mod, pack: exec('from %s import %s' % (pack, _mod.split('.')[1])) or None
 
 from pyeudatnat import COUNTRIES, AREAS
 from pyeudatnat.io import Json
+from pyeudatnat.base import PROCESSES
 
-from pyeufacility import PACKNAME, BASENAME, METANAME, HARMNAME, PREPNAME, FACILITIES
+from pyeufacility import PACKNAME, BASENAME, HARMONISE, FACILITIES
 from pyeufacility.config import MetaDatNatFacility, facilityFactory
 
 __THISDIR       = osp.dirname(__file__)
@@ -64,59 +65,85 @@ def __harmoniseData(facility, metadata, **kwargs):
         raise TypeError("Wrong input metadata for '%s' facility" % facility)
     #else:
     #    metadata = MetaDatNatFacility(metadata)
-    on_disk = kwargs.pop('on_disk', True)
+    dest = kwargs.pop("dest", None)
     try:
-        assert isinstance(on_disk,bool)
+        assert dest is None or isinstance(dest, string_types)
+    except:
+        raise TypeError("Wrong DEST file name")
+    on_disk = kwargs.pop('on_disk', None)
+    try:
+        assert on_disk is None or isinstance(on_disk, bool)
     except:
         raise TypeError("Wrong ON_DISK flag")
-    f_prep = kwargs.pop('met_prep')
+    # check dictionary of options
+    options = kwargs.pop('options', {})
     try:
-        assert f_prep is None or callable(f_prep) is True
+        assert isinstance(options, Mapping)
+        assert all(o is None or isinstance(o,Mapping) for o in options.values())
     except:
-        raise TypeError("Wrong option MET_PREP: data preparation method not recognised")
-    opt_prep = kwargs.pop("opt_prep", {})
-    opt_load = kwargs.pop("opt_load", {})
-    opt_format = kwargs.pop("opt_format", {})
+        raise TypeError("Wrong format for OPTIONS - must be a dictionary (of dictionaries)")
+    else:
+        try:
+            assert set(list(options.keys())).difference(PROCESSES) == set()
+        except:
+            raise IOError("Wrong keys for OPTIONS - must be any from the list '%s'" % PROCESSES)
+    # check dictionary of methods
+    methods = kwargs.pop('methods', {})
     try:
-        assert isinstance(opt_load,Mapping) and isinstance(opt_prep,Mapping) \
-            and isinstance(opt_format,Mapping)
+        assert isinstance(methods, Mapping)
+        # assert all(callable(m) for m in methods.values())
     except:
-        raise TypeError("Wrong additional options")
+        raise TypeError("Wrong format for METHODS - must be a dictionary (of callables)")
+    else:
+        try:
+            assert set(list(methods.keys())).difference(PROCESSES) == set()
+        except:
+            raise IOError("Wrong keys for METHODS - must be any from the list '%s'" % PROCESSES)
+    # create facility
     try:
-        Facility = facilityFactory(facility = facility, meta = metadata, **kwargs)
+        Facility = facilityFactory(fac = facility,
+                                   meta = metadata,
+                                   **kwargs)
     except:
         raise IOError("Impossible to create specific country class")
-    if f_prep is not None:
-        setattr(Facility, 'prepare_data', f_prep) # Facility.prepare_data = f_prep
+    # check wether some processes have been parsed
+    for proc, proc_data in methods.items():
+        try:
+            assert callable(proc_data)
+        except:
+            raise TypeError("Wrong option '%s': '%s_data' method not recognised" % (proc,proc))
+        else:
+            # for instance = Facility.prepare_data = prepare_data
+            setattr(Facility, '%s_data' % proc, proc_data)
+    # create an country instance
     try:
         natFacility = Facility()
     except:
         raise IOError("Impossible to create specific facility instance")
-    natFacility.load_data(**opt_load)
-    if inspect.isclass(natFacility.prepare_data):
-        natFacility.prepare_data()(natFacility, **opt_prep)
-    elif callable(natFacility.prepare_data): # inspect.ismethod(natFacility.prepare_data)
-        natFacility.prepare_data(**opt_prep)
-    natFacility.format_data(**opt_format)
-    if on_disk is False:
-        return natFacility
-    dest = kwargs.pop("dest", None)
-    opt_save = kwargs.pop("opt_save", None)
+    # process...
+    # fetch the data
     try:
-        opt_save is None or isinstance(opt_save, (Sequence,string_types))
-    except:
-        raise TypeError("Wrong additional options")
-    if not isinstance(opt_save, Sequence):
-        opt_save = [opt_save,]
-    for fmt in opt_save:
-        try:
-            assert (fmt is None or dest.split('.')[1] == fmt)
-        except:
-            f = '%s.%s' % (dest, fmt)
-        else:
-            f = dest
-        natFacility.dump_data(dest = dest, fmt = fmt)
-    return natFacility
+        natFacility.fetch_data(**options.get('fetch',{}))
+    except:     pass
+    # load the actual data
+    natFacility.load_data(**options.get('load',{}))
+    # prepare/update the data
+    if inspect.isclass(natFacility.prepare_data):
+        natFacility.prepare_data()(natFacility, **options.get('prepare',{}))
+    elif callable(natFacility.prepare_data): # inspect.ismethod(natFacility.prepare_data)
+        natFacility.prepare_data(**options.get('prepare',{}))
+    # geolocalise the data
+    natFacility.locate_data(**options.get('locate',{}))
+    # format/harmonise the data
+    natFacility.format_data(**options.get('format',{}))
+    # save the data
+    if on_disk is None:
+        return natFacility
+    elif on_disk is False:
+        return natFacility.dump_data(**options.get('dump',{}))
+    else:
+        natFacility.save_data(dest = dest, **options.get('save',{}))
+        return natFacility
 
 
 #%%
@@ -162,13 +189,13 @@ def harmoniseCountryService(facility, country = None, coder = None, **kwargs):
         # import_module('%s.%s' % (PACKNAME,modname) )
         imp = import_module('.%s' % modname, '%s.%s' % (PACKNAME, metadir))
     except AssertionError:
-        warnings.warn("\n! No country py-file '%s' found - will proceed without !" % fname)
+        logging.warning("\n! No country py-file '%s' found - will proceed without !" % fname)
     except ImportError:
-        warnings.warn("\n! No country py-module '%s' found - will proceed without !" % modname)
+        logging.warning("\n! No country py-module '%s' found - will proceed without !" % modname)
     except:
         raise ImportError("No country py-module '%s' loaded" % modname)
     else:
-        warnings.warn("\n! Country py-module '%s' found !" % imp.__name__)
+        logging.warning("\n! Country py-module '%s' found !" % imp.__name__)
         try:
             assert imp in sysmod.values()
         except:
@@ -177,33 +204,36 @@ def harmoniseCountryService(facility, country = None, coder = None, **kwargs):
         # assert 'CC' in dir(imp)
         CC = getattr(imp, 'CC', None)
     except:
-        warnings.warn("\n! Global variable 'CC' not set - use default !")
-    try:
-        # assert METANAME in dir(imp)
-        METADATNAT = getattr(imp, METANAME, None)
-        assert METADATNAT is not None
-    except:
-        warnings.warn("\n! No default metadata dictionary '%s' available !" % METANAME)
-    else:
-        warnings.warn("\n! Default hard-coded metadata dictionary '%s' found !" % METANAME)
+        logging.warning("\n! Global variable 'CC' not set - use default !")
+    # try:
+    #     # assert 'META' in dir(imp)
+    #     METADATNAT = getattr(imp, 'META', None)
+    #     assert METADATNAT is not None
+    # except:
+    #     logging.warning("\n! No default metadata dictionary 'META' available !")
+    # else:
+    #     logging.warning("\n! Default hard-coded metadata dictionary 'META' found !")
     try:
         # assert 'harmonise' in dir(imp)
-        harmonise = getattr(imp, HARMNAME, None)
+        harmonise = getattr(imp, HARMONISE, None)
         assert harmonise is not None
     except:
-        warnings.warn('\n! Generic formatting/harmonisation methods used !')
+        logging.warning('\n! Generic formatting/harmonisation methods used !')
         harmonise = __harmoniseData
     else:
-        warnings.warn('\n! Country-specific formatting/harmonisation methods used !')
-    try:
-        # assert 'prepare_data' in dir(imp)
-        prepare_data = getattr(imp, PREPNAME, None)
-        assert prepare_data is not None
-    except:
-        # warnings.warn('! no data preparation method used !')
-        prepare_data = None # anyway...
-    else:
-        warnings.warn('\n! country-specific data preparation method loaded !')
+        logging.warning('\n! Country-specific formatting/harmonisation methods used !')
+    for proc in PROCESSES:
+        try:
+            # assert proc in dir(imp)
+            proc_data = getattr(imp, proc, None)
+            assert proc_data is not None
+        except:
+            # logging.warning("! no data '%s' method used !" % proc)
+            pass # proc_data = None
+        else:
+            logging.warning("\n! country-specific '%s_data' method loaded !" % proc)
+        finally:
+            kwargs.update({proc: proc_data})
     # load country-dedicated metadata when available
     metadata = None
     metafname = '%s.json' % ccname
@@ -213,22 +243,21 @@ def harmoniseCountryService(facility, country = None, coder = None, **kwargs):
         with open(metafname, 'r') as fp:
             metadata = Json.load(fp)
     except (AssertionError,FileNotFoundError):
-        warnings.warn("\n! No metadata JSON-file '%s' found - will proceed without !" % metafname)
+        logging.warning("\n! No metadata JSON-file '%s' found - will proceed without !" % metafname)
     else:
-        warnings.warn("! Ad-hoc metadata found - JSON-file '%s' loaded !" % metafname)
+        logging.warning("! Ad-hoc metadata found - JSON-file '%s' loaded !" % metafname)
     # define the actual metadata: the one loaded, or the default
-    metadata = metadata or METADATNAT
+    # metadata = metadata or METADATNAT
     if metadata in (None,{}):
         raise IOError('No metadata parsed - this cannot end up well')
     try:
-        kwargs.update({'coder': coder, 'country' : {'code': CC or country},
-                       'met_prep': prepare_data})
+        kwargs.update({'coder': coder, 'country' : {'code': CC or country}})
                         # 'opt_load': {}, 'opt_format': {}, 'opt_save': {}
         res = harmonise(facility, metadata, **kwargs)
     except:
         raise IOError("Harmonisation process for country '%s' failed..." % country)
     else:
-        warnings.warn("\n! Harmonised data for country '%s' generated !" % country)
+        logging.warning("\n! Harmonised data for country '%s' generated !" % country)
     return res
 
 
@@ -298,9 +327,9 @@ def __main():
     try:
         run(facility, country, coder)
     except IOError:
-        warnings.warn('\n!!!  ERROR: data file not created !!!')
+        logging.warning('\n!!!  ERROR: data file not created !!!')
     else:
-        warnings.warn('\n!  OK: data file correctly created !')
+        logging.warning('\n!  OK: data file correctly created !')
 
 #try:
 #    del(__THISDIR)
