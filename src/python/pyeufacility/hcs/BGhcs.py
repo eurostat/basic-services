@@ -94,7 +94,9 @@ class prepare_data():
 
     @classmethod
     def split_address(cls, s):
-        ss, last = re.compile(r'\s*,\s').split(s), ''
+        street, number = "", ""
+        mem = re.compile(r'\s*,\s*').split(s)
+        ss, last = mem[0], " ".join(mem[1:])
         while last == '' and len(ss)>1:
             last = ss[-1].strip()
             ss = ss[:-1]
@@ -107,14 +109,17 @@ class prepare_data():
         return street, number
 
     def __call__(self, facility):
+        cols = facility.data.columns.tolist()
+        new_cols = ['street', 'number']
+        facility.data.reindex(columns = [*cols, *new_cols], fill_value = "")
         # facility.data[['street', 'number']] = facility.data['address'].str.split(pat=',', n=2, expand=True)
-        facility.data[['street', 'number']] = (
+        facility.data[new_cols] = (
             facility.data
             .apply(lambda row: pd.Series(self.split_address(row['address'])), axis=1)
             )
         # add the columns as inputs (they were created)
-        facility.icolumns.extend([{'en':'street'}, {'en': 'number'}])
+        facility.icolumns.extend([{'en':c} for c in new_cols])
         # add the data as outputs (they will be stored)
-        facility.oindex.update({'street': 'street', 'number': 'number'})
+        facility.oindex.update({c:c for c in new_cols})
 
 

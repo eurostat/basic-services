@@ -38,7 +38,9 @@ class prepare_data():
     @classmethod
     def split_ort(cls, s):
         # * Ort => postcode city
-        left, right = re.compile(r'\s*,\s').split(s)
+        postcode, city = "", ""
+        mem = re.compile(r'\s*,\s*').split(s)
+        left, right = mem[0], " ".join(mem[1:])
         while left == '' and len(right)>1:
             left = right[-1].strip()
             right = right[:-1]
@@ -55,7 +57,9 @@ class prepare_data():
     @classmethod
     def split_adr(cls, s):
         # * Adr => street house_number
-        left, right = re.compile(r'\s*,\s').split(s)
+        street, number = "", ""
+        mem = re.compile(r'\s*,\s*').split(s)
+        left, right = mem[0], " ".join(mem[1:])
         while right == '' and len(left)>1:
             right = left[-1].strip()
             left = left[:-1]
@@ -70,19 +74,26 @@ class prepare_data():
         return street, number
 
     def __call__(self, facility):
+        cols = facility.data.columns.tolist()
+        ort_cols = ['postcode', 'city']
+        adr_cols = ['street', 'number']
+        facility.data.reindex(columns = [*cols, *ort_cols, *adr_cols], fill_value = "")
         #facility.data['Ort'].replace('\s+',' ',regex=True,inplace=True)
         #df = facility.data['Ort'].str.split(pat=",", n=1, expand=True)
         #facility.data[['postcode', 'city']] = df[1].str.split(pat=' ', n=2, expand=True)
         #facility.data['Adr'].replace('\s+',' ',regex=True,inplace=True)
         #facility.data[['street', 'number']] = facility.data['Adr'].str.split(pat=" ", n=2, expand=True)
-        facility.data[['street', 'number']] = facility.data.apply(
-                lambda row: pd.Series(self.split_adr(row['Adr'])), axis=1)
-        facility.data[['postcode', 'city']] = facility.data.apply(
-                lambda row: pd.Series(self.split_ort(row['Ort'])), axis=1)
+        facility.data[adr_cols] = (
+            facility.data
+            .apply(lambda row: pd.Series(self.split_adr(row['Adr'])), axis=1)
+            )
+        facility.data[ort_cols] = (
+            facility.data
+            .apply(lambda row: pd.Series(self.split_ort(row['Ort'])), axis=1)
+            )
         # add the columns as inputs (they were created)
-        facility.icolumns.extend([{'en':'street'}, {'en': 'number'},
-                                  {'en':'postcode'}, {'en': 'city'}])
+        adr_cols.extend(ort_cols)
+        facility.icolumns.extend([{'en':c} for c in adr_cols])
         # add the data as outputs (they will be stored)
-        facility.oindex.update({'street': 'street', 'number': 'number',
-                                'postcode': 'postcode', 'city': 'city'})
+        facility.oindex.update({c:c for c in adr_cols})
 
