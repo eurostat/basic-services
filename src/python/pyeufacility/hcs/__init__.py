@@ -38,6 +38,9 @@ except:
     __BASENAME = ''
     __COUNTRIES = {}
 
+#from pyeufacility import PACKPATH
+
+
 # note: paths are relative to pyeufacility dir, where the hcs.json will be stored
 HCS             = {
     "path":     "../../../data/healthcare", # osp.abspath("../../../ddata/healthcare")
@@ -112,16 +115,19 @@ HCS             = {
 __all__ = [ ]#analysis:ignore
 
 __fac = 'hcs'
+#__path = osp.join(PACKPATH, __fac)
+
 for __cc in __COUNTRIES.keys():
     __src = '%s%s%s' % (__BASENAME, __cc, __fac)
+    # __fsrc = osp.join(__path, '%s.py' % __src)
     __fsrc = '%s.py' % __src
     try:
-        assert osp.exists( __fsrc) and osp.isfile(__fsrc)
+        assert osp.exists(__fsrc) and osp.isfile(__fsrc)
     except:     pass
     else:
         __all__.append(__src)
 
 try:
-    del(__fac,__BASENAME, __COUNTRIES)
+    del(__fac, __BASENAME, __COUNTRIES)
     del(__cc, __src, __fsrc)
 except: pass
