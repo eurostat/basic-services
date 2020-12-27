@@ -39,8 +39,7 @@
     },
     "options": {
         "load": {
-            "sep":  ";",    
-            "encoding":  "cp850",     
+            "header": 2,
             "dfmt": "%d/%m/%Y"
         },
         "clean":    null,

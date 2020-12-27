@@ -31,8 +31,8 @@ CC              = 'LT'
 
 #%%
 
-class prepare_data():
-    """Prepare LT data.
+class Prepare_data():
+    """Class of methods to prepare LT data.
     """
     def __init__(self):
         pass
@@ -75,24 +75,35 @@ class prepare_data():
             data
             .apply(lambda row: pd.Series(self.split_Adr(row['Address'])), axis=1)
             )
+        return new_cols
 
     def set_pp(self, data):
         col_pp = 'Level: 1-national, 2-regional, 3-municipality, 4-nursing, 5-other public and specialized, 6-private'
-        data['public_private'] = (
+        new_col = 'public_private'
+        data[new_col] = (
             data[col_pp]
             .apply(lambda x: 'private' if x==6 else 'public')
             )
+        return new_col
 
     def __call__(self, facility):
-        self.set_address(facility.data)
+        new_cols = self.set_address(facility.data)
         # add the columns as inputs (they were created)
-        facility.icolumns.extend([{'en':c} for c in new_cols])
+        facility.cols.extend([{'en':c} for c in new_cols])
         # add the data as outputs (they will be stored)
-        facility.oindex.update({c:c for c in new_cols})
+        facility.idx.update({c:c for c in new_cols})
         # return facility
-        self.set_pp(facility.data)
-        facility.icolumns.extend([{'en': 'public_private'}])
+        new_col = self.set_pp(facility.data)
+        facility.cols.extend([{'en': new_col}])
         # add the data as outputs (they will be stored)
-        facility.oindex.update({'public_private':'public_private'})
+        facility.idx.update({'public_private': new_col})
         # return facility
         return facility
+
+
+def prepare_data(self):
+    """Overriding prepare_data method for LT data.
+    """
+    preparator = Prepare_data()
+    preparator(self)
+    return
