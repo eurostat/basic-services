@@ -64,7 +64,7 @@ FACMETADATA         = {__fac:{} for __fac in FACILITIES.keys() if __fac!='Oth'}
 class MetaDatEUFacility(MetaDat):
     """Class used to represent metadata for harmonised dataset at EU level.
 
-        >>> EUmeta = MetaDatEUFacility(**metadata)
+        >>> EUmeta = MetaDatEUFacility(cat = facility, **kwargs)
     """
 
     # CATEGORY = 'HCS' # if only HCS...
@@ -72,7 +72,7 @@ class MetaDatEUFacility(MetaDat):
 
     #/************************************************************************/
     def __init__(self, *args, **kwargs):
-        facility = kwargs.pop('fac', None)
+        facility = kwargs.pop('cat', None)
         if isinstance(facility, string_types) and facility in FACILITIES:
             kwargs.update({'category': FACILITIES.get(facility)})
         elif facility is not None:
@@ -134,21 +134,21 @@ class MetaDatNatFacility(MetaDatNat):
 
     #/************************************************************************/
     @classmethod
-    def template(cls, fac=None, country=None, **kwargs):
+    def template(cls, cat = None, country = None, **kwargs):
         """"Create a template country metadata file as a JSON file
 
-            >>> MetaFacility.template()
+            >>> MetaFacility.template(cat = None, country = None, **kwargs)
         """
         if country is None:
             country = ''
         elif not isinstance(country, string_types):
             raise TypeError("Wrong type for country code '%s' - must be a string" % country)
-        if fac is None:
-            fac = ''
-        elif isinstance(fac, string_types) and fac in FACILITIES:
-            fac = FACILITIES.get(fac)
+        if cat is None:
+            cat = ''
+        elif isinstance(cat, string_types) and cat in FACILITIES:
+            cat = FACILITIES.get(cat)
         else:
-            raise TypeError("Wrong type for facility type '%s' - must be a string" % fac)
+            raise TypeError("Wrong type for facility type '%s' - must be a string" % cat)
         as_file = kwargs.pop('as_file', True)
         # dumb initialisation
         temp = dict.fromkeys(cls.PROPERTIES)
@@ -183,7 +183,7 @@ class MetaDatNatFacility(MetaDatNat):
         try:
             assert as_file is True
             # save it...somewhere
-            dest = osp.join(PACKPATH, facil, "%s%s.json" % (country.upper() or 'temp', facil))
+            dest = osp.join(PACKPATH, cat, "%s%s.json" % (country.upper() or 'temp', cat))
             template.save(dest, **kwargs)
         except AssertionError:
             return template
@@ -198,7 +198,7 @@ def facilityFactory(*args, **kwargs):
     """Generic function to derive a class from the base class :class:`BaseFacility`
     depending on specific metadata and a given geocoder.
 
-        >>>  NewFacility = facilityFactory(fac = facility, meta = None,
+        >>>  NewFacility = facilityFactory(cat = facility, meta = None,
                                            country = None, coder = None)
 
     Examples
@@ -214,7 +214,7 @@ def facilityFactory(*args, **kwargs):
     # check facility to define output data configuration format
     if args in ((),(None,)):        facility = None
     else:                           facility = args[0]
-    facility = facility or kwargs.pop('fac', None)
+    facility = facility or kwargs.pop('cat', None)
     try:
         assert facility is None or isinstance(facility, (string_types, Mapping, MetaDat))
     except AssertionError:
@@ -227,17 +227,22 @@ def facilityFactory(*args, **kwargs):
         except AttributeError:
             raise TypeError("Facility string '%s' not recognised - must be in '%s'" % (facility, list(FACILITIES.keys())))
         else:
-            config = MetaDatEUFacility(deepcopy(config), fac = facility)
+            config = MetaDatEUFacility(deepcopy(config), cat = facility)
     elif isinstance(facility, Mapping):
         config = MetaDatEUFacility(facility)
     elif isinstance(facility, MetaDatEUFacility):
         config = facility.copy()
-    # kwargs.update({'config': cfgmeta})
     return datnatFactory(config = config, **kwargs)
 
 
 #==============================================================================
 #%% Program run when loading the module
+
+# The code below is run when importing/loading the module config. It is used to
+# automatically:
+#   * load the facility configuration file(s) listed in FACMETADATA whenever
+#     it(they) exist(s), e.g. hcs.json is a file in the package directory
+#   * generate this(ese) file(s) in the opposite scenario.
 
 for __fac in FACMETADATA.keys():
     # for a given facility
@@ -267,12 +272,12 @@ for __fac in FACMETADATA.keys():
             else:
                 logging.warning("\n! Configuration file for facility '%s' will be created !" % __fac)
                 # with open(__fcfg, 'w') as __fp: Json.dump(__info, __fp)
-                __cfg = MetaDatEUFacility(__info, facil=__fac)
-                __cfg.dump(dest=__fcfg)
+                __cfg = MetaDatEUFacility(__info, cat = __fac)
+                __cfg.dump(dest = __fcfg, indent = 4) #, sort_keys=True)
     else:
         # with open(__fcfg, 'r') as __fp: __info = Json.load(__fp)
-        __cfg = MetaDatEUFacility(facil=__fac)
-        __info = __cfg.load(src=__fcfg)
+        __cfg = MetaDatEUFacility(cat = __fac)
+        __info = __cfg.load(src = __fcfg)
     finally:
         # logging.warning("\n! Loading configuration data for facility '%s' !" % __fac)
         FACMETADATA[__fac] = deepcopy(__info) # __info.copy()
