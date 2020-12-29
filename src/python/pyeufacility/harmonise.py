@@ -101,7 +101,7 @@ def __harmoniseData(facility, metadata, **kwargs):
             raise IOError("Wrong keys for METHODS - must be any from the list '%s'" % PROCESSES)
     # create facility
     try:
-        Facility = facilityFactory(fac = facility,
+        Facility = facilityFactory(cat = facility,
                                    meta = metadata,
                                    **kwargs)
     except:
