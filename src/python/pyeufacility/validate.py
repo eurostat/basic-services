@@ -50,10 +50,10 @@ MINMAX_LL = {'lat': [-90., 90.], 'lon': [-180., 180.]}
 
 #%%
 #==============================================================================
-# Function __validateData
+# Function validateFacilityData
 #==============================================================================
 
-def __validateData(facility, src):
+def validateFacilityData(facility, src):
     ocfg = FACMETADATA[facility]
     oopts = ocfg.get('options', {})
     enc, sep = oopts.get('enc', DEF_ENCODING), oopts.get('sep', DEF_SEP)
@@ -141,13 +141,13 @@ def __validateData(facility, src):
 
 #%%
 #==============================================================================
-# Function validateCountryService
+# Function validateService
 #==============================================================================
 
-def validateCountryService(facility, country = None, **kwargs):
+def validateService(facility, country = None, **kwargs):
     """Generic validation function.
 
-        >>> validate.validateCountry(country, **kwargs)
+        >>> validate.validateService(country, **kwargs)
     """
     if not isinstance(facility, string_types):
         raise TypeError("Wrong type for input service - must be the facility type")
@@ -158,7 +158,7 @@ def validateCountryService(facility, country = None, **kwargs):
     if not isinstance(country, string_types) and isinstance(country, Sequence):
         for ctry in country:
             try:
-                validateCountry(country=ctry, **kwargs)
+                validateService(country=ctry, **kwargs)
             except:
                 continue
         return
@@ -176,7 +176,7 @@ def validateCountryService(facility, country = None, **kwargs):
         assert osp.exists(src)
     except:
         raise FileNotFoundError("Input file '%s' not found" % src)
-    validate = __validateData
+    validate = validateFacilityData
     try:
         validate(facility, src)
     except:
@@ -191,7 +191,7 @@ def validateCountryService(facility, country = None, **kwargs):
 # Main functions
 #==============================================================================
 
-run = validateCountryService
+run = validateService
 
 def __main():
     """Parse and check the command line with default arguments.
