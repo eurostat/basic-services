@@ -44,6 +44,8 @@
         },
         "clean":    null,
         "prepare":  null,
-        "locate":   null
+        "locate":   {
+            "place": ["number", "street", "postcode", "city"]
+        }
     }
 }
