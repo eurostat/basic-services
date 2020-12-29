@@ -55,10 +55,10 @@ __THISDIR       = osp.dirname(__file__)
 
 #%%
 #==============================================================================
-# Function __harmoniseData
+# Function harmoniseFacilityData
 #==============================================================================
 
-def __harmoniseData(facility, metadata, **kwargs):
+def harmoniseFacilityData(facility, metadata, **kwargs):
     try:
         assert isinstance(metadata,(Mapping, MetaDatNatFacility))
     except:
@@ -101,9 +101,7 @@ def __harmoniseData(facility, metadata, **kwargs):
             raise IOError("Wrong keys for METHODS - must be any from the list '%s'" % PROCESSES)
     # create facility
     try:
-        Facility = facilityFactory(cat = facility,
-                                   meta = metadata,
-                                   **kwargs)
+        Facility = facilityFactory(cat = facility, meta = metadata, **kwargs)
     except:
         raise IOError("Impossible to create specific country class")
     # check wether some processes have been parsed
@@ -135,7 +133,9 @@ def __harmoniseData(facility, metadata, **kwargs):
     # geolocalise the data
     natFacility.locate_data(**options.get('locate',{}))
     # format/harmonise the data
-    natFacility.format_data(**options.get('format',{}))
+    opts = {'keep': True, 'force': True}
+    opts.update(options.get('format',{}))
+    natFacility.format_data(**opts)
     # save the data
     if on_disk is None:
         return natFacility
@@ -148,13 +148,13 @@ def __harmoniseData(facility, metadata, **kwargs):
 
 #%%
 #==============================================================================
-# Function harmoniseCountryService
+# Function harmoniseService
 #==============================================================================
 
-def harmoniseCountryService(facility, country = None, coder = None, **kwargs):
+def harmoniseService(facility, country = None, coder = None, **kwargs):
     """Generic harmonisation function.
 
-        >>> harmonise.harmoniseCountryService(facility, country = None, coder = None, **kwargs)
+        >>> harmonise.harmoniseService(facility, country = None, coder = None, **kwargs)
     """
     #if facility is None:
     #    facility = list(FACILITIES.keys())
@@ -219,7 +219,7 @@ def harmoniseCountryService(facility, country = None, coder = None, **kwargs):
         assert harmonise is not None
     except:
         logging.warning('\n! Generic formatting/harmonisation methods used !')
-        harmonise = __harmoniseData
+        harmonise = harmoniseFacilityData
     else:
         logging.warning('\n! Country-specific formatting/harmonisation methods used !')
     for proc in PROCESSES:
@@ -266,7 +266,7 @@ def harmoniseCountryService(facility, country = None, coder = None, **kwargs):
 # Main functions
 #==============================================================================
 
-run = harmoniseCountryService
+run = harmoniseService
 
 def __main():
     """Parse and check the command line with default arguments.
