@@ -106,11 +106,13 @@ def harmoniseFacilityData(facility, metadata, **kwargs):
         raise IOError("Impossible to create specific country class")
     # check wether some processes have been parsed
     for proc, proc_data in methods.items():
+        if proc_data is None:   continue
         try:
             assert callable(proc_data)
         except:
             raise TypeError("Wrong option '%s': '%s_data' method not recognised" % (proc,proc))
         else:
+            logging.warning("Overriding country-specific method '%s_data' loaded" % proc)
             # for instance = Facility.prepare_data = prepare_data
             setattr(Facility, '%s_data' % proc, proc_data)
     # create an country instance
@@ -125,6 +127,7 @@ def harmoniseFacilityData(facility, metadata, **kwargs):
     except:     pass
     # load the actual data
     natFacility.load_data(**options.get('load',{}))
+    natFacility.data = natFacility.data.copy().head(3)
     # prepare/update the data
     if inspect.isclass(natFacility.prepare_data):
         natFacility.prepare_data()(natFacility, **options.get('prepare',{}))
@@ -151,10 +154,10 @@ def harmoniseFacilityData(facility, metadata, **kwargs):
 # Function harmoniseService
 #==============================================================================
 
-def harmoniseService(facility, country = None, coder = None, **kwargs):
+def harmoniseService(facility, country = None, gc = None, **kwargs):
     """Generic harmonisation function.
 
-        >>> harmonise.harmoniseService(facility, country = None, coder = None, **kwargs)
+        >>> harmonise.harmoniseService(facility, country = None, gc = None, **kwargs)
     """
     #if facility is None:
     #    facility = list(FACILITIES.keys())
@@ -167,7 +170,7 @@ def harmoniseService(facility, country = None, coder = None, **kwargs):
     if not isinstance(country, string_types) and isinstance(country, Sequence):
         for ctry in country:
             try:
-                harmoniseCountryService(facility, country=ctry, coder=coder, **kwargs)
+                harmoniseService(facility, country = ctry, gc = gc, **kwargs)
             except:
                 continue
         return
@@ -175,7 +178,7 @@ def harmoniseService(facility, country = None, coder = None, **kwargs):
         raise TypeError("Wrong type for input country code - must be the ISO 2-letter string")
     elif not country in COUNTRIES.keys():
         raise IOError("Country code not recognised - must be a code of the '%s' area(s)" % list(COUNTRIES.keys()))
-    if not(coder is None or isinstance(coder,string_types) or isinstance(coder,Mapping)):
+    if not(gc is None or isinstance(gc, (string_types,Mapping))):
         raise TypeError("Coder type not recognised - must be a dictionary or a single string")
     CC, METADATNAT = None, {}
     metadir = FACILITIES[facility].get('code')
@@ -222,10 +225,12 @@ def harmoniseService(facility, country = None, coder = None, **kwargs):
         harmonise = harmoniseFacilityData
     else:
         logging.warning('\n! Country-specific formatting/harmonisation methods used !')
+    if 'methods' not in kwargs:
+        kwargs.update({'methods': {p:None for p in PROCESSES}})
     for proc in PROCESSES:
         try:
             # assert proc in dir(imp)
-            proc_data = getattr(imp, proc, None)
+            proc_data = getattr(imp, '%s_data' % proc, None)
             assert proc_data is not None
         except:
             # logging.warning("! no data '%s' method used !" % proc)
@@ -233,7 +238,7 @@ def harmoniseService(facility, country = None, coder = None, **kwargs):
         else:
             logging.warning("\n! country-specific '%s_data' method loaded !" % proc)
         finally:
-            kwargs.update({proc: proc_data})
+            kwargs['methods'].update({proc: proc_data})
     # load country-dedicated metadata when available
     metadata = None
     metafname = '%s.json' % ccname
@@ -251,8 +256,14 @@ def harmoniseService(facility, country = None, coder = None, **kwargs):
     if metadata in (None,{}):
         raise IOError('No metadata parsed - this cannot end up well')
     try:
-        kwargs.update({'coder': coder, 'country' : {'code': CC or country}})
-                        # 'opt_load': {}, 'opt_format': {}, 'opt_save': {}
+        kwargs.update({'country' : {'code': CC or country}})
+        if 'options' in kwargs.keys():
+            if 'locate' in kwargs['options'].keys():
+                kwargs['options']['locate'].update({'gc': gc})
+            else:
+                kwargs['options'].update({'locate': {'gc': gc}})
+        else:
+            kwargs.update({'options': {'locate': {'gc': gc}}})
         res = harmonise(facility, metadata, **kwargs)
     except:
         raise IOError("Harmonisation process for country '%s' failed..." % country)
@@ -275,10 +286,10 @@ def __main():
         description=                                                        \
     """Harmonise input national data on facility services.""",
         usage=                                                              \
-    """usage:         harmonise facility <code> <coder> <key>
+    """usage:         harmonise facility <code> <gc> <key>
     facility :        Type of service.
     <code> :          Country code.
-    <coder> ;         Geocoder.
+    <gc> ;            Geocoder.
     <key> :           Geocoder key"""                                      \
                        )
 
@@ -288,7 +299,7 @@ def __main():
     parser.add_option("-c", "--cc", action="store", dest="country",
                       help="Country.",
                       default=None)
-    parser.add_option("-g", "--geocoder", action="store", dest="coder",
+    parser.add_option("-g", "--geocoder", action="store", dest="gc",
                       help="geocoder.",
                       default=None)
     parser.add_option("-k", "--geokey", action="store", dest="key",
@@ -306,7 +317,7 @@ def __main():
     #    facility = list(FACILITIES.keys())[0]
 
     country = opts.country
-    if isinstance(coder, string_types):
+    if isinstance(country, string_types):
         if country.upper() == 'ALL':
             country = None
         elif country.upper() in AREAS:
@@ -317,15 +328,15 @@ def __main():
         # parser.error("country name is required.")
         country = list(COUNTRIES.values())[0]
 
-    coder = opts.coder
-    if isinstance(coder, string_types):
-        coder = {coder: opts.key}
-    elif coder is not None:
-        parser.error("coder is required.")
+    gc = opts.gc
+    if isinstance(gc, string_types):
+        gc = {gc: opts.key}
+    elif gc is not None:
+        parser.error("geocoder is required.")
 
     # run the generator
     try:
-        run(facility, country, coder)
+        run(facility, country, gc)
     except IOError:
         logging.warning('\n!!!  ERROR: data file not created !!!')
     else:
