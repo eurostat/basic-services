@@ -127,12 +127,8 @@ def harmoniseFacilityData(facility, metadata, **kwargs):
     except:     pass
     # load the actual data
     natFacility.load_data(**options.get('load',{}))
-    natFacility.data = natFacility.data.copy().head(3)
     # prepare/update the data
-    if inspect.isclass(natFacility.prepare_data):
-        natFacility.prepare_data()(natFacility, **options.get('prepare',{}))
-    elif callable(natFacility.prepare_data): # inspect.ismethod(natFacility.prepare_data)
-        natFacility.prepare_data(**options.get('prepare',{}))
+    natFacility.prepare_data(**options.get('prepare',{}))
     # geolocalise the data
     natFacility.locate_data(**options.get('locate',{}))
     # format/harmonise the data
