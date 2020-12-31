@@ -128,7 +128,7 @@ class MetaDatNatFacility(MetaDatNat):
         >>> CCmeta = MetaDatNatFacility(**metadata)
     """
 
-    PROPERTIES = ['provider', 'country', 'lang', 'proj', 'file', 'path',
+    PROPERTIES = ['provider', 'country', 'lang', 'file', 'path',
                   'columns', 'index', 'options', 'category', 'date']
     #          {'country':{}, 'lang':{}, 'proj':None, 'file':'', 'path':'', 'columns':{}, 'index':[], 'options':{}}
 
@@ -155,7 +155,6 @@ class MetaDatNatFacility(MetaDatNat):
         temp.update({ 'country':    {'code': country.upper() or 'CC', 'name': ''},
                       'lang':       {'code': country.lower() or 'cc', 'name': ''},
                       'file':       '%s.csv' % country or 'CC' ,
-                      'proj':       None,
                       'path':       '../../data/raw/',
                       'columns':    [ ],
                       'index':      { },
@@ -171,9 +170,9 @@ class MetaDatNatFacility(MetaDatNat):
                           'locate': {},
                           'format': {},
                           'save': {}
-                          }
-                      #'provider':   None,
-                      #'date':       None
+                          },
+                      'provider':   None,
+                      'date':       {}
                       })
         temp['columns'].extend([{country.lower() or 'cc': 'icol1', 'en': 'icol1', 'fr': 'icol1', 'de': 'iSpal1'},
                              {country.lower() or 'cc': 'icol2', 'en': 'icol1', 'fr': 'icol2', 'de': 'iSpal2'}])
@@ -232,6 +231,7 @@ def facilityFactory(*args, **kwargs):
         config = MetaDatEUFacility(facility)
     elif isinstance(facility, MetaDatEUFacility):
         config = facility.copy()
+    kwargs.update({'cls': { 'meta': MetaDatNatFacility, 'cfg': MetaDatEUFacility}})
     return datnatFactory(config = config, **kwargs)
 
 
