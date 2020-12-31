@@ -26,14 +26,17 @@ import pandas as pd#analysis:ignore
 
 CC              = 'AT'
 
-# METADATNAT : will be read from the AThcs.json file
+# metadata will be read from the AThcs.json file
 
 
 #%%
 
-class prepare_data():
-    """Prepare AT data.
+class Prepare_data():
+    """Class of methods to prepare AT data.
     """
+
+    def __init__(self):
+        pass
 
     @classmethod
     def split_address(cls, s):
@@ -80,3 +83,10 @@ class prepare_data():
         # add the data as outputs (they will be stored)
         facility.oindex.update({c:c for c in new_cols})
 
+
+def prepare_data(self):
+    """Overriding prepare_data method for LT data.
+    """
+    preparator = Prepare_data()
+    preparator(self)
+    return

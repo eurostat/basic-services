@@ -24,7 +24,7 @@ import pandas as pd#analysis:ignore
 
 CC              = 'IT'
 
-# METADATNAT : will be read from the IThcs.json file
+# metadata will be read from the IThcs.json file
 
 
 #%%
@@ -45,4 +45,5 @@ def prepare_data(facility): # facility is self when used as a method
                        on = 'id', rsuffix='_r')
     facility.data.rename(columns={"beds_r": "beds"},
                          inplace = True)
-    facility.oindex.update({'id': 'id', 'beds': 'beds'})
+    facility.idx.update({'id': 'id', 'beds': 'beds'})
+

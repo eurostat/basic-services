@@ -26,14 +26,17 @@ import pandas as pd#analysis:ignore
 
 CC              = 'CH'
 
-# METADATNAT : will be read from the CHhcs.json file
+# metadata will be read from the CHhcs.json file
 
 
 #%%
 
-class prepare_data():
-    """Prepare CH data.
+class Prepare_data():
+    """Class of methods to prepare CH data.
     """
+
+    def __init__(self):
+        pass
 
     @classmethod
     def split_ort(cls, s):
@@ -93,7 +96,14 @@ class prepare_data():
             )
         # add the columns as inputs (they were created)
         adr_cols.extend(ort_cols)
-        facility.icolumns.extend([{'en':c} for c in adr_cols])
+        facility.cols.extend([{'en':c} for c in adr_cols])
         # add the data as outputs (they will be stored)
-        facility.oindex.update({c:c for c in adr_cols})
+        facility.idx.update({c:c for c in adr_cols})
 
+
+def prepare_data(self):
+    """Overriding prepare_data method for LT data.
+    """
+    preparator = Prepare_data()
+    preparator(self)
+    return

@@ -26,7 +26,7 @@ import pandas as pd#analysis:ignore
 
 CC              = 'LT'
 
-# METADATNAT : will be read from the LThcs.json file
+# metadata will be read from the LThcs.json file
 
 
 #%%
@@ -34,6 +34,7 @@ CC              = 'LT'
 class Prepare_data():
     """Class of methods to prepare LT data.
     """
+
     def __init__(self):
         pass
 

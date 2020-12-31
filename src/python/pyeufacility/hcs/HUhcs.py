@@ -24,7 +24,7 @@ import pandas as pd#analysis:ignore
 
 CC              = 'HU'
 
-# METADATNAT : will be read from the HUhcs.json file
+# metadata will be read from the HUhcs.json file
 
 
 #%%
@@ -44,4 +44,5 @@ def prepare_data(facility): # facility is self when used as a method
                             .data[["Tel.körzet", "Telefonszám"]]
                             .apply(lambda x: '-'.join(x), axis=1)
                             )
-    facility.oindex.update({'tel': 'tel'})
+    facility.idx.update({'tel': 'tel'})
+
