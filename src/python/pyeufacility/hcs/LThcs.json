@@ -47,5 +47,8 @@
         "locate":   {
             "place": ["number", "street", "postcode", "city"]
         }
+    },
+    "date": {
+        "ref": null
     }
 }

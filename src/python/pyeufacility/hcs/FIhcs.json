@@ -46,5 +46,8 @@
         "clean":    null,
         "prepare":  null,
         "locate":   null
+    },
+    "date": {
+        "ref": null
     }
 }
