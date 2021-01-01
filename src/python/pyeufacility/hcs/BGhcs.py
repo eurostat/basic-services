@@ -50,7 +50,7 @@ class Prepare_data():
             ss = ss[:-1]
         if len(ss) == 1 and last == '':
             return ss[0], np.nan
-        if last[0].isdigit():
+        if last.isnumeric() or last[0].isdigit():
             street, number = ', '.join(ss), last
         else:
             street, number = ss, np.nan

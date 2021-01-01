@@ -51,13 +51,13 @@ class Prepare_data():
             return left[0], "", "", "" #np.nan, np.nan, np.nan
         lefts = re.compile(r'\s+').split(left)
         number = lefts[-1].strip()
-        if number[0].isdigit():
+        if number.isnumeric() or number[0].isdigit():
             street = " ".join(lefts[:-1])
         else:
             street, number = left, "" # np.nan
         rights = re.compile(r'\s+').split(right)
         postcode = rights[0].strip() # strip actually not necessary...
-        if postcode.isnumeric():
+        if postcode.isnumeric(): # or postcode[-1].isdigit()
             city = " ".join(rights[1:])
         else:
             city, postcode = right, "" # np.nan

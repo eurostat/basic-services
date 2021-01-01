@@ -51,7 +51,7 @@ class Prepare_data():
             return "", right[0]
         rights = re.compile(r'\s+').split(right)
         postcode = rights[0].strip()
-        if postcode.isnumeric():
+        if postcode.isnumeric(): # or postcode[-1].isdigit()
             city = " ".join(rights[1:])
         else:
             city, postcode = right, "" # np.nan
