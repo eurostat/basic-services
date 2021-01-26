@@ -164,7 +164,7 @@ public class BasicServicesValidation {
 
 			//check each value
 			while(it.hasNext()) {
-				String val = it.next().toString();
+				Object val = it.next();
 				boolean found = false;
 				for(String v : values)
 					if(val==null && v==null || v.equals(val)) {
