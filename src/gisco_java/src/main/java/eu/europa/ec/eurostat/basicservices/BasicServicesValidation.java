@@ -205,7 +205,7 @@ public class BasicServicesValidation {
 			if(val == null) return false;
 			if(val.length() == 0) continue;
 			try {
-				int c = Integer.parseInt(val);
+				Integer.parseInt(val);
 			} catch (NumberFormatException e) {
 				if(showErrorMessage)
 					System.err.println("Unepxected non-integer value for column "+col+". Value="+val);
