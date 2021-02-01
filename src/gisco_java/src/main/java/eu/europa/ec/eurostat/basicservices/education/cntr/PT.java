@@ -16,8 +16,6 @@ public class PT {
 
 	public static void main(String[] args) {
 		System.out.println("Start");
-
-		String inFilePath = EducationUtil.path + "PT/PT_formatted.csv";
 		
 		String inFilePath = EducationUtil.path + "PT/PT_edu.csv";
 
@@ -25,15 +23,6 @@ public class PT {
 		List<Map<String, String>> data = CSVUtil.load(inFilePath, csvF);
 		System.out.println(data.size());
 
-
-		// geocode
-		// set proxy
-		LocalParameters.loadProxySettings();
-		BingGeocoder.get();
-		// set bing geocoder key
-		BingGeocoder.key = LocalParameters.get("bing_map_api_key");
-
-		// validation
 		
 		//set proxy
 		LocalParameters.loadProxySettings();
@@ -46,16 +35,10 @@ public class PT {
 		//validation
 		Validation.validate(true, data, "PT");
 
-		// save
+		//save
 		System.out.println(data.size());
-
-		// CSVUtil.save(data, EducationUtil.path + "PT/PT.csv");
-		// GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), EducationUtil.path +
-		// "PT/PT.gpkg", CRSUtil.getWGS_84_CRS());
-
 		CSVUtil.save(data, EducationUtil.path + "PT/PT.csv");
 		//GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), EducationUtil.path + "PT/PT.gpkg", CRSUtil.getWGS_84_CRS());
-
 
 		System.out.println("End");
 	}
