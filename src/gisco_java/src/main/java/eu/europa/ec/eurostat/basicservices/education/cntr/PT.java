@@ -34,12 +34,12 @@ public class PT {
 
 		
 		//validation
-		//Validation.validate(true, data, "PT");
+		Validation.validate(true, data, "PT");
 
 		//save
 		System.out.println(data.size());
-		CSVUtil.save(data, EducationUtil.path + "PT/PT.csv");
-		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), EducationUtil.path + "PT/PT.gpkg", CRSUtil.getWGS_84_CRS());
+		//CSVUtil.save(data, EducationUtil.path + "PT/PT.csv");
+		//GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), EducationUtil.path + "PT/PT.gpkg", CRSUtil.getWGS_84_CRS());
 
 		System.out.println("End");
 	}
