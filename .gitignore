@@ -4,3 +4,5 @@ src/python/pyeufacility/gc_keys.json
 *pyc
 *__pycache__*
 *.ipynb_checkpoints*
+/.classpath
+/.project
