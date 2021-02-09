@@ -26,15 +26,14 @@ public class IE {
 		CSVUtil.setValue(data, "cc", "IE");
 		CSVUtil.setValue(data, "geo_qual", "4");
 		CSVUtil.setValue(data, "ref_date", "30/6/2020");
-
-		// TODO why is this not removing the column?
 		CSVUtil.removeColumn(data, "Attribute");
-
+		
+		
 		Validation.validate(true, data, "IE");
 
 		// save
 		System.out.println(data.size());
-		CSVUtil.save(data, EducationUtil.path + "IE/IE.csv");
+		CSVUtil.save(data, EducationUtil.path + "IE/IE_1.csv");
 		GeoData.save(CSVUtil.CSVToFeatures(data, "lon", "lat"), EducationUtil.path + "IE/IE.gpkg",
 				CRSUtil.getWGS_84_CRS());
 
