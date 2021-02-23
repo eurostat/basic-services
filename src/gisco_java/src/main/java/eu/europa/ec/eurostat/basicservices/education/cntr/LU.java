@@ -20,9 +20,10 @@ public class LU {
 
 		System.out.println(data.size());
 
-		CSVUtil.removeColumn(data, "nb");
-		CSVUtil.removeColumn(data, "ecole");
+		//remove unused columns
+		CSVUtil.removeColumn(data, "nb", "ecole");
 
+		//rename columns
 		CSVUtil.renameColumn(data, "eco_id", "id");
 		CSVUtil.renameColumn(data, "nom", "name");
 		CSVUtil.renameColumn(data, "num", "house_number");
@@ -31,65 +32,50 @@ public class LU {
 		CSVUtil.renameColumn(data, "ville", "city");
 		CSVUtil.renameColumn(data, "total_st", "enrollment");
 
-		CSVUtil.addColumn(data, "cc", "LU");
-
-
-
-
-		/*"precoce";"prescol";"primaire";"pri";"int"
-		precoce = 1 if the school offers a precoce section
-				prescol = 1 if the school offers a prescolaire section
-				primaire = 1 if the school offers a primaire section
-						pri = 1 if school is private
-						int = 1 if school is international*/
-
-		/*
-		Collection<Map<String, String>> schoolsFormatted = new ArrayList<Map<String, String>>();
 		for (Map<String, String> s : data) {
 
-			// new formatted school
-			HashMap<String, String> sf = new HashMap<String, String>();
+			//levels
 
-			// copy columns
-			sf.put("id", s.get("INSTITUTION_ID"));
-			sf.put("name", s.get("INSTITUTION_NAME"));
-			sf.put("levels", s.get("LEVEL OF EDUCATION"));
-			sf.put("facility_type", s.get("SCHOOL TYPE"));
-			sf.put("enrollment", s.get("ENROLLMENT"));
-			sf.put("email", s.get("EPOST"));
-			sf.put("url", s.get("URL"));
-			sf.put("postcode", s.get("POSTCODE"));
-			sf.put("city", s.get("SETTLEMENT"));
+			//precoce = 1 if the school offers a precoce section
+			String precoce = s.get("precoce");
+			//prescol = 1 if the school offers a prescolaire section
+			String prescol = s.get("prescol");
+			//primaire = 1 if the school offers a primaire section
+			String primaire = s.get("primaire");
+			System.out.println(precoce);
 
+			//public_private
 
-			// address 
-			//Kooli tänav, 1
-			String ad = sf.get("ADDRESS");
+			//pri = 1 if school is private
+			String pri = s.get("pri");
 
-			//if ad contains a comma, split it. else put address in street
-			if (ad.contains(",")) {
-				String[] parts = ad.split(",");
-				String houseNumber = parts[1];
-				sf.put("house_number", houseNumber);
-				String street = parts[0];
-				sf.put("street", street);
-
-				if (parts.length != 2)
-					System.err.println(ad);
-			}
-			else {	
-				sf.put("street", s.get("ADDRESS"));
-			}
+			//facility_type
+			
+			//int = 1 if school is international*/
+			String int_ = s.get("int");
 
 
 
-			// add to list
-			schoolsFormatted.add(sf);
+		}
+		CSVUtil.removeColumn(data, "precoce", "prescol", "primaire", "pri", "int");
 
-			// geocode
-			LocalParameters.loadProxySettings();
-			ServicesGeocoding.set(BingGeocoder.get(), schoolsFormatted, "lon", "lat", true, true);
-		 */
+		//add missing columns
+		CSVUtil.addColumn(data, "max_students", "");
+		CSVUtil.addColumn(data, "site_name", "");
+		CSVUtil.addColumn(data, "email", "");
+		CSVUtil.addColumn(data, "url", "");
+		CSVUtil.addColumn(data, "comments", "");
+		CSVUtil.addColumn(data, "cc", "LU");
+		CSVUtil.addColumn(data, "country", "Luxembourg");
+		CSVUtil.addColumn(data, "ref_date", "2021/02/15");
+		CSVUtil.addColumn(data, "pub_date", "2021/02/15");
+
+		//TODO geocode
+		CSVUtil.addColumn(data, "lon", "0");
+		CSVUtil.addColumn(data, "lat", "0");
+		CSVUtil.addColumn(data, "geo_qual", "-1");
+		//LocalParameters.loadProxySettings();
+		//ServicesGeocoding.set(BingGeocoder.get(), data, "lon", "lat", true, true);
 
 		Validation.validate(true, data, "LU");
 
