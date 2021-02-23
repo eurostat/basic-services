@@ -1,20 +1,13 @@
 package eu.europa.ec.eurostat.basicservices.education.cntr;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.commons.csv.CSVFormat;
 
-import eu.europa.ec.eurostat.basicservices.ServicesGeocoding;
 import eu.europa.ec.eurostat.basicservices.education.EducationUtil;
 import eu.europa.ec.eurostat.basicservices.education.Validation;
-import eu.europa.ec.eurostat.jgiscotools.geocoding.BingGeocoder;
-import eu.europa.ec.eurostat.jgiscotools.gisco_processes.LocalParameters;
 import eu.europa.ec.eurostat.jgiscotools.io.CSVUtil;
-import eu.europa.ec.eurostat.jgiscotools.io.geo.CRSUtil;
-import eu.europa.ec.eurostat.jgiscotools.io.geo.GeoData;
 
 public class LU {
 
@@ -23,11 +16,34 @@ public class LU {
 
 		// load data
 		CSVFormat csvF = CSVFormat.DEFAULT.withFirstRecordAsHeader().withDelimiter(';');
-		ArrayList<Map<String, String>> data = CSVUtil.load(EducationUtil.path + "EE/Estonia_Education_Institutions.csv",
-				csvF);
+		ArrayList<Map<String, String>> data = CSVUtil.load(EducationUtil.path + "LU/primary/export_eurostat.csv", csvF);
 
 		System.out.println(data.size());
-/*
+
+		CSVUtil.removeColumn(data, "nb");
+		CSVUtil.removeColumn(data, "ecole");
+
+		CSVUtil.renameColumn(data, "eco_id", "id");
+		CSVUtil.renameColumn(data, "nom", "name");
+		CSVUtil.renameColumn(data, "num", "house_number");
+		CSVUtil.renameColumn(data, "rue", "street");
+		CSVUtil.renameColumn(data, "cpo", "postcode");
+		CSVUtil.renameColumn(data, "ville", "city");
+		CSVUtil.renameColumn(data, "total_st", "enrollment");
+
+		CSVUtil.addColumn(data, "cc", "LU");
+
+
+
+
+		/*"precoce";"prescol";"primaire";"pri";"int"
+		precoce = 1 if the school offers a precoce section
+				prescol = 1 if the school offers a prescolaire section
+				primaire = 1 if the school offers a primaire section
+						pri = 1 if school is private
+						int = 1 if school is international*/
+
+		/*
 		Collection<Map<String, String>> schoolsFormatted = new ArrayList<Map<String, String>>();
 		for (Map<String, String> s : data) {
 
@@ -44,12 +60,12 @@ public class LU {
 			sf.put("url", s.get("URL"));
 			sf.put("postcode", s.get("POSTCODE"));
 			sf.put("city", s.get("SETTLEMENT"));
-			
+
 
 			// address 
 			//Kooli tänav, 1
 			String ad = sf.get("ADDRESS");
-			
+
 			//if ad contains a comma, split it. else put address in street
 			if (ad.contains(",")) {
 				String[] parts = ad.split(",");
@@ -57,15 +73,15 @@ public class LU {
 				sf.put("house_number", houseNumber);
 				String street = parts[0];
 				sf.put("street", street);
-					
+
 				if (parts.length != 2)
 					System.err.println(ad);
 			}
 			else {	
 				sf.put("street", s.get("ADDRESS"));
 			}
-			
-			
+
+
 
 			// add to list
 			schoolsFormatted.add(sf);
@@ -73,16 +89,17 @@ public class LU {
 			// geocode
 			LocalParameters.loadProxySettings();
 			ServicesGeocoding.set(BingGeocoder.get(), schoolsFormatted, "lon", "lat", true, true);
+		 */
 
-			Validation.validate(true, schoolsFormatted, "EE");
+		Validation.validate(true, data, "LU");
 
-			// save
-			System.out.println(schoolsFormatted.size());
-			CSVUtil.save(schoolsFormatted, EducationUtil.path + "EE/EE.csv");
-			GeoData.save(CSVUtil.CSVToFeatures(schoolsFormatted, "lon", "lat"), EducationUtil.path + "EE/EE.gpkg",
-					CRSUtil.getWGS_84_CRS());
-*/
-			System.out.println("End");
+		// save
+		System.out.println(data.size());
+		CSVUtil.save(data, EducationUtil.path + "LU/primary/LU.csv");
+		//GeoData.save(CSVUtil.CSVToFeatures(schoolsFormatted, "lon", "lat"), EducationUtil.path + "EE/EE.gpkg",
+		//		CRSUtil.getWGS_84_CRS());
+
+		System.out.println("End");
 	}
 
 }
