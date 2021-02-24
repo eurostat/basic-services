@@ -26,7 +26,7 @@ public class LU {
 		System.out.println(data.size());
 
 		//remove unused columns
-		CSVUtil.removeColumn(data, "nb", "ecole");
+		CSVUtil.removeColumn(data, "a", "ecole");
 
 		//rename columns
 		CSVUtil.renameColumn(data, "eco_id", "id");
