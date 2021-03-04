@@ -13,7 +13,8 @@ import eu.europa.ec.eurostat.basicservices.BasicServicePublication;
  */
 public class Publication {
 
-	static String destinationBasePath = "E:/users/gaffuju/eclipse_workspace/basic-services/";
+	static String destinationBasePath = "E:\\dissemination\\shared-data\\MS_data\\";
+	//static String destinationBasePath = "E:/users/gaffuju/eclipse_workspace/basic-services/";
 	//static String destinationBasePath = "E:/users/clemoki/workspace/basic-services/";
 
 	/**
