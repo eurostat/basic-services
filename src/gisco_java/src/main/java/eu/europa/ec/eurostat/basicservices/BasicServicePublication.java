@@ -47,7 +47,10 @@ public class BasicServicePublication {
 	public static void publish(String serviceType, String inDataPath, String destinationBasePath, String[] ccs, List<String> cols_, AttributeTypeSetter ats) {
 		System.out.println("Start");
 
-		String destinationDataPath = destinationBasePath + "data/"+serviceType+"/";
+		//Service - Education/EUR/
+		//Service - Service - Health/EUR/
+		String folder = "education".equals(serviceType)? "Service - Education" : "Service - Health";
+		String destinationDataPath = destinationBasePath + folder + "/EUR/";
 
 		//get publication date
 		String timeStamp = BasicServicesUtil.dateFormat.format(Calendar.getInstance().getTime());
