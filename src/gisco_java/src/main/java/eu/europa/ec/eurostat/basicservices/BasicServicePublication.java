@@ -143,7 +143,7 @@ public class BasicServicePublication {
 			GeoData.save(fs, destinationDataPath + "gpkg/all.gpkg", CRSUtil.getWGS_84_CRS());
 			
 
-			{
+			/*{
 				//export for web
 				ArrayList<Map<String, String>> data = CSVUtil.load(destinationDataPath+"csv/all.csv");
 				for(Map<String, String> d : data) {
@@ -166,7 +166,7 @@ public class BasicServicePublication {
 				//save
 				new File(destinationBasePath + "map/"+serviceType+"/").mkdirs();
 				CSVUtil.save(data, destinationBasePath + "map/"+serviceType+"/hcs.csv");
-			}
+			}*/
 		}
 
 		System.out.println("End");
