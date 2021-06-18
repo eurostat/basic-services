@@ -1,1 +1,1 @@
-[Overview map](https://eurostat.github.io/healthcare-services/map/)
+[Overview map](https://eurostat.github.io/healthcare-services/map/healthcare/)
